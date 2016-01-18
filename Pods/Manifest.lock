@@ -1,0 +1,113 @@
+PODS:
+  - Alamofire (3.1.2)
+  - Bolts (1.5.0):
+    - Bolts/AppLinks (= 1.5.0)
+    - Bolts/Tasks (= 1.5.0)
+  - Bolts/AppLinks (1.5.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.5.0)
+  - FBSDKCoreKit (4.8.0):
+    - Bolts (~> 1.1)
+    - FBSDKCoreKit/arc (= 4.8.0)
+    - FBSDKCoreKit/no-arc (= 4.8.0)
+  - FBSDKCoreKit/arc (4.8.0):
+    - Bolts (~> 1.1)
+  - FBSDKCoreKit/no-arc (4.8.0):
+    - Bolts (~> 1.1)
+    - FBSDKCoreKit/arc
+  - FBSDKLoginKit (4.8.0):
+    - FBSDKCoreKit
+  - FBSDKShareKit (4.9.0):
+    - FBSDKCoreKit
+  - GGLInstanceID (1.1.1):
+    - GoogleNetworkingUtilities (~> 1.0)
+    - GoogleSymbolUtilities (~> 1.0)
+    - GoogleUtilities (~> 1.0)
+  - Google/CloudMessaging (1.1.1):
+    - GGLInstanceID (~> 1.0)
+    - Google/Core
+    - GoogleCloudMessaging (~> 1.0)
+  - Google/Core (1.1.1):
+    - GoogleInterchangeUtilities (~> 1.0)
+    - GoogleNetworkingUtilities (~> 1.0)
+    - GoogleSymbolUtilities (~> 1.0)
+    - GoogleUtilities (~> 1.1)
+  - Google/SignIn (1.1.1):
+    - Google/Core
+    - GoogleSignIn (~> 2.0)
+  - GoogleAppUtilities (1.0.0):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleAuthUtilities (1.0.1):
+    - GoogleNetworkingUtilities (~> 1.0)
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleCloudMessaging (1.1.0):
+    - GoogleInterchangeUtilities (~> 1.0)
+    - GoogleIPhoneUtilities (~> 1.0)
+    - GoogleNetworkingUtilities (~> 1.0)
+    - GoogleSymbolUtilities (~> 1.0)
+    - GoogleUtilities (~> 1.0)
+  - GoogleInterchangeUtilities (1.0.0):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleIPhoneUtilities (1.0.0):
+    - GoogleSymbolUtilities (~> 1.0)
+    - GoogleUtilities (~> 1.0)
+  - GoogleMaps (1.10.5)
+  - GoogleNetworkingUtilities (1.0.0):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleSignIn (2.4.0):
+    - GoogleAppUtilities (~> 1.0)
+    - GoogleAuthUtilities (~> 1.0)
+    - GoogleNetworkingUtilities (~> 1.0)
+    - GoogleUtilities (~> 1.0)
+  - GoogleSymbolUtilities (1.0.0)
+  - GoogleUtilities (1.1.0):
+    - GoogleSymbolUtilities (~> 1.0.0)
+  - Reachability (3.2)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
+  - TIPBadgeManager (0.2.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.0)
+  - FBSDKLoginKit
+  - FBSDKShareKit
+  - Google/CloudMessaging
+  - Google/SignIn
+  - GoogleMaps
+  - Reachability (from `https://github.com/tonymillion/Reachability`)
+  - SDWebImage (~> 3.7)
+  - TIPBadgeManager (~> 0.2.1)
+
+EXTERNAL SOURCES:
+  Reachability:
+    :git: https://github.com/tonymillion/Reachability
+
+CHECKOUT OPTIONS:
+  Reachability:
+    :commit: 1c4661fe44b03b6cbe68675c8aa054c6c3db67e6
+    :git: https://github.com/tonymillion/Reachability
+
+SPEC CHECKSUMS:
+  Alamofire: 7c16ca65f3c7e681fd925fd7f2dec7747ff96855
+  Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
+  FBSDKCoreKit: 66a935d17b6e00b6b64e604f2eb9b72c9ab7deb8
+  FBSDKLoginKit: d893fcbb98d854496925e9ff73c67b896982d3c4
+  FBSDKShareKit: c2e0050cf7e8f1309b0da65b0bfebfcd66712a2b
+  GGLInstanceID: 407e418571271b5166ce15f9a9f5412b2e219b70
+  Google: 529a5d8719dff90ea2e7cba5f45302cd359b5456
+  GoogleAppUtilities: c01c6a5671e9da8b9d690fdaec5959d6c2aac699
+  GoogleAuthUtilities: 049ffd3a297cdffd271451b82fd4e75304f15ef3
+  GoogleCloudMessaging: eae7280c5317d41fc8e1c93514e925b87eb0b2d2
+  GoogleInterchangeUtilities: fe088bea8c936218e52324a004d279c4491b9d65
+  GoogleIPhoneUtilities: a39a5868b46cc0edee933d1cd8f317a33ae5b6d2
+  GoogleMaps: da51c62c338c2d9c47cdad470a0d1e0e4b8544e4
+  GoogleNetworkingUtilities: 292992ab31b7b4ba32809a0e8b40e324cdfb2c0c
+  GoogleSignIn: 79929b51e6299c69f1197bbd9c7a1367d523ecd8
+  GoogleSymbolUtilities: a7b0feed1fe667c8d5e647177938d0ecd62d6948
+  GoogleUtilities: 8ed9134debe11719097881711464752900668f10
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  TIPBadgeManager: 77dd47d4f6a75868f29640a86e3345fb8850edcc
+
+COCOAPODS: 0.39.0

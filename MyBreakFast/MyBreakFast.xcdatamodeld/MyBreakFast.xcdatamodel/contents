@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1509" minimumToolsVersion="Automatic">
+    <entity name="Fooddetails" representedClassName=".Fooddetails" syncable="YES">
+        <attribute name="calories" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="carbohydrates" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fats" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fibre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="proteins" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="offers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Offer" syncable="YES"/>
+    </entity>
+    <entity name="Item" representedClassName=".Item" syncable="YES">
+        <attribute name="active" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bestsuitedfor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imgurl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="instock" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemdescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="locationid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="maxlimit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="fooddetails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Fooddetails" syncable="YES"/>
+    </entity>
+    <entity name="Locations" representedClassName=".Locations" syncable="YES">
+        <attribute name="active" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="locationId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="locationName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="MyOrder" representedClassName=".MyOrder" syncable="YES">
+        <attribute name="addressId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="couponid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="deliveredtime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="deliveryStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="deliveryTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="discount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="extra" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="invoiceid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="orderedtime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="orderid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subtotal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="surcharge" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="totalamount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vat" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Offer" representedClassName=".Offer" syncable="YES">
+        <attribute name="menuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="offerdesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="offerid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="offername" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="offeroftheday" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startdate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="TimeSlots" representedClassName=".TimeSlots" syncable="YES">
+        <attribute name="endtime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="kitchenid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="orderlimit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="presentorders" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="slot" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="slotid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="starttime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="UserAddress" representedClassName=".UserAddress" syncable="YES">
+        <attribute name="addressId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cluster" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lineone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="linetwo" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="UserDetails" representedClassName="UserDetails" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="emailId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="referralCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Fooddetails" positionX="-360" positionY="279" width="128" height="133"/>
+        <element name="Item" positionX="-515" positionY="-6" width="128" height="225"/>
+        <element name="Locations" positionX="-36" positionY="117" width="128" height="118"/>
+        <element name="MyOrder" positionX="-27" positionY="117" width="128" height="285"/>
+        <element name="Offer" positionX="-216" positionY="126" width="128" height="178"/>
+        <element name="TimeSlots" positionX="-225" positionY="-90" width="128" height="165"/>
+        <element name="UserAddress" positionX="-180" positionY="366" width="128" height="120"/>
+        <element name="UserDetails" positionX="-63" positionY="-18" width="128" height="135"/>
+    </elements>
+</model>

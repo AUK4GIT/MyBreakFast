@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomSegment" customModule="MyBreakFast" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view tag="-999" contentMode="scaleToFill" restorationIdentifier="CustomSegment" id="iN0-l3-epB" customClass="CustomSegment" customModule="MyBreakFast" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="35"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETN-Pd-K34">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="35"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal" title="ALACARTE" backgroundImage="normalsegment">
+                        <color key="titleColor" white="1" alpha="0.73999999999999999" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" title="ALACARTE" backgroundImage="highlighted">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" title="ALACARTE" backgroundImage="highlighted">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonSelected:" destination="iN0-l3-epB" eventType="touchUpInside" id="m76-9E-GyO"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCi-YI-STL">
+                    <rect key="frame" x="300" y="0.0" width="300" height="35"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal" title="BREAKFAST PROG." backgroundImage="normalsegment">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="0.73999999999999999" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="selected" title="BREAKFAST PROG." backgroundImage="highlighted">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" title="BREAKFAST PROG." backgroundImage="highlighted">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonSelected:" destination="iN0-l3-epB" eventType="touchUpInside" id="fXq-st-h9v"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="FCi-YI-STL" secondAttribute="trailing" id="CMf-Np-g3b"/>
+                <constraint firstAttribute="bottom" secondItem="ETN-Pd-K34" secondAttribute="bottom" id="CS2-Pe-L0V"/>
+                <constraint firstItem="FCi-YI-STL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="DTb-VL-Imy"/>
+                <constraint firstItem="ETN-Pd-K34" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="IV2-64-Rcw"/>
+                <constraint firstAttribute="bottom" secondItem="FCi-YI-STL" secondAttribute="bottom" id="JlU-zm-Xhl"/>
+                <constraint firstItem="FCi-YI-STL" firstAttribute="leading" secondItem="ETN-Pd-K34" secondAttribute="trailing" id="Ztc-Ba-ha3"/>
+                <constraint firstItem="FCi-YI-STL" firstAttribute="width" secondItem="ETN-Pd-K34" secondAttribute="width" id="adE-Hr-9RI"/>
+                <constraint firstItem="ETN-Pd-K34" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gIO-TB-0WU"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="431" y="345.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="highlighted" width="50" height="11"/>
+        <image name="normalsegment" width="50" height="11"/>
+    </resources>
+</document>

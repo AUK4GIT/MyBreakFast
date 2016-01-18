@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MyOrdersDetailsCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyOrdersDetailsCell" id="qEA-Bc-DKN" customClass="MyOrdersDetailsCell" customModule="MyBreakFast" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qEA-Bc-DKN" id="O00-I3-yS6">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilH-mb-Ly0">
+                        <rect key="frame" x="8" y="5" width="35.5" height="18"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awE-JF-scW">
+                        <rect key="frame" x="8" y="21" width="33" height="17"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₹" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmQ-7E-V2H">
+                        <rect key="frame" x="305" y="14" width="7" height="15.5"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ilH-mb-Ly0" firstAttribute="leading" secondItem="O00-I3-yS6" secondAttribute="leading" constant="8" id="IQM-4I-SgH"/>
+                    <constraint firstAttribute="bottom" secondItem="awE-JF-scW" secondAttribute="bottom" constant="5" id="PcR-av-ucT"/>
+                    <constraint firstItem="awE-JF-scW" firstAttribute="leading" secondItem="O00-I3-yS6" secondAttribute="leading" constant="8" id="S2k-kk-wju"/>
+                    <constraint firstItem="kmQ-7E-V2H" firstAttribute="centerY" secondItem="O00-I3-yS6" secondAttribute="centerY" id="TNO-UG-vY6"/>
+                    <constraint firstItem="ilH-mb-Ly0" firstAttribute="top" secondItem="O00-I3-yS6" secondAttribute="top" constant="5" id="hNn-2V-pwG"/>
+                    <constraint firstAttribute="trailing" secondItem="kmQ-7E-V2H" secondAttribute="trailing" constant="8" id="oZR-tB-I2T"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="amountLabel" destination="kmQ-7E-V2H" id="o8b-N5-lCD"/>
+                <outlet property="customdetailTextLabel" destination="awE-JF-scW" id="sVi-wF-2rU"/>
+                <outlet property="customtextLabel" destination="ilH-mb-Ly0" id="e7j-Xp-LcV"/>
+            </connections>
+            <point key="canvasLocation" x="292" y="232"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VitaminCell" id="Sv9-mH-dq1" customClass="VitaminCell" customModule="MyBreakFast" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="75"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fhl-DG-8Lq">
+                        <rect key="frame" x="2" y="0.0" width="45" height="45"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle-red" translatesAutoresizingMaskIntoConstraints="NO" id="v5A-Ex-YrD">
+                                <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plX-DL-Ux8">
+                                <rect key="frame" x="10" y="14" width="23.5" height="17"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="45" id="0gd-5f-qeS"/>
+                            <constraint firstAttribute="bottom" secondItem="v5A-Ex-YrD" secondAttribute="bottom" id="5pk-Kk-lPr"/>
+                            <constraint firstAttribute="height" constant="45" id="IQK-3Y-N6V"/>
+                            <constraint firstAttribute="trailing" secondItem="v5A-Ex-YrD" secondAttribute="trailing" id="MMs-qI-Wdm"/>
+                            <constraint firstItem="plX-DL-Ux8" firstAttribute="centerX" secondItem="Fhl-DG-8Lq" secondAttribute="centerX" id="Q4I-86-S89"/>
+                            <constraint firstItem="v5A-Ex-YrD" firstAttribute="leading" secondItem="Fhl-DG-8Lq" secondAttribute="leading" id="TFy-Bn-L1A"/>
+                            <constraint firstItem="plX-DL-Ux8" firstAttribute="centerY" secondItem="Fhl-DG-8Lq" secondAttribute="centerY" id="cfD-fH-lSL"/>
+                            <constraint firstItem="v5A-Ex-YrD" firstAttribute="top" secondItem="Fhl-DG-8Lq" secondAttribute="top" id="wkw-Yh-7G5"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cal." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOc-vs-foJ">
+                        <rect key="frame" x="13" y="47" width="24" height="17"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="XOc-vs-foJ" firstAttribute="centerX" secondItem="Sv9-mH-dq1" secondAttribute="centerX" id="5hn-xc-gbA"/>
+                <constraint firstAttribute="trailing" secondItem="Fhl-DG-8Lq" secondAttribute="trailing" id="Klf-ZS-lgY"/>
+                <constraint firstAttribute="bottom" secondItem="XOc-vs-foJ" secondAttribute="bottom" id="a90-dD-IhT"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XOc-vs-foJ" secondAttribute="trailing" id="cfL-uR-68r"/>
+                <constraint firstItem="Fhl-DG-8Lq" firstAttribute="leading" secondItem="Sv9-mH-dq1" secondAttribute="leading" id="fTm-Kr-RYd"/>
+                <constraint firstItem="Fhl-DG-8Lq" firstAttribute="top" secondItem="Sv9-mH-dq1" secondAttribute="top" id="gcA-7h-ZMS"/>
+                <constraint firstAttribute="bottom" secondItem="Fhl-DG-8Lq" secondAttribute="bottom" constant="25" id="igq-41-HTv"/>
+                <constraint firstItem="Fhl-DG-8Lq" firstAttribute="centerX" secondItem="Sv9-mH-dq1" secondAttribute="centerX" id="j0S-VZ-0oC"/>
+                <constraint firstItem="XOc-vs-foJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Sv9-mH-dq1" secondAttribute="leading" id="m3q-HD-hhH"/>
+                <constraint firstItem="XOc-vs-foJ" firstAttribute="top" secondItem="Fhl-DG-8Lq" secondAttribute="bottom" constant="2" id="tiv-x6-YPF"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Klf-ZS-lgY"/>
+                    <exclude reference="fTm-Kr-RYd"/>
+                    <exclude reference="igq-41-HTv"/>
+                    <exclude reference="a90-dD-IhT"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="calValue" destination="plX-DL-Ux8" id="WiX-ic-bG0"/>
+                <outlet property="circleView" destination="Fhl-DG-8Lq" id="rcP-Uf-wuL"/>
+                <outlet property="label" destination="XOc-vs-foJ" id="XgB-8L-B8f"/>
+            </connections>
+            <point key="canvasLocation" x="173" y="180"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Circle-red" width="50" height="50"/>
+    </resources>
+</document>

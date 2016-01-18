@@ -1,0 +1,70 @@
+//
+//  TimeSlotCell.swift
+//  MyBreakFast
+//
+//  Created by Uday Kiran Ailapaka on 28/12/15.
+//  Copyright © 2015 AUK. All rights reserved.
+//
+
+import Foundation
+
+class TimeSlotCell: UICollectionViewCell {
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    var currentTime = NSDate()
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        let timeFormtter = NSDateFormatter()
+        timeFormtter.dateFormat = "hh:mm a"
+        self.currentTime = timeFormtter.dateFromString(timeFormtter.stringFromDate(self.currentTime))!
+
+    }
+    
+    override var selected: Bool {
+        get {
+            return super.selected
+        }
+        set {
+            if newValue {
+                super.selected = true
+                self.timeLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 14.0);
+            } else if newValue == false {
+                super.selected = false
+                self.timeLabel.font = UIFont(name: "HelveticaNeue-Light", size: 13.0);
+            }
+        }
+    }
+    
+    func setContent(timeSlot: TimeSlots){
+        let timeFormtter = NSDateFormatter()
+        timeFormtter.dateFormat = "HH:mm:ss"
+        timeFormtter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        let startTime = timeFormtter.dateFromString(timeSlot.starttime!);
+        var endTime = timeFormtter.dateFromString(timeSlot.endtime!);
+        if endTime == nil {
+            endTime = timeFormtter.dateFromString("00:00:00");
+        }
+        
+
+        timeFormtter.dateFormat = "hh:mm a"
+        
+        print(endTime, self.currentTime)
+
+        let result: NSComparisonResult  = endTime?.compare(self.currentTime) ?? NSComparisonResult.OrderedAscending
+        if result == NSComparisonResult.OrderedAscending
+        {
+            print("endTime is before than currentime");
+            timeSlot.status = "InActive"
+        }
+
+                self.timeLabel.text = timeFormtter.stringFromDate(startTime!)+" - "+timeFormtter.stringFromDate(endTime!)
+        if timeSlot.status == "Active"{
+            self.timeLabel.textColor = UIColor(red: 200.0/255.0, green: 5.0/255.0, blue: 15.0/255.0, alpha: 1.0)
+        } else {
+            self.timeLabel.textColor = UIColor.grayColor()
+        }
+    
+    }
+
+}
