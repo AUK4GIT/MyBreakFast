@@ -26,9 +26,14 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     let dateFormatter = NSDateFormatter()
     @IBOutlet weak var topToolbar: UIToolbar!
     var cartButtonIcon: UIButton?
+    var placesClient: GMSPlacesClient?
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        self.fetchCurrentLocation();
+        self.fetchAddressess();
+        
         Helper.sharedInstance.userLocation = nil;
         Helper.sharedInstance.order = nil;
         Helper.sharedInstance.quantities = nil;
@@ -54,7 +59,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         collectionViewLayoutVertical.sectionInset = UIEdgeInsetsMake(10, 0, 50, 0)
         self.collectionView.setCollectionViewLayout(collectionViewLayoutVertical, animated: true)
         self.collectionView.registerNib(UINib.init(nibName: "MenuItemCell", bundle: NSBundle.mainBundle()), forCellWithReuseIdentifier: "item")
-        self.fetchAddressess();
+        
         self.performSelector("fetchMenuData", withObject: nil, afterDelay: 1.0)
         
         let dtFormat = NSDateFormatter()
@@ -111,53 +116,87 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     
     }
     
-//    func getCoverageRadius() {
-//    
-//        Helper.sharedInstance.getCoverageRadius{ (response) -> () in
-//            
-//            if response as? String == "ERROR" {
-//                UIAlertView(title: "Error", message: "Please try again", delegate: nil, cancelButtonTitle: "OK").show()
-//            } else {
-//                let responseDict  = response as! NSDictionary
-//                Helper.sharedInstance.coverageRadius = responseDict.objectForKey("service_radius") as? Int
-//                self.fetchCurrentLocation()
-//            }
-//        }
-//    }
-    
-//    func fetchCurrentLocation() {
-//        
-//            self.placesClient = GMSPlacesClient()
-//            self.placesClient!.currentPlaceWithCallback({ (placeLikelihoods: GMSPlaceLikelihoodList?, error) -> Void in
-//                if error != nil {
-//                    print("Current Place error: \(error!.localizedDescription)")
-//                    
-//                    UIAlertView(title: "Location", message: "Your current location is out of our service area. Please select your delivery area from the list.", delegate: nil, cancelButtonTitle: "OK").show()
-//                    self.fetchMenuData()
-//                    return
-//                }
+    func fetchCurrentLocation() {
+        
+            self.placesClient = GMSPlacesClient()
+            self.placesClient!.currentPlaceWithCallback({ (placeLikelihoods: GMSPlaceLikelihoodList?, error) -> Void in
+                if error != nil {
+                    print("Current Place error: \(error!.localizedDescription)")
+                    
+                    UIAlertView(title: "First Eat", message: "Could not fetch your current location. Please choose a nearby location from the search.", delegate: nil, cancelButtonTitle: "OK").show()
+                    
+                    return
+                }
 //                var from : CLLocation?
 //                var to : CLLocation?
-//                for likelihood in placeLikelihoods!.likelihoods {
-//                    if let likelihood = likelihood as? GMSPlaceLikelihood {
-//                        let place = likelihood.place
-//                        print("Current Place name \(place.name) at likelihood \(likelihood.likelihood)")
-//                        print("Current Place address \(place.formattedAddress)")
-//                        print("Current Place attributions \(place.attributions)")
-//                        print("Current PlaceID \(place.placeID)")
-//                        print("Current Coordinates \(place.coordinate)")
+                var origin = "";
+                if placeLikelihoods!.likelihoods.count > 0 {
+                    let likelihood = placeLikelihoods!.likelihoods[0] as? GMSPlaceLikelihood
+                        let place = likelihood!.place
+                        print("Current Place name \(place.name) at likelihood \(likelihood!.likelihood)")
+                        print("Current Place address \(place.formattedAddress)")
+                        print("Current Place attributions \(place.attributions)")
+                        print("Current PlaceID \(place.placeID)")
+                        print("Current Coordinates \(place.coordinate)")
 //                        from = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
-//                    }
-//                }
-//                
-//                to = CLLocation(latitude: CLLocationDegrees(Constants.ServiceLocation.SLatitude), longitude: CLLocationDegrees(Constants.ServiceLocation.SLongitude))
-//                let distance = NSNumber(double: from!.distanceFromLocation(to!));
-//                print(distance, distance.integerValue)
-//                if 4.compare(distance) == .OrderedAscending {
-//                    UIAlertView(title: "Location", message: "Your current location is out of our service area. Please select your delivery area from the list.", delegate: nil, cancelButtonTitle: "OK").show()
-//                }
-//            })
-//    }
+                    let lat = place.coordinate.latitude as NSNumber
+                    let long = place.coordinate.longitude as NSNumber
+                        origin = (lat.stringValue)+","+(long.stringValue)
+                }
+                
+                
+                if let kitchens = Helper.sharedInstance.fetchKitchens() {
+                    var destinations: String = ""
+                    var radius = "0";
+                    for (index, kitchen) in (kitchens.enumerate()) {
+                        let kObj = kitchen;
+                        if index == 0 {
+                            destinations = (kObj.latitude)!+","+(kObj.longitude)!
+                        } else {
+                            destinations = destinations+"|"+(kObj.latitude)!+","+(kObj.longitude)!
+                        }
+                        radius = kitchen.radius!
+                    }
+                    
+                    Helper.sharedInstance.fetchKitchenDistance(origin, destinations: destinations, completionHandler: { (response) -> () in
+                        print(response);
+                        if let responseDict = response as? NSDictionary{
+                            if let rows = responseDict.objectForKey("rows") as? NSArray{
+                                let elementsDict = rows[0] as? NSDictionary
+                                if let elements = elementsDict!.objectForKey("elements") as? NSArray{
+                                    let element = elements[0] as! NSDictionary
+                                    let distanceDict = element.objectForKey("distance") as? NSDictionary
+                                    var distanceVal = distanceDict?.objectForKey("value") as? Double
+                                    distanceVal = floor(distanceVal!/1000)
+                                    if distanceVal > Double(radius){
+                                        UIAlertView(title: "First Eat", message: "Your current location is out of our service area. Please select your delivery area from the list.", delegate: nil, cancelButtonTitle: "OK").show()
+
+                                    } else {
+                                        if let addr = responseDict.objectForKey("origin_addresses") as? NSArray{
+                                        Helper.sharedInstance.userLocation = addr[0] as? String
+                                        self.searchButton.setTitle(Helper.sharedInstance.userLocation, forState: UIControlState.Normal)
+                                        }
+
+                                    }
+                                } else {
+                                    
+                                }
+                                
+                            } else {
+                            
+                            }
+                        } else {
+                            UIAlertView(title: "First Eat", message: "Could not fetch your current location. Please choose a nearby location from the search.", delegate: nil, cancelButtonTitle: "OK").show()
+
+                        }
+                    })
+                    
+                } else {
+                    UIAlertView(title: "First Eat", message: "Could not fetch your current location. Please choose a nearby location from the search.", delegate: nil, cancelButtonTitle: "OK").show()
+
+                }
+            })
+    }
     
     @IBAction func proceedtoConfirmOrder(sender: AnyObject) {
         
@@ -280,6 +319,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         searchButton.frame = CGRectMake(offset, 6, width, height);
         searchButton.setBackgroundImage(UIImage(named: "searchbg.png"), forState: UIControlState.Normal)
         searchButton.setTitle("Searching for locations", forState: UIControlState.Normal)
+        searchButton.titleEdgeInsets = UIEdgeInsetsMake(0, 20, 0, 20);
         searchButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         searchButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 14.0);
         searchButton.titleLabel?.textAlignment = NSTextAlignment.Center
@@ -322,23 +362,6 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         self.presentViewController(vc!, animated: true, completion: nil)
        
     }
-    
-    // MARK: DatePicker and LocationPicker Delegates
-    
-//    func didSelectDate(date: AnyObject) {
-//        let selectedDate = date as! NSDate
-//        
-//        let stringFromDate = self.dateFormatter.stringFromDate(selectedDate);
-//        let parentVC: ViewController = self.parentViewController as! ViewController
-//        parentVC.setNavBarTitle(stringFromDate)
-//        
-//        Helper.sharedInstance.getMenuFor(selectedDate, completionHandler: {
-//            self.itemsArray = Helper.sharedInstance.getTodaysItems();
-//            self.collectionView.reloadData()
-//        })
-//    }
-//    
-    
    
     // MARK: UICollectionView delegates and datasources
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {

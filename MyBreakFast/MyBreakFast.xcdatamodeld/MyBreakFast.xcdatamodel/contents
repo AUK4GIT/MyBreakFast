@@ -22,6 +22,20 @@
         <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="fooddetails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Fooddetails" syncable="YES"/>
     </entity>
+    <entity name="Kitchens" representedClassName=".Kitchens" syncable="YES">
+        <attribute name="active" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cluster" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="kdescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="kid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="landline" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mobile" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="radius" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Locations" representedClassName=".Locations" syncable="YES">
         <attribute name="active" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="String" syncable="YES"/>
@@ -84,13 +98,14 @@
         <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Fooddetails" positionX="-360" positionY="279" width="128" height="133"/>
+        <element name="Fooddetails" positionX="-495" positionY="353" width="128" height="133"/>
         <element name="Item" positionX="-515" positionY="-6" width="128" height="225"/>
-        <element name="Locations" positionX="-36" positionY="117" width="128" height="118"/>
-        <element name="MyOrder" positionX="-27" positionY="117" width="128" height="285"/>
-        <element name="Offer" positionX="-216" positionY="126" width="128" height="178"/>
-        <element name="TimeSlots" positionX="-225" positionY="-90" width="128" height="165"/>
-        <element name="UserAddress" positionX="-180" positionY="366" width="128" height="120"/>
-        <element name="UserDetails" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Locations" positionX="-63" positionY="-0" width="128" height="118"/>
+        <element name="MyOrder" positionX="-56" positionY="144" width="128" height="285"/>
+        <element name="Offer" positionX="-360" positionY="182" width="128" height="178"/>
+        <element name="TimeSlots" positionX="-360" positionY="-3" width="128" height="165"/>
+        <element name="UserAddress" positionX="-288" positionY="378" width="128" height="120"/>
+        <element name="UserDetails" positionX="-216" positionY="-0" width="128" height="135"/>
+        <element name="Kitchens" positionX="-216" positionY="162" width="128" height="223"/>
     </elements>
 </model>

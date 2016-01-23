@@ -2,29 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>TRACKING_ID</key>
-	<string>UA-69526615-2</string>
-	<key>CLIENT_ID</key>
-	<string>365171214999-cdtsuau3bushavbbfld85g89hldh4a25.apps.googleusercontent.com</string>
-	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.365171214999-cdtsuau3bushavbbfld85g89hldh4a25</string>
 	<key>GCM_SENDER_ID</key>
-	<string>365171214999</string>
+	<string>585897777082</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.illusionapps.FirstEAT</string>
+	<string>com.firsteat.firsteat</string>
 	<key>IS_ADS_ENABLED</key>
 	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<true/>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
 	<false/>
 	<key>IS_GCM_ENABLED</key>
 	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<false/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:365171214999:ios:c7fcc3fe5e09010a</string>
+	<string>1:585897777082:ios:10d5da5e6aa9cde1</string>
 </dict>
 </plist>

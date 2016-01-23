@@ -314,7 +314,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="SplashImage" width="360" height="640"/>
+        <image name="SplashImage" width="211" height="274"/>
         <image name="arrow-down" width="26" height="25"/>
         <image name="arrow-up" width="26" height="25"/>
         <image name="egg-info" width="22" height="27"/>

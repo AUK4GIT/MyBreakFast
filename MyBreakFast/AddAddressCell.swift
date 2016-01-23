@@ -51,24 +51,37 @@ class AddAddressCell: UICollectionViewCell {
         let dict: [String:String] = ["line1":lineOne!,"line2":self.secondLine.text!,"line3":"Gurgoan","category":"Home"];
             self.activity?.startAnimating()
         Helper.sharedInstance.uploadAddress(dict) { (response) -> () in
-            self.activity?.stopAnimating()
+            
             let responseStatus = (response as? String) ?? ""
             if responseStatus == "ERROR"{
                 UIAlertView(title: "First Eat", message: "Error adding address. Try again.", delegate: nil, cancelButtonTitle: "OK").show()
             } else {
                 if let dict = response as? NSDictionary {
+                    
+                    let userAddressObj = Helper.sharedInstance.getUserAddressObject() as? UserAddress
+                    userAddressObj?.lineone = lineOne!;
+                    userAddressObj?.linetwo = self.secondLine.text!;
+                    userAddressObj?.category = "Home";
+                    userAddressObj?.cluster = "Gurgoan";
+                    
                     if let addid = dict.objectForKey("address_id") as? NSNumber{
                         Helper.sharedInstance.order?.addressId = addid.stringValue;
+                        userAddressObj?.addressId = addid.stringValue
                         Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.LastSelectedAddressId, value: addid.stringValue)
-                        UIApplication.sharedApplication().sendAction("dismissViewAfterAddingAddress", to: nil, from: self, forEvent: nil);
+                        Helper.sharedInstance.saveContext()
+
                     } else {
                         let addrId = dict.objectForKey("address_id") as? String
                         Helper.sharedInstance.order?.addressId =  addrId
+                        userAddressObj?.addressId = addrId
                         Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.LastSelectedAddressId, value: addrId!)
-                        UIApplication.sharedApplication().sendAction("dismissViewAfterAddingAddress", to: nil, from: self, forEvent: nil);
+                        Helper.sharedInstance.saveContext()
+
                     }
+                    UIApplication.sharedApplication().sendAction("dismissViewAfterAddingAddress", to: nil, from: self, forEvent: nil);
                 }
             }
+            self.activity?.stopAnimating()
         }
     }
     

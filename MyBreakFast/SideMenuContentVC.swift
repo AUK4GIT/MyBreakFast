@@ -33,14 +33,18 @@ class SideMenuContentVC: UIViewController, UITableViewDataSource, UITableViewDel
 //        self.view.layer.insertSublayer(self.gradient, atIndex: 0)
         
         self.userName.text = "Hello! Guest"
-        self.locationName.text = "";
+        self.locationName.text = "----------";
             }
     
     func setUserDetails(){
         if let userdetails = Helper.sharedInstance.getUserNameandUserPhoneNumber()
         {
-            self.userName.text = "Hello! "+userdetails.userName!;
-            self.locationName.text = userdetails.phoneNumber;
+            if let usrName = userdetails.userName {
+                self.userName.text = "Hello! "+usrName;
+            }
+            if let phName = userdetails.phoneNumber {
+                self.locationName.text = phName;
+            }
         }
 
     }

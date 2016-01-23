@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--LaunchScreen-->
@@ -20,45 +21,23 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashImage" translatesAutoresizingMaskIntoConstraints="NO" id="jfU-f0-EPo">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6R-wC-93B">
-                                <rect key="frame" x="187" y="513" width="225.5" height="67"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="First ">
-                                        <attributes>
-                                            <color key="NSColor" red="0.99607843137254903" green="0.792156862745098" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="53" name="SnellRoundhand-Black"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Eat">
-                                        <attributes>
-                                            <color key="NSColor" red="0.8901960784313725" green="0.12549019607843137" blue="0.074509803921568626" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="53" name="SnellRoundhand-Black"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_logo" translatesAutoresizingMaskIntoConstraints="NO" id="yrE-Az-ny0">
-                                <rect key="frame" x="255" y="20" width="90" height="90"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FELogo" translatesAutoresizingMaskIntoConstraints="NO" id="yrE-Az-ny0">
+                                <rect key="frame" x="40" y="20" width="520" height="235"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="l6R-wC-93B" firstAttribute="centerX" secondItem="jfU-f0-EPo" secondAttribute="centerX" id="6gH-fE-90W"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yrE-Az-ny0" secondAttribute="trailing" constant="20" id="0gN-cs-NyF"/>
                             <constraint firstItem="jfU-f0-EPo" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="76G-s5-46a"/>
                             <constraint firstItem="yrE-Az-ny0" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="20" id="7Qe-YX-YZi"/>
                             <constraint firstItem="yrE-Az-ny0" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="7oo-lu-oE0"/>
                             <constraint firstItem="jfU-f0-EPo" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="KZe-DW-Mbw"/>
                             <constraint firstItem="jfU-f0-EPo" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Otz-8P-4JD"/>
-                            <constraint firstItem="l6R-wC-93B" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="QjC-vW-uXo"/>
                             <constraint firstAttribute="trailing" secondItem="jfU-f0-EPo" secondAttribute="trailing" id="YiI-ao-O3O"/>
                             <constraint firstItem="jfU-f0-EPo" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="b5i-O6-lVg"/>
                             <constraint firstItem="jfU-f0-EPo" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="eCn-Mo-mxb"/>
-                            <constraint firstItem="jfU-f0-EPo" firstAttribute="top" secondItem="l6R-wC-93B" secondAttribute="bottom" constant="8" id="gIM-1A-ptm"/>
+                            <constraint firstItem="yrE-Az-ny0" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="20" id="igy-sf-TOH"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="jfU-f0-EPo" secondAttribute="bottom" id="srf-M7-30N"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="l6R-wC-93B" secondAttribute="bottom" constant="20" id="tae-X9-i8F"/>
                             <constraint firstItem="jfU-f0-EPo" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="zTV-c6-UBH"/>
                         </constraints>
                         <variation key="default">
@@ -67,8 +46,6 @@
                                 <exclude reference="Otz-8P-4JD"/>
                                 <exclude reference="b5i-O6-lVg"/>
                                 <exclude reference="eCn-Mo-mxb"/>
-                                <exclude reference="gIM-1A-ptm"/>
-                                <exclude reference="6gH-fE-90W"/>
                             </mask>
                         </variation>
                     </view>
@@ -79,7 +56,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="SplashImage" width="360" height="640"/>
-        <image name="menu_logo" width="90" height="90"/>
+        <image name="FELogo" width="986" height="235"/>
+        <image name="SplashImage" width="211" height="274"/>
     </resources>
 </document>

@@ -1,8 +1,4 @@
-#if GMP_NO_MODULES
 #import <Foundation/Foundation.h>
-#else
-@import Foundation;
-#endif
 
 @class GGLInstanceIDConfig;
 

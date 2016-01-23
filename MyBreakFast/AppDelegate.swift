@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         assert(configureError == nil, "Error configuring Google services: \(configureError)")
         self.gcmSenderID = GGLContext.sharedInstance().configuration.gcmSenderID
         
-        GMSServices.provideAPIKey("AIzaSyC8eabwyXRMjbBTZtf1JKq0Z-4kjkult00")
+        GMSServices.provideAPIKey("AIzaSyAPh4llvFdSdesO88eBfeD1z2BJZ6VE2hw")
         self.locationManager.requestWhenInUseAuthorization()
         
         self.window?.backgroundColor = UIColor.blackColor()

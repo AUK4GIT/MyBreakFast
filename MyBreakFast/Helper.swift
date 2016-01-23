@@ -117,6 +117,15 @@ class Helper {
         self.saveContext();
     }
     
+    func saveKitchens(items: AnyObject) {
+        for item in items as! [AnyObject] {
+            let itemObj: Kitchens = NSManagedObject(entity: NSEntityDescription.entityForName("Kitchens",
+                inManagedObjectContext:appDelegate.managedObjectContext)!, insertIntoManagedObjectContext: appDelegate.managedObjectContext) as! Kitchens
+            itemObj.saveData(item as! NSDictionary);
+        }
+        self.saveContext();
+    }
+    
 //    func saveMenuOrders(myOrders: AnyObject) {
 //        self.deleteData("MyOrder");
 //        for order in myOrders as! [AnyObject] {
@@ -525,6 +534,23 @@ class Helper {
         return nil;
     }
 
+    func fetchKitchens()->[Kitchens]? {
+        let fetchRequest = NSFetchRequest(entityName: "Kitchens")
+        var usdObjs: [Kitchens]?
+        do {
+            let results =
+            try appDelegate.managedObjectContext.executeFetchRequest(fetchRequest)
+            usdObjs = results as? [Kitchens]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
+        if(usdObjs?.count>0) {
+            return usdObjs!
+        }
+        
+        return nil;
+    }
 
     
     // MARK: Service APIs
@@ -576,7 +602,7 @@ class Helper {
                         Helper.sharedInstance.hideActivity()
                         completionHandler("ERROR")
                     }
-                case .Success(let responseObject):
+                case .Success( _):
                     if let JSON = response.result.value {
                         print("JSON: \(JSON)")
                         if let jData =  JSON.objectForKey("data") as? NSDictionary{
@@ -689,6 +715,60 @@ class Helper {
         
         }
     }
+    
+    func fetchKitchenAddressess(completionHandler: (AnyObject) -> ()) {
+        
+        if !self.reach!.isReachable() {
+            UIAlertView(title: "No Internet Connection!", message: "Please connect to internet and try again", delegate: nil, cancelButtonTitle: "OK").show()
+            return
+        }
+        let completeURL = Constants.API.URL_KITCHENS
+        Alamofire.request(.GET, completeURL, parameters: nil)
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                    if let JSON = response.result.value {
+                        print("JSON: \(JSON)")
+                        self.deleteData("Kitchens");
+                        self.saveContext();
+                        self.saveKitchens(JSON.objectForKey("data")!);
+                        completionHandler("SUCCESS")
+                    } else {
+                        completionHandler("ERROR")
+                    }
+                }
+        }
+    }
+    
+    func fetchKitchenDistance(origin: String, destinations: String, completionHandler: (AnyObject) -> ()) {
+        
+        if !self.reach!.isReachable() {
+            UIAlertView(title: "No Internet Connection!", message: "Please connect to internet and try again", delegate: nil, cancelButtonTitle: "OK").show()
+            return
+        }
+        let completeURL = Constants.API.GOOGLE_DISTENCE_MATRIX
+        Alamofire.request(.GET, completeURL, parameters: ["origins":origin, "destinations":destinations, "language":"en-EN", "key":Constants.API.GOOGLE_BROWSER_KEY])
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                    if let JSON = response.result.value {
+                        print("JSON: \(JSON)")
+                        completionHandler(JSON)
+                    } else {
+                        completionHandler("ERROR")
+                    }
+                }
+        }
+    }
+
     
     func fetchUserRedeemPoints(completionHandler: (AnyObject) -> ()) {
         

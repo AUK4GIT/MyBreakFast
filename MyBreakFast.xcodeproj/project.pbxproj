@@ -87,6 +87,9 @@
 		EDCC2AEB1C3676CD00C15C3B /* OffersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC2AEA1C3676CD00C15C3B /* OffersCell.swift */; };
 		EDCC81E51C268BC300C961F8 /* CustomSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC81E41C268BC300C961F8 /* CustomSegment.swift */; };
 		EDCC81E71C268BF500C961F8 /* CustomSegment.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDCC81E61C268BF500C961F8 /* CustomSegment.xib */; };
+		EDE5E03C1C4FEB690044E819 /* Kitchens+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE5E03A1C4FEB690044E819 /* Kitchens+CoreDataProperties.swift */; };
+		EDE5E03D1C4FEB690044E819 /* Kitchens.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE5E03B1C4FEB690044E819 /* Kitchens.swift */; };
+		EDE5E0531C53562C0044E819 /* MyAddress.gpx in Resources */ = {isa = PBXBuildFile; fileRef = EDE5E0521C53562C0044E819 /* MyAddress.gpx */; };
 		EDEBAEF61C1492BF0047E070 /* VitaminCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEBAEF51C1492BF0047E070 /* VitaminCollectionView.swift */; };
 		EDEBAEF81C14932B0047E070 /* VitaminCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDEBAEF71C14932B0047E070 /* VitaminCell.xib */; };
 		EDEBAEFA1C14935B0047E070 /* VitaminCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEBAEF91C14935B0047E070 /* VitaminCell.swift */; };
@@ -183,6 +186,9 @@
 		EDCC2AEA1C3676CD00C15C3B /* OffersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersCell.swift; sourceTree = "<group>"; };
 		EDCC81E41C268BC300C961F8 /* CustomSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegment.swift; sourceTree = "<group>"; };
 		EDCC81E61C268BF500C961F8 /* CustomSegment.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSegment.xib; sourceTree = "<group>"; };
+		EDE5E03A1C4FEB690044E819 /* Kitchens+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Kitchens+CoreDataProperties.swift"; path = "Models/Kitchens+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EDE5E03B1C4FEB690044E819 /* Kitchens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Kitchens.swift; path = Models/Kitchens.swift; sourceTree = "<group>"; };
+		EDE5E0521C53562C0044E819 /* MyAddress.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = MyAddress.gpx; path = Resources/MyAddress.gpx; sourceTree = "<group>"; };
 		EDEBAEF51C1492BF0047E070 /* VitaminCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VitaminCollectionView.swift; sourceTree = "<group>"; };
 		EDEBAEF71C14932B0047E070 /* VitaminCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VitaminCell.xib; sourceTree = "<group>"; };
 		EDEBAEF91C14935B0047E070 /* VitaminCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VitaminCell.swift; sourceTree = "<group>"; };
@@ -213,6 +219,8 @@
 		ED5B216B1BF612A300C65857 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EDE5E03A1C4FEB690044E819 /* Kitchens+CoreDataProperties.swift */,
+				EDE5E03B1C4FEB690044E819 /* Kitchens.swift */,
 				ED996EB11C30CA960017284A /* UserAddress+CoreDataProperties.swift */,
 				ED996EB21C30CA960017284A /* UserAddress.swift */,
 				ED709AA11C29AA960068528C /* Fooddetails.swift */,
@@ -329,6 +337,7 @@
 		EDA736C11BE4DB1800AC9884 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EDE5E0521C53562C0044E819 /* MyAddress.gpx */,
 				ED58D6291C3D654200741E8D /* FloatRatingView.swift */,
 				EDA736D01BE4DF3700AC9884 /* GoogleService-Info.plist */,
 				EDA736D21BE4E05C00AC9884 /* MyBreakFast-Bridging-Header.h */,
@@ -418,6 +427,7 @@
 				ED87B01E1BE72E37003177D7 /* CartBillView.xib in Resources */,
 				ED996EAA1C2C63E70017284A /* Main.storyboard in Resources */,
 				ED1A6F281BE281C200F1B911 /* MenuItemCell.xib in Resources */,
+				EDE5E0531C53562C0044E819 /* MyAddress.gpx in Resources */,
 				EDBA07061C0B6C5800BE09B3 /* PopCell.xib in Resources */,
 				ED722B211BE09A33003DC9F2 /* Assets.xcassets in Resources */,
 				EDA7CCF21C46CC4800A40AEE /* MyOrdersDetailsCell.xib in Resources */,
@@ -484,6 +494,7 @@
 				ED722B2E1BE1060A003DC9F2 /* SideMenuContentVC.swift in Sources */,
 				ED722B361BE1F080003DC9F2 /* ContactUsVC.swift in Sources */,
 				EDA7CCF81C4C0CD000A40AEE /* AddAddressCell.swift in Sources */,
+				EDE5E03C1C4FEB690044E819 /* Kitchens+CoreDataProperties.swift in Sources */,
 				EDEBAEFA1C14935B0047E070 /* VitaminCell.swift in Sources */,
 				EDBA06BD1C01D8CF00BE09B3 /* UserOrderDetails.swift in Sources */,
 				ED5B21831BF76D3400C65857 /* Locations+CoreDataProperties.swift in Sources */,
@@ -538,6 +549,7 @@
 				EDCC2AE91C34D0C200C15C3B /* ProductsCell.swift in Sources */,
 				ED58D62A1C3D654200741E8D /* FloatRatingView.swift in Sources */,
 				EDBA06BF1C021B9F00BE09B3 /* Yourdetails.swift in Sources */,
+				EDE5E03D1C4FEB690044E819 /* Kitchens.swift in Sources */,
 				ED5B21821BF76D3400C65857 /* TimeSlots.swift in Sources */,
 				EDA7CCF41C4BA10100A40AEE /* AddAddressVC.swift in Sources */,
 				ED722B301BE1F04C003DC9F2 /* MenuVC.swift in Sources */,
@@ -593,8 +605,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: RICHA TICKOO (9SQPN3986G)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: RICHA TICKOO (9SQPN3986G)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Mannat Wadehra (7ECJ337932)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mannat Wadehra (7ECJ337932)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -640,8 +652,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: RICHA TICKOO (9SQPN3986G)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: RICHA TICKOO (9SQPN3986G)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Mannat Wadehra (7ECJ337932)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mannat Wadehra (7ECJ337932)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -669,8 +681,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: RICHA TICKOO (9SQPN3986G)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: RICHA TICKOO (9SQPN3986G)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Mannat Wadehra (7ECJ337932)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mannat Wadehra (7ECJ337932)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -696,7 +708,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.illusionapps.FirstEAT;
+				PRODUCT_BUNDLE_IDENTIFIER = com.firsteat.firsteat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyBreakFast/MyBreakFast-Bridging-Header.h";
@@ -711,8 +723,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: RICHA TICKOO (9SQPN3986G)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: RICHA TICKOO (9SQPN3986G)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Mannat Wadehra (7ECJ337932)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mannat Wadehra (7ECJ337932)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -738,7 +750,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.illusionapps.FirstEAT;
+				PRODUCT_BUNDLE_IDENTIFIER = com.firsteat.firsteat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyBreakFast/MyBreakFast-Bridging-Header.h";

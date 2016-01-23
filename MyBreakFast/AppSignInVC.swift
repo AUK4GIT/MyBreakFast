@@ -26,8 +26,8 @@ class AppSignInVC: UIViewController {
         super.viewDidLoad()
        
         self.isEditing = false;
-        self.loginButton.layer.cornerRadius = 15.0;
-        self.faceBookButton.layer.cornerRadius = 15.0;
+//        self.loginButton.layer.cornerRadius = 15.0;
+//        self.faceBookButton.layer.cornerRadius = 15.0;
         
         self.loginButton.titleLabel?.adjustFontToRealIPhoneSize = true;
         self.faceBookButton.titleLabel?.adjustFontToRealIPhoneSize = true;
@@ -36,6 +36,11 @@ class AppSignInVC: UIViewController {
         
         }
     }
+    
+    @IBAction func dismissViewController(sender: UIButton) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)

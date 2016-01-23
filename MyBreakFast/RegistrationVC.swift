@@ -24,8 +24,11 @@ class RegistrationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.isEditing = false;
-        self.loginButton.layer.cornerRadius = 12.0;
+//        self.loginButton.layer.cornerRadius = 12.0;
         self.userObj = Helper.sharedInstance.getUserDetailsObj() as? UserDetails
+    }
+    @IBAction func dismissViewController(sender: UIButton) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func setAfterLoginSettings(emailid: String, password: String){

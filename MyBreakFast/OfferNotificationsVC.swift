@@ -18,7 +18,7 @@ class OfferNotificationsVC: UIViewController {
         let doneButton: UIButton = UIButton(type: .Custom)
         doneButton.frame = CGRectMake(0, 0, 60, 44)
         doneButton.setTitle("Done", forState: .Normal)
-        doneButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 17.0);
+        doneButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 18.0);
         doneButton.titleLabel?.adjustFontToRealIPhoneSize = true;
         doneButton.addTarget(self, action: "dismissController:", forControlEvents: .TouchUpInside)
         doneButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -20)
@@ -78,7 +78,7 @@ class OfferNotificationsVC: UIViewController {
         cell.contentView.backgroundColor = UIColor.whiteColor()
         let label: UILabel = (cell.viewWithTag(5) as? UILabel)!
         let resDict = self.offersArray[indexPath.row] as? NSDictionary
-        label.text = resDict!["content_text"] as! String
+        label.text = resDict!["content_text"] as? String
         return cell;
     }
     

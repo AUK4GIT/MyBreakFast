@@ -25,7 +25,6 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.365171214999-cdtsuau3bushavbbfld85g89hldh4a25</string>
 				<string>fb788253427964410</string>
 			</array>
 		</dict>
@@ -34,7 +33,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.illusionapps.FirstEAT</string>
+				<string>com.firsteat.firsteat</string>
 			</array>
 		</dict>
 	</array>
@@ -99,6 +98,15 @@
 				<true/>
 				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
 				<false/>
+			</dict>
+			<key>firsteat.in</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSTemporaryExceptionMinimumTLSVersion</key>
+				<string>TLSv1.1</string>
 			</dict>
 			<key>firsteatwebportal.in</key>
 			<dict>

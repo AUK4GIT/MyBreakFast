@@ -58,13 +58,13 @@ extension UILabel {
                 let model = UIDevice.currentDevice().modelName
                 
                 if model == "iPhone 6" {
-                    sizeScale = 1.0
+                    sizeScale = 1.2
                 }
                 else if model == "iPhone 6 Plus" {
-                    sizeScale = 1.0
+                    sizeScale = 1.2
                 }
                 else if model == "iPhone 5" {
-                    sizeScale = 0.8
+                    sizeScale = 1.0
                 }
                 else if model == "iPhone 4" {
                     sizeScale = 0.8
@@ -144,6 +144,22 @@ class ViewController: UIViewController, Slidemenuprotocol, UIGestureRecognizerDe
             
         }
         
+        Helper.sharedInstance.fetchKitchenAddressess({ (response) -> () in
+//            if let kitchens = Helper.sharedInstance.fetchKitchens() {
+//                
+//                var destinations: String = ""
+//                
+//                for (index, kitchen) in (kitchens.enumerate()) {
+//                    let kObj = kitchen;
+//                    if index == 0 {
+//                        destinations = (kObj.latitude)!+","+(kObj.longitude)!
+//                    } else {
+//                        destinations = destinations+"|"+(kObj.latitude)!+","+(kObj.longitude)!
+//                    }
+//                }
+//            }
+        });
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -176,22 +192,6 @@ class ViewController: UIViewController, Slidemenuprotocol, UIGestureRecognizerDe
     {
         searchBar.resignFirstResponder()
     }
-    
-//    @objc private func titleWasTapped() {
-//        
-//        let mainV: UIView = self.mainContainer.viewWithTag(101)!
-//        let mainVC: UIViewController = mainV.nextResponder() as! UIViewController;
-//        NSLog("Hello, titleWasTapped!")
-//
-//        if  mainVC is MenuVC {
-//            let menuVC = mainVC as! MenuVC
-//            let datePicker: DatePicker = self.storyboard?.instantiateViewControllerWithIdentifier("DatePicker") as! DatePicker
-//            datePicker.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
-//            datePicker.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve;
-//            datePicker.delegate = menuVC;
-//            self.presentViewController(datePicker, animated: false, completion: nil)
-//        }
-//    }
 
     func backToMenu() {
         self.cycleFromViewController(nil, toViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("MenuVC"))!);
