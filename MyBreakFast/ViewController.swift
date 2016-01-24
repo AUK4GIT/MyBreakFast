@@ -58,9 +58,15 @@ extension UILabel {
                 let model = UIDevice.currentDevice().modelName
                 
                 if model == "iPhone 6" {
-                    sizeScale = 1.2
+                    sizeScale = 1.1
                 }
                 else if model == "iPhone 6 Plus" {
+                    sizeScale = 1.2
+                }
+                if model == "iPhone 6s" {
+                    sizeScale = 1.1
+                }
+                else if model == "iPhone 6s Plus" {
                     sizeScale = 1.2
                 }
                 else if model == "iPhone 5" {
@@ -70,13 +76,13 @@ extension UILabel {
                     sizeScale = 0.8
                 }
                 else if model == "iPhone 4s" {
-                    sizeScale = 0.8
+                    sizeScale = 0.9
                 }
                 else if model == "Simulator" {
                     sizeScale = 1.0
                 }
                 else {
-                    sizeScale = 1.0
+                    sizeScale = 1.1
                 }
                 
                 self.font = currentFont.fontWithSize(currentFont.pointSize * sizeScale)

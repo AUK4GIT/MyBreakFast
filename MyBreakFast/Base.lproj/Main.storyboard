@@ -144,7 +144,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5a5-mB-Wya">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="140"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guest" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Mb-rB-UA7">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guest" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Mb-rB-UA7">
                                         <rect key="frame" x="199" y="58" width="51.5" height="24"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -175,9 +175,11 @@
                                     <constraint firstItem="0Mb-rB-UA7" firstAttribute="top" secondItem="5a5-mB-Wya" secondAttribute="top" constant="40" id="3OI-tB-CpQ"/>
                                     <constraint firstItem="faZ-tf-ais" firstAttribute="centerY" secondItem="QdE-YZ-Bik" secondAttribute="centerY" id="6X0-by-N0c"/>
                                     <constraint firstItem="QdE-YZ-Bik" firstAttribute="top" secondItem="0Mb-rB-UA7" secondAttribute="bottom" constant="10" id="8lI-Lj-uWq"/>
+                                    <constraint firstItem="0Mb-rB-UA7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5a5-mB-Wya" secondAttribute="leading" constant="8" id="Jqo-nh-nk4"/>
                                     <constraint firstItem="0Mb-rB-UA7" firstAttribute="centerY" secondItem="5a5-mB-Wya" secondAttribute="centerY" id="RgG-jB-YFM"/>
                                     <constraint firstItem="QdE-YZ-Bik" firstAttribute="leading" secondItem="faZ-tf-ais" secondAttribute="trailing" constant="8" id="Sal-f2-3vD"/>
                                     <constraint firstItem="QdE-YZ-Bik" firstAttribute="centerX" secondItem="0Mb-rB-UA7" secondAttribute="centerX" id="aRZ-Jk-H0K"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0Mb-rB-UA7" secondAttribute="trailing" constant="8" id="iYL-1h-K0h"/>
                                     <constraint firstItem="0Mb-rB-UA7" firstAttribute="centerX" secondItem="5a5-mB-Wya" secondAttribute="centerX" id="lJR-BZ-uON"/>
                                     <constraint firstAttribute="height" constant="140" id="vdb-dy-T8Y"/>
                                 </constraints>
@@ -361,6 +363,7 @@
                                     <constraint firstItem="Wu2-4l-H3q" firstAttribute="top" secondItem="tJp-5i-oyS" secondAttribute="bottom" constant="4" id="YPU-GG-Lcz"/>
                                     <constraint firstAttribute="bottom" secondItem="Qfm-Bb-l6r" secondAttribute="bottom" constant="14" id="e7O-rs-qFc"/>
                                     <constraint firstAttribute="trailing" secondItem="0Bb-zw-3LQ" secondAttribute="trailing" constant="8" id="eiA-pA-AO4"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Wu2-4l-H3q" secondAttribute="trailing" constant="8" id="gif-pc-hQ6"/>
                                     <constraint firstItem="0Bb-zw-3LQ" firstAttribute="leading" secondItem="pc0-Xb-upd" secondAttribute="leading" constant="8" id="jZY-Or-GnD"/>
                                     <constraint firstItem="wdC-oN-cA2" firstAttribute="leading" secondItem="tJp-5i-oyS" secondAttribute="leading" id="oVC-LN-Ca0"/>
                                     <constraint firstItem="BU7-gV-tZy" firstAttribute="centerY" secondItem="Qfm-Bb-l6r" secondAttribute="centerY" id="wTI-aL-Ujo"/>
@@ -1680,8 +1683,8 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sub Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meU-Sc-c2t">
-                                        <rect key="frame" x="8" y="140" width="78" height="21.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                        <rect key="frame" x="8" y="141" width="73.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -1725,8 +1728,8 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₹" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPO-ex-KTC">
-                                        <rect key="frame" x="302" y="140" width="10" height="21.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                        <rect key="frame" x="302.5" y="141" width="9.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>

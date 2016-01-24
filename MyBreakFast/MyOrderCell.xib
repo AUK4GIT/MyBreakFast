@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -78,6 +79,7 @@
                 <constraints>
                     <constraint firstItem="Wm8-w6-biE" firstAttribute="top" secondItem="Yan-ry-lxp" secondAttribute="bottom" id="ATw-ye-ajU"/>
                     <constraint firstItem="LS3-ks-Maf" firstAttribute="centerY" secondItem="fHq-ot-TMS" secondAttribute="centerY" id="BC1-Vj-v92"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Yan-ry-lxp" secondAttribute="trailing" constant="8" id="BpA-zp-gf2"/>
                     <constraint firstItem="fHq-ot-TMS" firstAttribute="leading" secondItem="Wm8-w6-biE" secondAttribute="leading" id="Frc-7P-exN"/>
                     <constraint firstItem="Wm8-w6-biE" firstAttribute="top" secondItem="4xt-UJ-kc2" secondAttribute="bottom" constant="2.5" id="J1L-oR-HWX"/>
                     <constraint firstAttribute="trailing" secondItem="Ll3-hL-qrb" secondAttribute="trailing" constant="20" id="QRA-nT-pgW"/>

@@ -366,7 +366,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     // MARK: UICollectionView delegates and datasources
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let width: CGFloat = ((UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone) ? collectionView.bounds.size.width-10 : 600.0);
-        let height: CGFloat = (UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone) ? 330.0 : 400.0;
+        let height: CGFloat = (UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone) ? 340.0 : 400.0;
 
         return CGSizeMake(width, height);
     }
