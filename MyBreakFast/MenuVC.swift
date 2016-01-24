@@ -27,6 +27,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     @IBOutlet weak var topToolbar: UIToolbar!
     var cartButtonIcon: UIButton?
     var placesClient: GMSPlacesClient?
+    var itemQuantities = 0;
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -205,6 +206,8 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         let userRegistrationStatus = Helper.sharedInstance.getDataFromUserDefaults(forKey: Constants.UserdefaultConstants.UserRegistration) as? Bool
         if ((Helper.sharedInstance.userLocation) == nil) {
             UIAlertView(title: "First Eat", message: "Please choose a delivery location", delegate: nil, cancelButtonTitle: "OK").show()
+        } else if self.itemQuantities == 0{
+            UIAlertView(title: "First Eat", message: "Please choose an item from the menu", delegate: nil, cancelButtonTitle: "OK").show()
         }
         else if userLoginStatus == nil {
             let vc: AppSignInVC = (self.storyboard?.instantiateViewControllerWithIdentifier("AppSignInVC")) as! AppSignInVC
@@ -328,10 +331,6 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         parentVC.containerNavigationItem.titleView = searchcustomView//self.titleView
         searchButton.addTarget(self, action: "showLocationPicker:", forControlEvents: UIControlEvents.TouchUpInside);
         
-//        let filterButton: UIButton = UIButton(type: .Custom);
-//        filterButton.frame = CGRectMake(0, 0, 35, 35);
-//        filterButton.setBackgroundImage(UIImage(named: "filter.png"), forState: .Normal)
-        
         let cartButton: UIButton = UIButton(type: .Custom);
         cartButton.frame = CGRectMake(5, 0, 32, 32);
         cartButton.setBackgroundImage(UIImage(named: "bell.png"), forState: .Normal)
@@ -339,7 +338,6 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         let customView = UIView()
         customView.frame = CGRectMake(0, 0, 40, 35);
         customView.backgroundColor = UIColor.clearColor()
-//        customView.addSubview(filterButton)
         customView.addSubview(cartButton)
         cartButton.addTarget(self, action: "cartClicked:", forControlEvents: UIControlEvents.TouchUpInside)
         self.cartButtonIcon = cartButton
@@ -351,6 +349,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     func updateToolbar() {
         Helper.sharedInstance.getOrderCountandPrice { (count, price) -> () in
             print(count, price)
+            self.itemQuantities = count;
             self.numberOfItemsLabel.text = String(count)+" items Selected"
 //            self.amountLabel.text = String(price)+" ₹/-"
         }
