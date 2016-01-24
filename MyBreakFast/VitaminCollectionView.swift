@@ -70,10 +70,19 @@ class VitaminCollectionView: UICollectionView, UICollectionViewDataSource, UICol
         let key: String = (self.keysarray![indexPath.row] as? String)!
         cell.label.text = key;
         let vitamin = self.dict?.valueForKey(key) as! String
+        cell.calValue.text = vitamin + " g"
+
         if key == "calories"{
             cell.calValue.text = vitamin
-        } else {
-            cell.calValue.text = vitamin + " g"
+            cell.label.text = "kCal"
+        } else if key == "fats"{
+            cell.label.text = "Fats"
+        } else if key == "fibre"{
+            cell.label.text = "Fibre"
+        }else if key == "proteins"{
+            cell.label.text = "Proteins"
+        }else if key == "carbohydrates"{
+            cell.label.text = "Carb"
         }
         
         return cell;

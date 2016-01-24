@@ -865,10 +865,7 @@ class Helper {
         }
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-//        let stringFromDate = dateFormatter.stringFromDate(date);
-        let stringFromDate = dateFormatter.stringFromDate(NSDate());
-
-
+        let stringFromDate = dateFormatter.stringFromDate(date);
         Alamofire.request(.GET, Constants.API.TimeSlots, parameters: ["d":stringFromDate])
             .responseJSON { response in
                 print(response.request)  // original URL request
