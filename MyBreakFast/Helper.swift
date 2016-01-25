@@ -16,12 +16,13 @@ class Helper {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var actView : ActivityIndicator?
     let userDefaults = NSUserDefaults.standardUserDefaults()
-    var coverageRadius : Int?
     var reach: Reachability?
     var userLocation: String?
     var order: Order?
     var quantities: String?
     var orderDate: String?
+    var currenttimeSlot = ""
+    var isOrderForTomorrow = false;
     
     func setUpReachability(){
     
@@ -557,26 +558,31 @@ class Helper {
     
     func doGCMRegistration(completionHandler: (AnyObject) -> ()) {
         
-        let request = NSMutableURLRequest(URL: NSURL(string: Constants.API.GCMRegistration)!)
-        request.HTTPMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let values = ["device_id":self.userDefaults.objectForKey("DeviceId")!,"device_type":UIDevice.currentDevice().model,
-            "gcm_id":self.appDelegate.registrationToken!,
-            "user_email_id":self.getUserEmailId()]
-        request.HTTPBody = try! NSJSONSerialization.dataWithJSONObject(values, options: [])
-        print(self.appDelegate.registrationToken!);
-        Alamofire.request(request)
+        let values = ["devid":self.userDefaults.objectForKey("DeviceId")!,"dev":UIDevice.currentDevice().model,
+            "gcm":self.appDelegate.registrationToken!,
+            "email":self.getUserEmailId()]
+        
+        Alamofire.request(.GET, Constants.API.GCMRegistration, parameters: values)
             .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                //                print(response.data)     // server data
+                print(response.result)   // result of response serialization
                 // do whatever you want here
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                switch response.result {
-                case .Failure(let error):
-                    print(error)
-                    completionHandler("ERROR")
-                case .Success(let responseObject):
-                    print(responseObject)
-                    completionHandler(responseObject)
-                }
+                    Helper.sharedInstance.hideActivity()
+                    switch response.result {
+                    case .Failure(let error):
+                        print(error)
+                        completionHandler("ERROR")
+                    case .Success(let responseObject):
+                        if let JSON = response.result.value {
+                            print("JSON: \(JSON)")
+                            print(responseObject)
+                            completionHandler(JSON.objectForKey("data")!)
+                        }
+                        
+                    }
                 }
         }
     }
@@ -876,6 +882,9 @@ class Helper {
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
                     if let JSON = response.result.value {
                         print("JSON: \(JSON)")
+                        if let curTimeSlot = JSON.objectForKey("now") {
+                            self.currenttimeSlot = curTimeSlot as! String
+                        }
                         completionHandler(JSON.objectForKey("data")!)
                     } else {
                         completionHandler("ERROR")
@@ -1004,29 +1013,6 @@ class Helper {
         }
         
     }
-    
-    
-//    func getCoverageRadius(completionHandler: (AnyObject) -> ()) {
-//        
-//        Alamofire.request(.GET, Constants.API.ServiceCoverage, parameters: nil)
-//            .responseJSON { response in
-//                print(response.request)  // original URL request
-//                print(response.response) // URL response
-//                print(response.data)     // server data
-//                print(response.result)   // result of response serialization
-//                
-//                if let JSON = response.result.value {
-//                    print("JSON: \(JSON)")
-//                    dispatch_async(dispatch_get_main_queue()) { () -> Void in
-//                        completionHandler(JSON)
-//                    }
-//                } else {
-//                    dispatch_async(dispatch_get_main_queue()) { () -> Void in
-//                        completionHandler("ERROR")
-//                    }
-//                }
-//        }
-//    }
     
     func getDeliveryLocations(completionHandler: (AnyObject) -> ()) {
         

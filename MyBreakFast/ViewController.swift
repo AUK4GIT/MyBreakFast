@@ -79,7 +79,7 @@ extension UILabel {
                     sizeScale = 0.9
                 }
                 else if model == "Simulator" {
-                    sizeScale = 1.0
+                    sizeScale = 1.2
                 }
                 else {
                     sizeScale = 1.1

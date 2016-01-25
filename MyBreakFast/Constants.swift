@@ -55,21 +55,21 @@ struct Constants {
     
     //Production
     struct API {
-        static let GCMRegistration: String = "http://firsteatwebportal.in/api/v1/gcm/registeruser"
+        static let GCMRegistration: String = "http://eatfirst.touchmagics.com/index.php/ws/first/app"
         static let UserRegistration: String = "http://www.firsteat.in/app/index.php/ws/register/user"
         static let UserLogin: String = "http://www.firsteat.in/app/index.php/ws/verify/user"
-        static let MenuToday: String = "http://firsteatwebportal.in/api/v1/menu"//
+//        static let MenuToday: String = "http://firsteatwebportal.in/api/v1/menu"//
         static let MenuonDate: String = "http://www.firsteat.in/app/index.php/ws/menu/all"
         static let UserAddresses: String = "http://www.firsteat.in/app/index.php/ws/users/address/list/"
         static let UpdateUserAddress: String = "http://www.firsteat.in/app/index.php/ws/users/address/add"
         static let TimeSlots: String = "http://www.firsteat.in/app/index.php/ws/kitchen/slots"
         
-        static let PlaceTestOrder: String = "http://firsteatwebportal.in/api/v1/order/placeTestOrder"
+//        static let PlaceTestOrder: String = "http://firsteatwebportal.in/api/v1/order/placeTestOrder"
         static let AboutUs: String = "http://firsteatwebportal.in/api/v1/contactus/aboutUs"
         static let ContactUsMessage: String = "http://firsteatwebportal.in/api/v1/contactus/add"
         static let UserFeedback: String = "http://www.firsteat.in/app/index.php/ws/user/feedback/"
         
-        static let ServiceCoverage: String = "http://firsteatwebportal.in/api/v1/locations/getServiceRadius"
+//        static let ServiceCoverage: String = "http://firsteatwebportal.in/api/v1/locations/getServiceRadius"
         static let MyOrders: String = "http://www.firsteat.in/app/index.php/ws/users/orders/all/"
         static let LocationsURL: String = "http://www.firsteat.in/app/index.php/ws/get/all/locations"
         static let DeliveryLocationsURL: String = "http://www.firsteat.in/app/index.php/ws/locations/delivery/all"

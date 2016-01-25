@@ -14,6 +14,19 @@ class CouponCodeCell: UICollectionViewCell {
     @IBAction func couponAction(sender: AnyObject) {
         self.couponTextField.resignFirstResponder()
         
+        if self.couponTextField.text?.characters.count == 0 {
+            UIAlertView(title: "First Eat", message: "Coupon code cannot be empty.", delegate: nil, cancelButtonTitle: "OK").show()
+            return;
+        }
+        
+        self.couponTextField.text = self.couponTextField.text?.uppercaseString
+        
+        if ((Helper.sharedInstance.order?.couponsApplied.indexOf(self.couponTextField.text!)) != nil) {
+            UIAlertView(title: "First Eat", message: "Coupon code already applied.", delegate: nil, cancelButtonTitle: "OK").show()
+            return;
+        }
+        
+        
         Helper.sharedInstance.validateCoupon(self.couponTextField.text!, completionHandler: { (response) -> () in
             
             if let responseStatus = response as? String {
@@ -75,7 +88,9 @@ class CouponCodeCell: UICollectionViewCell {
                     let messg = "Coupon "+couponName!+" applied. "+"discount value: "+String(discount)
                     UIAlertView(title: "First Eat", message: messg, delegate: nil, cancelButtonTitle: "OK").show()
                 }
+                Helper.sharedInstance.order?.couponsApplied.insert(self.couponTextField.text!, atIndex: (Helper.sharedInstance.order?.couponsApplied.count)!)
             }
+            self.couponTextField.text = "";
         })
 
     }

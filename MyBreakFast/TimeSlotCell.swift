@@ -18,6 +18,12 @@ class TimeSlotCell: UICollectionViewCell {
         let timeFormtter = NSDateFormatter()
         timeFormtter.dateFormat = "hh:mm a"
         self.currentTime = timeFormtter.dateFromString(timeFormtter.stringFromDate(self.currentTime))!
+        
+        if Helper.sharedInstance.currenttimeSlot != "" {
+            timeFormtter.dateFormat = "HH:mm:ss"
+            self.currentTime = timeFormtter.dateFromString(Helper.sharedInstance.currenttimeSlot)!
+        }
+        self.timeLabel.font = UIFont(name: "HelveticaNeue-Light", size: 13.0);
 
     }
     
@@ -26,6 +32,8 @@ class TimeSlotCell: UICollectionViewCell {
             return super.selected
         }
         set {
+            self.timeLabel.font = UIFont(name: "HelveticaNeue-Light", size: 13.0);
+
             if newValue {
                 super.selected = true
                 self.timeLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 14.0);
@@ -37,6 +45,7 @@ class TimeSlotCell: UICollectionViewCell {
     }
     
     func setContent(timeSlot: TimeSlots){
+        
         let timeFormtter = NSDateFormatter()
         timeFormtter.dateFormat = "HH:mm:ss"
         timeFormtter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
@@ -46,19 +55,16 @@ class TimeSlotCell: UICollectionViewCell {
             endTime = timeFormtter.dateFromString("00:00:00");
         }
         
-
         timeFormtter.dateFormat = "hh:mm a"
         
-        print(endTime, self.currentTime)
-
         let result: NSComparisonResult  = endTime?.compare(self.currentTime) ?? NSComparisonResult.OrderedAscending
-        if result == NSComparisonResult.OrderedAscending
+        if result == NSComparisonResult.OrderedAscending && !Helper.sharedInstance.isOrderForTomorrow
         {
             print("endTime is before than currentime");
             timeSlot.status = "InActive"
         }
 
-                self.timeLabel.text = timeFormtter.stringFromDate(startTime!)+" - "+timeFormtter.stringFromDate(endTime!)
+        self.timeLabel.text = timeFormtter.stringFromDate(startTime!)+" - "+timeFormtter.stringFromDate(endTime!)
         if timeSlot.status == "Active"{
             self.timeLabel.textColor = UIColor(red: 200.0/255.0, green: 5.0/255.0, blue: 15.0/255.0, alpha: 1.0)
         } else {

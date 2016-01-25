@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="94y-83-Mc3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="94y-83-Mc3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -693,20 +693,15 @@
                         <viewControllerLayoutGuide type="bottom" id="4bo-z9-6wC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="V39-V6-G4C">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KSb-EZ-SDS">
-                                <rect key="frame" x="30" y="10" width="540" height="580"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSb-EZ-SDS">
+                                <rect key="frame" x="8" y="10" width="304" height="460"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Loading...">
-                                        <attributes>
-                                            <color key="NSColor" red="0.13135258838383823" green="0.13135258838383823" blue="0.13135258838383823" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="18" name="HelveticaNeue-ThinItalic"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <string key="text">Healthy Food is the corner stone of Good Health. In order to achieve good health for all, First Eat promises to provide 'Tasty, fresh and nutritious Indian breakfast prepared with highest standards of food safety and hygiene, packed in high food grade packaging containers, with a promise of your food being delivered hot to your doorstep. First Eat aims to ensure that you, the hard working people of our country, start your day full with energy and aims to do this through good healthy food'.</string>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -714,11 +709,20 @@
                         <color key="tintColor" red="0.80392156859999997" green="0.027450980390000001" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="4bo-z9-6wC" firstAttribute="top" secondItem="KSb-EZ-SDS" secondAttribute="bottom" constant="10" id="1Mg-t1-OdK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="KSb-EZ-SDS" secondAttribute="trailing" constant="10" id="A6s-cc-UZM"/>
-                            <constraint firstItem="KSb-EZ-SDS" firstAttribute="leading" secondItem="V39-V6-G4C" secondAttribute="leadingMargin" constant="10" id="JnS-1O-pGc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KSb-EZ-SDS" secondAttribute="trailing" constant="8" id="A6s-cc-UZM"/>
+                            <constraint firstItem="KSb-EZ-SDS" firstAttribute="leading" secondItem="V39-V6-G4C" secondAttribute="leadingMargin" constant="8" id="JnS-1O-pGc"/>
+                            <constraint firstAttribute="trailing" secondItem="KSb-EZ-SDS" secondAttribute="trailing" constant="8" id="KbW-d0-cEd"/>
                             <constraint firstItem="KSb-EZ-SDS" firstAttribute="top" secondItem="V39-V6-G4C" secondAttribute="topMargin" constant="10" id="uQJ-bY-7qn"/>
+                            <constraint firstItem="KSb-EZ-SDS" firstAttribute="leading" secondItem="V39-V6-G4C" secondAttribute="leading" constant="8" id="xtt-vQ-F6G"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="A6s-cc-UZM"/>
+                                <exclude reference="JnS-1O-pGc"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="textView" destination="KSb-EZ-SDS" id="sYO-gU-2yu"/>
                     </connections>

@@ -47,6 +47,12 @@ class AddAddressCell: UICollectionViewCell {
     
     @IBAction func addorChangeAddress(sender: UIButton) {
         
+        if self.secondLine.text.characters.count == 0 {
+            UIAlertView(title: "First Eat", message: "Address field cannot be empty.", delegate: nil, cancelButtonTitle: "OK").show()
+
+            return;
+        }
+        
         let lineOne = Helper.sharedInstance.userLocation
         let dict: [String:String] = ["line1":lineOne!,"line2":self.secondLine.text!,"line3":"Gurgoan","category":"Home"];
             self.activity?.startAnimating()

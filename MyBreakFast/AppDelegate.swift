@@ -109,7 +109,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
             self.subscribeToTopic()
 //            let userInfo = ["registrationToken": registrationToken]
             Helper.sharedInstance.doGCMRegistration({ (AnyObject) -> () in
-                
+                NSLog("GCM registration done---> ")
             })
 //            NSNotificationCenter.defaultCenter().postNotificationName(
 //                self.registrationKey, object: nil, userInfo: userInfo)

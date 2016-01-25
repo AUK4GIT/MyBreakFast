@@ -253,7 +253,6 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     func didSelectDate(date: AnyObject){
         let selectedDate = date as! NSDate
         print(self.dateFormatter.stringFromDate(selectedDate))
-//        self.dateLabel.title = self.dateFormatter.stringFromDate(selectedDate);
         Helper.sharedInstance.getMenuFor(selectedDate, completionHandler: {
             self.itemsArray = Helper.sharedInstance.getTodaysItems();
             Helper.sharedInstance.order = Order();
@@ -415,6 +414,11 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         self.dateLabel.title = cell?.textLabel?.text;
+        if indexPath.row == 0 {
+            Helper.sharedInstance.isOrderForTomorrow = false;
+        } else {
+            Helper.sharedInstance.isOrderForTomorrow = true;
+        }
         
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.dateTableView.alpha = 0.0;

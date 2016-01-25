@@ -35,17 +35,17 @@ class MenuItemCell: UICollectionViewCell {
         
             }
     
-    override var selected: Bool {
-        get {
-            return super.selected
-        }
-        set {
-            if newValue {
-                self.descButtonTapped(nil);
-            } else if newValue == false {
-            }
-        }
-    }
+//    override var selected: Bool {
+//        get {
+//            return super.selected
+//        }
+//        set {
+//            if newValue {
+//                self.descButtonTapped(nil);
+//            } else if newValue == false {
+//            }
+//        }
+//    }
 
     @IBAction func decreaseAction(sender: UIButton) {
         if self.quantity == 0{
@@ -177,6 +177,14 @@ class MenuItemCell: UICollectionViewCell {
     @IBAction func makeItemFavourite(sender: AnyObject) {
         Helper.sharedInstance.uploadFavouriteMenu((self.item?.itemid)!) { (response) -> () in
             
+        }
+    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let touch = touches.first! as UITouch
+        print(touch.locationInView(self),"    ",touch.locationInView(self.imageView))
+        if CGRectContainsPoint(self.imageView.frame, touch.locationInView(self.imageView)){
+            self.descButtonTapped(nil);
         }
     }
 
