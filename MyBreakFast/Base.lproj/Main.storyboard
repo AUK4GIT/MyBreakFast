@@ -252,7 +252,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="confirmationImg" translatesAutoresizingMaskIntoConstraints="NO" id="iBX-VI-ypP">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="confirmationImg" translatesAutoresizingMaskIntoConstraints="NO" id="iBX-VI-ypP">
                                 <rect key="frame" x="123" y="146" width="73" height="72"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank You!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gS-KB-jHY">
@@ -478,6 +478,7 @@
                         <outlet property="address" destination="Wu2-4l-H3q" id="Ire-iJ-qtn"/>
                         <outlet property="orderAmount" destination="Vru-gm-0hV" id="SzA-2S-JJA"/>
                         <outlet property="orderDate" destination="fgl-dM-MWB" id="HfK-34-MD7"/>
+                        <outlet property="orderDetailsView" destination="pc0-Xb-upd" id="Qy3-M9-kl4"/>
                         <outlet property="orderId" destination="tJp-5i-oyS" id="7Nk-or-haz"/>
                         <outlet property="orderTime" destination="BU7-gV-tZy" id="zOj-xA-VU9"/>
                         <outlet property="orderedAt" destination="Qfm-Bb-l6r" id="Q7X-vf-9pV"/>
@@ -3522,9 +3523,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCF-Zg-gfY">
-                                                    <rect key="frame" x="8" y="14.5" width="42.5" height="21.5"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="44" translatesAutoresizingMaskIntoConstraints="NO" id="zCF-Zg-gfY">
+                                                    <rect key="frame" x="4" y="4" width="272" height="42"/>
+                                                    <string key="text">Testing Testing Testing Testing Testing Testing Testing Testing Testing Testing Testing Testing Testing Testing Testing Testing Testing Testing Testing Testing Testing Testing Testing Testing</string>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
@@ -3536,10 +3538,29 @@
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="zCF-Zg-gfY" firstAttribute="leading" secondItem="o5L-5a-c7o" secondAttribute="leading" constant="8" id="3Nj-Ey-ghs"/>
+                                            <constraint firstItem="zCF-Zg-gfY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="o5L-5a-c7o" secondAttribute="topMargin" constant="2" id="2KU-c1-Bvs"/>
+                                            <constraint firstItem="zCF-Zg-gfY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="o5L-5a-c7o" secondAttribute="leading" constant="8" id="3Nj-Ey-ghs"/>
                                             <constraint firstItem="zCF-Zg-gfY" firstAttribute="centerY" secondItem="o5L-5a-c7o" secondAttribute="centerY" id="7qb-sB-6Ln"/>
+                                            <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="zCF-Zg-gfY" secondAttribute="bottom" priority="999" constant="8" id="BrO-Lb-vcV"/>
+                                            <constraint firstAttribute="bottom" secondItem="zCF-Zg-gfY" secondAttribute="bottom" constant="4" id="DzH-PS-TKs"/>
+                                            <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="zCF-Zg-gfY" secondAttribute="bottom" constant="2" id="T79-LX-fm9"/>
+                                            <constraint firstItem="zCF-Zg-gfY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="o5L-5a-c7o" secondAttribute="topMargin" priority="999" constant="8" id="UzF-PC-tOV"/>
+                                            <constraint firstItem="zCF-Zg-gfY" firstAttribute="top" secondItem="o5L-5a-c7o" secondAttribute="top" constant="4" id="c7x-pN-dW1"/>
                                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="zCF-Zg-gfY" secondAttribute="trailing" constant="8" id="ms2-Hg-VHe"/>
+                                            <constraint firstAttribute="trailing" secondItem="zCF-Zg-gfY" secondAttribute="trailing" constant="4" id="nSP-bh-toJ"/>
+                                            <constraint firstItem="zCF-Zg-gfY" firstAttribute="leading" secondItem="o5L-5a-c7o" secondAttribute="leading" constant="4" id="o1n-3K-uLm"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="2KU-c1-Bvs"/>
+                                                <exclude reference="3Nj-Ey-ghs"/>
+                                                <exclude reference="7qb-sB-6Ln"/>
+                                                <exclude reference="BrO-Lb-vcV"/>
+                                                <exclude reference="T79-LX-fm9"/>
+                                                <exclude reference="UzF-PC-tOV"/>
+                                                <exclude reference="ms2-Hg-VHe"/>
+                                            </mask>
+                                        </variation>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>

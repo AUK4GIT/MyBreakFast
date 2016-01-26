@@ -75,26 +75,20 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="556" height="200"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baf-ps-pd6">
-                                                <rect key="frame" x="206" y="20" width="143.5" height="18"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IK8-34-Vfv">
-                                                <rect key="frame" x="20" y="46" width="516" height="18"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IK8-34-Vfv">
+                                                <rect key="frame" x="20" y="20" width="516" height="18"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Suited for" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxO-XD-2Hh">
-                                                <rect key="frame" x="224" y="80" width="106.5" height="18"/>
+                                                <rect key="frame" x="224" y="54" width="106.5" height="18"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pln-kv-CZr">
-                                                <rect key="frame" x="20" y="106" width="516" height="35.5"/>
+                                                <rect key="frame" x="20" y="80" width="516" height="35.5"/>
                                                 <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -108,12 +102,10 @@
                                             <constraint firstItem="YxO-XD-2Hh" firstAttribute="centerX" secondItem="cXw-nN-OEV" secondAttribute="centerX" id="AGf-0s-J6A"/>
                                             <constraint firstItem="byF-8A-ugA" firstAttribute="top" secondItem="cXw-nN-OEV" secondAttribute="top" id="FQI-YV-Y1H"/>
                                             <constraint firstAttribute="bottom" secondItem="byF-8A-ugA" secondAttribute="bottom" id="Hil-R3-RUj"/>
-                                            <constraint firstItem="baf-ps-pd6" firstAttribute="top" secondItem="cXw-nN-OEV" secondAttribute="top" constant="20" id="NRf-Yd-II5"/>
+                                            <constraint firstItem="IK8-34-Vfv" firstAttribute="top" secondItem="cXw-nN-OEV" secondAttribute="top" constant="20" id="IeO-Uo-3qg"/>
                                             <constraint firstItem="IK8-34-Vfv" firstAttribute="width" secondItem="cXw-nN-OEV" secondAttribute="width" constant="-40" id="NVw-lq-aLj"/>
                                             <constraint firstItem="YxO-XD-2Hh" firstAttribute="top" secondItem="IK8-34-Vfv" secondAttribute="bottom" constant="16" id="d70-YW-mfF"/>
                                             <constraint firstItem="pln-kv-CZr" firstAttribute="width" secondItem="IK8-34-Vfv" secondAttribute="width" id="d7b-k0-zCe"/>
-                                            <constraint firstItem="baf-ps-pd6" firstAttribute="centerX" secondItem="cXw-nN-OEV" secondAttribute="centerX" id="hR1-yN-281"/>
-                                            <constraint firstItem="IK8-34-Vfv" firstAttribute="top" secondItem="baf-ps-pd6" secondAttribute="bottom" constant="8" id="j8J-pO-ixG"/>
                                             <constraint firstAttribute="trailing" secondItem="byF-8A-ugA" secondAttribute="trailing" id="lSV-Oh-wtG"/>
                                             <constraint firstItem="IK8-34-Vfv" firstAttribute="centerX" secondItem="cXw-nN-OEV" secondAttribute="centerX" id="ncO-wh-kz2"/>
                                             <constraint firstItem="pln-kv-CZr" firstAttribute="centerX" secondItem="cXw-nN-OEV" secondAttribute="centerX" id="qto-Ma-P3i"/>

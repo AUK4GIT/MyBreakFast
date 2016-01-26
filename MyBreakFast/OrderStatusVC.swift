@@ -21,6 +21,7 @@ class OrderStatusVC: UIViewController {
     let dayFormatter = NSDateFormatter()
     let timeFormatter = NSDateFormatter()
     
+    @IBOutlet weak var orderDetailsView: UIView!
     @IBOutlet weak var successLabel: UILabel!
     override func beginAppearanceTransition(isAppearing: Bool, animated: Bool) {
         super.beginAppearanceTransition(isAppearing, animated: animated)
@@ -98,5 +99,21 @@ class OrderStatusVC: UIViewController {
         let parentVC = self.parentViewController as! ViewController
         parentVC.cycleFromViewController(nil, toViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("MyOrdersVC"))!)
     }
+    
+    func gotoOrderDetails(){
+    
+        let vc: UINavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("MyOrderDetails") as! UINavigationController
+        self.presentViewController(vc, animated: true) { () -> Void in
+        let orderdetailsVC: MyOrderDetailsVC = vc.topViewController as! MyOrderDetailsVC
+            orderdetailsVC.getOrderDetailsFromConfirmationScreenForItemId((Helper.sharedInstance.order?.orderId)!)
 
+        }
+    }
+
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let touch = touches.first! as UITouch
+        if CGRectContainsPoint(self.orderDetailsView.frame, touch.locationInView(self.orderDetailsView)){
+            self.gotoOrderDetails();
+        }
+    }
 }

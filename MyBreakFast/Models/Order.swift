@@ -21,5 +21,6 @@ class Order: NSObject {
     var orderId: String?
     var slot: String?
     var discount: String = "0";
-    var couponsApplied: [String] = [];
+    var couponsApplied: [Coupon] = [];
+    var hasRedeemedPoints: Bool = false;
 }

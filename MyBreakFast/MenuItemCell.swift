@@ -77,7 +77,7 @@ class MenuItemCell: UICollectionViewCell {
         (url?.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLQueryAllowedCharacterSet()))
         self.imageView.sd_setImageWithURL(NSURL(string: url!), placeholderImage: UIImage(named: "menu_logo"), completed: nil)
         self.nameLabel.text = self.item!.itemname
-        self.amountLabel.text = "\(self.item!.price!) ₹ /-"
+        self.amountLabel.text = "₹ \(self.item!.price!)"
         self.quantityLabel.text = "0"
         self.productDescription.text = self.item!.itemdescription
         self.bestsuitedfor.text = self.item!.bestsuitedfor
@@ -139,6 +139,7 @@ class MenuItemCell: UICollectionViewCell {
     @IBAction func descButtonTapped(sender: AnyObject?) {
         
         if(self.cellDescriptionView.hidden == false){
+            self.hideDescription(sender);
             return;
         }
         
@@ -154,10 +155,10 @@ class MenuItemCell: UICollectionViewCell {
 //                self.cellBlackTape.hidden = true;
         }
         
-        self.performSelector("hideDescription:", withObject: nil, afterDelay: 3.0)
+        //        self.performSelector("hideDescription:", withObject: nil, afterDelay: 3.0)
     }
     
-    @IBAction func hideDescription(sender: AnyObject) {
+    @IBAction func hideDescription(sender: AnyObject?) {
 
         self.descButtonView.hidden = false;
 //        self.cellBlackTape.hidden = false;

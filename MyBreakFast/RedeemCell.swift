@@ -31,6 +31,15 @@ class RedeemCell: UICollectionViewCell {
     @IBAction func redeemAction(sender: AnyObject) {
         
         if Int(self.redeemPoints)>0 {
+            
+            if Helper.sharedInstance.order?.couponsApplied.count > 0 {
+                UIAlertView(title: "First Eat", message: "Cannot redeem points as discounts already applied from coupons.", delegate: nil, cancelButtonTitle: "OK").show()
+                return;
+            }
+            if Helper.sharedInstance.order?.hasRedeemedPoints == true {
+                UIAlertView(title: "First Eat", message: "Already redeemed Points.", delegate: nil, cancelButtonTitle: "OK").show()
+                return;
+            }
         
             Helper.sharedInstance.redeemPoints(self.redeemPoints, completionHandler: { (response) -> () in
                 
@@ -77,7 +86,7 @@ class RedeemCell: UICollectionViewCell {
                     Helper.sharedInstance.order?.totalAmountPayable = String(totalAmtPay)
                     self.redeemLabel.text = "You have "+(balancePoints as! String)+" points to redeem"
                     UIApplication.sharedApplication().sendAction("updateCartWithTotalAmountPayableWithDiscount:", to: nil, from: self, forEvent: nil)
-                    
+                    Helper.sharedInstance.order?.hasRedeemedPoints = true;
                 }
             }
             })

@@ -90,6 +90,7 @@
 		EDE5E03C1C4FEB690044E819 /* Kitchens+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE5E03A1C4FEB690044E819 /* Kitchens+CoreDataProperties.swift */; };
 		EDE5E03D1C4FEB690044E819 /* Kitchens.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE5E03B1C4FEB690044E819 /* Kitchens.swift */; };
 		EDE5E0531C53562C0044E819 /* MyAddress.gpx in Resources */ = {isa = PBXBuildFile; fileRef = EDE5E0521C53562C0044E819 /* MyAddress.gpx */; };
+		EDE7F1F41C57DBB30063F855 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE7F1F31C57DBB30063F855 /* Coupon.swift */; };
 		EDEBAEF61C1492BF0047E070 /* VitaminCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEBAEF51C1492BF0047E070 /* VitaminCollectionView.swift */; };
 		EDEBAEF81C14932B0047E070 /* VitaminCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDEBAEF71C14932B0047E070 /* VitaminCell.xib */; };
 		EDEBAEFA1C14935B0047E070 /* VitaminCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEBAEF91C14935B0047E070 /* VitaminCell.swift */; };
@@ -189,6 +190,7 @@
 		EDE5E03A1C4FEB690044E819 /* Kitchens+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Kitchens+CoreDataProperties.swift"; path = "Models/Kitchens+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EDE5E03B1C4FEB690044E819 /* Kitchens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Kitchens.swift; path = Models/Kitchens.swift; sourceTree = "<group>"; };
 		EDE5E0521C53562C0044E819 /* MyAddress.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = MyAddress.gpx; path = Resources/MyAddress.gpx; sourceTree = "<group>"; };
+		EDE7F1F31C57DBB30063F855 /* Coupon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Coupon.swift; path = Models/Coupon.swift; sourceTree = "<group>"; };
 		EDEBAEF51C1492BF0047E070 /* VitaminCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VitaminCollectionView.swift; sourceTree = "<group>"; };
 		EDEBAEF71C14932B0047E070 /* VitaminCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VitaminCell.xib; sourceTree = "<group>"; };
 		EDEBAEF91C14935B0047E070 /* VitaminCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VitaminCell.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				ED5B216D1BF612B700C65857 /* UserDetails.swift */,
 				EDCC2AE41C339F0800C15C3B /* Order.swift */,
 				EDCC2AE61C339F6500C15C3B /* OrderItem.swift */,
+				EDE7F1F31C57DBB30063F855 /* Coupon.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				EDBA07041C0B6BCF00BE09B3 /* PopCell.swift in Sources */,
 				ED722B1F1BE09A33003DC9F2 /* MyBreakFast.xcdatamodeld in Sources */,
 				EDA736D81BE4ED4F00AC9884 /* SignInVC.swift in Sources */,
+				EDE7F1F41C57DBB30063F855 /* Coupon.swift in Sources */,
 				EDCC2AE51C339F0800C15C3B /* Order.swift in Sources */,
 				ED5B21711BF612F700C65857 /* Helper.swift in Sources */,
 				ED996EB01C2D95750017284A /* RegistrationVC.swift in Sources */,

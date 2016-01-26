@@ -456,11 +456,23 @@ class Helper {
     
     func getTotalPrice(completionHandler: (Int) -> ()) {
         self.getOrderCountandPrice { (count, price) -> () in
+            
+            var totalAmount = price;
+            var actualDiscount = 0;
+            
+            //Note: Either Redeem or Coupon but not both can be applied per order.
+            if self.order?.couponsApplied.count > 0 {
+                for couponObj in (self.order?.couponsApplied)! {
+                    let coupon = couponObj as Coupon
+                    actualDiscount += Int((coupon.actualDiscount))!
+                }
+            }
+            totalAmount -= actualDiscount;
             let vatPercent = 0.125;
-            let scPercent = 0.005;
-            let vatAmount = Double(price) * vatPercent
+            let scPercent = 0.05;
+            let vatAmount = Double(totalAmount) * vatPercent
             let scAmount = vatAmount * scPercent
-            let totalPayableAmount = price+Int(ceil(vatAmount+scAmount))
+            let totalPayableAmount = totalAmount+Int(ceil(vatAmount+scAmount))
             self.order?.totalAmountPayable = String(totalPayableAmount);
             self.order?.vatAmount = String(vatAmount);
             self.order?.serviceChargeAmount = String(scAmount);
@@ -1106,7 +1118,18 @@ class Helper {
         Helper.sharedInstance.showActivity()
         let completeURL = Constants.API.PlaceOrder+self.getUserId()
         let change = Helper.sharedInstance.order?.change ?? ""
-        Alamofire.request(.GET, completeURL, parameters: ["change":change as String,"coupon":""])
+        let coupon = Helper.sharedInstance.order?.couponsApplied.count>0 ? Helper.sharedInstance.order?.couponsApplied[0]: nil;
+        var couponId = "";
+        if coupon != nil {
+            couponId = (coupon?.couponid)!;
+        }
+        var kitchenId = "";
+        if let kitchens = Helper.sharedInstance.fetchKitchens() {
+                let kitchen = kitchens[0]
+            kitchenId = kitchen.kid!
+        }
+        
+        Alamofire.request(.GET, completeURL, parameters: ["change":change as String,"coupon":couponId, "kitchen":kitchenId])
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response

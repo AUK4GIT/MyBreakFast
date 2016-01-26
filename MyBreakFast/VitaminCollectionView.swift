@@ -74,7 +74,7 @@ class VitaminCollectionView: UICollectionView, UICollectionViewDataSource, UICol
 
         if key == "calories"{
             cell.calValue.text = vitamin
-            cell.label.text = "kCal"
+            cell.label.text = "Cal"
         } else if key == "fats"{
             cell.label.text = "Fats"
         } else if key == "fibre"{

@@ -15,6 +15,8 @@ class OfferNotificationsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        self.collectionView.
+        
         let doneButton: UIButton = UIButton(type: .Custom)
         doneButton.frame = CGRectMake(0, 0, 60, 44)
         doneButton.setTitle("Done", forState: .Normal)
@@ -25,8 +27,6 @@ class OfferNotificationsVC: UIViewController {
         
         self.navigationItem.title = "Offers";
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: doneButton)
-
-//        Helper.sharedInstance.getSpe
         
         Helper.sharedInstance.getSpecialNotificationOffers { (response) -> () in
             
@@ -56,9 +56,18 @@ class OfferNotificationsVC: UIViewController {
     
     // MARK: UICollectionView delegates and datasources
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+
+        if let cell = collectionView.cellForItemAtIndexPath(indexPath) {
+            let label: UILabel = (cell.viewWithTag(5) as? UILabel)!
+            var size = label.bounds.size
+            size.width = cell.contentView.bounds.size.width
+            return size;
+        }
         
-        return CGSizeMake(collectionView.bounds.size.width, 44);
+        return CGSizeMake(collectionView.bounds.size.width, 84);
     }
+    
+    
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
