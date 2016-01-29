@@ -15,7 +15,12 @@ class Deliverytime: UICollectionViewCell {
 
 
     func fetchSlots() {
-        Helper.sharedInstance.fetchTimeSolts(forDate: NSDate()) { (response) -> () in
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let dateFromString = dateFormatter.dateFromString(Helper.sharedInstance.orderDate!);
+        
+        Helper.sharedInstance.fetchTimeSolts(forDate: dateFromString!) { (response) -> () in
             let responseStatus = (response as? String) ?? ""
             if responseStatus == "ERROR"{
 //                self.fetchSlots();
