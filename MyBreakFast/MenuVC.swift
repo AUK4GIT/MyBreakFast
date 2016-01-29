@@ -130,10 +130,12 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
                 }
 //                var from : CLLocation?
 //                var to : CLLocation?
+                var placeName = "";
                 var origin = "";
                 if placeLikelihoods!.likelihoods.count > 0 {
                     let likelihood = placeLikelihoods!.likelihoods[0] as? GMSPlaceLikelihood
                         let place = likelihood!.place
+                        placeName = place.name;
                         print("Current Place name \(place.name) at likelihood \(likelihood!.likelihood)")
                         print("Current Place address \(place.formattedAddress)")
                         print("Current Place attributions \(place.attributions)")
@@ -174,7 +176,11 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
 
                                     } else {
                                         if let addr = responseDict.objectForKey("origin_addresses") as? NSArray{
-                                        Helper.sharedInstance.userLocation = addr[0] as? String
+                                            if placeName == "" {
+                                                placeName = (addr[0] as? String)!;
+                                            }
+                                            Helper.sharedInstance.userLocation = placeName;
+
                                         self.searchButton.setTitle(Helper.sharedInstance.userLocation, forState: UIControlState.Normal)
                                         }
 

@@ -48,7 +48,7 @@ class RegistrationVC: UIViewController {
         self.usernameField.text = Helper.sharedInstance.getUserName();
 
         self.emailField.enabled = false;
-        self.referralField.enabled = false;
+//        self.referralField.enabled = false;
         
         UIAlertView(title: "Registration", message: "Please set Password and Phone number.", delegate: nil, cancelButtonTitle: "OK").show()
     }

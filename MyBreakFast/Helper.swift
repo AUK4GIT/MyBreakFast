@@ -298,6 +298,9 @@ class Helper {
     func getTodaysItems() -> [NSManagedObject] {
         
         let fetchRequest = NSFetchRequest(entityName: "Item")
+        let sortDescriptor = NSSortDescriptor(key: "stockid", ascending: true)
+        let sortDescriptors = [sortDescriptor]
+        fetchRequest.sortDescriptors = sortDescriptors
         var items: [NSManagedObject]?
         do {
             let results =

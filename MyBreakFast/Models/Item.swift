@@ -83,6 +83,11 @@ class Item: NSManagedObject {
                         let maxilimit = Int(self.maxlimit!)
                         let maxminlimit = min(maxilimit!, maxOrdLimit as! Int)
                         self.maxlimit = String(maxminlimit);
+                        if let obj = stock.objectForKey("id") as? NSNumber{
+                            self.stockid = obj.stringValue
+                        } else {
+                            self.stockid = stock.objectForKey("id") as? String;
+                        }
                         if let presOrder = stock.objectForKey("present_orders") as? NSNumber {
                             if Int(presOrder) >= maxminlimit{
                                 self.instock = "No";
