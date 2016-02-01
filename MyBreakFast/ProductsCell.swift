@@ -106,7 +106,7 @@ class ProductsCell: UICollectionViewCell {
         let cell:OffersCell = tableView.dequeueReusableCellWithIdentifier("offerscell")! as! OffersCell
         let offer = self.offersArray[indexPath.row] 
         cell.offerNameLbl.text = offer.offername;
-        cell.offerPrice.text = offer.price!+" ₹/-";
+        cell.offerPrice.text = offer.price!+" ₹";
         if self.selectedCellsIPaths.contains(indexPath) {
             cell.checkmarkImg.image = UIImage(named: "checkmark")
         }  else {

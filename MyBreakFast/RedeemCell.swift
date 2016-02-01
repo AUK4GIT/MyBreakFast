@@ -31,7 +31,6 @@ class RedeemCell: UICollectionViewCell {
     @IBAction func redeemAction(sender: AnyObject) {
         
         if Int(self.redeemPoints)>0 {
-            
             if Helper.sharedInstance.order?.couponsApplied.count > 0 {
                 UIAlertView(title: "First Eat", message: "Cannot redeem points as discounts already applied from coupons.", delegate: nil, cancelButtonTitle: "OK").show()
                 return;
@@ -40,56 +39,27 @@ class RedeemCell: UICollectionViewCell {
                 UIAlertView(title: "First Eat", message: "Already redeemed Points.", delegate: nil, cancelButtonTitle: "OK").show()
                 return;
             }
-        
-            Helper.sharedInstance.redeemPoints(self.redeemPoints, completionHandler: { (response) -> () in
-                
-                dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                let responseStatus = (response as? String) ?? ""
-
-                if responseStatus == "ERROR"{
-                    
-                } else {
-                    let responseStat = (response as? NSDictionary)
-                    var balancePoints: AnyObject?
-                    var discount: AnyObject?
-                    var message: AnyObject?
-                    var pointsRedeemed: AnyObject?
-                    if let balance = responseStat?.objectForKey("balance_points") as? NSNumber {
-                         balancePoints = String(balance);
-                    } else {
-                        balancePoints = responseStat?.objectForKey("balance_points") as? String
-                    }
-                    
-                    if let discountP = responseStat?.objectForKey("discount") as? NSNumber {
-                        discount = String(discountP);
-                    } else {
-                        discount = responseStat?.objectForKey("discount") as? String
-                    }
-                    
-                    message = responseStat?.objectForKey("msg") as? String
-                    
-                    if let balance = responseStat?.objectForKey("points_redeemed") as? NSNumber {
-                        pointsRedeemed = String(balance);
-                    } else {
-                        pointsRedeemed = responseStat?.objectForKey("points_redeemed") as? String
-                    }
-                    let msg = "Redeem "+(message as? String)!
-                    let messg = "Points redeemed: "+(pointsRedeemed as? String)!+" discount: "+(discount as? String)!+" balance: "+(balancePoints as? String)!
-                    UIAlertView(title: msg, message: messg, delegate: nil, cancelButtonTitle: "OK").show()
-                    
-                    Helper.sharedInstance.order?.discount = discount as! String
-                    
-                    let disc = Int(discount as! String)
-                    let amtPayable = Int((Helper.sharedInstance.order?.totalAmountPayable)!)
-                    let totalAmtPay = amtPayable!-disc!
-
-                    Helper.sharedInstance.order?.totalAmountPayable = String(totalAmtPay)
-                    self.redeemLabel.text = "You have "+(balancePoints as! String)+" points to redeem"
-                    UIApplication.sharedApplication().sendAction("updateCartWithTotalAmountPayableWithDiscount:", to: nil, from: self, forEvent: nil)
-                    Helper.sharedInstance.order?.hasRedeemedPoints = true;
-                }
+            
+            let totalPayableAmount = Int((Helper.sharedInstance.order?.totalAmountPayable)!);
+            let totalRedeemValue = floor((Double(self.redeemPoints)!*Helper.sharedInstance.redeemValue));
+            if totalPayableAmount >= Int(totalRedeemValue) {
+                Helper.sharedInstance.order?.totalAmountPayable = String(totalPayableAmount! - Int(totalRedeemValue))
+                self.redeemLabel.text = "You have 0 points to redeem"
+                UIApplication.sharedApplication().sendAction("updateCartWithTotalAmountPayableWithDiscount:", to: nil, from: self, forEvent: nil)
+                Helper.sharedInstance.order?.hasRedeemedPoints = true;
+                let redeemPoi = self.redeemPoints
+                Helper.sharedInstance.order?.pointsToRedeem = redeemPoi;
+                self.redeemPoints = "0";
+            } else {
+                Helper.sharedInstance.order?.totalAmountPayable = "0"
+                let balancePoints = ceil(Double(self.redeemPoints)! - ceil(Double(totalPayableAmount!)/Helper.sharedInstance.redeemValue))
+                Helper.sharedInstance.order?.pointsToRedeem = String(Int(self.redeemPoints)! - Int(balancePoints));
+                self.redeemLabel.text = "You have "+String(balancePoints)+" points to redeem"
+                UIApplication.sharedApplication().sendAction("updateCartWithTotalAmountPayableWithDiscount:", to: nil, from: self, forEvent: nil)
+                Helper.sharedInstance.order?.hasRedeemedPoints = true;
+            
             }
-            })
+           
         }
         
     }

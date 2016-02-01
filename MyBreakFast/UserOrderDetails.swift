@@ -90,7 +90,7 @@ class UserOrderDetails: UIViewController {
         if self.offeroftheday != nil {
             self.offerofthedayView.hidden = false;
             self.todaysOfferLabel.text = "Today's best offer ("+(self.offeroftheday?.offername)!+")"
-            self.todaysOfferAmountLabel.text = "₹ "+(self.offeroftheday?.price!)!+"/-"
+            self.todaysOfferAmountLabel.text = "₹ "+(self.offeroftheday?.price!)!
         } else {
             self.offerofthedayView.hidden = true;
         }
@@ -130,7 +130,7 @@ class UserOrderDetails: UIViewController {
     
     func updateCartToolbar(){
         Helper.sharedInstance.getOrderCountandPrice { (count, price) -> () in
-            self.totalBillLabel.title = "Total Amount ₹ "+String(price)+" /-"
+            self.totalBillLabel.title = "Total Amount ₹ "+String(price)
         }
     }
     

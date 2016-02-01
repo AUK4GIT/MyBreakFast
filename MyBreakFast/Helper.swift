@@ -23,7 +23,8 @@ class Helper {
     var orderDate: String?
     var currenttimeSlot = ""
     var isOrderForTomorrow = false;
-    
+    var redeemValue: Double = 0.5;
+
     func setUpReachability(){
     
         self.reach = Reachability.reachabilityForInternetConnection()
@@ -475,7 +476,7 @@ class Helper {
             let scPercent = 0.05;
             let vatAmount = Double(totalAmount) * vatPercent
             let scAmount = vatAmount * scPercent
-            let totalPayableAmount = totalAmount+Int(ceil(vatAmount+scAmount))
+            let totalPayableAmount = totalAmount+Int(ceil(vatAmount+scAmount))-Int(Double((self.order?.pointsToRedeem)!)! * Double(self.redeemValue))
             self.order?.totalAmountPayable = String(totalPayableAmount);
             self.order?.vatAmount = String(vatAmount);
             self.order?.serviceChargeAmount = String(scAmount);
@@ -959,6 +960,19 @@ class Helper {
                     self.deleteData("Item");
                     self.saveContext();
                     if let jData =  JSON.objectForKey("data") as? Array<AnyObject>{
+                        var numPoints = 2;
+                        var pointsVal = 1;
+                        if let pointsT = JSON.objectForKey("num_points") as? NSNumber{
+                            numPoints = Int(pointsT);
+                        } else {
+                            numPoints = Int(JSON.objectForKey("num_points") as! String)!
+                        }
+                        if let pointsV = JSON.objectForKey("point_value") as? NSNumber{
+                            pointsVal = Int(pointsV);
+                        } else {
+                            pointsVal = Int(JSON.objectForKey("point_value") as! String)!
+                        }
+                        Helper.sharedInstance.redeemValue = Double(pointsVal)/Double(numPoints);
                         self.saveMenuItems(jData)
                         self.saveContext();
                     }

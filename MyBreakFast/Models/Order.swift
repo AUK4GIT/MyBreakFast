@@ -23,4 +23,5 @@ class Order: NSObject {
     var discount: String = "0";
     var couponsApplied: [Coupon] = [];
     var hasRedeemedPoints: Bool = false;
+    var pointsToRedeem = "0";
 }

@@ -47,6 +47,15 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         UINavigationBar.appearance().shadowImage = UIImage();
         
         self.datesArray.append(NSDate())
+        
+//        let dayComponent: NSDateComponents = NSDateComponents();
+//        dayComponent.day = 1;
+//        
+//        let theCalendar: NSCalendar = NSCalendar.currentCalendar();
+//        let nextDate: NSDate = theCalendar.dateByAddingComponents(dayComponent, toDate: NSDate(), options: .MatchFirst)!
+//        
+
+        
         self.datesArray.append(NSDate().dateByAddingTimeInterval(60*60*24))
 
         self.dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
@@ -64,7 +73,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         self.performSelector("fetchMenuData", withObject: nil, afterDelay: 1.0)
         
         let dtFormat = NSDateFormatter()
-        dtFormat.dateFormat = "EEEE DD, MMM"
+        dtFormat.dateFormat = "EEEE dd, MMM"
         let date = NSDate()
         self.dateLabel.title = self.dateFormatter.stringFromDate(date)+" ("+dtFormat.stringFromDate(date)+")"
         self.dateLabel.tintColor = UIColor.darkGrayColor()
@@ -355,8 +364,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         Helper.sharedInstance.getOrderCountandPrice { (count, price) -> () in
             print(count, price)
             self.itemQuantities = count;
-            self.numberOfItemsLabel.text = String(count)+" items Selected"
-//            self.amountLabel.text = String(price)+" ₹/-"
+            self.numberOfItemsLabel.text = String(count)+" items selected"
         }
     }
     
@@ -446,7 +454,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
 cell.textLabel?.textColor = UIColor.darkGrayColor()//UIColor(red: 200.0/255.0, green: 5.0/255.0, blue: 15.0/255.0, alpha: 1.0)
 //        cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 16.0)
         let dtFormat = NSDateFormatter()
-        dtFormat.dateFormat = "EEEE DD, MMM"
+        dtFormat.dateFormat = "EEEE dd, MMM"
         let date = self.datesArray[indexPath.row] as NSDate
         cell.textLabel?.text = self.dateFormatter.stringFromDate(date)+" ("+dtFormat.stringFromDate(date)+")"
         

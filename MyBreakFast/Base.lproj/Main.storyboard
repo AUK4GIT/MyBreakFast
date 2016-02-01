@@ -1687,8 +1687,8 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sub Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meU-Sc-c2t">
-                                        <rect key="frame" x="8" y="141" width="73.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meU-Sc-c2t">
+                                        <rect key="frame" x="8" y="141" width="87" height="20.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -1733,7 +1733,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₹" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPO-ex-KTC">
-                                        <rect key="frame" x="302.5" y="141" width="9.5" height="20.5"/>
+                                        <rect key="frame" x="302" y="141" width="9.5" height="20.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -3253,7 +3253,7 @@
                                                     <constraint firstAttribute="width" constant="173" id="SS2-1O-ohV"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                                <textInputTraits key="textInputTraits"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
                                                         <exclude reference="SS2-1O-ohV"/>
