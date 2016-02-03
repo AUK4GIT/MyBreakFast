@@ -50,6 +50,10 @@ class RedeemCell: UICollectionViewCell {
                 let redeemPoi = self.redeemPoints
                 Helper.sharedInstance.order?.pointsToRedeem = redeemPoi;
                 self.redeemPoints = "0";
+                Helper.sharedInstance.order?.discount = String(totalRedeemValue);
+                let messg = "Points redeemed: "+redeemPoi+" discount: ₹ "+String(totalRedeemValue)+" balance points: 0"
+                UIAlertView(title: "First Eat", message: messg, delegate: nil, cancelButtonTitle: "OK").show()
+
             } else {
                 Helper.sharedInstance.order?.totalAmountPayable = "0"
                 let balancePoints = ceil(Double(self.redeemPoints)! - ceil(Double(totalPayableAmount!)/Helper.sharedInstance.redeemValue))
@@ -57,7 +61,13 @@ class RedeemCell: UICollectionViewCell {
                 self.redeemLabel.text = "You have "+String(balancePoints)+" points to redeem"
                 UIApplication.sharedApplication().sendAction("updateCartWithTotalAmountPayableWithDiscount:", to: nil, from: self, forEvent: nil)
                 Helper.sharedInstance.order?.hasRedeemedPoints = true;
-            
+                let discount = Int(Double((Helper.sharedInstance.order?.pointsToRedeem)!)!*Double(Helper.sharedInstance.redeemValue))
+                let pointstoredeem: String = (Helper.sharedInstance.order?.pointsToRedeem)!
+                Helper.sharedInstance.order?.discount = String(discount)
+
+                let messg = "Points redeemed: "+pointstoredeem+" discount: ₹ "+String(discount)+" balance points: "+String(balancePoints)
+                UIAlertView(title: "First Eat", message: messg, delegate: nil, cancelButtonTitle: "OK").show()
+
             }
            
         }

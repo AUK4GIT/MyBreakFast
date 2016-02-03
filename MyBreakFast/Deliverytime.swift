@@ -12,7 +12,7 @@ class Deliverytime: UICollectionViewCell {
     var slotsArray: [AnyObject] = [];
     @IBOutlet var collectionViewLayout: UICollectionViewFlowLayout!
     var activity: UIActivityIndicatorView?
-
+    var currentTimeIndex = 0;
 
     func fetchSlots() {
         
@@ -63,9 +63,45 @@ class Deliverytime: UICollectionViewCell {
                     }
                 }
                 self.collectionView.reloadData()
+                self.performSelector("showCurrentSlot", withObject: nil, afterDelay: 1.0);
             }
             self.activity?.stopAnimating()
 
+        }
+    }
+    func showCurrentSlot(){
+        if Helper.sharedInstance.isOrderForTomorrow == false {
+            var currentTime = NSDate()
+            for (index, element) in (self.slotsArray.enumerate()) {
+                let timeSlot = element as! TimeSlots
+                let timeFormtter = NSDateFormatter()
+                timeFormtter.dateFormat = "HH:mm:ss"
+                timeFormtter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+                var endTime = timeFormtter.dateFromString(timeSlot.endtime!);
+                if endTime == nil {
+                    endTime = timeFormtter.dateFromString("00:00:00");
+                }
+                
+                timeFormtter.dateFormat = "hh:mm a"
+                
+                let timeFormtter1 = NSDateFormatter()
+                timeFormtter1.dateFormat = "hh:mm a"
+                currentTime = timeFormtter.dateFromString(timeFormtter1.stringFromDate(currentTime))!
+                
+                if Helper.sharedInstance.currenttimeSlot != "" {
+                    timeFormtter1.dateFormat = "HH:mm:ss"
+                    currentTime = timeFormtter1.dateFromString(Helper.sharedInstance.currenttimeSlot)!
+                }
+                
+                let result: NSComparisonResult  = endTime?.compare(currentTime) ?? NSComparisonResult.OrderedAscending
+                if result == NSComparisonResult.OrderedDescending
+                {
+                    self.currentTimeIndex = index;
+                    break;
+                }
+                
+            }
+            self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: self.currentTimeIndex, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.Left, animated: true);
         }
     }
     

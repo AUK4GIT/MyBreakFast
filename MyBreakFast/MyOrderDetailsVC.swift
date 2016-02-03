@@ -56,8 +56,8 @@ class MyOrderDetailsVC: UIViewController {
         let dateFormatter = NSDateFormatter()
         let dayFormatter = NSDateFormatter()
         let timeFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-DD HH:mm:ss"
-        dayFormatter.dateFormat = "EEE MMM DD,  YYYY"
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dayFormatter.dateFormat = "EEE MMM dd,  yyyy"
         timeFormatter.dateFormat = "hh:mm a"
         
         if let discountval = dict.objectForKey("discount") as? NSNumber {
@@ -152,6 +152,16 @@ class MyOrderDetailsVC: UIViewController {
                 if let meuArray = responsestatus?.objectForKey("offers") as? NSArray{
                     self.orderDetails.addObjectsFromArray(meuArray as! [NSDictionary])
                 }
+               
+                let orArray = self.orderDetails.filteredArrayUsingPredicate(NSPredicate(block: { (dict, _: [String : AnyObject]?) -> Bool in
+                    print(dict.objectForKey("menu"));
+                    if let _ = dict.objectForKey("menu") as? NSDictionary {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }))
+                self.orderDetails = NSMutableArray(array: orArray);
                 
 //                self.setDetails((responsestatus?.objectForKey("order"))! as! NSDictionary, addressDict: (responsestatus?.objectForKey("address"))! as! NSDictionary)
             }
@@ -166,14 +176,19 @@ class MyOrderDetailsVC: UIViewController {
         let dateFormatter = NSDateFormatter()
         let dayFormatter = NSDateFormatter()
         let timeFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-DD HH:mm:ss"
-        dayFormatter.dateFormat = "EEE MMM DD,  YYYY"
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dayFormatter.dateFormat = "EEE MMM dd,  yyyy"
         timeFormatter.dateFormat = "hh:mm a"
         
         if let discountval = dict.objectForKey("discount") as? NSNumber {
             self.discount.text =  "₹ "+discountval.stringValue;
         } else {
             self.discount.text =  "₹ "+(dict.objectForKey("discount") as? String)!
+        }
+        
+        if Helper.sharedInstance.order?.hasRedeemedPoints == true {
+            let discount: String = (Helper.sharedInstance.order?.discount)!
+            self.discount.text =  "₹ \(discount)"
         }
         
         if let sub_total = dict.objectForKey("sub_total") as? NSNumber {
@@ -200,11 +215,11 @@ class MyOrderDetailsVC: UIViewController {
             self.vat.text =  "₹ "+(dict.objectForKey("vat") as? String)!
         }
         
-        if let discountval = dict.objectForKey("discount") as? NSNumber {
-            self.discount.text =  "₹ "+discountval.stringValue;
-        } else {
-            self.discount.text =  "₹ "+(dict.objectForKey("discount") as? String)!
-        }
+//        if let discountval = dict.objectForKey("discount") as? NSNumber {
+//            self.discount.text =  "₹ "+discountval.stringValue;
+//        } else {
+//            self.discount.text =  "₹ "+(dict.objectForKey("discount") as? String)!
+//        }
         
         self.shipping.text = "₹ "+"0"
         
@@ -309,24 +324,23 @@ class MyOrderDetailsVC: UIViewController {
                 }
 
         
-        } else {
+        } else if let dict = dict?.objectForKey("offer") as? NSDictionary {
         
-            let dict = dict?.objectForKey("offer") as? NSDictionary
 
-            if let menuid = dict!.objectForKey("offer_name") as? NSNumber {
+            if let menuid = dict.objectForKey("offer_name") as? NSNumber {
                 cell.customtextLabel?.text = "Offer name: "+menuid.stringValue
             } else {
-                cell.customtextLabel?.text = "Offer name: "+(dict!.objectForKey("offer_name") as? String)!
+                cell.customtextLabel?.text = "Offer name: "+(dict.objectForKey("offer_name") as? String)!
             }
-            if let menuid = dict?.objectForKey("qty") as? NSNumber {
+            if let menuid = dict.objectForKey("qty") as? NSNumber {
                 cell.customdetailTextLabel?.text = "Quantity: "+menuid.stringValue
             } else {
-                cell.customdetailTextLabel?.text = "Quantity: "+(dict?.objectForKey("qty") as? String)!
+                cell.customdetailTextLabel?.text = "Quantity: "+(dict.objectForKey("qty") as? String)!
             }
-            if let menuid = dict!.objectForKey("price") as? NSNumber {
+            if let menuid = dict.objectForKey("price") as? NSNumber {
                 cell.amountLabel?.text = "₹ "+menuid.stringValue
             } else {
-                cell.amountLabel?.text = "₹ "+(dict!.objectForKey("price") as? String)!
+                cell.amountLabel?.text = "₹ "+(dict.objectForKey("price") as? String)!
             }
         }
 

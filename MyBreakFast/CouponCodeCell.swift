@@ -46,7 +46,7 @@ class CouponCodeCell: UICollectionViewCell {
                 let discountType = responseStat.objectForKey("discount_type") as? String
                 let endDateStr = responseStat.objectForKey("end_date") as? String
                 let dateFormatter = NSDateFormatter()
-                dateFormatter.dateFormat = "YYYY-MM-DD"
+                dateFormatter.dateFormat = "yyyy-MM-dd"
                 let endDate = dateFormatter.dateFromString(endDateStr!);
                 let currentDate = dateFormatter.dateFromString(dateFormatter.stringFromDate(NSDate()));
                 

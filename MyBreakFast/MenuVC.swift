@@ -85,6 +85,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     }
     
     func fetchMenuData(){
+        Helper.sharedInstance.isOrderForTomorrow = false;
         self.didSelectDate(NSDate());
     }
     

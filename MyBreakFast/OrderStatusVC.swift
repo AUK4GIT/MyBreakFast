@@ -44,8 +44,8 @@ class OrderStatusVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.dateFormatter.dateFormat = "YYYY-MM-DD"
-        self.dayFormatter.dateFormat = "EEE MMM DD,  YYYY"
+        self.dateFormatter.dateFormat = "yyyy-MM-dd"
+        self.dayFormatter.dateFormat = "EEE MMM dd,  yyyy"
         self.timeFormatter.dateFormat = "hh:mm a"
         
         self.orderId.text = "Order ID: "+(Helper.sharedInstance.order?.orderId)!

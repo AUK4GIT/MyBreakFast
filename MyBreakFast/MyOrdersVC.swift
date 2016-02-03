@@ -38,8 +38,8 @@ class MyOrdersVC: UIViewController {
         super.viewDidLoad()
         self.tableView.registerNib(UINib(nibName: "MyOrderCell", bundle: nil), forCellReuseIdentifier: "MyOrderCell")
         self.tableView.rowHeight = 100.0;
-        self.dateFormatter.dateFormat = "YYYY-MM-DD HH:mm:ss"
-        self.dayFormatter.dateFormat = "EEE MMM DD,  YYYY"
+        self.dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        self.dayFormatter.dateFormat = "EEE MMM dd,  yyyy"
         self.timeFormatter.dateFormat = "hh:mm a"
 //        self.addressess = Helper.sharedInstance.getUserAddresses()
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
@@ -84,7 +84,7 @@ class MyOrdersVC: UIViewController {
                     if contentArr != nil {
                     self.contentArray = contentArr!
                     let dateFormatter = NSDateFormatter()
-                    dateFormatter.dateFormat = "YYYY-MM-DD HH:mm:ss"
+                    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                     dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
                     self.contentArray = self.contentArray.sortedArrayUsingComparator({ (dict1, dict2) -> NSComparisonResult in
                         print(dict1["ordered_at"], dict2["ordered_at"]);
