@@ -98,7 +98,7 @@ struct Constants {
 
     
     struct StaticContent {
-        static let SideMenuList : [String] = ["Menu", "My orders", "About us", "Contact us", "Feedback", "Refer a Friend"];
+        static let SideMenuList : [String] = ["Menu", "My Orders", "About Us", "Contact Us", "Rate Us", "Refer a Friend"];
     }
     
     struct ServiceLocation {

@@ -89,7 +89,7 @@ class ReferralVC: UIViewController {
                         points = pointsDict?.objectForKey("total_points") as? String
                     }
                     let userpoints = points ?? "0";
-                    self.redeemPoints.text = "₹ "+(userpoints as? String)!
+                    self.redeemPoints.text = (userpoints as? String)!
                     let referCode = responseStat?.objectForKey("referal_code")  ?? "----";
                     self.referralCode.text = referCode as? String;
                     self.referCode = referCode as? String;

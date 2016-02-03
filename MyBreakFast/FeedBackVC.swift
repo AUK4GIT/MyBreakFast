@@ -37,7 +37,7 @@ class FeedBackVC: UIViewController, FloatRatingViewDelegate {
             fadeTextAnimation.type = kCATransitionFade;
             
             let parentVC: ViewController = self.parentViewController as! ViewController
-            parentVC.setNavBarTitle("Contact Us")
+            parentVC.setNavBarTitle("Rate Us")
             parentVC.containerNavigationBar.layer.addAnimation(fadeTextAnimation, forKey: "fadeText");
             
 //            self.textView.layer.borderColor = UIColor.lightGrayColor().CGColor
