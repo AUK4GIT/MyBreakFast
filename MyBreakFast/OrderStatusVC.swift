@@ -47,7 +47,8 @@ class OrderStatusVC: UIViewController {
         self.dateFormatter.dateFormat = "yyyy-MM-dd"
         self.dayFormatter.dateFormat = "EEE MMM dd,  yyyy"
         self.timeFormatter.dateFormat = "hh:mm a"
-        
+        self.timeFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+
         self.orderId.text = "Order ID: "+(Helper.sharedInstance.order?.orderId)!
     }
     

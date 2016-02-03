@@ -72,21 +72,26 @@ class Deliverytime: UICollectionViewCell {
     func showCurrentSlot(){
         if Helper.sharedInstance.isOrderForTomorrow == false {
             var currentTime = NSDate()
+            let timeFormtter = NSDateFormatter()
+            let timeFormtter1 = NSDateFormatter()
+            timeFormtter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+            timeFormtter1.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+
             for (index, element) in (self.slotsArray.enumerate()) {
                 let timeSlot = element as! TimeSlots
-                let timeFormtter = NSDateFormatter()
                 timeFormtter.dateFormat = "HH:mm:ss"
-                timeFormtter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
                 var endTime = timeFormtter.dateFromString(timeSlot.endtime!);
                 if endTime == nil {
                     endTime = timeFormtter.dateFromString("00:00:00");
                 }
                 
                 timeFormtter.dateFormat = "hh:mm a"
-                
-                let timeFormtter1 = NSDateFormatter()
                 timeFormtter1.dateFormat = "hh:mm a"
-                currentTime = timeFormtter.dateFromString(timeFormtter1.stringFromDate(currentTime))!
+                if let timeStr = timeFormtter1.stringFromDate(currentTime) as? String {
+                    currentTime = timeFormtter.dateFromString(timeStr)!
+                } else {
+                
+                }
                 
                 if Helper.sharedInstance.currenttimeSlot != "" {
                     timeFormtter1.dateFormat = "HH:mm:ss"

@@ -59,7 +59,8 @@ class MyOrderDetailsVC: UIViewController {
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         dayFormatter.dateFormat = "EEE MMM dd,  yyyy"
         timeFormatter.dateFormat = "hh:mm a"
-        
+        timeFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+
         if let discountval = dict.objectForKey("discount") as? NSNumber {
             self.discount.text =  "₹ "+discountval.stringValue;
         } else {

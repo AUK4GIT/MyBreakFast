@@ -41,6 +41,8 @@ class MyOrdersVC: UIViewController {
         self.dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         self.dayFormatter.dateFormat = "EEE MMM dd,  yyyy"
         self.timeFormatter.dateFormat = "hh:mm a"
+        self.timeFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+
 //        self.addressess = Helper.sharedInstance.getUserAddresses()
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         
