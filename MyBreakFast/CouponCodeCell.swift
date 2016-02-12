@@ -99,7 +99,9 @@ class CouponCodeCell: UICollectionViewCell {
                 if discountType == "AMOUNT"{
                     Helper.sharedInstance.order?.discount = String(Int((Helper.sharedInstance.order?.discount)!)! + Int(Float(discountValue!)!))
                     if couponName == "TEAM250" {
-                        Helper.sharedInstance.order?.discount = maxDiscountAmount!;
+                        let totAmnt = Int((Helper.sharedInstance.order?.totalAmount)!)
+                        let couponDiscount = totAmnt! - 250
+                        Helper.sharedInstance.order?.discount = String(couponDiscount); //maxDiscountAmount!;
                         discountValue = maxDiscountAmount;
                         coupon.discountvalue = discountValue!;
                     }
@@ -125,7 +127,9 @@ class CouponCodeCell: UICollectionViewCell {
                     
                     Helper.sharedInstance.order?.discount = String(Int((Helper.sharedInstance.order?.discount)!)! + discount)
                     if couponName == "TEAM250" {
-                        Helper.sharedInstance.order?.discount = maxDiscountAmount!;
+                        let totAmnt = Int((Helper.sharedInstance.order?.totalAmount)!)
+                        let couponDiscount = totAmnt! - 250
+                        Helper.sharedInstance.order?.discount = String(couponDiscount); //maxDiscountAmount!;
                         discount = Int(maxDiscountAmount!)!
                         coupon.discountvalue = String(discount);
                     }
