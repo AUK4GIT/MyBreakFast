@@ -126,22 +126,31 @@ class CartVC: UIViewController {
             } else {
                 
                 Helper.sharedInstance.showActivity()
-                Helper.sharedInstance.redeemPoints((Helper.sharedInstance.order?.pointsToRedeem)!, completionHandler: { (responseS) -> () in
-                    
-                    dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                        let responseStatus = (responseS as? String) ?? ""
-                        if responseStatus == "ERROR"{
-                            UIAlertView(title: "Error redeeming points!", message: "Please try again", delegate: nil, cancelButtonTitle: "OK").show()
-                        } else {
+                if Helper.sharedInstance.order?.hasRedeemedPoints == true {
+                    Helper.sharedInstance.redeemPoints((Helper.sharedInstance.order?.pointsToRedeem)!, completionHandler: { (responseS) -> () in
+                        
+                        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                            let responseStatus = (responseS as? String) ?? ""
+                            if responseStatus == "ERROR"{
+                                UIAlertView(title: "Error redeeming points!", message: "Please try again", delegate: nil, cancelButtonTitle: "OK").show()
+                            } else {
+                            }
+                            let parentVC = self.parentViewController as! ViewController
+                            let statusVC = (self.storyboard?.instantiateViewControllerWithIdentifier("OrderStatusVC")) as! OrderStatusVC
+                            parentVC.cycleFromViewController(nil, toViewController: statusVC)
+                            statusVC.setData(response as! NSDictionary);
+                            Helper.sharedInstance.hideActivity()
+                            
                         }
-                        let parentVC = self.parentViewController as! ViewController
-                        let statusVC = (self.storyboard?.instantiateViewControllerWithIdentifier("OrderStatusVC")) as! OrderStatusVC
-                        parentVC.cycleFromViewController(nil, toViewController: statusVC)
-                        statusVC.setData(response as! NSDictionary);
-                        Helper.sharedInstance.hideActivity()
+                    })
+                } else {
+                    Helper.sharedInstance.hideActivity()
+                    let parentVC = self.parentViewController as! ViewController
+                    let statusVC = (self.storyboard?.instantiateViewControllerWithIdentifier("OrderStatusVC")) as! OrderStatusVC
+                    parentVC.cycleFromViewController(nil, toViewController: statusVC)
+                    statusVC.setData(response as! NSDictionary);
 
-                    }
-                })
+                }
             }
 
         }

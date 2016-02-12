@@ -214,10 +214,39 @@ class Helper {
     
     func getCommaSeparatedMenuIdsandQuantities() -> String {
         
-        let orders = self.order?.orders
+        let orders = self.order?.orders.filter(){ $0.quantity > "0" };
         var menuids: String = ""
         var quantities: String = ""
 
+        for (index, order) in (orders?.enumerate())! {
+            let ord = order as OrderItem;
+            if index == 0 {
+                menuids = ord.itemId!
+                quantities = ord.quantity!
+                let qnty = Int(quantities)! - 1
+                if qnty>0 {
+                    for _ in  1...qnty{
+                        menuids = menuids+","+ord.itemId!
+                        quantities = quantities+","+ord.quantity!
+                    }
+                }
+            } else {
+                let qnty = Int(ord.quantity!)! - 1
+                for _ in  0...qnty {
+                    menuids = menuids+","+ord.itemId!
+                    quantities = quantities+","+ord.quantity!
+                }
+            }
+        }
+        self.quantities = quantities;
+        return menuids;
+    }
+    
+    func getCommaSeparatedMenuIdsandQuantitiesForOrder() -> String {
+        let orders = self.order?.orders
+        var menuids: String = ""
+        var quantities: String = ""
+        
         for (index, order) in (orders?.enumerate())! {
             let ord = order as OrderItem;
             if index == 0 {
@@ -230,7 +259,9 @@ class Helper {
         }
         self.quantities = quantities;
         return menuids;
+
     }
+
     
     func getCommaSeparatedOfferIds() -> String {
         
@@ -258,7 +289,9 @@ class Helper {
         }
         let fetchRequest = NSFetchRequest(entityName: "Item")
         let predicate:NSPredicate  = NSCompoundPredicate(orPredicateWithSubpredicates: predicatesArray )
-
+        let sortDescriptor = NSSortDescriptor(key: "stockid", ascending: true)
+        let sortDescriptors = [sortDescriptor]
+        fetchRequest.sortDescriptors = sortDescriptors
         fetchRequest.predicate = predicate;
         
         var items: [NSManagedObject]?
@@ -451,6 +484,10 @@ class Helper {
             }
             price += offerPrice
             Helper.sharedInstance.order?.totalAmount = String(price)
+
+            if self.order?.hasRedeemedPoints == true {
+                price = price - Int((self.order?.discount)!)!
+            }
             dispatch_async(dispatch_get_main_queue()) {
                 completionHandler(count, price)
             }
@@ -472,11 +509,15 @@ class Helper {
                 }
             }
             totalAmount -= actualDiscount;
+            if totalAmount < 0 {
+                totalAmount = 0;
+            }
             let vatPercent = 0.125;
             let scPercent = 0.05;
             let vatAmount = Double(totalAmount) * vatPercent
             let scAmount = vatAmount * scPercent
-            let totalPayableAmount = totalAmount+Int(ceil(vatAmount+scAmount))-Int(Double((self.order?.pointsToRedeem)!)! * Double(self.redeemValue))
+//            let totalPayableAmount = totalAmount+Int(ceil(vatAmount+scAmount))-Int(Double((self.order?.pointsToRedeem)!)! * Double(self.redeemValue))
+            let totalPayableAmount = totalAmount+Int(ceil(vatAmount+scAmount))
             self.order?.totalAmountPayable = String(totalPayableAmount);
             self.order?.vatAmount = String(vatAmount);
             self.order?.serviceChargeAmount = String(scAmount);
@@ -858,7 +899,7 @@ class Helper {
         let userId = self.getUserId()
         let completeURL = Constants.API.ValidateCoupon+couponcode
         
-        Alamofire.request(.GET, completeURL, parameters: ["user":userId, "amt":(self.order?.totalAmount)!, "menu":self.getCommaSeparatedMenuIdsandQuantities()])
+        Alamofire.request(.GET, completeURL, parameters: ["user":userId, "amt":(self.order?.totalAmount)!, "menu":self.getCommaSeparatedMenuIdsandQuantities(),"qty":self.quantities!])
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
@@ -1134,7 +1175,7 @@ class Helper {
         
         Helper.sharedInstance.showActivity()
         let completeURL = Constants.API.PlaceOrder+self.getUserId()
-        let change = Helper.sharedInstance.order?.change ?? ""
+        let change = Helper.sharedInstance.order?.change ?? "100"
         let coupon = Helper.sharedInstance.order?.couponsApplied.count>0 ? Helper.sharedInstance.order?.couponsApplied[0]: nil;
         var couponId = "";
         if coupon != nil {
@@ -1181,7 +1222,7 @@ class Helper {
             Helper.sharedInstance.showActivity()
             let completeURL = Constants.API.UpdateOrderWithMenuIds+(self.order?.orderId)!
             
-            Alamofire.request(.GET, completeURL, parameters: ["menu":self.getCommaSeparatedMenuIdsandQuantities(),"qty":self.quantities!])
+            Alamofire.request(.GET, completeURL, parameters: ["menu":self.getCommaSeparatedMenuIdsandQuantitiesForOrder(),"qty":self.quantities!])
                 .responseJSON { response in
                     print(response.request)  // original URL request
                     print(response.response) // URL response

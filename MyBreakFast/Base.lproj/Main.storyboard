@@ -3365,6 +3365,7 @@
                         <outlet property="emailField" destination="Ams-jC-us5" id="aUz-JP-PQc"/>
                         <outlet property="loginButton" destination="FmY-Zr-F5d" id="LFj-xL-WBS"/>
                         <outlet property="newPasswordField" destination="LdD-RW-W3q" id="yN8-yu-JB6"/>
+                        <outlet property="nopasswordConstraint" destination="Vzb-kq-FeN" id="Pbc-vi-HsC"/>
                         <outlet property="phonenumberField" destination="aIG-TY-3Zf" id="HHh-Gt-WT6"/>
                         <outlet property="referralField" destination="FyT-tq-kd7" id="i0l-TZ-7lr"/>
                         <outlet property="topConstraint" destination="HLH-oN-zHD" id="YYe-AW-ct2"/>

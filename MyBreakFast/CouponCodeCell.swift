@@ -40,7 +40,11 @@ class CouponCodeCell: UICollectionViewCell {
         Helper.sharedInstance.validateCoupon(self.couponTextField.text!, completionHandler: { (response) -> () in
             
             if let responseStatus = response as? String {
+                if responseStatus == "max_redeem_limit"{
+                    UIAlertView(title: "First Eat", message: "The coupon has already been used.", delegate: nil, cancelButtonTitle: "OK").show()
+                } else {
                 UIAlertView(title: "First Eat", message: responseStatus, delegate: nil, cancelButtonTitle: "OK").show()
+                }
             } else if let responseStat = response as? NSDictionary{
                 let couponName = responseStat.objectForKey("coupon_name") as? String
                 let discountType = responseStat.objectForKey("discount_type") as? String
@@ -58,7 +62,7 @@ class CouponCodeCell: UICollectionViewCell {
                 }
                 
                 
-                let discountValue : String?
+                var discountValue : String?
                 let maxDiscountAmount: String?
                 if let discount_Value = responseStat.objectForKey("discount_value") as? NSNumber{
                     discountValue = discount_Value.stringValue;
@@ -94,9 +98,17 @@ class CouponCodeCell: UICollectionViewCell {
 
                 if discountType == "AMOUNT"{
                     Helper.sharedInstance.order?.discount = String(Int((Helper.sharedInstance.order?.discount)!)! + Int(Float(discountValue!)!))
+                    if couponName == "TEAM250" {
+                        Helper.sharedInstance.order?.discount = maxDiscountAmount!;
+                        discountValue = maxDiscountAmount;
+                        coupon.discountvalue = discountValue!;
+                    }
                     coupon.actualDiscount = (Helper.sharedInstance.order?.discount)!
                     let amtPayable = Int((Helper.sharedInstance.order?.totalAmountPayable)!)
-                    let totalAmtPay = amtPayable!-Int(Float(discountValue!)!)
+                    var totalAmtPay = amtPayable!-Int(Float(discountValue!)!)
+                    if totalAmtPay < 0 {
+                        totalAmtPay = 0;
+                    }
                     Helper.sharedInstance.order?.totalAmountPayable = String(totalAmtPay)
                  
                     UIApplication.sharedApplication().sendAction("updateCartWithTotalAmountPayableWithDiscount:", to: nil, from: self, forEvent: nil)
@@ -112,9 +124,17 @@ class CouponCodeCell: UICollectionViewCell {
                     }
                     
                     Helper.sharedInstance.order?.discount = String(Int((Helper.sharedInstance.order?.discount)!)! + discount)
+                    if couponName == "TEAM250" {
+                        Helper.sharedInstance.order?.discount = maxDiscountAmount!;
+                        discount = Int(maxDiscountAmount!)!
+                        coupon.discountvalue = String(discount);
+                    }
                     coupon.actualDiscount = (Helper.sharedInstance.order?.discount)!
                     let amtountPayable = Int((Helper.sharedInstance.order?.totalAmountPayable)!)
-                    let totalAmtPay = amtountPayable!-discount
+                    var totalAmtPay = amtountPayable!-discount
+                    if totalAmtPay < 0 {
+                        totalAmtPay = 0;
+                    }
                     Helper.sharedInstance.order?.totalAmountPayable = String(totalAmtPay)
                   
                     UIApplication.sharedApplication().sendAction("updateCartWithTotalAmountPayableWithDiscount:", to: nil, from: self, forEvent: nil)

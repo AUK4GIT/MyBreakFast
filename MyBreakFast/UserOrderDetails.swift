@@ -80,10 +80,14 @@ class UserOrderDetails: UIViewController {
         self.collectionView.collectionViewLayout = self.collectionViewLayout
         
         self.itemsArray = Helper.sharedInstance.getOrderItems()
-        
+        for item in self.itemsArray {
+            let itm = item as? Item
+            print("Testing:::   ",itm?.maxlimit, itm?.itemid)
+        }
         self.updateCartToolbar()
         
         self.offeroftheday = Helper.sharedInstance.getOfferoftheDay()
+        
         self.todaysOfferButton.layer.borderColor = UIColor.whiteColor().CGColor
         self.todaysOfferButton.layer.borderWidth = 1;
 
@@ -185,40 +189,20 @@ class UserOrderDetails: UIViewController {
         switch indexPath.section {
         case 0 :
              cell = collectionView.dequeueReusableCellWithReuseIdentifier("yourdetails", forIndexPath: indexPath)
-//             let bgView: UIView = (cell?.viewWithTag(6))!;
-//             bgView.layer.shadowOpacity = 0.8;
-//             bgView.layer.shadowColor = UIColor.grayColor().CGColor;
-//             bgView.layer.shadowOffset = CGSizeMake(1, 1);
             break;
         case 1 :
             
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("deliverytime", forIndexPath: indexPath)
-//            let bgView: UIView = (cell?.viewWithTag(6))!;
-//            bgView.layer.shadowOpacity = 0.8;
-//            bgView.layer.shadowColor = UIColor.grayColor().CGColor;
-//            bgView.layer.shadowOffset = CGSizeMake(1, 1);
-
             break;
         case 2 :
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("productscell", forIndexPath: indexPath) as! ProductsCell
-//            let bgView: UIView = (cell.viewWithTag(6))!;
-//            bgView.layer.shadowOpacity = 0.8;
-//            bgView.layer.shadowColor = UIColor.grayColor().CGColor;
-//            bgView.layer.shadowOffset = CGSizeMake(1, 1);
             
             let item : Item = self.itemsArray[indexPath.item] as! Item
             cell.item = item;
             cell.orderItem = Helper.sharedInstance.order?.orders[indexPath.row]
             cell.setItemContent();
             return cell;
-        /*case 3 :
-             cell = collectionView.dequeueReusableCellWithReuseIdentifier("deliveryaddress", forIndexPath: indexPath)
 
-            break;
-        case 4 :
-            cell = collectionView.dequeueReusableCellWithReuseIdentifier("deliverylocation", forIndexPath: indexPath)
-
-            break;*/
         default:
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("yourdetails", forIndexPath: indexPath)
 

@@ -20,6 +20,7 @@ class RegistrationVC: UIViewController {
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     var userObj: UserDetails?
     var isEditing: Bool?
+    @IBOutlet weak var nopasswordConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,11 +47,19 @@ class RegistrationVC: UIViewController {
     func setAfterFaceBookLoginSettings(){
         self.emailField.text = Helper.sharedInstance.getUserEmailId();
         self.usernameField.text = Helper.sharedInstance.getUserName();
+        self.confirmPasswordField.text = "firsteat";
+        self.newPasswordField.text = "firsteat";
+        self.confirmPasswordField.enabled = false;
+        self.newPasswordField.enabled = false;
 
+        self.confirmPasswordField.alpha = 0.6;
+        self.newPasswordField.alpha = 0.6;
+        self.nopasswordConstraint.constant = -30;
+        self.view.layoutIfNeeded()
         self.emailField.enabled = false;
 //        self.referralField.enabled = false;
         
-        UIAlertView(title: "Registration", message: "Please set Password and Phone number.", delegate: nil, cancelButtonTitle: "OK").show()
+        UIAlertView(title: "Registration", message: "Please set Phone number.", delegate: nil, cancelButtonTitle: "OK").show()
     }
     
     @IBAction func registerAction(sender: AnyObject) {

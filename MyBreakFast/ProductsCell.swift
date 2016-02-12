@@ -31,6 +31,8 @@ class ProductsCell: UICollectionViewCell {
     }
     
     @IBAction func decreaseAction(sender: UIButton) {
+        print("Testing: ",self.orderItem?.itemId);
+
         if self.quantity == 0{
             return
         } else {
@@ -43,7 +45,10 @@ class ProductsCell: UICollectionViewCell {
     }
     
     @IBAction func increaseAction(sender: UIButton) {
+        print("Testing: ",self.orderItem?.itemId);
+
         if self.quantity == Int((self.item?.maxlimit)!)!{
+            UIAlertView(title: "First Eat", message: "Maximum order limit reached for the item.", delegate: nil, cancelButtonTitle: "OK").show()
             return
         } else {
             ++self.quantity;

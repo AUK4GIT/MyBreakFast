@@ -179,11 +179,10 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
                                 if let elements = elementsDict!.objectForKey("elements") as? NSArray{
                                     let element = elements[0] as! NSDictionary
                                     let distanceDict = element.objectForKey("distance") as? NSDictionary
-                                    var distanceVal = distanceDict?.objectForKey("value") as? Double
-                                    distanceVal = floor(distanceVal!/1000)
-                                    if distanceVal > Double(radius){
+                                    if let distanceVal = distanceDict?.objectForKey("value") as? Double {
+                                    let distance = floor(distanceVal/1000)
+                                    if distance > Double(radius){
                                         UIAlertView(title: "First Eat", message: "Your current location is out of our service area. Please select your delivery area from the list.", delegate: nil, cancelButtonTitle: "OK").show()
-
                                     } else {
                                         if let addr = responseDict.objectForKey("origin_addresses") as? NSArray{
                                             if placeName == "" {
@@ -194,6 +193,9 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
                                         self.searchButton.setTitle(Helper.sharedInstance.userLocation, forState: UIControlState.Normal)
                                         }
 
+                                    }
+                                    } else {
+                                        UIAlertView(title: "First Eat", message: "Your current location is out of our service area. Please select your delivery area from the list.", delegate: nil, cancelButtonTitle: "OK").show()
                                     }
                                 } else {
                                     
@@ -413,13 +415,6 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-//        let modalVC : ItemPreViewVC = self.storyboard?.instantiateViewControllerWithIdentifier("ItemPreViewVC") as! ItemPreViewVC
-//        let item : Item = self.itemsArray[indexPath.item] as! Item
-//
-//        modalVC.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
-//        self.presentViewController(modalVC, animated: true, completion: nil)
-//        modalVC.imageView.sd_setImageWithURL(NSURL(string: item.imageURL!), placeholderImage: UIImage(named: "menu_logo"), completed: nil)
-//        modalVC.descriptionView.text = item.itemDescription
     }
     
     //MARK: Date Picker TableView Delegates
