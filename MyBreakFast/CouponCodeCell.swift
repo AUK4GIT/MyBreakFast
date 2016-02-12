@@ -105,12 +105,14 @@ class CouponCodeCell: UICollectionViewCell {
                         discountValue = maxDiscountAmount;
                         coupon.discountvalue = discountValue!;
                     }
-                    coupon.actualDiscount = (Helper.sharedInstance.order?.discount)!
                     let amtPayable = Int((Helper.sharedInstance.order?.totalAmountPayable)!)
                     var totalAmtPay = amtPayable!-Int(Float(discountValue!)!)
                     if totalAmtPay < 0 {
+                        discountValue = (Helper.sharedInstance.order?.totalAmount)
+                        Helper.sharedInstance.order?.discount = discountValue!;
                         totalAmtPay = 0;
                     }
+                    coupon.actualDiscount = (Helper.sharedInstance.order?.discount)!
                     Helper.sharedInstance.order?.totalAmountPayable = String(totalAmtPay)
                  
                     UIApplication.sharedApplication().sendAction("updateCartWithTotalAmountPayableWithDiscount:", to: nil, from: self, forEvent: nil)
@@ -133,12 +135,15 @@ class CouponCodeCell: UICollectionViewCell {
                         discount = Int(maxDiscountAmount!)!
                         coupon.discountvalue = String(discount);
                     }
-                    coupon.actualDiscount = (Helper.sharedInstance.order?.discount)!
                     let amtountPayable = Int((Helper.sharedInstance.order?.totalAmountPayable)!)
                     var totalAmtPay = amtountPayable!-discount
                     if totalAmtPay < 0 {
+                        discount = Int((Helper.sharedInstance.order?.totalAmount)!)!
+                        Helper.sharedInstance.order?.discount = String(discount);
                         totalAmtPay = 0;
                     }
+                    coupon.actualDiscount = (Helper.sharedInstance.order?.discount)!
+
                     Helper.sharedInstance.order?.totalAmountPayable = String(totalAmtPay)
                   
                     UIApplication.sharedApplication().sendAction("updateCartWithTotalAmountPayableWithDiscount:", to: nil, from: self, forEvent: nil)

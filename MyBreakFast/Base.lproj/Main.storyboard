@@ -1417,9 +1417,6 @@
                                 <items>
                                     <barButtonItem title="Total Amount ₹ 0" style="plain" id="Bkz-Y7-CS4">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <action selector="moveToNextScreen:" destination="hma-5w-OH7" id="ykB-d9-7gf"/>
-                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="fzn-0I-Wab">
                                         <connections>
@@ -1439,6 +1436,9 @@
                                                 <action selector="proceedtoConfirmOrder:" destination="w5d-lc-9vk" eventType="touchUpInside" id="fFT-zg-HbU"/>
                                             </connections>
                                         </button>
+                                        <connections>
+                                            <action selector="moveToNextScreen:" destination="hma-5w-OH7" id="WsN-th-dXB"/>
+                                        </connections>
                                     </barButtonItem>
                                 </items>
                                 <color key="barTintColor" red="0.80392156859999997" green="0.027450980390000001" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>

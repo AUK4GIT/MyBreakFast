@@ -93,7 +93,7 @@ class UserOrderDetails: UIViewController {
 
         if self.offeroftheday != nil {
             self.offerofthedayView.hidden = false;
-            self.todaysOfferLabel.text = "Today's best offer ("+(self.offeroftheday?.offername)!+")"
+            self.todaysOfferLabel.text = self.offeroftheday?.offername
             self.todaysOfferAmountLabel.text = "₹ "+(self.offeroftheday?.price!)!
         } else {
             self.offerofthedayView.hidden = true;
