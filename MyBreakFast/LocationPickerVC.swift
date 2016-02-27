@@ -12,7 +12,7 @@ import Foundation
     optional func didSelectLocation(locationObj: AnyObject)
 }
 
-class LocationPickerVC: UIViewController {
+class LocationPickerVC: CustomModalViewController {
     
     @IBOutlet weak var maskView: UIView!
     @IBOutlet weak var locationPicker: UIPickerView!
@@ -81,7 +81,7 @@ class LocationPickerVC: UIViewController {
         if (pickerLabel == nil)
         {
             pickerLabel = UILabel()
-            pickerLabel?.textColor = UIColor(red: 200.0/255.0, green: 5.0/255.0, blue: 15.0/255.0, alpha: 1.0);
+            pickerLabel?.textColor = Constants.StaticContent.AppThemeColor;
             pickerLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 16)
             pickerLabel?.textAlignment = NSTextAlignment.Center
         }

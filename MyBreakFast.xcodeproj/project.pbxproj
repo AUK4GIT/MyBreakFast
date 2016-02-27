@@ -80,6 +80,9 @@
 		EDBA07061C0B6C5800BE09B3 /* PopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDBA07051C0B6C5800BE09B3 /* PopCell.xib */; };
 		EDC1691A1BF99176000538E9 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC169191BF99176000538E9 /* DatePicker.swift */; };
 		EDC1691C1BF9918D000538E9 /* LocationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC1691B1BF9918D000538E9 /* LocationPicker.swift */; };
+		EDC572261C7AD1210018F11C /* CustomPresentationAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC572231C7AD1210018F11C /* CustomPresentationAnimationController.swift */; };
+		EDC572271C7AD1210018F11C /* CustomPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC572241C7AD1210018F11C /* CustomPresentationController.swift */; };
+		EDC572281C7AD1210018F11C /* CustomModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC572251C7AD1210018F11C /* CustomModalViewController.swift */; };
 		EDCC2AE31C318F8A00C15C3B /* TimeSlotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC2AE21C318F8A00C15C3B /* TimeSlotCell.swift */; };
 		EDCC2AE51C339F0800C15C3B /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC2AE41C339F0800C15C3B /* Order.swift */; };
 		EDCC2AE71C339F6500C15C3B /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC2AE61C339F6500C15C3B /* OrderItem.swift */; };
@@ -180,6 +183,9 @@
 		EDBA07051C0B6C5800BE09B3 /* PopCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopCell.xib; sourceTree = "<group>"; };
 		EDC169191BF99176000538E9 /* DatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		EDC1691B1BF9918D000538E9 /* LocationPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationPicker.swift; sourceTree = "<group>"; };
+		EDC572231C7AD1210018F11C /* CustomPresentationAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomPresentationAnimationController.swift; path = CustomModalVC/CustomPresentationAnimationController.swift; sourceTree = "<group>"; };
+		EDC572241C7AD1210018F11C /* CustomPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomPresentationController.swift; path = CustomModalVC/CustomPresentationController.swift; sourceTree = "<group>"; };
+		EDC572251C7AD1210018F11C /* CustomModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomModalViewController.swift; path = CustomModalVC/CustomModalViewController.swift; sourceTree = "<group>"; };
 		EDCC2AE21C318F8A00C15C3B /* TimeSlotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSlotCell.swift; sourceTree = "<group>"; };
 		EDCC2AE41C339F0800C15C3B /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Order.swift; path = Models/Order.swift; sourceTree = "<group>"; };
 		EDCC2AE61C339F6500C15C3B /* OrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderItem.swift; path = Models/OrderItem.swift; sourceTree = "<group>"; };
@@ -267,6 +273,7 @@
 		ED722B151BE09A33003DC9F2 /* MyBreakFast */ = {
 			isa = PBXGroup;
 			children = (
+				EDC572221C7AD08F0018F11C /* CustomModalVC */,
 				ED996EA81C2C63E70017284A /* Main.storyboard */,
 				ED5B216B1BF612A300C65857 /* Models */,
 				ED722B161BE09A33003DC9F2 /* AppDelegate.swift */,
@@ -346,6 +353,16 @@
 				EDA736D21BE4E05C00AC9884 /* MyBreakFast-Bridging-Header.h */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		EDC572221C7AD08F0018F11C /* CustomModalVC */ = {
+			isa = PBXGroup;
+			children = (
+				EDC572231C7AD1210018F11C /* CustomPresentationAnimationController.swift */,
+				EDC572241C7AD1210018F11C /* CustomPresentationController.swift */,
+				EDC572251C7AD1210018F11C /* CustomModalViewController.swift */,
+			);
+			name = CustomModalVC;
 			sourceTree = "<group>";
 		};
 		FCCBE4C75107B921E1C15ABB /* Frameworks */ = {
@@ -513,6 +530,7 @@
 				ED87B01C1BE72DFA003177D7 /* CartBillView.swift in Sources */,
 				ED5B21751BF6B85200C65857 /* ActivityIndicator.swift in Sources */,
 				EDA7CCF01C46CBBF00A40AEE /* MyOrdersDetailsCell.swift in Sources */,
+				EDC572281C7AD1210018F11C /* CustomModalViewController.swift in Sources */,
 				EDCC2AEB1C3676CD00C15C3B /* OffersCell.swift in Sources */,
 				EDCC81E51C268BC300C961F8 /* CustomSegment.swift in Sources */,
 				EDBA07041C0B6BCF00BE09B3 /* PopCell.swift in Sources */,
@@ -522,6 +540,7 @@
 				EDCC2AE51C339F0800C15C3B /* Order.swift in Sources */,
 				ED5B21711BF612F700C65857 /* Helper.swift in Sources */,
 				ED996EB01C2D95750017284A /* RegistrationVC.swift in Sources */,
+				EDC572261C7AD1210018F11C /* CustomPresentationAnimationController.swift in Sources */,
 				ED996EAC1C2C68DC0017284A /* DummyVC.swift in Sources */,
 				ED5B21871BF76D3400C65857 /* Item.swift in Sources */,
 				EDC1691C1BF9918D000538E9 /* LocationPicker.swift in Sources */,
@@ -566,6 +585,7 @@
 				EDCC2AE31C318F8A00C15C3B /* TimeSlotCell.swift in Sources */,
 				EDA7CCF61C4BBD2900A40AEE /* AddressCell.swift in Sources */,
 				ED58D6201C3A026D00741E8D /* ChangeCell.swift in Sources */,
+				EDC572271C7AD1210018F11C /* CustomPresentationController.swift in Sources */,
 				ED3E37F61BEF626600BB5F91 /* SideMenuCell.swift in Sources */,
 				ED709AA41C29AA960068528C /* Fooddetails+CoreDataProperties.swift in Sources */,
 				ED5B217F1BF76D3400C65857 /* Offer+CoreDataProperties.swift in Sources */,

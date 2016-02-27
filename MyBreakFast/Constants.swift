@@ -11,94 +11,97 @@ import Foundation
 struct Constants {
     
 //    Development
-   /* struct API {
+    struct API {
         static let GCMRegistration: String = "http://firsteatwebportal.in/api/v1/gcm/registeruser"
-        static let UserRegistration: String = "http://eatfirst.touchmagics.com/index.php/ws/register/user"
-        static let UserLogin: String = "http://eatfirst.touchmagics.com/index.php/ws/verify/user"
+        static let UserRegistration: String = "http://www.firsteat.in/dev/index.php/ws/register/user"
+        static let UserLogin: String = "http://www.firsteat.in/dev/index.php/ws/verify/user"
         static let MenuToday: String = "http://firsteatwebportal.in/api/v1/menu"//
-        static let MenuonDate: String = "http://www.eatfirst.touchmagics.com/index.php/ws/menu/all"
-        static let UserAddresses: String = "http://www.eatfirst.touchmagics.com/index.php/ws/users/address/list/"
-        static let UpdateUserAddress: String = "http://www.eatfirst.touchmagics.com/index.php/ws/users/address/add"
-        static let TimeSlots: String = "http://eatfirst.touchmagics.com/index.php/ws/kitchen/slots"
+        static let MenuonDate: String = "http://www.firsteat.in/dev/index.php/ws/menu/all"
+        static let MenuonDateLocation: String = "http://www.firsteat.in/dev/index.php/ws/menu/location/"
+        static let UserAddresses: String = "http://www.firsteat.in/dev/index.php/ws/users/address/list/"
+        static let UpdateUserAddress: String = "http://www.firsteat.in/dev/index.php/ws/users/address/add"
+        static let TimeSlots: String = "http://www.firsteat.in/dev/index.php/ws/kitchen/slots"
 
         static let PlaceTestOrder: String = "http://firsteatwebportal.in/api/v1/order/placeTestOrder"
         static let AboutUs: String = "http://firsteatwebportal.in/api/v1/contactus/aboutUs"
         static let ContactUsMessage: String = "http://firsteatwebportal.in/api/v1/contactus/add"
-        static let UserFeedback: String = "http://eatfirst.touchmagics.com/index.php/ws/user/feedback/"
+        static let UserFeedback: String = "http://www.firsteat.in/dev/index.php/ws/user/feedback/"
 
         static let ServiceCoverage: String = "http://firsteatwebportal.in/api/v1/locations/getServiceRadius"
-        static let MyOrders: String = "http://eatfirst.touchmagics.com/index.php/ws/users/orders/all/"
-        static let LocationsURL: String = "http://eatfirst.touchmagics.com/index.php/ws/get/all/locations"
-        static let DeliveryLocationsURL: String = "http://eatfirst.touchmagics.com/index.php/ws/locations/delivery/all"
-        static let GETRedeemPoints: String = "http://eatfirst.touchmagics.com/index.php/ws/users/points/all/"
-        static let RedeemPoints: String = "http://eatfirst.touchmagics.com/index.php/ws/points/redeem/"
-        static let ValidateCoupon: String = "http://eatfirst.touchmagics.com/index.php/ws/orders/coupon/apply?coupon="
-        static let PlaceOrder: String = "http://www.eatfirst.touchmagics.com/index.php/ws/orders/add/new/"
+        static let MyOrders: String = "http://www.firsteat.in/dev/index.php/ws/users/orders/all/"
+        static let LocationsURL: String = "http://www.firsteat.in/dev/index.php/ws/get/all/locations"
+        static let DeliveryLocationsURL: String = "http://www.firsteat.in/dev/index.php/ws/locations/delivery/all"
+        static let GETRedeemPoints: String = "http://www.firsteat.in/dev/index.php/ws/users/points/all/"
+        static let RedeemPoints: String = "http://www.firsteat.in/dev/index.php/ws/points/redeem/"
+        static let ValidateCoupon: String = "http://www.firsteat.in/dev/index.php/ws/orders/coupon/apply?coupon="
+        static let PlaceOrder: String = "http://www.firsteat.in/dev/index.php/ws/orders/add/new/"
 
-        static let UpdateOrderWithMenuIds: String = "http://www.eatfirst.touchmagics.com/index.php/ws/orders/add/new/item/"
-        static let UpdateOrderWithOfferIds: String = "http://eatfirst.touchmagics.com/index.php/ws/orders/add/menu/offers/"
-        static let UpdateOrderWithBill: String = "http://www.eatfirst.touchmagics.com/index.php/ws/orders/update/"
+        static let UpdateOrderWithMenuIds: String = "http://www.firsteat.in/dev/index.php/ws/orders/add/new/item/"
+        static let UpdateOrderWithOfferIds: String = "http://www.firsteat.in/dev/index.php/ws/orders/add/menu/offers/"
+        static let UpdateOrderWithBill: String = "http://www.firsteat.in/dev/index.php/ws/orders/update/"
 
-        static let FavouritesMenu: String = "http://www.eatfirst.touchmagics.com/index.php/ws/user/favorite/menu/"
-        static let UploadFavouritesMenu: String = "http://www.eatfirst.touchmagics.com/index.php/ws/menu/user/favorite?user="
+        static let FavouritesMenu: String = "http://www.firsteat.in/dev/index.php/ws/user/favorite/menu/"
+        static let UploadFavouritesMenu: String = "http://www.firsteat.in/dev/index.php/ws/menu/user/favorite?user="
         
-        static let SpecialNotifications: String = "http://eatfirst.touchmagics.com/index.php/ws/notifications/special"
-        static let OrderDetails: String = "http://eatfirst.touchmagics.com/index.php/ws/user/order/details/"
+        static let SpecialNotifications: String = "http://www.firsteat.in/dev/index.php/ws/notifications/special"
+        static let OrderDetails: String = "http://www.firsteat.in/dev/index.php/ws/user/order/details/"
         
         static let GOOGLE_DISTENCE_MATRIX: String = "https://maps.googleapis.com/maps/api/distancematrix/json";
         
-        static let  URL_KITCHENS: String = "http://eatfirst.touchmagics.com/index.php/ws/kitchens/all";
+        static let  URL_KITCHENS: String = "http://www.firsteat.in/dev/index.php/ws/kitchens/all";
 
         static let  GOOGLE_BROWSER_KEY : String = "AIzaSyCQeMJ_iTUeitPnr71dHMFgK_T6ZXj1BMo";
 
-    } */
+    }
     
     //Production
-    struct API {
-        static let GCMRegistration: String = "http://eatfirst.touchmagics.com/index.php/ws/first/app"
-        static let UserRegistration: String = "http://www.firsteat.in/app/index.php/ws/register/user"
-        static let UserLogin: String = "http://www.firsteat.in/app/index.php/ws/verify/user"
-//        static let MenuToday: String = "http://firsteatwebportal.in/api/v1/menu"//
-        static let MenuonDate: String = "http://www.firsteat.in/app/index.php/ws/menu/all"
-        static let UserAddresses: String = "http://www.firsteat.in/app/index.php/ws/users/address/list/"
-        static let UpdateUserAddress: String = "http://www.firsteat.in/app/index.php/ws/users/address/add"
-        static let TimeSlots: String = "http://www.firsteat.in/app/index.php/ws/kitchen/slots"
-        
-//        static let PlaceTestOrder: String = "http://firsteatwebportal.in/api/v1/order/placeTestOrder"
-        static let AboutUs: String = "http://firsteatwebportal.in/api/v1/contactus/aboutUs"
-        static let ContactUsMessage: String = "http://firsteatwebportal.in/api/v1/contactus/add"
-        static let UserFeedback: String = "http://www.firsteat.in/app/index.php/ws/user/feedback/"
-        
-//        static let ServiceCoverage: String = "http://firsteatwebportal.in/api/v1/locations/getServiceRadius"
-        static let MyOrders: String = "http://www.firsteat.in/app/index.php/ws/users/orders/all/"
-        static let LocationsURL: String = "http://www.firsteat.in/app/index.php/ws/get/all/locations"
-        static let DeliveryLocationsURL: String = "http://www.firsteat.in/app/index.php/ws/locations/delivery/all"
-        static let GETRedeemPoints: String = "http://www.firsteat.in/app/index.php/ws/users/points/all/"
-        static let RedeemPoints: String = "http://www.firsteat.in/app/index.php/ws/points/redeem/"
-        static let ValidateCoupon: String = "http://www.firsteat.in/app/index.php/ws/orders/coupon/apply?coupon="
-        static let PlaceOrder: String = "http://www.firsteat.in/app/index.php/ws/orders/add/new/"
-        
-        static let UpdateOrderWithMenuIds: String = "http://www.firsteat.in/app/index.php/ws/orders/add/new/item/"
-        static let UpdateOrderWithOfferIds: String = "http://www.firsteat.in/app/index.php/ws/orders/add/menu/offers/"
-        static let UpdateOrderWithBill: String = "http://www.firsteat.in/app/index.php/ws/orders/update/"
-        
-        static let FavouritesMenu: String = "http://www.firsteat.in/app/index.php/ws/user/favorite/menu/"
-        static let UploadFavouritesMenu: String = "http://www.firsteat.in/app/index.php/ws/menu/user/favorite?user="
-        
-        static let SpecialNotifications: String = "http://www.firsteat.in/app/index.php/ws/notifications/special"
-        static let OrderDetails: String = "http://www.firsteat.in/app/index.php/ws/user/order/details/"
-        
-        static let GOOGLE_DISTENCE_MATRIX: String = "https://maps.googleapis.com/maps/api/distancematrix/json";
-        
-        static let  URL_KITCHENS: String = "http://www.firsteat.in/app/index.php/ws/kitchens/all";
-        
-        static let  GOOGLE_BROWSER_KEY : String = "AIzaSyCQeMJ_iTUeitPnr71dHMFgK_T6ZXj1BMo";
-        
-    }
+//    struct API {
+//        static let GCMRegistration: String = "http://www.firsteat.in/dev/index.php/ws/first/app"
+//        static let UserRegistration: String = "http://www.firsteat.in/app/index.php/ws/register/user"
+//        static let UserLogin: String = "http://www.firsteat.in/app/index.php/ws/verify/user"
+////        static let MenuToday: String = "http://firsteatwebportal.in/api/v1/menu"//
+//        static let MenuonDate: String = "http://www.firsteat.in/app/index.php/ws/menu/all"
+//    static let MenuonDateLocation: String = "http://www.firsteat.in/app/index.php/ws/menu/location/"
+//        static let UserAddresses: String = "http://www.firsteat.in/app/index.php/ws/users/address/list/"
+//        static let UpdateUserAddress: String = "http://www.firsteat.in/app/index.php/ws/users/address/add"
+//        static let TimeSlots: String = "http://www.firsteat.in/app/index.php/ws/kitchen/slots"
+//        
+////        static let PlaceTestOrder: String = "http://firsteatwebportal.in/api/v1/order/placeTestOrder"
+//        static let AboutUs: String = "http://firsteatwebportal.in/api/v1/contactus/aboutUs"
+//        static let ContactUsMessage: String = "http://firsteatwebportal.in/api/v1/contactus/add"
+//        static let UserFeedback: String = "http://www.firsteat.in/app/index.php/ws/user/feedback/"
+//        
+////        static let ServiceCoverage: String = "http://firsteatwebportal.in/api/v1/locations/getServiceRadius"
+//        static let MyOrders: String = "http://www.firsteat.in/app/index.php/ws/users/orders/all/"
+//        static let LocationsURL: String = "http://www.firsteat.in/app/index.php/ws/get/all/locations"
+//        static let DeliveryLocationsURL: String = "http://www.firsteat.in/app/index.php/ws/locations/delivery/all"
+//        static let GETRedeemPoints: String = "http://www.firsteat.in/app/index.php/ws/users/points/all/"
+//        static let RedeemPoints: String = "http://www.firsteat.in/app/index.php/ws/points/redeem/"
+//        static let ValidateCoupon: String = "http://www.firsteat.in/app/index.php/ws/orders/coupon/apply?coupon="
+//        static let PlaceOrder: String = "http://www.firsteat.in/app/index.php/ws/orders/add/new/"
+//        
+//        static let UpdateOrderWithMenuIds: String = "http://www.firsteat.in/app/index.php/ws/orders/add/new/item/"
+//        static let UpdateOrderWithOfferIds: String = "http://www.firsteat.in/app/index.php/ws/orders/add/menu/offers/"
+//        static let UpdateOrderWithBill: String = "http://www.firsteat.in/app/index.php/ws/orders/update/"
+//        
+//        static let FavouritesMenu: String = "http://www.firsteat.in/app/index.php/ws/user/favorite/menu/"
+//        static let UploadFavouritesMenu: String = "http://www.firsteat.in/app/index.php/ws/menu/user/favorite?user="
+//        
+//        static let SpecialNotifications: String = "http://www.firsteat.in/app/index.php/ws/notifications/special"
+//        static let OrderDetails: String = "http://www.firsteat.in/app/index.php/ws/user/order/details/"
+//        
+//        static let GOOGLE_DISTENCE_MATRIX: String = "https://maps.googleapis.com/maps/api/distancematrix/json";
+//        
+//        static let  URL_KITCHENS: String = "http://www.firsteat.in/app/index.php/ws/kitchens/all";
+//        
+//        static let  GOOGLE_BROWSER_KEY : String = "AIzaSyCQeMJ_iTUeitPnr71dHMFgK_T6ZXj1BMo";
+//        
+//    }
 
     
     struct StaticContent {
         static let SideMenuList : [String] = ["Menu", "My Orders", "About Us", "Contact Us", "Rate Us", "Refer a Friend"];
+        static let AppThemeColor = UIColor(red: 200.0/255.0, green: 5.0/255.0, blue: 15.0/255.0, alpha: 1.0);
     }
     
     struct ServiceLocation {
@@ -125,6 +128,7 @@ struct Constants {
         static let UserLoginStatus: String = "UserLogInStatus"
         static let UserRegistration: String = "UserRegistration"
         static let LastSelectedAddressId: String = "LastSelectedAddressId"
+        static let LastSelectedLocationId: String = "LastSelectedLocationId"
 
     }
 }

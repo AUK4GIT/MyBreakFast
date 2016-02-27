@@ -24,7 +24,7 @@ class DatePickerVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.maskView.alpha = 0.0
-//        self.datePicker.textColor = UIColor(red: 200.0/255.0, green: 5.0/255.0, blue: 15.0/255.0, alpha: 1.0)
+//        self.datePicker.textColor = Constants.StaticContent.AppThemeColor;
 //        self.datePicker.locale = NSLocale(localeIdentifier: "en_US");
 //        self.datePicker.setDate(NSDate(), animated: true);
 //        self.datePicker.minimumDate = NSDate()

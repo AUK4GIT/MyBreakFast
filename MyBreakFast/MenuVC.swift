@@ -13,7 +13,7 @@ import GoogleMaps
 import TIPBadgeManager
 
 
-class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, DatePickerVCDelegate, LocationPickerVCDelegate {
+class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, DatePickerVCDelegate, LocationPickerVCDelegate, UIAlertViewDelegate, LocationPickerDelegate {
     @IBOutlet var collectionView: UICollectionView!
     
     @IBOutlet weak var dateTableView: UITableView!
@@ -28,6 +28,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     var cartButtonIcon: UIButton?
     var placesClient: GMSPlacesClient?
     var itemQuantities = 0;
+    var menuDate = NSDate();
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -77,6 +78,14 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         let date = NSDate()
         self.dateLabel.title = self.dateFormatter.stringFromDate(date)+" ("+dtFormat.stringFromDate(date)+")"
         self.dateLabel.tintColor = UIColor.darkGrayColor()
+        
+        if let locId = Helper.sharedInstance.getDataFromUserDefaults(forKey: Constants.UserdefaultConstants.LastSelectedLocationId) {
+            let locations = Helper.sharedInstance.getLocationsForLocationId(locId as! String);
+            let locationObj = locations[0] as? Locations
+            Helper.sharedInstance.userLocation = locationObj?.locationName;
+        } else {
+            self.performSelector("showDeliveryLocationPopUp", withObject: nil, afterDelay: 1.0);
+        }
     }
     
     override func viewWillLayoutSubviews() {
@@ -268,8 +277,24 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         
     }
     
+    func showDeliveryLocationPopUp() {
+
+        let alertController = UIAlertController(title: "First Eat", message: "Please search a delivery location", preferredStyle: .Alert)
+        let searchAction = UIAlertAction(title: "OK", style: .Default) { (_) in
+            self.showLocationPicker(nil);
+        }
+        
+        alertController.addAction(searchAction)
+        self.presentViewController(alertController, animated: true) {
+            alertController.view.tintColor = Constants.StaticContent.AppThemeColor;
+
+        }
+
+    }
+    
     func didSelectDate(date: AnyObject){
         let selectedDate = date as! NSDate
+        self.menuDate = selectedDate;
         print(self.dateFormatter.stringFromDate(selectedDate))
         Helper.sharedInstance.getMenuFor(selectedDate, completionHandler: {
             self.itemsArray = Helper.sharedInstance.getTodaysItems();
@@ -282,11 +307,13 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         })
     }
     
-    func showLocationPicker(locationObj: AnyObject) {
-        let locationPickVC : LocationPickerVC = self.storyboard?.instantiateViewControllerWithIdentifier("LocationPickerVC") as! LocationPickerVC
-        locationPickVC.delegate = self;
-        locationPickVC.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+    func showLocationPicker(locationObj: AnyObject?) {
+        
+        self.searchButton.setTitle("", forState: .Normal)
+        let locationPickVC : LocationPicker = self.storyboard?.instantiateViewControllerWithIdentifier("LocationPicker") as! LocationPicker
+        locationPickVC.locationDelegate = self;
         self.presentViewController(locationPickVC, animated: true, completion: nil)
+//        return;
     }
     
     func didSelectLocation(location:AnyObject) {
@@ -298,7 +325,15 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     }
     
 
-    
+    func didPickLocation(location: AnyObject) {
+        let locationObj = location as? Locations
+        print(locationObj?.locationId, locationObj?.locationName);
+        self.searchButton.setTitle(locationObj!.locationName, forState: .Normal)
+        Helper.sharedInstance.userLocation = locationObj!.locationName;
+        Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.LastSelectedLocationId, value: locationObj!.locationId!)
+        self.didSelectDate(self.menuDate)
+    }
+
     
     override func beginAppearanceTransition(isAppearing: Bool, animated: Bool) {
         super.beginAppearanceTransition(isAppearing, animated: animated)
@@ -318,6 +353,11 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         } else {
             parentVC.containerNavigationItem.rightBarButtonItem = nil;
         }
+        
+        if let title = Helper.sharedInstance.userLocation {
+            self.searchButton.setTitle(title, forState: UIControlState.Normal)
+        }
+
     }
     override func endAppearanceTransition() {
         super.endAppearanceTransition()
@@ -447,7 +487,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell")! 
-cell.textLabel?.textColor = UIColor.darkGrayColor()//UIColor(red: 200.0/255.0, green: 5.0/255.0, blue: 15.0/255.0, alpha: 1.0)
+cell.textLabel?.textColor = UIColor.darkGrayColor()//Constants.StaticContent.AppThemeColor;
 //        cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 16.0)
         let dtFormat = NSDateFormatter()
         dtFormat.dateFormat = "EEEE dd, MMM"

@@ -66,7 +66,7 @@ class TimeSlotCell: UICollectionViewCell {
 
         self.timeLabel.text = timeFormtter.stringFromDate(startTime!)+" - "+timeFormtter.stringFromDate(endTime!)
         if timeSlot.status == "Active"{
-            self.timeLabel.textColor = UIColor(red: 200.0/255.0, green: 5.0/255.0, blue: 15.0/255.0, alpha: 1.0)
+            self.timeLabel.textColor = Constants.StaticContent.AppThemeColor;
         } else {
             self.timeLabel.textColor = UIColor.grayColor()
         }

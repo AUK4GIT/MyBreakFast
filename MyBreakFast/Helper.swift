@@ -24,6 +24,7 @@ class Helper {
     var currenttimeSlot = ""
     var isOrderForTomorrow = false;
     var redeemValue: Double = 0.5;
+    var kitchen = "";
 
     func setUpReachability(){
     
@@ -349,6 +350,38 @@ class Helper {
     
     func getLocations() -> [NSManagedObject] {
         let fetchRequest = NSFetchRequest(entityName: "Locations")
+        var locations: [NSManagedObject]?
+        do {
+            let results =
+            try appDelegate.managedObjectContext.executeFetchRequest(fetchRequest)
+            locations = results as? [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
+        return locations!
+    }
+    
+    func getLocationsForSearchString(searchStr: String) -> [NSManagedObject] {
+        let fetchRequest = NSFetchRequest(entityName: "Locations")
+        let predicate :NSPredicate = NSPredicate(format: "locationName CONTAINS[cd] %@",searchStr)
+        fetchRequest.predicate = predicate;
+        var locations: [NSManagedObject]?
+        do {
+            let results =
+            try appDelegate.managedObjectContext.executeFetchRequest(fetchRequest)
+            locations = results as? [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
+        return locations!
+    }
+    
+    func getLocationsForLocationId(searchStr: String) -> [NSManagedObject] {
+        let fetchRequest = NSFetchRequest(entityName: "Locations")
+        let predicate :NSPredicate = NSPredicate(format: "locationId == %@",searchStr)
+        fetchRequest.predicate = predicate;
         var locations: [NSManagedObject]?
         do {
             let results =
@@ -929,7 +962,7 @@ class Helper {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let stringFromDate = dateFormatter.stringFromDate(date);
-        Alamofire.request(.GET, Constants.API.TimeSlots, parameters: ["d":stringFromDate])
+        Alamofire.request(.GET, Constants.API.TimeSlots, parameters: ["d":stringFromDate, "kitchen":Helper.sharedInstance.kitchen])
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
@@ -979,7 +1012,7 @@ class Helper {
     }
 
 
-    
+/*
     func getMenuFor(date: NSDate, completionHandler: () -> Void) {
         
         Helper.sharedInstance.showActivity()
@@ -1014,6 +1047,55 @@ class Helper {
                             pointsVal = Int(JSON.objectForKey("point_value") as! String)!
                         }
                         Helper.sharedInstance.redeemValue = Double(pointsVal)/Double(numPoints);
+                        self.saveMenuItems(jData)
+                        self.saveContext();
+                    }
+                }
+                dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                    Helper.sharedInstance.hideActivity()
+                    completionHandler()
+                }
+        }
+    }
+    */
+    
+    func getMenuFor(date: NSDate, completionHandler: () -> Void) {
+        
+        Helper.sharedInstance.showActivity()
+        let locId = self.getDataFromUserDefaults(forKey: Constants.UserdefaultConstants.LastSelectedLocationId) as? String ?? ""
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let stringFromDate = "?d=\(dateFormatter.stringFromDate(date))";
+        self.orderDate = dateFormatter.stringFromDate(date);// This is very important
+        let url = "\(Constants.API.MenuonDateLocation)\(locId)\(stringFromDate)"
+        Alamofire.request(.GET, url, parameters: nil)
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                    self.deleteData("Offer");
+                    self.deleteData("Fooddetails");
+                    self.deleteData("Item");
+                    self.saveContext();
+                    if let jData =  JSON.objectForKey("data") as? Array<AnyObject>{
+                        var numPoints = 2;
+                        var pointsVal = 1;
+                        if let pointsT = JSON.objectForKey("num_points") as? NSNumber{
+                            numPoints = Int(pointsT);
+                        } else {
+                            numPoints = Int(JSON.objectForKey("num_points") as! String)!
+                        }
+                        if let pointsV = JSON.objectForKey("point_value") as? NSNumber{
+                            pointsVal = Int(pointsV);
+                        } else {
+                            pointsVal = Int(JSON.objectForKey("point_value") as! String)!
+                        }
+                        Helper.sharedInstance.redeemValue = Double(pointsVal)/Double(numPoints);
+                        Helper.sharedInstance.kitchen = (JSON.objectForKey("kitchen") as? NSNumber)!.stringValue
                         self.saveMenuItems(jData)
                         self.saveContext();
                     }
@@ -1181,13 +1263,13 @@ class Helper {
         if coupon != nil {
             couponId = (coupon?.couponid)!;
         }
-        var kitchenId = "";
-        if let kitchens = Helper.sharedInstance.fetchKitchens() {
-                let kitchen = kitchens[0]
-            kitchenId = kitchen.kid!
-        }
+//        var kitchenId = "";
+//        if let kitchens = Helper.sharedInstance.fetchKitchens() {
+//                let kitchen = kitchens[0]
+//            kitchenId = kitchen.kid!
+//        }
         
-        Alamofire.request(.GET, completeURL, parameters: ["change":change as String,"coupon":couponId, "kitchen":kitchenId])
+        Alamofire.request(.GET, completeURL, parameters: ["change":change as String,"coupon":couponId, "kitchen":Helper.sharedInstance.kitchen, "address":(self.order?.addressId!)!,"slot":(self.order?.timeSlotId!)!])
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response

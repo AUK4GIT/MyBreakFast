@@ -22,7 +22,7 @@ class AddAddressCell: UICollectionViewCell {
         self.activity?.frame = CGRectMake(0, 0, 50, 50);
         self.activity?.center = CGPointMake(self.bounds.width/2, self.bounds.height/2);
         self.addSubview(self.activity!);
-        self.activity?.color = UIColor(red: 200.0/255.0, green: 5.0/255.0, blue: 15.0/255.0, alpha: 1.0)
+        self.activity?.color = Constants.StaticContent.AppThemeColor;
 //        self.activity?.startAnimating()
         self.activity?.hidesWhenStopped = true;
         
