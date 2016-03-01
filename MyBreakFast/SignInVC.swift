@@ -8,11 +8,10 @@
 
 import Foundation
 import UIKit
-import GoogleMaps
 
 class SignInVC: UIViewController {
     
-    var placesClient: GMSPlacesClient?
+//    var placesClient: GMSPlacesClient?
 
     override func viewDidLoad() {
         super.viewDidLoad()

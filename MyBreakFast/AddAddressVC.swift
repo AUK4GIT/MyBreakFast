@@ -18,7 +18,7 @@ class AddAddressVC: UIViewController, LocationPickerVCDelegate {
         
         let doneButton: UIButton = UIButton(type: .Custom)
         doneButton.frame = CGRectMake(0, 0, 60, 44)
-        doneButton.setTitle("Done", forState: .Normal)
+        doneButton.setTitle("Back", forState: .Normal)
         doneButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 18.0);
         doneButton.titleLabel?.adjustFontToRealIPhoneSize = true;
         doneButton.addTarget(self, action: "dismissViewController", forControlEvents: .TouchUpInside)

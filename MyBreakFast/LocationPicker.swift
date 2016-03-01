@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import QuartzCore
 @objc protocol LocationPickerDelegate: class{
-    optional func didPickLocation(location: AnyObject)
+    optional func didPickLocation(location: AnyObject?)
 }
 class LocationPicker: CustomModalViewController {
     
@@ -22,27 +22,37 @@ class LocationPicker: CustomModalViewController {
     var searchString = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.locationsArray = Helper.sharedInstance.getLocations()
+        self.locationsArray = [];
         self.tableView.registerNib(UINib(nibName: "PopCell", bundle: nil), forCellReuseIdentifier: "PopCell")
         self.tableView.sectionHeaderHeight = 0;
-        self.searchField.becomeFirstResponder();
 
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        if self.locationsArray?.count == 0 {
-            let alertController = UIAlertController(title: "First Eat", message: "Location not found.", preferredStyle: .Alert)
-            let searchAction = UIAlertAction(title: "OK", style: .Default) { (_) in
-                self.dismissViewControllerAnimated(true, completion: nil)
-            }
-            alertController.addAction(searchAction)
-            self.presentViewController(alertController, animated: true) {
-                alertController.view.tintColor = Constants.StaticContent.AppThemeColor;
-                
-            }
+        self.locationsArray = Helper.sharedInstance.getLocations()
+            if self.locationsArray?.count == 0 {
+                Helper.sharedInstance.fetchLocations({ (response) -> () in
+                    self.locationsArray = Helper.sharedInstance.getLocations()
+                    
+                    if self.locationsArray?.count == 0 {
+                    let alertController = UIAlertController(title: "First Eat", message: "Location not found. Please check your internet connection.", preferredStyle: .Alert)
+                    let searchAction = UIAlertAction(title: "OK", style: .Default) { (_) in
+                        
+                            self.dismissViewControllerAnimated(true, completion: nil)
+                    }
+                    alertController.addAction(searchAction)
+                    self.presentViewController(alertController, animated: true) {
+                        alertController.view.tintColor = Constants.StaticContent.AppThemeColor;
+                    }
+                    } else {
+                        self.searchField.becomeFirstResponder();
+                    }
+                    
+                })
+            } else {
+                self.searchField.becomeFirstResponder();
         }
 
     }
@@ -82,6 +92,8 @@ class LocationPicker: CustomModalViewController {
     // MARK: TextField Delegates
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
+        self.locationDelegate?.didPickLocation!(nil)
+        self.dismissViewControllerAnimated(true, completion: nil)
         return true
     }
     
@@ -99,10 +111,11 @@ class LocationPicker: CustomModalViewController {
         return true;
     }
     
-//    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-//        let touch = touches.first! as UITouch
-//        if !CGRectContainsPoint(self.tableView.frame, touch.locationInView(self.view)){
-//            self.dismissViewControllerAnimated(true, completion: nil)
-//        }
-//    }
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let touch = touches.first! as UITouch
+        if !CGRectContainsPoint(self.tableView.frame, touch.locationInView(self.view)){
+            self.locationDelegate?.didPickLocation!(nil)
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+    }
 }

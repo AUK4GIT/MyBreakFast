@@ -702,7 +702,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Healthy Food is the corner stone of Good Health. In order to achieve good health for all, First Eat promises to provide 'Tasty, fresh and nutritious Indian breakfast prepared with highest standards of food safety and hygiene, packed in high food grade packaging containers, with a promise of your food being delivered hot to your doorstep. First Eat aims to ensure that you, the hard working people of our country, start your day full with energy and aims to do this through good healthy food'.</string>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -1584,7 +1584,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MSC-W0-o2G">
-                                <rect key="frame" x="160" y="69" width="280" height="180"/>
+                                <rect key="frame" x="160" y="69" width="280" height="261"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1596,6 +1596,7 @@
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="VAz-7n-fy4"/>
                                         <exclude reference="oYf-hT-qae"/>
                                     </mask>
                                 </variation>
@@ -1618,6 +1619,7 @@
                             <constraint firstItem="MSC-W0-o2G" firstAttribute="centerY" secondItem="3vU-2I-vwT" secondAttribute="centerY" id="cym-Qe-gp8"/>
                             <constraint firstItem="MSC-W0-o2G" firstAttribute="top" secondItem="ww9-Mc-cVL" secondAttribute="bottom" constant="64" id="eDd-Ap-cLX"/>
                             <constraint firstItem="L5A-Qw-fSR" firstAttribute="width" secondItem="MSC-W0-o2G" secondAttribute="width" id="gCF-ZY-lln"/>
+                            <constraint firstAttribute="bottom" secondItem="MSC-W0-o2G" secondAttribute="bottom" constant="270" id="gd9-4t-tz0"/>
                             <constraint firstItem="L5A-Qw-fSR" firstAttribute="top" secondItem="fIv-xJ-Quq" secondAttribute="bottom" constant="10" id="t2z-mf-VAY"/>
                             <constraint firstItem="fIv-xJ-Quq" firstAttribute="centerX" secondItem="3vU-2I-vwT" secondAttribute="centerX" id="xa3-yq-koj"/>
                         </constraints>
@@ -3791,7 +3793,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="3dq-Gh-lv0"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="3dq-Gh-lv0"/>
                                     <constraint firstAttribute="width" constant="320" id="6GC-lc-Yhd"/>
                                     <constraint firstItem="uTi-wi-bcB" firstAttribute="top" secondItem="y3M-cj-HPF" secondAttribute="bottom" constant="12" id="8n9-4o-FHH"/>
                                     <constraint firstItem="uTi-wi-bcB" firstAttribute="centerX" secondItem="EcS-Bw-zcK" secondAttribute="centerX" id="Dr5-L1-Bp1"/>
@@ -3866,6 +3868,7 @@
                             <constraint firstItem="kjy-fG-nBe" firstAttribute="top" secondItem="913-9e-YAv" secondAttribute="top" constant="20" id="TrY-oK-NL7"/>
                             <constraint firstItem="EcS-Bw-zcK" firstAttribute="centerX" secondItem="913-9e-YAv" secondAttribute="centerX" id="Zuw-Km-uSu"/>
                             <constraint firstItem="kjy-fG-nBe" firstAttribute="leading" secondItem="913-9e-YAv" secondAttribute="leading" id="cwJ-si-HyH"/>
+                            <constraint firstItem="EcS-Bw-zcK" firstAttribute="top" secondItem="kjy-fG-nBe" secondAttribute="bottom" priority="750" constant="10" id="hYU-H2-8qb"/>
                             <constraint firstAttribute="trailing" secondItem="kjy-fG-nBe" secondAttribute="trailing" id="kFi-Di-2Tr"/>
                         </constraints>
                     </view>
@@ -3928,9 +3931,6 @@
                                                             <state key="normal" title="Pick a Location">
                                                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
-                                                            <connections>
-                                                                <action selector="showLocationPicker:" destination="n0R-Hf-77e" eventType="touchUpInside" id="P92-2W-Fpt"/>
-                                                            </connections>
                                                         </button>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Osb-2I-iYj">
                                                             <rect key="frame" x="97.5" y="8" width="178.5" height="55"/>
@@ -3983,7 +3983,7 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                                                     <color key="tintColor" red="0.80392156859999997" green="0.027450980390000001" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <state key="normal" title="Add/Change">
+                                                    <state key="normal" title="Add">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <state key="disabled">
@@ -4025,7 +4025,7 @@
                                         </variation>
                                         <connections>
                                             <outlet property="addChnageButton" destination="AbZ-QY-xl6" id="FAU-CO-bHT"/>
-                                            <outlet property="locationButton" destination="UZJ-HV-QNp" id="bwh-T6-XhS"/>
+                                            <outlet property="locationButton" destination="UZJ-HV-QNp" id="Jts-nK-ebW"/>
                                             <outlet property="secondLine" destination="Osb-2I-iYj" id="vAE-jt-o7I"/>
                                         </connections>
                                     </collectionViewCell>
@@ -4101,9 +4101,9 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <outlet property="firstLine" destination="TgR-nG-xRX" id="rnt-Vo-y70"/>
-                                            <outlet property="locationButton" destination="MUE-K8-srr" id="ewC-Gd-Blp"/>
-                                            <outlet property="secondLine" destination="Mqe-bA-fWn" id="zDu-GK-g5y"/>
+                                            <outlet property="firstLine" destination="TgR-nG-xRX" id="VCQ-yU-v1j"/>
+                                            <outlet property="locationButton" destination="MUE-K8-srr" id="l5h-4O-F2P"/>
+                                            <outlet property="secondLine" destination="Mqe-bA-fWn" id="z2t-PH-PVe"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -4185,6 +4185,76 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ehM-7P-1Uo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3788" y="336"/>
+        </scene>
+        <!--TermsVC-->
+        <scene sceneID="zld-wb-XjY">
+            <objects>
+                <viewController storyboardIdentifier="TermsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DFe-gd-Cpf" customClass="TermsVC" customModule="MyBreakFast" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IDi-dp-0GW"/>
+                        <viewControllerLayoutGuide type="bottom" id="ymv-bI-fiA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="omT-y5-uec">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCV-xR-xtc">
+                                <rect key="frame" x="8" y="10" width="304" height="460"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <string key="text">COPYRIGHT:
+All text and images on First Eat Mobile Application remains copyright of F.E. Food Tech Pvt. Limited. 
+Usage of any of this material is prohibited, unless authorized by the copyright holder. 
+
+TERMS &amp; CONDITIONS:
+By making a purchase with us on this Mobile Application, you are agreeing to the following terms and conditions. 
+
+Privacy
+We only store necessary user information required to make a purchase.
+We do not sell or lease any of your personal information. All user information left with First Eat mobile application is entirely confidential.
+
+Prices
+All of our prices are exclusive of taxes.
+We reserve the rights to change the price of any product without prior information
+
+Refund Policy
+First Eat is committed to ensure quality of our products that you have ordered from us. Should there be any issue and your are not satisfied we will replace as per your wish.
+
+PRIVACY POLICY:
+This is for reasons of fraud protection. Fraudulent orders will be submitted to the appropriate authorities.
+F.E Food Tech Pvt. Limited collects personally identifiable information that you may voluntarily provide on online forms, which may include: user registration, contact requests. The personally identifiable information (Personal Information) collected on this mobile app can include some or all of the following: your name, address, telephone number, email addresses, demographic information, and any other information you may voluntarily provide.
+
+DISCLAIMER:
+It is your own responsibility to ensure that you are fully aware of all of these terms and conditions when making a purchase on First eat Mobile App.
+F.E Food Tech Pvt. Limited reserves the right to change / modify these terms &amp; conditions at their own discretion anytime.
+The images shown are only indicative in nature &amp; the actual product may vary in size, color etc.
+F.E. Food Tech Private Limited reserves the right to change any part or piece of information on First Eat Mobile Application without any notice to customers or visitors.</string>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.80392156859999997" green="0.027450980390000001" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="TCV-xR-xtc" firstAttribute="top" secondItem="omT-y5-uec" secondAttribute="topMargin" constant="10" id="6ce-82-4gq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TCV-xR-xtc" secondAttribute="trailing" constant="8" id="RBM-tv-lPJ"/>
+                            <constraint firstItem="TCV-xR-xtc" firstAttribute="leading" secondItem="omT-y5-uec" secondAttribute="leading" constant="8" id="VjV-hS-p8G"/>
+                            <constraint firstItem="TCV-xR-xtc" firstAttribute="leading" secondItem="omT-y5-uec" secondAttribute="leadingMargin" constant="8" id="Zer-cn-2US"/>
+                            <constraint firstAttribute="trailing" secondItem="TCV-xR-xtc" secondAttribute="trailing" constant="8" id="dtY-fQ-LTL"/>
+                            <constraint firstItem="ymv-bI-fiA" firstAttribute="top" secondItem="TCV-xR-xtc" secondAttribute="bottom" constant="10" id="u9E-Zl-Ozq"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="RBM-tv-lPJ"/>
+                                <exclude reference="Zer-cn-2US"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="loC-fz-YG9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2235" y="-330"/>
         </scene>
     </scenes>
     <resources>

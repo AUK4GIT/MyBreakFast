@@ -71,12 +71,14 @@ class RegistrationVC: UIViewController {
             self.userObj?.emailId = self.emailField.text;
             self.userObj?.phoneNumber = self.phonenumberField.text;
             self.userObj?.address = Helper.sharedInstance.userLocation;
-            
+            var referralText = "";
             if self.referralField.text?.characters.count == 0{
-                self.referralField.text = "";
+                referralText = "null";
+            } else {
+                referralText = self.referralField.text!
             }
             
-            Helper.sharedInstance.doUserRegistration(self.userObj!,password: self.newPasswordField.text!, referralId: self.referralField.text!, completionHandler: { (response) -> () in
+            Helper.sharedInstance.doUserRegistration(self.userObj!,password: self.newPasswordField.text!, referralId: referralText, completionHandler: { (response) -> () in
                 let responseStatus = (response as? String) ?? ""
                 if responseStatus == "ERROR" {
                     UIAlertView(title: "Registration Unsuccessful!", message: "Please try again.", delegate: nil, cancelButtonTitle: "OK").show()

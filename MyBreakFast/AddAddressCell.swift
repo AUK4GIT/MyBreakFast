@@ -42,7 +42,7 @@ class AddAddressCell: UICollectionViewCell {
     }
     
     @IBAction func showLocationPicker(sender: UIButton) {
-        sender.sendAction("showLocationPicker:", to: nil, forEvent: nil)
+//        sender.sendAction("showLocationPicker:", to: nil, forEvent: nil)
     }
     
     @IBAction func addorChangeAddress(sender: UIButton) {

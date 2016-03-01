@@ -128,8 +128,6 @@
 			</dict>
 		</dict>
 	</dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>To check if your area is under delivery coverage</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

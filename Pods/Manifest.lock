@@ -44,7 +44,6 @@ PODS:
   - GoogleIPhoneUtilities (1.1.1):
     - GoogleSymbolUtilities (~> 1.0)
     - GoogleUtilities (~> 1.0)
-  - GoogleMaps (1.10.5)
   - GoogleNetworkingUtilities (1.0.0):
     - GoogleSymbolUtilities (~> 1.0)
   - GoogleSymbolUtilities (1.0.3)
@@ -61,7 +60,6 @@ DEPENDENCIES:
   - FBSDKLoginKit
   - FBSDKShareKit
   - Google/CloudMessaging
-  - GoogleMaps
   - Reachability (from `https://github.com/tonymillion/Reachability`)
   - SDWebImage (~> 3.7)
   - TIPBadgeManager (~> 0.2.1)
@@ -86,7 +84,6 @@ SPEC CHECKSUMS:
   GoogleCloudMessaging: faa057e30845e7300da31de3777060420b2f6579
   GoogleInterchangeUtilities: d7f7174176fbcf9710f696f1acebad4dbd98ac03
   GoogleIPhoneUtilities: 3252d20d075b902e37a08036dcc9f74828cf5595
-  GoogleMaps: da51c62c338c2d9c47cdad470a0d1e0e4b8544e4
   GoogleNetworkingUtilities: 292992ab31b7b4ba32809a0e8b40e324cdfb2c0c
   GoogleSymbolUtilities: 82ad9f93d3615244b3f4ce440f5ab2515e8b4f56
   GoogleUtilities: 8ed9134debe11719097881711464752900668f10

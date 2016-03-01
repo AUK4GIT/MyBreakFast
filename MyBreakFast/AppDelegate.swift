@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GCMReceiverDelegate {
@@ -25,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
     var connectedToGCM = false
     var subscribedToTopic = false
     
-    let locationManager: CLLocationManager = CLLocationManager()
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -49,9 +47,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         GGLContext.sharedInstance().configureWithError(&configureError)
         assert(configureError == nil, "Error configuring Google services: \(configureError)")
         self.gcmSenderID = GGLContext.sharedInstance().configuration.gcmSenderID
-        
-        GMSServices.provideAPIKey("AIzaSyAPh4llvFdSdesO88eBfeD1z2BJZ6VE2hw")
-        self.locationManager.requestWhenInUseAuthorization()
         
         self.window?.backgroundColor = UIColor.blackColor()
         

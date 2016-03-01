@@ -84,7 +84,9 @@ class SideMenuContentVC: UIViewController, UITableViewDataSource, UITableViewDel
         case 5:
             self.delegate?.selectedViewController((self.storyboard?.instantiateViewControllerWithIdentifier("ReferralVC"))!)
             break;
-    
+        case 6:
+            self.delegate?.selectedViewController((self.storyboard?.instantiateViewControllerWithIdentifier("TermsVC"))!)
+            break;
         default:
             break;
         }

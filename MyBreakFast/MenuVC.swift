@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import SDWebImage
-import GoogleMaps
 import TIPBadgeManager
 
 
@@ -26,14 +25,12 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     let dateFormatter = NSDateFormatter()
     @IBOutlet weak var topToolbar: UIToolbar!
     var cartButtonIcon: UIButton?
-    var placesClient: GMSPlacesClient?
     var itemQuantities = 0;
     var menuDate = NSDate();
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        self.fetchCurrentLocation();
         self.fetchAddressess();
         
         Helper.sharedInstance.userLocation = nil;
@@ -81,8 +78,12 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         
         if let locId = Helper.sharedInstance.getDataFromUserDefaults(forKey: Constants.UserdefaultConstants.LastSelectedLocationId) {
             let locations = Helper.sharedInstance.getLocationsForLocationId(locId as! String);
-            let locationObj = locations[0] as? Locations
-            Helper.sharedInstance.userLocation = locationObj?.locationName;
+            if locations.count > 0 {
+                let locationObj = locations[0] as? Locations
+                Helper.sharedInstance.userLocation = locationObj?.locationName;
+            } else {
+                self.performSelector("showDeliveryLocationPopUp", withObject: nil, afterDelay: 1.0);
+            }
         } else {
             self.performSelector("showDeliveryLocationPopUp", withObject: nil, afterDelay: 1.0);
         }
@@ -136,95 +137,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     
     }
     
-    func fetchCurrentLocation() {
-        
-            self.placesClient = GMSPlacesClient()
-            self.placesClient!.currentPlaceWithCallback({ (placeLikelihoods: GMSPlaceLikelihoodList?, error) -> Void in
-                if error != nil {
-                    print("Current Place error: \(error!.localizedDescription)")
-                    
-                    UIAlertView(title: "First Eat", message: "Could not fetch your current location. Please choose a nearby location from the search.", delegate: nil, cancelButtonTitle: "OK").show()
-                    
-                    return
-                }
-//                var from : CLLocation?
-//                var to : CLLocation?
-                var placeName = "";
-                var origin = "";
-                if placeLikelihoods!.likelihoods.count > 0 {
-                    let likelihood = placeLikelihoods!.likelihoods[0] as? GMSPlaceLikelihood
-                        let place = likelihood!.place
-                        placeName = place.name;
-                        print("Current Place name \(place.name) at likelihood \(likelihood!.likelihood)")
-                        print("Current Place address \(place.formattedAddress)")
-                        print("Current Place attributions \(place.attributions)")
-                        print("Current PlaceID \(place.placeID)")
-                        print("Current Coordinates \(place.coordinate)")
-//                        from = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
-                    let lat = place.coordinate.latitude as NSNumber
-                    let long = place.coordinate.longitude as NSNumber
-                        origin = (lat.stringValue)+","+(long.stringValue)
-                }
-                
-                
-                if let kitchens = Helper.sharedInstance.fetchKitchens() {
-                    var destinations: String = ""
-                    var radius = "0";
-                    for (index, kitchen) in (kitchens.enumerate()) {
-                        let kObj = kitchen;
-                        if index == 0 {
-                            destinations = (kObj.latitude)!+","+(kObj.longitude)!
-                        } else {
-                            destinations = destinations+"|"+(kObj.latitude)!+","+(kObj.longitude)!
-                        }
-                        radius = kitchen.radius!
-                    }
-                    
-                    Helper.sharedInstance.fetchKitchenDistance(origin, destinations: destinations, completionHandler: { (response) -> () in
-                        print(response);
-                        if let responseDict = response as? NSDictionary{
-                            if let rows = responseDict.objectForKey("rows") as? NSArray{
-                                let elementsDict = rows[0] as? NSDictionary
-                                if let elements = elementsDict!.objectForKey("elements") as? NSArray{
-                                    let element = elements[0] as! NSDictionary
-                                    let distanceDict = element.objectForKey("distance") as? NSDictionary
-                                    if let distanceVal = distanceDict?.objectForKey("value") as? Double {
-                                    let distance = floor(distanceVal/1000)
-                                    if distance > Double(radius){
-                                        UIAlertView(title: "First Eat", message: "Your current location is out of our service area. Please select your delivery area from the list.", delegate: nil, cancelButtonTitle: "OK").show()
-                                    } else {
-                                        if let addr = responseDict.objectForKey("origin_addresses") as? NSArray{
-                                            if placeName == "" {
-                                                placeName = (addr[0] as? String)!;
-                                            }
-                                            Helper.sharedInstance.userLocation = placeName;
 
-                                        self.searchButton.setTitle(Helper.sharedInstance.userLocation, forState: UIControlState.Normal)
-                                        }
-
-                                    }
-                                    } else {
-                                        UIAlertView(title: "First Eat", message: "Your current location is out of our service area. Please select your delivery area from the list.", delegate: nil, cancelButtonTitle: "OK").show()
-                                    }
-                                } else {
-                                    
-                                }
-                                
-                            } else {
-                            
-                            }
-                        } else {
-                            UIAlertView(title: "First Eat", message: "Could not fetch your current location. Please choose a nearby location from the search.", delegate: nil, cancelButtonTitle: "OK").show()
-
-                        }
-                    })
-                    
-                } else {
-                    UIAlertView(title: "First Eat", message: "Could not fetch your current location. Please choose a nearby location from the search.", delegate: nil, cancelButtonTitle: "OK").show()
-
-                }
-            })
-    }
     
     @IBAction func proceedtoConfirmOrder(sender: AnyObject) {
         
@@ -279,12 +192,16 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     
     func showDeliveryLocationPopUp() {
 
+        let imageView = UIImageView(frame: CGRectMake(85, 22, 12, 16))
+        imageView.image = UIImage(named: "location.png");
+        
         let alertController = UIAlertController(title: "First Eat", message: "Please search a delivery location", preferredStyle: .Alert)
         let searchAction = UIAlertAction(title: "OK", style: .Default) { (_) in
             self.showLocationPicker(nil);
         }
-        
         alertController.addAction(searchAction)
+        alertController.view.addSubview(imageView)
+
         self.presentViewController(alertController, animated: true) {
             alertController.view.tintColor = Constants.StaticContent.AppThemeColor;
 
@@ -325,13 +242,27 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     }
     
 
-    func didPickLocation(location: AnyObject) {
-        let locationObj = location as? Locations
-        print(locationObj?.locationId, locationObj?.locationName);
-        self.searchButton.setTitle(locationObj!.locationName, forState: .Normal)
-        Helper.sharedInstance.userLocation = locationObj!.locationName;
-        Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.LastSelectedLocationId, value: locationObj!.locationId!)
-        self.didSelectDate(self.menuDate)
+    func didPickLocation(location: AnyObject?) {
+        if let locationObj = location as? Locations {
+            print(locationObj.locationId, locationObj.locationName);
+            self.searchButton.setTitle(locationObj.locationName, forState: .Normal)
+            Helper.sharedInstance.userLocation = locationObj.locationName;
+            Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.LastSelectedLocationId, value: locationObj.locationId!)
+            self.didSelectDate(self.menuDate)
+        } else {
+            if let locId = Helper.sharedInstance.getDataFromUserDefaults(forKey: Constants.UserdefaultConstants.LastSelectedLocationId) {
+                let locations = Helper.sharedInstance.getLocationsForLocationId(locId as! String);
+                if locations.count > 0 {
+                    let locationObj = locations[0] as? Locations
+                    Helper.sharedInstance.userLocation = locationObj?.locationName;
+                    self.searchButton.setTitle(locationObj?.locationName, forState: .Normal)
+                } else {
+                    self.searchButton.setTitle("Search for locations", forState: .Normal)
+                }
+            } else {
+                self.searchButton.setTitle("Search for locations", forState: .Normal)
+            }
+        }
     }
 
     
@@ -378,7 +309,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         self.searchButton = UIButton(type: UIButtonType.Custom)
         searchButton.frame = CGRectMake(offset, 6, width, height);
         searchButton.setBackgroundImage(UIImage(named: "searchbg.png"), forState: UIControlState.Normal)
-        searchButton.setTitle("Searching for locations", forState: UIControlState.Normal)
+        searchButton.setTitle("Search for locations", forState: UIControlState.Normal)
         searchButton.titleEdgeInsets = UIEdgeInsetsMake(0, 20, 0, 20);
         searchButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         searchButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 14.0);

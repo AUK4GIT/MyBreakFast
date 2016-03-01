@@ -15,6 +15,7 @@
 		ED3E37F41BEF5FE400BB5F91 /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED3E37F31BEF5FE400BB5F91 /* SideMenuCell.xib */; };
 		ED3E37F61BEF626600BB5F91 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E37F51BEF626600BB5F91 /* SideMenuCell.swift */; };
 		ED441C601C1879A700ED45E6 /* AppSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED441C5F1C1879A700ED45E6 /* AppSignInVC.swift */; };
+		ED584CC01C842D8000BDCC5C /* TermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED584CBF1C842D8000BDCC5C /* TermsVC.swift */; };
 		ED58D6181C3A01D700741E8D /* TotalBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED58D6171C3A01D700741E8D /* TotalBill.swift */; };
 		ED58D61A1C3A020A00741E8D /* RedeemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED58D6191C3A020A00741E8D /* RedeemCell.swift */; };
 		ED58D61C1C3A022700741E8D /* CouponCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED58D61B1C3A022700741E8D /* CouponCodeCell.swift */; };
@@ -111,6 +112,7 @@
 		ED3E37F31BEF5FE400BB5F91 /* SideMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuCell.xib; sourceTree = "<group>"; };
 		ED3E37F51BEF626600BB5F91 /* SideMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		ED441C5F1C1879A700ED45E6 /* AppSignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSignInVC.swift; sourceTree = "<group>"; };
+		ED584CBF1C842D8000BDCC5C /* TermsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsVC.swift; sourceTree = "<group>"; };
 		ED58D6171C3A01D700741E8D /* TotalBill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalBill.swift; sourceTree = "<group>"; };
 		ED58D6191C3A020A00741E8D /* RedeemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedeemCell.swift; sourceTree = "<group>"; };
 		ED58D61B1C3A022700741E8D /* CouponCodeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponCodeCell.swift; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 				EDA7CCF31C4BA10100A40AEE /* AddAddressVC.swift */,
 				EDA7CCF51C4BBD2900A40AEE /* AddressCell.swift */,
 				EDA7CCF71C4C0CD000A40AEE /* AddAddressCell.swift */,
+				ED584CBF1C842D8000BDCC5C /* TermsVC.swift */,
 			);
 			path = MyBreakFast;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				EDCC2AE91C34D0C200C15C3B /* ProductsCell.swift in Sources */,
 				ED58D62A1C3D654200741E8D /* FloatRatingView.swift in Sources */,
 				EDBA06BF1C021B9F00BE09B3 /* Yourdetails.swift in Sources */,
+				ED584CC01C842D8000BDCC5C /* TermsVC.swift in Sources */,
 				EDE5E03D1C4FEB690044E819 /* Kitchens.swift in Sources */,
 				ED5B21821BF76D3400C65857 /* TimeSlots.swift in Sources */,
 				EDA7CCF41C4BA10100A40AEE /* AddAddressVC.swift in Sources */,
