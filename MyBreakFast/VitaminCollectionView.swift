@@ -64,12 +64,9 @@ class VitaminCollectionView: UICollectionView, UICollectionViewDataSource, UICol
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: VitaminCell = (collectionView.dequeueReusableCellWithReuseIdentifier("VitaminCell", forIndexPath: indexPath) as? VitaminCell)!
-//        cell.circleView.layer.cornerRadius = 24.0;
-//        cell.circleView.layer.borderWidth = 1.0;
-//        cell.circleView.layer.borderColor = UIColor(red: 255.0/255.0, green: 0, blue: 0, alpha: 1.0).CGColor;
         let key: String = (self.keysarray![indexPath.row] as? String)!
         cell.label.text = key;
-        let vitamin = self.dict?.valueForKey(key) as! String
+        let vitamin = self.dict?.valueForKey(key) as? String ?? "0"
         cell.calValue.text = vitamin + " g"
 
         if key == "calories"{

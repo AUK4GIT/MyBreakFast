@@ -189,6 +189,9 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FELogo_Small" translatesAutoresizingMaskIntoConstraints="NO" id="3ku-wk-H2m">
+                                <rect key="frame" x="20" y="534" width="410" height="66"/>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yhh-Jw-zdP">
                                 <rect key="frame" x="0.0" y="140" width="450" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -210,14 +213,19 @@
                             <constraint firstItem="yhh-Jw-zdP" firstAttribute="leading" secondItem="4hm-Fx-iLB" secondAttribute="leading" id="D03-mc-OWD"/>
                             <constraint firstItem="5a5-mB-Wya" firstAttribute="leading" secondItem="4hm-Fx-iLB" secondAttribute="leading" id="J8E-Dj-qDw"/>
                             <constraint firstAttribute="trailing" secondItem="5a5-mB-Wya" secondAttribute="trailing" id="R4M-yy-dX7"/>
+                            <constraint firstItem="3ku-wk-H2m" firstAttribute="leading" secondItem="4hm-Fx-iLB" secondAttribute="leading" constant="20" id="RRs-rv-SfH"/>
+                            <constraint firstItem="3ku-wk-H2m" firstAttribute="top" relation="greaterThanOrEqual" secondItem="5a5-mB-Wya" secondAttribute="bottom" constant="380" id="TQA-Um-Wgz"/>
                             <constraint firstItem="yhh-Jw-zdP" firstAttribute="top" secondItem="D8z-cj-CsV" secondAttribute="bottom" id="ZnV-QM-xGg"/>
                             <constraint firstItem="5a5-mB-Wya" firstAttribute="top" secondItem="4hm-Fx-iLB" secondAttribute="topMargin" id="j8w-m4-By8"/>
+                            <constraint firstAttribute="trailing" secondItem="3ku-wk-H2m" secondAttribute="trailing" constant="20" id="lbk-Jc-H8V"/>
                             <constraint firstItem="2KT-1w-fvd" firstAttribute="top" secondItem="yhh-Jw-zdP" secondAttribute="bottom" id="mVV-f8-yDl"/>
                             <constraint firstItem="5a5-mB-Wya" firstAttribute="top" secondItem="D8z-cj-CsV" secondAttribute="bottom" id="r7W-Mi-8ob"/>
                             <constraint firstAttribute="trailing" secondItem="yhh-Jw-zdP" secondAttribute="trailing" id="rg4-3z-9w7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yhh-Jw-zdP" secondAttribute="trailing" id="tpY-MP-jRV"/>
+                            <constraint firstItem="2KT-1w-fvd" firstAttribute="top" secondItem="3ku-wk-H2m" secondAttribute="bottom" id="u9I-FC-qR5"/>
                             <constraint firstItem="yhh-Jw-zdP" firstAttribute="top" secondItem="D8z-cj-CsV" secondAttribute="bottom" id="xAV-ax-s2f"/>
                             <constraint firstItem="yhh-Jw-zdP" firstAttribute="leading" secondItem="4hm-Fx-iLB" secondAttribute="leadingMargin" id="xVi-7J-yE6"/>
+                            <constraint firstItem="3ku-wk-H2m" firstAttribute="centerX" secondItem="4hm-Fx-iLB" secondAttribute="centerX" id="ysS-tA-haa"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">

@@ -195,7 +195,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         let imageView = UIImageView(frame: CGRectMake(85, 22, 12, 16))
         imageView.image = UIImage(named: "location.png");
         
-        let alertController = UIAlertController(title: "First Eat", message: "Please search a delivery location", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "First Eat", message: "Please select a delivery location", preferredStyle: .Alert)
         let searchAction = UIAlertAction(title: "OK", style: .Default) { (_) in
             self.showLocationPicker(nil);
         }
