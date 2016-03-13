@@ -10,7 +10,7 @@ import Foundation
 
 class TimeSlotCell: UICollectionViewCell {
     
-    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet  var timeLabel: UILabel!
     var currentTime = NSDate()
     override func awakeFromNib() {
         super.awakeFromNib()

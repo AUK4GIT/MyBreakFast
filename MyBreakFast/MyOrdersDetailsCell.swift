@@ -9,10 +9,10 @@
 import Foundation
 
 class MyOrdersDetailsCell: UITableViewCell {
-    @IBOutlet weak var customtextLabel: UILabel!
+    @IBOutlet  var customtextLabel: UILabel!
     
-    @IBOutlet weak var amountLabel: UILabel!
-    @IBOutlet weak var customdetailTextLabel: UILabel!
+    @IBOutlet  var amountLabel: UILabel!
+    @IBOutlet  var customdetailTextLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -12,21 +12,24 @@ import SDWebImage
 import TIPBadgeManager
 
 
-class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, DatePickerVCDelegate, LocationPickerVCDelegate, UIAlertViewDelegate, LocationPickerDelegate {
+class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, DatePickerVCDelegate, LocationPickerVCDelegate, UIAlertViewDelegate, LocationPickerDelegate, AKPickerViewDataSource, AKPickerViewDelegate {
     @IBOutlet var collectionView: UICollectionView!
-    
-    @IBOutlet weak var dateTableView: UITableView!
+    @IBOutlet var pickerView: AKPickerView!
+    @IBOutlet  var dateTableView: UITableView!
     var datesArray: [NSDate] = []
-    @IBOutlet weak var numberOfItemsLabel: UILabel!
+    @IBOutlet  var numberOfItemsLabel: UILabel!
     
-    @IBOutlet weak var dateLabel: UIBarButtonItem!
+    @IBOutlet  var dateLabel: UIBarButtonItem!
      var searchButton: UIButton!
     var itemsArray : [AnyObject] = [];
+    var tempItemsArray : [AnyObject] = [];
     let dateFormatter = NSDateFormatter()
-    @IBOutlet weak var topToolbar: UIToolbar!
+    @IBOutlet  var topToolbar: UIToolbar!
     var cartButtonIcon: UIButton?
     var itemQuantities = 0;
     var menuDate = NSDate();
+    let titles = ["All", "Veg", "Egg", "NonVeg"];
+
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -53,6 +56,18 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
 //        let nextDate: NSDate = theCalendar.dateByAddingComponents(dayComponent, toDate: NSDate(), options: .MatchFirst)!
 //        
 
+        self.pickerView.delegate = self
+        self.pickerView.dataSource = self
+        
+        self.pickerView.font = UIFont(name: "HelveticaNeue-Light", size: 14)!
+//        self.pickerView.highlightedFont = UIFont(name: "HelveticaNeue-bold", size: 16)!
+        self.pickerView.highlightedFont = UIFont(name: "HelveticaNeue-Light", size: 14)!
+
+        self.pickerView.interitemSpacing = 30.0
+        self.pickerView.viewDepth = 700.0
+        self.pickerView.pickerViewStyle = .Wheel
+        self.pickerView.maskDisabled = false
+        self.pickerView.reloadData()
         
         self.datesArray.append(NSDate().dateByAddingTimeInterval(60*60*24))
 
@@ -93,6 +108,70 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         super.viewWillLayoutSubviews()
         self.collectionView.collectionViewLayout.invalidateLayout()
     }
+    
+    // MARK: - AKPickerViewDataSource
+    
+    func numberOfItemsInPickerView(pickerView: AKPickerView) -> Int {
+        return self.titles.count
+    }
+    
+    /*
+    
+    Image Support
+    -------------
+    Please comment '-pickerView:titleForItem:' entirely and
+    uncomment '-pickerView:imageForItem:' to see how it works.
+    
+    */
+    func pickerView(pickerView: AKPickerView, titleForItem item: Int) -> String {
+        return self.titles[item]
+    }
+    
+    func pickerView(pickerView: AKPickerView, imageForItem item: Int) -> UIImage {
+        return UIImage(named: self.titles[item])!
+    }
+    
+    // MARK: - AKPickerViewDelegate
+    
+    func pickerView(pickerView: AKPickerView, didSelectItem item: Int) {
+        print("Your favorite city is \(self.titles[item])")
+        var category: String = "";
+        switch item {
+        case 0:
+            category = "";
+            self.itemsArray = self.tempItemsArray;
+            self.collectionView.reloadData();
+        break;
+        case 1:
+            category = "0";
+            self.itemsArray = self.tempItemsArray.filter(){
+                return ($0.category == category);
+            };
+            self.collectionView.reloadData();
+        break;
+        case 2:
+        category = "1";
+        self.itemsArray = self.tempItemsArray.filter(){
+            return ($0.category == category);
+        };
+        self.collectionView.reloadData();
+        break;
+        case 3:
+            category = "2";
+            self.itemsArray = self.tempItemsArray.filter(){
+                return ($0.category == category);
+            };
+            self.collectionView.reloadData();
+        
+        break;
+        default:
+            category = "";
+            self.itemsArray = self.tempItemsArray;
+            self.collectionView.reloadData();
+        break;
+        }
+    }
+
     
     func fetchMenuData(){
         Helper.sharedInstance.isOrderForTomorrow = false;
@@ -220,6 +299,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
             for _ in 0...maxCount {
                 Helper.sharedInstance.order?.orders.append(OrderItem());
                 }
+            self.tempItemsArray = self.itemsArray;
             self.collectionView.reloadData()
         })
     }

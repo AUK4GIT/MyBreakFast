@@ -9,7 +9,7 @@
 import Foundation
 
 class TotalBill: UICollectionViewCell {
-    @IBOutlet weak var billLabel: UILabel!
+    @IBOutlet  var billLabel: UILabel!
  
     override func awakeFromNib() {
         super.awakeFromNib()

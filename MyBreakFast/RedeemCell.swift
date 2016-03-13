@@ -10,7 +10,7 @@ import Foundation
 
 class RedeemCell: UICollectionViewCell {
     
-    @IBOutlet weak var redeemLabel: UILabel!
+    @IBOutlet  var redeemLabel: UILabel!
     var activity: UIActivityIndicatorView?
     var redeemPoints = "0";
 

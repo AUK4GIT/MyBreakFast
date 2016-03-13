@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		42F4FE3801F1438966FD070F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6E7E1A1C9BAD8E663A54F6 /* Pods.framework */; };
+		ED0432EB1C8F326800B6B6F2 /* AKPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0432EA1C8F326800B6B6F2 /* AKPickerView.swift */; };
 		ED0B85041C3E29740082AFF4 /* OfferNotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0B85031C3E29740082AFF4 /* OfferNotificationsVC.swift */; };
 		ED1A6F241BE27F6700F1B911 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A6F231BE27F6700F1B911 /* MenuItemCell.swift */; };
 		ED1A6F281BE281C200F1B911 /* MenuItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1A6F271BE281C200F1B911 /* MenuItemCell.xib */; };
@@ -105,6 +106,7 @@
 		A83BCDDAA0B52B48CF8F04BD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C02CB2CC5C006A15257050EC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DC6E7E1A1C9BAD8E663A54F6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED0432EA1C8F326800B6B6F2 /* AKPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AKPickerView.swift; path = AKPickerView/AKPickerView.swift; sourceTree = "<group>"; };
 		ED0B85031C3E29740082AFF4 /* OfferNotificationsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferNotificationsVC.swift; sourceTree = "<group>"; };
 		ED1A6F231BE27F6700F1B911 /* MenuItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		ED1A6F271BE281C200F1B911 /* MenuItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuItemCell.xib; sourceTree = "<group>"; };
@@ -226,6 +228,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		ED0432E91C8F322C00B6B6F2 /* AKPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				ED0432EA1C8F326800B6B6F2 /* AKPickerView.swift */,
+			);
+			name = AKPickerView;
+			sourceTree = "<group>";
+		};
 		ED5B216B1BF612A300C65857 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +285,7 @@
 		ED722B151BE09A33003DC9F2 /* MyBreakFast */ = {
 			isa = PBXGroup;
 			children = (
+				ED0432E91C8F322C00B6B6F2 /* AKPickerView */,
 				EDC572221C7AD08F0018F11C /* CustomModalVC */,
 				ED996EA81C2C63E70017284A /* Main.storyboard */,
 				ED5B216B1BF612A300C65857 /* Models */,
@@ -581,6 +592,7 @@
 				ED58D62A1C3D654200741E8D /* FloatRatingView.swift in Sources */,
 				EDBA06BF1C021B9F00BE09B3 /* Yourdetails.swift in Sources */,
 				ED584CC01C842D8000BDCC5C /* TermsVC.swift in Sources */,
+				ED0432EB1C8F326800B6B6F2 /* AKPickerView.swift in Sources */,
 				EDE5E03D1C4FEB690044E819 /* Kitchens.swift in Sources */,
 				ED5B21821BF76D3400C65857 /* TimeSlots.swift in Sources */,
 				EDA7CCF41C4BA10100A40AEE /* AddAddressVC.swift in Sources */,
@@ -738,7 +750,7 @@
 					"\"${PODS_ROOT}/Headers/Public/GoogleUtilities\"",
 				);
 				INFOPLIST_FILE = MyBreakFast/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.firsteat.firsteat;
@@ -780,7 +792,7 @@
 					"\"${PODS_ROOT}/Headers/Public/GoogleUtilities\"",
 				);
 				INFOPLIST_FILE = MyBreakFast/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.firsteat.firsteat;

@@ -13,7 +13,7 @@ class MyOrderCell: UITableViewCell {
     @IBOutlet var deliveryStatus: UILabel!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var totalLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet  var timeLabel: UILabel!
+    @IBOutlet  var addressLabel: UILabel!
     
 }

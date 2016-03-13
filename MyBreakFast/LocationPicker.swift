@@ -14,7 +14,7 @@ import QuartzCore
 }
 class LocationPicker: CustomModalViewController {
     
-    @IBOutlet weak var searchField: UITextField!
+    @IBOutlet  var searchField: UITextField!
     @IBOutlet var horizantalCenterConstraint: NSLayoutConstraint!
     @IBOutlet var tableView: UITableView!
     var locationsArray: [AnyObject]?

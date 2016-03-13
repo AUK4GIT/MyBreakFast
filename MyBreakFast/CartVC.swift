@@ -12,7 +12,7 @@ import UIKit
 class CartVC: UIViewController {
     
     
-    @IBOutlet weak var payableAmountLabel: UILabel!
+    @IBOutlet  var payableAmountLabel: UILabel!
     @IBOutlet var toolbar: UIToolbar!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var collectionViewLayout: UICollectionViewFlowLayout!

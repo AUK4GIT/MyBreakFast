@@ -23,9 +23,9 @@ class MenuItemCell: UICollectionViewCell {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var cellDescriptionView: UIView!
-    @IBOutlet weak var vitaminQuantity: VitaminCollectionView!
-    @IBOutlet weak var productDescription: UILabel!
-    @IBOutlet weak var bestsuitedfor: UILabel!
+    @IBOutlet  var vitaminQuantity: VitaminCollectionView!
+    @IBOutlet  var productDescription: UILabel!
+    @IBOutlet  var bestsuitedfor: UILabel!
     weak var orderItem : OrderItem?
     var quantity = 0;
     var item: Item?

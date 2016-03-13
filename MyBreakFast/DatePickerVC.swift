@@ -16,8 +16,8 @@ import Foundation
 
 class DatePickerVC: UIViewController {
     
-    @IBOutlet weak var maskView: UIView!
-//    @IBOutlet weak var datePicker: PIDatePicker!
+    @IBOutlet  var maskView: UIView!
+//    @IBOutlet  var datePicker: PIDatePicker!
     
     weak var delegate: DatePickerVCDelegate?
     

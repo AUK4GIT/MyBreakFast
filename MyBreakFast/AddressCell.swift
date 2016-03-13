@@ -10,9 +10,9 @@ import Foundation
 
 class AddressCell: UICollectionViewCell {
     
-    @IBOutlet weak var secondLine: UITextField!
-    @IBOutlet weak var firstLine: UILabel!
-    @IBOutlet weak var locationButton: UIButton!
+    @IBOutlet  var secondLine: UITextField!
+    @IBOutlet  var firstLine: UILabel!
+    @IBOutlet  var locationButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

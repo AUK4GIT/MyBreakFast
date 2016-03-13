@@ -12,10 +12,10 @@ import FBSDKShareKit
 
 class ReferralVC: UIViewController {
     
-    @IBOutlet weak var redeemPoints: UILabel!
+    @IBOutlet  var redeemPoints: UILabel!
     
-    @IBOutlet weak var expiryDate: UILabel!
-    @IBOutlet weak var referralCode: UILabel!
+    @IBOutlet  var expiryDate: UILabel!
+    @IBOutlet  var referralCode: UILabel!
     var referCode : String?
     
     override func beginAppearanceTransition(isAppearing: Bool, animated: Bool) {

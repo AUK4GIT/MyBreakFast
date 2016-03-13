@@ -10,17 +10,17 @@ import Foundation
 
 class RegistrationVC: UIViewController {
     
-    @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var usernameField: UITextField!
-    @IBOutlet weak var newPasswordField: UITextField!
-    @IBOutlet weak var confirmPasswordField: UITextField!
-    @IBOutlet weak var phonenumberField: UITextField!
-    @IBOutlet weak var referralField: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    @IBOutlet  var emailField: UITextField!
+    @IBOutlet  var usernameField: UITextField!
+    @IBOutlet  var newPasswordField: UITextField!
+    @IBOutlet  var confirmPasswordField: UITextField!
+    @IBOutlet  var phonenumberField: UITextField!
+    @IBOutlet  var referralField: UITextField!
+    @IBOutlet  var loginButton: UIButton!
+    @IBOutlet  var topConstraint: NSLayoutConstraint!
     var userObj: UserDetails?
     var isEditing: Bool?
-    @IBOutlet weak var nopasswordConstraint: NSLayoutConstraint!
+    @IBOutlet  var nopasswordConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()

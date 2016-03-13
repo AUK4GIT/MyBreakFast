@@ -16,8 +16,8 @@ protocol Slidemenuprotocol: class  {
 
 class SideMenuContentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet weak var locationName: UILabel!
-    @IBOutlet weak var userName: UILabel!
+    @IBOutlet  var locationName: UILabel!
+    @IBOutlet  var userName: UILabel!
 //    let gradient: CAGradientLayer = CAGradientLayer()
     var contentArray: [String] = Constants.StaticContent.SideMenuList;
     weak var delegate: Slidemenuprotocol?

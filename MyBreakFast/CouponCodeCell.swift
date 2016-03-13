@@ -10,7 +10,7 @@ import Foundation
 
 class CouponCodeCell: UICollectionViewCell {
     
-    @IBOutlet weak var couponTextField: UITextField!
+    @IBOutlet  var couponTextField: UITextField!
     @IBAction func couponAction(sender: AnyObject) {
         self.couponTextField.resignFirstResponder()
         

@@ -9,7 +9,7 @@
 import Foundation
 class OffersCell: UITableViewCell {
     
-    @IBOutlet weak var offerPrice: UILabel!
-    @IBOutlet weak var offerNameLbl: UILabel!
-    @IBOutlet weak var checkmarkImg: UIImageView!
+    @IBOutlet  var offerPrice: UILabel!
+    @IBOutlet  var offerNameLbl: UILabel!
+    @IBOutlet  var checkmarkImg: UIImageView!
 }

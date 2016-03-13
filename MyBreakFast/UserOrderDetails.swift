@@ -11,7 +11,7 @@ import UIKit
 
 class UserOrderDetails: UIViewController {
     
-    @IBOutlet weak var totalBillLabel: UIBarButtonItem!
+    @IBOutlet  var totalBillLabel: UIBarButtonItem!
     @IBOutlet var toolbar: UIToolbar!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var collectionViewLayout: UICollectionViewFlowLayout!
@@ -19,10 +19,10 @@ class UserOrderDetails: UIViewController {
     var itemsArray : [AnyObject] = [];
     var offeroftheday: Offer?
 
-    @IBOutlet weak var offerofthedayView: UIView!
-    @IBOutlet weak var todaysOfferButton: UIButton!
-    @IBOutlet weak var todaysOfferAmountLabel: UILabel!
-    @IBOutlet weak var todaysOfferLabel: UILabel!
+    @IBOutlet  var offerofthedayView: UIView!
+    @IBOutlet  var todaysOfferButton: UIButton!
+    @IBOutlet  var todaysOfferAmountLabel: UILabel!
+    @IBOutlet  var todaysOfferLabel: UILabel!
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)

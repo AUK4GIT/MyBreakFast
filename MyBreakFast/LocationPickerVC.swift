@@ -14,8 +14,8 @@ import Foundation
 
 class LocationPickerVC: CustomModalViewController {
     
-    @IBOutlet weak var maskView: UIView!
-    @IBOutlet weak var locationPicker: UIPickerView!
+    @IBOutlet  var maskView: UIView!
+    @IBOutlet  var locationPicker: UIPickerView!
     weak var delegate: LocationPickerVCDelegate?
     var locationsArray: [AnyObject]?
 

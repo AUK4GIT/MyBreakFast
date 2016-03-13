@@ -10,21 +10,21 @@ import Foundation
 
 class MyOrderDetailsVC: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet  var tableView: UITableView!
     
-    @IBOutlet weak var addrineOne: UILabel!
-    @IBOutlet weak var addrineTwo: UILabel!
-    @IBOutlet weak var addrineThree: UILabel!
-    @IBOutlet weak var status: UILabel!
-    @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var time: UILabel!
+    @IBOutlet  var addrineOne: UILabel!
+    @IBOutlet  var addrineTwo: UILabel!
+    @IBOutlet  var addrineThree: UILabel!
+    @IBOutlet  var status: UILabel!
+    @IBOutlet  var date: UILabel!
+    @IBOutlet  var time: UILabel!
 
-    @IBOutlet weak var subtotal: UILabel!
-    @IBOutlet weak var vat: UILabel!
-    @IBOutlet weak var surcharge: UILabel!
-    @IBOutlet weak var shipping: UILabel!
-    @IBOutlet weak var discount: UILabel!
-    @IBOutlet weak var ordertotal: UILabel!
+    @IBOutlet  var subtotal: UILabel!
+    @IBOutlet  var vat: UILabel!
+    @IBOutlet  var surcharge: UILabel!
+    @IBOutlet  var shipping: UILabel!
+    @IBOutlet  var discount: UILabel!
+    @IBOutlet  var ordertotal: UILabel!
     
     var orderDetails: NSMutableArray = []
     

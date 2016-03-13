@@ -9,9 +9,9 @@
 import Foundation
 class ChangeCell: UICollectionViewCell {
     
-    @IBOutlet weak var hundredButton: UIButton!
-    @IBOutlet weak var fiveHundredButton: UIButton!
-//    @IBOutlet weak var thousandButton: UIButton!
+    @IBOutlet  var hundredButton: UIButton!
+    @IBOutlet  var fiveHundredButton: UIButton!
+//    @IBOutlet  var thousandButton: UIButton!
     
     @IBAction func changeAction(sender: UIButton) {
         

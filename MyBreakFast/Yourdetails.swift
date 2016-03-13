@@ -10,10 +10,10 @@ import Foundation
 class Yourdetails: UICollectionViewCell {
     
     
-    @IBOutlet weak var firstLine: UILabel!
-    @IBOutlet weak var secondLine: UITextField!
-    @IBOutlet weak var locationButton: UIButton!
-    @IBOutlet weak var addChnageButton: UIButton!
+    @IBOutlet  var firstLine: UILabel!
+    @IBOutlet  var secondLine: UITextField!
+    @IBOutlet  var locationButton: UIButton!
+    @IBOutlet  var addChnageButton: UIButton!
     
     var i: Int = 0
     override func awakeFromNib() {

@@ -18,7 +18,7 @@ class ProductsCell: UICollectionViewCell {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var descButton: UIButton!
-    @IBOutlet weak var offersTableView: UITableView!
+    @IBOutlet  var offersTableView: UITableView!
     var selectedCellsIPaths : [NSIndexPath] = []
     var offersArray: [Offer] = []
     var quantity = 0;

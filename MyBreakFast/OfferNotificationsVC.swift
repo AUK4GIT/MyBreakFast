@@ -10,7 +10,7 @@ import Foundation
 
 class OfferNotificationsVC: UIViewController {
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet  var collectionView: UICollectionView!
     var offersArray: NSArray = []
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -10,9 +10,9 @@ import Foundation
 class AddAddressCell: UICollectionViewCell {
     
     
-    @IBOutlet weak var secondLine: UITextView!
-    @IBOutlet weak var locationButton: UIButton!
-    @IBOutlet weak var addChnageButton: UIButton!
+    @IBOutlet  var secondLine: UITextView!
+    @IBOutlet  var locationButton: UIButton!
+    @IBOutlet  var addChnageButton: UIButton!
     var activity: UIActivityIndicatorView?
 
     override func awakeFromNib() {

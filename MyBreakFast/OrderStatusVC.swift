@@ -10,19 +10,19 @@ import Foundation
 import UIKit
 
 class OrderStatusVC: UIViewController {
-    @IBOutlet weak var orderId: UILabel!
-    @IBOutlet weak var address: UILabel!
-    @IBOutlet weak var status: UILabel!
-    @IBOutlet weak var orderedAt: UILabel!
-    @IBOutlet weak var orderDate: UILabel!
-    @IBOutlet weak var orderTime: UILabel!
-    @IBOutlet weak var orderAmount: UILabel!
+    @IBOutlet  var orderId: UILabel!
+    @IBOutlet  var address: UILabel!
+    @IBOutlet  var status: UILabel!
+    @IBOutlet  var orderedAt: UILabel!
+    @IBOutlet  var orderDate: UILabel!
+    @IBOutlet  var orderTime: UILabel!
+    @IBOutlet  var orderAmount: UILabel!
     let dateFormatter = NSDateFormatter()
     let dayFormatter = NSDateFormatter()
     let timeFormatter = NSDateFormatter()
     
-    @IBOutlet weak var orderDetailsView: UIView!
-    @IBOutlet weak var successLabel: UILabel!
+    @IBOutlet  var orderDetailsView: UIView!
+    @IBOutlet  var successLabel: UILabel!
     override func beginAppearanceTransition(isAppearing: Bool, animated: Bool) {
         super.beginAppearanceTransition(isAppearing, animated: animated)
         if isAppearing {

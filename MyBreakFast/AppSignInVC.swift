@@ -12,14 +12,14 @@ import FBSDKLoginKit
 
 class AppSignInVC: UIViewController {
     
-    @IBOutlet weak var topConstraint: NSLayoutConstraint!
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet  var topConstraint: NSLayoutConstraint!
+    @IBOutlet  var loginButton: UIButton!
     @IBOutlet var faceBookButton: UIButton!
      var completionHandler:((NSDictionary)->Void)!
-    @IBOutlet weak var userEmail: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var confirmPasswordField: UITextField!
-    @IBOutlet weak var forgotPassword: UIButton!
+    @IBOutlet  var userEmail: UITextField!
+    @IBOutlet  var passwordField: UITextField!
+    @IBOutlet  var confirmPasswordField: UITextField!
+    @IBOutlet  var forgotPassword: UIButton!
     var isEditing: Bool?
     
     override func viewDidLoad() {
