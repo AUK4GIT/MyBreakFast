@@ -9,24 +9,10 @@
 /* Begin PBXBuildFile section */
 		42F4FE3801F1438966FD070F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6E7E1A1C9BAD8E663A54F6 /* Pods.framework */; };
 		ED0432EB1C8F326800B6B6F2 /* AKPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0432EA1C8F326800B6B6F2 /* AKPickerView.swift */; };
-		ED0B85041C3E29740082AFF4 /* OfferNotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0B85031C3E29740082AFF4 /* OfferNotificationsVC.swift */; };
-		ED1A6F241BE27F6700F1B911 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A6F231BE27F6700F1B911 /* MenuItemCell.swift */; };
-		ED1A6F281BE281C200F1B911 /* MenuItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1A6F271BE281C200F1B911 /* MenuItemCell.xib */; };
 		ED3E37F21BEE5CEA00BB5F91 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E37F11BEE5CEA00BB5F91 /* Constants.swift */; };
-		ED3E37F41BEF5FE400BB5F91 /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED3E37F31BEF5FE400BB5F91 /* SideMenuCell.xib */; };
-		ED3E37F61BEF626600BB5F91 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E37F51BEF626600BB5F91 /* SideMenuCell.swift */; };
-		ED441C601C1879A700ED45E6 /* AppSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED441C5F1C1879A700ED45E6 /* AppSignInVC.swift */; };
-		ED584CC01C842D8000BDCC5C /* TermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED584CBF1C842D8000BDCC5C /* TermsVC.swift */; };
-		ED58D6181C3A01D700741E8D /* TotalBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED58D6171C3A01D700741E8D /* TotalBill.swift */; };
-		ED58D61A1C3A020A00741E8D /* RedeemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED58D6191C3A020A00741E8D /* RedeemCell.swift */; };
-		ED58D61C1C3A022700741E8D /* CouponCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED58D61B1C3A022700741E8D /* CouponCodeCell.swift */; };
-		ED58D61E1C3A025100741E8D /* PaymentModeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED58D61D1C3A025100741E8D /* PaymentModeCell.swift */; };
-		ED58D6201C3A026D00741E8D /* ChangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED58D61F1C3A026D00741E8D /* ChangeCell.swift */; };
-		ED58D6281C3D5E0C00741E8D /* FeedBackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED58D6271C3D5E0C00741E8D /* FeedBackVC.swift */; };
 		ED58D62A1C3D654200741E8D /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED58D6291C3D654200741E8D /* FloatRatingView.swift */; };
 		ED5B216F1BF612B700C65857 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5B216D1BF612B700C65857 /* UserDetails.swift */; };
 		ED5B21711BF612F700C65857 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5B21701BF612F700C65857 /* Helper.swift */; };
-		ED5B21751BF6B85200C65857 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5B21741BF6B85200C65857 /* ActivityIndicator.swift */; };
 		ED5B217F1BF76D3400C65857 /* Offer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5B21761BF76D3400C65857 /* Offer+CoreDataProperties.swift */; };
 		ED5B21801BF76D3400C65857 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5B21771BF76D3400C65857 /* Offer.swift */; };
 		ED5B21811BF76D3400C65857 /* TimeSlots+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5B21781BF76D3400C65857 /* TimeSlots+CoreDataProperties.swift */; };
@@ -39,67 +25,168 @@
 		ED709AA31C29AA960068528C /* Fooddetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED709AA11C29AA960068528C /* Fooddetails.swift */; };
 		ED709AA41C29AA960068528C /* Fooddetails+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED709AA21C29AA960068528C /* Fooddetails+CoreDataProperties.swift */; };
 		ED722B171BE09A33003DC9F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED722B161BE09A33003DC9F2 /* AppDelegate.swift */; };
-		ED722B191BE09A33003DC9F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED722B181BE09A33003DC9F2 /* ViewController.swift */; };
 		ED722B1F1BE09A33003DC9F2 /* MyBreakFast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED722B1D1BE09A33003DC9F2 /* MyBreakFast.xcdatamodeld */; };
 		ED722B211BE09A33003DC9F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED722B201BE09A33003DC9F2 /* Assets.xcassets */; };
 		ED722B241BE09A33003DC9F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED722B221BE09A33003DC9F2 /* LaunchScreen.storyboard */; };
-		ED722B2E1BE1060A003DC9F2 /* SideMenuContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED722B2D1BE1060A003DC9F2 /* SideMenuContentVC.swift */; };
-		ED722B301BE1F04C003DC9F2 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED722B2F1BE1F04C003DC9F2 /* MenuVC.swift */; };
-		ED722B321BE1F060003DC9F2 /* MyOrdersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED722B311BE1F060003DC9F2 /* MyOrdersVC.swift */; };
-		ED722B341BE1F073003DC9F2 /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED722B331BE1F073003DC9F2 /* AboutUsVC.swift */; };
-		ED722B361BE1F080003DC9F2 /* ContactUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED722B351BE1F080003DC9F2 /* ContactUsVC.swift */; };
-		ED87B01C1BE72DFA003177D7 /* CartBillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED87B01B1BE72DFA003177D7 /* CartBillView.swift */; };
-		ED87B01E1BE72E37003177D7 /* CartBillView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED87B01D1BE72E37003177D7 /* CartBillView.xib */; };
-		ED87B0201BE73E7D003177D7 /* AddOnsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED87B01F1BE73E7D003177D7 /* AddOnsTableCell.xib */; };
-		ED87B0221BE74336003177D7 /* OrderStatusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED87B0211BE74336003177D7 /* OrderStatusVC.swift */; };
-		ED87B0251BE7C68A003177D7 /* ItemPreViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED87B0241BE7C68A003177D7 /* ItemPreViewVC.swift */; };
-		ED996EA61C2BBD190017284A /* DatePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED996EA51C2BBD190017284A /* DatePickerVC.swift */; };
+		ED8E6B911C9548F2002CB4DE /* CTSRestError.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6AC31C9548F2002CB4DE /* CTSRestError.m */; };
+		ED8E6B921C9548F2002CB4DE /* CTSRuleInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6AC61C9548F2002CB4DE /* CTSRuleInfo.m */; };
+		ED8E6B931C9548F2002CB4DE /* CTSSignupState.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6AC81C9548F2002CB4DE /* CTSSignupState.m */; };
+		ED8E6B941C9548F2002CB4DE /* CTSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6ACA1C9548F2002CB4DE /* CTSUser.m */; };
+		ED8E6B951C9548F2002CB4DE /* PayLoadWebviewDto.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6ACC1C9548F2002CB4DE /* PayLoadWebviewDto.m */; };
+		ED8E6B961C9548F2002CB4DE /* CTSAmount.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6AD01C9548F2002CB4DE /* CTSAmount.m */; };
+		ED8E6B971C9548F2002CB4DE /* CTSCashoutBankAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6AD21C9548F2002CB4DE /* CTSCashoutBankAccount.m */; };
+		ED8E6B981C9548F2002CB4DE /* CTSCashoutToBankRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6AD41C9548F2002CB4DE /* CTSCashoutToBankRes.m */; };
+		ED8E6B991C9548F2002CB4DE /* CTSDyPPaymentInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6AD61C9548F2002CB4DE /* CTSDyPPaymentInfo.m */; };
+		ED8E6B9A1C9548F2002CB4DE /* CTSDyPValidateRuleReq.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6AD81C9548F2002CB4DE /* CTSDyPValidateRuleReq.m */; };
+		ED8E6B9B1C9548F2002CB4DE /* CTSGuestCheckout.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6ADA1C9548F2002CB4DE /* CTSGuestCheckout.m */; };
+		ED8E6B9C1C9548F2002CB4DE /* CTSPaymentMode.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6ADC1C9548F2002CB4DE /* CTSPaymentMode.m */; };
+		ED8E6B9D1C9548F2002CB4DE /* CTSPaymentNetbankingRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6ADE1C9548F2002CB4DE /* CTSPaymentNetbankingRequest.m */; };
+		ED8E6B9E1C9548F2002CB4DE /* CTSPaymentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6AE01C9548F2002CB4DE /* CTSPaymentRequest.m */; };
+		ED8E6B9F1C9548F2002CB4DE /* CTSPaymentToken.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6AE21C9548F2002CB4DE /* CTSPaymentToken.m */; };
+		ED8E6BA01C9548F2002CB4DE /* CTSPaymentUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6AE41C9548F2002CB4DE /* CTSPaymentUpdate.m */; };
+		ED8E6BA11C9548F2002CB4DE /* CTSTokenizedCardPayment.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6AE61C9548F2002CB4DE /* CTSTokenizedCardPayment.m */; };
+		ED8E6BA21C9548F2002CB4DE /* CTSTokenizedPaymentToken.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6AE81C9548F2002CB4DE /* CTSTokenizedPaymentToken.m */; };
+		ED8E6BA31C9548F2002CB4DE /* CTSUserAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6AEA1C9548F2002CB4DE /* CTSUserAddress.m */; };
+		ED8E6BA41C9548F2002CB4DE /* CTSUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6AEC1C9548F2002CB4DE /* CTSUserDetails.m */; };
+		ED8E6BA51C9548F2002CB4DE /* CTSContactUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6AEF1C9548F2002CB4DE /* CTSContactUpdate.m */; };
+		ED8E6BA61C9548F2002CB4DE /* CTSElectronicCardUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6AF11C9548F2002CB4DE /* CTSElectronicCardUpdate.m */; };
+		ED8E6BA71C9548F2002CB4DE /* CTSNetBankingUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6AF31C9548F2002CB4DE /* CTSNetBankingUpdate.m */; };
+		ED8E6BA81C9548F2002CB4DE /* CTSNewUserProfileReq.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6AF51C9548F2002CB4DE /* CTSNewUserProfileReq.m */; };
+		ED8E6BA91C9548F2002CB4DE /* CTSPaymentDetailUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6AF71C9548F2002CB4DE /* CTSPaymentDetailUpdate.m */; };
+		ED8E6BAA1C9548F2002CB4DE /* CTSPaymentOption.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6AF91C9548F2002CB4DE /* CTSPaymentOption.m */; };
+		ED8E6BAB1C9548F2002CB4DE /* CTSPrepaidUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6AFB1C9548F2002CB4DE /* CTSPrepaidUpdate.m */; };
+		ED8E6BAC1C9548F2002CB4DE /* CTSTokenizedPayment.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6AFD1C9548F2002CB4DE /* CTSTokenizedPayment.m */; };
+		ED8E6BAD1C9548F2002CB4DE /* CTSKeyStore.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B011C9548F2002CB4DE /* CTSKeyStore.m */; };
+		ED8E6BAE1C9548F2002CB4DE /* CTSLinkRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B031C9548F2002CB4DE /* CTSLinkRes.m */; };
+		ED8E6BAF1C9548F2002CB4DE /* CTSLinkUserRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B051C9548F2002CB4DE /* CTSLinkUserRes.m */; };
+		ED8E6BB01C9548F2002CB4DE /* CTSOauthTokenRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B071C9548F2002CB4DE /* CTSOauthTokenRes.m */; };
+		ED8E6BB11C9548F2002CB4DE /* CTSSignUpRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B091C9548F2002CB4DE /* CTSSignUpRes.m */; };
+		ED8E6BB21C9548F2002CB4DE /* CTSResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B0B1C9548F2002CB4DE /* CTSResponse.m */; };
+		ED8E6BB31C9548F2002CB4DE /* CitrusCashRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B0E1C9548F2002CB4DE /* CitrusCashRes.m */; };
+		ED8E6BB41C9548F2002CB4DE /* CTSBill.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B101C9548F2002CB4DE /* CTSBill.m */; };
+		ED8E6BB51C9548F2002CB4DE /* CTSCardBinResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B121C9548F2002CB4DE /* CTSCardBinResponse.m */; };
+		ED8E6BB61C9548F2002CB4DE /* CTSCashoutBankAccountResp.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B141C9548F2002CB4DE /* CTSCashoutBankAccountResp.m */; };
+		ED8E6BB71C9548F2002CB4DE /* CTSCreditCardOption.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B161C9548F2002CB4DE /* CTSCreditCardOption.m */; };
+		ED8E6BB81C9548F2002CB4DE /* CTSDebitCardOption.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B181C9548F2002CB4DE /* CTSDebitCardOption.m */; };
+		ED8E6BB91C9548F2002CB4DE /* CTSDyPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B1A1C9548F2002CB4DE /* CTSDyPResponse.m */; };
+		ED8E6BBA1C9548F2002CB4DE /* CTSNetbankingOption.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B1C1C9548F2002CB4DE /* CTSNetbankingOption.m */; };
+		ED8E6BBB1C9548F2002CB4DE /* CTSPaymentRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B1E1C9548F2002CB4DE /* CTSPaymentRes.m */; };
+		ED8E6BBC1C9548F2002CB4DE /* CTSPaymentTransactionRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B201C9548F2002CB4DE /* CTSPaymentTransactionRes.m */; };
+		ED8E6BBD1C9548F2002CB4DE /* CTSPGHealthRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B221C9548F2002CB4DE /* CTSPGHealthRes.m */; };
+		ED8E6BBE1C9548F2002CB4DE /* CTSPgSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B241C9548F2002CB4DE /* CTSPgSettings.m */; };
+		ED8E6BBF1C9548F2002CB4DE /* CTSPrepaidBill.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B261C9548F2002CB4DE /* CTSPrepaidBill.m */; };
+		ED8E6BC01C9548F2002CB4DE /* CTSTransferMoneyResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B281C9548F2002CB4DE /* CTSTransferMoneyResponse.m */; };
+		ED8E6BC11C9548F2002CB4DE /* CTSGetBalanceRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B2B1C9548F2002CB4DE /* CTSGetBalanceRes.m */; };
+		ED8E6BC21C9548F2002CB4DE /* CTSNewContactProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B2D1C9548F2002CB4DE /* CTSNewContactProfile.m */; };
+		ED8E6BC31C9548F2002CB4DE /* CTSNewResponseDataProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B2F1C9548F2002CB4DE /* CTSNewResponseDataProfile.m */; };
+		ED8E6BC41C9548F2002CB4DE /* CTSProfileContactNewRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B311C9548F2002CB4DE /* CTSProfileContactNewRes.m */; };
+		ED8E6BC51C9548F2002CB4DE /* CTSProfileContactRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B331C9548F2002CB4DE /* CTSProfileContactRes.m */; };
+		ED8E6BC61C9548F2002CB4DE /* CTSProfilePaymentRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B351C9548F2002CB4DE /* CTSProfilePaymentRes.m */; };
+		ED8E6BC71C9548F2002CB4DE /* CTSProfilePrepaidRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B371C9548F2002CB4DE /* CTSProfilePrepaidRes.m */; };
+		ED8E6BC81C9548F2002CB4DE /* CTSUpdateMobileNumberRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B391C9548F2002CB4DE /* CTSUpdateMobileNumberRes.m */; };
+		ED8E6BC91C9548F2002CB4DE /* GetProfileRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B3B1C9548F2002CB4DE /* GetProfileRes.m */; };
+		ED8E6BCA1C9548F2002CB4DE /* CTSAuthLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B401C9548F2002CB4DE /* CTSAuthLayer.m */; };
+		ED8E6BCB1C9548F2002CB4DE /* CTSError.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B441C9548F2002CB4DE /* CTSError.m */; };
+		ED8E6BCC1C9548F2002CB4DE /* CTSDataCache.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B481C9548F2002CB4DE /* CTSDataCache.m */; };
+		ED8E6BCD1C9548F2002CB4DE /* CTSOauthManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B4A1C9548F2002CB4DE /* CTSOauthManager.m */; };
+		ED8E6BCE1C9548F2002CB4DE /* CTSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B4C1C9548F2002CB4DE /* CTSObject.m */; };
+		ED8E6BCF1C9548F2002CB4DE /* CTSUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B4E1C9548F2002CB4DE /* CTSUtility.m */; };
+		ED8E6BD01C9548F2002CB4DE /* OauthStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B501C9548F2002CB4DE /* OauthStatus.m */; };
+		ED8E6BD11C9548F2002CB4DE /* CTSRestCore.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B541C9548F2002CB4DE /* CTSRestCore.m */; };
+		ED8E6BD21C9548F2002CB4DE /* CTSRestCoreRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B571C9548F2002CB4DE /* CTSRestCoreRequest.m */; };
+		ED8E6BD31C9548F2002CB4DE /* CTSRestCoreResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B591C9548F2002CB4DE /* CTSRestCoreResponse.m */; };
+		ED8E6BD41C9548F2002CB4DE /* CTSRestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B5B1C9548F2002CB4DE /* CTSRestObject.m */; };
+		ED8E6BD51C9548F2002CB4DE /* CTSRestPluginBase.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B5D1C9548F2002CB4DE /* CTSRestPluginBase.m */; };
+		ED8E6BD61C9548F2002CB4DE /* CreditCard-Validator.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B601C9548F2002CB4DE /* CreditCard-Validator.m */; };
+		ED8E6BD71C9548F2002CB4DE /* JSONModel+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B641C9548F2002CB4DE /* JSONModel+CoreData.m */; };
+		ED8E6BD81C9548F2002CB4DE /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B661C9548F2002CB4DE /* JSONModel.m */; };
+		ED8E6BD91C9548F2002CB4DE /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B681C9548F2002CB4DE /* JSONModelArray.m */; };
+		ED8E6BDA1C9548F2002CB4DE /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B6A1C9548F2002CB4DE /* JSONModelClassProperty.m */; };
+		ED8E6BDB1C9548F2002CB4DE /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B6C1C9548F2002CB4DE /* JSONModelError.m */; };
+		ED8E6BDC1C9548F2002CB4DE /* NSArray+JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B6F1C9548F2002CB4DE /* NSArray+JSONModel.m */; };
+		ED8E6BDD1C9548F2002CB4DE /* JSONAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B731C9548F2002CB4DE /* JSONAPI.m */; };
+		ED8E6BDE1C9548F2002CB4DE /* JSONHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B751C9548F2002CB4DE /* JSONHTTPClient.m */; };
+		ED8E6BDF1C9548F2002CB4DE /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B771C9548F2002CB4DE /* JSONModel+networking.m */; };
+		ED8E6BE01C9548F2002CB4DE /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B7A1C9548F2002CB4DE /* JSONKeyMapper.m */; };
+		ED8E6BE11C9548F2002CB4DE /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B7C1C9548F2002CB4DE /* JSONValueTransformer.m */; };
+		ED8E6BE21C9548F2002CB4DE /* NSObject+logProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B7F1C9548F2002CB4DE /* NSObject+logProperties.m */; };
+		ED8E6BE31C9548F2002CB4DE /* CTSPaymentLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B821C9548F2002CB4DE /* CTSPaymentLayer.m */; };
+		ED8E6BE41C9548F2002CB4DE /* CTSProfileLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B861C9548F2002CB4DE /* CTSProfileLayer.m */; };
+		ED8E6BE51C9548F2002CB4DE /* CTSValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B8A1C9548F2002CB4DE /* CTSValidator.m */; };
+		ED8E6BE61C9548F2002CB4DE /* CTSPaymentWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B8E1C9548F2002CB4DE /* CTSPaymentWebViewController.m */; };
+		ED8E6BE71C9548F2002CB4DE /* UIUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6B901C9548F2002CB4DE /* UIUtility.m */; };
+		ED8E6C001C95496D002CB4DE /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6BE91C95496D002CB4DE /* AboutUsVC.swift */; };
+		ED8E6C011C95496D002CB4DE /* AddAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6BEA1C95496D002CB4DE /* AddAddressVC.swift */; };
+		ED8E6C021C95496D002CB4DE /* AppSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6BEB1C95496D002CB4DE /* AppSignInVC.swift */; };
+		ED8E6C031C95496D002CB4DE /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6BEC1C95496D002CB4DE /* CartVC.swift */; };
+		ED8E6C041C95496D002CB4DE /* ContactUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6BED1C95496D002CB4DE /* ContactUsVC.swift */; };
+		ED8E6C051C95496D002CB4DE /* DatePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6BEE1C95496D002CB4DE /* DatePickerVC.swift */; };
+		ED8E6C061C95496D002CB4DE /* DummyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6BEF1C95496D002CB4DE /* DummyVC.swift */; };
+		ED8E6C071C95496D002CB4DE /* FeedBackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6BF01C95496D002CB4DE /* FeedBackVC.swift */; };
+		ED8E6C081C95496D002CB4DE /* ItemPreViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6BF11C95496D002CB4DE /* ItemPreViewVC.swift */; };
+		ED8E6C091C95496D002CB4DE /* LocationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6BF21C95496D002CB4DE /* LocationPicker.swift */; };
+		ED8E6C0A1C95496D002CB4DE /* LocationPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6BF31C95496D002CB4DE /* LocationPickerVC.swift */; };
+		ED8E6C0B1C95496D002CB4DE /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6BF41C95496D002CB4DE /* MenuVC.swift */; };
+		ED8E6C0C1C95496D002CB4DE /* MyOrderDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6BF51C95496D002CB4DE /* MyOrderDetailsVC.swift */; };
+		ED8E6C0D1C95496D002CB4DE /* MyOrdersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6BF61C95496D002CB4DE /* MyOrdersVC.swift */; };
+		ED8E6C0E1C95496D002CB4DE /* OfferNotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6BF71C95496D002CB4DE /* OfferNotificationsVC.swift */; };
+		ED8E6C0F1C95496D002CB4DE /* OrderStatusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6BF81C95496D002CB4DE /* OrderStatusVC.swift */; };
+		ED8E6C101C95496D002CB4DE /* ReferralVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6BF91C95496D002CB4DE /* ReferralVC.swift */; };
+		ED8E6C111C95496D002CB4DE /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6BFA1C95496D002CB4DE /* RegistrationVC.swift */; };
+		ED8E6C121C95496D002CB4DE /* SideMenuContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6BFB1C95496D002CB4DE /* SideMenuContentVC.swift */; };
+		ED8E6C131C95496D002CB4DE /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6BFC1C95496D002CB4DE /* SignInVC.swift */; };
+		ED8E6C141C95496D002CB4DE /* TermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6BFD1C95496D002CB4DE /* TermsVC.swift */; };
+		ED8E6C151C95496D002CB4DE /* UserOrderDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6BFE1C95496D002CB4DE /* UserOrderDetails.swift */; };
+		ED8E6C161C95496D002CB4DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6BFF1C95496D002CB4DE /* ViewController.swift */; };
+		ED8E6C3B1C9549FA002CB4DE /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6C181C9549FA002CB4DE /* ActivityIndicator.swift */; };
+		ED8E6C3C1C9549FA002CB4DE /* AddAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6C191C9549FA002CB4DE /* AddAddressCell.swift */; };
+		ED8E6C3D1C9549FA002CB4DE /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6C1A1C9549FA002CB4DE /* AddressCell.swift */; };
+		ED8E6C3E1C9549FA002CB4DE /* CartBillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6C1B1C9549FA002CB4DE /* CartBillView.swift */; };
+		ED8E6C3F1C9549FA002CB4DE /* ChangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6C1C1C9549FA002CB4DE /* ChangeCell.swift */; };
+		ED8E6C401C9549FA002CB4DE /* CouponCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6C1D1C9549FA002CB4DE /* CouponCodeCell.swift */; };
+		ED8E6C411C9549FA002CB4DE /* CustomSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6C1E1C9549FA002CB4DE /* CustomSegment.swift */; };
+		ED8E6C421C9549FA002CB4DE /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6C1F1C9549FA002CB4DE /* DatePicker.swift */; };
+		ED8E6C431C9549FA002CB4DE /* Deliveryaddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6C201C9549FA002CB4DE /* Deliveryaddress.swift */; };
+		ED8E6C441C9549FA002CB4DE /* Deliverylocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6C211C9549FA002CB4DE /* Deliverylocation.swift */; };
+		ED8E6C451C9549FA002CB4DE /* Deliverytime.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6C221C9549FA002CB4DE /* Deliverytime.swift */; };
+		ED8E6C461C9549FA002CB4DE /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6C231C9549FA002CB4DE /* MenuItemCell.swift */; };
+		ED8E6C471C9549FA002CB4DE /* MyOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6C241C9549FA002CB4DE /* MyOrderCell.swift */; };
+		ED8E6C481C9549FA002CB4DE /* MyOrdersDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6C251C9549FA002CB4DE /* MyOrdersDetailsCell.swift */; };
+		ED8E6C491C9549FA002CB4DE /* OffersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6C261C9549FA002CB4DE /* OffersCell.swift */; };
+		ED8E6C4A1C9549FA002CB4DE /* PaymentModeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6C271C9549FA002CB4DE /* PaymentModeCell.swift */; };
+		ED8E6C4B1C9549FA002CB4DE /* PopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6C281C9549FA002CB4DE /* PopCell.swift */; };
+		ED8E6C4C1C9549FA002CB4DE /* ProductsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6C291C9549FA002CB4DE /* ProductsCell.swift */; };
+		ED8E6C4D1C9549FA002CB4DE /* RedeemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6C2A1C9549FA002CB4DE /* RedeemCell.swift */; };
+		ED8E6C4E1C9549FA002CB4DE /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6C2B1C9549FA002CB4DE /* SideMenuCell.swift */; };
+		ED8E6C4F1C9549FA002CB4DE /* TimeSlotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6C2C1C9549FA002CB4DE /* TimeSlotCell.swift */; };
+		ED8E6C501C9549FA002CB4DE /* TotalBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6C2D1C9549FA002CB4DE /* TotalBill.swift */; };
+		ED8E6C511C9549FA002CB4DE /* VitaminCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6C2E1C9549FA002CB4DE /* VitaminCell.swift */; };
+		ED8E6C521C9549FA002CB4DE /* VitaminCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6C2F1C9549FA002CB4DE /* VitaminCollectionView.swift */; };
+		ED8E6C531C9549FA002CB4DE /* AddOnsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED8E6C311C9549FA002CB4DE /* AddOnsTableCell.xib */; };
+		ED8E6C541C9549FA002CB4DE /* CartBillView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED8E6C321C9549FA002CB4DE /* CartBillView.xib */; };
+		ED8E6C551C9549FA002CB4DE /* CustomSegment.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED8E6C331C9549FA002CB4DE /* CustomSegment.xib */; };
+		ED8E6C561C9549FA002CB4DE /* MenuItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED8E6C341C9549FA002CB4DE /* MenuItemCell.xib */; };
+		ED8E6C571C9549FA002CB4DE /* MyOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED8E6C351C9549FA002CB4DE /* MyOrderCell.xib */; };
+		ED8E6C581C9549FA002CB4DE /* MyOrdersDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED8E6C361C9549FA002CB4DE /* MyOrdersDetailsCell.xib */; };
+		ED8E6C591C9549FA002CB4DE /* PopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED8E6C371C9549FA002CB4DE /* PopCell.xib */; };
+		ED8E6C5A1C9549FA002CB4DE /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED8E6C381C9549FA002CB4DE /* SideMenuCell.xib */; };
+		ED8E6C5B1C9549FA002CB4DE /* VitaminCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED8E6C391C9549FA002CB4DE /* VitaminCell.xib */; };
+		ED8E6C5C1C9549FA002CB4DE /* Yourdetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6C3A1C9549FA002CB4DE /* Yourdetails.swift */; };
 		ED996EAA1C2C63E70017284A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED996EA81C2C63E70017284A /* Main.storyboard */; };
-		ED996EAC1C2C68DC0017284A /* DummyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED996EAB1C2C68DC0017284A /* DummyVC.swift */; };
-		ED996EAE1C2D17790017284A /* LocationPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED996EAD1C2D17790017284A /* LocationPickerVC.swift */; };
-		ED996EB01C2D95750017284A /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED996EAF1C2D95750017284A /* RegistrationVC.swift */; };
 		ED996EB31C30CA960017284A /* UserAddress+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED996EB11C30CA960017284A /* UserAddress+CoreDataProperties.swift */; };
 		ED996EB41C30CA960017284A /* UserAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED996EB21C30CA960017284A /* UserAddress.swift */; };
-		EDA736C01BE4A4CD00AC9884 /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA736BF1BE4A4CD00AC9884 /* CartVC.swift */; };
 		EDA736D11BE4DF3700AC9884 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDA736D01BE4DF3700AC9884 /* GoogleService-Info.plist */; };
-		EDA736D81BE4ED4F00AC9884 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA736D71BE4ED4F00AC9884 /* SignInVC.swift */; };
-		EDA7CCDE1C4601A100A40AEE /* ReferralVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7CCDD1C4601A100A40AEE /* ReferralVC.swift */; };
-		EDA7CCF01C46CBBF00A40AEE /* MyOrdersDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7CCEF1C46CBBF00A40AEE /* MyOrdersDetailsCell.swift */; };
-		EDA7CCF21C46CC4800A40AEE /* MyOrdersDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDA7CCF11C46CC4800A40AEE /* MyOrdersDetailsCell.xib */; };
-		EDA7CCF41C4BA10100A40AEE /* AddAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7CCF31C4BA10100A40AEE /* AddAddressVC.swift */; };
-		EDA7CCF61C4BBD2900A40AEE /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7CCF51C4BBD2900A40AEE /* AddressCell.swift */; };
-		EDA7CCF81C4C0CD000A40AEE /* AddAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7CCF71C4C0CD000A40AEE /* AddAddressCell.swift */; };
 		EDBA06B61C00D7BC00BE09B3 /* MyOrder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBA06B41C00D7BC00BE09B3 /* MyOrder+CoreDataProperties.swift */; };
 		EDBA06B71C00D7BC00BE09B3 /* MyOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBA06B51C00D7BC00BE09B3 /* MyOrder.swift */; };
-		EDBA06B91C019FE200BE09B3 /* MyOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDBA06B81C019FE200BE09B3 /* MyOrderCell.xib */; };
-		EDBA06BB1C01A23300BE09B3 /* MyOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBA06BA1C01A23300BE09B3 /* MyOrderCell.swift */; };
-		EDBA06BD1C01D8CF00BE09B3 /* UserOrderDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBA06BC1C01D8CF00BE09B3 /* UserOrderDetails.swift */; };
-		EDBA06BF1C021B9F00BE09B3 /* Yourdetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBA06BE1C021B9F00BE09B3 /* Yourdetails.swift */; };
-		EDBA06C11C021BD600BE09B3 /* Deliverylocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBA06C01C021BD600BE09B3 /* Deliverylocation.swift */; };
-		EDBA06C31C021C0500BE09B3 /* Deliveryaddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBA06C21C021C0500BE09B3 /* Deliveryaddress.swift */; };
-		EDBA06C51C021C2B00BE09B3 /* Deliverytime.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBA06C41C021C2B00BE09B3 /* Deliverytime.swift */; };
-		EDBA07041C0B6BCF00BE09B3 /* PopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBA07031C0B6BCF00BE09B3 /* PopCell.swift */; };
-		EDBA07061C0B6C5800BE09B3 /* PopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDBA07051C0B6C5800BE09B3 /* PopCell.xib */; };
-		EDC1691A1BF99176000538E9 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC169191BF99176000538E9 /* DatePicker.swift */; };
-		EDC1691C1BF9918D000538E9 /* LocationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC1691B1BF9918D000538E9 /* LocationPicker.swift */; };
 		EDC572261C7AD1210018F11C /* CustomPresentationAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC572231C7AD1210018F11C /* CustomPresentationAnimationController.swift */; };
 		EDC572271C7AD1210018F11C /* CustomPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC572241C7AD1210018F11C /* CustomPresentationController.swift */; };
 		EDC572281C7AD1210018F11C /* CustomModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC572251C7AD1210018F11C /* CustomModalViewController.swift */; };
-		EDCC2AE31C318F8A00C15C3B /* TimeSlotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC2AE21C318F8A00C15C3B /* TimeSlotCell.swift */; };
 		EDCC2AE51C339F0800C15C3B /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC2AE41C339F0800C15C3B /* Order.swift */; };
 		EDCC2AE71C339F6500C15C3B /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC2AE61C339F6500C15C3B /* OrderItem.swift */; };
-		EDCC2AE91C34D0C200C15C3B /* ProductsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC2AE81C34D0C200C15C3B /* ProductsCell.swift */; };
-		EDCC2AEB1C3676CD00C15C3B /* OffersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC2AEA1C3676CD00C15C3B /* OffersCell.swift */; };
-		EDCC81E51C268BC300C961F8 /* CustomSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC81E41C268BC300C961F8 /* CustomSegment.swift */; };
-		EDCC81E71C268BF500C961F8 /* CustomSegment.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDCC81E61C268BF500C961F8 /* CustomSegment.xib */; };
 		EDE5E03C1C4FEB690044E819 /* Kitchens+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE5E03A1C4FEB690044E819 /* Kitchens+CoreDataProperties.swift */; };
 		EDE5E03D1C4FEB690044E819 /* Kitchens.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE5E03B1C4FEB690044E819 /* Kitchens.swift */; };
 		EDE5E0531C53562C0044E819 /* MyAddress.gpx in Resources */ = {isa = PBXBuildFile; fileRef = EDE5E0521C53562C0044E819 /* MyAddress.gpx */; };
 		EDE7F1F41C57DBB30063F855 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE7F1F31C57DBB30063F855 /* Coupon.swift */; };
-		EDEBAEF61C1492BF0047E070 /* VitaminCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEBAEF51C1492BF0047E070 /* VitaminCollectionView.swift */; };
-		EDEBAEF81C14932B0047E070 /* VitaminCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDEBAEF71C14932B0047E070 /* VitaminCell.xib */; };
-		EDEBAEFA1C14935B0047E070 /* VitaminCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEBAEF91C14935B0047E070 /* VitaminCell.swift */; };
-		EDF3C48E1C43E70700010218 /* MyOrderDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3C48D1C43E70700010218 /* MyOrderDetailsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,24 +194,10 @@
 		C02CB2CC5C006A15257050EC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DC6E7E1A1C9BAD8E663A54F6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED0432EA1C8F326800B6B6F2 /* AKPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AKPickerView.swift; path = AKPickerView/AKPickerView.swift; sourceTree = "<group>"; };
-		ED0B85031C3E29740082AFF4 /* OfferNotificationsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferNotificationsVC.swift; sourceTree = "<group>"; };
-		ED1A6F231BE27F6700F1B911 /* MenuItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
-		ED1A6F271BE281C200F1B911 /* MenuItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuItemCell.xib; sourceTree = "<group>"; };
 		ED3E37F11BEE5CEA00BB5F91 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		ED3E37F31BEF5FE400BB5F91 /* SideMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuCell.xib; sourceTree = "<group>"; };
-		ED3E37F51BEF626600BB5F91 /* SideMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
-		ED441C5F1C1879A700ED45E6 /* AppSignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSignInVC.swift; sourceTree = "<group>"; };
-		ED584CBF1C842D8000BDCC5C /* TermsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsVC.swift; sourceTree = "<group>"; };
-		ED58D6171C3A01D700741E8D /* TotalBill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalBill.swift; sourceTree = "<group>"; };
-		ED58D6191C3A020A00741E8D /* RedeemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedeemCell.swift; sourceTree = "<group>"; };
-		ED58D61B1C3A022700741E8D /* CouponCodeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponCodeCell.swift; sourceTree = "<group>"; };
-		ED58D61D1C3A025100741E8D /* PaymentModeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentModeCell.swift; sourceTree = "<group>"; };
-		ED58D61F1C3A026D00741E8D /* ChangeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeCell.swift; sourceTree = "<group>"; };
-		ED58D6271C3D5E0C00741E8D /* FeedBackVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedBackVC.swift; sourceTree = "<group>"; };
 		ED58D6291C3D654200741E8D /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
 		ED5B216D1BF612B700C65857 /* UserDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDetails.swift; path = Models/UserDetails.swift; sourceTree = "<group>"; };
 		ED5B21701BF612F700C65857 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		ED5B21741BF6B85200C65857 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		ED5B21761BF76D3400C65857 /* Offer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Offer+CoreDataProperties.swift"; path = "Models/Offer+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ED5B21771BF76D3400C65857 /* Offer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Offer.swift; path = Models/Offer.swift; sourceTree = "<group>"; };
 		ED5B21781BF76D3400C65857 /* TimeSlots+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TimeSlots+CoreDataProperties.swift"; path = "Models/TimeSlots+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -138,73 +211,272 @@
 		ED709AA21C29AA960068528C /* Fooddetails+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Fooddetails+CoreDataProperties.swift"; path = "Models/Fooddetails+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ED722B131BE09A33003DC9F2 /* MyBreakFast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyBreakFast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED722B161BE09A33003DC9F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ED722B181BE09A33003DC9F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ED722B1E1BE09A33003DC9F2 /* MyBreakFast.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyBreakFast.xcdatamodel; sourceTree = "<group>"; };
 		ED722B201BE09A33003DC9F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED722B231BE09A33003DC9F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED722B251BE09A33003DC9F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ED722B2D1BE1060A003DC9F2 /* SideMenuContentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuContentVC.swift; sourceTree = "<group>"; };
-		ED722B2F1BE1F04C003DC9F2 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
-		ED722B311BE1F060003DC9F2 /* MyOrdersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrdersVC.swift; sourceTree = "<group>"; };
-		ED722B331BE1F073003DC9F2 /* AboutUsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsVC.swift; sourceTree = "<group>"; };
-		ED722B351BE1F080003DC9F2 /* ContactUsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsVC.swift; sourceTree = "<group>"; };
-		ED87B01B1BE72DFA003177D7 /* CartBillView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartBillView.swift; sourceTree = "<group>"; };
-		ED87B01D1BE72E37003177D7 /* CartBillView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartBillView.xib; sourceTree = "<group>"; };
-		ED87B01F1BE73E7D003177D7 /* AddOnsTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddOnsTableCell.xib; sourceTree = "<group>"; };
-		ED87B0211BE74336003177D7 /* OrderStatusVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderStatusVC.swift; sourceTree = "<group>"; };
-		ED87B0241BE7C68A003177D7 /* ItemPreViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemPreViewVC.swift; sourceTree = "<group>"; };
-		ED996EA51C2BBD190017284A /* DatePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerVC.swift; sourceTree = "<group>"; };
+		ED8E6AC01C9548F2002CB4DE /* CitrusSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitrusSdk.h; sourceTree = "<group>"; };
+		ED8E6AC21C9548F2002CB4DE /* CTSRestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSRestError.h; sourceTree = "<group>"; };
+		ED8E6AC31C9548F2002CB4DE /* CTSRestError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSRestError.m; sourceTree = "<group>"; };
+		ED8E6AC51C9548F2002CB4DE /* CTSRuleInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSRuleInfo.h; sourceTree = "<group>"; };
+		ED8E6AC61C9548F2002CB4DE /* CTSRuleInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSRuleInfo.m; sourceTree = "<group>"; };
+		ED8E6AC71C9548F2002CB4DE /* CTSSignupState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSSignupState.h; sourceTree = "<group>"; };
+		ED8E6AC81C9548F2002CB4DE /* CTSSignupState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSSignupState.m; sourceTree = "<group>"; };
+		ED8E6AC91C9548F2002CB4DE /* CTSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSUser.h; sourceTree = "<group>"; };
+		ED8E6ACA1C9548F2002CB4DE /* CTSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSUser.m; sourceTree = "<group>"; };
+		ED8E6ACB1C9548F2002CB4DE /* PayLoadWebviewDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayLoadWebviewDto.h; sourceTree = "<group>"; };
+		ED8E6ACC1C9548F2002CB4DE /* PayLoadWebviewDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayLoadWebviewDto.m; sourceTree = "<group>"; };
+		ED8E6ACF1C9548F2002CB4DE /* CTSAmount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSAmount.h; sourceTree = "<group>"; };
+		ED8E6AD01C9548F2002CB4DE /* CTSAmount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSAmount.m; sourceTree = "<group>"; };
+		ED8E6AD11C9548F2002CB4DE /* CTSCashoutBankAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSCashoutBankAccount.h; sourceTree = "<group>"; };
+		ED8E6AD21C9548F2002CB4DE /* CTSCashoutBankAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSCashoutBankAccount.m; sourceTree = "<group>"; };
+		ED8E6AD31C9548F2002CB4DE /* CTSCashoutToBankRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSCashoutToBankRes.h; sourceTree = "<group>"; };
+		ED8E6AD41C9548F2002CB4DE /* CTSCashoutToBankRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSCashoutToBankRes.m; sourceTree = "<group>"; };
+		ED8E6AD51C9548F2002CB4DE /* CTSDyPPaymentInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSDyPPaymentInfo.h; sourceTree = "<group>"; };
+		ED8E6AD61C9548F2002CB4DE /* CTSDyPPaymentInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSDyPPaymentInfo.m; sourceTree = "<group>"; };
+		ED8E6AD71C9548F2002CB4DE /* CTSDyPValidateRuleReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSDyPValidateRuleReq.h; sourceTree = "<group>"; };
+		ED8E6AD81C9548F2002CB4DE /* CTSDyPValidateRuleReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSDyPValidateRuleReq.m; sourceTree = "<group>"; };
+		ED8E6AD91C9548F2002CB4DE /* CTSGuestCheckout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSGuestCheckout.h; sourceTree = "<group>"; };
+		ED8E6ADA1C9548F2002CB4DE /* CTSGuestCheckout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSGuestCheckout.m; sourceTree = "<group>"; };
+		ED8E6ADB1C9548F2002CB4DE /* CTSPaymentMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPaymentMode.h; sourceTree = "<group>"; };
+		ED8E6ADC1C9548F2002CB4DE /* CTSPaymentMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPaymentMode.m; sourceTree = "<group>"; };
+		ED8E6ADD1C9548F2002CB4DE /* CTSPaymentNetbankingRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPaymentNetbankingRequest.h; sourceTree = "<group>"; };
+		ED8E6ADE1C9548F2002CB4DE /* CTSPaymentNetbankingRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPaymentNetbankingRequest.m; sourceTree = "<group>"; };
+		ED8E6ADF1C9548F2002CB4DE /* CTSPaymentRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPaymentRequest.h; sourceTree = "<group>"; };
+		ED8E6AE01C9548F2002CB4DE /* CTSPaymentRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPaymentRequest.m; sourceTree = "<group>"; };
+		ED8E6AE11C9548F2002CB4DE /* CTSPaymentToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPaymentToken.h; sourceTree = "<group>"; };
+		ED8E6AE21C9548F2002CB4DE /* CTSPaymentToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPaymentToken.m; sourceTree = "<group>"; };
+		ED8E6AE31C9548F2002CB4DE /* CTSPaymentUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPaymentUpdate.h; sourceTree = "<group>"; };
+		ED8E6AE41C9548F2002CB4DE /* CTSPaymentUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPaymentUpdate.m; sourceTree = "<group>"; };
+		ED8E6AE51C9548F2002CB4DE /* CTSTokenizedCardPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSTokenizedCardPayment.h; sourceTree = "<group>"; };
+		ED8E6AE61C9548F2002CB4DE /* CTSTokenizedCardPayment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSTokenizedCardPayment.m; sourceTree = "<group>"; };
+		ED8E6AE71C9548F2002CB4DE /* CTSTokenizedPaymentToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSTokenizedPaymentToken.h; sourceTree = "<group>"; };
+		ED8E6AE81C9548F2002CB4DE /* CTSTokenizedPaymentToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSTokenizedPaymentToken.m; sourceTree = "<group>"; };
+		ED8E6AE91C9548F2002CB4DE /* CTSUserAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSUserAddress.h; sourceTree = "<group>"; };
+		ED8E6AEA1C9548F2002CB4DE /* CTSUserAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSUserAddress.m; sourceTree = "<group>"; };
+		ED8E6AEB1C9548F2002CB4DE /* CTSUserDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSUserDetails.h; sourceTree = "<group>"; };
+		ED8E6AEC1C9548F2002CB4DE /* CTSUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSUserDetails.m; sourceTree = "<group>"; };
+		ED8E6AEE1C9548F2002CB4DE /* CTSContactUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSContactUpdate.h; sourceTree = "<group>"; };
+		ED8E6AEF1C9548F2002CB4DE /* CTSContactUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSContactUpdate.m; sourceTree = "<group>"; };
+		ED8E6AF01C9548F2002CB4DE /* CTSElectronicCardUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSElectronicCardUpdate.h; sourceTree = "<group>"; };
+		ED8E6AF11C9548F2002CB4DE /* CTSElectronicCardUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSElectronicCardUpdate.m; sourceTree = "<group>"; };
+		ED8E6AF21C9548F2002CB4DE /* CTSNetBankingUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSNetBankingUpdate.h; sourceTree = "<group>"; };
+		ED8E6AF31C9548F2002CB4DE /* CTSNetBankingUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSNetBankingUpdate.m; sourceTree = "<group>"; };
+		ED8E6AF41C9548F2002CB4DE /* CTSNewUserProfileReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSNewUserProfileReq.h; sourceTree = "<group>"; };
+		ED8E6AF51C9548F2002CB4DE /* CTSNewUserProfileReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSNewUserProfileReq.m; sourceTree = "<group>"; };
+		ED8E6AF61C9548F2002CB4DE /* CTSPaymentDetailUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPaymentDetailUpdate.h; sourceTree = "<group>"; };
+		ED8E6AF71C9548F2002CB4DE /* CTSPaymentDetailUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPaymentDetailUpdate.m; sourceTree = "<group>"; };
+		ED8E6AF81C9548F2002CB4DE /* CTSPaymentOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPaymentOption.h; sourceTree = "<group>"; };
+		ED8E6AF91C9548F2002CB4DE /* CTSPaymentOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPaymentOption.m; sourceTree = "<group>"; };
+		ED8E6AFA1C9548F2002CB4DE /* CTSPrepaidUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPrepaidUpdate.h; sourceTree = "<group>"; };
+		ED8E6AFB1C9548F2002CB4DE /* CTSPrepaidUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPrepaidUpdate.m; sourceTree = "<group>"; };
+		ED8E6AFC1C9548F2002CB4DE /* CTSTokenizedPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSTokenizedPayment.h; sourceTree = "<group>"; };
+		ED8E6AFD1C9548F2002CB4DE /* CTSTokenizedPayment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSTokenizedPayment.m; sourceTree = "<group>"; };
+		ED8E6B001C9548F2002CB4DE /* CTSKeyStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSKeyStore.h; sourceTree = "<group>"; };
+		ED8E6B011C9548F2002CB4DE /* CTSKeyStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSKeyStore.m; sourceTree = "<group>"; };
+		ED8E6B021C9548F2002CB4DE /* CTSLinkRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSLinkRes.h; sourceTree = "<group>"; };
+		ED8E6B031C9548F2002CB4DE /* CTSLinkRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSLinkRes.m; sourceTree = "<group>"; };
+		ED8E6B041C9548F2002CB4DE /* CTSLinkUserRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSLinkUserRes.h; sourceTree = "<group>"; };
+		ED8E6B051C9548F2002CB4DE /* CTSLinkUserRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSLinkUserRes.m; sourceTree = "<group>"; };
+		ED8E6B061C9548F2002CB4DE /* CTSOauthTokenRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSOauthTokenRes.h; sourceTree = "<group>"; };
+		ED8E6B071C9548F2002CB4DE /* CTSOauthTokenRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSOauthTokenRes.m; sourceTree = "<group>"; };
+		ED8E6B081C9548F2002CB4DE /* CTSSignUpRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSSignUpRes.h; sourceTree = "<group>"; };
+		ED8E6B091C9548F2002CB4DE /* CTSSignUpRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSSignUpRes.m; sourceTree = "<group>"; };
+		ED8E6B0A1C9548F2002CB4DE /* CTSResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSResponse.h; sourceTree = "<group>"; };
+		ED8E6B0B1C9548F2002CB4DE /* CTSResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSResponse.m; sourceTree = "<group>"; };
+		ED8E6B0D1C9548F2002CB4DE /* CitrusCashRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitrusCashRes.h; sourceTree = "<group>"; };
+		ED8E6B0E1C9548F2002CB4DE /* CitrusCashRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitrusCashRes.m; sourceTree = "<group>"; };
+		ED8E6B0F1C9548F2002CB4DE /* CTSBill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSBill.h; sourceTree = "<group>"; };
+		ED8E6B101C9548F2002CB4DE /* CTSBill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSBill.m; sourceTree = "<group>"; };
+		ED8E6B111C9548F2002CB4DE /* CTSCardBinResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSCardBinResponse.h; sourceTree = "<group>"; };
+		ED8E6B121C9548F2002CB4DE /* CTSCardBinResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSCardBinResponse.m; sourceTree = "<group>"; };
+		ED8E6B131C9548F2002CB4DE /* CTSCashoutBankAccountResp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSCashoutBankAccountResp.h; sourceTree = "<group>"; };
+		ED8E6B141C9548F2002CB4DE /* CTSCashoutBankAccountResp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSCashoutBankAccountResp.m; sourceTree = "<group>"; };
+		ED8E6B151C9548F2002CB4DE /* CTSCreditCardOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSCreditCardOption.h; sourceTree = "<group>"; };
+		ED8E6B161C9548F2002CB4DE /* CTSCreditCardOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSCreditCardOption.m; sourceTree = "<group>"; };
+		ED8E6B171C9548F2002CB4DE /* CTSDebitCardOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSDebitCardOption.h; sourceTree = "<group>"; };
+		ED8E6B181C9548F2002CB4DE /* CTSDebitCardOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSDebitCardOption.m; sourceTree = "<group>"; };
+		ED8E6B191C9548F2002CB4DE /* CTSDyPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSDyPResponse.h; sourceTree = "<group>"; };
+		ED8E6B1A1C9548F2002CB4DE /* CTSDyPResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSDyPResponse.m; sourceTree = "<group>"; };
+		ED8E6B1B1C9548F2002CB4DE /* CTSNetbankingOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSNetbankingOption.h; sourceTree = "<group>"; };
+		ED8E6B1C1C9548F2002CB4DE /* CTSNetbankingOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSNetbankingOption.m; sourceTree = "<group>"; };
+		ED8E6B1D1C9548F2002CB4DE /* CTSPaymentRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPaymentRes.h; sourceTree = "<group>"; };
+		ED8E6B1E1C9548F2002CB4DE /* CTSPaymentRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPaymentRes.m; sourceTree = "<group>"; };
+		ED8E6B1F1C9548F2002CB4DE /* CTSPaymentTransactionRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPaymentTransactionRes.h; sourceTree = "<group>"; };
+		ED8E6B201C9548F2002CB4DE /* CTSPaymentTransactionRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPaymentTransactionRes.m; sourceTree = "<group>"; };
+		ED8E6B211C9548F2002CB4DE /* CTSPGHealthRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPGHealthRes.h; sourceTree = "<group>"; };
+		ED8E6B221C9548F2002CB4DE /* CTSPGHealthRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPGHealthRes.m; sourceTree = "<group>"; };
+		ED8E6B231C9548F2002CB4DE /* CTSPgSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPgSettings.h; sourceTree = "<group>"; };
+		ED8E6B241C9548F2002CB4DE /* CTSPgSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPgSettings.m; sourceTree = "<group>"; };
+		ED8E6B251C9548F2002CB4DE /* CTSPrepaidBill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPrepaidBill.h; sourceTree = "<group>"; };
+		ED8E6B261C9548F2002CB4DE /* CTSPrepaidBill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPrepaidBill.m; sourceTree = "<group>"; };
+		ED8E6B271C9548F2002CB4DE /* CTSTransferMoneyResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSTransferMoneyResponse.h; sourceTree = "<group>"; };
+		ED8E6B281C9548F2002CB4DE /* CTSTransferMoneyResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSTransferMoneyResponse.m; sourceTree = "<group>"; };
+		ED8E6B2A1C9548F2002CB4DE /* CTSGetBalanceRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSGetBalanceRes.h; sourceTree = "<group>"; };
+		ED8E6B2B1C9548F2002CB4DE /* CTSGetBalanceRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSGetBalanceRes.m; sourceTree = "<group>"; };
+		ED8E6B2C1C9548F2002CB4DE /* CTSNewContactProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSNewContactProfile.h; sourceTree = "<group>"; };
+		ED8E6B2D1C9548F2002CB4DE /* CTSNewContactProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSNewContactProfile.m; sourceTree = "<group>"; };
+		ED8E6B2E1C9548F2002CB4DE /* CTSNewResponseDataProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSNewResponseDataProfile.h; sourceTree = "<group>"; };
+		ED8E6B2F1C9548F2002CB4DE /* CTSNewResponseDataProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSNewResponseDataProfile.m; sourceTree = "<group>"; };
+		ED8E6B301C9548F2002CB4DE /* CTSProfileContactNewRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSProfileContactNewRes.h; sourceTree = "<group>"; };
+		ED8E6B311C9548F2002CB4DE /* CTSProfileContactNewRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSProfileContactNewRes.m; sourceTree = "<group>"; };
+		ED8E6B321C9548F2002CB4DE /* CTSProfileContactRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSProfileContactRes.h; sourceTree = "<group>"; };
+		ED8E6B331C9548F2002CB4DE /* CTSProfileContactRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSProfileContactRes.m; sourceTree = "<group>"; };
+		ED8E6B341C9548F2002CB4DE /* CTSProfilePaymentRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSProfilePaymentRes.h; sourceTree = "<group>"; };
+		ED8E6B351C9548F2002CB4DE /* CTSProfilePaymentRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSProfilePaymentRes.m; sourceTree = "<group>"; };
+		ED8E6B361C9548F2002CB4DE /* CTSProfilePrepaidRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSProfilePrepaidRes.h; sourceTree = "<group>"; };
+		ED8E6B371C9548F2002CB4DE /* CTSProfilePrepaidRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSProfilePrepaidRes.m; sourceTree = "<group>"; };
+		ED8E6B381C9548F2002CB4DE /* CTSUpdateMobileNumberRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSUpdateMobileNumberRes.h; sourceTree = "<group>"; };
+		ED8E6B391C9548F2002CB4DE /* CTSUpdateMobileNumberRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSUpdateMobileNumberRes.m; sourceTree = "<group>"; };
+		ED8E6B3A1C9548F2002CB4DE /* GetProfileRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetProfileRes.h; sourceTree = "<group>"; };
+		ED8E6B3B1C9548F2002CB4DE /* GetProfileRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetProfileRes.m; sourceTree = "<group>"; };
+		ED8E6B3C1C9548F2002CB4DE /* MerchantConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantConstants.h; sourceTree = "<group>"; };
+		ED8E6B3F1C9548F2002CB4DE /* CTSAuthLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSAuthLayer.h; sourceTree = "<group>"; };
+		ED8E6B401C9548F2002CB4DE /* CTSAuthLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSAuthLayer.m; sourceTree = "<group>"; };
+		ED8E6B411C9548F2002CB4DE /* CTSAuthLayerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSAuthLayerConstants.h; sourceTree = "<group>"; };
+		ED8E6B431C9548F2002CB4DE /* CTSError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSError.h; sourceTree = "<group>"; };
+		ED8E6B441C9548F2002CB4DE /* CTSError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSError.m; sourceTree = "<group>"; };
+		ED8E6B461C9548F2002CB4DE /* CTSCoreProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSCoreProtocol.h; sourceTree = "<group>"; };
+		ED8E6B471C9548F2002CB4DE /* CTSDataCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSDataCache.h; sourceTree = "<group>"; };
+		ED8E6B481C9548F2002CB4DE /* CTSDataCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSDataCache.m; sourceTree = "<group>"; };
+		ED8E6B491C9548F2002CB4DE /* CTSOauthManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSOauthManager.h; sourceTree = "<group>"; };
+		ED8E6B4A1C9548F2002CB4DE /* CTSOauthManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSOauthManager.m; sourceTree = "<group>"; };
+		ED8E6B4B1C9548F2002CB4DE /* CTSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSObject.h; sourceTree = "<group>"; };
+		ED8E6B4C1C9548F2002CB4DE /* CTSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSObject.m; sourceTree = "<group>"; };
+		ED8E6B4D1C9548F2002CB4DE /* CTSUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSUtility.h; sourceTree = "<group>"; };
+		ED8E6B4E1C9548F2002CB4DE /* CTSUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSUtility.m; sourceTree = "<group>"; };
+		ED8E6B4F1C9548F2002CB4DE /* OauthStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OauthStatus.h; sourceTree = "<group>"; };
+		ED8E6B501C9548F2002CB4DE /* OauthStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OauthStatus.m; sourceTree = "<group>"; };
+		ED8E6B511C9548F2002CB4DE /* RestLayerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestLayerConstants.h; sourceTree = "<group>"; };
+		ED8E6B531C9548F2002CB4DE /* CTSRestCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSRestCore.h; sourceTree = "<group>"; };
+		ED8E6B541C9548F2002CB4DE /* CTSRestCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSRestCore.m; sourceTree = "<group>"; };
+		ED8E6B551C9548F2002CB4DE /* CTSRestCoreConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSRestCoreConstants.h; sourceTree = "<group>"; };
+		ED8E6B561C9548F2002CB4DE /* CTSRestCoreRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSRestCoreRequest.h; sourceTree = "<group>"; };
+		ED8E6B571C9548F2002CB4DE /* CTSRestCoreRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSRestCoreRequest.m; sourceTree = "<group>"; };
+		ED8E6B581C9548F2002CB4DE /* CTSRestCoreResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSRestCoreResponse.h; sourceTree = "<group>"; };
+		ED8E6B591C9548F2002CB4DE /* CTSRestCoreResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSRestCoreResponse.m; sourceTree = "<group>"; };
+		ED8E6B5A1C9548F2002CB4DE /* CTSRestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSRestObject.h; sourceTree = "<group>"; };
+		ED8E6B5B1C9548F2002CB4DE /* CTSRestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSRestObject.m; sourceTree = "<group>"; };
+		ED8E6B5C1C9548F2002CB4DE /* CTSRestPluginBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSRestPluginBase.h; sourceTree = "<group>"; };
+		ED8E6B5D1C9548F2002CB4DE /* CTSRestPluginBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSRestPluginBase.m; sourceTree = "<group>"; };
+		ED8E6B5F1C9548F2002CB4DE /* CreditCard-Validator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CreditCard-Validator.h"; sourceTree = "<group>"; };
+		ED8E6B601C9548F2002CB4DE /* CreditCard-Validator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CreditCard-Validator.m"; sourceTree = "<group>"; };
+		ED8E6B631C9548F2002CB4DE /* JSONModel+CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSONModel+CoreData.h"; sourceTree = "<group>"; };
+		ED8E6B641C9548F2002CB4DE /* JSONModel+CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONModel+CoreData.m"; sourceTree = "<group>"; };
+		ED8E6B651C9548F2002CB4DE /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
+		ED8E6B661C9548F2002CB4DE /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
+		ED8E6B671C9548F2002CB4DE /* JSONModelArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelArray.h; sourceTree = "<group>"; };
+		ED8E6B681C9548F2002CB4DE /* JSONModelArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelArray.m; sourceTree = "<group>"; };
+		ED8E6B691C9548F2002CB4DE /* JSONModelClassProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelClassProperty.h; sourceTree = "<group>"; };
+		ED8E6B6A1C9548F2002CB4DE /* JSONModelClassProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelClassProperty.m; sourceTree = "<group>"; };
+		ED8E6B6B1C9548F2002CB4DE /* JSONModelError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelError.h; sourceTree = "<group>"; };
+		ED8E6B6C1C9548F2002CB4DE /* JSONModelError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelError.m; sourceTree = "<group>"; };
+		ED8E6B6E1C9548F2002CB4DE /* NSArray+JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JSONModel.h"; sourceTree = "<group>"; };
+		ED8E6B6F1C9548F2002CB4DE /* NSArray+JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JSONModel.m"; sourceTree = "<group>"; };
+		ED8E6B701C9548F2002CB4DE /* JSONModelLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelLib.h; sourceTree = "<group>"; };
+		ED8E6B721C9548F2002CB4DE /* JSONAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONAPI.h; sourceTree = "<group>"; };
+		ED8E6B731C9548F2002CB4DE /* JSONAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONAPI.m; sourceTree = "<group>"; };
+		ED8E6B741C9548F2002CB4DE /* JSONHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONHTTPClient.h; sourceTree = "<group>"; };
+		ED8E6B751C9548F2002CB4DE /* JSONHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONHTTPClient.m; sourceTree = "<group>"; };
+		ED8E6B761C9548F2002CB4DE /* JSONModel+networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSONModel+networking.h"; sourceTree = "<group>"; };
+		ED8E6B771C9548F2002CB4DE /* JSONModel+networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONModel+networking.m"; sourceTree = "<group>"; };
+		ED8E6B791C9548F2002CB4DE /* JSONKeyMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKeyMapper.h; sourceTree = "<group>"; };
+		ED8E6B7A1C9548F2002CB4DE /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
+		ED8E6B7B1C9548F2002CB4DE /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
+		ED8E6B7C1C9548F2002CB4DE /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
+		ED8E6B7D1C9548F2002CB4DE /* UserLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLogging.h; sourceTree = "<group>"; };
+		ED8E6B7E1C9548F2002CB4DE /* NSObject+logProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+logProperties.h"; sourceTree = "<group>"; };
+		ED8E6B7F1C9548F2002CB4DE /* NSObject+logProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+logProperties.m"; sourceTree = "<group>"; };
+		ED8E6B811C9548F2002CB4DE /* CTSPaymentLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPaymentLayer.h; sourceTree = "<group>"; };
+		ED8E6B821C9548F2002CB4DE /* CTSPaymentLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPaymentLayer.m; sourceTree = "<group>"; };
+		ED8E6B831C9548F2002CB4DE /* CTSPaymentLayerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPaymentLayerConstants.h; sourceTree = "<group>"; };
+		ED8E6B851C9548F2002CB4DE /* CTSProfileLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSProfileLayer.h; sourceTree = "<group>"; };
+		ED8E6B861C9548F2002CB4DE /* CTSProfileLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSProfileLayer.m; sourceTree = "<group>"; };
+		ED8E6B871C9548F2002CB4DE /* CTSProfileLayerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSProfileLayerConstants.h; sourceTree = "<group>"; };
+		ED8E6B891C9548F2002CB4DE /* CTSValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSValidator.h; sourceTree = "<group>"; };
+		ED8E6B8A1C9548F2002CB4DE /* CTSValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSValidator.m; sourceTree = "<group>"; };
+		ED8E6B8B1C9548F2002CB4DE /* Version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Version.h; sourceTree = "<group>"; };
+		ED8E6B8D1C9548F2002CB4DE /* CTSPaymentWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPaymentWebViewController.h; sourceTree = "<group>"; };
+		ED8E6B8E1C9548F2002CB4DE /* CTSPaymentWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPaymentWebViewController.m; sourceTree = "<group>"; };
+		ED8E6B8F1C9548F2002CB4DE /* UIUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIUtility.h; sourceTree = "<group>"; };
+		ED8E6B901C9548F2002CB4DE /* UIUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIUtility.m; sourceTree = "<group>"; };
+		ED8E6BE91C95496D002CB4DE /* AboutUsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutUsVC.swift; path = Controllers/AboutUsVC.swift; sourceTree = "<group>"; };
+		ED8E6BEA1C95496D002CB4DE /* AddAddressVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddAddressVC.swift; path = Controllers/AddAddressVC.swift; sourceTree = "<group>"; };
+		ED8E6BEB1C95496D002CB4DE /* AppSignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppSignInVC.swift; path = Controllers/AppSignInVC.swift; sourceTree = "<group>"; };
+		ED8E6BEC1C95496D002CB4DE /* CartVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CartVC.swift; path = Controllers/CartVC.swift; sourceTree = "<group>"; };
+		ED8E6BED1C95496D002CB4DE /* ContactUsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactUsVC.swift; path = Controllers/ContactUsVC.swift; sourceTree = "<group>"; };
+		ED8E6BEE1C95496D002CB4DE /* DatePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePickerVC.swift; path = Controllers/DatePickerVC.swift; sourceTree = "<group>"; };
+		ED8E6BEF1C95496D002CB4DE /* DummyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DummyVC.swift; path = Controllers/DummyVC.swift; sourceTree = "<group>"; };
+		ED8E6BF01C95496D002CB4DE /* FeedBackVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedBackVC.swift; path = Controllers/FeedBackVC.swift; sourceTree = "<group>"; };
+		ED8E6BF11C95496D002CB4DE /* ItemPreViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemPreViewVC.swift; path = Controllers/ItemPreViewVC.swift; sourceTree = "<group>"; };
+		ED8E6BF21C95496D002CB4DE /* LocationPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationPicker.swift; path = Controllers/LocationPicker.swift; sourceTree = "<group>"; };
+		ED8E6BF31C95496D002CB4DE /* LocationPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationPickerVC.swift; path = Controllers/LocationPickerVC.swift; sourceTree = "<group>"; };
+		ED8E6BF41C95496D002CB4DE /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuVC.swift; path = Controllers/MenuVC.swift; sourceTree = "<group>"; };
+		ED8E6BF51C95496D002CB4DE /* MyOrderDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyOrderDetailsVC.swift; path = Controllers/MyOrderDetailsVC.swift; sourceTree = "<group>"; };
+		ED8E6BF61C95496D002CB4DE /* MyOrdersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyOrdersVC.swift; path = Controllers/MyOrdersVC.swift; sourceTree = "<group>"; };
+		ED8E6BF71C95496D002CB4DE /* OfferNotificationsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OfferNotificationsVC.swift; path = Controllers/OfferNotificationsVC.swift; sourceTree = "<group>"; };
+		ED8E6BF81C95496D002CB4DE /* OrderStatusVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderStatusVC.swift; path = Controllers/OrderStatusVC.swift; sourceTree = "<group>"; };
+		ED8E6BF91C95496D002CB4DE /* ReferralVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReferralVC.swift; path = Controllers/ReferralVC.swift; sourceTree = "<group>"; };
+		ED8E6BFA1C95496D002CB4DE /* RegistrationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationVC.swift; path = Controllers/RegistrationVC.swift; sourceTree = "<group>"; };
+		ED8E6BFB1C95496D002CB4DE /* SideMenuContentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuContentVC.swift; path = Controllers/SideMenuContentVC.swift; sourceTree = "<group>"; };
+		ED8E6BFC1C95496D002CB4DE /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInVC.swift; path = Controllers/SignInVC.swift; sourceTree = "<group>"; };
+		ED8E6BFD1C95496D002CB4DE /* TermsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TermsVC.swift; path = Controllers/TermsVC.swift; sourceTree = "<group>"; };
+		ED8E6BFE1C95496D002CB4DE /* UserOrderDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserOrderDetails.swift; path = Controllers/UserOrderDetails.swift; sourceTree = "<group>"; };
+		ED8E6BFF1C95496D002CB4DE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Controllers/ViewController.swift; sourceTree = "<group>"; };
+		ED8E6C181C9549FA002CB4DE /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicator.swift; path = Views/ActivityIndicator.swift; sourceTree = "<group>"; };
+		ED8E6C191C9549FA002CB4DE /* AddAddressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddAddressCell.swift; path = Views/AddAddressCell.swift; sourceTree = "<group>"; };
+		ED8E6C1A1C9549FA002CB4DE /* AddressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressCell.swift; path = Views/AddressCell.swift; sourceTree = "<group>"; };
+		ED8E6C1B1C9549FA002CB4DE /* CartBillView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CartBillView.swift; path = Views/CartBillView.swift; sourceTree = "<group>"; };
+		ED8E6C1C1C9549FA002CB4DE /* ChangeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeCell.swift; path = Views/ChangeCell.swift; sourceTree = "<group>"; };
+		ED8E6C1D1C9549FA002CB4DE /* CouponCodeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CouponCodeCell.swift; path = Views/CouponCodeCell.swift; sourceTree = "<group>"; };
+		ED8E6C1E1C9549FA002CB4DE /* CustomSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomSegment.swift; path = Views/CustomSegment.swift; sourceTree = "<group>"; };
+		ED8E6C1F1C9549FA002CB4DE /* DatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePicker.swift; path = Views/DatePicker.swift; sourceTree = "<group>"; };
+		ED8E6C201C9549FA002CB4DE /* Deliveryaddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Deliveryaddress.swift; path = Views/Deliveryaddress.swift; sourceTree = "<group>"; };
+		ED8E6C211C9549FA002CB4DE /* Deliverylocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Deliverylocation.swift; path = Views/Deliverylocation.swift; sourceTree = "<group>"; };
+		ED8E6C221C9549FA002CB4DE /* Deliverytime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Deliverytime.swift; path = Views/Deliverytime.swift; sourceTree = "<group>"; };
+		ED8E6C231C9549FA002CB4DE /* MenuItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuItemCell.swift; path = Views/MenuItemCell.swift; sourceTree = "<group>"; };
+		ED8E6C241C9549FA002CB4DE /* MyOrderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyOrderCell.swift; path = Views/MyOrderCell.swift; sourceTree = "<group>"; };
+		ED8E6C251C9549FA002CB4DE /* MyOrdersDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyOrdersDetailsCell.swift; path = Views/MyOrdersDetailsCell.swift; sourceTree = "<group>"; };
+		ED8E6C261C9549FA002CB4DE /* OffersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OffersCell.swift; path = Views/OffersCell.swift; sourceTree = "<group>"; };
+		ED8E6C271C9549FA002CB4DE /* PaymentModeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentModeCell.swift; path = Views/PaymentModeCell.swift; sourceTree = "<group>"; };
+		ED8E6C281C9549FA002CB4DE /* PopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopCell.swift; path = Views/PopCell.swift; sourceTree = "<group>"; };
+		ED8E6C291C9549FA002CB4DE /* ProductsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductsCell.swift; path = Views/ProductsCell.swift; sourceTree = "<group>"; };
+		ED8E6C2A1C9549FA002CB4DE /* RedeemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RedeemCell.swift; path = Views/RedeemCell.swift; sourceTree = "<group>"; };
+		ED8E6C2B1C9549FA002CB4DE /* SideMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuCell.swift; path = Views/SideMenuCell.swift; sourceTree = "<group>"; };
+		ED8E6C2C1C9549FA002CB4DE /* TimeSlotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeSlotCell.swift; path = Views/TimeSlotCell.swift; sourceTree = "<group>"; };
+		ED8E6C2D1C9549FA002CB4DE /* TotalBill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TotalBill.swift; path = Views/TotalBill.swift; sourceTree = "<group>"; };
+		ED8E6C2E1C9549FA002CB4DE /* VitaminCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VitaminCell.swift; path = Views/VitaminCell.swift; sourceTree = "<group>"; };
+		ED8E6C2F1C9549FA002CB4DE /* VitaminCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VitaminCollectionView.swift; path = Views/VitaminCollectionView.swift; sourceTree = "<group>"; };
+		ED8E6C311C9549FA002CB4DE /* AddOnsTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddOnsTableCell.xib; sourceTree = "<group>"; };
+		ED8E6C321C9549FA002CB4DE /* CartBillView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartBillView.xib; sourceTree = "<group>"; };
+		ED8E6C331C9549FA002CB4DE /* CustomSegment.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSegment.xib; sourceTree = "<group>"; };
+		ED8E6C341C9549FA002CB4DE /* MenuItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuItemCell.xib; sourceTree = "<group>"; };
+		ED8E6C351C9549FA002CB4DE /* MyOrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrderCell.xib; sourceTree = "<group>"; };
+		ED8E6C361C9549FA002CB4DE /* MyOrdersDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrdersDetailsCell.xib; sourceTree = "<group>"; };
+		ED8E6C371C9549FA002CB4DE /* PopCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopCell.xib; sourceTree = "<group>"; };
+		ED8E6C381C9549FA002CB4DE /* SideMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuCell.xib; sourceTree = "<group>"; };
+		ED8E6C391C9549FA002CB4DE /* VitaminCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VitaminCell.xib; sourceTree = "<group>"; };
+		ED8E6C3A1C9549FA002CB4DE /* Yourdetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Yourdetails.swift; path = Views/Yourdetails.swift; sourceTree = "<group>"; };
 		ED996EA91C2C63E70017284A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		ED996EAB1C2C68DC0017284A /* DummyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyVC.swift; sourceTree = "<group>"; };
-		ED996EAD1C2D17790017284A /* LocationPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationPickerVC.swift; sourceTree = "<group>"; };
-		ED996EAF1C2D95750017284A /* RegistrationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		ED996EB11C30CA960017284A /* UserAddress+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserAddress+CoreDataProperties.swift"; path = "Models/UserAddress+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ED996EB21C30CA960017284A /* UserAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserAddress.swift; path = Models/UserAddress.swift; sourceTree = "<group>"; };
 		EDA09EF01BFC24C5000470CB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		EDA736BF1BE4A4CD00AC9884 /* CartVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
 		EDA736D01BE4DF3700AC9884 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Resources/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EDA736D21BE4E05C00AC9884 /* MyBreakFast-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyBreakFast-Bridging-Header.h"; sourceTree = "<group>"; };
-		EDA736D71BE4ED4F00AC9884 /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		EDA736D91BE4F10E00AC9884 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		EDA736DB1BE4F11400AC9884 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		EDA736DD1BE4F14D00AC9884 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		EDA7CCDD1C4601A100A40AEE /* ReferralVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferralVC.swift; sourceTree = "<group>"; };
-		EDA7CCEF1C46CBBF00A40AEE /* MyOrdersDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrdersDetailsCell.swift; sourceTree = "<group>"; };
-		EDA7CCF11C46CC4800A40AEE /* MyOrdersDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrdersDetailsCell.xib; sourceTree = "<group>"; };
-		EDA7CCF31C4BA10100A40AEE /* AddAddressVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAddressVC.swift; sourceTree = "<group>"; };
-		EDA7CCF51C4BBD2900A40AEE /* AddressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
-		EDA7CCF71C4C0CD000A40AEE /* AddAddressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAddressCell.swift; sourceTree = "<group>"; };
 		EDBA06B41C00D7BC00BE09B3 /* MyOrder+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MyOrder+CoreDataProperties.swift"; path = "Models/MyOrder+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EDBA06B51C00D7BC00BE09B3 /* MyOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyOrder.swift; path = Models/MyOrder.swift; sourceTree = "<group>"; };
-		EDBA06B81C019FE200BE09B3 /* MyOrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrderCell.xib; sourceTree = "<group>"; };
-		EDBA06BA1C01A23300BE09B3 /* MyOrderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderCell.swift; sourceTree = "<group>"; };
-		EDBA06BC1C01D8CF00BE09B3 /* UserOrderDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserOrderDetails.swift; sourceTree = "<group>"; };
-		EDBA06BE1C021B9F00BE09B3 /* Yourdetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Yourdetails.swift; sourceTree = "<group>"; };
-		EDBA06C01C021BD600BE09B3 /* Deliverylocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deliverylocation.swift; sourceTree = "<group>"; };
-		EDBA06C21C021C0500BE09B3 /* Deliveryaddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deliveryaddress.swift; sourceTree = "<group>"; };
-		EDBA06C41C021C2B00BE09B3 /* Deliverytime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deliverytime.swift; sourceTree = "<group>"; };
-		EDBA07031C0B6BCF00BE09B3 /* PopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopCell.swift; sourceTree = "<group>"; };
-		EDBA07051C0B6C5800BE09B3 /* PopCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopCell.xib; sourceTree = "<group>"; };
-		EDC169191BF99176000538E9 /* DatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
-		EDC1691B1BF9918D000538E9 /* LocationPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationPicker.swift; sourceTree = "<group>"; };
 		EDC572231C7AD1210018F11C /* CustomPresentationAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomPresentationAnimationController.swift; path = CustomModalVC/CustomPresentationAnimationController.swift; sourceTree = "<group>"; };
 		EDC572241C7AD1210018F11C /* CustomPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomPresentationController.swift; path = CustomModalVC/CustomPresentationController.swift; sourceTree = "<group>"; };
 		EDC572251C7AD1210018F11C /* CustomModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomModalViewController.swift; path = CustomModalVC/CustomModalViewController.swift; sourceTree = "<group>"; };
-		EDCC2AE21C318F8A00C15C3B /* TimeSlotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSlotCell.swift; sourceTree = "<group>"; };
 		EDCC2AE41C339F0800C15C3B /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Order.swift; path = Models/Order.swift; sourceTree = "<group>"; };
 		EDCC2AE61C339F6500C15C3B /* OrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderItem.swift; path = Models/OrderItem.swift; sourceTree = "<group>"; };
-		EDCC2AE81C34D0C200C15C3B /* ProductsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsCell.swift; sourceTree = "<group>"; };
-		EDCC2AEA1C3676CD00C15C3B /* OffersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersCell.swift; sourceTree = "<group>"; };
-		EDCC81E41C268BC300C961F8 /* CustomSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegment.swift; sourceTree = "<group>"; };
-		EDCC81E61C268BF500C961F8 /* CustomSegment.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSegment.xib; sourceTree = "<group>"; };
 		EDE5E03A1C4FEB690044E819 /* Kitchens+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Kitchens+CoreDataProperties.swift"; path = "Models/Kitchens+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EDE5E03B1C4FEB690044E819 /* Kitchens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Kitchens.swift; path = Models/Kitchens.swift; sourceTree = "<group>"; };
 		EDE5E0521C53562C0044E819 /* MyAddress.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = MyAddress.gpx; path = Resources/MyAddress.gpx; sourceTree = "<group>"; };
 		EDE7F1F31C57DBB30063F855 /* Coupon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Coupon.swift; path = Models/Coupon.swift; sourceTree = "<group>"; };
-		EDEBAEF51C1492BF0047E070 /* VitaminCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VitaminCollectionView.swift; sourceTree = "<group>"; };
-		EDEBAEF71C14932B0047E070 /* VitaminCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VitaminCell.xib; sourceTree = "<group>"; };
-		EDEBAEF91C14935B0047E070 /* VitaminCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VitaminCell.swift; sourceTree = "<group>"; };
-		EDF3C48D1C43E70700010218 /* MyOrderDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderDetailsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,77 +557,487 @@
 		ED722B151BE09A33003DC9F2 /* MyBreakFast */ = {
 			isa = PBXGroup;
 			children = (
+				ED8E6C171C954974002CB4DE /* Views */,
+				ED8E6BE81C95495D002CB4DE /* Controllers */,
+				ED8E6ABF1C9548F2002CB4DE /* CitrusDevKit */,
 				ED0432E91C8F322C00B6B6F2 /* AKPickerView */,
 				EDC572221C7AD08F0018F11C /* CustomModalVC */,
 				ED996EA81C2C63E70017284A /* Main.storyboard */,
 				ED5B216B1BF612A300C65857 /* Models */,
 				ED722B161BE09A33003DC9F2 /* AppDelegate.swift */,
-				ED996EAF1C2D95750017284A /* RegistrationVC.swift */,
-				ED441C5F1C1879A700ED45E6 /* AppSignInVC.swift */,
-				ED722B181BE09A33003DC9F2 /* ViewController.swift */,
-				EDA736D71BE4ED4F00AC9884 /* SignInVC.swift */,
-				EDBA06BC1C01D8CF00BE09B3 /* UserOrderDetails.swift */,
-				ED722B2D1BE1060A003DC9F2 /* SideMenuContentVC.swift */,
-				ED722B2F1BE1F04C003DC9F2 /* MenuVC.swift */,
-				ED722B311BE1F060003DC9F2 /* MyOrdersVC.swift */,
-				ED722B331BE1F073003DC9F2 /* AboutUsVC.swift */,
-				ED722B351BE1F080003DC9F2 /* ContactUsVC.swift */,
-				ED1A6F231BE27F6700F1B911 /* MenuItemCell.swift */,
-				EDA736BF1BE4A4CD00AC9884 /* CartVC.swift */,
-				ED87B01B1BE72DFA003177D7 /* CartBillView.swift */,
-				ED87B0211BE74336003177D7 /* OrderStatusVC.swift */,
-				ED87B0241BE7C68A003177D7 /* ItemPreViewVC.swift */,
-				ED3E37F51BEF626600BB5F91 /* SideMenuCell.swift */,
-				ED5B21741BF6B85200C65857 /* ActivityIndicator.swift */,
-				EDC169191BF99176000538E9 /* DatePicker.swift */,
-				EDC1691B1BF9918D000538E9 /* LocationPicker.swift */,
-				EDBA06BA1C01A23300BE09B3 /* MyOrderCell.swift */,
-				EDBA06BE1C021B9F00BE09B3 /* Yourdetails.swift */,
-				EDBA06C01C021BD600BE09B3 /* Deliverylocation.swift */,
-				EDBA06C21C021C0500BE09B3 /* Deliveryaddress.swift */,
-				EDBA06C41C021C2B00BE09B3 /* Deliverytime.swift */,
-				EDBA07031C0B6BCF00BE09B3 /* PopCell.swift */,
-				EDEBAEF51C1492BF0047E070 /* VitaminCollectionView.swift */,
-				EDEBAEF91C14935B0047E070 /* VitaminCell.swift */,
-				EDCC81E41C268BC300C961F8 /* CustomSegment.swift */,
-				ED996EA51C2BBD190017284A /* DatePickerVC.swift */,
-				ED996EAD1C2D17790017284A /* LocationPickerVC.swift */,
-				ED996EAB1C2C68DC0017284A /* DummyVC.swift */,
 				ED5B21701BF612F700C65857 /* Helper.swift */,
 				ED3E37F11BEE5CEA00BB5F91 /* Constants.swift */,
-				EDCC2AE21C318F8A00C15C3B /* TimeSlotCell.swift */,
-				ED1A6F271BE281C200F1B911 /* MenuItemCell.xib */,
 				ED722B221BE09A33003DC9F2 /* LaunchScreen.storyboard */,
-				ED87B01D1BE72E37003177D7 /* CartBillView.xib */,
-				ED87B01F1BE73E7D003177D7 /* AddOnsTableCell.xib */,
-				ED3E37F31BEF5FE400BB5F91 /* SideMenuCell.xib */,
-				EDBA06B81C019FE200BE09B3 /* MyOrderCell.xib */,
-				EDBA07051C0B6C5800BE09B3 /* PopCell.xib */,
-				EDEBAEF71C14932B0047E070 /* VitaminCell.xib */,
-				EDCC81E61C268BF500C961F8 /* CustomSegment.xib */,
 				EDA736C11BE4DB1800AC9884 /* Resources */,
 				ED722B201BE09A33003DC9F2 /* Assets.xcassets */,
 				ED722B251BE09A33003DC9F2 /* Info.plist */,
 				ED722B1D1BE09A33003DC9F2 /* MyBreakFast.xcdatamodeld */,
-				EDCC2AE81C34D0C200C15C3B /* ProductsCell.swift */,
-				EDCC2AEA1C3676CD00C15C3B /* OffersCell.swift */,
-				ED58D6171C3A01D700741E8D /* TotalBill.swift */,
-				ED58D6191C3A020A00741E8D /* RedeemCell.swift */,
-				ED58D61B1C3A022700741E8D /* CouponCodeCell.swift */,
-				ED58D61D1C3A025100741E8D /* PaymentModeCell.swift */,
-				ED58D61F1C3A026D00741E8D /* ChangeCell.swift */,
-				ED58D6271C3D5E0C00741E8D /* FeedBackVC.swift */,
-				ED0B85031C3E29740082AFF4 /* OfferNotificationsVC.swift */,
-				EDF3C48D1C43E70700010218 /* MyOrderDetailsVC.swift */,
-				EDA7CCDD1C4601A100A40AEE /* ReferralVC.swift */,
-				EDA7CCEF1C46CBBF00A40AEE /* MyOrdersDetailsCell.swift */,
-				EDA7CCF11C46CC4800A40AEE /* MyOrdersDetailsCell.xib */,
-				EDA7CCF31C4BA10100A40AEE /* AddAddressVC.swift */,
-				EDA7CCF51C4BBD2900A40AEE /* AddressCell.swift */,
-				EDA7CCF71C4C0CD000A40AEE /* AddAddressCell.swift */,
-				ED584CBF1C842D8000BDCC5C /* TermsVC.swift */,
 			);
 			path = MyBreakFast;
+			sourceTree = "<group>";
+		};
+		ED8E6ABF1C9548F2002CB4DE /* CitrusDevKit */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6AC01C9548F2002CB4DE /* CitrusSdk.h */,
+				ED8E6AC11C9548F2002CB4DE /* Data */,
+				ED8E6B3C1C9548F2002CB4DE /* MerchantConstants.h */,
+				ED8E6B3D1C9548F2002CB4DE /* ModelLayers */,
+				ED8E6B8B1C9548F2002CB4DE /* Version.h */,
+				ED8E6B8C1C9548F2002CB4DE /* View */,
+			);
+			path = CitrusDevKit;
+			sourceTree = "<group>";
+		};
+		ED8E6AC11C9548F2002CB4DE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6AC21C9548F2002CB4DE /* CTSRestError.h */,
+				ED8E6AC31C9548F2002CB4DE /* CTSRestError.m */,
+				ED8E6AC41C9548F2002CB4DE /* dto */,
+				ED8E6ACD1C9548F2002CB4DE /* RequestObjects */,
+				ED8E6AFE1C9548F2002CB4DE /* ResponseObjects */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		ED8E6AC41C9548F2002CB4DE /* dto */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6AC51C9548F2002CB4DE /* CTSRuleInfo.h */,
+				ED8E6AC61C9548F2002CB4DE /* CTSRuleInfo.m */,
+				ED8E6AC71C9548F2002CB4DE /* CTSSignupState.h */,
+				ED8E6AC81C9548F2002CB4DE /* CTSSignupState.m */,
+				ED8E6AC91C9548F2002CB4DE /* CTSUser.h */,
+				ED8E6ACA1C9548F2002CB4DE /* CTSUser.m */,
+				ED8E6ACB1C9548F2002CB4DE /* PayLoadWebviewDto.h */,
+				ED8E6ACC1C9548F2002CB4DE /* PayLoadWebviewDto.m */,
+			);
+			path = dto;
+			sourceTree = "<group>";
+		};
+		ED8E6ACD1C9548F2002CB4DE /* RequestObjects */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6ACE1C9548F2002CB4DE /* Payment */,
+				ED8E6AED1C9548F2002CB4DE /* UserProfile */,
+			);
+			path = RequestObjects;
+			sourceTree = "<group>";
+		};
+		ED8E6ACE1C9548F2002CB4DE /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6ACF1C9548F2002CB4DE /* CTSAmount.h */,
+				ED8E6AD01C9548F2002CB4DE /* CTSAmount.m */,
+				ED8E6AD11C9548F2002CB4DE /* CTSCashoutBankAccount.h */,
+				ED8E6AD21C9548F2002CB4DE /* CTSCashoutBankAccount.m */,
+				ED8E6AD31C9548F2002CB4DE /* CTSCashoutToBankRes.h */,
+				ED8E6AD41C9548F2002CB4DE /* CTSCashoutToBankRes.m */,
+				ED8E6AD51C9548F2002CB4DE /* CTSDyPPaymentInfo.h */,
+				ED8E6AD61C9548F2002CB4DE /* CTSDyPPaymentInfo.m */,
+				ED8E6AD71C9548F2002CB4DE /* CTSDyPValidateRuleReq.h */,
+				ED8E6AD81C9548F2002CB4DE /* CTSDyPValidateRuleReq.m */,
+				ED8E6AD91C9548F2002CB4DE /* CTSGuestCheckout.h */,
+				ED8E6ADA1C9548F2002CB4DE /* CTSGuestCheckout.m */,
+				ED8E6ADB1C9548F2002CB4DE /* CTSPaymentMode.h */,
+				ED8E6ADC1C9548F2002CB4DE /* CTSPaymentMode.m */,
+				ED8E6ADD1C9548F2002CB4DE /* CTSPaymentNetbankingRequest.h */,
+				ED8E6ADE1C9548F2002CB4DE /* CTSPaymentNetbankingRequest.m */,
+				ED8E6ADF1C9548F2002CB4DE /* CTSPaymentRequest.h */,
+				ED8E6AE01C9548F2002CB4DE /* CTSPaymentRequest.m */,
+				ED8E6AE11C9548F2002CB4DE /* CTSPaymentToken.h */,
+				ED8E6AE21C9548F2002CB4DE /* CTSPaymentToken.m */,
+				ED8E6AE31C9548F2002CB4DE /* CTSPaymentUpdate.h */,
+				ED8E6AE41C9548F2002CB4DE /* CTSPaymentUpdate.m */,
+				ED8E6AE51C9548F2002CB4DE /* CTSTokenizedCardPayment.h */,
+				ED8E6AE61C9548F2002CB4DE /* CTSTokenizedCardPayment.m */,
+				ED8E6AE71C9548F2002CB4DE /* CTSTokenizedPaymentToken.h */,
+				ED8E6AE81C9548F2002CB4DE /* CTSTokenizedPaymentToken.m */,
+				ED8E6AE91C9548F2002CB4DE /* CTSUserAddress.h */,
+				ED8E6AEA1C9548F2002CB4DE /* CTSUserAddress.m */,
+				ED8E6AEB1C9548F2002CB4DE /* CTSUserDetails.h */,
+				ED8E6AEC1C9548F2002CB4DE /* CTSUserDetails.m */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		ED8E6AED1C9548F2002CB4DE /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6AEE1C9548F2002CB4DE /* CTSContactUpdate.h */,
+				ED8E6AEF1C9548F2002CB4DE /* CTSContactUpdate.m */,
+				ED8E6AF01C9548F2002CB4DE /* CTSElectronicCardUpdate.h */,
+				ED8E6AF11C9548F2002CB4DE /* CTSElectronicCardUpdate.m */,
+				ED8E6AF21C9548F2002CB4DE /* CTSNetBankingUpdate.h */,
+				ED8E6AF31C9548F2002CB4DE /* CTSNetBankingUpdate.m */,
+				ED8E6AF41C9548F2002CB4DE /* CTSNewUserProfileReq.h */,
+				ED8E6AF51C9548F2002CB4DE /* CTSNewUserProfileReq.m */,
+				ED8E6AF61C9548F2002CB4DE /* CTSPaymentDetailUpdate.h */,
+				ED8E6AF71C9548F2002CB4DE /* CTSPaymentDetailUpdate.m */,
+				ED8E6AF81C9548F2002CB4DE /* CTSPaymentOption.h */,
+				ED8E6AF91C9548F2002CB4DE /* CTSPaymentOption.m */,
+				ED8E6AFA1C9548F2002CB4DE /* CTSPrepaidUpdate.h */,
+				ED8E6AFB1C9548F2002CB4DE /* CTSPrepaidUpdate.m */,
+				ED8E6AFC1C9548F2002CB4DE /* CTSTokenizedPayment.h */,
+				ED8E6AFD1C9548F2002CB4DE /* CTSTokenizedPayment.m */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		ED8E6AFE1C9548F2002CB4DE /* ResponseObjects */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6AFF1C9548F2002CB4DE /* Authentication */,
+				ED8E6B0A1C9548F2002CB4DE /* CTSResponse.h */,
+				ED8E6B0B1C9548F2002CB4DE /* CTSResponse.m */,
+				ED8E6B0C1C9548F2002CB4DE /* Payment */,
+				ED8E6B291C9548F2002CB4DE /* UserProfile */,
+			);
+			path = ResponseObjects;
+			sourceTree = "<group>";
+		};
+		ED8E6AFF1C9548F2002CB4DE /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6B001C9548F2002CB4DE /* CTSKeyStore.h */,
+				ED8E6B011C9548F2002CB4DE /* CTSKeyStore.m */,
+				ED8E6B021C9548F2002CB4DE /* CTSLinkRes.h */,
+				ED8E6B031C9548F2002CB4DE /* CTSLinkRes.m */,
+				ED8E6B041C9548F2002CB4DE /* CTSLinkUserRes.h */,
+				ED8E6B051C9548F2002CB4DE /* CTSLinkUserRes.m */,
+				ED8E6B061C9548F2002CB4DE /* CTSOauthTokenRes.h */,
+				ED8E6B071C9548F2002CB4DE /* CTSOauthTokenRes.m */,
+				ED8E6B081C9548F2002CB4DE /* CTSSignUpRes.h */,
+				ED8E6B091C9548F2002CB4DE /* CTSSignUpRes.m */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		ED8E6B0C1C9548F2002CB4DE /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6B0D1C9548F2002CB4DE /* CitrusCashRes.h */,
+				ED8E6B0E1C9548F2002CB4DE /* CitrusCashRes.m */,
+				ED8E6B0F1C9548F2002CB4DE /* CTSBill.h */,
+				ED8E6B101C9548F2002CB4DE /* CTSBill.m */,
+				ED8E6B111C9548F2002CB4DE /* CTSCardBinResponse.h */,
+				ED8E6B121C9548F2002CB4DE /* CTSCardBinResponse.m */,
+				ED8E6B131C9548F2002CB4DE /* CTSCashoutBankAccountResp.h */,
+				ED8E6B141C9548F2002CB4DE /* CTSCashoutBankAccountResp.m */,
+				ED8E6B151C9548F2002CB4DE /* CTSCreditCardOption.h */,
+				ED8E6B161C9548F2002CB4DE /* CTSCreditCardOption.m */,
+				ED8E6B171C9548F2002CB4DE /* CTSDebitCardOption.h */,
+				ED8E6B181C9548F2002CB4DE /* CTSDebitCardOption.m */,
+				ED8E6B191C9548F2002CB4DE /* CTSDyPResponse.h */,
+				ED8E6B1A1C9548F2002CB4DE /* CTSDyPResponse.m */,
+				ED8E6B1B1C9548F2002CB4DE /* CTSNetbankingOption.h */,
+				ED8E6B1C1C9548F2002CB4DE /* CTSNetbankingOption.m */,
+				ED8E6B1D1C9548F2002CB4DE /* CTSPaymentRes.h */,
+				ED8E6B1E1C9548F2002CB4DE /* CTSPaymentRes.m */,
+				ED8E6B1F1C9548F2002CB4DE /* CTSPaymentTransactionRes.h */,
+				ED8E6B201C9548F2002CB4DE /* CTSPaymentTransactionRes.m */,
+				ED8E6B211C9548F2002CB4DE /* CTSPGHealthRes.h */,
+				ED8E6B221C9548F2002CB4DE /* CTSPGHealthRes.m */,
+				ED8E6B231C9548F2002CB4DE /* CTSPgSettings.h */,
+				ED8E6B241C9548F2002CB4DE /* CTSPgSettings.m */,
+				ED8E6B251C9548F2002CB4DE /* CTSPrepaidBill.h */,
+				ED8E6B261C9548F2002CB4DE /* CTSPrepaidBill.m */,
+				ED8E6B271C9548F2002CB4DE /* CTSTransferMoneyResponse.h */,
+				ED8E6B281C9548F2002CB4DE /* CTSTransferMoneyResponse.m */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		ED8E6B291C9548F2002CB4DE /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6B2A1C9548F2002CB4DE /* CTSGetBalanceRes.h */,
+				ED8E6B2B1C9548F2002CB4DE /* CTSGetBalanceRes.m */,
+				ED8E6B2C1C9548F2002CB4DE /* CTSNewContactProfile.h */,
+				ED8E6B2D1C9548F2002CB4DE /* CTSNewContactProfile.m */,
+				ED8E6B2E1C9548F2002CB4DE /* CTSNewResponseDataProfile.h */,
+				ED8E6B2F1C9548F2002CB4DE /* CTSNewResponseDataProfile.m */,
+				ED8E6B301C9548F2002CB4DE /* CTSProfileContactNewRes.h */,
+				ED8E6B311C9548F2002CB4DE /* CTSProfileContactNewRes.m */,
+				ED8E6B321C9548F2002CB4DE /* CTSProfileContactRes.h */,
+				ED8E6B331C9548F2002CB4DE /* CTSProfileContactRes.m */,
+				ED8E6B341C9548F2002CB4DE /* CTSProfilePaymentRes.h */,
+				ED8E6B351C9548F2002CB4DE /* CTSProfilePaymentRes.m */,
+				ED8E6B361C9548F2002CB4DE /* CTSProfilePrepaidRes.h */,
+				ED8E6B371C9548F2002CB4DE /* CTSProfilePrepaidRes.m */,
+				ED8E6B381C9548F2002CB4DE /* CTSUpdateMobileNumberRes.h */,
+				ED8E6B391C9548F2002CB4DE /* CTSUpdateMobileNumberRes.m */,
+				ED8E6B3A1C9548F2002CB4DE /* GetProfileRes.h */,
+				ED8E6B3B1C9548F2002CB4DE /* GetProfileRes.m */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		ED8E6B3D1C9548F2002CB4DE /* ModelLayers */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6B3E1C9548F2002CB4DE /* Authentication */,
+				ED8E6B421C9548F2002CB4DE /* CitrusError */,
+				ED8E6B451C9548F2002CB4DE /* Core */,
+				ED8E6B521C9548F2002CB4DE /* CTSRestKitCode */,
+				ED8E6B5E1C9548F2002CB4DE /* External */,
+				ED8E6B7E1C9548F2002CB4DE /* NSObject+logProperties.h */,
+				ED8E6B7F1C9548F2002CB4DE /* NSObject+logProperties.m */,
+				ED8E6B801C9548F2002CB4DE /* Payment */,
+				ED8E6B841C9548F2002CB4DE /* UserProfile */,
+				ED8E6B881C9548F2002CB4DE /* Validator */,
+			);
+			path = ModelLayers;
+			sourceTree = "<group>";
+		};
+		ED8E6B3E1C9548F2002CB4DE /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6B3F1C9548F2002CB4DE /* CTSAuthLayer.h */,
+				ED8E6B401C9548F2002CB4DE /* CTSAuthLayer.m */,
+				ED8E6B411C9548F2002CB4DE /* CTSAuthLayerConstants.h */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		ED8E6B421C9548F2002CB4DE /* CitrusError */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6B431C9548F2002CB4DE /* CTSError.h */,
+				ED8E6B441C9548F2002CB4DE /* CTSError.m */,
+			);
+			path = CitrusError;
+			sourceTree = "<group>";
+		};
+		ED8E6B451C9548F2002CB4DE /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6B461C9548F2002CB4DE /* CTSCoreProtocol.h */,
+				ED8E6B471C9548F2002CB4DE /* CTSDataCache.h */,
+				ED8E6B481C9548F2002CB4DE /* CTSDataCache.m */,
+				ED8E6B491C9548F2002CB4DE /* CTSOauthManager.h */,
+				ED8E6B4A1C9548F2002CB4DE /* CTSOauthManager.m */,
+				ED8E6B4B1C9548F2002CB4DE /* CTSObject.h */,
+				ED8E6B4C1C9548F2002CB4DE /* CTSObject.m */,
+				ED8E6B4D1C9548F2002CB4DE /* CTSUtility.h */,
+				ED8E6B4E1C9548F2002CB4DE /* CTSUtility.m */,
+				ED8E6B4F1C9548F2002CB4DE /* OauthStatus.h */,
+				ED8E6B501C9548F2002CB4DE /* OauthStatus.m */,
+				ED8E6B511C9548F2002CB4DE /* RestLayerConstants.h */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		ED8E6B521C9548F2002CB4DE /* CTSRestKitCode */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6B531C9548F2002CB4DE /* CTSRestCore.h */,
+				ED8E6B541C9548F2002CB4DE /* CTSRestCore.m */,
+				ED8E6B551C9548F2002CB4DE /* CTSRestCoreConstants.h */,
+				ED8E6B561C9548F2002CB4DE /* CTSRestCoreRequest.h */,
+				ED8E6B571C9548F2002CB4DE /* CTSRestCoreRequest.m */,
+				ED8E6B581C9548F2002CB4DE /* CTSRestCoreResponse.h */,
+				ED8E6B591C9548F2002CB4DE /* CTSRestCoreResponse.m */,
+				ED8E6B5A1C9548F2002CB4DE /* CTSRestObject.h */,
+				ED8E6B5B1C9548F2002CB4DE /* CTSRestObject.m */,
+				ED8E6B5C1C9548F2002CB4DE /* CTSRestPluginBase.h */,
+				ED8E6B5D1C9548F2002CB4DE /* CTSRestPluginBase.m */,
+			);
+			path = CTSRestKitCode;
+			sourceTree = "<group>";
+		};
+		ED8E6B5E1C9548F2002CB4DE /* External */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6B5F1C9548F2002CB4DE /* CreditCard-Validator.h */,
+				ED8E6B601C9548F2002CB4DE /* CreditCard-Validator.m */,
+				ED8E6B611C9548F2002CB4DE /* JSONModel */,
+				ED8E6B7D1C9548F2002CB4DE /* UserLogging.h */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		ED8E6B611C9548F2002CB4DE /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6B621C9548F2002CB4DE /* JSONModel */,
+				ED8E6B6D1C9548F2002CB4DE /* JSONModelCategories */,
+				ED8E6B701C9548F2002CB4DE /* JSONModelLib.h */,
+				ED8E6B711C9548F2002CB4DE /* JSONModelNetworking */,
+				ED8E6B781C9548F2002CB4DE /* JSONModelTransformations */,
+			);
+			path = JSONModel;
+			sourceTree = "<group>";
+		};
+		ED8E6B621C9548F2002CB4DE /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6B631C9548F2002CB4DE /* JSONModel+CoreData.h */,
+				ED8E6B641C9548F2002CB4DE /* JSONModel+CoreData.m */,
+				ED8E6B651C9548F2002CB4DE /* JSONModel.h */,
+				ED8E6B661C9548F2002CB4DE /* JSONModel.m */,
+				ED8E6B671C9548F2002CB4DE /* JSONModelArray.h */,
+				ED8E6B681C9548F2002CB4DE /* JSONModelArray.m */,
+				ED8E6B691C9548F2002CB4DE /* JSONModelClassProperty.h */,
+				ED8E6B6A1C9548F2002CB4DE /* JSONModelClassProperty.m */,
+				ED8E6B6B1C9548F2002CB4DE /* JSONModelError.h */,
+				ED8E6B6C1C9548F2002CB4DE /* JSONModelError.m */,
+			);
+			path = JSONModel;
+			sourceTree = "<group>";
+		};
+		ED8E6B6D1C9548F2002CB4DE /* JSONModelCategories */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6B6E1C9548F2002CB4DE /* NSArray+JSONModel.h */,
+				ED8E6B6F1C9548F2002CB4DE /* NSArray+JSONModel.m */,
+			);
+			path = JSONModelCategories;
+			sourceTree = "<group>";
+		};
+		ED8E6B711C9548F2002CB4DE /* JSONModelNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6B721C9548F2002CB4DE /* JSONAPI.h */,
+				ED8E6B731C9548F2002CB4DE /* JSONAPI.m */,
+				ED8E6B741C9548F2002CB4DE /* JSONHTTPClient.h */,
+				ED8E6B751C9548F2002CB4DE /* JSONHTTPClient.m */,
+				ED8E6B761C9548F2002CB4DE /* JSONModel+networking.h */,
+				ED8E6B771C9548F2002CB4DE /* JSONModel+networking.m */,
+			);
+			path = JSONModelNetworking;
+			sourceTree = "<group>";
+		};
+		ED8E6B781C9548F2002CB4DE /* JSONModelTransformations */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6B791C9548F2002CB4DE /* JSONKeyMapper.h */,
+				ED8E6B7A1C9548F2002CB4DE /* JSONKeyMapper.m */,
+				ED8E6B7B1C9548F2002CB4DE /* JSONValueTransformer.h */,
+				ED8E6B7C1C9548F2002CB4DE /* JSONValueTransformer.m */,
+			);
+			path = JSONModelTransformations;
+			sourceTree = "<group>";
+		};
+		ED8E6B801C9548F2002CB4DE /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6B811C9548F2002CB4DE /* CTSPaymentLayer.h */,
+				ED8E6B821C9548F2002CB4DE /* CTSPaymentLayer.m */,
+				ED8E6B831C9548F2002CB4DE /* CTSPaymentLayerConstants.h */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		ED8E6B841C9548F2002CB4DE /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6B851C9548F2002CB4DE /* CTSProfileLayer.h */,
+				ED8E6B861C9548F2002CB4DE /* CTSProfileLayer.m */,
+				ED8E6B871C9548F2002CB4DE /* CTSProfileLayerConstants.h */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		ED8E6B881C9548F2002CB4DE /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6B891C9548F2002CB4DE /* CTSValidator.h */,
+				ED8E6B8A1C9548F2002CB4DE /* CTSValidator.m */,
+			);
+			path = Validator;
+			sourceTree = "<group>";
+		};
+		ED8E6B8C1C9548F2002CB4DE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6B8D1C9548F2002CB4DE /* CTSPaymentWebViewController.h */,
+				ED8E6B8E1C9548F2002CB4DE /* CTSPaymentWebViewController.m */,
+				ED8E6B8F1C9548F2002CB4DE /* UIUtility.h */,
+				ED8E6B901C9548F2002CB4DE /* UIUtility.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ED8E6BE81C95495D002CB4DE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6BE91C95496D002CB4DE /* AboutUsVC.swift */,
+				ED8E6BEA1C95496D002CB4DE /* AddAddressVC.swift */,
+				ED8E6BEB1C95496D002CB4DE /* AppSignInVC.swift */,
+				ED8E6BEC1C95496D002CB4DE /* CartVC.swift */,
+				ED8E6BED1C95496D002CB4DE /* ContactUsVC.swift */,
+				ED8E6BEE1C95496D002CB4DE /* DatePickerVC.swift */,
+				ED8E6BEF1C95496D002CB4DE /* DummyVC.swift */,
+				ED8E6BF01C95496D002CB4DE /* FeedBackVC.swift */,
+				ED8E6BF11C95496D002CB4DE /* ItemPreViewVC.swift */,
+				ED8E6BF21C95496D002CB4DE /* LocationPicker.swift */,
+				ED8E6BF31C95496D002CB4DE /* LocationPickerVC.swift */,
+				ED8E6BF41C95496D002CB4DE /* MenuVC.swift */,
+				ED8E6BF51C95496D002CB4DE /* MyOrderDetailsVC.swift */,
+				ED8E6BF61C95496D002CB4DE /* MyOrdersVC.swift */,
+				ED8E6BF71C95496D002CB4DE /* OfferNotificationsVC.swift */,
+				ED8E6BF81C95496D002CB4DE /* OrderStatusVC.swift */,
+				ED8E6BF91C95496D002CB4DE /* ReferralVC.swift */,
+				ED8E6BFA1C95496D002CB4DE /* RegistrationVC.swift */,
+				ED8E6BFB1C95496D002CB4DE /* SideMenuContentVC.swift */,
+				ED8E6BFC1C95496D002CB4DE /* SignInVC.swift */,
+				ED8E6BFD1C95496D002CB4DE /* TermsVC.swift */,
+				ED8E6BFE1C95496D002CB4DE /* UserOrderDetails.swift */,
+				ED8E6BFF1C95496D002CB4DE /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		ED8E6C171C954974002CB4DE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6C181C9549FA002CB4DE /* ActivityIndicator.swift */,
+				ED8E6C191C9549FA002CB4DE /* AddAddressCell.swift */,
+				ED8E6C1A1C9549FA002CB4DE /* AddressCell.swift */,
+				ED8E6C1B1C9549FA002CB4DE /* CartBillView.swift */,
+				ED8E6C1C1C9549FA002CB4DE /* ChangeCell.swift */,
+				ED8E6C1D1C9549FA002CB4DE /* CouponCodeCell.swift */,
+				ED8E6C1E1C9549FA002CB4DE /* CustomSegment.swift */,
+				ED8E6C1F1C9549FA002CB4DE /* DatePicker.swift */,
+				ED8E6C201C9549FA002CB4DE /* Deliveryaddress.swift */,
+				ED8E6C211C9549FA002CB4DE /* Deliverylocation.swift */,
+				ED8E6C221C9549FA002CB4DE /* Deliverytime.swift */,
+				ED8E6C231C9549FA002CB4DE /* MenuItemCell.swift */,
+				ED8E6C241C9549FA002CB4DE /* MyOrderCell.swift */,
+				ED8E6C251C9549FA002CB4DE /* MyOrdersDetailsCell.swift */,
+				ED8E6C261C9549FA002CB4DE /* OffersCell.swift */,
+				ED8E6C271C9549FA002CB4DE /* PaymentModeCell.swift */,
+				ED8E6C281C9549FA002CB4DE /* PopCell.swift */,
+				ED8E6C291C9549FA002CB4DE /* ProductsCell.swift */,
+				ED8E6C2A1C9549FA002CB4DE /* RedeemCell.swift */,
+				ED8E6C2B1C9549FA002CB4DE /* SideMenuCell.swift */,
+				ED8E6C2C1C9549FA002CB4DE /* TimeSlotCell.swift */,
+				ED8E6C2D1C9549FA002CB4DE /* TotalBill.swift */,
+				ED8E6C2E1C9549FA002CB4DE /* VitaminCell.swift */,
+				ED8E6C2F1C9549FA002CB4DE /* VitaminCollectionView.swift */,
+				ED8E6C3A1C9549FA002CB4DE /* Yourdetails.swift */,
+				ED8E6C301C9549FA002CB4DE /* Xibs */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		ED8E6C301C9549FA002CB4DE /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6C311C9549FA002CB4DE /* AddOnsTableCell.xib */,
+				ED8E6C321C9549FA002CB4DE /* CartBillView.xib */,
+				ED8E6C331C9549FA002CB4DE /* CustomSegment.xib */,
+				ED8E6C341C9549FA002CB4DE /* MenuItemCell.xib */,
+				ED8E6C351C9549FA002CB4DE /* MyOrderCell.xib */,
+				ED8E6C361C9549FA002CB4DE /* MyOrdersDetailsCell.xib */,
+				ED8E6C371C9549FA002CB4DE /* PopCell.xib */,
+				ED8E6C381C9549FA002CB4DE /* SideMenuCell.xib */,
+				ED8E6C391C9549FA002CB4DE /* VitaminCell.xib */,
+			);
+			name = Xibs;
+			path = Views/Xibs;
 			sourceTree = "<group>";
 		};
 		EDA736C11BE4DB1800AC9884 /* Resources */ = {
@@ -458,19 +1140,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDEBAEF81C14932B0047E070 /* VitaminCell.xib in Resources */,
-				EDCC81E71C268BF500C961F8 /* CustomSegment.xib in Resources */,
+				ED8E6C551C9549FA002CB4DE /* CustomSegment.xib in Resources */,
+				ED8E6C5A1C9549FA002CB4DE /* SideMenuCell.xib in Resources */,
 				ED722B241BE09A33003DC9F2 /* LaunchScreen.storyboard in Resources */,
-				ED3E37F41BEF5FE400BB5F91 /* SideMenuCell.xib in Resources */,
-				EDBA06B91C019FE200BE09B3 /* MyOrderCell.xib in Resources */,
-				ED87B01E1BE72E37003177D7 /* CartBillView.xib in Resources */,
 				ED996EAA1C2C63E70017284A /* Main.storyboard in Resources */,
-				ED1A6F281BE281C200F1B911 /* MenuItemCell.xib in Resources */,
+				ED8E6C541C9549FA002CB4DE /* CartBillView.xib in Resources */,
+				ED8E6C571C9549FA002CB4DE /* MyOrderCell.xib in Resources */,
+				ED8E6C581C9549FA002CB4DE /* MyOrdersDetailsCell.xib in Resources */,
+				ED8E6C561C9549FA002CB4DE /* MenuItemCell.xib in Resources */,
+				ED8E6C5B1C9549FA002CB4DE /* VitaminCell.xib in Resources */,
+				ED8E6C591C9549FA002CB4DE /* PopCell.xib in Resources */,
 				EDE5E0531C53562C0044E819 /* MyAddress.gpx in Resources */,
-				EDBA07061C0B6C5800BE09B3 /* PopCell.xib in Resources */,
+				ED8E6C531C9549FA002CB4DE /* AddOnsTableCell.xib in Resources */,
 				ED722B211BE09A33003DC9F2 /* Assets.xcassets in Resources */,
-				EDA7CCF21C46CC4800A40AEE /* MyOrdersDetailsCell.xib in Resources */,
-				ED87B0201BE73E7D003177D7 /* AddOnsTableCell.xib in Resources */,
 				EDA736D11BE4DF3700AC9884 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,84 +1212,171 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED722B2E1BE1060A003DC9F2 /* SideMenuContentVC.swift in Sources */,
-				ED722B361BE1F080003DC9F2 /* ContactUsVC.swift in Sources */,
-				EDA7CCF81C4C0CD000A40AEE /* AddAddressCell.swift in Sources */,
+				ED8E6BE31C9548F2002CB4DE /* CTSPaymentLayer.m in Sources */,
+				ED8E6C131C95496D002CB4DE /* SignInVC.swift in Sources */,
+				ED8E6BB71C9548F2002CB4DE /* CTSCreditCardOption.m in Sources */,
+				ED8E6C111C95496D002CB4DE /* RegistrationVC.swift in Sources */,
+				ED8E6BE01C9548F2002CB4DE /* JSONKeyMapper.m in Sources */,
 				EDE5E03C1C4FEB690044E819 /* Kitchens+CoreDataProperties.swift in Sources */,
-				EDEBAEFA1C14935B0047E070 /* VitaminCell.swift in Sources */,
-				EDBA06BD1C01D8CF00BE09B3 /* UserOrderDetails.swift in Sources */,
+				ED8E6BA11C9548F2002CB4DE /* CTSTokenizedCardPayment.m in Sources */,
+				ED8E6BC11C9548F2002CB4DE /* CTSGetBalanceRes.m in Sources */,
+				ED8E6C441C9549FA002CB4DE /* Deliverylocation.swift in Sources */,
+				ED8E6BB61C9548F2002CB4DE /* CTSCashoutBankAccountResp.m in Sources */,
+				ED8E6B981C9548F2002CB4DE /* CTSCashoutToBankRes.m in Sources */,
+				ED8E6C481C9549FA002CB4DE /* MyOrdersDetailsCell.swift in Sources */,
+				ED8E6B921C9548F2002CB4DE /* CTSRuleInfo.m in Sources */,
 				ED5B21831BF76D3400C65857 /* Locations+CoreDataProperties.swift in Sources */,
-				ED58D6281C3D5E0C00741E8D /* FeedBackVC.swift in Sources */,
-				ED58D61A1C3A020A00741E8D /* RedeemCell.swift in Sources */,
-				EDA7CCDE1C4601A100A40AEE /* ReferralVC.swift in Sources */,
-				ED722B321BE1F060003DC9F2 /* MyOrdersVC.swift in Sources */,
-				ED87B01C1BE72DFA003177D7 /* CartBillView.swift in Sources */,
-				ED5B21751BF6B85200C65857 /* ActivityIndicator.swift in Sources */,
-				EDA7CCF01C46CBBF00A40AEE /* MyOrdersDetailsCell.swift in Sources */,
+				ED8E6C161C95496D002CB4DE /* ViewController.swift in Sources */,
+				ED8E6BBE1C9548F2002CB4DE /* CTSPgSettings.m in Sources */,
+				ED8E6C041C95496D002CB4DE /* ContactUsVC.swift in Sources */,
+				ED8E6BB81C9548F2002CB4DE /* CTSDebitCardOption.m in Sources */,
+				ED8E6C0B1C95496D002CB4DE /* MenuVC.swift in Sources */,
+				ED8E6BD71C9548F2002CB4DE /* JSONModel+CoreData.m in Sources */,
+				ED8E6C4B1C9549FA002CB4DE /* PopCell.swift in Sources */,
+				ED8E6BA31C9548F2002CB4DE /* CTSUserAddress.m in Sources */,
+				ED8E6C061C95496D002CB4DE /* DummyVC.swift in Sources */,
 				EDC572281C7AD1210018F11C /* CustomModalViewController.swift in Sources */,
-				EDCC2AEB1C3676CD00C15C3B /* OffersCell.swift in Sources */,
-				EDCC81E51C268BC300C961F8 /* CustomSegment.swift in Sources */,
-				EDBA07041C0B6BCF00BE09B3 /* PopCell.swift in Sources */,
+				ED8E6C431C9549FA002CB4DE /* Deliveryaddress.swift in Sources */,
+				ED8E6C0E1C95496D002CB4DE /* OfferNotificationsVC.swift in Sources */,
+				ED8E6BC61C9548F2002CB4DE /* CTSProfilePaymentRes.m in Sources */,
+				ED8E6C411C9549FA002CB4DE /* CustomSegment.swift in Sources */,
+				ED8E6B961C9548F2002CB4DE /* CTSAmount.m in Sources */,
+				ED8E6BD11C9548F2002CB4DE /* CTSRestCore.m in Sources */,
+				ED8E6BCD1C9548F2002CB4DE /* CTSOauthManager.m in Sources */,
+				ED8E6C091C95496D002CB4DE /* LocationPicker.swift in Sources */,
+				ED8E6BAB1C9548F2002CB4DE /* CTSPrepaidUpdate.m in Sources */,
+				ED8E6BDD1C9548F2002CB4DE /* JSONAPI.m in Sources */,
+				ED8E6B9F1C9548F2002CB4DE /* CTSPaymentToken.m in Sources */,
 				ED722B1F1BE09A33003DC9F2 /* MyBreakFast.xcdatamodeld in Sources */,
-				EDA736D81BE4ED4F00AC9884 /* SignInVC.swift in Sources */,
+				ED8E6C4D1C9549FA002CB4DE /* RedeemCell.swift in Sources */,
+				ED8E6C4A1C9549FA002CB4DE /* PaymentModeCell.swift in Sources */,
+				ED8E6BBC1C9548F2002CB4DE /* CTSPaymentTransactionRes.m in Sources */,
+				ED8E6B941C9548F2002CB4DE /* CTSUser.m in Sources */,
+				ED8E6C0A1C95496D002CB4DE /* LocationPickerVC.swift in Sources */,
+				ED8E6C5C1C9549FA002CB4DE /* Yourdetails.swift in Sources */,
 				EDE7F1F41C57DBB30063F855 /* Coupon.swift in Sources */,
+				ED8E6C4C1C9549FA002CB4DE /* ProductsCell.swift in Sources */,
+				ED8E6B931C9548F2002CB4DE /* CTSSignupState.m in Sources */,
 				EDCC2AE51C339F0800C15C3B /* Order.swift in Sources */,
+				ED8E6C011C95496D002CB4DE /* AddAddressVC.swift in Sources */,
 				ED5B21711BF612F700C65857 /* Helper.swift in Sources */,
-				ED996EB01C2D95750017284A /* RegistrationVC.swift in Sources */,
+				ED8E6C0F1C95496D002CB4DE /* OrderStatusVC.swift in Sources */,
+				ED8E6BAF1C9548F2002CB4DE /* CTSLinkUserRes.m in Sources */,
 				EDC572261C7AD1210018F11C /* CustomPresentationAnimationController.swift in Sources */,
-				ED996EAC1C2C68DC0017284A /* DummyVC.swift in Sources */,
+				ED8E6BB41C9548F2002CB4DE /* CTSBill.m in Sources */,
+				ED8E6BB91C9548F2002CB4DE /* CTSDyPResponse.m in Sources */,
+				ED8E6BCC1C9548F2002CB4DE /* CTSDataCache.m in Sources */,
 				ED5B21871BF76D3400C65857 /* Item.swift in Sources */,
-				EDC1691C1BF9918D000538E9 /* LocationPicker.swift in Sources */,
-				ED722B341BE1F073003DC9F2 /* AboutUsVC.swift in Sources */,
-				EDBA06BB1C01A23300BE09B3 /* MyOrderCell.swift in Sources */,
-				ED996EAE1C2D17790017284A /* LocationPickerVC.swift in Sources */,
+				ED8E6BA71C9548F2002CB4DE /* CTSNetBankingUpdate.m in Sources */,
+				ED8E6BCA1C9548F2002CB4DE /* CTSAuthLayer.m in Sources */,
+				ED8E6BAD1C9548F2002CB4DE /* CTSKeyStore.m in Sources */,
+				ED8E6BA81C9548F2002CB4DE /* CTSNewUserProfileReq.m in Sources */,
+				ED8E6C031C95496D002CB4DE /* CartVC.swift in Sources */,
+				ED8E6BA01C9548F2002CB4DE /* CTSPaymentUpdate.m in Sources */,
+				ED8E6B9A1C9548F2002CB4DE /* CTSDyPValidateRuleReq.m in Sources */,
+				ED8E6C521C9549FA002CB4DE /* VitaminCollectionView.swift in Sources */,
 				ED5B21851BF76D3400C65857 /* UserDetails+CoreDataProperties.swift in Sources */,
+				ED8E6C3C1C9549FA002CB4DE /* AddAddressCell.swift in Sources */,
+				ED8E6BBA1C9548F2002CB4DE /* CTSNetbankingOption.m in Sources */,
+				ED8E6BE71C9548F2002CB4DE /* UIUtility.m in Sources */,
 				ED3E37F21BEE5CEA00BB5F91 /* Constants.swift in Sources */,
-				ED0B85041C3E29740082AFF4 /* OfferNotificationsVC.swift in Sources */,
-				ED87B0251BE7C68A003177D7 /* ItemPreViewVC.swift in Sources */,
+				ED8E6BB21C9548F2002CB4DE /* CTSResponse.m in Sources */,
+				ED8E6BC71C9548F2002CB4DE /* CTSProfilePrepaidRes.m in Sources */,
+				ED8E6BD51C9548F2002CB4DE /* CTSRestPluginBase.m in Sources */,
 				ED5B21811BF76D3400C65857 /* TimeSlots+CoreDataProperties.swift in Sources */,
+				ED8E6BD81C9548F2002CB4DE /* JSONModel.m in Sources */,
+				ED8E6C4E1C9549FA002CB4DE /* SideMenuCell.swift in Sources */,
 				EDBA06B61C00D7BC00BE09B3 /* MyOrder+CoreDataProperties.swift in Sources */,
+				ED8E6BDE1C9548F2002CB4DE /* JSONHTTPClient.m in Sources */,
 				ED996EB41C30CA960017284A /* UserAddress.swift in Sources */,
+				ED8E6B971C9548F2002CB4DE /* CTSCashoutBankAccount.m in Sources */,
 				EDCC2AE71C339F6500C15C3B /* OrderItem.swift in Sources */,
-				EDEBAEF61C1492BF0047E070 /* VitaminCollectionView.swift in Sources */,
-				ED87B0221BE74336003177D7 /* OrderStatusVC.swift in Sources */,
-				ED58D61C1C3A022700741E8D /* CouponCodeCell.swift in Sources */,
-				ED722B191BE09A33003DC9F2 /* ViewController.swift in Sources */,
-				EDBA06C11C021BD600BE09B3 /* Deliverylocation.swift in Sources */,
-				ED58D61E1C3A025100741E8D /* PaymentModeCell.swift in Sources */,
-				EDBA06C31C021C0500BE09B3 /* Deliveryaddress.swift in Sources */,
-				ED1A6F241BE27F6700F1B911 /* MenuItemCell.swift in Sources */,
+				ED8E6BBD1C9548F2002CB4DE /* CTSPGHealthRes.m in Sources */,
+				ED8E6BD61C9548F2002CB4DE /* CreditCard-Validator.m in Sources */,
+				ED8E6BD21C9548F2002CB4DE /* CTSRestCoreRequest.m in Sources */,
+				ED8E6C121C95496D002CB4DE /* SideMenuContentVC.swift in Sources */,
+				ED8E6B911C9548F2002CB4DE /* CTSRestError.m in Sources */,
+				ED8E6BD91C9548F2002CB4DE /* JSONModelArray.m in Sources */,
+				ED8E6BC41C9548F2002CB4DE /* CTSProfileContactNewRes.m in Sources */,
+				ED8E6B9E1C9548F2002CB4DE /* CTSPaymentRequest.m in Sources */,
+				ED8E6BA41C9548F2002CB4DE /* CTSUserDetails.m in Sources */,
+				ED8E6C3D1C9549FA002CB4DE /* AddressCell.swift in Sources */,
+				ED8E6C001C95496D002CB4DE /* AboutUsVC.swift in Sources */,
+				ED8E6BE61C9548F2002CB4DE /* CTSPaymentWebViewController.m in Sources */,
+				ED8E6BDF1C9548F2002CB4DE /* JSONModel+networking.m in Sources */,
 				ED996EB31C30CA960017284A /* UserAddress+CoreDataProperties.swift in Sources */,
 				ED5B21801BF76D3400C65857 /* Offer.swift in Sources */,
+				ED8E6B9B1C9548F2002CB4DE /* CTSGuestCheckout.m in Sources */,
+				ED8E6C101C95496D002CB4DE /* ReferralVC.swift in Sources */,
+				ED8E6BC81C9548F2002CB4DE /* CTSUpdateMobileNumberRes.m in Sources */,
+				ED8E6BE51C9548F2002CB4DE /* CTSValidator.m in Sources */,
+				ED8E6BE11C9548F2002CB4DE /* JSONValueTransformer.m in Sources */,
+				ED8E6B9D1C9548F2002CB4DE /* CTSPaymentNetbankingRequest.m in Sources */,
 				ED5B21841BF76D3400C65857 /* Locations.swift in Sources */,
-				ED441C601C1879A700ED45E6 /* AppSignInVC.swift in Sources */,
+				ED8E6C0C1C95496D002CB4DE /* MyOrderDetailsVC.swift in Sources */,
+				ED8E6BE21C9548F2002CB4DE /* NSObject+logProperties.m in Sources */,
+				ED8E6C491C9549FA002CB4DE /* OffersCell.swift in Sources */,
+				ED8E6BDA1C9548F2002CB4DE /* JSONModelClassProperty.m in Sources */,
 				EDBA06B71C00D7BC00BE09B3 /* MyOrder.swift in Sources */,
+				ED8E6C471C9549FA002CB4DE /* MyOrderCell.swift in Sources */,
+				ED8E6C421C9549FA002CB4DE /* DatePicker.swift in Sources */,
 				ED5B21861BF76D3400C65857 /* Item+CoreDataProperties.swift in Sources */,
 				ED722B171BE09A33003DC9F2 /* AppDelegate.swift in Sources */,
-				ED996EA61C2BBD190017284A /* DatePickerVC.swift in Sources */,
+				ED8E6BD01C9548F2002CB4DE /* OauthStatus.m in Sources */,
 				ED709AA31C29AA960068528C /* Fooddetails.swift in Sources */,
-				ED58D6181C3A01D700741E8D /* TotalBill.swift in Sources */,
-				EDA736C01BE4A4CD00AC9884 /* CartVC.swift in Sources */,
-				EDCC2AE91C34D0C200C15C3B /* ProductsCell.swift in Sources */,
+				ED8E6BA91C9548F2002CB4DE /* CTSPaymentDetailUpdate.m in Sources */,
+				ED8E6BDC1C9548F2002CB4DE /* NSArray+JSONModel.m in Sources */,
+				ED8E6BC51C9548F2002CB4DE /* CTSProfileContactRes.m in Sources */,
+				ED8E6BC91C9548F2002CB4DE /* GetProfileRes.m in Sources */,
 				ED58D62A1C3D654200741E8D /* FloatRatingView.swift in Sources */,
-				EDBA06BF1C021B9F00BE09B3 /* Yourdetails.swift in Sources */,
-				ED584CC01C842D8000BDCC5C /* TermsVC.swift in Sources */,
+				ED8E6BDB1C9548F2002CB4DE /* JSONModelError.m in Sources */,
+				ED8E6BAE1C9548F2002CB4DE /* CTSLinkRes.m in Sources */,
+				ED8E6BA21C9548F2002CB4DE /* CTSTokenizedPaymentToken.m in Sources */,
+				ED8E6BB01C9548F2002CB4DE /* CTSOauthTokenRes.m in Sources */,
+				ED8E6BC21C9548F2002CB4DE /* CTSNewContactProfile.m in Sources */,
 				ED0432EB1C8F326800B6B6F2 /* AKPickerView.swift in Sources */,
+				ED8E6C081C95496D002CB4DE /* ItemPreViewVC.swift in Sources */,
+				ED8E6C401C9549FA002CB4DE /* CouponCodeCell.swift in Sources */,
+				ED8E6BA51C9548F2002CB4DE /* CTSContactUpdate.m in Sources */,
+				ED8E6C0D1C95496D002CB4DE /* MyOrdersVC.swift in Sources */,
 				EDE5E03D1C4FEB690044E819 /* Kitchens.swift in Sources */,
 				ED5B21821BF76D3400C65857 /* TimeSlots.swift in Sources */,
-				EDA7CCF41C4BA10100A40AEE /* AddAddressVC.swift in Sources */,
-				ED722B301BE1F04C003DC9F2 /* MenuVC.swift in Sources */,
-				EDBA06C51C021C2B00BE09B3 /* Deliverytime.swift in Sources */,
-				EDCC2AE31C318F8A00C15C3B /* TimeSlotCell.swift in Sources */,
-				EDA7CCF61C4BBD2900A40AEE /* AddressCell.swift in Sources */,
-				ED58D6201C3A026D00741E8D /* ChangeCell.swift in Sources */,
+				ED8E6BAA1C9548F2002CB4DE /* CTSPaymentOption.m in Sources */,
+				ED8E6BC01C9548F2002CB4DE /* CTSTransferMoneyResponse.m in Sources */,
+				ED8E6C3F1C9549FA002CB4DE /* ChangeCell.swift in Sources */,
+				ED8E6BCF1C9548F2002CB4DE /* CTSUtility.m in Sources */,
+				ED8E6C451C9549FA002CB4DE /* Deliverytime.swift in Sources */,
+				ED8E6C3B1C9549FA002CB4DE /* ActivityIndicator.swift in Sources */,
+				ED8E6BB51C9548F2002CB4DE /* CTSCardBinResponse.m in Sources */,
+				ED8E6C141C95496D002CB4DE /* TermsVC.swift in Sources */,
+				ED8E6BD31C9548F2002CB4DE /* CTSRestCoreResponse.m in Sources */,
+				ED8E6C071C95496D002CB4DE /* FeedBackVC.swift in Sources */,
+				ED8E6C461C9549FA002CB4DE /* MenuItemCell.swift in Sources */,
+				ED8E6B9C1C9548F2002CB4DE /* CTSPaymentMode.m in Sources */,
+				ED8E6B951C9548F2002CB4DE /* PayLoadWebviewDto.m in Sources */,
+				ED8E6BB11C9548F2002CB4DE /* CTSSignUpRes.m in Sources */,
+				ED8E6C151C95496D002CB4DE /* UserOrderDetails.swift in Sources */,
+				ED8E6BBF1C9548F2002CB4DE /* CTSPrepaidBill.m in Sources */,
+				ED8E6C501C9549FA002CB4DE /* TotalBill.swift in Sources */,
+				ED8E6C4F1C9549FA002CB4DE /* TimeSlotCell.swift in Sources */,
+				ED8E6BBB1C9548F2002CB4DE /* CTSPaymentRes.m in Sources */,
+				ED8E6C511C9549FA002CB4DE /* VitaminCell.swift in Sources */,
 				EDC572271C7AD1210018F11C /* CustomPresentationController.swift in Sources */,
-				ED3E37F61BEF626600BB5F91 /* SideMenuCell.swift in Sources */,
+				ED8E6BCE1C9548F2002CB4DE /* CTSObject.m in Sources */,
+				ED8E6BAC1C9548F2002CB4DE /* CTSTokenizedPayment.m in Sources */,
+				ED8E6C051C95496D002CB4DE /* DatePickerVC.swift in Sources */,
 				ED709AA41C29AA960068528C /* Fooddetails+CoreDataProperties.swift in Sources */,
+				ED8E6C3E1C9549FA002CB4DE /* CartBillView.swift in Sources */,
+				ED8E6BB31C9548F2002CB4DE /* CitrusCashRes.m in Sources */,
+				ED8E6BE41C9548F2002CB4DE /* CTSProfileLayer.m in Sources */,
 				ED5B217F1BF76D3400C65857 /* Offer+CoreDataProperties.swift in Sources */,
-				EDF3C48E1C43E70700010218 /* MyOrderDetailsVC.swift in Sources */,
+				ED8E6BA61C9548F2002CB4DE /* CTSElectronicCardUpdate.m in Sources */,
+				ED8E6BD41C9548F2002CB4DE /* CTSRestObject.m in Sources */,
 				ED5B216F1BF612B700C65857 /* UserDetails.swift in Sources */,
-				EDC1691A1BF99176000538E9 /* DatePicker.swift in Sources */,
+				ED8E6BC31C9548F2002CB4DE /* CTSNewResponseDataProfile.m in Sources */,
+				ED8E6C021C95496D002CB4DE /* AppSignInVC.swift in Sources */,
+				ED8E6BCB1C9548F2002CB4DE /* CTSError.m in Sources */,
+				ED8E6B991C9548F2002CB4DE /* CTSDyPPaymentInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

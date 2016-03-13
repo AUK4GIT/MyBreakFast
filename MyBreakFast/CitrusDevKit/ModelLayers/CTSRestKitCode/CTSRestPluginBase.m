@@ -1,0 +1,175 @@
+//
+//  CTSRestPluginBase.m
+//  CTSRestKit
+//
+//  Created by Yadnesh Wankhede on 30/07/14.
+//  Copyright (c) 2014 CitrusPay. All rights reserved.
+//
+
+#import "CTSRestPluginBase.h"
+#import "CTSRestError.h"
+#import "NSObject+logProperties.h"
+#import "CTSOauthManager.h"
+#import "CTSAuthLayerConstants.h"
+#import "CTSUtility.h"
+@implementation CTSRestPluginBase
+@synthesize requestBlockCallbackMap;
+- (instancetype)initWithRequestSelectorMapping:(NSDictionary*)mapping
+                                       baseUrl:(NSString*)baseUrl
+                                      keyStore:(CTSKeyStore *)keyStoreArg{
+    self = [super init];
+    if (self) {
+        ctsCache = [CTSDataCache sharedCache];
+        restCore = [[CTSRestCore alloc] initWithBaseUrl:baseUrl];
+        restCore.delegate = self;
+        requestSelectorMap = mapping;
+        keystore = keyStoreArg;
+        requestBlockCallbackMap = [[NSMutableDictionary alloc] init];
+        dataCache = [[NSMutableDictionary alloc] init];
+        if (self != [CTSRestPluginBase class] &&
+            ![self conformsToProtocol:@protocol(CTSRestCoreDelegate)]) {
+            @throw
+            [[NSException alloc] initWithName:@"UnImplimented Protocol"
+                                       reason:@"CTSRestCoreDelegate - not adopted"
+                                     userInfo:nil];
+        }
+    }
+    return self;
+}
+
+- (instancetype)initWithRequestSelectorMapping:(NSDictionary*)mapping
+                                       baseUrl:(NSString*)baseUrl
+{
+    return [self initWithRequestSelectorMapping:mapping baseUrl:baseUrl keyStore:nil];
+}
+
+-(void)setKeyStore:(CTSKeyStore *)keyStoreArg{
+    keystore = keyStoreArg;
+}
+
+- (void)restCore:(CTSRestCore*)restCore
+didReceiveResponse:(CTSRestCoreResponse*)response {
+    SEL sel = [[requestSelectorMap
+                valueForKey:toNSString(response.requestId)] pointerValue];
+    
+    if ([self respondsToSelector:sel]) {
+        if (response.error != nil) {
+            response = [self addJsonErrorToResponse:response];
+        }
+        
+        [self performSelector:sel onThread:[NSThread currentThread] withObject:response waitUntilDone:YES];
+    } else {
+        @throw [[NSException alloc]
+                initWithName:@"No Selector Found"
+                reason:[NSString stringWithFormat:@"method %@ | NOT FOUND",
+                        NSStringFromSelector(sel)]
+                userInfo:nil];
+    }
+}
+
+
+
+
+
+- (CTSRestCoreResponse*)addJsonErrorToResponse:(CTSRestCoreResponse*)response {
+    JSONModelError* jsonError = nil;
+    NSError* serverError = response.error;
+    CTSRestError* error;
+    error = [[CTSRestError alloc] initWithString:response.responseString
+                                           error:&jsonError];
+    
+    if(error != nil && error.errorMessage == nil && error.errorDescription == nil && error.error == nil){
+        //error may be in the form of other unexpected json, try with other format
+        NSDictionary *dict = [CTSUtility toDict:response.responseString];
+        
+        error.errorMessage = [dict valueForKey:@"errorMessage"];
+        error.errorCode = [dict valueForKey:@"errorCode"];
+        if(error.errorMessage == nil){
+            error = nil;
+        }
+    }
+    
+    [error logProperties];
+    if (error != nil) {
+        if (error.type != nil) {
+            error.error = error.type;
+        } else {
+            error.type = error.error;
+        }
+        
+        if(error.errorDescription == nil){
+            error.errorDescription = error.description;
+        }
+        else{
+            error.description = error.errorDescription;
+        }
+        
+        
+        if(error.errorMessage != nil){
+            error.errorDescription = error.errorMessage;
+        }
+    } else {
+        error = [[CTSRestError alloc] init];
+    }
+    
+    error.serverResponse = response.responseString;
+    
+    NSString *newDes;
+    if(error.errorDescription != nil){
+        newDes =error.errorDescription;
+    }
+    else {
+        newDes =[[serverError userInfo] valueForKey:NSLocalizedDescriptionKey];
+        
+    }
+    
+    
+    
+    NSDictionary* userInfo = @{
+                               CITRUS_ERROR_DESCRIPTION_KEY : error,
+                               NSLocalizedDescriptionKey :newDes
+                               
+                               };
+    response.error = [NSError errorWithDomain:CITRUS_ERROR_DOMAIN
+                                         code:[serverError code]
+                                     userInfo:userInfo];
+    return response;
+}
+
+- (void)addCallback:(id)callBack forRequestId:(int)reqId {
+    if (callBack != nil)
+        [self.requestBlockCallbackMap setObject:[callBack copy]
+                                         forKey:toNSString(reqId)];
+}
+
+- (id)retrieveAndRemoveCallbackForReqId:(int)reqId {
+    id callback = [self.requestBlockCallbackMap objectForKey:toNSString(reqId)];
+    [self.requestBlockCallbackMap removeObjectForKey:toNSString(reqId)];
+    return callback;
+}
+
+- (void)cacheData:(id)object key:(NSString *)index {
+    [ctsCache.cache setValue:object forKey:index];
+}
+- (id)fetchCachedDataForKey:(NSString *)index {
+    return [ctsCache.cache valueForKey:index];
+}
+- (id)fetchAndRemovedCachedDataForKey:(NSString *)index {
+    id object = [self fetchCachedDataForKey:index];
+    [ctsCache.cache removeObjectForKey:index];
+    return object;
+}
+//
+//- (long)addDataToCacheAtAutoIndex:(NSString *)object {
+//    long index = [self getNewIndex];
+//    [self cacheData:object key:index];
+//    return index;
+//}
+//
+//- (long)getNewIndex {
+//    return cacheId++;
+//}
+
+
+
+@end
