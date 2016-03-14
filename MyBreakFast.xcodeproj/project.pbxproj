@@ -172,6 +172,7 @@
 		ED8E6C5A1C9549FA002CB4DE /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED8E6C381C9549FA002CB4DE /* SideMenuCell.xib */; };
 		ED8E6C5B1C9549FA002CB4DE /* VitaminCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED8E6C391C9549FA002CB4DE /* VitaminCell.xib */; };
 		ED8E6C5C1C9549FA002CB4DE /* Yourdetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8E6C3A1C9549FA002CB4DE /* Yourdetails.swift */; };
+		ED8E6C721C95619A002CB4DE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8E6C711C95619A002CB4DE /* Security.framework */; };
 		ED996EAA1C2C63E70017284A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED996EA81C2C63E70017284A /* Main.storyboard */; };
 		ED996EB31C30CA960017284A /* UserAddress+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED996EB11C30CA960017284A /* UserAddress+CoreDataProperties.swift */; };
 		ED996EB41C30CA960017284A /* UserAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED996EB21C30CA960017284A /* UserAddress.swift */; };
@@ -457,6 +458,7 @@
 		ED8E6C381C9549FA002CB4DE /* SideMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuCell.xib; sourceTree = "<group>"; };
 		ED8E6C391C9549FA002CB4DE /* VitaminCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VitaminCell.xib; sourceTree = "<group>"; };
 		ED8E6C3A1C9549FA002CB4DE /* Yourdetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Yourdetails.swift; path = Views/Yourdetails.swift; sourceTree = "<group>"; };
+		ED8E6C711C95619A002CB4DE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		ED996EA91C2C63E70017284A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED996EB11C30CA960017284A /* UserAddress+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserAddress+CoreDataProperties.swift"; path = "Models/UserAddress+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ED996EB21C30CA960017284A /* UserAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserAddress.swift; path = Models/UserAddress.swift; sourceTree = "<group>"; };
@@ -484,6 +486,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED8E6C721C95619A002CB4DE /* Security.framework in Frameworks */,
 				42F4FE3801F1438966FD070F /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1064,6 +1067,7 @@
 		FCCBE4C75107B921E1C15ABB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ED8E6C711C95619A002CB4DE /* Security.framework */,
 				EDA09EF01BFC24C5000470CB /* CoreLocation.framework */,
 				EDA736DD1BE4F14D00AC9884 /* StoreKit.framework */,
 				EDA736DB1BE4F11400AC9884 /* SystemConfiguration.framework */,
