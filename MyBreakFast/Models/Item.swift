@@ -71,6 +71,9 @@ class Item: NSManagedObject {
         } else {
             self.bestsuitedfor = "\(dict.objectForKey("best_suited"))";
         }
+        if let obj = dict.objectForKey("tags") as? NSArray{
+            self.tags = obj.componentsJoinedByString(",");
+        }
         if let obj = dict.objectForKey("food_details") as? NSDictionary{
             self.fooddetails = Helper.sharedInstance.getFoodDetailsObject() as? Fooddetails;
             self.fooddetails?.saveData(obj);

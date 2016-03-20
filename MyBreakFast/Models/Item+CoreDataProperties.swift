@@ -2,7 +2,7 @@
 //  Item+CoreDataProperties.swift
 //  
 //
-//  Created by Uday Kiran Ailapaka on 29/01/16.
+//  Created by Uday Kiran Ailapaka on 19/03/16.
 //
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -26,6 +26,7 @@ extension Item {
     @NSManaged var maxlimit: String?
     @NSManaged var price: String?
     @NSManaged var stockid: String?
+    @NSManaged var tags: String?
     @NSManaged var fooddetails: Fooddetails?
 
 }

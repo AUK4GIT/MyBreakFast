@@ -12,23 +12,22 @@ import SDWebImage
 import TIPBadgeManager
 
 
-class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, DatePickerVCDelegate, LocationPickerVCDelegate, UIAlertViewDelegate, LocationPickerDelegate, AKPickerViewDataSource, AKPickerViewDelegate {
+class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, DatePickerVCDelegate, LocationPickerVCDelegate, UIAlertViewDelegate, LocationPickerDelegate, FilterProtocol {
     @IBOutlet var collectionView: UICollectionView!
-    @IBOutlet var pickerView: AKPickerView!
     @IBOutlet  var dateTableView: UITableView!
     var datesArray: [NSDate] = []
     @IBOutlet  var numberOfItemsLabel: UILabel!
     
     @IBOutlet  var dateLabel: UIBarButtonItem!
      var searchButton: UIButton!
-    var itemsArray : [AnyObject] = [];
-    var tempItemsArray : [AnyObject] = [];
+    var itemsArray : [Item] = [];
+    var tempItemsArray : [Item] = [];
     let dateFormatter = NSDateFormatter()
     @IBOutlet  var topToolbar: UIToolbar!
     var cartButtonIcon: UIButton?
     var itemQuantities = 0;
     var menuDate = NSDate();
-    let titles = ["All", "Veg", "Egg", "NonVeg"];
+//    let titles = ["All", "Veg", "Egg", "NonVeg"];
 
     override func viewDidLoad() {
         
@@ -48,26 +47,6 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         UINavigationBar.appearance().shadowImage = UIImage();
         
         self.datesArray.append(NSDate())
-        
-//        let dayComponent: NSDateComponents = NSDateComponents();
-//        dayComponent.day = 1;
-//        
-//        let theCalendar: NSCalendar = NSCalendar.currentCalendar();
-//        let nextDate: NSDate = theCalendar.dateByAddingComponents(dayComponent, toDate: NSDate(), options: .MatchFirst)!
-//        
-
-        self.pickerView.delegate = self
-        self.pickerView.dataSource = self
-        
-        self.pickerView.font = UIFont(name: "HelveticaNeue-Light", size: 14)!
-//        self.pickerView.highlightedFont = UIFont(name: "HelveticaNeue-bold", size: 16)!
-        self.pickerView.highlightedFont = UIFont(name: "HelveticaNeue-Light", size: 14)!
-
-        self.pickerView.interitemSpacing = 30.0
-        self.pickerView.viewDepth = 700.0
-        self.pickerView.pickerViewStyle = .Wheel
-        self.pickerView.maskDisabled = false
-        self.pickerView.reloadData()
         
         self.datesArray.append(NSDate().dateByAddingTimeInterval(60*60*24))
 
@@ -109,67 +88,18 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         self.collectionView.collectionViewLayout.invalidateLayout()
     }
     
-    // MARK: - AKPickerViewDataSource
+   
+    // MARK: - FilterView Delegate
     
-    func numberOfItemsInPickerView(pickerView: AKPickerView) -> Int {
-        return self.titles.count
-    }
-    
-    /*
-    
-    Image Support
-    -------------
-    Please comment '-pickerView:titleForItem:' entirely and
-    uncomment '-pickerView:imageForItem:' to see how it works.
-    
-    */
-    func pickerView(pickerView: AKPickerView, titleForItem item: Int) -> String {
-        return self.titles[item]
-    }
-    
-    func pickerView(pickerView: AKPickerView, imageForItem item: Int) -> UIImage {
-        return UIImage(named: self.titles[item])!
-    }
-    
-    // MARK: - AKPickerViewDelegate
-    
-    func pickerView(pickerView: AKPickerView, didSelectItem item: Int) {
-        print("Your favorite city is \(self.titles[item])")
-        var category: String = "";
-        switch item {
-        case 0:
-            category = "";
-            self.itemsArray = self.tempItemsArray;
-            self.collectionView.reloadData();
-        break;
-        case 1:
-            category = "0";
-            self.itemsArray = self.tempItemsArray.filter(){
-                return ($0.category == category);
-            };
-            self.collectionView.reloadData();
-        break;
-        case 2:
-        category = "1";
+    func didFilterWithString(searchString: String) {
+        print("Your search string is \(searchString)")
+        let category: String = searchString ?? "";
         self.itemsArray = self.tempItemsArray.filter(){
-            return ($0.category == category);
+            let tags = $0.tags
+            let tagsArray = tags!.componentsSeparatedByString(",");
+            return (tagsArray.contains(category));
         };
         self.collectionView.reloadData();
-        break;
-        case 3:
-            category = "2";
-            self.itemsArray = self.tempItemsArray.filter(){
-                return ($0.category == category);
-            };
-            self.collectionView.reloadData();
-        
-        break;
-        default:
-            category = "";
-            self.itemsArray = self.tempItemsArray;
-            self.collectionView.reloadData();
-        break;
-        }
     }
 
     
@@ -382,7 +312,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         searchcustomView.frame = CGRectMake(0, 0, 240, 44);
         searchcustomView.backgroundColor = UIColor.clearColor()
         
-        let width: CGFloat = Constants.DeviceConstants.IS_IPHONE_5_OR_LESS ? 200.0 : 240.0;
+        let width: CGFloat = Constants.DeviceConstants.IS_IPHONE_5_OR_LESS ? 180.0 : (Constants.DeviceConstants.IS_IPHONE_6 ? 220 : 252);
         let offset: CGFloat = Constants.DeviceConstants.IS_IPHONE_5_OR_LESS ? -10 : 0.0;
         let height: CGFloat = Constants.DeviceConstants.IS_IPHONE_5_OR_LESS ? 27.0 : 30.0;
 
@@ -399,14 +329,20 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         parentVC.containerNavigationItem.titleView = searchcustomView//self.titleView
         searchButton.addTarget(self, action: "showLocationPicker:", forControlEvents: UIControlEvents.TouchUpInside);
         
+        let filterButton: UIButton = UIButton(type: .Custom);
+        filterButton.frame = CGRectMake(20, 0, 32, 32);
+        filterButton.setBackgroundImage(UIImage(named: "filter.png"), forState: .Normal)
+
         let cartButton: UIButton = UIButton(type: .Custom);
-        cartButton.frame = CGRectMake(5, 0, 32, 32);
+        cartButton.frame = CGRectMake(55, 0, 32, 32);
         cartButton.setBackgroundImage(UIImage(named: "bell.png"), forState: .Normal)
         
         let customView = UIView()
-        customView.frame = CGRectMake(0, 0, 40, 35);
+        customView.frame = CGRectMake(0, 0, 80, 35);
         customView.backgroundColor = UIColor.clearColor()
+        customView.addSubview(filterButton)
         customView.addSubview(cartButton)
+        filterButton.addTarget(self, action: "filterClicked:", forControlEvents: UIControlEvents.TouchUpInside)
         cartButton.addTarget(self, action: "cartClicked:", forControlEvents: UIControlEvents.TouchUpInside)
         self.cartButtonIcon = cartButton
         let useItem: UIBarButtonItem = UIBarButtonItem(customView: customView);
@@ -427,6 +363,14 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("OfferNotificationsVC")
         self.presentViewController(vc!, animated: true, completion: nil)
        
+    }
+    
+    func filterClicked(sender: AnyObject) {
+        
+        let vc: FIlterVC = self.storyboard?.instantiateViewControllerWithIdentifier("FIlterVC") as! FIlterVC
+        vc.delegate = self;
+        self.presentViewController(vc, animated: true, completion: nil)
+        
     }
    
     // MARK: UICollectionView delegates and datasources

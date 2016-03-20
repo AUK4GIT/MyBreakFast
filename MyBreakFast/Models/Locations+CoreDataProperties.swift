@@ -19,5 +19,6 @@ extension Locations {
     @NSManaged var latitude: String?
     @NSManaged var longitude: String?
     @NSManaged var active: String?
+    @NSManaged var cluster: String?
 
 }

@@ -36,10 +36,15 @@ class Locations: NSManagedObject {
         } else {
             self.longitude = dict.objectForKey("longitude") as? String;
         }
-        if let obj = dict.objectForKey("active") as? NSNumber{
+        if let obj = dict.objectForKey("status") as? NSNumber{
             self.active = obj.stringValue
         } else {
-            self.active = dict.objectForKey("active") as? String;
+            self.active = dict.objectForKey("status") as? String;
+        }
+        if let obj = dict.objectForKey("cluster") as? NSNumber{
+            self.cluster = obj.stringValue
+        } else {
+            self.cluster = dict.objectForKey("cluster") as? String;
         }
     }
 

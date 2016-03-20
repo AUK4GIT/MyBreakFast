@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		42F4FE3801F1438966FD070F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6E7E1A1C9BAD8E663A54F6 /* Pods.framework */; };
-		ED0432EB1C8F326800B6B6F2 /* AKPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0432EA1C8F326800B6B6F2 /* AKPickerView.swift */; };
 		ED344C941C9B14DA008643F9 /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED344C7C1C9B14DA008643F9 /* AboutUsVC.swift */; };
 		ED344C951C9B14DA008643F9 /* AddAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED344C7D1C9B14DA008643F9 /* AddAddressVC.swift */; };
 		ED344C961C9B14DA008643F9 /* AppSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED344C7E1C9B14DA008643F9 /* AppSignInVC.swift */; };
@@ -68,7 +67,8 @@
 		ED344CEF1C9B1536008643F9 /* PopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED344CE61C9B1536008643F9 /* PopCell.xib */; };
 		ED344CF01C9B1536008643F9 /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED344CE71C9B1536008643F9 /* SideMenuCell.xib */; };
 		ED344CF11C9B1536008643F9 /* VitaminCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED344CE81C9B1536008643F9 /* VitaminCell.xib */; };
-		ED58D62A1C3D654200741E8D /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED58D6291C3D654200741E8D /* FloatRatingView.swift */; };
+		ED344CF41C9B19EB008643F9 /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED344CF31C9B19EB008643F9 /* FloatRatingView.swift */; };
+		ED344CF81C9B1A65008643F9 /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED344CF71C9B1A65008643F9 /* FilterVC.swift */; };
 		ED5B216F1BF612B700C65857 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5B216D1BF612B700C65857 /* UserDetails.swift */; };
 		ED5B217F1BF76D3400C65857 /* Offer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5B21761BF76D3400C65857 /* Offer+CoreDataProperties.swift */; };
 		ED5B21801BF76D3400C65857 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5B21771BF76D3400C65857 /* Offer.swift */; };
@@ -98,7 +98,6 @@
 		EDCC2AE71C339F6500C15C3B /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC2AE61C339F6500C15C3B /* OrderItem.swift */; };
 		EDE5E03C1C4FEB690044E819 /* Kitchens+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE5E03A1C4FEB690044E819 /* Kitchens+CoreDataProperties.swift */; };
 		EDE5E03D1C4FEB690044E819 /* Kitchens.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE5E03B1C4FEB690044E819 /* Kitchens.swift */; };
-		EDE5E0531C53562C0044E819 /* MyAddress.gpx in Resources */ = {isa = PBXBuildFile; fileRef = EDE5E0521C53562C0044E819 /* MyAddress.gpx */; };
 		EDE7F1F41C57DBB30063F855 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE7F1F31C57DBB30063F855 /* Coupon.swift */; };
 /* End PBXBuildFile section */
 
@@ -106,7 +105,6 @@
 		A83BCDDAA0B52B48CF8F04BD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C02CB2CC5C006A15257050EC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DC6E7E1A1C9BAD8E663A54F6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED0432EA1C8F326800B6B6F2 /* AKPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AKPickerView.swift; path = AKPickerView/AKPickerView.swift; sourceTree = "<group>"; };
 		ED344C7C1C9B14DA008643F9 /* AboutUsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutUsVC.swift; path = Controllers/AboutUsVC.swift; sourceTree = "<group>"; };
 		ED344C7D1C9B14DA008643F9 /* AddAddressVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddAddressVC.swift; path = Controllers/AddAddressVC.swift; sourceTree = "<group>"; };
 		ED344C7E1C9B14DA008643F9 /* AppSignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppSignInVC.swift; path = Controllers/AppSignInVC.swift; sourceTree = "<group>"; };
@@ -166,7 +164,8 @@
 		ED344CE61C9B1536008643F9 /* PopCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopCell.xib; path = Views/Xibs/PopCell.xib; sourceTree = "<group>"; };
 		ED344CE71C9B1536008643F9 /* SideMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SideMenuCell.xib; path = Views/Xibs/SideMenuCell.xib; sourceTree = "<group>"; };
 		ED344CE81C9B1536008643F9 /* VitaminCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VitaminCell.xib; path = Views/Xibs/VitaminCell.xib; sourceTree = "<group>"; };
-		ED58D6291C3D654200741E8D /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
+		ED344CF31C9B19EB008643F9 /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatRatingView.swift; path = Views/FloatRatingView.swift; sourceTree = "<group>"; };
+		ED344CF71C9B1A65008643F9 /* FilterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilterVC.swift; path = Controllers/FilterVC.swift; sourceTree = "<group>"; };
 		ED5B216D1BF612B700C65857 /* UserDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDetails.swift; path = Models/UserDetails.swift; sourceTree = "<group>"; };
 		ED5B21761BF76D3400C65857 /* Offer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Offer+CoreDataProperties.swift"; path = "Models/Offer+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ED5B21771BF76D3400C65857 /* Offer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Offer.swift; path = Models/Offer.swift; sourceTree = "<group>"; };
@@ -185,6 +184,7 @@
 		ED722B201BE09A33003DC9F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED722B231BE09A33003DC9F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED722B251BE09A33003DC9F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED8687681C973271008DCCAC /* MyBreakFast 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MyBreakFast 2.xcdatamodel"; sourceTree = "<group>"; };
 		ED996EA91C2C63E70017284A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED996EB11C30CA960017284A /* UserAddress+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserAddress+CoreDataProperties.swift"; path = "Models/UserAddress+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ED996EB21C30CA960017284A /* UserAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserAddress.swift; path = Models/UserAddress.swift; sourceTree = "<group>"; };
@@ -203,7 +203,6 @@
 		EDCC2AE61C339F6500C15C3B /* OrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderItem.swift; path = Models/OrderItem.swift; sourceTree = "<group>"; };
 		EDE5E03A1C4FEB690044E819 /* Kitchens+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Kitchens+CoreDataProperties.swift"; path = "Models/Kitchens+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EDE5E03B1C4FEB690044E819 /* Kitchens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Kitchens.swift; path = Models/Kitchens.swift; sourceTree = "<group>"; };
-		EDE5E0521C53562C0044E819 /* MyAddress.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = MyAddress.gpx; path = Resources/MyAddress.gpx; sourceTree = "<group>"; };
 		EDE7F1F31C57DBB30063F855 /* Coupon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Coupon.swift; path = Models/Coupon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -228,17 +227,10 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		ED0432E91C8F322C00B6B6F2 /* AKPickerView */ = {
-			isa = PBXGroup;
-			children = (
-				ED0432EA1C8F326800B6B6F2 /* AKPickerView.swift */,
-			);
-			name = AKPickerView;
-			sourceTree = "<group>";
-		};
 		ED344C791C9B14AB008643F9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				ED344CF71C9B1A65008643F9 /* FilterVC.swift */,
 				ED344C7C1C9B14DA008643F9 /* AboutUsVC.swift */,
 				ED344C7D1C9B14DA008643F9 /* AddAddressVC.swift */,
 				ED344C7E1C9B14DA008643F9 /* AppSignInVC.swift */,
@@ -270,18 +262,17 @@
 		ED344C7A1C9B14B4008643F9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ED344CF31C9B19EB008643F9 /* FloatRatingView.swift */,
 				ED344CAC1C9B1526008643F9 /* ActivityIndicator.swift */,
 				ED344CAD1C9B1526008643F9 /* AddAddressCell.swift */,
 				ED344CAE1C9B1526008643F9 /* AddressCell.swift */,
 				ED344CAF1C9B1526008643F9 /* ChangeCell.swift */,
-				ED344CB01C9B1526008643F9 /* Constants.swift */,
 				ED344CB11C9B1526008643F9 /* CouponCodeCell.swift */,
 				ED344CB21C9B1526008643F9 /* CustomSegment.swift */,
 				ED344CB31C9B1526008643F9 /* DatePicker.swift */,
 				ED344CB41C9B1526008643F9 /* Deliveryaddress.swift */,
 				ED344CB51C9B1526008643F9 /* Deliverylocation.swift */,
 				ED344CB61C9B1526008643F9 /* Deliverytime.swift */,
-				ED344CB71C9B1526008643F9 /* Helper.swift */,
 				ED344CB81C9B1526008643F9 /* MenuItemCell.swift */,
 				ED344CB91C9B1526008643F9 /* MyOrderCell.swift */,
 				ED344CBA1C9B1526008643F9 /* MyOrdersDetailsCell.swift */,
@@ -368,9 +359,10 @@
 			children = (
 				ED344C7A1C9B14B4008643F9 /* Views */,
 				ED344C791C9B14AB008643F9 /* Controllers */,
-				ED0432E91C8F322C00B6B6F2 /* AKPickerView */,
 				EDC572221C7AD08F0018F11C /* CustomModalVC */,
 				ED5B216B1BF612A300C65857 /* Models */,
+				ED344CB01C9B1526008643F9 /* Constants.swift */,
+				ED344CB71C9B1526008643F9 /* Helper.swift */,
 				ED722B161BE09A33003DC9F2 /* AppDelegate.swift */,
 				ED996EA81C2C63E70017284A /* Main.storyboard */,
 				ED722B221BE09A33003DC9F2 /* LaunchScreen.storyboard */,
@@ -385,8 +377,6 @@
 		EDA736C11BE4DB1800AC9884 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				EDE5E0521C53562C0044E819 /* MyAddress.gpx */,
-				ED58D6291C3D654200741E8D /* FloatRatingView.swift */,
 				EDA736D01BE4DF3700AC9884 /* GoogleService-Info.plist */,
 				EDA736D21BE4E05C00AC9884 /* MyBreakFast-Bridging-Header.h */,
 			);
@@ -492,7 +482,6 @@
 				ED344CEC1C9B1536008643F9 /* MenuItemCell.xib in Resources */,
 				ED344CF11C9B1536008643F9 /* VitaminCell.xib in Resources */,
 				ED344CEF1C9B1536008643F9 /* PopCell.xib in Resources */,
-				EDE5E0531C53562C0044E819 /* MyAddress.gpx in Resources */,
 				ED344CE91C9B1536008643F9 /* AddOnsTableCell.xib in Resources */,
 				ED722B211BE09A33003DC9F2 /* Assets.xcassets in Resources */,
 				EDA736D11BE4DF3700AC9884 /* GoogleService-Info.plist in Resources */,
@@ -560,6 +549,7 @@
 				ED344CA41C9B14DA008643F9 /* OrderStatusVC.swift in Sources */,
 				ED344C9F1C9B14DA008643F9 /* LocationPickerVC.swift in Sources */,
 				EDE5E03C1C4FEB690044E819 /* Kitchens+CoreDataProperties.swift in Sources */,
+				ED344CF81C9B1A65008643F9 /* FilterVC.swift in Sources */,
 				ED5B21831BF76D3400C65857 /* Locations+CoreDataProperties.swift in Sources */,
 				EDC572281C7AD1210018F11C /* CustomModalViewController.swift in Sources */,
 				ED344CD11C9B1526008643F9 /* Helper.swift in Sources */,
@@ -605,6 +595,7 @@
 				ED722B171BE09A33003DC9F2 /* AppDelegate.swift in Sources */,
 				ED344CD31C9B1526008643F9 /* MyOrderCell.swift in Sources */,
 				ED344CCC1C9B1526008643F9 /* CustomSegment.swift in Sources */,
+				ED344CF41C9B19EB008643F9 /* FloatRatingView.swift in Sources */,
 				ED344CC61C9B1526008643F9 /* ActivityIndicator.swift in Sources */,
 				ED344C951C9B14DA008643F9 /* AddAddressVC.swift in Sources */,
 				ED344C971C9B14DA008643F9 /* CartBillView.swift in Sources */,
@@ -612,13 +603,11 @@
 				ED344CAB1C9B14DA008643F9 /* ViewController.swift in Sources */,
 				ED344CA71C9B14DA008643F9 /* SideMenuContentVC.swift in Sources */,
 				ED344C981C9B14DA008643F9 /* CartVC.swift in Sources */,
-				ED58D62A1C3D654200741E8D /* FloatRatingView.swift in Sources */,
 				ED344CCF1C9B1526008643F9 /* Deliverylocation.swift in Sources */,
 				ED344C941C9B14DA008643F9 /* AboutUsVC.swift in Sources */,
 				ED344CDA1C9B1526008643F9 /* SideMenuCell.swift in Sources */,
 				ED344CA51C9B14DA008643F9 /* ReferralVC.swift in Sources */,
 				ED344CA21C9B14DA008643F9 /* MyOrdersVC.swift in Sources */,
-				ED0432EB1C8F326800B6B6F2 /* AKPickerView.swift in Sources */,
 				ED344CD51C9B1526008643F9 /* OffersCell.swift in Sources */,
 				ED344CA01C9B14DA008643F9 /* MenuVC.swift in Sources */,
 				ED344C9E1C9B14DA008643F9 /* LocationPicker.swift in Sources */,
@@ -854,9 +843,10 @@
 		ED722B1D1BE09A33003DC9F2 /* MyBreakFast.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				ED8687681C973271008DCCAC /* MyBreakFast 2.xcdatamodel */,
 				ED722B1E1BE09A33003DC9F2 /* MyBreakFast.xcdatamodel */,
 			);
-			currentVersion = ED722B1E1BE09A33003DC9F2 /* MyBreakFast.xcdatamodel */;
+			currentVersion = ED8687681C973271008DCCAC /* MyBreakFast 2.xcdatamodel */;
 			path = MyBreakFast.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

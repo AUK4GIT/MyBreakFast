@@ -330,17 +330,17 @@ class Helper {
     }
 
     
-    func getTodaysItems() -> [NSManagedObject] {
+    func getTodaysItems() -> [Item] {
         
         let fetchRequest = NSFetchRequest(entityName: "Item")
         let sortDescriptor = NSSortDescriptor(key: "stockid", ascending: true)
         let sortDescriptors = [sortDescriptor]
         fetchRequest.sortDescriptors = sortDescriptors
-        var items: [NSManagedObject]?
+        var items: [Item]?
         do {
             let results =
             try appDelegate.managedObjectContext.executeFetchRequest(fetchRequest)
-            items = results as? [NSManagedObject]
+            items = results as? [Item]
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
@@ -643,6 +643,27 @@ class Helper {
         return nil;
     }
 
+    func fetchClusterFromLocationForId(locId: String)->String? {
+        let predicate :NSPredicate = NSPredicate(format: "locationId == %@",locId)
+        let fetchRequest = NSFetchRequest(entityName: "Locations")
+        fetchRequest.predicate = predicate;
+        var usdObjs: [Locations]?
+        do {
+            let results =
+            try appDelegate.managedObjectContext.executeFetchRequest(fetchRequest)
+            usdObjs = results as? [Locations]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        var cluster = "";
+        if(usdObjs?.count>0) {
+             let locObj = usdObjs![0]
+            cluster = (locObj.cluster! ?? "");
+            return cluster;
+        }
+        
+        return "";
+    }
     
     // MARK: Service APIs
     
@@ -1067,6 +1088,7 @@ class Helper {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let stringFromDate = "?d=\(dateFormatter.stringFromDate(date))";
+
         self.orderDate = dateFormatter.stringFromDate(date);// This is very important
         let url = "\(Constants.API.MenuonDateLocation)\(locId)\(stringFromDate)"
         Alamofire.request(.GET, url, parameters: nil)

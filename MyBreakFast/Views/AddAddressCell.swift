@@ -54,7 +54,11 @@ class AddAddressCell: UICollectionViewCell {
         }
         
         let lineOne = Helper.sharedInstance.userLocation
-        let dict: [String:String] = ["line1":lineOne!,"line2":self.secondLine.text!,"line3":"Gurgoan","category":"Home"];
+        
+        let locId = Helper.sharedInstance.getDataFromUserDefaults(forKey: Constants.UserdefaultConstants.LastSelectedLocationId) as? String ?? ""
+        let cluster = Helper.sharedInstance.fetchClusterFromLocationForId(locId);
+
+        let dict: [String:String] = ["line1":lineOne!,"line2":self.secondLine.text!,"line3":"Gurgoan","category":"Home","cluster":cluster!];
             self.activity?.startAnimating()
         Helper.sharedInstance.uploadAddress(dict) { (response) -> () in
             
