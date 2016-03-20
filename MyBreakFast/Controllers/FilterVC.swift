@@ -47,9 +47,20 @@ class FIlterVC: CustomModalViewController {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("FilterCell")!
-        cell.textLabel?.textColor = UIColor.grayColor()
         cell.textLabel?.text = self.filtersArray![indexPath.row]["filterName"] as? String
         cell.imageView?.image = UIImage(named: (self.filtersArray![indexPath.row]["imageName"] as? String)!);
+        cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 14.0);
+        cell.textLabel?.adjustFontToRealIPhoneSize = true;
+        let color = self.filtersArray![indexPath.row]["color"] as? String;
+        if color == "green" {
+            cell.textLabel?.textColor = UIColor.greenColor()
+        } else if color == "red" {
+            cell.textLabel?.textColor = UIColor.redColor()
+        } else if color == "yellow"{
+            cell.textLabel?.textColor = UIColor.yellowColor()
+        } else {
+            cell.textLabel?.textColor = UIColor.darkTextColor()
+        }
         return cell
     }
     

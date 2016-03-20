@@ -148,15 +148,15 @@ struct Constants {
     struct StaticContent {
         static let SideMenuList : [String] = ["Menu", "My Orders", "About Us", "Contact Us", "Rate Us", "Refer a Friend", "Terms & Conditions"];
         static let AppThemeColor = UIColor(red: 200.0/255.0, green: 5.0/255.0, blue: 15.0/255.0, alpha: 1.0);
-        static let Filters : [[String:String]] = [["filterName":"Veg", "filtervalue":"Veg","imageName":"bell.png"],
-        ["filterName":"Non-Veg", "filtervalue":"Non-Veg","imageName":"bell.png"],
-        ["filterName":"Egg", "filtervalue":"Egg","imageName":"bell.png"],
-        ["filterName":"Club Sandwich", "filtervalue":"Club Sandwich","imageName":"bell.png"],
-        ["filterName":"Zero Oil Sandwich", "filtervalue":"Zero Oil Sandwich","imageName":"bell.png"],
-        ["filterName":"Juices", "filtervalue":"Juices","imageName":"bell.png"],
-        ["filterName":"Salads", "filtervalue":"Salads","imageName":"bell.png"],
-        ["filterName":"Mom-Made", "filtervalue":"Mom-Made","imageName":"bell.png"],
-        ["filterName":"Combos", "filtervalue":"Combos","imageName":"bell.png"]];
+        static let Filters : [[String:String]] = [["filterName":"Veg", "filtervalue":"Veg","imageName":"bell.png", "color":"green"],
+        ["filterName":"Non-Veg", "filtervalue":"Non-Veg","imageName":"bell.png", "color":"red"],
+        ["filterName":"Egg", "filtervalue":"Egg","imageName":"bell.png", "color":"yellow"],
+        ["filterName":"Club Sandwich", "filtervalue":"Club Sandwich","imageName":"bell.png", "color":"gray"],
+        ["filterName":"Zero Oil Sandwich", "filtervalue":"Zero Oil Sandwich","imageName":"bell.png", "color":"gray"],
+        ["filterName":"Juices", "filtervalue":"Juices","imageName":"bell.png", "color":"gray"],
+        ["filterName":"Salads", "filtervalue":"Salads","imageName":"bell.png", "color":"gray"],
+        ["filterName":"Mom-Made", "filtervalue":"Mom-Made","imageName":"bell.png", "color":"gray"],
+        ["filterName":"Combos", "filtervalue":"Combos","imageName":"bell.png", "color":"gray"]];
 
     }
     
