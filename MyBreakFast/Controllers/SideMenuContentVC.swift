@@ -111,6 +111,32 @@ class SideMenuContentVC: UIViewController, UITableViewDataSource, UITableViewDel
         let bView = UIView(frame: cell.bounds)
         bView.backgroundColor = UIColor(red: 200.0/255.0, green: 200.0/255.0, blue: 200.0/255.0, alpha: 1.0)
         cell.selectedBackgroundView = bView
+        
+        switch indexPath.row {
+        case 0:
+            cell.imageView?.image = UIImage(imageLiteral: "Menu.png");
+            break;
+        case 1:
+            cell.imageView?.image = UIImage(imageLiteral: "MyOrders.png");
+            break;
+        case 2:
+            cell.imageView?.image = UIImage(imageLiteral: "Aboutus.png");
+            break;
+        case 3:
+            cell.imageView?.image = UIImage(imageLiteral: "Contactus.png");
+            break;
+        case 4:
+            cell.imageView?.image = UIImage(imageLiteral: "Rateus.png");
+            break;
+        case 5:
+            cell.imageView?.image = UIImage(imageLiteral: "Refer.png");
+            break;
+        case 6:
+            cell.imageView?.image = UIImage(imageLiteral: "Terms.png");
+            break;
+        default:
+            break;
+        }
         return cell
     }
 }
