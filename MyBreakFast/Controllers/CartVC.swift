@@ -73,22 +73,36 @@ class CartVC: UIViewController {
     
     @IBAction func showOrderStatus(sender: AnyObject) {
         
-        Helper.sharedInstance.placeOrder { (response) -> () in
-            if response as? String == "ERROR" {
-                UIAlertView(title: "Error", message: "Please try again", delegate: nil, cancelButtonTitle: "OK").show()
-            } else {
-                
-                let resDict = response as! NSDictionary
-                if let orderId = resDict.objectForKey("order_id") as? NSNumber {
-                    Helper.sharedInstance.order?.orderId = String(orderId);
-                } else {
-                    Helper.sharedInstance.order?.orderId = resDict.objectForKey("order_id") as? String;
+        if let paymentMode = Helper.sharedInstance.order!.modeOfPayment {
+            if paymentMode == paymentType.COD {
+                Helper.sharedInstance.placeOrder { (response) -> () in
+                    if response as? String == "ERROR" {
+                        UIAlertView(title: "Error", message: "Please try again", delegate: nil, cancelButtonTitle: "OK").show()
+                    } else {
+                        
+                        let resDict = response as! NSDictionary
+                        if let orderId = resDict.objectForKey("order_id") as? NSNumber {
+                            Helper.sharedInstance.order?.orderId = String(orderId);
+                        } else {
+                            Helper.sharedInstance.order?.orderId = resDict.objectForKey("order_id") as? String;
+                        }
+                        
+                        self.updateOrderWithMenuIds()
+                    }
+                    
                 }
+            } else {
+                        let storyboard: UIStoryboard = UIStoryboard(name: "Citrus_flow", bundle: nil);
+                        let nvc: UIViewController = storyboard.instantiateInitialViewController()!
+                        self.presentViewController(nvc, animated: true, completion: nil)
                 
-                self.updateOrderWithMenuIds()
             }
-            
+        
+        } else {
+        
         }
+        
+
     }
 
     func updateOrderWithMenuIds() {
@@ -240,6 +254,7 @@ class CartVC: UIViewController {
         
         return cell!;
     }
+    
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()

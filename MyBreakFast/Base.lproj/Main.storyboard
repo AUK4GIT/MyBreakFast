@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="94y-83-Mc3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="94y-83-Mc3">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -2555,8 +2555,8 @@
                                                 <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="947-YY-xrs">
                                                     <rect key="frame" x="8" y="8" width="284" height="60"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLY-1J-bDP">
-                                                            <rect key="frame" x="91" y="15" width="102" height="29"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLY-1J-bDP">
+                                                            <rect key="frame" x="8" y="15" width="134" height="29"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                                             <state key="normal" title="Cash on Delivery">
                                                                 <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -2564,18 +2564,42 @@
                                                             <state key="selected">
                                                                 <color key="titleColor" red="0.7843137255" green="0.019607843140000001" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="selectModeOfPayment:" destination="GMI-DT-ki2" eventType="touchUpInside" id="JXc-Sr-wXv"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ap4-dG-gnE">
+                                                            <rect key="frame" x="142" y="15" width="134" height="29"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                            <state key="normal" title="Citrus">
+                                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <state key="selected">
+                                                                <color key="titleColor" red="0.7843137255" green="0.019607843140000001" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="selectModeOfPayment:" destination="GMI-DT-ki2" eventType="touchUpInside" id="pz8-pI-9Lq"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
+                                                        <constraint firstItem="GLY-1J-bDP" firstAttribute="width" secondItem="ap4-dG-gnE" secondAttribute="width" id="1Qf-3N-gCp"/>
+                                                        <constraint firstItem="GLY-1J-bDP" firstAttribute="centerY" secondItem="947-YY-xrs" secondAttribute="centerY" id="4IX-am-EJh"/>
+                                                        <constraint firstItem="GLY-1J-bDP" firstAttribute="leading" secondItem="947-YY-xrs" secondAttribute="leading" constant="8" id="A4V-dS-wqO"/>
                                                         <constraint firstItem="GLY-1J-bDP" firstAttribute="leading" secondItem="947-YY-xrs" secondAttribute="leading" id="BIH-oh-yVa"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ap4-dG-gnE" secondAttribute="trailing" constant="8" id="CQU-FG-jWx"/>
                                                         <constraint firstItem="GLY-1J-bDP" firstAttribute="centerY" secondItem="947-YY-xrs" secondAttribute="centerY" id="Iva-jw-KFk"/>
+                                                        <constraint firstItem="ap4-dG-gnE" firstAttribute="leading" secondItem="GLY-1J-bDP" secondAttribute="trailing" id="Usy-hl-74T"/>
+                                                        <constraint firstItem="ap4-dG-gnE" firstAttribute="centerY" secondItem="947-YY-xrs" secondAttribute="centerY" id="auB-h5-ray"/>
                                                         <constraint firstItem="GLY-1J-bDP" firstAttribute="centerX" secondItem="947-YY-xrs" secondAttribute="centerX" id="gxV-Gn-ArD"/>
                                                         <constraint firstAttribute="height" constant="60" id="hXI-EK-iZE"/>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="BIH-oh-yVa"/>
+                                                            <exclude reference="Iva-jw-KFk"/>
+                                                            <exclude reference="gxV-Gn-ArD"/>
                                                         </mask>
                                                     </variation>
                                                 </view>
@@ -2598,6 +2622,10 @@
                                                 <exclude reference="hv2-rt-oQT"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <outlet property="citrusButton" destination="ap4-dG-gnE" id="iAL-2g-JPa"/>
+                                            <outlet property="codButton" destination="GLY-1J-bDP" id="M6t-Vp-mYd"/>
+                                        </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ChangeCell" reuseIdentifier="change" id="LgF-cb-0Ku" customClass="ChangeCell" customModule="MyBreakFast" customModuleProvider="target">
                                         <rect key="frame" x="10" y="439.5" width="300" height="150"/>

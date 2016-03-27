@@ -172,6 +172,7 @@ class ViewController: UIViewController, Slidemenuprotocol, UIGestureRecognizerDe
         super.viewDidAppear(animated)
         
 //        self.backToMenu();
+        
     }
     func setNavBarTitle(title: String) {
         self.titleView.font = UIFont(name: "HelveticaNeue-Medium", size: 18)

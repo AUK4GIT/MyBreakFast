@@ -11,7 +11,11 @@ import CoreData
 import Alamofire
 import Reachability
 
-class Helper {
+enum paymentType {
+    case COD
+    case PG
+}
+@objc class Helper: NSObject {
     static let sharedInstance = Helper()
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var actView : ActivityIndicator?
@@ -192,6 +196,35 @@ class Helper {
         let usdObj: UserDetails = NSManagedObject(entity: NSEntityDescription.entityForName("UserDetails",
             inManagedObjectContext:appDelegate.managedObjectContext)!, insertIntoManagedObjectContext: appDelegate.managedObjectContext) as! UserDetails
         return usdObj;
+    }
+    
+    /*
+        returns dictionary of userdata for Citrus PG
+    */
+     func getUserDetailsDict()-> NSDictionary? {
+        
+        let fetchRequest = NSFetchRequest(entityName: "UserDetails")
+        var usdObjs: [NSManagedObject]?
+        do {
+            let results =
+            try appDelegate.managedObjectContext.executeFetchRequest(fetchRequest)
+            usdObjs = results as? [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        if(usdObjs?.count>0) {
+            let userDetails: UserDetails = usdObjs![0] as! UserDetails;
+            let userDict: NSMutableDictionary = NSMutableDictionary();
+            userDict.setObject(userDetails.userName!, forKey: "firstName");
+            userDict.setObject(userDetails.emailId!, forKey: "email");
+            userDict.setObject(userDetails.phoneNumber!, forKey: "mobile");
+            userDict.setObject(userDetails.address!, forKey: "address");
+
+
+            return userDict;
+        }
+        
+        return nil;
     }
     
     func getUserNameandUserPhoneNumber()->UserDetails? {

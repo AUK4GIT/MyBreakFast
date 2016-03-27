@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:MyBreakFast/Resources/MyAddress.gpx">
-   </FileRef>
-   <FileRef
       location = "group:MyBreakFast.xcodeproj">
    </FileRef>
    <FileRef
