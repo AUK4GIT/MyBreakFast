@@ -85,6 +85,276 @@
 		ED722B1F1BE09A33003DC9F2 /* MyBreakFast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED722B1D1BE09A33003DC9F2 /* MyBreakFast.xcdatamodeld */; };
 		ED722B211BE09A33003DC9F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED722B201BE09A33003DC9F2 /* Assets.xcassets */; };
 		ED722B241BE09A33003DC9F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED722B221BE09A33003DC9F2 /* LaunchScreen.storyboard */; };
+		ED742C5E1CA78856007FC96D /* Citrus_flow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED742AAA1CA78855007FC96D /* Citrus_flow.storyboard */; };
+		ED742C5F1CA78856007FC96D /* CTSRestError.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AAF1CA78855007FC96D /* CTSRestError.m */; };
+		ED742C601CA78856007FC96D /* CTSRuleInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AB21CA78855007FC96D /* CTSRuleInfo.m */; };
+		ED742C611CA78856007FC96D /* CTSSignupState.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AB41CA78855007FC96D /* CTSSignupState.m */; };
+		ED742C621CA78856007FC96D /* CTSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AB61CA78855007FC96D /* CTSUser.m */; };
+		ED742C631CA78856007FC96D /* PayLoadWebviewDto.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AB81CA78855007FC96D /* PayLoadWebviewDto.m */; };
+		ED742C641CA78856007FC96D /* CTSAmount.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742ABC1CA78855007FC96D /* CTSAmount.m */; };
+		ED742C651CA78856007FC96D /* CTSCashoutBankAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742ABE1CA78855007FC96D /* CTSCashoutBankAccount.m */; };
+		ED742C661CA78856007FC96D /* CTSCashoutToBankRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AC01CA78855007FC96D /* CTSCashoutToBankRes.m */; };
+		ED742C671CA78856007FC96D /* CTSDyPPaymentInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AC21CA78855007FC96D /* CTSDyPPaymentInfo.m */; };
+		ED742C681CA78856007FC96D /* CTSDyPValidateRuleReq.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AC41CA78855007FC96D /* CTSDyPValidateRuleReq.m */; };
+		ED742C691CA78856007FC96D /* CTSGuestCheckout.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AC61CA78855007FC96D /* CTSGuestCheckout.m */; };
+		ED742C6A1CA78856007FC96D /* CTSPaymentMode.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AC81CA78855007FC96D /* CTSPaymentMode.m */; };
+		ED742C6B1CA78856007FC96D /* CTSPaymentNetbankingRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742ACA1CA78855007FC96D /* CTSPaymentNetbankingRequest.m */; };
+		ED742C6C1CA78856007FC96D /* CTSPaymentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742ACC1CA78855007FC96D /* CTSPaymentRequest.m */; };
+		ED742C6D1CA78856007FC96D /* CTSPaymentToken.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742ACE1CA78855007FC96D /* CTSPaymentToken.m */; };
+		ED742C6E1CA78856007FC96D /* CTSPaymentUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AD01CA78855007FC96D /* CTSPaymentUpdate.m */; };
+		ED742C6F1CA78856007FC96D /* CTSPrepaidPayReq.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AD21CA78855007FC96D /* CTSPrepaidPayReq.m */; };
+		ED742C701CA78856007FC96D /* CTSPrepaidUser.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AD41CA78855007FC96D /* CTSPrepaidUser.m */; };
+		ED742C711CA78856007FC96D /* CTSTokenizedCardPayment.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AD61CA78855007FC96D /* CTSTokenizedCardPayment.m */; };
+		ED742C721CA78856007FC96D /* CTSTokenizedPaymentToken.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AD81CA78855007FC96D /* CTSTokenizedPaymentToken.m */; };
+		ED742C731CA78856007FC96D /* CTSUserAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742ADA1CA78855007FC96D /* CTSUserAddress.m */; };
+		ED742C741CA78856007FC96D /* CTSUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742ADC1CA78855007FC96D /* CTSUserDetails.m */; };
+		ED742C751CA78856007FC96D /* CTSContactUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742ADF1CA78855007FC96D /* CTSContactUpdate.m */; };
+		ED742C761CA78856007FC96D /* CTSDPMerchantQueryReq.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AE11CA78855007FC96D /* CTSDPMerchantQueryReq.m */; };
+		ED742C771CA78856007FC96D /* CTSElectronicCardUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AE31CA78855007FC96D /* CTSElectronicCardUpdate.m */; };
+		ED742C781CA78856007FC96D /* CTSNetBankingUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AE51CA78855007FC96D /* CTSNetBankingUpdate.m */; };
+		ED742C791CA78856007FC96D /* CTSNewUserProfileReq.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AE71CA78855007FC96D /* CTSNewUserProfileReq.m */; };
+		ED742C7A1CA78856007FC96D /* CTSPaymentDetailUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AE91CA78855007FC96D /* CTSPaymentDetailUpdate.m */; };
+		ED742C7B1CA78856007FC96D /* CTSPaymentOption.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AEB1CA78855007FC96D /* CTSPaymentOption.m */; };
+		ED742C7C1CA78856007FC96D /* CTSPrepaidUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AED1CA78855007FC96D /* CTSPrepaidUpdate.m */; };
+		ED742C7D1CA78856007FC96D /* CTSProfileUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AEF1CA78855007FC96D /* CTSProfileUpdate.m */; };
+		ED742C7E1CA78856007FC96D /* CTSTokenizedPayment.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AF11CA78855007FC96D /* CTSTokenizedPayment.m */; };
+		ED742C7F1CA78856007FC96D /* CTSCitrusLinkRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AF51CA78855007FC96D /* CTSCitrusLinkRes.m */; };
+		ED742C801CA78856007FC96D /* CTSEotpVerSigninResp.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AF71CA78855007FC96D /* CTSEotpVerSigninResp.m */; };
+		ED742C811CA78856007FC96D /* CTSKeyStore.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AF91CA78855007FC96D /* CTSKeyStore.m */; };
+		ED742C821CA78856007FC96D /* CTSLinkRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AFB1CA78855007FC96D /* CTSLinkRes.m */; };
+		ED742C831CA78856007FC96D /* CTSLinkUserRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AFD1CA78855007FC96D /* CTSLinkUserRes.m */; };
+		ED742C841CA78856007FC96D /* CTSOauthTokenRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AFF1CA78855007FC96D /* CTSOauthTokenRes.m */; };
+		ED742C851CA78856007FC96D /* CTSSignUpRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B011CA78855007FC96D /* CTSSignUpRes.m */; };
+		ED742C861CA78856007FC96D /* CTSTokenValidityRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B031CA78855007FC96D /* CTSTokenValidityRes.m */; };
+		ED742C871CA78856007FC96D /* CTSDPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B051CA78855007FC96D /* CTSDPResponse.m */; };
+		ED742C881CA78856007FC96D /* CTSResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B071CA78855007FC96D /* CTSResponse.m */; };
+		ED742C891CA78856007FC96D /* CitrusCashRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B0A1CA78855007FC96D /* CitrusCashRes.m */; };
+		ED742C8A1CA78856007FC96D /* CTSBill.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B0C1CA78855007FC96D /* CTSBill.m */; };
+		ED742C8B1CA78856007FC96D /* CTSCardBinResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B0E1CA78855007FC96D /* CTSCardBinResponse.m */; };
+		ED742C8C1CA78856007FC96D /* CTSCashoutBankAccountResp.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B101CA78855007FC96D /* CTSCashoutBankAccountResp.m */; };
+		ED742C8D1CA78856007FC96D /* CTSCreditCardOption.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B121CA78855007FC96D /* CTSCreditCardOption.m */; };
+		ED742C8E1CA78856007FC96D /* CTSDebitCardOption.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B141CA78855007FC96D /* CTSDebitCardOption.m */; };
+		ED742C8F1CA78856007FC96D /* CTSDyPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B161CA78855007FC96D /* CTSDyPResponse.m */; };
+		ED742C901CA78856007FC96D /* CTSNetbankingOption.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B181CA78855007FC96D /* CTSNetbankingOption.m */; };
+		ED742C911CA78856007FC96D /* CTSPaymentRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B1A1CA78855007FC96D /* CTSPaymentRes.m */; };
+		ED742C921CA78856007FC96D /* CTSPaymentTransactionRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B1C1CA78855007FC96D /* CTSPaymentTransactionRes.m */; };
+		ED742C931CA78856007FC96D /* CTSPGHealthRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B1E1CA78855007FC96D /* CTSPGHealthRes.m */; };
+		ED742C941CA78856007FC96D /* CTSPgSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B201CA78855007FC96D /* CTSPgSettings.m */; };
+		ED742C951CA78856007FC96D /* CTSPrepaidBill.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B221CA78855007FC96D /* CTSPrepaidBill.m */; };
+		ED742C961CA78856007FC96D /* CTSPrepaidPayResp.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B241CA78855007FC96D /* CTSPrepaidPayResp.m */; };
+		ED742C971CA78856007FC96D /* CTSSaveCardResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B261CA78855007FC96D /* CTSSaveCardResponse.m */; };
+		ED742C981CA78856007FC96D /* CTSTransferMoneyResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B281CA78855007FC96D /* CTSTransferMoneyResponse.m */; };
+		ED742C991CA78856007FC96D /* CTSGetBalanceRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B2B1CA78855007FC96D /* CTSGetBalanceRes.m */; };
+		ED742C9A1CA78856007FC96D /* CTSNewContactProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B2D1CA78855007FC96D /* CTSNewContactProfile.m */; };
+		ED742C9B1CA78856007FC96D /* CTSNewResponseDataProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B2F1CA78855007FC96D /* CTSNewResponseDataProfile.m */; };
+		ED742C9C1CA78856007FC96D /* CTSProfileContactNewRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B311CA78855007FC96D /* CTSProfileContactNewRes.m */; };
+		ED742C9D1CA78856007FC96D /* CTSProfileContactRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B331CA78855007FC96D /* CTSProfileContactRes.m */; };
+		ED742C9E1CA78856007FC96D /* CTSProfilePaymentRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B351CA78855007FC96D /* CTSProfilePaymentRes.m */; };
+		ED742C9F1CA78856007FC96D /* CTSProfilePrepaidRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B371CA78855007FC96D /* CTSProfilePrepaidRes.m */; };
+		ED742CA01CA78856007FC96D /* CTSUpdateMobileNumberRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B391CA78855007FC96D /* CTSUpdateMobileNumberRes.m */; };
+		ED742CA11CA78856007FC96D /* CTSUserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B3B1CA78855007FC96D /* CTSUserProfile.m */; };
+		ED742CA21CA78856007FC96D /* GetProfileRes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B3D1CA78855007FC96D /* GetProfileRes.m */; };
+		ED742CA31CA78856007FC96D /* CTSAuthLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B411CA78855007FC96D /* CTSAuthLayer.m */; };
+		ED742CA41CA78856007FC96D /* CTSError.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B451CA78855007FC96D /* CTSError.m */; };
+		ED742CA51CA78856007FC96D /* BankImagesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED742B471CA78855007FC96D /* BankImagesList.plist */; };
+		ED742CA61CA78856007FC96D /* BankImagesListWithBankName.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED742B481CA78855007FC96D /* BankImagesListWithBankName.plist */; };
+		ED742CA71CA78856007FC96D /* CitrusPay.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B4A1CA78855007FC96D /* CitrusPay.m */; };
+		ED742CA81CA78856007FC96D /* CTSDataCache.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B4D1CA78855007FC96D /* CTSDataCache.m */; };
+		ED742CA91CA78856007FC96D /* CTSOauthManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B4F1CA78855007FC96D /* CTSOauthManager.m */; };
+		ED742CAA1CA78856007FC96D /* CTSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B511CA78855007FC96D /* CTSObject.m */; };
+		ED742CAB1CA78856007FC96D /* CTSUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B531CA78855007FC96D /* CTSUtility.m */; };
+		ED742CAC1CA78856007FC96D /* OauthStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B551CA78855007FC96D /* OauthStatus.m */; };
+		ED742CAD1CA78856007FC96D /* ProductionEnv.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED742B561CA78855007FC96D /* ProductionEnv.plist */; };
+		ED742CAE1CA78856007FC96D /* SandboxEnv.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED742B581CA78855007FC96D /* SandboxEnv.plist */; };
+		ED742CAF1CA78856007FC96D /* SchemeImagesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED742B591CA78855007FC96D /* SchemeImagesList.plist */; };
+		ED742CB01CA78856007FC96D /* Staging1Env.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED742B5A1CA78855007FC96D /* Staging1Env.plist */; };
+		ED742CB11CA78856007FC96D /* Staging3Env.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED742B5B1CA78855007FC96D /* Staging3Env.plist */; };
+		ED742CB21CA78856007FC96D /* Staging4Env.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED742B5C1CA78855007FC96D /* Staging4Env.plist */; };
+		ED742CB31CA78856007FC96D /* Staging5Env.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED742B5D1CA78855007FC96D /* Staging5Env.plist */; };
+		ED742CB41CA78856007FC96D /* Staging7Env.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED742B5E1CA78855007FC96D /* Staging7Env.plist */; };
+		ED742CB51CA78856007FC96D /* CTSRestCore.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B611CA78855007FC96D /* CTSRestCore.m */; };
+		ED742CB61CA78856007FC96D /* CTSRestCoreRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B641CA78855007FC96D /* CTSRestCoreRequest.m */; };
+		ED742CB71CA78856007FC96D /* CTSRestCoreResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B661CA78855007FC96D /* CTSRestCoreResponse.m */; };
+		ED742CB81CA78856007FC96D /* CTSRestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B681CA78855007FC96D /* CTSRestObject.m */; };
+		ED742CB91CA78856007FC96D /* CTSRestPluginBase.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B6A1CA78855007FC96D /* CTSRestPluginBase.m */; };
+		ED742CBA1CA78856007FC96D /* CTSCVVEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B6D1CA78855007FC96D /* CTSCVVEncryptor.m */; };
+		ED742CBB1CA78856007FC96D /* CreditCard-Validator.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B701CA78855007FC96D /* CreditCard-Validator.m */; };
+		ED742CBC1CA78856007FC96D /* JSONModel+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B741CA78855007FC96D /* JSONModel+CoreData.m */; };
+		ED742CBD1CA78856007FC96D /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B761CA78855007FC96D /* JSONModel.m */; };
+		ED742CBE1CA78856007FC96D /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B781CA78855007FC96D /* JSONModelArray.m */; };
+		ED742CBF1CA78856007FC96D /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B7A1CA78855007FC96D /* JSONModelClassProperty.m */; };
+		ED742CC01CA78856007FC96D /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B7C1CA78855007FC96D /* JSONModelError.m */; };
+		ED742CC11CA78856007FC96D /* NSArray+JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B7F1CA78855007FC96D /* NSArray+JSONModel.m */; };
+		ED742CC21CA78856007FC96D /* JSONAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B831CA78855007FC96D /* JSONAPI.m */; };
+		ED742CC31CA78856007FC96D /* JSONHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B851CA78855007FC96D /* JSONHTTPClient.m */; };
+		ED742CC41CA78856007FC96D /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B871CA78855007FC96D /* JSONModel+networking.m */; };
+		ED742CC51CA78856007FC96D /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B8A1CA78855007FC96D /* JSONKeyMapper.m */; };
+		ED742CC61CA78856007FC96D /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B8C1CA78855007FC96D /* JSONValueTransformer.m */; };
+		ED742CC71CA78856007FC96D /* CTSHtmlElement.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B901CA78855007FC96D /* CTSHtmlElement.m */; };
+		ED742CC81CA78856007FC96D /* CTSHtmlParser.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B921CA78855007FC96D /* CTSHtmlParser.m */; };
+		ED742CC91CA78856007FC96D /* NSObject+logProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B941CA78855007FC96D /* NSObject+logProperties.m */; };
+		ED742CCA1CA78856007FC96D /* CTSPaymentLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B971CA78855007FC96D /* CTSPaymentLayer.m */; };
+		ED742CCB1CA78856007FC96D /* RNCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B9C1CA78855007FC96D /* RNCryptor.m */; };
+		ED742CCC1CA78856007FC96D /* RNCryptorEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742B9E1CA78855007FC96D /* RNCryptorEngine.m */; };
+		ED742CCD1CA78856007FC96D /* RNDecryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742BA01CA78855007FC96D /* RNDecryptor.m */; };
+		ED742CCE1CA78856007FC96D /* RNEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742BA21CA78855007FC96D /* RNEncryptor.m */; };
+		ED742CCF1CA78856007FC96D /* CTSProfileLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742BA51CA78855007FC96D /* CTSProfileLayer.m */; };
+		ED742CD01CA78856007FC96D /* CTSValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742BA91CA78855007FC96D /* CTSValidator.m */; };
+		ED742CD11CA78856007FC96D /* CTSPaymentWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742BAD1CA78855007FC96D /* CTSPaymentWebViewController.m */; };
+		ED742CD21CA78856007FC96D /* HVDOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742BAF1CA78855007FC96D /* HVDOverlay.m */; };
+		ED742CD31CA78856007FC96D /* andra_bank.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BB21CA78855007FC96D /* andra_bank.png */; };
+		ED742CD41CA78856007FC96D /* andra_bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BB31CA78855007FC96D /* andra_bank@2x.png */; };
+		ED742CD51CA78856007FC96D /* andra_bank@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BB41CA78855007FC96D /* andra_bank@3x.png */; };
+		ED742CD61CA78856007FC96D /* axis_bank.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BB51CA78855007FC96D /* axis_bank.png */; };
+		ED742CD71CA78856007FC96D /* axis_bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BB61CA78855007FC96D /* axis_bank@2x.png */; };
+		ED742CD81CA78856007FC96D /* axis_bank@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BB71CA78855007FC96D /* axis_bank@3x.png */; };
+		ED742CD91CA78856007FC96D /* Bank_of_baroda.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BB81CA78855007FC96D /* Bank_of_baroda.png */; };
+		ED742CDA1CA78856007FC96D /* Bank_of_baroda@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BB91CA78855007FC96D /* Bank_of_baroda@2x.png */; };
+		ED742CDB1CA78856007FC96D /* Bank_of_baroda@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BBA1CA78855007FC96D /* Bank_of_baroda@3x.png */; };
+		ED742CDC1CA78856007FC96D /* bank_of_india.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BBB1CA78855007FC96D /* bank_of_india.png */; };
+		ED742CDD1CA78856007FC96D /* bank_of_india@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BBC1CA78855007FC96D /* bank_of_india@2x.png */; };
+		ED742CDE1CA78856007FC96D /* bank_of_india@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BBD1CA78855007FC96D /* bank_of_india@3x.png */; };
+		ED742CDF1CA78856007FC96D /* bank_of_maharshtra.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BBE1CA78855007FC96D /* bank_of_maharshtra.png */; };
+		ED742CE01CA78856007FC96D /* bank_of_maharshtra2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BBF1CA78855007FC96D /* bank_of_maharshtra2x.png */; };
+		ED742CE11CA78856007FC96D /* bank_of_maharshtra@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BC01CA78855007FC96D /* bank_of_maharshtra@3x.png */; };
+		ED742CE21CA78856007FC96D /* canara_bank.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BC11CA78855007FC96D /* canara_bank.png */; };
+		ED742CE31CA78856007FC96D /* canara_bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BC21CA78855007FC96D /* canara_bank@2x.png */; };
+		ED742CE41CA78856007FC96D /* canara_bank@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BC31CA78855007FC96D /* canara_bank@3x.png */; };
+		ED742CE51CA78856007FC96D /* Catholic.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BC41CA78855007FC96D /* Catholic.png */; };
+		ED742CE61CA78856007FC96D /* Catholic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BC51CA78855007FC96D /* Catholic@2x.png */; };
+		ED742CE71CA78856007FC96D /* Catholic@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BC61CA78855007FC96D /* Catholic@3x.png */; };
+		ED742CE81CA78856007FC96D /* central_bank.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BC71CA78855007FC96D /* central_bank.png */; };
+		ED742CE91CA78856007FC96D /* central_bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BC81CA78855007FC96D /* central_bank@2x.png */; };
+		ED742CEA1CA78856007FC96D /* central_bank@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BC91CA78855007FC96D /* central_bank@3x.png */; };
+		ED742CEB1CA78856007FC96D /* citi_bank.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BCA1CA78855007FC96D /* citi_bank.png */; };
+		ED742CEC1CA78856007FC96D /* citi_bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BCB1CA78855007FC96D /* citi_bank@2x.png */; };
+		ED742CED1CA78856007FC96D /* citi_bank@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BCC1CA78855007FC96D /* citi_bank@3x.png */; };
+		ED742CEE1CA78856007FC96D /* citi_union_bank.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BCD1CA78855007FC96D /* citi_union_bank.png */; };
+		ED742CEF1CA78856007FC96D /* citi_union_bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BCE1CA78855007FC96D /* citi_union_bank@2x.png */; };
+		ED742CF01CA78856007FC96D /* citi_union_bank@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BCF1CA78855007FC96D /* citi_union_bank@3x.png */; };
+		ED742CF11CA78856007FC96D /* corporation_bank.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BD01CA78855007FC96D /* corporation_bank.png */; };
+		ED742CF21CA78856007FC96D /* corporation_bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BD11CA78855007FC96D /* corporation_bank@2x.png */; };
+		ED742CF31CA78856007FC96D /* corporation_bank@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BD21CA78855007FC96D /* corporation_bank@3x.png */; };
+		ED742CF41CA78856007FC96D /* cosmos_bank.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BD31CA78855007FC96D /* cosmos_bank.png */; };
+		ED742CF51CA78856007FC96D /* cosmos_bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BD41CA78855007FC96D /* cosmos_bank@2x.png */; };
+		ED742CF61CA78856007FC96D /* cosmos_bank@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BD51CA78855007FC96D /* cosmos_bank@3x.png */; };
+		ED742CF71CA78856007FC96D /* DCB.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BD61CA78855007FC96D /* DCB.png */; };
+		ED742CF81CA78856007FC96D /* DCB@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BD71CA78855007FC96D /* DCB@2x.png */; };
+		ED742CF91CA78856007FC96D /* DCB@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BD81CA78855007FC96D /* DCB@3x.png */; };
+		ED742CFA1CA78856007FC96D /* default_bank.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BD91CA78855007FC96D /* default_bank.png */; };
+		ED742CFB1CA78856007FC96D /* default_bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BDA1CA78855007FC96D /* default_bank@2x.png */; };
+		ED742CFC1CA78856007FC96D /* default_bank@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BDB1CA78855007FC96D /* default_bank@3x.png */; };
+		ED742CFD1CA78856007FC96D /* detuch_bank.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BDC1CA78855007FC96D /* detuch_bank.png */; };
+		ED742CFE1CA78856007FC96D /* detuch_bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BDD1CA78855007FC96D /* detuch_bank@2x.png */; };
+		ED742CFF1CA78856007FC96D /* detuch_bank@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BDE1CA78855007FC96D /* detuch_bank@3x.png */; };
+		ED742D001CA78856007FC96D /* Federal.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BDF1CA78855007FC96D /* Federal.png */; };
+		ED742D011CA78856007FC96D /* Federal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BE01CA78855007FC96D /* Federal@2x.png */; };
+		ED742D021CA78856007FC96D /* Federal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BE11CA78855007FC96D /* Federal@3x.png */; };
+		ED742D031CA78856007FC96D /* hdfc.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BE21CA78855007FC96D /* hdfc.png */; };
+		ED742D041CA78856007FC96D /* hdfc@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BE31CA78855007FC96D /* hdfc@2x.png */; };
+		ED742D051CA78856007FC96D /* hdfc@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BE41CA78855007FC96D /* hdfc@3x.png */; };
+		ED742D061CA78856007FC96D /* icici_bank.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BE51CA78855007FC96D /* icici_bank.png */; };
+		ED742D071CA78856007FC96D /* icici_bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BE61CA78855007FC96D /* icici_bank@2x.png */; };
+		ED742D081CA78856007FC96D /* icici_bank@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BE71CA78855007FC96D /* icici_bank@3x.png */; };
+		ED742D091CA78856007FC96D /* idbi.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BE81CA78855007FC96D /* idbi.png */; };
+		ED742D0A1CA78856007FC96D /* idbi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BE91CA78855007FC96D /* idbi@2x.png */; };
+		ED742D0B1CA78856007FC96D /* idbi@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BEA1CA78855007FC96D /* idbi@3x.png */; };
+		ED742D0C1CA78856007FC96D /* indian_bank.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BEB1CA78855007FC96D /* indian_bank.png */; };
+		ED742D0D1CA78856007FC96D /* indian_bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BEC1CA78855007FC96D /* indian_bank@2x.png */; };
+		ED742D0E1CA78856007FC96D /* indian_bank@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BED1CA78855007FC96D /* indian_bank@3x.png */; };
+		ED742D0F1CA78856007FC96D /* Indian_overseas_bank.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BEE1CA78855007FC96D /* Indian_overseas_bank.png */; };
+		ED742D101CA78856007FC96D /* Indian_overseas_bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BEF1CA78855007FC96D /* Indian_overseas_bank@2x.png */; };
+		ED742D111CA78856007FC96D /* Indian_overseas_bank@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BF01CA78855007FC96D /* Indian_overseas_bank@3x.png */; };
+		ED742D121CA78856007FC96D /* indusind_bank.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BF11CA78855007FC96D /* indusind_bank.png */; };
+		ED742D131CA78856007FC96D /* indusind_bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BF21CA78855007FC96D /* indusind_bank@2x.png */; };
+		ED742D141CA78856007FC96D /* indusind_bank@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BF31CA78855007FC96D /* indusind_bank@3x.png */; };
+		ED742D151CA78856007FC96D /* ING.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BF41CA78855007FC96D /* ING.png */; };
+		ED742D161CA78856007FC96D /* ING@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BF51CA78855007FC96D /* ING@2x.png */; };
+		ED742D171CA78856007FC96D /* ING@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BF61CA78855007FC96D /* ING@3x.png */; };
+		ED742D181CA78856007FC96D /* karnataka_bank.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BF71CA78855007FC96D /* karnataka_bank.png */; };
+		ED742D191CA78856007FC96D /* karnataka_bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BF81CA78855007FC96D /* karnataka_bank@2x.png */; };
+		ED742D1A1CA78856007FC96D /* karnataka_bank@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BF91CA78855007FC96D /* karnataka_bank@3x.png */; };
+		ED742D1B1CA78856007FC96D /* Karur_Vyasa_Bank.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BFA1CA78855007FC96D /* Karur_Vyasa_Bank.png */; };
+		ED742D1C1CA78856007FC96D /* Karur_Vyasa_Bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BFB1CA78855007FC96D /* Karur_Vyasa_Bank@2x.png */; };
+		ED742D1D1CA78856007FC96D /* Karur_Vyasa_Bank@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BFC1CA78855007FC96D /* Karur_Vyasa_Bank@3x.png */; };
+		ED742D1E1CA78856007FC96D /* kotak_mahindra.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BFD1CA78855007FC96D /* kotak_mahindra.png */; };
+		ED742D1F1CA78856007FC96D /* kotak_mahindra@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BFE1CA78855007FC96D /* kotak_mahindra@2x.png */; };
+		ED742D201CA78856007FC96D /* kotak_mahindra@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742BFF1CA78855007FC96D /* kotak_mahindra@3x.png */; };
+		ED742D211CA78856007FC96D /* punjab_national_bank.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C001CA78855007FC96D /* punjab_national_bank.png */; };
+		ED742D221CA78856007FC96D /* punjab_national_bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C011CA78855007FC96D /* punjab_national_bank@2x.png */; };
+		ED742D231CA78856007FC96D /* punjab_national_bank@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C021CA78855007FC96D /* punjab_national_bank@3x.png */; };
+		ED742D241CA78856007FC96D /* south_indian_bank.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C031CA78855007FC96D /* south_indian_bank.png */; };
+		ED742D251CA78856007FC96D /* south_indian_bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C041CA78855007FC96D /* south_indian_bank@2x.png */; };
+		ED742D261CA78856007FC96D /* south_indian_bank@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C051CA78855007FC96D /* south_indian_bank@3x.png */; };
+		ED742D271CA78856007FC96D /* State_bank_of_bikaner_and_jaipur.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C061CA78855007FC96D /* State_bank_of_bikaner_and_jaipur.png */; };
+		ED742D281CA78856007FC96D /* State_bank_of_bikaner_and_jaipur@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C071CA78855007FC96D /* State_bank_of_bikaner_and_jaipur@2x.png */; };
+		ED742D291CA78856007FC96D /* State_bank_of_bikaner_and_jaipur@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C081CA78855007FC96D /* State_bank_of_bikaner_and_jaipur@3x.png */; };
+		ED742D2A1CA78856007FC96D /* State_bank_of_hyderabad.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C091CA78855007FC96D /* State_bank_of_hyderabad.png */; };
+		ED742D2B1CA78856007FC96D /* State_bank_of_hyderabad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C0A1CA78855007FC96D /* State_bank_of_hyderabad@2x.png */; };
+		ED742D2C1CA78856007FC96D /* State_bank_of_hyderabad@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C0B1CA78855007FC96D /* State_bank_of_hyderabad@3x.png */; };
+		ED742D2D1CA78856007FC96D /* State_bank_of_india.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C0C1CA78855007FC96D /* State_bank_of_india.png */; };
+		ED742D2E1CA78856007FC96D /* State_bank_of_india@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C0D1CA78855007FC96D /* State_bank_of_india@2x.png */; };
+		ED742D2F1CA78856007FC96D /* State_bank_of_india@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C0E1CA78855007FC96D /* State_bank_of_india@3x.png */; };
+		ED742D301CA78856007FC96D /* State_bank_of_mysore.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C0F1CA78855007FC96D /* State_bank_of_mysore.png */; };
+		ED742D311CA78856007FC96D /* State_bank_of_mysore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C101CA78856007FC96D /* State_bank_of_mysore@2x.png */; };
+		ED742D321CA78856007FC96D /* State_bank_of_mysore@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C111CA78856007FC96D /* State_bank_of_mysore@3x.png */; };
+		ED742D331CA78856007FC96D /* State_bank_of_patalia.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C121CA78856007FC96D /* State_bank_of_patalia.png */; };
+		ED742D341CA78856007FC96D /* State_bank_of_patalia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C131CA78856007FC96D /* State_bank_of_patalia@2x.png */; };
+		ED742D351CA78856007FC96D /* State_bank_of_patalia@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C141CA78856007FC96D /* State_bank_of_patalia@3x.png */; };
+		ED742D361CA78856007FC96D /* State_Bank_of_Travancore.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C151CA78856007FC96D /* State_Bank_of_Travancore.png */; };
+		ED742D371CA78856007FC96D /* State_Bank_of_Travancore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C161CA78856007FC96D /* State_Bank_of_Travancore@2x.png */; };
+		ED742D381CA78856007FC96D /* State_Bank_of_Travancore@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C171CA78856007FC96D /* State_Bank_of_Travancore@3x.png */; };
+		ED742D391CA78856007FC96D /* UCO_bank.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C181CA78856007FC96D /* UCO_bank.png */; };
+		ED742D3A1CA78856007FC96D /* UCO_bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C191CA78856007FC96D /* UCO_bank@2x.png */; };
+		ED742D3B1CA78856007FC96D /* UCO_bank@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C1A1CA78856007FC96D /* UCO_bank@3x.png */; };
+		ED742D3C1CA78856007FC96D /* Union_bank.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C1B1CA78856007FC96D /* Union_bank.png */; };
+		ED742D3D1CA78856007FC96D /* Union_bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C1C1CA78856007FC96D /* Union_bank@2x.png */; };
+		ED742D3E1CA78856007FC96D /* Union_bank@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C1D1CA78856007FC96D /* Union_bank@3x.png */; };
+		ED742D3F1CA78856007FC96D /* united_bank_of_india.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C1E1CA78856007FC96D /* united_bank_of_india.png */; };
+		ED742D401CA78856007FC96D /* united_bank_of_india@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C1F1CA78856007FC96D /* united_bank_of_india@2x.png */; };
+		ED742D411CA78856007FC96D /* united_bank_of_india@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C201CA78856007FC96D /* united_bank_of_india@3x.png */; };
+		ED742D421CA78856007FC96D /* vijaya_bank.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C211CA78856007FC96D /* vijaya_bank.png */; };
+		ED742D431CA78856007FC96D /* vijaya_bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C221CA78856007FC96D /* vijaya_bank@2x.png */; };
+		ED742D441CA78856007FC96D /* vijaya_bank@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C231CA78856007FC96D /* vijaya_bank@3x.png */; };
+		ED742D451CA78856007FC96D /* yes_bank.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C241CA78856007FC96D /* yes_bank.png */; };
+		ED742D461CA78856007FC96D /* yes_bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C251CA78856007FC96D /* yes_bank@2x.png */; };
+		ED742D471CA78856007FC96D /* yes_bank@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C261CA78856007FC96D /* yes_bank@3x.png */; };
+		ED742D481CA78856007FC96D /* AmericanXpress.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C281CA78856007FC96D /* AmericanXpress.png */; };
+		ED742D491CA78856007FC96D /* AmericanXpress@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C291CA78856007FC96D /* AmericanXpress@2x.png */; };
+		ED742D4A1CA78856007FC96D /* AmericanXpress@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C2A1CA78856007FC96D /* AmericanXpress@3x.png */; };
+		ED742D4B1CA78856007FC96D /* discover.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C2B1CA78856007FC96D /* discover.png */; };
+		ED742D4C1CA78856007FC96D /* discover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C2C1CA78856007FC96D /* discover@2x.png */; };
+		ED742D4D1CA78856007FC96D /* discover@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C2D1CA78856007FC96D /* discover@3x.png */; };
+		ED742D4E1CA78856007FC96D /* jcb.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C2E1CA78856007FC96D /* jcb.png */; };
+		ED742D4F1CA78856007FC96D /* jcb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C2F1CA78856007FC96D /* jcb@2x.png */; };
+		ED742D501CA78856007FC96D /* jcb@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C301CA78856007FC96D /* jcb@3x.png */; };
+		ED742D511CA78856007FC96D /* Mastercard.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C311CA78856007FC96D /* Mastercard.png */; };
+		ED742D521CA78856007FC96D /* Mastercard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C321CA78856007FC96D /* Mastercard@2x.png */; };
+		ED742D531CA78856007FC96D /* Mastercard@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C331CA78856007FC96D /* Mastercard@3x.png */; };
+		ED742D541CA78856007FC96D /* Mastero.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C341CA78856007FC96D /* Mastero.png */; };
+		ED742D551CA78856007FC96D /* Mastero@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C351CA78856007FC96D /* Mastero@2x.png */; };
+		ED742D561CA78856007FC96D /* Mastero@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C361CA78856007FC96D /* Mastero@3x.png */; };
+		ED742D571CA78856007FC96D /* Rupay.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C371CA78856007FC96D /* Rupay.png */; };
+		ED742D581CA78856007FC96D /* Rupay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C381CA78856007FC96D /* Rupay@2x.png */; };
+		ED742D591CA78856007FC96D /* Rupay@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C391CA78856007FC96D /* Rupay@3x.png */; };
+		ED742D5A1CA78856007FC96D /* visa.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C3A1CA78856007FC96D /* visa.png */; };
+		ED742D5B1CA78856007FC96D /* visa@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C3B1CA78856007FC96D /* visa@2x.png */; };
+		ED742D5C1CA78856007FC96D /* visa@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED742C3C1CA78856007FC96D /* visa@3x.png */; };
+		ED742D5D1CA78856007FC96D /* NSString+HVDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742C3E1CA78856007FC96D /* NSString+HVDKit.m */; };
+		ED742D5E1CA78856007FC96D /* UIUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742C401CA78856007FC96D /* UIUtility.m */; };
+		ED742D5F1CA78856007FC96D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742C431CA78856007FC96D /* BaseViewController.m */; };
+		ED742D601CA78856007FC96D /* CardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742C451CA78856007FC96D /* CardsViewController.m */; };
+		ED742D611CA78856007FC96D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742C471CA78856007FC96D /* HomeViewController.m */; };
+		ED742D621CA78856007FC96D /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742C491CA78856007FC96D /* InitialViewController.m */; };
+		ED742D631CA78856007FC96D /* ManageCradViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742C4B1CA78856007FC96D /* ManageCradViewController.m */; };
+		ED742D641CA78856007FC96D /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742C4D1CA78856007FC96D /* ResetPasswordViewController.m */; };
+		ED742D651CA78856007FC96D /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742C4F1CA78856007FC96D /* SettingViewController.m */; };
+		ED742D661CA78856007FC96D /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742C511CA78856007FC96D /* SignInViewController.m */; };
+		ED742D671CA78856007FC96D /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742C531CA78856007FC96D /* SignUpViewController.m */; };
+		ED742D681CA78856007FC96D /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742C561CA78856007FC96D /* HMSegmentedControl.m */; };
+		ED742D691CA78856007FC96D /* UICustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742C581CA78856007FC96D /* UICustomButton.m */; };
+		ED742D6A1CA78856007FC96D /* UICustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742C5A1CA78856007FC96D /* UICustomTextField.m */; };
+		ED742D6B1CA78856007FC96D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED742C5B1CA78856007FC96D /* Images.xcassets */; };
 		ED996EAA1C2C63E70017284A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED996EA81C2C63E70017284A /* Main.storyboard */; };
 		ED996EB31C30CA960017284A /* UserAddress+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED996EB11C30CA960017284A /* UserAddress+CoreDataProperties.swift */; };
 		ED996EB41C30CA960017284A /* UserAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED996EB21C30CA960017284A /* UserAddress.swift */; };
@@ -184,6 +454,409 @@
 		ED722B201BE09A33003DC9F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED722B231BE09A33003DC9F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED722B251BE09A33003DC9F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED742AAA1CA78855007FC96D /* Citrus_flow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Citrus_flow.storyboard; sourceTree = "<group>"; };
+		ED742AAC1CA78855007FC96D /* CitrusSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitrusSdk.h; sourceTree = "<group>"; };
+		ED742AAE1CA78855007FC96D /* CTSRestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSRestError.h; sourceTree = "<group>"; };
+		ED742AAF1CA78855007FC96D /* CTSRestError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSRestError.m; sourceTree = "<group>"; };
+		ED742AB11CA78855007FC96D /* CTSRuleInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSRuleInfo.h; sourceTree = "<group>"; };
+		ED742AB21CA78855007FC96D /* CTSRuleInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSRuleInfo.m; sourceTree = "<group>"; };
+		ED742AB31CA78855007FC96D /* CTSSignupState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSSignupState.h; sourceTree = "<group>"; };
+		ED742AB41CA78855007FC96D /* CTSSignupState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSSignupState.m; sourceTree = "<group>"; };
+		ED742AB51CA78855007FC96D /* CTSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSUser.h; sourceTree = "<group>"; };
+		ED742AB61CA78855007FC96D /* CTSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSUser.m; sourceTree = "<group>"; };
+		ED742AB71CA78855007FC96D /* PayLoadWebviewDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayLoadWebviewDto.h; sourceTree = "<group>"; };
+		ED742AB81CA78855007FC96D /* PayLoadWebviewDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayLoadWebviewDto.m; sourceTree = "<group>"; };
+		ED742ABB1CA78855007FC96D /* CTSAmount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSAmount.h; sourceTree = "<group>"; };
+		ED742ABC1CA78855007FC96D /* CTSAmount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSAmount.m; sourceTree = "<group>"; };
+		ED742ABD1CA78855007FC96D /* CTSCashoutBankAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSCashoutBankAccount.h; sourceTree = "<group>"; };
+		ED742ABE1CA78855007FC96D /* CTSCashoutBankAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSCashoutBankAccount.m; sourceTree = "<group>"; };
+		ED742ABF1CA78855007FC96D /* CTSCashoutToBankRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSCashoutToBankRes.h; sourceTree = "<group>"; };
+		ED742AC01CA78855007FC96D /* CTSCashoutToBankRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSCashoutToBankRes.m; sourceTree = "<group>"; };
+		ED742AC11CA78855007FC96D /* CTSDyPPaymentInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSDyPPaymentInfo.h; sourceTree = "<group>"; };
+		ED742AC21CA78855007FC96D /* CTSDyPPaymentInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSDyPPaymentInfo.m; sourceTree = "<group>"; };
+		ED742AC31CA78855007FC96D /* CTSDyPValidateRuleReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSDyPValidateRuleReq.h; sourceTree = "<group>"; };
+		ED742AC41CA78855007FC96D /* CTSDyPValidateRuleReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSDyPValidateRuleReq.m; sourceTree = "<group>"; };
+		ED742AC51CA78855007FC96D /* CTSGuestCheckout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSGuestCheckout.h; sourceTree = "<group>"; };
+		ED742AC61CA78855007FC96D /* CTSGuestCheckout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSGuestCheckout.m; sourceTree = "<group>"; };
+		ED742AC71CA78855007FC96D /* CTSPaymentMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPaymentMode.h; sourceTree = "<group>"; };
+		ED742AC81CA78855007FC96D /* CTSPaymentMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPaymentMode.m; sourceTree = "<group>"; };
+		ED742AC91CA78855007FC96D /* CTSPaymentNetbankingRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPaymentNetbankingRequest.h; sourceTree = "<group>"; };
+		ED742ACA1CA78855007FC96D /* CTSPaymentNetbankingRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPaymentNetbankingRequest.m; sourceTree = "<group>"; };
+		ED742ACB1CA78855007FC96D /* CTSPaymentRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPaymentRequest.h; sourceTree = "<group>"; };
+		ED742ACC1CA78855007FC96D /* CTSPaymentRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPaymentRequest.m; sourceTree = "<group>"; };
+		ED742ACD1CA78855007FC96D /* CTSPaymentToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPaymentToken.h; sourceTree = "<group>"; };
+		ED742ACE1CA78855007FC96D /* CTSPaymentToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPaymentToken.m; sourceTree = "<group>"; };
+		ED742ACF1CA78855007FC96D /* CTSPaymentUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPaymentUpdate.h; sourceTree = "<group>"; };
+		ED742AD01CA78855007FC96D /* CTSPaymentUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPaymentUpdate.m; sourceTree = "<group>"; };
+		ED742AD11CA78855007FC96D /* CTSPrepaidPayReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPrepaidPayReq.h; sourceTree = "<group>"; };
+		ED742AD21CA78855007FC96D /* CTSPrepaidPayReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPrepaidPayReq.m; sourceTree = "<group>"; };
+		ED742AD31CA78855007FC96D /* CTSPrepaidUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPrepaidUser.h; sourceTree = "<group>"; };
+		ED742AD41CA78855007FC96D /* CTSPrepaidUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPrepaidUser.m; sourceTree = "<group>"; };
+		ED742AD51CA78855007FC96D /* CTSTokenizedCardPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSTokenizedCardPayment.h; sourceTree = "<group>"; };
+		ED742AD61CA78855007FC96D /* CTSTokenizedCardPayment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSTokenizedCardPayment.m; sourceTree = "<group>"; };
+		ED742AD71CA78855007FC96D /* CTSTokenizedPaymentToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSTokenizedPaymentToken.h; sourceTree = "<group>"; };
+		ED742AD81CA78855007FC96D /* CTSTokenizedPaymentToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSTokenizedPaymentToken.m; sourceTree = "<group>"; };
+		ED742AD91CA78855007FC96D /* CTSUserAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSUserAddress.h; sourceTree = "<group>"; };
+		ED742ADA1CA78855007FC96D /* CTSUserAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSUserAddress.m; sourceTree = "<group>"; };
+		ED742ADB1CA78855007FC96D /* CTSUserDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSUserDetails.h; sourceTree = "<group>"; };
+		ED742ADC1CA78855007FC96D /* CTSUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSUserDetails.m; sourceTree = "<group>"; };
+		ED742ADE1CA78855007FC96D /* CTSContactUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSContactUpdate.h; sourceTree = "<group>"; };
+		ED742ADF1CA78855007FC96D /* CTSContactUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSContactUpdate.m; sourceTree = "<group>"; };
+		ED742AE01CA78855007FC96D /* CTSDPMerchantQueryReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSDPMerchantQueryReq.h; sourceTree = "<group>"; };
+		ED742AE11CA78855007FC96D /* CTSDPMerchantQueryReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSDPMerchantQueryReq.m; sourceTree = "<group>"; };
+		ED742AE21CA78855007FC96D /* CTSElectronicCardUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSElectronicCardUpdate.h; sourceTree = "<group>"; };
+		ED742AE31CA78855007FC96D /* CTSElectronicCardUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSElectronicCardUpdate.m; sourceTree = "<group>"; };
+		ED742AE41CA78855007FC96D /* CTSNetBankingUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSNetBankingUpdate.h; sourceTree = "<group>"; };
+		ED742AE51CA78855007FC96D /* CTSNetBankingUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSNetBankingUpdate.m; sourceTree = "<group>"; };
+		ED742AE61CA78855007FC96D /* CTSNewUserProfileReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSNewUserProfileReq.h; sourceTree = "<group>"; };
+		ED742AE71CA78855007FC96D /* CTSNewUserProfileReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSNewUserProfileReq.m; sourceTree = "<group>"; };
+		ED742AE81CA78855007FC96D /* CTSPaymentDetailUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPaymentDetailUpdate.h; sourceTree = "<group>"; };
+		ED742AE91CA78855007FC96D /* CTSPaymentDetailUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPaymentDetailUpdate.m; sourceTree = "<group>"; };
+		ED742AEA1CA78855007FC96D /* CTSPaymentOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPaymentOption.h; sourceTree = "<group>"; };
+		ED742AEB1CA78855007FC96D /* CTSPaymentOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPaymentOption.m; sourceTree = "<group>"; };
+		ED742AEC1CA78855007FC96D /* CTSPrepaidUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPrepaidUpdate.h; sourceTree = "<group>"; };
+		ED742AED1CA78855007FC96D /* CTSPrepaidUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPrepaidUpdate.m; sourceTree = "<group>"; };
+		ED742AEE1CA78855007FC96D /* CTSProfileUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSProfileUpdate.h; sourceTree = "<group>"; };
+		ED742AEF1CA78855007FC96D /* CTSProfileUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSProfileUpdate.m; sourceTree = "<group>"; };
+		ED742AF01CA78855007FC96D /* CTSTokenizedPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSTokenizedPayment.h; sourceTree = "<group>"; };
+		ED742AF11CA78855007FC96D /* CTSTokenizedPayment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSTokenizedPayment.m; sourceTree = "<group>"; };
+		ED742AF41CA78855007FC96D /* CTSCitrusLinkRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSCitrusLinkRes.h; sourceTree = "<group>"; };
+		ED742AF51CA78855007FC96D /* CTSCitrusLinkRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSCitrusLinkRes.m; sourceTree = "<group>"; };
+		ED742AF61CA78855007FC96D /* CTSEotpVerSigninResp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSEotpVerSigninResp.h; sourceTree = "<group>"; };
+		ED742AF71CA78855007FC96D /* CTSEotpVerSigninResp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSEotpVerSigninResp.m; sourceTree = "<group>"; };
+		ED742AF81CA78855007FC96D /* CTSKeyStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSKeyStore.h; sourceTree = "<group>"; };
+		ED742AF91CA78855007FC96D /* CTSKeyStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSKeyStore.m; sourceTree = "<group>"; };
+		ED742AFA1CA78855007FC96D /* CTSLinkRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSLinkRes.h; sourceTree = "<group>"; };
+		ED742AFB1CA78855007FC96D /* CTSLinkRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSLinkRes.m; sourceTree = "<group>"; };
+		ED742AFC1CA78855007FC96D /* CTSLinkUserRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSLinkUserRes.h; sourceTree = "<group>"; };
+		ED742AFD1CA78855007FC96D /* CTSLinkUserRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSLinkUserRes.m; sourceTree = "<group>"; };
+		ED742AFE1CA78855007FC96D /* CTSOauthTokenRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSOauthTokenRes.h; sourceTree = "<group>"; };
+		ED742AFF1CA78855007FC96D /* CTSOauthTokenRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSOauthTokenRes.m; sourceTree = "<group>"; };
+		ED742B001CA78855007FC96D /* CTSSignUpRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSSignUpRes.h; sourceTree = "<group>"; };
+		ED742B011CA78855007FC96D /* CTSSignUpRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSSignUpRes.m; sourceTree = "<group>"; };
+		ED742B021CA78855007FC96D /* CTSTokenValidityRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSTokenValidityRes.h; sourceTree = "<group>"; };
+		ED742B031CA78855007FC96D /* CTSTokenValidityRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSTokenValidityRes.m; sourceTree = "<group>"; };
+		ED742B041CA78855007FC96D /* CTSDPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSDPResponse.h; sourceTree = "<group>"; };
+		ED742B051CA78855007FC96D /* CTSDPResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSDPResponse.m; sourceTree = "<group>"; };
+		ED742B061CA78855007FC96D /* CTSResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSResponse.h; sourceTree = "<group>"; };
+		ED742B071CA78855007FC96D /* CTSResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSResponse.m; sourceTree = "<group>"; };
+		ED742B091CA78855007FC96D /* CitrusCashRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitrusCashRes.h; sourceTree = "<group>"; };
+		ED742B0A1CA78855007FC96D /* CitrusCashRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitrusCashRes.m; sourceTree = "<group>"; };
+		ED742B0B1CA78855007FC96D /* CTSBill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSBill.h; sourceTree = "<group>"; };
+		ED742B0C1CA78855007FC96D /* CTSBill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSBill.m; sourceTree = "<group>"; };
+		ED742B0D1CA78855007FC96D /* CTSCardBinResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSCardBinResponse.h; sourceTree = "<group>"; };
+		ED742B0E1CA78855007FC96D /* CTSCardBinResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSCardBinResponse.m; sourceTree = "<group>"; };
+		ED742B0F1CA78855007FC96D /* CTSCashoutBankAccountResp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSCashoutBankAccountResp.h; sourceTree = "<group>"; };
+		ED742B101CA78855007FC96D /* CTSCashoutBankAccountResp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSCashoutBankAccountResp.m; sourceTree = "<group>"; };
+		ED742B111CA78855007FC96D /* CTSCreditCardOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSCreditCardOption.h; sourceTree = "<group>"; };
+		ED742B121CA78855007FC96D /* CTSCreditCardOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSCreditCardOption.m; sourceTree = "<group>"; };
+		ED742B131CA78855007FC96D /* CTSDebitCardOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSDebitCardOption.h; sourceTree = "<group>"; };
+		ED742B141CA78855007FC96D /* CTSDebitCardOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSDebitCardOption.m; sourceTree = "<group>"; };
+		ED742B151CA78855007FC96D /* CTSDyPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSDyPResponse.h; sourceTree = "<group>"; };
+		ED742B161CA78855007FC96D /* CTSDyPResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSDyPResponse.m; sourceTree = "<group>"; };
+		ED742B171CA78855007FC96D /* CTSNetbankingOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSNetbankingOption.h; sourceTree = "<group>"; };
+		ED742B181CA78855007FC96D /* CTSNetbankingOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSNetbankingOption.m; sourceTree = "<group>"; };
+		ED742B191CA78855007FC96D /* CTSPaymentRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPaymentRes.h; sourceTree = "<group>"; };
+		ED742B1A1CA78855007FC96D /* CTSPaymentRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPaymentRes.m; sourceTree = "<group>"; };
+		ED742B1B1CA78855007FC96D /* CTSPaymentTransactionRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPaymentTransactionRes.h; sourceTree = "<group>"; };
+		ED742B1C1CA78855007FC96D /* CTSPaymentTransactionRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPaymentTransactionRes.m; sourceTree = "<group>"; };
+		ED742B1D1CA78855007FC96D /* CTSPGHealthRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPGHealthRes.h; sourceTree = "<group>"; };
+		ED742B1E1CA78855007FC96D /* CTSPGHealthRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPGHealthRes.m; sourceTree = "<group>"; };
+		ED742B1F1CA78855007FC96D /* CTSPgSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPgSettings.h; sourceTree = "<group>"; };
+		ED742B201CA78855007FC96D /* CTSPgSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPgSettings.m; sourceTree = "<group>"; };
+		ED742B211CA78855007FC96D /* CTSPrepaidBill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPrepaidBill.h; sourceTree = "<group>"; };
+		ED742B221CA78855007FC96D /* CTSPrepaidBill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPrepaidBill.m; sourceTree = "<group>"; };
+		ED742B231CA78855007FC96D /* CTSPrepaidPayResp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPrepaidPayResp.h; sourceTree = "<group>"; };
+		ED742B241CA78855007FC96D /* CTSPrepaidPayResp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPrepaidPayResp.m; sourceTree = "<group>"; };
+		ED742B251CA78855007FC96D /* CTSSaveCardResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSSaveCardResponse.h; sourceTree = "<group>"; };
+		ED742B261CA78855007FC96D /* CTSSaveCardResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSSaveCardResponse.m; sourceTree = "<group>"; };
+		ED742B271CA78855007FC96D /* CTSTransferMoneyResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSTransferMoneyResponse.h; sourceTree = "<group>"; };
+		ED742B281CA78855007FC96D /* CTSTransferMoneyResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSTransferMoneyResponse.m; sourceTree = "<group>"; };
+		ED742B2A1CA78855007FC96D /* CTSGetBalanceRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSGetBalanceRes.h; sourceTree = "<group>"; };
+		ED742B2B1CA78855007FC96D /* CTSGetBalanceRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSGetBalanceRes.m; sourceTree = "<group>"; };
+		ED742B2C1CA78855007FC96D /* CTSNewContactProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSNewContactProfile.h; sourceTree = "<group>"; };
+		ED742B2D1CA78855007FC96D /* CTSNewContactProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSNewContactProfile.m; sourceTree = "<group>"; };
+		ED742B2E1CA78855007FC96D /* CTSNewResponseDataProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSNewResponseDataProfile.h; sourceTree = "<group>"; };
+		ED742B2F1CA78855007FC96D /* CTSNewResponseDataProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSNewResponseDataProfile.m; sourceTree = "<group>"; };
+		ED742B301CA78855007FC96D /* CTSProfileContactNewRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSProfileContactNewRes.h; sourceTree = "<group>"; };
+		ED742B311CA78855007FC96D /* CTSProfileContactNewRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSProfileContactNewRes.m; sourceTree = "<group>"; };
+		ED742B321CA78855007FC96D /* CTSProfileContactRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSProfileContactRes.h; sourceTree = "<group>"; };
+		ED742B331CA78855007FC96D /* CTSProfileContactRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSProfileContactRes.m; sourceTree = "<group>"; };
+		ED742B341CA78855007FC96D /* CTSProfilePaymentRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSProfilePaymentRes.h; sourceTree = "<group>"; };
+		ED742B351CA78855007FC96D /* CTSProfilePaymentRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSProfilePaymentRes.m; sourceTree = "<group>"; };
+		ED742B361CA78855007FC96D /* CTSProfilePrepaidRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSProfilePrepaidRes.h; sourceTree = "<group>"; };
+		ED742B371CA78855007FC96D /* CTSProfilePrepaidRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSProfilePrepaidRes.m; sourceTree = "<group>"; };
+		ED742B381CA78855007FC96D /* CTSUpdateMobileNumberRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSUpdateMobileNumberRes.h; sourceTree = "<group>"; };
+		ED742B391CA78855007FC96D /* CTSUpdateMobileNumberRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSUpdateMobileNumberRes.m; sourceTree = "<group>"; };
+		ED742B3A1CA78855007FC96D /* CTSUserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSUserProfile.h; sourceTree = "<group>"; };
+		ED742B3B1CA78855007FC96D /* CTSUserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSUserProfile.m; sourceTree = "<group>"; };
+		ED742B3C1CA78855007FC96D /* GetProfileRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetProfileRes.h; sourceTree = "<group>"; };
+		ED742B3D1CA78855007FC96D /* GetProfileRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetProfileRes.m; sourceTree = "<group>"; };
+		ED742B401CA78855007FC96D /* CTSAuthLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSAuthLayer.h; sourceTree = "<group>"; };
+		ED742B411CA78855007FC96D /* CTSAuthLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSAuthLayer.m; sourceTree = "<group>"; };
+		ED742B421CA78855007FC96D /* CTSAuthLayerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSAuthLayerConstants.h; sourceTree = "<group>"; };
+		ED742B441CA78855007FC96D /* CTSError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSError.h; sourceTree = "<group>"; };
+		ED742B451CA78855007FC96D /* CTSError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSError.m; sourceTree = "<group>"; };
+		ED742B471CA78855007FC96D /* BankImagesList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BankImagesList.plist; sourceTree = "<group>"; };
+		ED742B481CA78855007FC96D /* BankImagesListWithBankName.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BankImagesListWithBankName.plist; sourceTree = "<group>"; };
+		ED742B491CA78855007FC96D /* CitrusPay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitrusPay.h; sourceTree = "<group>"; };
+		ED742B4A1CA78855007FC96D /* CitrusPay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitrusPay.m; sourceTree = "<group>"; };
+		ED742B4B1CA78855007FC96D /* CTSCoreProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSCoreProtocol.h; sourceTree = "<group>"; };
+		ED742B4C1CA78855007FC96D /* CTSDataCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSDataCache.h; sourceTree = "<group>"; };
+		ED742B4D1CA78855007FC96D /* CTSDataCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSDataCache.m; sourceTree = "<group>"; };
+		ED742B4E1CA78855007FC96D /* CTSOauthManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSOauthManager.h; sourceTree = "<group>"; };
+		ED742B4F1CA78855007FC96D /* CTSOauthManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSOauthManager.m; sourceTree = "<group>"; };
+		ED742B501CA78855007FC96D /* CTSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSObject.h; sourceTree = "<group>"; };
+		ED742B511CA78855007FC96D /* CTSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSObject.m; sourceTree = "<group>"; };
+		ED742B521CA78855007FC96D /* CTSUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSUtility.h; sourceTree = "<group>"; };
+		ED742B531CA78855007FC96D /* CTSUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSUtility.m; sourceTree = "<group>"; };
+		ED742B541CA78855007FC96D /* OauthStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OauthStatus.h; sourceTree = "<group>"; };
+		ED742B551CA78855007FC96D /* OauthStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OauthStatus.m; sourceTree = "<group>"; };
+		ED742B561CA78855007FC96D /* ProductionEnv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ProductionEnv.plist; sourceTree = "<group>"; };
+		ED742B571CA78855007FC96D /* RestLayerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestLayerConstants.h; sourceTree = "<group>"; };
+		ED742B581CA78855007FC96D /* SandboxEnv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SandboxEnv.plist; sourceTree = "<group>"; };
+		ED742B591CA78855007FC96D /* SchemeImagesList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SchemeImagesList.plist; sourceTree = "<group>"; };
+		ED742B5A1CA78855007FC96D /* Staging1Env.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Staging1Env.plist; sourceTree = "<group>"; };
+		ED742B5B1CA78855007FC96D /* Staging3Env.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Staging3Env.plist; sourceTree = "<group>"; };
+		ED742B5C1CA78855007FC96D /* Staging4Env.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Staging4Env.plist; sourceTree = "<group>"; };
+		ED742B5D1CA78855007FC96D /* Staging5Env.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Staging5Env.plist; sourceTree = "<group>"; };
+		ED742B5E1CA78855007FC96D /* Staging7Env.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Staging7Env.plist; sourceTree = "<group>"; };
+		ED742B601CA78855007FC96D /* CTSRestCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSRestCore.h; sourceTree = "<group>"; };
+		ED742B611CA78855007FC96D /* CTSRestCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSRestCore.m; sourceTree = "<group>"; };
+		ED742B621CA78855007FC96D /* CTSRestCoreConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSRestCoreConstants.h; sourceTree = "<group>"; };
+		ED742B631CA78855007FC96D /* CTSRestCoreRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSRestCoreRequest.h; sourceTree = "<group>"; };
+		ED742B641CA78855007FC96D /* CTSRestCoreRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSRestCoreRequest.m; sourceTree = "<group>"; };
+		ED742B651CA78855007FC96D /* CTSRestCoreResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSRestCoreResponse.h; sourceTree = "<group>"; };
+		ED742B661CA78855007FC96D /* CTSRestCoreResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSRestCoreResponse.m; sourceTree = "<group>"; };
+		ED742B671CA78855007FC96D /* CTSRestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSRestObject.h; sourceTree = "<group>"; };
+		ED742B681CA78855007FC96D /* CTSRestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSRestObject.m; sourceTree = "<group>"; };
+		ED742B691CA78855007FC96D /* CTSRestPluginBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSRestPluginBase.h; sourceTree = "<group>"; };
+		ED742B6A1CA78855007FC96D /* CTSRestPluginBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSRestPluginBase.m; sourceTree = "<group>"; };
+		ED742B6C1CA78855007FC96D /* CTSCVVEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSCVVEncryptor.h; sourceTree = "<group>"; };
+		ED742B6D1CA78855007FC96D /* CTSCVVEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSCVVEncryptor.m; sourceTree = "<group>"; };
+		ED742B6F1CA78855007FC96D /* CreditCard-Validator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CreditCard-Validator.h"; sourceTree = "<group>"; };
+		ED742B701CA78855007FC96D /* CreditCard-Validator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CreditCard-Validator.m"; sourceTree = "<group>"; };
+		ED742B731CA78855007FC96D /* JSONModel+CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSONModel+CoreData.h"; sourceTree = "<group>"; };
+		ED742B741CA78855007FC96D /* JSONModel+CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONModel+CoreData.m"; sourceTree = "<group>"; };
+		ED742B751CA78855007FC96D /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
+		ED742B761CA78855007FC96D /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
+		ED742B771CA78855007FC96D /* JSONModelArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelArray.h; sourceTree = "<group>"; };
+		ED742B781CA78855007FC96D /* JSONModelArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelArray.m; sourceTree = "<group>"; };
+		ED742B791CA78855007FC96D /* JSONModelClassProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelClassProperty.h; sourceTree = "<group>"; };
+		ED742B7A1CA78855007FC96D /* JSONModelClassProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelClassProperty.m; sourceTree = "<group>"; };
+		ED742B7B1CA78855007FC96D /* JSONModelError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelError.h; sourceTree = "<group>"; };
+		ED742B7C1CA78855007FC96D /* JSONModelError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelError.m; sourceTree = "<group>"; };
+		ED742B7E1CA78855007FC96D /* NSArray+JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JSONModel.h"; sourceTree = "<group>"; };
+		ED742B7F1CA78855007FC96D /* NSArray+JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JSONModel.m"; sourceTree = "<group>"; };
+		ED742B801CA78855007FC96D /* JSONModelLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelLib.h; sourceTree = "<group>"; };
+		ED742B821CA78855007FC96D /* JSONAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONAPI.h; sourceTree = "<group>"; };
+		ED742B831CA78855007FC96D /* JSONAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONAPI.m; sourceTree = "<group>"; };
+		ED742B841CA78855007FC96D /* JSONHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONHTTPClient.h; sourceTree = "<group>"; };
+		ED742B851CA78855007FC96D /* JSONHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONHTTPClient.m; sourceTree = "<group>"; };
+		ED742B861CA78855007FC96D /* JSONModel+networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSONModel+networking.h"; sourceTree = "<group>"; };
+		ED742B871CA78855007FC96D /* JSONModel+networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONModel+networking.m"; sourceTree = "<group>"; };
+		ED742B891CA78855007FC96D /* JSONKeyMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKeyMapper.h; sourceTree = "<group>"; };
+		ED742B8A1CA78855007FC96D /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
+		ED742B8B1CA78855007FC96D /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
+		ED742B8C1CA78855007FC96D /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
+		ED742B8D1CA78855007FC96D /* UserLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLogging.h; sourceTree = "<group>"; };
+		ED742B8F1CA78855007FC96D /* CTSHtmlElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSHtmlElement.h; sourceTree = "<group>"; };
+		ED742B901CA78855007FC96D /* CTSHtmlElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSHtmlElement.m; sourceTree = "<group>"; };
+		ED742B911CA78855007FC96D /* CTSHtmlParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSHtmlParser.h; sourceTree = "<group>"; };
+		ED742B921CA78855007FC96D /* CTSHtmlParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSHtmlParser.m; sourceTree = "<group>"; };
+		ED742B931CA78855007FC96D /* NSObject+logProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+logProperties.h"; sourceTree = "<group>"; };
+		ED742B941CA78855007FC96D /* NSObject+logProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+logProperties.m"; sourceTree = "<group>"; };
+		ED742B961CA78855007FC96D /* CTSPaymentLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPaymentLayer.h; sourceTree = "<group>"; };
+		ED742B971CA78855007FC96D /* CTSPaymentLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPaymentLayer.m; sourceTree = "<group>"; };
+		ED742B981CA78855007FC96D /* CTSPaymentLayerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPaymentLayerConstants.h; sourceTree = "<group>"; };
+		ED742B9A1CA78855007FC96D /* RNCryptor+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RNCryptor+Private.h"; sourceTree = "<group>"; };
+		ED742B9B1CA78855007FC96D /* RNCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCryptor.h; sourceTree = "<group>"; };
+		ED742B9C1CA78855007FC96D /* RNCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCryptor.m; sourceTree = "<group>"; };
+		ED742B9D1CA78855007FC96D /* RNCryptorEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCryptorEngine.h; sourceTree = "<group>"; };
+		ED742B9E1CA78855007FC96D /* RNCryptorEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCryptorEngine.m; sourceTree = "<group>"; };
+		ED742B9F1CA78855007FC96D /* RNDecryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNDecryptor.h; sourceTree = "<group>"; };
+		ED742BA01CA78855007FC96D /* RNDecryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNDecryptor.m; sourceTree = "<group>"; };
+		ED742BA11CA78855007FC96D /* RNEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNEncryptor.h; sourceTree = "<group>"; };
+		ED742BA21CA78855007FC96D /* RNEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNEncryptor.m; sourceTree = "<group>"; };
+		ED742BA41CA78855007FC96D /* CTSProfileLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSProfileLayer.h; sourceTree = "<group>"; };
+		ED742BA51CA78855007FC96D /* CTSProfileLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSProfileLayer.m; sourceTree = "<group>"; };
+		ED742BA61CA78855007FC96D /* CTSProfileLayerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSProfileLayerConstants.h; sourceTree = "<group>"; };
+		ED742BA81CA78855007FC96D /* CTSValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSValidator.h; sourceTree = "<group>"; };
+		ED742BA91CA78855007FC96D /* CTSValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSValidator.m; sourceTree = "<group>"; };
+		ED742BAA1CA78855007FC96D /* Version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Version.h; sourceTree = "<group>"; };
+		ED742BAC1CA78855007FC96D /* CTSPaymentWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSPaymentWebViewController.h; sourceTree = "<group>"; };
+		ED742BAD1CA78855007FC96D /* CTSPaymentWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSPaymentWebViewController.m; sourceTree = "<group>"; };
+		ED742BAE1CA78855007FC96D /* HVDOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVDOverlay.h; sourceTree = "<group>"; };
+		ED742BAF1CA78855007FC96D /* HVDOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVDOverlay.m; sourceTree = "<group>"; };
+		ED742BB21CA78855007FC96D /* andra_bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = andra_bank.png; sourceTree = "<group>"; };
+		ED742BB31CA78855007FC96D /* andra_bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "andra_bank@2x.png"; sourceTree = "<group>"; };
+		ED742BB41CA78855007FC96D /* andra_bank@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "andra_bank@3x.png"; sourceTree = "<group>"; };
+		ED742BB51CA78855007FC96D /* axis_bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = axis_bank.png; sourceTree = "<group>"; };
+		ED742BB61CA78855007FC96D /* axis_bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "axis_bank@2x.png"; sourceTree = "<group>"; };
+		ED742BB71CA78855007FC96D /* axis_bank@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "axis_bank@3x.png"; sourceTree = "<group>"; };
+		ED742BB81CA78855007FC96D /* Bank_of_baroda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bank_of_baroda.png; sourceTree = "<group>"; };
+		ED742BB91CA78855007FC96D /* Bank_of_baroda@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bank_of_baroda@2x.png"; sourceTree = "<group>"; };
+		ED742BBA1CA78855007FC96D /* Bank_of_baroda@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bank_of_baroda@3x.png"; sourceTree = "<group>"; };
+		ED742BBB1CA78855007FC96D /* bank_of_india.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bank_of_india.png; sourceTree = "<group>"; };
+		ED742BBC1CA78855007FC96D /* bank_of_india@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bank_of_india@2x.png"; sourceTree = "<group>"; };
+		ED742BBD1CA78855007FC96D /* bank_of_india@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bank_of_india@3x.png"; sourceTree = "<group>"; };
+		ED742BBE1CA78855007FC96D /* bank_of_maharshtra.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bank_of_maharshtra.png; sourceTree = "<group>"; };
+		ED742BBF1CA78855007FC96D /* bank_of_maharshtra2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bank_of_maharshtra2x.png; sourceTree = "<group>"; };
+		ED742BC01CA78855007FC96D /* bank_of_maharshtra@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bank_of_maharshtra@3x.png"; sourceTree = "<group>"; };
+		ED742BC11CA78855007FC96D /* canara_bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = canara_bank.png; sourceTree = "<group>"; };
+		ED742BC21CA78855007FC96D /* canara_bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canara_bank@2x.png"; sourceTree = "<group>"; };
+		ED742BC31CA78855007FC96D /* canara_bank@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canara_bank@3x.png"; sourceTree = "<group>"; };
+		ED742BC41CA78855007FC96D /* Catholic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Catholic.png; sourceTree = "<group>"; };
+		ED742BC51CA78855007FC96D /* Catholic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Catholic@2x.png"; sourceTree = "<group>"; };
+		ED742BC61CA78855007FC96D /* Catholic@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Catholic@3x.png"; sourceTree = "<group>"; };
+		ED742BC71CA78855007FC96D /* central_bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = central_bank.png; sourceTree = "<group>"; };
+		ED742BC81CA78855007FC96D /* central_bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "central_bank@2x.png"; sourceTree = "<group>"; };
+		ED742BC91CA78855007FC96D /* central_bank@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "central_bank@3x.png"; sourceTree = "<group>"; };
+		ED742BCA1CA78855007FC96D /* citi_bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = citi_bank.png; sourceTree = "<group>"; };
+		ED742BCB1CA78855007FC96D /* citi_bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "citi_bank@2x.png"; sourceTree = "<group>"; };
+		ED742BCC1CA78855007FC96D /* citi_bank@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "citi_bank@3x.png"; sourceTree = "<group>"; };
+		ED742BCD1CA78855007FC96D /* citi_union_bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = citi_union_bank.png; sourceTree = "<group>"; };
+		ED742BCE1CA78855007FC96D /* citi_union_bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "citi_union_bank@2x.png"; sourceTree = "<group>"; };
+		ED742BCF1CA78855007FC96D /* citi_union_bank@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "citi_union_bank@3x.png"; sourceTree = "<group>"; };
+		ED742BD01CA78855007FC96D /* corporation_bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corporation_bank.png; sourceTree = "<group>"; };
+		ED742BD11CA78855007FC96D /* corporation_bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "corporation_bank@2x.png"; sourceTree = "<group>"; };
+		ED742BD21CA78855007FC96D /* corporation_bank@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "corporation_bank@3x.png"; sourceTree = "<group>"; };
+		ED742BD31CA78855007FC96D /* cosmos_bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cosmos_bank.png; sourceTree = "<group>"; };
+		ED742BD41CA78855007FC96D /* cosmos_bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cosmos_bank@2x.png"; sourceTree = "<group>"; };
+		ED742BD51CA78855007FC96D /* cosmos_bank@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cosmos_bank@3x.png"; sourceTree = "<group>"; };
+		ED742BD61CA78855007FC96D /* DCB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DCB.png; sourceTree = "<group>"; };
+		ED742BD71CA78855007FC96D /* DCB@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DCB@2x.png"; sourceTree = "<group>"; };
+		ED742BD81CA78855007FC96D /* DCB@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DCB@3x.png"; sourceTree = "<group>"; };
+		ED742BD91CA78855007FC96D /* default_bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_bank.png; sourceTree = "<group>"; };
+		ED742BDA1CA78855007FC96D /* default_bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_bank@2x.png"; sourceTree = "<group>"; };
+		ED742BDB1CA78855007FC96D /* default_bank@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_bank@3x.png"; sourceTree = "<group>"; };
+		ED742BDC1CA78855007FC96D /* detuch_bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = detuch_bank.png; sourceTree = "<group>"; };
+		ED742BDD1CA78855007FC96D /* detuch_bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detuch_bank@2x.png"; sourceTree = "<group>"; };
+		ED742BDE1CA78855007FC96D /* detuch_bank@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detuch_bank@3x.png"; sourceTree = "<group>"; };
+		ED742BDF1CA78855007FC96D /* Federal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Federal.png; sourceTree = "<group>"; };
+		ED742BE01CA78855007FC96D /* Federal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Federal@2x.png"; sourceTree = "<group>"; };
+		ED742BE11CA78855007FC96D /* Federal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Federal@3x.png"; sourceTree = "<group>"; };
+		ED742BE21CA78855007FC96D /* hdfc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hdfc.png; sourceTree = "<group>"; };
+		ED742BE31CA78855007FC96D /* hdfc@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hdfc@2x.png"; sourceTree = "<group>"; };
+		ED742BE41CA78855007FC96D /* hdfc@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hdfc@3x.png"; sourceTree = "<group>"; };
+		ED742BE51CA78855007FC96D /* icici_bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icici_bank.png; sourceTree = "<group>"; };
+		ED742BE61CA78855007FC96D /* icici_bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icici_bank@2x.png"; sourceTree = "<group>"; };
+		ED742BE71CA78855007FC96D /* icici_bank@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icici_bank@3x.png"; sourceTree = "<group>"; };
+		ED742BE81CA78855007FC96D /* idbi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = idbi.png; sourceTree = "<group>"; };
+		ED742BE91CA78855007FC96D /* idbi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "idbi@2x.png"; sourceTree = "<group>"; };
+		ED742BEA1CA78855007FC96D /* idbi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "idbi@3x.png"; sourceTree = "<group>"; };
+		ED742BEB1CA78855007FC96D /* indian_bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = indian_bank.png; sourceTree = "<group>"; };
+		ED742BEC1CA78855007FC96D /* indian_bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "indian_bank@2x.png"; sourceTree = "<group>"; };
+		ED742BED1CA78855007FC96D /* indian_bank@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "indian_bank@3x.png"; sourceTree = "<group>"; };
+		ED742BEE1CA78855007FC96D /* Indian_overseas_bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Indian_overseas_bank.png; sourceTree = "<group>"; };
+		ED742BEF1CA78855007FC96D /* Indian_overseas_bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Indian_overseas_bank@2x.png"; sourceTree = "<group>"; };
+		ED742BF01CA78855007FC96D /* Indian_overseas_bank@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Indian_overseas_bank@3x.png"; sourceTree = "<group>"; };
+		ED742BF11CA78855007FC96D /* indusind_bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = indusind_bank.png; sourceTree = "<group>"; };
+		ED742BF21CA78855007FC96D /* indusind_bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "indusind_bank@2x.png"; sourceTree = "<group>"; };
+		ED742BF31CA78855007FC96D /* indusind_bank@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "indusind_bank@3x.png"; sourceTree = "<group>"; };
+		ED742BF41CA78855007FC96D /* ING.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ING.png; sourceTree = "<group>"; };
+		ED742BF51CA78855007FC96D /* ING@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ING@2x.png"; sourceTree = "<group>"; };
+		ED742BF61CA78855007FC96D /* ING@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ING@3x.png"; sourceTree = "<group>"; };
+		ED742BF71CA78855007FC96D /* karnataka_bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = karnataka_bank.png; sourceTree = "<group>"; };
+		ED742BF81CA78855007FC96D /* karnataka_bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "karnataka_bank@2x.png"; sourceTree = "<group>"; };
+		ED742BF91CA78855007FC96D /* karnataka_bank@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "karnataka_bank@3x.png"; sourceTree = "<group>"; };
+		ED742BFA1CA78855007FC96D /* Karur_Vyasa_Bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Karur_Vyasa_Bank.png; sourceTree = "<group>"; };
+		ED742BFB1CA78855007FC96D /* Karur_Vyasa_Bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Karur_Vyasa_Bank@2x.png"; sourceTree = "<group>"; };
+		ED742BFC1CA78855007FC96D /* Karur_Vyasa_Bank@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Karur_Vyasa_Bank@3x.png"; sourceTree = "<group>"; };
+		ED742BFD1CA78855007FC96D /* kotak_mahindra.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kotak_mahindra.png; sourceTree = "<group>"; };
+		ED742BFE1CA78855007FC96D /* kotak_mahindra@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kotak_mahindra@2x.png"; sourceTree = "<group>"; };
+		ED742BFF1CA78855007FC96D /* kotak_mahindra@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kotak_mahindra@3x.png"; sourceTree = "<group>"; };
+		ED742C001CA78855007FC96D /* punjab_national_bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = punjab_national_bank.png; sourceTree = "<group>"; };
+		ED742C011CA78855007FC96D /* punjab_national_bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "punjab_national_bank@2x.png"; sourceTree = "<group>"; };
+		ED742C021CA78855007FC96D /* punjab_national_bank@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "punjab_national_bank@3x.png"; sourceTree = "<group>"; };
+		ED742C031CA78855007FC96D /* south_indian_bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = south_indian_bank.png; sourceTree = "<group>"; };
+		ED742C041CA78855007FC96D /* south_indian_bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "south_indian_bank@2x.png"; sourceTree = "<group>"; };
+		ED742C051CA78855007FC96D /* south_indian_bank@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "south_indian_bank@3x.png"; sourceTree = "<group>"; };
+		ED742C061CA78855007FC96D /* State_bank_of_bikaner_and_jaipur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = State_bank_of_bikaner_and_jaipur.png; sourceTree = "<group>"; };
+		ED742C071CA78855007FC96D /* State_bank_of_bikaner_and_jaipur@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "State_bank_of_bikaner_and_jaipur@2x.png"; sourceTree = "<group>"; };
+		ED742C081CA78855007FC96D /* State_bank_of_bikaner_and_jaipur@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "State_bank_of_bikaner_and_jaipur@3x.png"; sourceTree = "<group>"; };
+		ED742C091CA78855007FC96D /* State_bank_of_hyderabad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = State_bank_of_hyderabad.png; sourceTree = "<group>"; };
+		ED742C0A1CA78855007FC96D /* State_bank_of_hyderabad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "State_bank_of_hyderabad@2x.png"; sourceTree = "<group>"; };
+		ED742C0B1CA78855007FC96D /* State_bank_of_hyderabad@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "State_bank_of_hyderabad@3x.png"; sourceTree = "<group>"; };
+		ED742C0C1CA78855007FC96D /* State_bank_of_india.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = State_bank_of_india.png; sourceTree = "<group>"; };
+		ED742C0D1CA78855007FC96D /* State_bank_of_india@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "State_bank_of_india@2x.png"; sourceTree = "<group>"; };
+		ED742C0E1CA78855007FC96D /* State_bank_of_india@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "State_bank_of_india@3x.png"; sourceTree = "<group>"; };
+		ED742C0F1CA78855007FC96D /* State_bank_of_mysore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = State_bank_of_mysore.png; sourceTree = "<group>"; };
+		ED742C101CA78856007FC96D /* State_bank_of_mysore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "State_bank_of_mysore@2x.png"; sourceTree = "<group>"; };
+		ED742C111CA78856007FC96D /* State_bank_of_mysore@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "State_bank_of_mysore@3x.png"; sourceTree = "<group>"; };
+		ED742C121CA78856007FC96D /* State_bank_of_patalia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = State_bank_of_patalia.png; sourceTree = "<group>"; };
+		ED742C131CA78856007FC96D /* State_bank_of_patalia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "State_bank_of_patalia@2x.png"; sourceTree = "<group>"; };
+		ED742C141CA78856007FC96D /* State_bank_of_patalia@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "State_bank_of_patalia@3x.png"; sourceTree = "<group>"; };
+		ED742C151CA78856007FC96D /* State_Bank_of_Travancore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = State_Bank_of_Travancore.png; sourceTree = "<group>"; };
+		ED742C161CA78856007FC96D /* State_Bank_of_Travancore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "State_Bank_of_Travancore@2x.png"; sourceTree = "<group>"; };
+		ED742C171CA78856007FC96D /* State_Bank_of_Travancore@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "State_Bank_of_Travancore@3x.png"; sourceTree = "<group>"; };
+		ED742C181CA78856007FC96D /* UCO_bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UCO_bank.png; sourceTree = "<group>"; };
+		ED742C191CA78856007FC96D /* UCO_bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UCO_bank@2x.png"; sourceTree = "<group>"; };
+		ED742C1A1CA78856007FC96D /* UCO_bank@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UCO_bank@3x.png"; sourceTree = "<group>"; };
+		ED742C1B1CA78856007FC96D /* Union_bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Union_bank.png; sourceTree = "<group>"; };
+		ED742C1C1CA78856007FC96D /* Union_bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Union_bank@2x.png"; sourceTree = "<group>"; };
+		ED742C1D1CA78856007FC96D /* Union_bank@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Union_bank@3x.png"; sourceTree = "<group>"; };
+		ED742C1E1CA78856007FC96D /* united_bank_of_india.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = united_bank_of_india.png; sourceTree = "<group>"; };
+		ED742C1F1CA78856007FC96D /* united_bank_of_india@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "united_bank_of_india@2x.png"; sourceTree = "<group>"; };
+		ED742C201CA78856007FC96D /* united_bank_of_india@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "united_bank_of_india@3x.png"; sourceTree = "<group>"; };
+		ED742C211CA78856007FC96D /* vijaya_bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vijaya_bank.png; sourceTree = "<group>"; };
+		ED742C221CA78856007FC96D /* vijaya_bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vijaya_bank@2x.png"; sourceTree = "<group>"; };
+		ED742C231CA78856007FC96D /* vijaya_bank@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vijaya_bank@3x.png"; sourceTree = "<group>"; };
+		ED742C241CA78856007FC96D /* yes_bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yes_bank.png; sourceTree = "<group>"; };
+		ED742C251CA78856007FC96D /* yes_bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yes_bank@2x.png"; sourceTree = "<group>"; };
+		ED742C261CA78856007FC96D /* yes_bank@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yes_bank@3x.png"; sourceTree = "<group>"; };
+		ED742C281CA78856007FC96D /* AmericanXpress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AmericanXpress.png; sourceTree = "<group>"; };
+		ED742C291CA78856007FC96D /* AmericanXpress@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AmericanXpress@2x.png"; sourceTree = "<group>"; };
+		ED742C2A1CA78856007FC96D /* AmericanXpress@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AmericanXpress@3x.png"; sourceTree = "<group>"; };
+		ED742C2B1CA78856007FC96D /* discover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discover.png; sourceTree = "<group>"; };
+		ED742C2C1CA78856007FC96D /* discover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "discover@2x.png"; sourceTree = "<group>"; };
+		ED742C2D1CA78856007FC96D /* discover@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "discover@3x.png"; sourceTree = "<group>"; };
+		ED742C2E1CA78856007FC96D /* jcb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jcb.png; sourceTree = "<group>"; };
+		ED742C2F1CA78856007FC96D /* jcb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jcb@2x.png"; sourceTree = "<group>"; };
+		ED742C301CA78856007FC96D /* jcb@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jcb@3x.png"; sourceTree = "<group>"; };
+		ED742C311CA78856007FC96D /* Mastercard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mastercard.png; sourceTree = "<group>"; };
+		ED742C321CA78856007FC96D /* Mastercard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mastercard@2x.png"; sourceTree = "<group>"; };
+		ED742C331CA78856007FC96D /* Mastercard@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mastercard@3x.png"; sourceTree = "<group>"; };
+		ED742C341CA78856007FC96D /* Mastero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mastero.png; sourceTree = "<group>"; };
+		ED742C351CA78856007FC96D /* Mastero@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mastero@2x.png"; sourceTree = "<group>"; };
+		ED742C361CA78856007FC96D /* Mastero@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mastero@3x.png"; sourceTree = "<group>"; };
+		ED742C371CA78856007FC96D /* Rupay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rupay.png; sourceTree = "<group>"; };
+		ED742C381CA78856007FC96D /* Rupay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rupay@2x.png"; sourceTree = "<group>"; };
+		ED742C391CA78856007FC96D /* Rupay@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rupay@3x.png"; sourceTree = "<group>"; };
+		ED742C3A1CA78856007FC96D /* visa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = visa.png; sourceTree = "<group>"; };
+		ED742C3B1CA78856007FC96D /* visa@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "visa@2x.png"; sourceTree = "<group>"; };
+		ED742C3C1CA78856007FC96D /* visa@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "visa@3x.png"; sourceTree = "<group>"; };
+		ED742C3D1CA78856007FC96D /* NSString+HVDKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HVDKit.h"; sourceTree = "<group>"; };
+		ED742C3E1CA78856007FC96D /* NSString+HVDKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HVDKit.m"; sourceTree = "<group>"; };
+		ED742C3F1CA78856007FC96D /* UIUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIUtility.h; sourceTree = "<group>"; };
+		ED742C401CA78856007FC96D /* UIUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIUtility.m; sourceTree = "<group>"; };
+		ED742C421CA78856007FC96D /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		ED742C431CA78856007FC96D /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		ED742C441CA78856007FC96D /* CardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardsViewController.h; sourceTree = "<group>"; };
+		ED742C451CA78856007FC96D /* CardsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardsViewController.m; sourceTree = "<group>"; };
+		ED742C461CA78856007FC96D /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		ED742C471CA78856007FC96D /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		ED742C481CA78856007FC96D /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
+		ED742C491CA78856007FC96D /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
+		ED742C4A1CA78856007FC96D /* ManageCradViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageCradViewController.h; sourceTree = "<group>"; };
+		ED742C4B1CA78856007FC96D /* ManageCradViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageCradViewController.m; sourceTree = "<group>"; };
+		ED742C4C1CA78856007FC96D /* ResetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetPasswordViewController.h; sourceTree = "<group>"; };
+		ED742C4D1CA78856007FC96D /* ResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetPasswordViewController.m; sourceTree = "<group>"; };
+		ED742C4E1CA78856007FC96D /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		ED742C4F1CA78856007FC96D /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		ED742C501CA78856007FC96D /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
+		ED742C511CA78856007FC96D /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
+		ED742C521CA78856007FC96D /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		ED742C531CA78856007FC96D /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		ED742C551CA78856007FC96D /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
+		ED742C561CA78856007FC96D /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
+		ED742C571CA78856007FC96D /* UICustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICustomButton.h; sourceTree = "<group>"; };
+		ED742C581CA78856007FC96D /* UICustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICustomButton.m; sourceTree = "<group>"; };
+		ED742C591CA78856007FC96D /* UICustomTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICustomTextField.h; sourceTree = "<group>"; };
+		ED742C5A1CA78856007FC96D /* UICustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICustomTextField.m; sourceTree = "<group>"; };
+		ED742C5B1CA78856007FC96D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		ED742C5C1CA78856007FC96D /* MerchantConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantConstants.h; sourceTree = "<group>"; };
+		ED742C5D1CA78856007FC96D /* TestParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestParams.h; sourceTree = "<group>"; };
 		ED8687681C973271008DCCAC /* MyBreakFast 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MyBreakFast 2.xcdatamodel"; sourceTree = "<group>"; };
 		ED996EA91C2C63E70017284A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED996EB11C30CA960017284A /* UserAddress+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserAddress+CoreDataProperties.swift"; path = "Models/UserAddress+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -357,6 +1030,7 @@
 		ED722B151BE09A33003DC9F2 /* MyBreakFast */ = {
 			isa = PBXGroup;
 			children = (
+				ED742AA91CA78855007FC96D /* Citrus_PG */,
 				ED344C7A1C9B14B4008643F9 /* Views */,
 				ED344C791C9B14AB008643F9 /* Controllers */,
 				EDC572221C7AD08F0018F11C /* CustomModalVC */,
@@ -372,6 +1046,680 @@
 				ED722B1D1BE09A33003DC9F2 /* MyBreakFast.xcdatamodeld */,
 			);
 			path = MyBreakFast;
+			sourceTree = "<group>";
+		};
+		ED742AA91CA78855007FC96D /* Citrus_PG */ = {
+			isa = PBXGroup;
+			children = (
+				ED742AAA1CA78855007FC96D /* Citrus_flow.storyboard */,
+				ED742AAB1CA78855007FC96D /* CitrusDevKit */,
+				ED742C411CA78856007FC96D /* Controllers */,
+				ED742C541CA78856007FC96D /* CustomComponents */,
+				ED742C5B1CA78856007FC96D /* Images.xcassets */,
+				ED742C5C1CA78856007FC96D /* MerchantConstants.h */,
+				ED742C5D1CA78856007FC96D /* TestParams.h */,
+			);
+			path = Citrus_PG;
+			sourceTree = "<group>";
+		};
+		ED742AAB1CA78855007FC96D /* CitrusDevKit */ = {
+			isa = PBXGroup;
+			children = (
+				ED742AAC1CA78855007FC96D /* CitrusSdk.h */,
+				ED742AAD1CA78855007FC96D /* Data */,
+				ED742B3E1CA78855007FC96D /* ModelLayers */,
+				ED742BAA1CA78855007FC96D /* Version.h */,
+				ED742BAB1CA78855007FC96D /* View */,
+			);
+			path = CitrusDevKit;
+			sourceTree = "<group>";
+		};
+		ED742AAD1CA78855007FC96D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				ED742AAE1CA78855007FC96D /* CTSRestError.h */,
+				ED742AAF1CA78855007FC96D /* CTSRestError.m */,
+				ED742AB01CA78855007FC96D /* dto */,
+				ED742AB91CA78855007FC96D /* RequestObjects */,
+				ED742AF21CA78855007FC96D /* ResponseObjects */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		ED742AB01CA78855007FC96D /* dto */ = {
+			isa = PBXGroup;
+			children = (
+				ED742AB11CA78855007FC96D /* CTSRuleInfo.h */,
+				ED742AB21CA78855007FC96D /* CTSRuleInfo.m */,
+				ED742AB31CA78855007FC96D /* CTSSignupState.h */,
+				ED742AB41CA78855007FC96D /* CTSSignupState.m */,
+				ED742AB51CA78855007FC96D /* CTSUser.h */,
+				ED742AB61CA78855007FC96D /* CTSUser.m */,
+				ED742AB71CA78855007FC96D /* PayLoadWebviewDto.h */,
+				ED742AB81CA78855007FC96D /* PayLoadWebviewDto.m */,
+			);
+			path = dto;
+			sourceTree = "<group>";
+		};
+		ED742AB91CA78855007FC96D /* RequestObjects */ = {
+			isa = PBXGroup;
+			children = (
+				ED742ABA1CA78855007FC96D /* Payment */,
+				ED742ADD1CA78855007FC96D /* UserProfile */,
+			);
+			path = RequestObjects;
+			sourceTree = "<group>";
+		};
+		ED742ABA1CA78855007FC96D /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				ED742ABB1CA78855007FC96D /* CTSAmount.h */,
+				ED742ABC1CA78855007FC96D /* CTSAmount.m */,
+				ED742ABD1CA78855007FC96D /* CTSCashoutBankAccount.h */,
+				ED742ABE1CA78855007FC96D /* CTSCashoutBankAccount.m */,
+				ED742ABF1CA78855007FC96D /* CTSCashoutToBankRes.h */,
+				ED742AC01CA78855007FC96D /* CTSCashoutToBankRes.m */,
+				ED742AC11CA78855007FC96D /* CTSDyPPaymentInfo.h */,
+				ED742AC21CA78855007FC96D /* CTSDyPPaymentInfo.m */,
+				ED742AC31CA78855007FC96D /* CTSDyPValidateRuleReq.h */,
+				ED742AC41CA78855007FC96D /* CTSDyPValidateRuleReq.m */,
+				ED742AC51CA78855007FC96D /* CTSGuestCheckout.h */,
+				ED742AC61CA78855007FC96D /* CTSGuestCheckout.m */,
+				ED742AC71CA78855007FC96D /* CTSPaymentMode.h */,
+				ED742AC81CA78855007FC96D /* CTSPaymentMode.m */,
+				ED742AC91CA78855007FC96D /* CTSPaymentNetbankingRequest.h */,
+				ED742ACA1CA78855007FC96D /* CTSPaymentNetbankingRequest.m */,
+				ED742ACB1CA78855007FC96D /* CTSPaymentRequest.h */,
+				ED742ACC1CA78855007FC96D /* CTSPaymentRequest.m */,
+				ED742ACD1CA78855007FC96D /* CTSPaymentToken.h */,
+				ED742ACE1CA78855007FC96D /* CTSPaymentToken.m */,
+				ED742ACF1CA78855007FC96D /* CTSPaymentUpdate.h */,
+				ED742AD01CA78855007FC96D /* CTSPaymentUpdate.m */,
+				ED742AD11CA78855007FC96D /* CTSPrepaidPayReq.h */,
+				ED742AD21CA78855007FC96D /* CTSPrepaidPayReq.m */,
+				ED742AD31CA78855007FC96D /* CTSPrepaidUser.h */,
+				ED742AD41CA78855007FC96D /* CTSPrepaidUser.m */,
+				ED742AD51CA78855007FC96D /* CTSTokenizedCardPayment.h */,
+				ED742AD61CA78855007FC96D /* CTSTokenizedCardPayment.m */,
+				ED742AD71CA78855007FC96D /* CTSTokenizedPaymentToken.h */,
+				ED742AD81CA78855007FC96D /* CTSTokenizedPaymentToken.m */,
+				ED742AD91CA78855007FC96D /* CTSUserAddress.h */,
+				ED742ADA1CA78855007FC96D /* CTSUserAddress.m */,
+				ED742ADB1CA78855007FC96D /* CTSUserDetails.h */,
+				ED742ADC1CA78855007FC96D /* CTSUserDetails.m */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		ED742ADD1CA78855007FC96D /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				ED742ADE1CA78855007FC96D /* CTSContactUpdate.h */,
+				ED742ADF1CA78855007FC96D /* CTSContactUpdate.m */,
+				ED742AE01CA78855007FC96D /* CTSDPMerchantQueryReq.h */,
+				ED742AE11CA78855007FC96D /* CTSDPMerchantQueryReq.m */,
+				ED742AE21CA78855007FC96D /* CTSElectronicCardUpdate.h */,
+				ED742AE31CA78855007FC96D /* CTSElectronicCardUpdate.m */,
+				ED742AE41CA78855007FC96D /* CTSNetBankingUpdate.h */,
+				ED742AE51CA78855007FC96D /* CTSNetBankingUpdate.m */,
+				ED742AE61CA78855007FC96D /* CTSNewUserProfileReq.h */,
+				ED742AE71CA78855007FC96D /* CTSNewUserProfileReq.m */,
+				ED742AE81CA78855007FC96D /* CTSPaymentDetailUpdate.h */,
+				ED742AE91CA78855007FC96D /* CTSPaymentDetailUpdate.m */,
+				ED742AEA1CA78855007FC96D /* CTSPaymentOption.h */,
+				ED742AEB1CA78855007FC96D /* CTSPaymentOption.m */,
+				ED742AEC1CA78855007FC96D /* CTSPrepaidUpdate.h */,
+				ED742AED1CA78855007FC96D /* CTSPrepaidUpdate.m */,
+				ED742AEE1CA78855007FC96D /* CTSProfileUpdate.h */,
+				ED742AEF1CA78855007FC96D /* CTSProfileUpdate.m */,
+				ED742AF01CA78855007FC96D /* CTSTokenizedPayment.h */,
+				ED742AF11CA78855007FC96D /* CTSTokenizedPayment.m */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		ED742AF21CA78855007FC96D /* ResponseObjects */ = {
+			isa = PBXGroup;
+			children = (
+				ED742AF31CA78855007FC96D /* Authentication */,
+				ED742B041CA78855007FC96D /* CTSDPResponse.h */,
+				ED742B051CA78855007FC96D /* CTSDPResponse.m */,
+				ED742B061CA78855007FC96D /* CTSResponse.h */,
+				ED742B071CA78855007FC96D /* CTSResponse.m */,
+				ED742B081CA78855007FC96D /* Payment */,
+				ED742B291CA78855007FC96D /* UserProfile */,
+			);
+			path = ResponseObjects;
+			sourceTree = "<group>";
+		};
+		ED742AF31CA78855007FC96D /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				ED742AF41CA78855007FC96D /* CTSCitrusLinkRes.h */,
+				ED742AF51CA78855007FC96D /* CTSCitrusLinkRes.m */,
+				ED742AF61CA78855007FC96D /* CTSEotpVerSigninResp.h */,
+				ED742AF71CA78855007FC96D /* CTSEotpVerSigninResp.m */,
+				ED742AF81CA78855007FC96D /* CTSKeyStore.h */,
+				ED742AF91CA78855007FC96D /* CTSKeyStore.m */,
+				ED742AFA1CA78855007FC96D /* CTSLinkRes.h */,
+				ED742AFB1CA78855007FC96D /* CTSLinkRes.m */,
+				ED742AFC1CA78855007FC96D /* CTSLinkUserRes.h */,
+				ED742AFD1CA78855007FC96D /* CTSLinkUserRes.m */,
+				ED742AFE1CA78855007FC96D /* CTSOauthTokenRes.h */,
+				ED742AFF1CA78855007FC96D /* CTSOauthTokenRes.m */,
+				ED742B001CA78855007FC96D /* CTSSignUpRes.h */,
+				ED742B011CA78855007FC96D /* CTSSignUpRes.m */,
+				ED742B021CA78855007FC96D /* CTSTokenValidityRes.h */,
+				ED742B031CA78855007FC96D /* CTSTokenValidityRes.m */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		ED742B081CA78855007FC96D /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				ED742B091CA78855007FC96D /* CitrusCashRes.h */,
+				ED742B0A1CA78855007FC96D /* CitrusCashRes.m */,
+				ED742B0B1CA78855007FC96D /* CTSBill.h */,
+				ED742B0C1CA78855007FC96D /* CTSBill.m */,
+				ED742B0D1CA78855007FC96D /* CTSCardBinResponse.h */,
+				ED742B0E1CA78855007FC96D /* CTSCardBinResponse.m */,
+				ED742B0F1CA78855007FC96D /* CTSCashoutBankAccountResp.h */,
+				ED742B101CA78855007FC96D /* CTSCashoutBankAccountResp.m */,
+				ED742B111CA78855007FC96D /* CTSCreditCardOption.h */,
+				ED742B121CA78855007FC96D /* CTSCreditCardOption.m */,
+				ED742B131CA78855007FC96D /* CTSDebitCardOption.h */,
+				ED742B141CA78855007FC96D /* CTSDebitCardOption.m */,
+				ED742B151CA78855007FC96D /* CTSDyPResponse.h */,
+				ED742B161CA78855007FC96D /* CTSDyPResponse.m */,
+				ED742B171CA78855007FC96D /* CTSNetbankingOption.h */,
+				ED742B181CA78855007FC96D /* CTSNetbankingOption.m */,
+				ED742B191CA78855007FC96D /* CTSPaymentRes.h */,
+				ED742B1A1CA78855007FC96D /* CTSPaymentRes.m */,
+				ED742B1B1CA78855007FC96D /* CTSPaymentTransactionRes.h */,
+				ED742B1C1CA78855007FC96D /* CTSPaymentTransactionRes.m */,
+				ED742B1D1CA78855007FC96D /* CTSPGHealthRes.h */,
+				ED742B1E1CA78855007FC96D /* CTSPGHealthRes.m */,
+				ED742B1F1CA78855007FC96D /* CTSPgSettings.h */,
+				ED742B201CA78855007FC96D /* CTSPgSettings.m */,
+				ED742B211CA78855007FC96D /* CTSPrepaidBill.h */,
+				ED742B221CA78855007FC96D /* CTSPrepaidBill.m */,
+				ED742B231CA78855007FC96D /* CTSPrepaidPayResp.h */,
+				ED742B241CA78855007FC96D /* CTSPrepaidPayResp.m */,
+				ED742B251CA78855007FC96D /* CTSSaveCardResponse.h */,
+				ED742B261CA78855007FC96D /* CTSSaveCardResponse.m */,
+				ED742B271CA78855007FC96D /* CTSTransferMoneyResponse.h */,
+				ED742B281CA78855007FC96D /* CTSTransferMoneyResponse.m */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		ED742B291CA78855007FC96D /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				ED742B2A1CA78855007FC96D /* CTSGetBalanceRes.h */,
+				ED742B2B1CA78855007FC96D /* CTSGetBalanceRes.m */,
+				ED742B2C1CA78855007FC96D /* CTSNewContactProfile.h */,
+				ED742B2D1CA78855007FC96D /* CTSNewContactProfile.m */,
+				ED742B2E1CA78855007FC96D /* CTSNewResponseDataProfile.h */,
+				ED742B2F1CA78855007FC96D /* CTSNewResponseDataProfile.m */,
+				ED742B301CA78855007FC96D /* CTSProfileContactNewRes.h */,
+				ED742B311CA78855007FC96D /* CTSProfileContactNewRes.m */,
+				ED742B321CA78855007FC96D /* CTSProfileContactRes.h */,
+				ED742B331CA78855007FC96D /* CTSProfileContactRes.m */,
+				ED742B341CA78855007FC96D /* CTSProfilePaymentRes.h */,
+				ED742B351CA78855007FC96D /* CTSProfilePaymentRes.m */,
+				ED742B361CA78855007FC96D /* CTSProfilePrepaidRes.h */,
+				ED742B371CA78855007FC96D /* CTSProfilePrepaidRes.m */,
+				ED742B381CA78855007FC96D /* CTSUpdateMobileNumberRes.h */,
+				ED742B391CA78855007FC96D /* CTSUpdateMobileNumberRes.m */,
+				ED742B3A1CA78855007FC96D /* CTSUserProfile.h */,
+				ED742B3B1CA78855007FC96D /* CTSUserProfile.m */,
+				ED742B3C1CA78855007FC96D /* GetProfileRes.h */,
+				ED742B3D1CA78855007FC96D /* GetProfileRes.m */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		ED742B3E1CA78855007FC96D /* ModelLayers */ = {
+			isa = PBXGroup;
+			children = (
+				ED742B3F1CA78855007FC96D /* Authentication */,
+				ED742B431CA78855007FC96D /* CitrusError */,
+				ED742B461CA78855007FC96D /* Core */,
+				ED742B5F1CA78855007FC96D /* CTSRestKitCode */,
+				ED742B6B1CA78855007FC96D /* CvvEncryptor */,
+				ED742B6E1CA78855007FC96D /* External */,
+				ED742B8E1CA78855007FC96D /* HTMLParserModelClass */,
+				ED742B931CA78855007FC96D /* NSObject+logProperties.h */,
+				ED742B941CA78855007FC96D /* NSObject+logProperties.m */,
+				ED742B951CA78855007FC96D /* Payment */,
+				ED742B991CA78855007FC96D /* RNCryptor */,
+				ED742BA31CA78855007FC96D /* UserProfile */,
+				ED742BA71CA78855007FC96D /* Validator */,
+			);
+			path = ModelLayers;
+			sourceTree = "<group>";
+		};
+		ED742B3F1CA78855007FC96D /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				ED742B401CA78855007FC96D /* CTSAuthLayer.h */,
+				ED742B411CA78855007FC96D /* CTSAuthLayer.m */,
+				ED742B421CA78855007FC96D /* CTSAuthLayerConstants.h */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		ED742B431CA78855007FC96D /* CitrusError */ = {
+			isa = PBXGroup;
+			children = (
+				ED742B441CA78855007FC96D /* CTSError.h */,
+				ED742B451CA78855007FC96D /* CTSError.m */,
+			);
+			path = CitrusError;
+			sourceTree = "<group>";
+		};
+		ED742B461CA78855007FC96D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				ED742B471CA78855007FC96D /* BankImagesList.plist */,
+				ED742B481CA78855007FC96D /* BankImagesListWithBankName.plist */,
+				ED742B491CA78855007FC96D /* CitrusPay.h */,
+				ED742B4A1CA78855007FC96D /* CitrusPay.m */,
+				ED742B4B1CA78855007FC96D /* CTSCoreProtocol.h */,
+				ED742B4C1CA78855007FC96D /* CTSDataCache.h */,
+				ED742B4D1CA78855007FC96D /* CTSDataCache.m */,
+				ED742B4E1CA78855007FC96D /* CTSOauthManager.h */,
+				ED742B4F1CA78855007FC96D /* CTSOauthManager.m */,
+				ED742B501CA78855007FC96D /* CTSObject.h */,
+				ED742B511CA78855007FC96D /* CTSObject.m */,
+				ED742B521CA78855007FC96D /* CTSUtility.h */,
+				ED742B531CA78855007FC96D /* CTSUtility.m */,
+				ED742B541CA78855007FC96D /* OauthStatus.h */,
+				ED742B551CA78855007FC96D /* OauthStatus.m */,
+				ED742B561CA78855007FC96D /* ProductionEnv.plist */,
+				ED742B571CA78855007FC96D /* RestLayerConstants.h */,
+				ED742B581CA78855007FC96D /* SandboxEnv.plist */,
+				ED742B591CA78855007FC96D /* SchemeImagesList.plist */,
+				ED742B5A1CA78855007FC96D /* Staging1Env.plist */,
+				ED742B5B1CA78855007FC96D /* Staging3Env.plist */,
+				ED742B5C1CA78855007FC96D /* Staging4Env.plist */,
+				ED742B5D1CA78855007FC96D /* Staging5Env.plist */,
+				ED742B5E1CA78855007FC96D /* Staging7Env.plist */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		ED742B5F1CA78855007FC96D /* CTSRestKitCode */ = {
+			isa = PBXGroup;
+			children = (
+				ED742B601CA78855007FC96D /* CTSRestCore.h */,
+				ED742B611CA78855007FC96D /* CTSRestCore.m */,
+				ED742B621CA78855007FC96D /* CTSRestCoreConstants.h */,
+				ED742B631CA78855007FC96D /* CTSRestCoreRequest.h */,
+				ED742B641CA78855007FC96D /* CTSRestCoreRequest.m */,
+				ED742B651CA78855007FC96D /* CTSRestCoreResponse.h */,
+				ED742B661CA78855007FC96D /* CTSRestCoreResponse.m */,
+				ED742B671CA78855007FC96D /* CTSRestObject.h */,
+				ED742B681CA78855007FC96D /* CTSRestObject.m */,
+				ED742B691CA78855007FC96D /* CTSRestPluginBase.h */,
+				ED742B6A1CA78855007FC96D /* CTSRestPluginBase.m */,
+			);
+			path = CTSRestKitCode;
+			sourceTree = "<group>";
+		};
+		ED742B6B1CA78855007FC96D /* CvvEncryptor */ = {
+			isa = PBXGroup;
+			children = (
+				ED742B6C1CA78855007FC96D /* CTSCVVEncryptor.h */,
+				ED742B6D1CA78855007FC96D /* CTSCVVEncryptor.m */,
+			);
+			path = CvvEncryptor;
+			sourceTree = "<group>";
+		};
+		ED742B6E1CA78855007FC96D /* External */ = {
+			isa = PBXGroup;
+			children = (
+				ED742B6F1CA78855007FC96D /* CreditCard-Validator.h */,
+				ED742B701CA78855007FC96D /* CreditCard-Validator.m */,
+				ED742B711CA78855007FC96D /* JSONModel */,
+				ED742B8D1CA78855007FC96D /* UserLogging.h */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		ED742B711CA78855007FC96D /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				ED742B721CA78855007FC96D /* JSONModel */,
+				ED742B7D1CA78855007FC96D /* JSONModelCategories */,
+				ED742B801CA78855007FC96D /* JSONModelLib.h */,
+				ED742B811CA78855007FC96D /* JSONModelNetworking */,
+				ED742B881CA78855007FC96D /* JSONModelTransformations */,
+			);
+			path = JSONModel;
+			sourceTree = "<group>";
+		};
+		ED742B721CA78855007FC96D /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				ED742B731CA78855007FC96D /* JSONModel+CoreData.h */,
+				ED742B741CA78855007FC96D /* JSONModel+CoreData.m */,
+				ED742B751CA78855007FC96D /* JSONModel.h */,
+				ED742B761CA78855007FC96D /* JSONModel.m */,
+				ED742B771CA78855007FC96D /* JSONModelArray.h */,
+				ED742B781CA78855007FC96D /* JSONModelArray.m */,
+				ED742B791CA78855007FC96D /* JSONModelClassProperty.h */,
+				ED742B7A1CA78855007FC96D /* JSONModelClassProperty.m */,
+				ED742B7B1CA78855007FC96D /* JSONModelError.h */,
+				ED742B7C1CA78855007FC96D /* JSONModelError.m */,
+			);
+			path = JSONModel;
+			sourceTree = "<group>";
+		};
+		ED742B7D1CA78855007FC96D /* JSONModelCategories */ = {
+			isa = PBXGroup;
+			children = (
+				ED742B7E1CA78855007FC96D /* NSArray+JSONModel.h */,
+				ED742B7F1CA78855007FC96D /* NSArray+JSONModel.m */,
+			);
+			path = JSONModelCategories;
+			sourceTree = "<group>";
+		};
+		ED742B811CA78855007FC96D /* JSONModelNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				ED742B821CA78855007FC96D /* JSONAPI.h */,
+				ED742B831CA78855007FC96D /* JSONAPI.m */,
+				ED742B841CA78855007FC96D /* JSONHTTPClient.h */,
+				ED742B851CA78855007FC96D /* JSONHTTPClient.m */,
+				ED742B861CA78855007FC96D /* JSONModel+networking.h */,
+				ED742B871CA78855007FC96D /* JSONModel+networking.m */,
+			);
+			path = JSONModelNetworking;
+			sourceTree = "<group>";
+		};
+		ED742B881CA78855007FC96D /* JSONModelTransformations */ = {
+			isa = PBXGroup;
+			children = (
+				ED742B891CA78855007FC96D /* JSONKeyMapper.h */,
+				ED742B8A1CA78855007FC96D /* JSONKeyMapper.m */,
+				ED742B8B1CA78855007FC96D /* JSONValueTransformer.h */,
+				ED742B8C1CA78855007FC96D /* JSONValueTransformer.m */,
+			);
+			path = JSONModelTransformations;
+			sourceTree = "<group>";
+		};
+		ED742B8E1CA78855007FC96D /* HTMLParserModelClass */ = {
+			isa = PBXGroup;
+			children = (
+				ED742B8F1CA78855007FC96D /* CTSHtmlElement.h */,
+				ED742B901CA78855007FC96D /* CTSHtmlElement.m */,
+				ED742B911CA78855007FC96D /* CTSHtmlParser.h */,
+				ED742B921CA78855007FC96D /* CTSHtmlParser.m */,
+			);
+			path = HTMLParserModelClass;
+			sourceTree = "<group>";
+		};
+		ED742B951CA78855007FC96D /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				ED742B961CA78855007FC96D /* CTSPaymentLayer.h */,
+				ED742B971CA78855007FC96D /* CTSPaymentLayer.m */,
+				ED742B981CA78855007FC96D /* CTSPaymentLayerConstants.h */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		ED742B991CA78855007FC96D /* RNCryptor */ = {
+			isa = PBXGroup;
+			children = (
+				ED742B9A1CA78855007FC96D /* RNCryptor+Private.h */,
+				ED742B9B1CA78855007FC96D /* RNCryptor.h */,
+				ED742B9C1CA78855007FC96D /* RNCryptor.m */,
+				ED742B9D1CA78855007FC96D /* RNCryptorEngine.h */,
+				ED742B9E1CA78855007FC96D /* RNCryptorEngine.m */,
+				ED742B9F1CA78855007FC96D /* RNDecryptor.h */,
+				ED742BA01CA78855007FC96D /* RNDecryptor.m */,
+				ED742BA11CA78855007FC96D /* RNEncryptor.h */,
+				ED742BA21CA78855007FC96D /* RNEncryptor.m */,
+			);
+			path = RNCryptor;
+			sourceTree = "<group>";
+		};
+		ED742BA31CA78855007FC96D /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				ED742BA41CA78855007FC96D /* CTSProfileLayer.h */,
+				ED742BA51CA78855007FC96D /* CTSProfileLayer.m */,
+				ED742BA61CA78855007FC96D /* CTSProfileLayerConstants.h */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		ED742BA71CA78855007FC96D /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				ED742BA81CA78855007FC96D /* CTSValidator.h */,
+				ED742BA91CA78855007FC96D /* CTSValidator.m */,
+			);
+			path = Validator;
+			sourceTree = "<group>";
+		};
+		ED742BAB1CA78855007FC96D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ED742BAC1CA78855007FC96D /* CTSPaymentWebViewController.h */,
+				ED742BAD1CA78855007FC96D /* CTSPaymentWebViewController.m */,
+				ED742BAE1CA78855007FC96D /* HVDOverlay.h */,
+				ED742BAF1CA78855007FC96D /* HVDOverlay.m */,
+				ED742BB01CA78855007FC96D /* Images */,
+				ED742C3D1CA78856007FC96D /* NSString+HVDKit.h */,
+				ED742C3E1CA78856007FC96D /* NSString+HVDKit.m */,
+				ED742C3F1CA78856007FC96D /* UIUtility.h */,
+				ED742C401CA78856007FC96D /* UIUtility.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ED742BB01CA78855007FC96D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				ED742BB11CA78855007FC96D /* BankLogo */,
+				ED742C271CA78856007FC96D /* SchemeLogo */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		ED742BB11CA78855007FC96D /* BankLogo */ = {
+			isa = PBXGroup;
+			children = (
+				ED742BB21CA78855007FC96D /* andra_bank.png */,
+				ED742BB31CA78855007FC96D /* andra_bank@2x.png */,
+				ED742BB41CA78855007FC96D /* andra_bank@3x.png */,
+				ED742BB51CA78855007FC96D /* axis_bank.png */,
+				ED742BB61CA78855007FC96D /* axis_bank@2x.png */,
+				ED742BB71CA78855007FC96D /* axis_bank@3x.png */,
+				ED742BB81CA78855007FC96D /* Bank_of_baroda.png */,
+				ED742BB91CA78855007FC96D /* Bank_of_baroda@2x.png */,
+				ED742BBA1CA78855007FC96D /* Bank_of_baroda@3x.png */,
+				ED742BBB1CA78855007FC96D /* bank_of_india.png */,
+				ED742BBC1CA78855007FC96D /* bank_of_india@2x.png */,
+				ED742BBD1CA78855007FC96D /* bank_of_india@3x.png */,
+				ED742BBE1CA78855007FC96D /* bank_of_maharshtra.png */,
+				ED742BBF1CA78855007FC96D /* bank_of_maharshtra2x.png */,
+				ED742BC01CA78855007FC96D /* bank_of_maharshtra@3x.png */,
+				ED742BC11CA78855007FC96D /* canara_bank.png */,
+				ED742BC21CA78855007FC96D /* canara_bank@2x.png */,
+				ED742BC31CA78855007FC96D /* canara_bank@3x.png */,
+				ED742BC41CA78855007FC96D /* Catholic.png */,
+				ED742BC51CA78855007FC96D /* Catholic@2x.png */,
+				ED742BC61CA78855007FC96D /* Catholic@3x.png */,
+				ED742BC71CA78855007FC96D /* central_bank.png */,
+				ED742BC81CA78855007FC96D /* central_bank@2x.png */,
+				ED742BC91CA78855007FC96D /* central_bank@3x.png */,
+				ED742BCA1CA78855007FC96D /* citi_bank.png */,
+				ED742BCB1CA78855007FC96D /* citi_bank@2x.png */,
+				ED742BCC1CA78855007FC96D /* citi_bank@3x.png */,
+				ED742BCD1CA78855007FC96D /* citi_union_bank.png */,
+				ED742BCE1CA78855007FC96D /* citi_union_bank@2x.png */,
+				ED742BCF1CA78855007FC96D /* citi_union_bank@3x.png */,
+				ED742BD01CA78855007FC96D /* corporation_bank.png */,
+				ED742BD11CA78855007FC96D /* corporation_bank@2x.png */,
+				ED742BD21CA78855007FC96D /* corporation_bank@3x.png */,
+				ED742BD31CA78855007FC96D /* cosmos_bank.png */,
+				ED742BD41CA78855007FC96D /* cosmos_bank@2x.png */,
+				ED742BD51CA78855007FC96D /* cosmos_bank@3x.png */,
+				ED742BD61CA78855007FC96D /* DCB.png */,
+				ED742BD71CA78855007FC96D /* DCB@2x.png */,
+				ED742BD81CA78855007FC96D /* DCB@3x.png */,
+				ED742BD91CA78855007FC96D /* default_bank.png */,
+				ED742BDA1CA78855007FC96D /* default_bank@2x.png */,
+				ED742BDB1CA78855007FC96D /* default_bank@3x.png */,
+				ED742BDC1CA78855007FC96D /* detuch_bank.png */,
+				ED742BDD1CA78855007FC96D /* detuch_bank@2x.png */,
+				ED742BDE1CA78855007FC96D /* detuch_bank@3x.png */,
+				ED742BDF1CA78855007FC96D /* Federal.png */,
+				ED742BE01CA78855007FC96D /* Federal@2x.png */,
+				ED742BE11CA78855007FC96D /* Federal@3x.png */,
+				ED742BE21CA78855007FC96D /* hdfc.png */,
+				ED742BE31CA78855007FC96D /* hdfc@2x.png */,
+				ED742BE41CA78855007FC96D /* hdfc@3x.png */,
+				ED742BE51CA78855007FC96D /* icici_bank.png */,
+				ED742BE61CA78855007FC96D /* icici_bank@2x.png */,
+				ED742BE71CA78855007FC96D /* icici_bank@3x.png */,
+				ED742BE81CA78855007FC96D /* idbi.png */,
+				ED742BE91CA78855007FC96D /* idbi@2x.png */,
+				ED742BEA1CA78855007FC96D /* idbi@3x.png */,
+				ED742BEB1CA78855007FC96D /* indian_bank.png */,
+				ED742BEC1CA78855007FC96D /* indian_bank@2x.png */,
+				ED742BED1CA78855007FC96D /* indian_bank@3x.png */,
+				ED742BEE1CA78855007FC96D /* Indian_overseas_bank.png */,
+				ED742BEF1CA78855007FC96D /* Indian_overseas_bank@2x.png */,
+				ED742BF01CA78855007FC96D /* Indian_overseas_bank@3x.png */,
+				ED742BF11CA78855007FC96D /* indusind_bank.png */,
+				ED742BF21CA78855007FC96D /* indusind_bank@2x.png */,
+				ED742BF31CA78855007FC96D /* indusind_bank@3x.png */,
+				ED742BF41CA78855007FC96D /* ING.png */,
+				ED742BF51CA78855007FC96D /* ING@2x.png */,
+				ED742BF61CA78855007FC96D /* ING@3x.png */,
+				ED742BF71CA78855007FC96D /* karnataka_bank.png */,
+				ED742BF81CA78855007FC96D /* karnataka_bank@2x.png */,
+				ED742BF91CA78855007FC96D /* karnataka_bank@3x.png */,
+				ED742BFA1CA78855007FC96D /* Karur_Vyasa_Bank.png */,
+				ED742BFB1CA78855007FC96D /* Karur_Vyasa_Bank@2x.png */,
+				ED742BFC1CA78855007FC96D /* Karur_Vyasa_Bank@3x.png */,
+				ED742BFD1CA78855007FC96D /* kotak_mahindra.png */,
+				ED742BFE1CA78855007FC96D /* kotak_mahindra@2x.png */,
+				ED742BFF1CA78855007FC96D /* kotak_mahindra@3x.png */,
+				ED742C001CA78855007FC96D /* punjab_national_bank.png */,
+				ED742C011CA78855007FC96D /* punjab_national_bank@2x.png */,
+				ED742C021CA78855007FC96D /* punjab_national_bank@3x.png */,
+				ED742C031CA78855007FC96D /* south_indian_bank.png */,
+				ED742C041CA78855007FC96D /* south_indian_bank@2x.png */,
+				ED742C051CA78855007FC96D /* south_indian_bank@3x.png */,
+				ED742C061CA78855007FC96D /* State_bank_of_bikaner_and_jaipur.png */,
+				ED742C071CA78855007FC96D /* State_bank_of_bikaner_and_jaipur@2x.png */,
+				ED742C081CA78855007FC96D /* State_bank_of_bikaner_and_jaipur@3x.png */,
+				ED742C091CA78855007FC96D /* State_bank_of_hyderabad.png */,
+				ED742C0A1CA78855007FC96D /* State_bank_of_hyderabad@2x.png */,
+				ED742C0B1CA78855007FC96D /* State_bank_of_hyderabad@3x.png */,
+				ED742C0C1CA78855007FC96D /* State_bank_of_india.png */,
+				ED742C0D1CA78855007FC96D /* State_bank_of_india@2x.png */,
+				ED742C0E1CA78855007FC96D /* State_bank_of_india@3x.png */,
+				ED742C0F1CA78855007FC96D /* State_bank_of_mysore.png */,
+				ED742C101CA78856007FC96D /* State_bank_of_mysore@2x.png */,
+				ED742C111CA78856007FC96D /* State_bank_of_mysore@3x.png */,
+				ED742C121CA78856007FC96D /* State_bank_of_patalia.png */,
+				ED742C131CA78856007FC96D /* State_bank_of_patalia@2x.png */,
+				ED742C141CA78856007FC96D /* State_bank_of_patalia@3x.png */,
+				ED742C151CA78856007FC96D /* State_Bank_of_Travancore.png */,
+				ED742C161CA78856007FC96D /* State_Bank_of_Travancore@2x.png */,
+				ED742C171CA78856007FC96D /* State_Bank_of_Travancore@3x.png */,
+				ED742C181CA78856007FC96D /* UCO_bank.png */,
+				ED742C191CA78856007FC96D /* UCO_bank@2x.png */,
+				ED742C1A1CA78856007FC96D /* UCO_bank@3x.png */,
+				ED742C1B1CA78856007FC96D /* Union_bank.png */,
+				ED742C1C1CA78856007FC96D /* Union_bank@2x.png */,
+				ED742C1D1CA78856007FC96D /* Union_bank@3x.png */,
+				ED742C1E1CA78856007FC96D /* united_bank_of_india.png */,
+				ED742C1F1CA78856007FC96D /* united_bank_of_india@2x.png */,
+				ED742C201CA78856007FC96D /* united_bank_of_india@3x.png */,
+				ED742C211CA78856007FC96D /* vijaya_bank.png */,
+				ED742C221CA78856007FC96D /* vijaya_bank@2x.png */,
+				ED742C231CA78856007FC96D /* vijaya_bank@3x.png */,
+				ED742C241CA78856007FC96D /* yes_bank.png */,
+				ED742C251CA78856007FC96D /* yes_bank@2x.png */,
+				ED742C261CA78856007FC96D /* yes_bank@3x.png */,
+			);
+			path = BankLogo;
+			sourceTree = "<group>";
+		};
+		ED742C271CA78856007FC96D /* SchemeLogo */ = {
+			isa = PBXGroup;
+			children = (
+				ED742C281CA78856007FC96D /* AmericanXpress.png */,
+				ED742C291CA78856007FC96D /* AmericanXpress@2x.png */,
+				ED742C2A1CA78856007FC96D /* AmericanXpress@3x.png */,
+				ED742C2B1CA78856007FC96D /* discover.png */,
+				ED742C2C1CA78856007FC96D /* discover@2x.png */,
+				ED742C2D1CA78856007FC96D /* discover@3x.png */,
+				ED742C2E1CA78856007FC96D /* jcb.png */,
+				ED742C2F1CA78856007FC96D /* jcb@2x.png */,
+				ED742C301CA78856007FC96D /* jcb@3x.png */,
+				ED742C311CA78856007FC96D /* Mastercard.png */,
+				ED742C321CA78856007FC96D /* Mastercard@2x.png */,
+				ED742C331CA78856007FC96D /* Mastercard@3x.png */,
+				ED742C341CA78856007FC96D /* Mastero.png */,
+				ED742C351CA78856007FC96D /* Mastero@2x.png */,
+				ED742C361CA78856007FC96D /* Mastero@3x.png */,
+				ED742C371CA78856007FC96D /* Rupay.png */,
+				ED742C381CA78856007FC96D /* Rupay@2x.png */,
+				ED742C391CA78856007FC96D /* Rupay@3x.png */,
+				ED742C3A1CA78856007FC96D /* visa.png */,
+				ED742C3B1CA78856007FC96D /* visa@2x.png */,
+				ED742C3C1CA78856007FC96D /* visa@3x.png */,
+			);
+			path = SchemeLogo;
+			sourceTree = "<group>";
+		};
+		ED742C411CA78856007FC96D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ED742C421CA78856007FC96D /* BaseViewController.h */,
+				ED742C431CA78856007FC96D /* BaseViewController.m */,
+				ED742C441CA78856007FC96D /* CardsViewController.h */,
+				ED742C451CA78856007FC96D /* CardsViewController.m */,
+				ED742C461CA78856007FC96D /* HomeViewController.h */,
+				ED742C471CA78856007FC96D /* HomeViewController.m */,
+				ED742C481CA78856007FC96D /* InitialViewController.h */,
+				ED742C491CA78856007FC96D /* InitialViewController.m */,
+				ED742C4A1CA78856007FC96D /* ManageCradViewController.h */,
+				ED742C4B1CA78856007FC96D /* ManageCradViewController.m */,
+				ED742C4C1CA78856007FC96D /* ResetPasswordViewController.h */,
+				ED742C4D1CA78856007FC96D /* ResetPasswordViewController.m */,
+				ED742C4E1CA78856007FC96D /* SettingViewController.h */,
+				ED742C4F1CA78856007FC96D /* SettingViewController.m */,
+				ED742C501CA78856007FC96D /* SignInViewController.h */,
+				ED742C511CA78856007FC96D /* SignInViewController.m */,
+				ED742C521CA78856007FC96D /* SignUpViewController.h */,
+				ED742C531CA78856007FC96D /* SignUpViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		ED742C541CA78856007FC96D /* CustomComponents */ = {
+			isa = PBXGroup;
+			children = (
+				ED742C551CA78856007FC96D /* HMSegmentedControl.h */,
+				ED742C561CA78856007FC96D /* HMSegmentedControl.m */,
+				ED742C571CA78856007FC96D /* UICustomButton.h */,
+				ED742C581CA78856007FC96D /* UICustomButton.m */,
+				ED742C591CA78856007FC96D /* UICustomTextField.h */,
+				ED742C5A1CA78856007FC96D /* UICustomTextField.m */,
+			);
+			path = CustomComponents;
 			sourceTree = "<group>";
 		};
 		EDA736C11BE4DB1800AC9884 /* Resources */ = {
@@ -473,18 +1821,168 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED344CEB1C9B1536008643F9 /* CustomSegment.xib in Resources */,
+				ED742CF41CA78856007FC96D /* cosmos_bank.png in Resources */,
+				ED742D091CA78856007FC96D /* idbi.png in Resources */,
 				ED344CF01C9B1536008643F9 /* SideMenuCell.xib in Resources */,
+				ED742CF61CA78856007FC96D /* cosmos_bank@3x.png in Resources */,
+				ED742CD91CA78856007FC96D /* Bank_of_baroda.png in Resources */,
+				ED742D3F1CA78856007FC96D /* united_bank_of_india.png in Resources */,
+				ED742CEB1CA78856007FC96D /* citi_bank.png in Resources */,
+				ED742CA61CA78856007FC96D /* BankImagesListWithBankName.plist in Resources */,
+				ED742D241CA78856007FC96D /* south_indian_bank.png in Resources */,
+				ED742D3D1CA78856007FC96D /* Union_bank@2x.png in Resources */,
+				ED742D561CA78856007FC96D /* Mastero@3x.png in Resources */,
+				ED742CB31CA78856007FC96D /* Staging5Env.plist in Resources */,
+				ED742CD61CA78856007FC96D /* axis_bank.png in Resources */,
+				ED742D031CA78856007FC96D /* hdfc.png in Resources */,
+				ED742D481CA78856007FC96D /* AmericanXpress.png in Resources */,
+				ED742D101CA78856007FC96D /* Indian_overseas_bank@2x.png in Resources */,
+				ED742CF21CA78856007FC96D /* corporation_bank@2x.png in Resources */,
+				ED742D3E1CA78856007FC96D /* Union_bank@3x.png in Resources */,
+				ED742CF91CA78856007FC96D /* DCB@3x.png in Resources */,
 				ED722B241BE09A33003DC9F2 /* LaunchScreen.storyboard in Resources */,
+				ED742D411CA78856007FC96D /* united_bank_of_india@3x.png in Resources */,
+				ED742D571CA78856007FC96D /* Rupay.png in Resources */,
+				ED742CEF1CA78856007FC96D /* citi_union_bank@2x.png in Resources */,
+				ED742CE11CA78856007FC96D /* bank_of_maharshtra@3x.png in Resources */,
 				ED996EAA1C2C63E70017284A /* Main.storyboard in Resources */,
+				ED742CFE1CA78856007FC96D /* detuch_bank@2x.png in Resources */,
+				ED742D0C1CA78856007FC96D /* indian_bank.png in Resources */,
+				ED742D311CA78856007FC96D /* State_bank_of_mysore@2x.png in Resources */,
 				ED344CEA1C9B1536008643F9 /* CartBillView.xib in Resources */,
+				ED742D291CA78856007FC96D /* State_bank_of_bikaner_and_jaipur@3x.png in Resources */,
+				ED742CDF1CA78856007FC96D /* bank_of_maharshtra.png in Resources */,
+				ED742D491CA78856007FC96D /* AmericanXpress@2x.png in Resources */,
+				ED742D371CA78856007FC96D /* State_Bank_of_Travancore@2x.png in Resources */,
+				ED742CE81CA78856007FC96D /* central_bank.png in Resources */,
+				ED742CF51CA78856007FC96D /* cosmos_bank@2x.png in Resources */,
+				ED742D041CA78856007FC96D /* hdfc@2x.png in Resources */,
+				ED742D501CA78856007FC96D /* jcb@3x.png in Resources */,
+				ED742D2D1CA78856007FC96D /* State_bank_of_india.png in Resources */,
+				ED742D471CA78856007FC96D /* yes_bank@3x.png in Resources */,
+				ED742CDD1CA78856007FC96D /* bank_of_india@2x.png in Resources */,
+				ED742D4B1CA78856007FC96D /* discover.png in Resources */,
+				ED742D581CA78856007FC96D /* Rupay@2x.png in Resources */,
+				ED742D551CA78856007FC96D /* Mastero@2x.png in Resources */,
+				ED742CE01CA78856007FC96D /* bank_of_maharshtra2x.png in Resources */,
+				ED742CE41CA78856007FC96D /* canara_bank@3x.png in Resources */,
+				ED742D5A1CA78856007FC96D /* visa.png in Resources */,
+				ED742D131CA78856007FC96D /* indusind_bank@2x.png in Resources */,
+				ED742D1C1CA78856007FC96D /* Karur_Vyasa_Bank@2x.png in Resources */,
+				ED742D401CA78856007FC96D /* united_bank_of_india@2x.png in Resources */,
+				ED742CE51CA78856007FC96D /* Catholic.png in Resources */,
+				ED742CDB1CA78856007FC96D /* Bank_of_baroda@3x.png in Resources */,
+				ED742D221CA78856007FC96D /* punjab_national_bank@2x.png in Resources */,
+				ED742D2C1CA78856007FC96D /* State_bank_of_hyderabad@3x.png in Resources */,
 				ED344CED1C9B1536008643F9 /* MyOrderCell.xib in Resources */,
+				ED742D6B1CA78856007FC96D /* Images.xcassets in Resources */,
+				ED742D361CA78856007FC96D /* State_Bank_of_Travancore.png in Resources */,
+				ED742CDA1CA78856007FC96D /* Bank_of_baroda@2x.png in Resources */,
+				ED742D591CA78856007FC96D /* Rupay@3x.png in Resources */,
+				ED742D1E1CA78856007FC96D /* kotak_mahindra.png in Resources */,
+				ED742CFB1CA78856007FC96D /* default_bank@2x.png in Resources */,
+				ED742CFC1CA78856007FC96D /* default_bank@3x.png in Resources */,
+				ED742D451CA78856007FC96D /* yes_bank.png in Resources */,
+				ED742D5C1CA78856007FC96D /* visa@3x.png in Resources */,
+				ED742CED1CA78856007FC96D /* citi_bank@3x.png in Resources */,
+				ED742CAF1CA78856007FC96D /* SchemeImagesList.plist in Resources */,
+				ED742CE61CA78856007FC96D /* Catholic@2x.png in Resources */,
+				ED742D171CA78856007FC96D /* ING@3x.png in Resources */,
+				ED742CFF1CA78856007FC96D /* detuch_bank@3x.png in Resources */,
+				ED742D441CA78856007FC96D /* vijaya_bank@3x.png in Resources */,
+				ED742CEA1CA78856007FC96D /* central_bank@3x.png in Resources */,
 				ED344CEE1C9B1536008643F9 /* MyOrdersDetailsCell.xib in Resources */,
+				ED742CF31CA78856007FC96D /* corporation_bank@3x.png in Resources */,
+				ED742D3C1CA78856007FC96D /* Union_bank.png in Resources */,
+				ED742D4E1CA78856007FC96D /* jcb.png in Resources */,
+				ED742CD31CA78856007FC96D /* andra_bank.png in Resources */,
+				ED742D521CA78856007FC96D /* Mastercard@2x.png in Resources */,
+				ED742D2A1CA78856007FC96D /* State_bank_of_hyderabad.png in Resources */,
+				ED742CB11CA78856007FC96D /* Staging3Env.plist in Resources */,
+				ED742D541CA78856007FC96D /* Mastero.png in Resources */,
+				ED742D111CA78856007FC96D /* Indian_overseas_bank@3x.png in Resources */,
+				ED742D381CA78856007FC96D /* State_Bank_of_Travancore@3x.png in Resources */,
+				ED742D321CA78856007FC96D /* State_bank_of_mysore@3x.png in Resources */,
+				ED742D0E1CA78856007FC96D /* indian_bank@3x.png in Resources */,
+				ED742D011CA78856007FC96D /* Federal@2x.png in Resources */,
+				ED742D021CA78856007FC96D /* Federal@3x.png in Resources */,
+				ED742D4D1CA78856007FC96D /* discover@3x.png in Resources */,
+				ED742CF71CA78856007FC96D /* DCB.png in Resources */,
+				ED742D331CA78856007FC96D /* State_bank_of_patalia.png in Resources */,
+				ED742CFA1CA78856007FC96D /* default_bank.png in Resources */,
+				ED742CE91CA78856007FC96D /* central_bank@2x.png in Resources */,
+				ED742D181CA78856007FC96D /* karnataka_bank.png in Resources */,
+				ED742CDC1CA78856007FC96D /* bank_of_india.png in Resources */,
 				ED344CEC1C9B1536008643F9 /* MenuItemCell.xib in Resources */,
+				ED742D0F1CA78856007FC96D /* Indian_overseas_bank.png in Resources */,
+				ED742D3B1CA78856007FC96D /* UCO_bank@3x.png in Resources */,
+				ED742D121CA78856007FC96D /* indusind_bank.png in Resources */,
+				ED742D461CA78856007FC96D /* yes_bank@2x.png in Resources */,
+				ED742D0A1CA78856007FC96D /* idbi@2x.png in Resources */,
+				ED742D251CA78856007FC96D /* south_indian_bank@2x.png in Resources */,
+				ED742CE31CA78856007FC96D /* canara_bank@2x.png in Resources */,
+				ED742D161CA78856007FC96D /* ING@2x.png in Resources */,
+				ED742D1A1CA78856007FC96D /* karnataka_bank@3x.png in Resources */,
 				ED344CF11C9B1536008643F9 /* VitaminCell.xib in Resources */,
+				ED742D351CA78856007FC96D /* State_bank_of_patalia@3x.png in Resources */,
+				ED742D3A1CA78856007FC96D /* UCO_bank@2x.png in Resources */,
+				ED742CD71CA78856007FC96D /* axis_bank@2x.png in Resources */,
 				ED344CEF1C9B1536008643F9 /* PopCell.xib in Resources */,
+				ED742D431CA78856007FC96D /* vijaya_bank@2x.png in Resources */,
+				ED742C5E1CA78856007FC96D /* Citrus_flow.storyboard in Resources */,
+				ED742D071CA78856007FC96D /* icici_bank@2x.png in Resources */,
+				ED742CFD1CA78856007FC96D /* detuch_bank.png in Resources */,
+				ED742CF01CA78856007FC96D /* citi_union_bank@3x.png in Resources */,
+				ED742CAD1CA78856007FC96D /* ProductionEnv.plist in Resources */,
+				ED742D001CA78856007FC96D /* Federal.png in Resources */,
+				ED742CEC1CA78856007FC96D /* citi_bank@2x.png in Resources */,
+				ED742D191CA78856007FC96D /* karnataka_bank@2x.png in Resources */,
+				ED742D201CA78856007FC96D /* kotak_mahindra@3x.png in Resources */,
+				ED742CB41CA78856007FC96D /* Staging7Env.plist in Resources */,
+				ED742D081CA78856007FC96D /* icici_bank@3x.png in Resources */,
+				ED742D2F1CA78856007FC96D /* State_bank_of_india@3x.png in Resources */,
+				ED742D0D1CA78856007FC96D /* indian_bank@2x.png in Resources */,
 				ED344CE91C9B1536008643F9 /* AddOnsTableCell.xib in Resources */,
+				ED742CDE1CA78856007FC96D /* bank_of_india@3x.png in Resources */,
+				ED742D2E1CA78856007FC96D /* State_bank_of_india@2x.png in Resources */,
+				ED742CD41CA78856007FC96D /* andra_bank@2x.png in Resources */,
+				ED742D421CA78856007FC96D /* vijaya_bank.png in Resources */,
+				ED742D271CA78856007FC96D /* State_bank_of_bikaner_and_jaipur.png in Resources */,
+				ED742D301CA78856007FC96D /* State_bank_of_mysore.png in Resources */,
+				ED742D141CA78856007FC96D /* indusind_bank@3x.png in Resources */,
+				ED742CD81CA78856007FC96D /* axis_bank@3x.png in Resources */,
+				ED742CAE1CA78856007FC96D /* SandboxEnv.plist in Resources */,
+				ED742CF11CA78856007FC96D /* corporation_bank.png in Resources */,
+				ED742D5B1CA78856007FC96D /* visa@2x.png in Resources */,
+				ED742D281CA78856007FC96D /* State_bank_of_bikaner_and_jaipur@2x.png in Resources */,
 				ED722B211BE09A33003DC9F2 /* Assets.xcassets in Resources */,
+				ED742D1F1CA78856007FC96D /* kotak_mahindra@2x.png in Resources */,
+				ED742D391CA78856007FC96D /* UCO_bank.png in Resources */,
+				ED742D211CA78856007FC96D /* punjab_national_bank.png in Resources */,
+				ED742D4C1CA78856007FC96D /* discover@2x.png in Resources */,
+				ED742D4F1CA78856007FC96D /* jcb@2x.png in Resources */,
 				EDA736D11BE4DF3700AC9884 /* GoogleService-Info.plist in Resources */,
+				ED742CE21CA78856007FC96D /* canara_bank.png in Resources */,
+				ED742D2B1CA78856007FC96D /* State_bank_of_hyderabad@2x.png in Resources */,
+				ED742D531CA78856007FC96D /* Mastercard@3x.png in Resources */,
+				ED742CD51CA78856007FC96D /* andra_bank@3x.png in Resources */,
+				ED742D511CA78856007FC96D /* Mastercard.png in Resources */,
+				ED742D151CA78856007FC96D /* ING.png in Resources */,
+				ED742D051CA78856007FC96D /* hdfc@3x.png in Resources */,
+				ED742D061CA78856007FC96D /* icici_bank.png in Resources */,
+				ED742D341CA78856007FC96D /* State_bank_of_patalia@2x.png in Resources */,
+				ED742CE71CA78856007FC96D /* Catholic@3x.png in Resources */,
+				ED742D261CA78856007FC96D /* south_indian_bank@3x.png in Resources */,
+				ED742CB01CA78856007FC96D /* Staging1Env.plist in Resources */,
+				ED742CA51CA78856007FC96D /* BankImagesList.plist in Resources */,
+				ED742D4A1CA78856007FC96D /* AmericanXpress@3x.png in Resources */,
+				ED742D1D1CA78856007FC96D /* Karur_Vyasa_Bank@3x.png in Resources */,
+				ED742CEE1CA78856007FC96D /* citi_union_bank.png in Resources */,
+				ED742CF81CA78856007FC96D /* DCB@2x.png in Resources */,
+				ED742D1B1CA78856007FC96D /* Karur_Vyasa_Bank.png in Resources */,
+				ED742D231CA78856007FC96D /* punjab_national_bank@3x.png in Resources */,
+				ED742D0B1CA78856007FC96D /* idbi@3x.png in Resources */,
+				ED742CB21CA78856007FC96D /* Staging4Env.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,81 +2044,201 @@
 				ED344C961C9B14DA008643F9 /* AppSignInVC.swift in Sources */,
 				ED344CC91C9B1526008643F9 /* ChangeCell.swift in Sources */,
 				ED344CDB1C9B1526008643F9 /* TimeSlotCell.swift in Sources */,
+				ED742CAC1CA78856007FC96D /* OauthStatus.m in Sources */,
+				ED742C711CA78856007FC96D /* CTSTokenizedCardPayment.m in Sources */,
 				ED344CA41C9B14DA008643F9 /* OrderStatusVC.swift in Sources */,
 				ED344C9F1C9B14DA008643F9 /* LocationPickerVC.swift in Sources */,
+				ED742C8E1CA78856007FC96D /* CTSDebitCardOption.m in Sources */,
 				EDE5E03C1C4FEB690044E819 /* Kitchens+CoreDataProperties.swift in Sources */,
+				ED742C661CA78856007FC96D /* CTSCashoutToBankRes.m in Sources */,
+				ED742C601CA78856007FC96D /* CTSRuleInfo.m in Sources */,
+				ED742D671CA78856007FC96D /* SignUpViewController.m in Sources */,
 				ED344CF81C9B1A65008643F9 /* FilterVC.swift in Sources */,
 				ED5B21831BF76D3400C65857 /* Locations+CoreDataProperties.swift in Sources */,
+				ED742D641CA78856007FC96D /* ResetPasswordViewController.m in Sources */,
 				EDC572281C7AD1210018F11C /* CustomModalViewController.swift in Sources */,
+				ED742CBC1CA78856007FC96D /* JSONModel+CoreData.m in Sources */,
 				ED344CD11C9B1526008643F9 /* Helper.swift in Sources */,
+				ED742CC91CA78856007FC96D /* NSObject+logProperties.m in Sources */,
 				ED344CD01C9B1526008643F9 /* Deliverytime.swift in Sources */,
 				ED344CC71C9B1526008643F9 /* AddAddressCell.swift in Sources */,
 				ED344C9C1C9B14DA008643F9 /* FeedBackVC.swift in Sources */,
 				ED344CD41C9B1526008643F9 /* MyOrdersDetailsCell.swift in Sources */,
+				ED742C881CA78856007FC96D /* CTSResponse.m in Sources */,
 				ED722B1F1BE09A33003DC9F2 /* MyBreakFast.xcdatamodeld in Sources */,
+				ED742C901CA78856007FC96D /* CTSNetbankingOption.m in Sources */,
+				ED742D6A1CA78856007FC96D /* UICustomTextField.m in Sources */,
+				ED742D5F1CA78856007FC96D /* BaseViewController.m in Sources */,
+				ED742C641CA78856007FC96D /* CTSAmount.m in Sources */,
 				EDE7F1F41C57DBB30063F855 /* Coupon.swift in Sources */,
+				ED742C961CA78856007FC96D /* CTSPrepaidPayResp.m in Sources */,
+				ED742CD21CA78856007FC96D /* HVDOverlay.m in Sources */,
+				ED742C851CA78856007FC96D /* CTSSignUpRes.m in Sources */,
 				EDCC2AE51C339F0800C15C3B /* Order.swift in Sources */,
+				ED742CCB1CA78856007FC96D /* RNCryptor.m in Sources */,
 				ED344CC81C9B1526008643F9 /* AddressCell.swift in Sources */,
+				ED742D5E1CA78856007FC96D /* UIUtility.m in Sources */,
+				ED742C6D1CA78856007FC96D /* CTSPaymentToken.m in Sources */,
+				ED742D621CA78856007FC96D /* InitialViewController.m in Sources */,
 				ED344C991C9B14DA008643F9 /* ContactUsVC.swift in Sources */,
+				ED742C941CA78856007FC96D /* CTSPgSettings.m in Sources */,
+				ED742C911CA78856007FC96D /* CTSPaymentRes.m in Sources */,
 				ED344CD61C9B1526008643F9 /* PaymentModeCell.swift in Sources */,
+				ED742C621CA78856007FC96D /* CTSUser.m in Sources */,
+				ED742C701CA78856007FC96D /* CTSPrepaidUser.m in Sources */,
+				ED742CC01CA78856007FC96D /* JSONModelError.m in Sources */,
+				ED742C871CA78856007FC96D /* CTSDPResponse.m in Sources */,
+				ED742C751CA78856007FC96D /* CTSContactUpdate.m in Sources */,
+				ED742CC61CA78856007FC96D /* JSONValueTransformer.m in Sources */,
+				ED742CCE1CA78856007FC96D /* RNEncryptor.m in Sources */,
 				EDC572261C7AD1210018F11C /* CustomPresentationAnimationController.swift in Sources */,
+				ED742C611CA78856007FC96D /* CTSSignupState.m in Sources */,
+				ED742CA11CA78856007FC96D /* CTSUserProfile.m in Sources */,
+				ED742D631CA78856007FC96D /* ManageCradViewController.m in Sources */,
 				ED344C9D1C9B14DA008643F9 /* ItemPreViewVC.swift in Sources */,
+				ED742C9C1CA78856007FC96D /* CTSProfileContactNewRes.m in Sources */,
+				ED742CA41CA78856007FC96D /* CTSError.m in Sources */,
+				ED742CBA1CA78856007FC96D /* CTSCVVEncryptor.m in Sources */,
+				ED742CA71CA78856007FC96D /* CitrusPay.m in Sources */,
+				ED742C771CA78856007FC96D /* CTSElectronicCardUpdate.m in Sources */,
 				ED5B21871BF76D3400C65857 /* Item.swift in Sources */,
+				ED742C821CA78856007FC96D /* CTSLinkRes.m in Sources */,
+				ED742C721CA78856007FC96D /* CTSTokenizedPaymentToken.m in Sources */,
 				ED344CCE1C9B1526008643F9 /* Deliveryaddress.swift in Sources */,
+				ED742CB81CA78856007FC96D /* CTSRestObject.m in Sources */,
+				ED742C951CA78856007FC96D /* CTSPrepaidBill.m in Sources */,
 				ED5B21851BF76D3400C65857 /* UserDetails+CoreDataProperties.swift in Sources */,
 				ED5B21811BF76D3400C65857 /* TimeSlots+CoreDataProperties.swift in Sources */,
+				ED742CC21CA78856007FC96D /* JSONAPI.m in Sources */,
 				ED344CDE1C9B1526008643F9 /* VitaminCollectionView.swift in Sources */,
+				ED742C9A1CA78856007FC96D /* CTSNewContactProfile.m in Sources */,
+				ED742C781CA78856007FC96D /* CTSNetBankingUpdate.m in Sources */,
 				ED344CD81C9B1526008643F9 /* ProductsCell.swift in Sources */,
 				EDBA06B61C00D7BC00BE09B3 /* MyOrder+CoreDataProperties.swift in Sources */,
 				ED344CCA1C9B1526008643F9 /* Constants.swift in Sources */,
+				ED742C9E1CA78856007FC96D /* CTSProfilePaymentRes.m in Sources */,
+				ED742C6E1CA78856007FC96D /* CTSPaymentUpdate.m in Sources */,
+				ED742C681CA78856007FC96D /* CTSDyPValidateRuleReq.m in Sources */,
+				ED742CB51CA78856007FC96D /* CTSRestCore.m in Sources */,
 				ED344C9B1C9B14DA008643F9 /* DummyVC.swift in Sources */,
+				ED742C8B1CA78856007FC96D /* CTSCardBinResponse.m in Sources */,
+				ED742D651CA78856007FC96D /* SettingViewController.m in Sources */,
+				ED742C741CA78856007FC96D /* CTSUserDetails.m in Sources */,
 				ED996EB41C30CA960017284A /* UserAddress.swift in Sources */,
+				ED742C8A1CA78856007FC96D /* CTSBill.m in Sources */,
+				ED742C7D1CA78856007FC96D /* CTSProfileUpdate.m in Sources */,
+				ED742C8D1CA78856007FC96D /* CTSCreditCardOption.m in Sources */,
+				ED742CBD1CA78856007FC96D /* JSONModel.m in Sources */,
+				ED742C8C1CA78856007FC96D /* CTSCashoutBankAccountResp.m in Sources */,
 				EDCC2AE71C339F6500C15C3B /* OrderItem.swift in Sources */,
 				ED996EB31C30CA960017284A /* UserAddress+CoreDataProperties.swift in Sources */,
+				ED742C921CA78856007FC96D /* CTSPaymentTransactionRes.m in Sources */,
 				ED344C9A1C9B14DA008643F9 /* DatePickerVC.swift in Sources */,
 				ED5B21801BF76D3400C65857 /* Offer.swift in Sources */,
+				ED742C791CA78856007FC96D /* CTSNewUserProfileReq.m in Sources */,
 				ED344CA31C9B14DA008643F9 /* OfferNotificationsVC.swift in Sources */,
 				ED344CDC1C9B1526008643F9 /* TotalBill.swift in Sources */,
+				ED742C651CA78856007FC96D /* CTSCashoutBankAccount.m in Sources */,
+				ED742CA21CA78856007FC96D /* GetProfileRes.m in Sources */,
 				ED5B21841BF76D3400C65857 /* Locations.swift in Sources */,
+				ED742CC41CA78856007FC96D /* JSONModel+networking.m in Sources */,
 				EDBA06B71C00D7BC00BE09B3 /* MyOrder.swift in Sources */,
+				ED742C5F1CA78856007FC96D /* CTSRestError.m in Sources */,
 				ED344CD21C9B1526008643F9 /* MenuItemCell.swift in Sources */,
+				ED742CD11CA78856007FC96D /* CTSPaymentWebViewController.m in Sources */,
+				ED742C7C1CA78856007FC96D /* CTSPrepaidUpdate.m in Sources */,
+				ED742C931CA78856007FC96D /* CTSPGHealthRes.m in Sources */,
+				ED742CCF1CA78856007FC96D /* CTSProfileLayer.m in Sources */,
 				ED344CA11C9B14DA008643F9 /* MyOrderDetailsVC.swift in Sources */,
 				ED344CDF1C9B1526008643F9 /* Yourdetails.swift in Sources */,
+				ED742CBF1CA78856007FC96D /* JSONModelClassProperty.m in Sources */,
+				ED742CBB1CA78856007FC96D /* CreditCard-Validator.m in Sources */,
+				ED742C6C1CA78856007FC96D /* CTSPaymentRequest.m in Sources */,
+				ED742D5D1CA78856007FC96D /* NSString+HVDKit.m in Sources */,
+				ED742CB91CA78856007FC96D /* CTSRestPluginBase.m in Sources */,
 				ED344CD71C9B1526008643F9 /* PopCell.swift in Sources */,
+				ED742C8F1CA78856007FC96D /* CTSDyPResponse.m in Sources */,
 				ED5B21861BF76D3400C65857 /* Item+CoreDataProperties.swift in Sources */,
 				ED344CA91C9B14DA008643F9 /* TermsVC.swift in Sources */,
+				ED742C991CA78856007FC96D /* CTSGetBalanceRes.m in Sources */,
+				ED742C761CA78856007FC96D /* CTSDPMerchantQueryReq.m in Sources */,
 				ED344CAA1C9B14DA008643F9 /* UserOrderDetails.swift in Sources */,
 				ED344CDD1C9B1526008643F9 /* VitaminCell.swift in Sources */,
+				ED742CB61CA78856007FC96D /* CTSRestCoreRequest.m in Sources */,
 				ED344CCB1C9B1526008643F9 /* CouponCodeCell.swift in Sources */,
+				ED742C691CA78856007FC96D /* CTSGuestCheckout.m in Sources */,
+				ED742CA01CA78856007FC96D /* CTSUpdateMobileNumberRes.m in Sources */,
+				ED742CC51CA78856007FC96D /* JSONKeyMapper.m in Sources */,
+				ED742C6B1CA78856007FC96D /* CTSPaymentNetbankingRequest.m in Sources */,
+				ED742CA81CA78856007FC96D /* CTSDataCache.m in Sources */,
+				ED742C971CA78856007FC96D /* CTSSaveCardResponse.m in Sources */,
 				ED722B171BE09A33003DC9F2 /* AppDelegate.swift in Sources */,
+				ED742D661CA78856007FC96D /* SignInViewController.m in Sources */,
 				ED344CD31C9B1526008643F9 /* MyOrderCell.swift in Sources */,
+				ED742CAA1CA78856007FC96D /* CTSObject.m in Sources */,
 				ED344CCC1C9B1526008643F9 /* CustomSegment.swift in Sources */,
+				ED742C9D1CA78856007FC96D /* CTSProfileContactRes.m in Sources */,
 				ED344CF41C9B19EB008643F9 /* FloatRatingView.swift in Sources */,
+				ED742D611CA78856007FC96D /* HomeViewController.m in Sources */,
 				ED344CC61C9B1526008643F9 /* ActivityIndicator.swift in Sources */,
 				ED344C951C9B14DA008643F9 /* AddAddressVC.swift in Sources */,
+				ED742C861CA78856007FC96D /* CTSTokenValidityRes.m in Sources */,
+				ED742CCC1CA78856007FC96D /* RNCryptorEngine.m in Sources */,
 				ED344C971C9B14DA008643F9 /* CartBillView.swift in Sources */,
 				ED709AA31C29AA960068528C /* Fooddetails.swift in Sources */,
+				ED742CAB1CA78856007FC96D /* CTSUtility.m in Sources */,
 				ED344CAB1C9B14DA008643F9 /* ViewController.swift in Sources */,
+				ED742C841CA78856007FC96D /* CTSOauthTokenRes.m in Sources */,
+				ED742C801CA78856007FC96D /* CTSEotpVerSigninResp.m in Sources */,
+				ED742C6F1CA78856007FC96D /* CTSPrepaidPayReq.m in Sources */,
 				ED344CA71C9B14DA008643F9 /* SideMenuContentVC.swift in Sources */,
+				ED742C831CA78856007FC96D /* CTSLinkUserRes.m in Sources */,
+				ED742CA31CA78856007FC96D /* CTSAuthLayer.m in Sources */,
 				ED344C981C9B14DA008643F9 /* CartVC.swift in Sources */,
+				ED742CD01CA78856007FC96D /* CTSValidator.m in Sources */,
+				ED742C7E1CA78856007FC96D /* CTSTokenizedPayment.m in Sources */,
 				ED344CCF1C9B1526008643F9 /* Deliverylocation.swift in Sources */,
 				ED344C941C9B14DA008643F9 /* AboutUsVC.swift in Sources */,
+				ED742D681CA78856007FC96D /* HMSegmentedControl.m in Sources */,
+				ED742C7A1CA78856007FC96D /* CTSPaymentDetailUpdate.m in Sources */,
+				ED742CC31CA78856007FC96D /* JSONHTTPClient.m in Sources */,
+				ED742C811CA78856007FC96D /* CTSKeyStore.m in Sources */,
 				ED344CDA1C9B1526008643F9 /* SideMenuCell.swift in Sources */,
 				ED344CA51C9B14DA008643F9 /* ReferralVC.swift in Sources */,
+				ED742CCA1CA78856007FC96D /* CTSPaymentLayer.m in Sources */,
+				ED742C7F1CA78856007FC96D /* CTSCitrusLinkRes.m in Sources */,
+				ED742CC71CA78856007FC96D /* CTSHtmlElement.m in Sources */,
+				ED742C891CA78856007FC96D /* CitrusCashRes.m in Sources */,
 				ED344CA21C9B14DA008643F9 /* MyOrdersVC.swift in Sources */,
 				ED344CD51C9B1526008643F9 /* OffersCell.swift in Sources */,
 				ED344CA01C9B14DA008643F9 /* MenuVC.swift in Sources */,
 				ED344C9E1C9B14DA008643F9 /* LocationPicker.swift in Sources */,
+				ED742C9B1CA78856007FC96D /* CTSNewResponseDataProfile.m in Sources */,
+				ED742CC81CA78856007FC96D /* CTSHtmlParser.m in Sources */,
+				ED742D691CA78856007FC96D /* UICustomButton.m in Sources */,
 				EDE5E03D1C4FEB690044E819 /* Kitchens.swift in Sources */,
+				ED742CBE1CA78856007FC96D /* JSONModelArray.m in Sources */,
+				ED742C6A1CA78856007FC96D /* CTSPaymentMode.m in Sources */,
+				ED742CCD1CA78856007FC96D /* RNDecryptor.m in Sources */,
+				ED742CA91CA78856007FC96D /* CTSOauthManager.m in Sources */,
+				ED742C631CA78856007FC96D /* PayLoadWebviewDto.m in Sources */,
+				ED742CC11CA78856007FC96D /* NSArray+JSONModel.m in Sources */,
+				ED742D601CA78856007FC96D /* CardsViewController.m in Sources */,
+				ED742C981CA78856007FC96D /* CTSTransferMoneyResponse.m in Sources */,
 				ED5B21821BF76D3400C65857 /* TimeSlots.swift in Sources */,
 				ED344CA61C9B14DA008643F9 /* RegistrationVC.swift in Sources */,
 				EDC572271C7AD1210018F11C /* CustomPresentationController.swift in Sources */,
 				ED709AA41C29AA960068528C /* Fooddetails+CoreDataProperties.swift in Sources */,
+				ED742CB71CA78856007FC96D /* CTSRestCoreResponse.m in Sources */,
 				ED344CA81C9B14DA008643F9 /* SignInVC.swift in Sources */,
+				ED742C7B1CA78856007FC96D /* CTSPaymentOption.m in Sources */,
+				ED742C731CA78856007FC96D /* CTSUserAddress.m in Sources */,
+				ED742C9F1CA78856007FC96D /* CTSProfilePrepaidRes.m in Sources */,
 				ED5B217F1BF76D3400C65857 /* Offer+CoreDataProperties.swift in Sources */,
 				ED344CD91C9B1526008643F9 /* RedeemCell.swift in Sources */,
 				ED5B216F1BF612B700C65857 /* UserDetails.swift in Sources */,
 				ED344CCD1C9B1526008643F9 /* DatePicker.swift in Sources */,
+				ED742C671CA78856007FC96D /* CTSDyPPaymentInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,6 +2359,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Mannat Wadehra (TX6YJ82MD9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mannat Wadehra (TX6YJ82MD9)";
+				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -769,6 +2388,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.firsteat.firsteat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "MyBreakFast/MyBreakFast-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -783,6 +2403,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Mannat Wadehra (7ECJ337932)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mannat Wadehra (7ECJ337932)";
+				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -811,6 +2432,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.firsteat.firsteat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "MyBreakFast/MyBreakFast-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

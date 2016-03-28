@@ -13,12 +13,13 @@ struct Constants {
 //    http://52.37.172.250/project-poha/index.php/admin
 //    Development
 //    struct API {
-//        static let GCMRegistration: String = "http://firsteatwebportal.in/api/v1/gcm/registeruser"
+////        static let GCMRegistration: String = "http://firsteatwebportal.in/api/v1/gcm/registeruser"
+//        static let GCMRegistration: String = "http://www.firsteat.in/dev/index.php/ws/first/app"
 //        static let UserRegistration: String = "http://www.firsteat.in/dev/index.php/ws/register/user"
 //        static let UserLogin: String = "http://www.firsteat.in/dev/index.php/ws/verify/user"
 //        static let MenuToday: String = "http://firsteatwebportal.in/api/v1/menu"//
 //        static let MenuonDate: String = "http://www.firsteat.in/dev/index.php/ws/menu/all"
-//        static let MenuonDateLocation: String = "http://www.firsteat.in/dev/index.php/ws/menu/location/"
+//        static let MenuonDateLocation: String = "http://firsteatwebportal.in/project-poha/index.php/ws/menu/location/"
 //        static let UserAddresses: String = "http://www.firsteat.in/dev/index.php/ws/users/address/list/"
 //        static let UpdateUserAddress: String = "http://www.firsteat.in/dev/index.php/ws/users/address/add"
 //        static let TimeSlots: String = "http://www.firsteat.in/dev/index.php/ws/kitchen/slots"

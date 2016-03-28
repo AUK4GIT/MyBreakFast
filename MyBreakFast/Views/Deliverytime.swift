@@ -106,7 +106,9 @@ class Deliverytime: UICollectionViewCell {
                 }
                 
             }
-            self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: self.currentTimeIndex, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.Left, animated: true);
+            if self.slotsArray.count > 0 {
+                self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: self.currentTimeIndex, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.Left, animated: true);
+            }
         }
     }
     

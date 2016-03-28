@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="94y-83-Mc3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="94y-83-Mc3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -2524,18 +2524,18 @@
                                             <outlet property="couponTextField" destination="oUZ-qB-alC" id="InI-ST-Qhx"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="PaymentModeCell" reuseIdentifier="paymentmethod" id="GMI-DT-ki2" customClass="PaymentModeCell" customModule="MyBreakFast" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="PaymentModeCell" reuseIdentifier="paymentmethod" id="VN7-sz-EqY" customClass="PaymentModeCell" customModule="MyBreakFast" customModuleProvider="target">
                                         <rect key="frame" x="10" y="338.5" width="300" height="96"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="96"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="947-YY-xrs">
+                                                <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9mq-Pc-nL9">
                                                     <rect key="frame" x="8" y="8" width="284" height="60"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLY-1J-bDP">
-                                                            <rect key="frame" x="91" y="15" width="102" height="29"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCr-mu-k4Z">
+                                                            <rect key="frame" x="8" y="15" width="134" height="29"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                                             <state key="normal" title="Cash on Delivery">
                                                                 <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -2543,18 +2543,42 @@
                                                             <state key="selected">
                                                                 <color key="titleColor" red="0.7843137255" green="0.019607843140000001" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="selectModeOfPayment:" destination="VN7-sz-EqY" eventType="touchUpInside" id="yOu-ee-Fsl"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHp-zN-aWI">
+                                                            <rect key="frame" x="142" y="15" width="134" height="29"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                            <state key="normal" title="Citrus">
+                                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <state key="selected">
+                                                                <color key="titleColor" red="0.7843137255" green="0.019607843140000001" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="selectModeOfPayment:" destination="VN7-sz-EqY" eventType="touchUpInside" id="PHi-Zo-MDR"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstItem="GLY-1J-bDP" firstAttribute="leading" secondItem="947-YY-xrs" secondAttribute="leading" id="BIH-oh-yVa"/>
-                                                        <constraint firstItem="GLY-1J-bDP" firstAttribute="centerY" secondItem="947-YY-xrs" secondAttribute="centerY" id="Iva-jw-KFk"/>
-                                                        <constraint firstItem="GLY-1J-bDP" firstAttribute="centerX" secondItem="947-YY-xrs" secondAttribute="centerX" id="gxV-Gn-ArD"/>
-                                                        <constraint firstAttribute="height" constant="60" id="hXI-EK-iZE"/>
+                                                        <constraint firstItem="HCr-mu-k4Z" firstAttribute="width" secondItem="RHp-zN-aWI" secondAttribute="width" id="Rrn-LI-ZWE"/>
+                                                        <constraint firstItem="HCr-mu-k4Z" firstAttribute="centerY" secondItem="9mq-Pc-nL9" secondAttribute="centerY" id="WZh-fQ-qcI"/>
+                                                        <constraint firstItem="HCr-mu-k4Z" firstAttribute="leading" secondItem="9mq-Pc-nL9" secondAttribute="leading" constant="8" id="Yeh-jy-0jv"/>
+                                                        <constraint firstItem="HCr-mu-k4Z" firstAttribute="centerY" secondItem="9mq-Pc-nL9" secondAttribute="centerY" id="bnI-zg-NPb"/>
+                                                        <constraint firstItem="RHp-zN-aWI" firstAttribute="centerY" secondItem="9mq-Pc-nL9" secondAttribute="centerY" id="faW-zZ-cqU"/>
+                                                        <constraint firstItem="HCr-mu-k4Z" firstAttribute="centerX" secondItem="9mq-Pc-nL9" secondAttribute="centerX" id="nRI-kx-He5"/>
+                                                        <constraint firstAttribute="height" constant="60" id="oZn-NT-dyT"/>
+                                                        <constraint firstAttribute="trailing" secondItem="RHp-zN-aWI" secondAttribute="trailing" constant="8" id="tNe-V8-frg"/>
+                                                        <constraint firstItem="RHp-zN-aWI" firstAttribute="leading" secondItem="HCr-mu-k4Z" secondAttribute="trailing" id="v6E-LB-uI1"/>
+                                                        <constraint firstItem="HCr-mu-k4Z" firstAttribute="leading" secondItem="9mq-Pc-nL9" secondAttribute="leading" id="w9T-f9-53w"/>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="BIH-oh-yVa"/>
+                                                            <exclude reference="w9T-f9-53w"/>
+                                                            <exclude reference="bnI-zg-NPb"/>
+                                                            <exclude reference="nRI-kx-He5"/>
                                                         </mask>
                                                     </variation>
                                                 </view>
@@ -2562,21 +2586,25 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="947-YY-xrs" secondAttribute="trailing" constant="8" id="4uU-id-l01"/>
-                                            <constraint firstItem="947-YY-xrs" firstAttribute="leading" secondItem="GMI-DT-ki2" secondAttribute="leadingMargin" constant="8" id="Abi-Zc-Itt"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="947-YY-xrs" secondAttribute="trailing" constant="8" id="WhG-EP-ass"/>
-                                            <constraint firstItem="947-YY-xrs" firstAttribute="top" secondItem="GMI-DT-ki2" secondAttribute="topMargin" constant="8" id="hv2-rt-oQT"/>
-                                            <constraint firstItem="947-YY-xrs" firstAttribute="top" secondItem="GMI-DT-ki2" secondAttribute="top" constant="8" id="kon-Hm-wYH"/>
-                                            <constraint firstItem="947-YY-xrs" firstAttribute="leading" secondItem="GMI-DT-ki2" secondAttribute="leading" constant="8" id="ldS-np-9YD"/>
+                                            <constraint firstAttribute="trailing" secondItem="9mq-Pc-nL9" secondAttribute="trailing" constant="8" id="Bd9-ym-bT6"/>
+                                            <constraint firstItem="9mq-Pc-nL9" firstAttribute="leading" secondItem="VN7-sz-EqY" secondAttribute="leadingMargin" constant="8" id="OqW-cY-5TV"/>
+                                            <constraint firstItem="9mq-Pc-nL9" firstAttribute="leading" secondItem="VN7-sz-EqY" secondAttribute="leading" constant="8" id="Qto-gN-ySG"/>
+                                            <constraint firstItem="9mq-Pc-nL9" firstAttribute="top" secondItem="VN7-sz-EqY" secondAttribute="topMargin" constant="8" id="YHj-r0-BMz"/>
+                                            <constraint firstItem="9mq-Pc-nL9" firstAttribute="top" secondItem="VN7-sz-EqY" secondAttribute="top" constant="8" id="vaO-7H-yu2"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="9mq-Pc-nL9" secondAttribute="trailing" constant="8" id="yoB-D0-u2k"/>
                                         </constraints>
                                         <size key="customSize" width="300" height="96"/>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="Abi-Zc-Itt"/>
-                                                <exclude reference="WhG-EP-ass"/>
-                                                <exclude reference="hv2-rt-oQT"/>
+                                                <exclude reference="OqW-cY-5TV"/>
+                                                <exclude reference="yoB-D0-u2k"/>
+                                                <exclude reference="YHj-r0-BMz"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <outlet property="citrusButton" destination="RHp-zN-aWI" id="0MA-aD-Q7F"/>
+                                            <outlet property="codButton" destination="HCr-mu-k4Z" id="8Qz-ge-FnI"/>
+                                        </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ChangeCell" reuseIdentifier="change" id="LgF-cb-0Ku" customClass="ChangeCell" customModule="MyBreakFast" customModuleProvider="target">
                                         <rect key="frame" x="10" y="439.5" width="300" height="150"/>
