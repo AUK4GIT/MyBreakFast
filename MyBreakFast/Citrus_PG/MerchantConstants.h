@@ -17,13 +17,16 @@
 #define SubscriptionSecretKey @"6d2e949ea213d683557206b853cba16a" //signup
 
 
-
+#ifdef DEBUG
 // URLs Sandbox
 #define VanityUrl @"nativeSDK"
 #define LoadWalletReturnUrl @"https://salty-plateau-1529.herokuapp.com/redirectURL.sandbox.php"
 #define BillUrl @"https://salty-plateau-1529.herokuapp.com/billGenerator.sandbox.php"
-
-
+#else
+//URLs Production
+#define BillUrl @"http://firsteat.in/andro/index.php/ws/orders/bill/generator?amount=100"
+#define LoadWalletReturnUrl @"http://firsteat.in/andro/index.php/admin/returndata"
+#endif
 
 //"vanity": "zc7st7huse"
 #endif
