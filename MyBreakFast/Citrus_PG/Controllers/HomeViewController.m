@@ -30,6 +30,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelAction:)];
+    
     [self initialSetting];
     
 }
@@ -730,6 +733,10 @@
         [self.pickerView removeFromSuperview];
         [self.dynamicPricingTextField becomeFirstResponder];
     }
+}
+
+- (IBAction)cancelAction:(id)sender {
+    [self dismissViewControllerAnimated:true completion:nil];
 }
 
 

@@ -10,20 +10,43 @@ import Foundation
 
 class PaymentModeCell: UICollectionViewCell {
     
-    @IBOutlet var citrusButton: UIButton!
-    @IBOutlet var codButton: UIButton!
+    @IBOutlet weak var bgView: UIView!
+    @IBOutlet var PaymentRadioButton: [UIButton]!
     @IBAction func selectModeOfPayment(sender: AnyObject) {
         
+        for view in bgView.subviews{
+            if let button = view as? UIButton{
+                button.selected = false;
+            }
+        }
+        
         if let button = sender as? UIButton {
-            if button.isEqual(self.codButton) {
-                button.selected = true;
-                self.citrusButton.selected = false;
+            button.selected = true;
+            switch button.tag {
+            case 0:
                 Helper.sharedInstance.order!.modeOfPayment = paymentType.COD;
-            } else {
-                button.selected = true;
-                self.codButton.selected = false;
-                Helper.sharedInstance.order!.modeOfPayment = paymentType.PG;
+
+                break;
+            case 1:
+                Helper.sharedInstance.order!.modeOfPayment = paymentType.NB;
+
+                break;
+            case 2:
+                Helper.sharedInstance.order!.modeOfPayment = paymentType.CARDS;
+
+                break;
+            case 3:
+                Helper.sharedInstance.order!.modeOfPayment = paymentType.PAYTM;
+
+                break;
+            case 4:
+                Helper.sharedInstance.order!.modeOfPayment = paymentType.CITRUS;
+
+                break;
+            default:
+                Helper.sharedInstance.order!.modeOfPayment = paymentType.COD;
                 
+                break;
             }
         }
         

@@ -11,9 +11,12 @@ import CoreData
 import Alamofire
 import Reachability
 
-enum paymentType {
+enum paymentType: Int {
     case COD
-    case PG
+    case NB
+    case CARDS
+    case PAYTM
+    case CITRUS
 }
 @objc class Helper : NSObject{
     static let sharedInstance = Helper()

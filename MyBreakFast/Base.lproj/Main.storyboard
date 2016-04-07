@@ -115,6 +115,7 @@
             <string>HelveticaNeue-Light</string>
             <string>HelveticaNeue-Light</string>
             <string>HelveticaNeue-Light</string>
+            <string>HelveticaNeue-Light</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -2431,11 +2432,11 @@
                         <viewControllerLayoutGuide type="bottom" id="AcW-O5-3ob"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZV1-7f-Xig">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="V4o-OA-cX3">
-                                <rect key="frame" x="0.0" y="8" width="320" height="516"/>
+                                <rect key="frame" x="0.0" y="8" width="320" height="748"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="srf-Lh-dy0">
                                     <size key="itemSize" width="300" height="150"/>
@@ -2526,7 +2527,7 @@
                                                                 <constraint firstAttribute="width" constant="80" id="V9y-sj-7gJ"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
-                                                            <state key="normal" title="Redeem" backgroundImage="roundrect-red"/>
+                                                            <state key="normal" title="REDEEM" backgroundImage="roundrect-red"/>
                                                             <connections>
                                                                 <action selector="redeemAction:" destination="v8m-eL-IfZ" eventType="touchUpInside" id="drj-DU-Qcq"/>
                                                             </connections>
@@ -2599,7 +2600,7 @@
                                                                 <constraint firstAttribute="width" constant="80" id="ukP-UP-VCY"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
-                                                            <state key="normal" title="Enter" backgroundImage="roundrect-red"/>
+                                                            <state key="normal" title="APPLY" backgroundImage="roundrect-red"/>
                                                             <connections>
                                                                 <action selector="couponAction:" destination="N8s-df-WG5" eventType="touchUpInside" id="y0v-MV-VWD"/>
                                                             </connections>
@@ -2635,53 +2636,146 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="PaymentModeCell" reuseIdentifier="paymentmethod" id="VN7-sz-EqY" customClass="PaymentModeCell" customModule="MyBreakFast" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="338.5" width="300" height="96"/>
+                                        <rect key="frame" x="10" y="338.5" width="300" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="96"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9mq-Pc-nL9">
-                                                    <rect key="frame" x="8" y="8" width="284" height="60"/>
+                                                    <rect key="frame" x="8" y="8" width="284" height="184"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCr-mu-k4Z">
-                                                            <rect key="frame" x="8" y="15" width="134" height="29"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCr-mu-k4Z">
+                                                            <rect key="frame" x="16" y="16" width="155" height="17"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                                            <state key="normal" title="Cash on Delivery">
+                                                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                            <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                            <state key="normal" title="CASH ON DELIVERY" image="radio_unselected">
                                                                 <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
-                                                            <state key="selected">
-                                                                <color key="titleColor" red="0.7843137255" green="0.019607843140000001" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <state key="selected" image="radio_selected">
+                                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <state key="highlighted" image="radio_selected"/>
                                                             <connections>
-                                                                <action selector="selectModeOfPayment:" destination="VN7-sz-EqY" eventType="touchUpInside" id="yOu-ee-Fsl"/>
+                                                                <action selector="selectModeOfPayment:" destination="VN7-sz-EqY" eventType="touchUpInside" id="qzr-Hv-9xk"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHp-zN-aWI">
-                                                            <rect key="frame" x="142" y="15" width="134" height="29"/>
+                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5o-xy-uVv">
+                                                            <rect key="frame" x="16" y="49" width="113" height="17"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                                            <state key="normal" title="Citrus">
+                                                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                            <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                            <state key="normal" title="NETBANKING" image="radio_unselected">
                                                                 <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
-                                                            <state key="selected">
-                                                                <color key="titleColor" red="0.7843137255" green="0.019607843140000001" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <state key="selected" image="radio_selected">
+                                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <state key="highlighted" image="radio_selected"/>
                                                             <connections>
-                                                                <action selector="selectModeOfPayment:" destination="VN7-sz-EqY" eventType="touchUpInside" id="PHi-Zo-MDR"/>
+                                                                <action selector="selectModeOfPayment:" destination="VN7-sz-EqY" eventType="touchUpInside" id="JO2-ou-mJ8"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G25-v8-iyM">
+                                                            <rect key="frame" x="16" y="82" width="159" height="17"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                            <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                            <state key="normal" title="DEBIT/CREDIT CARD" image="radio_unselected">
+                                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <state key="selected" image="radio_selected">
+                                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <state key="highlighted" image="radio_selected"/>
+                                                            <connections>
+                                                                <action selector="selectModeOfPayment:" destination="VN7-sz-EqY" eventType="touchUpInside" id="pXj-9e-Q6t"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" tag="3" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w1q-hP-PuF">
+                                                            <rect key="frame" x="16" y="115" width="75" height="16"/>
+                                                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                            <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                            <state key="normal" image="radio_unselected">
+                                                                <attributedString key="attributedTitle">
+                                                                    <fragment content="PAY">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.015686274509803921" green="0.13725490196078433" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <font key="NSFont" size="14" name="TimesNewRomanPS-BoldMT"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="TM">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.019607843137254902" green="0.62745098039215685" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <font key="NSFont" size="14" name="TimesNewRomanPS-BoldMT"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
+                                                            </state>
+                                                            <state key="disabled">
+                                                                <attributedString key="attributedTitle">
+                                                                    <fragment content="PAYTM">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <font key="NSFont" size="14" name="TimesNewRomanPS-BoldMT"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
+                                                            </state>
+                                                            <state key="selected" image="radio_selected"/>
+                                                            <state key="highlighted" image="radio_selected"/>
+                                                            <connections>
+                                                                <action selector="selectModeOfPayment:" destination="VN7-sz-EqY" eventType="touchUpInside" id="a3X-0Q-XQH"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zaj-56-YDa">
+                                                            <rect key="frame" x="16" y="147" width="68" height="19"/>
+                                                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                            <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                            <state key="normal" image="radio_unselected">
+                                                                <attributedString key="attributedTitle">
+                                                                    <fragment content="C">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.94117647058823528" green="0.58823529411764708" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <font key="NSFont" size="16" name="HelveticaNeue-Bold"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="itrus">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.94117647058823528" green="0.58823529411764708" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
+                                                            </state>
+                                                            <state key="selected" image="radio_selected"/>
+                                                            <state key="highlighted" image="radio_selected"/>
+                                                            <connections>
+                                                                <action selector="selectModeOfPayment:" destination="VN7-sz-EqY" eventType="touchUpInside" id="Aeh-TK-VKo"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstItem="HCr-mu-k4Z" firstAttribute="width" secondItem="RHp-zN-aWI" secondAttribute="width" id="Rrn-LI-ZWE"/>
-                                                        <constraint firstItem="HCr-mu-k4Z" firstAttribute="centerY" secondItem="9mq-Pc-nL9" secondAttribute="centerY" id="WZh-fQ-qcI"/>
-                                                        <constraint firstItem="HCr-mu-k4Z" firstAttribute="leading" secondItem="9mq-Pc-nL9" secondAttribute="leading" constant="8" id="Yeh-jy-0jv"/>
+                                                        <constraint firstItem="B5o-xy-uVv" firstAttribute="leading" secondItem="HCr-mu-k4Z" secondAttribute="leading" id="23M-va-Ght"/>
+                                                        <constraint firstItem="HCr-mu-k4Z" firstAttribute="leading" secondItem="9mq-Pc-nL9" secondAttribute="leading" constant="16" id="6Yi-tZ-bPh"/>
+                                                        <constraint firstItem="zaj-56-YDa" firstAttribute="leading" secondItem="w1q-hP-PuF" secondAttribute="leading" id="FAm-pF-dfg"/>
+                                                        <constraint firstItem="G25-v8-iyM" firstAttribute="leading" secondItem="B5o-xy-uVv" secondAttribute="leading" id="LRh-bF-sXM"/>
+                                                        <constraint firstItem="w1q-hP-PuF" firstAttribute="top" secondItem="G25-v8-iyM" secondAttribute="bottom" constant="16" id="MwK-0c-sgh"/>
+                                                        <constraint firstItem="zaj-56-YDa" firstAttribute="top" secondItem="w1q-hP-PuF" secondAttribute="bottom" constant="16" id="Uu3-Lv-qCe"/>
+                                                        <constraint firstItem="w1q-hP-PuF" firstAttribute="leading" secondItem="G25-v8-iyM" secondAttribute="leading" id="aqj-zJ-1De"/>
                                                         <constraint firstItem="HCr-mu-k4Z" firstAttribute="centerY" secondItem="9mq-Pc-nL9" secondAttribute="centerY" id="bnI-zg-NPb"/>
-                                                        <constraint firstItem="RHp-zN-aWI" firstAttribute="centerY" secondItem="9mq-Pc-nL9" secondAttribute="centerY" id="faW-zZ-cqU"/>
                                                         <constraint firstItem="HCr-mu-k4Z" firstAttribute="centerX" secondItem="9mq-Pc-nL9" secondAttribute="centerX" id="nRI-kx-He5"/>
-                                                        <constraint firstAttribute="height" constant="60" id="oZn-NT-dyT"/>
-                                                        <constraint firstAttribute="trailing" secondItem="RHp-zN-aWI" secondAttribute="trailing" constant="8" id="tNe-V8-frg"/>
-                                                        <constraint firstItem="RHp-zN-aWI" firstAttribute="leading" secondItem="HCr-mu-k4Z" secondAttribute="trailing" id="v6E-LB-uI1"/>
+                                                        <constraint firstItem="HCr-mu-k4Z" firstAttribute="top" secondItem="9mq-Pc-nL9" secondAttribute="top" constant="16" id="nYI-kw-YMN"/>
+                                                        <constraint firstItem="B5o-xy-uVv" firstAttribute="top" secondItem="HCr-mu-k4Z" secondAttribute="bottom" constant="16" id="nr7-sU-YET"/>
+                                                        <constraint firstAttribute="height" constant="184" id="oZn-NT-dyT"/>
+                                                        <constraint firstItem="G25-v8-iyM" firstAttribute="top" secondItem="B5o-xy-uVv" secondAttribute="bottom" constant="16" id="phu-5d-Kyf"/>
                                                         <constraint firstItem="HCr-mu-k4Z" firstAttribute="leading" secondItem="9mq-Pc-nL9" secondAttribute="leading" id="w9T-f9-53w"/>
                                                     </constraints>
                                                     <variation key="default">
@@ -2703,7 +2797,7 @@
                                             <constraint firstItem="9mq-Pc-nL9" firstAttribute="top" secondItem="VN7-sz-EqY" secondAttribute="top" constant="8" id="vaO-7H-yu2"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="9mq-Pc-nL9" secondAttribute="trailing" constant="8" id="yoB-D0-u2k"/>
                                         </constraints>
-                                        <size key="customSize" width="300" height="96"/>
+                                        <size key="customSize" width="300" height="200"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="OqW-cY-5TV"/>
@@ -2712,12 +2806,16 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <outlet property="citrusButton" destination="RHp-zN-aWI" id="0MA-aD-Q7F"/>
-                                            <outlet property="codButton" destination="HCr-mu-k4Z" id="8Qz-ge-FnI"/>
+                                            <outlet property="bgView" destination="9mq-Pc-nL9" id="ZX7-0X-uGb"/>
+                                            <outletCollection property="PaymentRadioButton" destination="HCr-mu-k4Z" collectionClass="NSMutableArray" id="gd6-Bd-mmO"/>
+                                            <outletCollection property="PaymentRadioButton" destination="B5o-xy-uVv" collectionClass="NSMutableArray" id="pS9-ag-ftm"/>
+                                            <outletCollection property="PaymentRadioButton" destination="G25-v8-iyM" collectionClass="NSMutableArray" id="E3a-tb-wVs"/>
+                                            <outletCollection property="PaymentRadioButton" destination="w1q-hP-PuF" collectionClass="NSMutableArray" id="Ja2-xd-y6t"/>
+                                            <outletCollection property="PaymentRadioButton" destination="zaj-56-YDa" collectionClass="NSMutableArray" id="fgc-7Z-vDi"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ChangeCell" reuseIdentifier="change" id="LgF-cb-0Ku" customClass="ChangeCell" customModule="MyBreakFast" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="439.5" width="300" height="150"/>
+                                        <rect key="frame" x="10" y="543.5" width="300" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
@@ -2814,7 +2912,7 @@
                                 </connections>
                             </collectionView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AQW-dD-G6d">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="756" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="e7G-n0-Y8Q"/>
                                     <constraint firstAttribute="height" constant="44" id="v33-4Z-PHr"/>
@@ -2885,7 +2983,8 @@
                             </mask>
                         </variation>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="800"/>
                     <connections>
                         <outlet property="collectionView" destination="V4o-OA-cX3" id="3ky-8d-Cfo"/>
                         <outlet property="collectionViewLayout" destination="srf-Lh-dy0" id="Fdz-G2-cpg"/>
@@ -4426,6 +4525,8 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
         <image name="office" width="28" height="28"/>
         <image name="phone" width="42" height="42"/>
         <image name="phone_white" width="42" height="42"/>
+        <image name="radio_selected" width="16" height="16"/>
+        <image name="radio_unselected" width="16" height="16"/>
         <image name="roundrect-red" width="120" height="33"/>
         <image name="roundrect-white" width="120" height="33"/>
         <image name="twitter_circle_color-256" width="42" height="42"/>

@@ -23,6 +23,7 @@
     
     [super viewDidLoad];
     
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelAction:)];
      self.signupOptionOneButton.layer.cornerRadius = 4;
      self.signupOptionTwoButton.layer.cornerRadius = 4;
      self.signupOptionThreeButton.layer.cornerRadius = 4;
@@ -72,6 +73,11 @@
         signUpViewController.loginType = selectionType;
     }
     
+}
+
+
+- (IBAction)cancelAction:(id)sender {
+    [self dismissViewControllerAnimated:true completion:nil];
 }
 
 

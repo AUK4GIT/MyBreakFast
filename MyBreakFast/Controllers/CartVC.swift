@@ -11,12 +11,11 @@ import UIKit
 
 class CartVC: UIViewController {
     
-    
     @IBOutlet  var payableAmountLabel: UILabel!
     @IBOutlet var toolbar: UIToolbar!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var collectionViewLayout: UICollectionViewFlowLayout!
-    let sectionHeaders: [String] = ["TOTAL AMOUNT", "REEDEM POINTS", "COUPON CODE", "PAYMENT METHOD", "BRING ME CHANGE OF"];
+    let sectionHeaders: [String] = ["TOTAL AMOUNT", "REEDEM POINTS", "COUPON CODE", "BRING ME CHANGE OF", "PAYMENT METHODS"];
     var totalAmount: Int?
     
     override func beginAppearanceTransition(isAppearing: Bool, animated: Bool) {
@@ -91,6 +90,11 @@ class CartVC: UIViewController {
                     }
                     
                 }
+            } else if paymentMode == paymentType.PAYTM{
+//                let storyboard: UIStoryboard = UIStoryboard(name: "Citrus_flow", bundle: nil);
+//                let nvc: UIViewController = storyboard.instantiateInitialViewController()!
+//                self.presentViewController(nvc, animated: true, completion: nil)
+                
             } else {
                 let storyboard: UIStoryboard = UIStoryboard(name: "Citrus_flow", bundle: nil);
                 let nvc: UIViewController = storyboard.instantiateInitialViewController()!
@@ -174,7 +178,9 @@ class CartVC: UIViewController {
     // MARK: UICollectionView delegates and datasources
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let width: CGFloat = ((UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone) ? collectionView.bounds.size.width : 600.0);
-        let height: CGFloat = (UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone) ? 75.0 : 100.0;
+        var height: CGFloat = (UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone) ? 75.0 : 100.0;
+        height = indexPath.section == 4 ? 200.0: height;
+        print("indexPath.row: %@ --> %@",indexPath.section, height);
         return CGSizeMake(width, height);
     }
     
@@ -238,13 +244,12 @@ class CartVC: UIViewController {
             
             break;
             case 3 :
-            cell = collectionView.dequeueReusableCellWithReuseIdentifier("paymentmethod", forIndexPath: indexPath)
-
+                cell = collectionView.dequeueReusableCellWithReuseIdentifier("change", forIndexPath: indexPath)
             
             break;
             case 4 :
-            cell = collectionView.dequeueReusableCellWithReuseIdentifier("change", forIndexPath: indexPath)
-            
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("paymentmethod", forIndexPath: indexPath)
+
             break;
         default:
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("change", forIndexPath: indexPath)
