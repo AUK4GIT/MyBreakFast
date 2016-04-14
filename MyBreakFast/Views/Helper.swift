@@ -11,12 +11,13 @@ import CoreData
 import Alamofire
 import Reachability
 
-enum paymentType: Int {
+@objc public enum PaymentType: NSInteger {
     case COD
     case NB
     case CARDS
     case PAYTM
     case CITRUS
+    case NONE
 }
 @objc class Helper : NSObject{
     static let sharedInstance = Helper()
@@ -468,7 +469,7 @@ enum paymentType: Int {
         if items?.count>0{
             let userDetails = items![0] as! UserDetails
             userId = userDetails.userId ?? "";
-            print(" userDetails.userName!: ",userDetails.userName!);
+//            print(" userDetails.userName!: ",userDetails.userName!);
         }
         return userId;
     }
@@ -713,7 +714,7 @@ enum paymentType: Int {
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
-                //                print(response.data)     // server data
+                //                //print(response.data)     // server data
                 print(response.result)   // result of response serialization
                 // do whatever you want here
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
@@ -734,7 +735,57 @@ enum paymentType: Int {
         }
     }
     
-    func doUserRegistration(userObject: UserDetails, password: String, referralId: String, completionHandler: (AnyObject) -> ()) {
+//    func doUserRegistration(userObject: UserDetails, password: String, referralId: String, completionHandler: (AnyObject) -> ()) {
+//        
+//        let gcmId = (self.appDelegate.registrationToken ?? self.getDataFromUserDefaults(forKey: Constants.UserdefaultConstants.GCMRegistrationToken) ?? "")
+//        let useraddress = userObject.address ?? ""
+//        let values: [String: String] = ["devid":self.userDefaults.objectForKey("DeviceId")! as! String,"devtype":UIDevice.currentDevice().model, "gcm": gcmId as! String, "email":userObject.emailId!,"mobile":userObject.phoneNumber!,"name":userObject.userName!,"pwd":password,"address":useraddress,"ref":referralId];
+//        Helper.sharedInstance.showActivity()
+//        Alamofire.request(.GET, Constants.API.UserRegistration, parameters: values)
+//            .responseJSON { response in
+//                print(response.request)  // original URL request
+//                print(response.response) // URL response
+////                //print(response.data)     // server data
+//                print(response.result)   // result of response serialization
+//                // do whatever you want here
+//                switch response.result {
+//                case .Failure(let error):
+//                    print(error)
+//                    dispatch_async(dispatch_get_main_queue()) { () -> Void in
+//                        print(response.result.value)
+//                        Helper.sharedInstance.hideActivity()
+//                        completionHandler("ERROR")
+//                    }
+//                case .Success( _):
+//                    if let JSON = response.result.value {
+//                        print("JSON: \(JSON)")
+//                        if let jData =  JSON.objectForKey("data") as? NSDictionary{
+//                            if let userid = jData.objectForKey("user_id") as? NSNumber {
+//                                userObject.userId = userid.stringValue
+//                            } else {
+//                                userObject.userId = jData.objectForKey("user_id") as? String
+//                            }
+//                            if let keys = jData.objectForKey("keys"){
+//                                if keys is NSNull {
+//                                    userObject.referralCode = ""
+//                                } else {
+//                                    userObject.referralCode = keys.objectForKey("referal_code") as? String
+//                                }
+//                            }
+//                            self.saveContext();
+//                        }
+//                    }
+//                    dispatch_async(dispatch_get_main_queue()) { () -> Void in
+//                        print(response.result.value)
+//                        Helper.sharedInstance.hideActivity()
+//                        completionHandler("SUCCESS")
+//
+//                    }
+//            }
+//        }
+//    }
+    
+    func registerUser(userObject: UserDetails, password: String, referralId: String, completionHandler: (AnyObject) -> ()) {
         
         let gcmId = (self.appDelegate.registrationToken ?? self.getDataFromUserDefaults(forKey: Constants.UserdefaultConstants.GCMRegistrationToken) ?? "")
         let useraddress = userObject.address ?? ""
@@ -744,7 +795,7 @@ enum paymentType: Int {
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
-//                print(response.data)     // server data
+                //                //print(response.data)     // server data
                 print(response.result)   // result of response serialization
                 // do whatever you want here
                 switch response.result {
@@ -778,9 +829,9 @@ enum paymentType: Int {
                         print(response.result.value)
                         Helper.sharedInstance.hideActivity()
                         completionHandler("SUCCESS")
-
+                        
                     }
-            }
+                }
         }
     }
     
@@ -793,7 +844,7 @@ enum paymentType: Int {
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
-                //                print(response.data)     // server data
+                //                //print(response.data)     // server data
                 print(response.result)   // result of response serialization
                 // do whatever you want here
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
@@ -814,6 +865,64 @@ enum paymentType: Int {
         }
     }
     
+    func validatePhoneNumber(phonenumber: String, completionHandler: (AnyObject) -> ()) {
+        
+        let values: [String: String] = ["mobile":phonenumber];
+        Helper.sharedInstance.showActivity()
+        Alamofire.request(.GET, Constants.API.ValidatePhonenumber, parameters: values)
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                //                //print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                // do whatever you want here
+                dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                    Helper.sharedInstance.hideActivity()
+                    switch response.result {
+                    case .Failure(let error):
+                        print(error)
+                        completionHandler("ERROR")
+                    case .Success(let responseObject):
+                        if let JSON = response.result.value {
+                            print("JSON: \(JSON)")
+                            print(responseObject)
+                            completionHandler(JSON)
+                        }
+                        
+                    }
+                }
+        }
+    }
+    
+    func VerifyOTP(otp: String,userObject: UserDetails, completionHandler: (AnyObject) -> ()) {
+        let values: [String: String] = ["otp":otp, "user_id":userObject.userId!];
+        Helper.sharedInstance.showActivity()
+        Alamofire.request(.GET, Constants.API.VerifyOTP, parameters: values)
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                //                //print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                // do whatever you want here
+                dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                    Helper.sharedInstance.hideActivity()
+                    switch response.result {
+                    case .Failure(let error):
+                        print(error)
+                        completionHandler("ERROR")
+                    case .Success(let responseObject):
+                        if let JSON = response.result.value {
+                            self.saveContext();
+                            print("JSON: \(JSON)")
+                            print(responseObject)
+                            completionHandler(JSON)
+                        }
+                        
+                    }
+                }
+        }
+    }
+    
     func fetchLocations(completionHandler: () -> Void) {
         
         if !self.reach!.isReachable() {
@@ -825,7 +934,7 @@ enum paymentType: Int {
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
-                print(response.data)     // server data
+                //print(response.data)     // server data
                 print(response.result)   // result of response serialization
                 if let JSON = response.result.value {
                     print("JSON: \(JSON)")
@@ -852,7 +961,7 @@ enum paymentType: Int {
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
-                print(response.data)     // server data
+                //print(response.data)     // server data
                 print(response.result)   // result of response serialization
                 
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
@@ -880,7 +989,7 @@ enum paymentType: Int {
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
-                print(response.data)     // server data
+                //print(response.data)     // server data
                 print(response.result)   // result of response serialization
                 
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
@@ -908,7 +1017,7 @@ enum paymentType: Int {
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
-                print(response.data)     // server data
+                //print(response.data)     // server data
                 print(response.result)   // result of response serialization
                 
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
@@ -937,7 +1046,7 @@ enum paymentType: Int {
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
-                print(response.data)     // server data
+                //print(response.data)     // server data
                 print(response.result)   // result of response serialization
                 
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
@@ -965,7 +1074,7 @@ enum paymentType: Int {
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
-                print(response.data)     // server data
+                //print(response.data)     // server data
                 print(response.result)   // result of response serialization
                 
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
@@ -993,7 +1102,7 @@ enum paymentType: Int {
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
-                print(response.data)     // server data
+                //print(response.data)     // server data
                 print(response.result)   // result of response serialization
                 
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
@@ -1023,7 +1132,7 @@ enum paymentType: Int {
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
-                print(response.data)     // server data
+                //print(response.data)     // server data
                 print(response.result)   // result of response serialization
                 
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
@@ -1053,7 +1162,7 @@ enum paymentType: Int {
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
-                print(response.data)     // server data
+                //print(response.data)     // server data
                 print(response.result)   // result of response serialization
                 
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
@@ -1068,6 +1177,34 @@ enum paymentType: Int {
         }
     }
 
+    func getUserDetails(userid: String, completionHandler: (AnyObject) -> ()) {
+        
+        Helper.sharedInstance.showActivity()
+        if !self.reach!.isReachable() {
+            UIAlertView(title: "No Internet Connection!", message: "Please connect to internet and try again", delegate: nil, cancelButtonTitle: "OK").show()
+            Helper.sharedInstance.hideActivity()
+            return
+        }
+        let url: String = Constants.API.UserDetails+userid;
+        Alamofire.request(.GET, url, parameters: nil)
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                //print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                Helper.sharedInstance.hideActivity()
+                dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                    if let JSON = response.result.value {
+                        print("JSON: \(JSON)")
+                        let data: NSArray = JSON.objectForKey("data")! as! NSArray
+                        completionHandler(data[0]);
+                    } else {
+                        completionHandler("ERROR")
+                    }
+                }
+                
+        }
+    }
 
 /*
     func getMenuFor(date: NSDate, completionHandler: () -> Void) {
@@ -1082,7 +1219,7 @@ enum paymentType: Int {
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
-                print(response.data)     // server data
+                //print(response.data)     // server data
                 print(response.result)   // result of response serialization
                 if let JSON = response.result.value {
                     print("JSON: \(JSON)")
@@ -1131,7 +1268,7 @@ enum paymentType: Int {
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
-                print(response.data)     // server data
+                //print(response.data)     // server data
                 print(response.result)   // result of response serialization
                 if let JSON = response.result.value {
                     print("JSON: \(JSON)")
@@ -1173,7 +1310,7 @@ enum paymentType: Int {
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
-                print(response.data)     // server data
+                //print(response.data)     // server data
                 print(response.result)   // result of response serialization
                 
                 if let JSON = response.result.value {
@@ -1203,7 +1340,7 @@ enum paymentType: Int {
         .responseString { response in
         print(response.request)  // original URL request
         print(response.response) // URL response
-        print(response.data)     // server data
+        //print(response.data)     // server data
         print(response.result)   // result of response serialization
             
         if let JSON = response.result.value {
@@ -1230,7 +1367,7 @@ enum paymentType: Int {
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
-                print(response.data)     // server data
+                //print(response.data)     // server data
                 print(response.result)   // result of response serialization
                 
                 if let JSON = response.result.value {
@@ -1287,7 +1424,7 @@ enum paymentType: Int {
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
-                print(response.data)     // server data
+                //print(response.data)     // server data
                 print(response.result)   // result of response serialization
                 
                 if let JSON = response.result.value {
@@ -1331,7 +1468,7 @@ enum paymentType: Int {
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
-                print(response.data)     // server data
+                //print(response.data)     // server data
                 print(response.result)   // result of response serialization
                 
                 if let JSON = response.result.value {
@@ -1366,7 +1503,7 @@ enum paymentType: Int {
                 .responseJSON { response in
                     print(response.request)  // original URL request
                     print(response.response) // URL response
-                    print(response.data)     // server data
+                    //print(response.data)     // server data
                     print(response.result)   // result of response serialization
                     
                     if let JSON = response.result.value {
@@ -1398,7 +1535,7 @@ enum paymentType: Int {
                     .responseJSON { response in
                         print(response.request)  // original URL request
                         print(response.response) // URL response
-                        print(response.data)     // server data
+                        //print(response.data)     // server data
                         print(response.result)   // result of response serialization
                         
                         if let JSON = response.result.value {
@@ -1429,7 +1566,7 @@ enum paymentType: Int {
                         .responseJSON { response in
                             print(response.request)  // original URL request
                             print(response.response) // URL response
-                            print(response.data)     // server data
+                            //print(response.data)     // server data
                             print(response.result)   // result of response serialization
                             
                             if let JSON = response.result.value {
@@ -1460,7 +1597,7 @@ enum paymentType: Int {
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
-                print(response.data)     // server data
+                //print(response.data)     // server data
                 print(response.result)   // result of response serialization
                 
                 if let JSON = response.result.value {
@@ -1487,7 +1624,7 @@ enum paymentType: Int {
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
-                print(response.data)     // server data
+                //print(response.data)     // server data
                 print(response.result)   // result of response serialization
                 
                 if let JSON = response.result.value {
@@ -1515,7 +1652,7 @@ enum paymentType: Int {
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
-                print(response.data)     // server data
+                //print(response.data)     // server data
                 print(response.result)   // result of response serialization
                 
                 if let JSON = response.result.value {

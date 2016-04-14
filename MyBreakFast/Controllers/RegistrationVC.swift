@@ -32,16 +32,34 @@ class RegistrationVC: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func setAfterLoginSettings(emailid: String, password: String){
-        self.emailField.text = emailid;
+//    func setAfterLoginSettings(emailid: String, password: String){
+//        self.emailField.text = emailid;
+//        self.newPasswordField.text = password;
+//        self.confirmPasswordField.text = password;
+//        
+//        self.emailField.enabled = false;
+//        self.newPasswordField.enabled = false;
+//        self.confirmPasswordField.enabled = false;
+//        
+////        UIAlertView(title: "Registration", message: "Please enter Username and Phone number.", delegate: nil, cancelButtonTitle: "OK").show()
+//        
+//        UIAlertView(title: "Registration", message: "Please enter Username and Email address.", delegate: nil, cancelButtonTitle: "OK").show()
+//
+//    }
+    
+    func setAfterLoginSettings(phoneNumber: String, password: String){
+        self.emailField.text = "";
         self.newPasswordField.text = password;
         self.confirmPasswordField.text = password;
+        self.phonenumberField.text = phoneNumber;
         
-        self.emailField.enabled = false;
+//        self.emailField.enabled = false;
         self.newPasswordField.enabled = false;
         self.confirmPasswordField.enabled = false;
+        self.phonenumberField.enabled = false;
+                
+        UIAlertView(title: "Registration", message: "Please enter Username and Email address.", delegate: nil, cancelButtonTitle: "OK").show()
         
-        UIAlertView(title: "Registration", message: "Please enter Username and Phone number.", delegate: nil, cancelButtonTitle: "OK").show()
     }
     
     func setAfterFaceBookLoginSettings(){
@@ -78,18 +96,81 @@ class RegistrationVC: UIViewController {
                 referralText = self.referralField.text!
             }
             
-            Helper.sharedInstance.doUserRegistration(self.userObj!,password: self.newPasswordField.text!, referralId: referralText, completionHandler: { (response) -> () in
+            Helper.sharedInstance.registerUser(self.userObj!,password: self.newPasswordField.text!, referralId: referralText, completionHandler: { (response) -> () in
                 let responseStatus = (response as? String) ?? ""
                 if responseStatus == "ERROR" {
                     UIAlertView(title: "Registration Unsuccessful!", message: "Please try again.", delegate: nil, cancelButtonTitle: "OK").show()
-
+                    
                 } else {
-                    Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserRegistration, value: true)
-                    self.dismissViewControllerAnimated(true, completion: { () -> Void in
-                    })
+//                    Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserRegistration, value: true)
+//                    Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserLoginStatus, value: true)
+                    self.verifyOTPWithUserId("");
+//                    self.dismissViewControllerAnimated(true, completion: { () -> Void in
+//                    })
                 }
             })
+            
+//            Helper.sharedInstance.doUserRegistration(self.userObj!,password: self.newPasswordField.text!, referralId: referralText, completionHandler: { (response) -> () in
+//                let responseStatus = (response as? String) ?? ""
+//                if responseStatus == "ERROR" {
+//                    UIAlertView(title: "Registration Unsuccessful!", message: "Please try again.", delegate: nil, cancelButtonTitle: "OK").show()
+//
+//                } else {
+//                    Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserRegistration, value: true)
+//                    self.dismissViewControllerAnimated(true, completion: { () -> Void in
+//                    })
+//                }
+//            })
         }
+    }
+    
+    func verifyOTPWithUserId(userId: String){
+        
+        var inputTextField: UITextField?
+        let passwordPrompt = UIAlertController(title: "First Eat", message: "Please enter the OTP received.", preferredStyle: UIAlertControllerStyle.Alert)
+        passwordPrompt.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+        passwordPrompt.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            // Now do whatever you want with inputTextField (remember to unwrap the optional)
+            print("%@",inputTextField?.text);
+            Helper.sharedInstance.VerifyOTP((inputTextField?.text)!, userObject: self.userObj!, completionHandler: { (response) -> () in
+                let respo = response as? NSDictionary
+                if let status = respo?.objectForKey("status") as? String {
+                    if status == "1" {
+                        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                            Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserLoginStatus, value: true)
+                            Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserRegistration, value: true)
+                            
+                        });
+                    } else {
+                        let warning = UIAlertController(title: "First Eat", message: "OTP doesnot match/. retry or relogin.", preferredStyle: UIAlertControllerStyle.Alert)
+                        warning.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+                            self.verifyOTPWithUserId((self.userObj?.userId!)!);
+                        }))
+                    }
+                } else {
+                    let status = respo?.objectForKey("status") as? NSNumber
+                    if status == 1 {
+                        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                            Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserLoginStatus, value: true)
+                            Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserRegistration, value: true)
+                            
+                        });
+                    } else {
+                        let warning = UIAlertController(title: "First Eat", message: "OTP doesnot match. retry or relogin.", preferredStyle: UIAlertControllerStyle.Alert)
+                        warning.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+                            self.verifyOTPWithUserId((self.userObj?.userId!)!);
+                        }))
+                    }
+                }
+            })
+        }))
+        passwordPrompt.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+            textField.placeholder = "OTP"
+            textField.secureTextEntry = true
+            inputTextField = textField
+        })
+        
+        presentViewController(passwordPrompt, animated: true, completion: nil)
     }
     
     func validateAllFields()->Bool {

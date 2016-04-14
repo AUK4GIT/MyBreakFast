@@ -66,8 +66,8 @@ class LocationPicker: CustomModalViewController {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.view.endEditing(true);
-        self.closeView(self)
         self.locationDelegate?.didPickLocation!(self.locationsArray![indexPath.row])
+        self.closeView(self)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -104,8 +104,9 @@ class LocationPicker: CustomModalViewController {
         } else {
             self.searchString = textField.text!+string;
         }
-        print(self.searchString);
         self.locationsArray = Helper.sharedInstance.getLocationsForSearchString(self.searchString);
+        print(self.searchString, self.locationsArray?.count);
+
         self.tableView.reloadData()
 
         return true;

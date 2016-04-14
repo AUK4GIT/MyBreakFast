@@ -12,7 +12,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "MerchantConstants.h"
 #import "SettingViewController.h"
-
+#import "MyBreakFast-Swift.h"
 
 @interface HomeViewController (){
 
@@ -35,6 +35,11 @@
     
     [self initialSetting];
     
+    if ([Helper sharedInstance].order.modeOfPayment == PaymentTypeCITRUS) {
+        [self performSelector:@selector(payFromWallet) withObject:nil afterDelay:1.0];
+    } else {
+        [self payMoney:nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -150,6 +155,8 @@
 // make payment using Citrus cash account
 -(IBAction)payUsingCitrusCash:(id)sender{
     
+    [self payFromWallet];
+    /*
     dispatch_async(dispatch_get_main_queue(), ^{
         
        UIAlertView *citrusPayAlert = [[UIAlertView alloc] initWithTitle:@"" message:@"Please enter amount." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok" , nil];
@@ -160,12 +167,17 @@
         alertTextField.placeholder = @"Amount";
         [citrusPayAlert show];
     });
+     */
 }
 
 //Pay money from Cards
 -(IBAction)payMoney:(id)sender{
 
     option = 1;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self performSegueWithIdentifier:@"CardViewIdentifier" sender:self];
+        });
+    /*
     dispatch_async(dispatch_get_main_queue(), ^{
         
         alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Please enter amount." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok" , nil];
@@ -176,7 +188,7 @@
         alertTextField.placeholder = @"Amount";
         [alert show];
     });
-    
+    */
 
 }
 
@@ -672,7 +684,9 @@
             
         }
         else
-            viewController.amount = ((UITextField *)[alert textFieldAtIndex:0]).text; //Passing the amount to Card payment screen
+//            viewController.amount = ((UITextField *)[alert textFieldAtIndex:0]).text; //Passing the amount to Card payment screen
+            viewController.amount = @"2";//[Helper sharedInstance].order.totalAmountPayable; //Passing the amount to Card payment screen
+
     }
     else if ([segue.identifier isEqualToString:@"SettingViewIdentifier"]){
         
@@ -739,6 +753,85 @@
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
+#pragma mark - pay from wallet
 
+- (void)payFromWallet {
+    
+    [self.indicatorView startAnimating];
+    self.indicatorView.hidden = FALSE;
+    
+    
+    [proifleLayer requestGetBalance:^(CTSAmount *amount, NSError *error) {
+        
+        if (error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.indicatorView stopAnimating];
+                self.indicatorView.hidden = TRUE;
+            });
+            [UIUtility toastMessageOnScreen:[error localizedDescription]];
+        }
+        else{
+//            UITextField * alertTextField = [alertView textFieldAtIndex:0];
+            NSString *payableAmount = [Helper sharedInstance].order.totalAmountPayable;
+            if(payableAmount.length==0){
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.indicatorView stopAnimating];
+                    self.indicatorView.hidden = TRUE;
+                });
+                [UIUtility toastMessageOnScreen:@"Amount should not be blank."];
+                
+            }
+            
+            else if ([payableAmount isEqualToString:@"0"]) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.indicatorView stopAnimating];
+                    self.indicatorView.hidden = TRUE;
+                });
+                [UIUtility toastMessageOnScreen:@"Amount should be greater than 0"];
+            }
+            else if([payableAmount doubleValue] > [amount.value doubleValue]){
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.indicatorView stopAnimating];
+                    self.indicatorView.hidden = TRUE;
+                });
+                [UIUtility toastMessageOnScreen:@"The balance in your Citrus Cash account is insufficient. Please load money."];
+            }
+            else{
+                
+                [CTSUtility requestBillAmount:payableAmount billURL:BillUrl callback:^(CTSBill *bill , NSError *error){
+                    
+                    if (error) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [self.indicatorView stopAnimating];
+                            self.indicatorView.hidden = TRUE;
+                        });
+                        [UIUtility toastMessageOnScreen:[error localizedDescription]];
+                    }
+                    else{
+                        [paymentLayer requestChargeCitrusWalletWithContact:contactInfo address:addressInfo bill:bill returnViewController:self withCompletionHandler:^(CTSCitrusCashRes *paymentInfo, NSError *error) {
+                            
+                            LogTrace(@"paymentInfo %@",paymentInfo);
+                            LogTrace(@"error %@",error);
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                [self.indicatorView stopAnimating];
+                                self.indicatorView.hidden = TRUE;
+                                
+                            });
+                            if(error){
+                                [UIUtility toastMessageOnScreen:[error localizedDescription]];
+                            }
+                            else{
+                                LogTrace(@" isAnyoneSignedIn %d",[authLayer isLoggedIn]);
+                                [UIUtility toastMessageOnScreen:[NSString stringWithFormat:@"TxnStatus: %@",[paymentInfo.responseDict valueForKey:@"TxStatus"]]];
+                                [self getBalance:nil];
+                            }
+                        }];
+                    }
+                }];
+            }
+        }
+    }];
+    
+}
 
 @end

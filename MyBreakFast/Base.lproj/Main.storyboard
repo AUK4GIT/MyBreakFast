@@ -1692,7 +1692,7 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <connections>
                                     <outlet property="delegate" destination="ed9-Bs-h4Q" id="s3k-r7-UOg"/>
                                 </connections>
@@ -2651,10 +2651,10 @@
                                                             <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             <state key="normal" title="CASH ON DELIVERY" image="radio_unselected">
-                                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <state key="selected" image="radio_selected">
-                                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
                                                             <state key="highlighted" image="radio_selected"/>
                                                             <connections>
@@ -2667,10 +2667,10 @@
                                                             <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             <state key="normal" title="NETBANKING" image="radio_unselected">
-                                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <state key="selected" image="radio_selected">
-                                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
                                                             <state key="highlighted" image="radio_selected"/>
                                                             <connections>
@@ -2683,10 +2683,10 @@
                                                             <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             <state key="normal" title="DEBIT/CREDIT CARD" image="radio_unselected">
-                                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <state key="selected" image="radio_selected">
-                                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
                                                             <state key="highlighted" image="radio_selected"/>
                                                             <connections>
@@ -2717,9 +2717,16 @@
                                                             </state>
                                                             <state key="disabled">
                                                                 <attributedString key="attributedTitle">
-                                                                    <fragment content="PAYTM">
+                                                                    <fragment content="PAY">
                                                                         <attributes>
-                                                                            <color key="NSColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <color key="NSColor" red="0.015686274509803921" green="0.13725490196078433" blue="0.31372549019607843" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                                            <font key="NSFont" size="14" name="TimesNewRomanPS-BoldMT"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="TM">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.019607843137254902" green="0.62745098039215685" blue="0.78431372549019607" alpha="0.47999999999999998" colorSpace="calibratedRGB"/>
                                                                             <font key="NSFont" size="14" name="TimesNewRomanPS-BoldMT"/>
                                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                                         </attributes>
@@ -3039,7 +3046,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Nt-Hp-Fgd">
                                         <rect key="frame" x="8" y="159" width="304" height="180"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qdc-g0-Eat">
+                                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qdc-g0-Eat">
                                                 <rect key="frame" x="8" y="16" width="288" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" red="0.7843137255" green="0.019607843140000001" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -3052,12 +3059,12 @@
                                                     <outlet property="delegate" destination="uG1-BS-Wha" id="0Ms-Z7-xCH"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GiH-gP-Ich">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GiH-gP-Ich">
                                                 <rect key="frame" x="8" y="66" width="288" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" red="0.7843137255" green="0.019607843140000001" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" secureTextEntry="YES"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="uG1-BS-Wha" id="8kd-4z-c58"/>
                                                 </connections>
@@ -3081,7 +3088,7 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDs-Cm-Gep">
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDs-Cm-Gep">
                                                 <rect key="frame" x="86" y="150" width="118" height="30"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <state key="normal" title="forgot password ?"/>
@@ -3110,7 +3117,7 @@
                                             <constraint firstItem="GiH-gP-Ich" firstAttribute="leading" secondItem="2Nt-Hp-Fgd" secondAttribute="leading" constant="8" id="zcj-it-gaH"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riW-hl-d6t">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riW-hl-d6t">
                                         <rect key="frame" x="153" y="349" width="13.5" height="17"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
@@ -3120,7 +3127,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cat-zw-O1I">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cat-zw-O1I">
                                         <rect key="frame" x="60" y="382" width="200" height="31"/>
                                         <color key="backgroundColor" red="0.11764705882352941" green="0.19607843137254902" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>

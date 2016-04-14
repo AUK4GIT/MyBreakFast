@@ -72,8 +72,7 @@ class CartVC: UIViewController {
     
     @IBAction func showOrderStatus(sender: AnyObject) {
         
-        if let paymentMode = Helper.sharedInstance.order!.modeOfPayment {
-            if paymentMode == paymentType.COD {
+            if Helper.sharedInstance.order!.modeOfPayment == PaymentType.COD {
                 Helper.sharedInstance.placeOrder { (response) -> () in
                     if response as? String == "ERROR" {
                         UIAlertView(title: "Error", message: "Please try again", delegate: nil, cancelButtonTitle: "OK").show()
@@ -90,7 +89,7 @@ class CartVC: UIViewController {
                     }
                     
                 }
-            } else if paymentMode == paymentType.PAYTM{
+            } else if Helper.sharedInstance.order!.modeOfPayment == PaymentType.PAYTM{
 //                let storyboard: UIStoryboard = UIStoryboard(name: "Citrus_flow", bundle: nil);
 //                let nvc: UIViewController = storyboard.instantiateInitialViewController()!
 //                self.presentViewController(nvc, animated: true, completion: nil)
@@ -101,12 +100,6 @@ class CartVC: UIViewController {
                 self.presentViewController(nvc, animated: true, completion: nil)
                 
             }
-            
-        } else {
-            
-        }
-        
-        
     }
 
     func updateOrderWithMenuIds() {

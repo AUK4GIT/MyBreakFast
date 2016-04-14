@@ -24,27 +24,27 @@ class PaymentModeCell: UICollectionViewCell {
             button.selected = true;
             switch button.tag {
             case 0:
-                Helper.sharedInstance.order!.modeOfPayment = paymentType.COD;
+                Helper.sharedInstance.order!.modeOfPayment = PaymentType.COD;
 
                 break;
             case 1:
-                Helper.sharedInstance.order!.modeOfPayment = paymentType.NB;
+                Helper.sharedInstance.order!.modeOfPayment = PaymentType.NB;
 
                 break;
             case 2:
-                Helper.sharedInstance.order!.modeOfPayment = paymentType.CARDS;
+                Helper.sharedInstance.order!.modeOfPayment = PaymentType.CARDS;
 
                 break;
             case 3:
-                Helper.sharedInstance.order!.modeOfPayment = paymentType.PAYTM;
+                Helper.sharedInstance.order!.modeOfPayment = PaymentType.PAYTM;
 
                 break;
             case 4:
-                Helper.sharedInstance.order!.modeOfPayment = paymentType.CITRUS;
+                Helper.sharedInstance.order!.modeOfPayment = PaymentType.CITRUS;
 
                 break;
             default:
-                Helper.sharedInstance.order!.modeOfPayment = paymentType.COD;
+                Helper.sharedInstance.order!.modeOfPayment = PaymentType.COD;
                 
                 break;
             }

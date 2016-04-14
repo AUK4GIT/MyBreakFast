@@ -24,5 +24,5 @@ class Order: NSObject {
     var couponsApplied: [Coupon] = [];
     var hasRedeemedPoints: Bool = false;
     var pointsToRedeem = "0";
-    var modeOfPayment: paymentType?
+    var modeOfPayment: PaymentType = PaymentType.NONE;
 }
