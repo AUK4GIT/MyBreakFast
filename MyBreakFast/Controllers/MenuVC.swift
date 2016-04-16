@@ -91,13 +91,12 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
    
     // MARK: - FilterView Delegate
     
-    func didFilterWithString(searchString: String) {
-        print("Your search string is \(searchString)")
-        let category: String = searchString ?? "";
+    func didFilterWithString(searchTags: Set<String>) {
+        print("Your search string is \(searchTags)")
         self.itemsArray = self.tempItemsArray.filter(){
             let tags = $0.tags
             let tagsArray = tags!.componentsSeparatedByString(",");
-            return (tagsArray.contains(category));
+            return tagsArray.contains { searchTags.contains($0) };
         };
         self.collectionView.reloadData();
     }
@@ -312,8 +311,8 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         searchcustomView.frame = CGRectMake(0, 0, 240, 44);
         searchcustomView.backgroundColor = UIColor.clearColor()
         
-        let width: CGFloat = Constants.DeviceConstants.IS_IPHONE_5_OR_LESS ? 180.0 : (Constants.DeviceConstants.IS_IPHONE_6 ? 220 : 252);
-        let offset: CGFloat = Constants.DeviceConstants.IS_IPHONE_5_OR_LESS ? -10 : 0.0;
+        let width: CGFloat = Constants.DeviceConstants.IS_IPHONE_5_OR_LESS ? 190.0 : (Constants.DeviceConstants.IS_IPHONE_6 ? 240 : 242);
+        let offset: CGFloat = 0;//Constants.DeviceConstants.IS_IPHONE_5_OR_LESS ? -10 : 0.0;
         let height: CGFloat = Constants.DeviceConstants.IS_IPHONE_5_OR_LESS ? 27.0 : 30.0;
 
         self.searchButton = UIButton(type: UIButtonType.Custom)
@@ -330,21 +329,21 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         searchButton.addTarget(self, action: "showLocationPicker:", forControlEvents: UIControlEvents.TouchUpInside);
         
         let filterButton: UIButton = UIButton(type: .Custom);
-        filterButton.frame = CGRectMake(20, 0, 32, 32);
+        filterButton.frame = CGRectMake(8, 2, 32, 32);
         filterButton.setBackgroundImage(UIImage(named: "filter.png"), forState: .Normal)
 
-        let cartButton: UIButton = UIButton(type: .Custom);
-        cartButton.frame = CGRectMake(55, 0, 32, 32);
-        cartButton.setBackgroundImage(UIImage(named: "bell.png"), forState: .Normal)
+//        let cartButton: UIButton = UIButton(type: .Custom);
+//        cartButton.frame = CGRectMake(55, 0, 32, 32);
+//        cartButton.setBackgroundImage(UIImage(named: "bell.png"), forState: .Normal)
         
         let customView = UIView()
-        customView.frame = CGRectMake(0, 0, 80, 35);
+        customView.frame = CGRectMake(0, 0, 40, 35);
         customView.backgroundColor = UIColor.clearColor()
         customView.addSubview(filterButton)
-        customView.addSubview(cartButton)
+//        customView.addSubview(cartButton)
         filterButton.addTarget(self, action: "filterClicked:", forControlEvents: UIControlEvents.TouchUpInside)
-        cartButton.addTarget(self, action: "cartClicked:", forControlEvents: UIControlEvents.TouchUpInside)
-        self.cartButtonIcon = cartButton
+//        cartButton.addTarget(self, action: "cartClicked:", forControlEvents: UIControlEvents.TouchUpInside)
+//        self.cartButtonIcon = cartButton
         let useItem: UIBarButtonItem = UIBarButtonItem(customView: customView);
         parentVC.containerNavigationItem.setRightBarButtonItem(useItem, animated: true);
 

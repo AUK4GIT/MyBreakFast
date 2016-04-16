@@ -9,13 +9,14 @@
 import Foundation
 @objc protocol FilterProtocol : class
 {
-    optional func didFilterWithString(searchString: String);
+    optional func didFilterWithString(searchString: Set<String>);
 }
 class FIlterVC: CustomModalViewController {
     
     @IBOutlet var tableView: UITableView!
     var filtersArray: [AnyObject]?
     weak var delegate: FilterProtocol?
+    var filters: Set<String> = []
     
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -30,13 +31,17 @@ class FIlterVC: CustomModalViewController {
     }
     
     // MARK: Tableview delegates & datasources
-    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.view.endEditing(true);
-        let str = self.filtersArray![indexPath.row]["filtervalue"] as! String
-        self.delegate?.didFilterWithString!(str)
-        self.closeView(self)
-//        self.locationDelegate?.didPickLocation!(self.locationsArray![indexPath.row])
+
+        self.filters.insert((self.filtersArray![indexPath.row]["filtervalue"] as! String))
+        self.delegate?.didFilterWithString!(self.filters)
+    }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+//        if self.filters.contains((self.filtersArray![indexPath.row]["filtervalue"] as! String)){
+            self.filters.remove((self.filtersArray![indexPath.row]["filtervalue"] as! String))
+//        }
+        self.delegate?.didFilterWithString!(self.filters)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,17 +56,23 @@ class FIlterVC: CustomModalViewController {
         cell.imageView?.image = UIImage(named: (self.filtersArray![indexPath.row]["imageName"] as? String)!);
         cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 14.0);
         cell.textLabel?.adjustFontToRealIPhoneSize = true;
-        let color = self.filtersArray![indexPath.row]["color"] as? String;
-        if color == "green" {
-            cell.textLabel?.textColor = UIColor.greenColor()
-        } else if color == "red" {
-            cell.textLabel?.textColor = UIColor.redColor()
-        } else if color == "yellow"{
-            cell.textLabel?.textColor = UIColor.yellowColor()
-        } else {
-            cell.textLabel?.textColor = UIColor.darkTextColor()
-        }
+//        let color = self.filtersArray![indexPath.row]["color"] as? String;
+//        if color == "green" {
+//            cell.textLabel?.textColor = UIColor.greenColor()
+//        } else if color == "red" {
+//            cell.textLabel?.textColor = UIColor.redColor()
+//        } else if color == "yellow"{
+//            cell.textLabel?.textColor = UIColor.yellowColor()
+//        } else {
+//            cell.textLabel?.textColor = UIColor.darkTextColor()
+//        }
         return cell
     }
     
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let touch = touches.first! as UITouch
+        if !CGRectContainsPoint(self.tableView.frame, touch.locationInView(self.view)){
+            self.closeView(self);
+        }
+    }
 }

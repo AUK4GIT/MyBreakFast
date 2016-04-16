@@ -18,13 +18,15 @@ class RedeemCell: UICollectionViewCell {
         super.awakeFromNib()
         
         self.activity = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
-        self.activity?.frame = CGRectMake(0, 0, 40, 40);
-        self.activity?.center = CGPointMake(self.bounds.width/2, self.bounds.height/2);
         self.addSubview(self.activity!);
+        self.activity?.translatesAutoresizingMaskIntoConstraints = false;
         self.activity?.color = Constants.StaticContent.AppThemeColor;
         self.activity?.startAnimating()
         self.activity?.hidesWhenStopped = true;
 
+        self.addConstraint(NSLayoutConstraint(item: self.activity!, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterX, multiplier: 1.0, constant: 0.0));
+        self.addConstraint(NSLayoutConstraint(item: self.activity!, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterY, multiplier: 1.0, constant: 0.0));
+        
         self.fetchRedeemPoints()
     }
     

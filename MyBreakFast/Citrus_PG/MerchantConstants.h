@@ -24,6 +24,7 @@
 #define BillUrl @"https://salty-plateau-1529.herokuapp.com/billGenerator.sandbox.php"
 #else
 //URLs Production
+#define VanityUrl @"nativeSDK"
 #define BillUrl @"http://firsteat.in/andro/index.php/ws/orders/bill/generator?amount=100"
 #define LoadWalletReturnUrl @"http://firsteat.in/andro/index.php/admin/returndata"
 #endif

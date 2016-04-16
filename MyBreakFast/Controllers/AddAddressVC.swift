@@ -24,7 +24,7 @@ class AddAddressVC: UIViewController, LocationPickerVCDelegate {
         doneButton.addTarget(self, action: "dismissViewController", forControlEvents: .TouchUpInside)
         doneButton.titleEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0)
         
-        self.navigationItem.title = "Add Addressess";
+        self.navigationItem.title = "Add Address";
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: doneButton)
 //        self.collectionView.registerClass(AddressCell.self, forCellWithReuseIdentifier: "AddressCell")
         self.fetchAddressess();
@@ -148,8 +148,8 @@ class AddAddressVC: UIViewController, LocationPickerVCDelegate {
             
             let cell: AddressCell = collectionView.dequeueReusableCellWithReuseIdentifier("AddressCell", forIndexPath: indexPath) as! AddressCell
             let userAddr = self.itemsArray[indexPath.row] as? UserAddress
-            cell.firstLine.text = userAddr?.lineone
-            cell.secondLine.text = userAddr?.linetwo
+            cell.firstLine.text = userAddr?.linetwo
+            cell.secondLine.text = userAddr?.lineone
             
             let bView = UIView(frame: cell.bounds)
             bView.backgroundColor = UIColor(red: 200.0/255.0, green: 200.0/255.0, blue: 200.0/255.0, alpha: 1.0)

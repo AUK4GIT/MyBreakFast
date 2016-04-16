@@ -24,7 +24,7 @@ class Yourdetails: UICollectionViewCell {
         if (userLoginStatus != nil) {
 //            self.fetchAddressess();
         }
-        self.firstLine.text = Helper.sharedInstance.userLocation;
+        self.secondLine.text = Helper.sharedInstance.userLocation;
     }
     
     override func layoutSubviews() {

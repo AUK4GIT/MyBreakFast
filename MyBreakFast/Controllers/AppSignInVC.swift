@@ -161,6 +161,7 @@ class AppSignInVC: UIViewController {
                         warning.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
                             self.verifyOTPWithUserId((self.userObj?.userId!)!);
                         }))
+                        self.presentViewController(warning, animated: true, completion: nil)
                     }
                 } else {
                     let status = respo?.objectForKey("status") as? NSNumber

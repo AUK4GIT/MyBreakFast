@@ -19,16 +19,18 @@ class AddAddressCell: UICollectionViewCell {
         super.awakeFromNib()
         
         self.activity = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
-        self.activity?.frame = CGRectMake(0, 0, 50, 50);
-        self.activity?.center = CGPointMake(self.bounds.width/2, self.bounds.height/2);
         self.addSubview(self.activity!);
         self.activity?.color = Constants.StaticContent.AppThemeColor;
-//        self.activity?.startAnimating()
         self.activity?.hidesWhenStopped = true;
-        
+        self.activity?.translatesAutoresizingMaskIntoConstraints = false;
+
         if let usrLoc = Helper.sharedInstance.userLocation {
             self.locationButton.setTitle(usrLoc, forState: UIControlState.Normal)
         }
+
+        self.addConstraint(NSLayoutConstraint(item: self.activity!, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterX, multiplier: 1.0, constant: 0.0));
+        self.addConstraint(NSLayoutConstraint(item: self.activity!, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterY, multiplier: 1.0, constant: 0.0));
+
     }
     
     override func layoutSubviews() {
@@ -60,6 +62,7 @@ class AddAddressCell: UICollectionViewCell {
 
         let dict: [String:String] = ["line1":self.secondLine.text!,"line2":lineOne!,"line3":"Gurgoan","category":"Home","cluster":cluster!];
             self.activity?.startAnimating()
+
         Helper.sharedInstance.uploadAddress(dict) { (response) -> () in
             
             let responseStatus = (response as? String) ?? ""
@@ -69,8 +72,8 @@ class AddAddressCell: UICollectionViewCell {
                 if let dict = response as? NSDictionary {
                     
                     let userAddressObj = Helper.sharedInstance.getUserAddressObject() as? UserAddress
-                    userAddressObj?.lineone = lineOne!;
-                    userAddressObj?.linetwo = self.secondLine.text!;
+                    userAddressObj?.lineone = self.secondLine.text!;
+                    userAddressObj?.linetwo = lineOne!;
                     userAddressObj?.category = "Home";
                     userAddressObj?.cluster = "Gurgoan";
                     

@@ -33,8 +33,8 @@ class UserOrderDetails: UIViewController {
                 let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
                 dispatch_after(delayTime, dispatch_get_main_queue()) {
                     let collectionCell = self.collectionView.cellForItemAtIndexPath(NSIndexPath(forItem: 0, inSection: 0)) as? Yourdetails
-                    collectionCell?.secondLine.text = userAddr.linetwo
-                    collectionCell?.firstLine.text = userAddr.lineone
+                    collectionCell?.secondLine.text = userAddr.lineone
+                    collectionCell?.firstLine.text = userAddr.linetwo
                 }
             }
         } else {

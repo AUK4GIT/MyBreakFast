@@ -11,11 +11,12 @@ import Foundation
 class CouponCodeCell: UICollectionViewCell {
     
     @IBOutlet  var couponTextField: UITextField!
-    @IBAction func couponAction(sender: AnyObject) {
+    @IBAction func couponAction(sender: UIButton) {
         self.couponTextField.resignFirstResponder()
-        
+        sender.enabled = false;
         if self.couponTextField.text?.characters.count == 0 {
             UIAlertView(title: "First Eat", message: "Coupon code cannot be empty.", delegate: nil, cancelButtonTitle: "OK").show()
+            sender.enabled = true;
             return;
         }
         
@@ -27,18 +28,19 @@ class CouponCodeCell: UICollectionViewCell {
         if coupons!.count > 0 {
 //            UIAlertView(title: "First Eat", message: "Coupon code already applied.", delegate: nil, cancelButtonTitle: "OK").show()
             UIAlertView(title: "First Eat", message: "Only one coupon can be applied per order.", delegate: nil, cancelButtonTitle: "OK").show()
-
+            sender.enabled = true;
             return;
         }
         
         if Helper.sharedInstance.order?.hasRedeemedPoints == true {
             UIAlertView(title: "First Eat", message: "Cannot apply coupon as discounts already applied from redeem points.", delegate: nil, cancelButtonTitle: "OK").show()
+            sender.enabled = true;
             return;
         }
         
         
         Helper.sharedInstance.validateCoupon(self.couponTextField.text!, completionHandler: { (response) -> () in
-            
+            sender.enabled = true;
             if let responseStatus = response as? String {
                 if responseStatus == "max_redeem_limit"{
                     UIAlertView(title: "First Eat", message: "The coupon has already been used.", delegate: nil, cancelButtonTitle: "OK").show()
