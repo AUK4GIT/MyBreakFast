@@ -1060,7 +1060,8 @@ import Reachability
                 
         }
     }
-    
+
+    /*
     func redeemPoints(points: String, completionHandler: (AnyObject) -> ()) {
         
         if !self.reach!.isReachable() {
@@ -1088,6 +1089,7 @@ import Reachability
                 
         }
     }
+*/
     
     func validateCoupon(couponcode: String, completionHandler: (AnyObject) -> ()) {
         
@@ -1446,7 +1448,65 @@ import Reachability
         }
     }
 
+    func placeOrder(paymentMode: String, completionHandler: (AnyObject) -> ()) {
+        
+        
+        Helper.sharedInstance.showActivity()
+        let completeURL = Constants.API.PlaceOrder+"1098" //self.getUserId()
+        let change = Helper.sharedInstance.order?.change ?? "100"
+        let coupon = Helper.sharedInstance.order?.couponsApplied.count>0 ? Helper.sharedInstance.order?.couponsApplied[0]: nil;
+        var couponId = "";
+        if coupon != nil {
+            couponId = (coupon?.couponid)!;
+        }
+        let postParams: [String : AnyObject] = ["change":change as String,
+            "coupon":couponId,
+            "kitchen":Helper.sharedInstance.kitchen,
+            "address":(self.order?.addressId!)!,
+            "slot":(self.order?.timeSlotId)!,
+            "points":0,
+            "menu":self.getCommaSeparatedMenuIdsandQuantitiesForOrder(),
+            "qty":self.quantities!,
+            "offers":self.getCommaSeparatedOfferIds(),
+            "subtotal":(self.order?.totalAmount!)!,
+            "paymentmode":paymentMode,
+            "discount":(Helper.sharedInstance.order?.discount)!,
+            "vat":(Helper.sharedInstance.order?.vatAmount)!,
+            "surcharge":(Helper.sharedInstance.order?.serviceChargeAmount)!,
+            "total":(self.order?.totalAmountPayable!)!,
+            "d":self.orderDate!]
+        
+        Alamofire.request(.GET, completeURL, parameters: postParams)
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                //print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                    if let jData =  JSON as? NSDictionary{
+                        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                            Helper.sharedInstance.hideActivity()
+                            completionHandler(jData)
+                        }
+                    } else {
+                        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                            Helper.sharedInstance.hideActivity()
+                            completionHandler("ERROR")
+                        }
+                    }
+                } else {
+                    dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                        Helper.sharedInstance.hideActivity()
+                        completionHandler("ERROR")
+                    }
+                }
+        }
+    }
     
+    
+/*
     func placeOrder(completionHandler: (AnyObject) -> ()) {
         
         
@@ -1492,7 +1552,9 @@ import Reachability
                 }
         }
     }
+    */
     
+    /*
         func sendMenuIdstoOrder(completionHandler: (AnyObject) -> ()) {
             
             
@@ -1587,7 +1649,7 @@ import Reachability
                             }
                     }
     }
-    
+    */
     func uploadFavouriteMenu(menuId: String, completionHandler: (AnyObject) -> ()) {
         
         Helper.sharedInstance.showActivity()

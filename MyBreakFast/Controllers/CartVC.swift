@@ -72,36 +72,49 @@ class CartVC: UIViewController {
     
     @IBAction func showOrderStatus(sender: AnyObject) {
         
-            if Helper.sharedInstance.order!.modeOfPayment == PaymentType.COD {
-                Helper.sharedInstance.placeOrder { (response) -> () in
-                    if response as? String == "ERROR" {
-                        UIAlertView(title: "Error", message: "Please try again", delegate: nil, cancelButtonTitle: "OK").show()
+        
+        let paymentStr = (Helper.sharedInstance.order!.modeOfPayment == PaymentType.COD) ? "COD" : "Online"
+        
+        Helper.sharedInstance.placeOrder (paymentStr, completionHandler: { (response) -> () in
+            if response as? String == "ERROR" {
+                UIAlertView(title: "Error", message: "Please try again", delegate: nil, cancelButtonTitle: "OK").show()
+            } else {
+                
+                if let orderResDict = response.objectForKey("new_order_response") {
+                    let orderResDataDict = orderResDict.objectForKey("data");
+                    if let orderId = orderResDataDict!.objectForKey("order_id") as? NSNumber {
+                        Helper.sharedInstance.order?.orderId = String(orderId);
                     } else {
-                        
-                        let resDict = response as! NSDictionary
-                        if let orderId = resDict.objectForKey("order_id") as? NSNumber {
-                            Helper.sharedInstance.order?.orderId = String(orderId);
-                        } else {
-                            Helper.sharedInstance.order?.orderId = resDict.objectForKey("order_id") as? String;
-                        }
-                        
-                        self.updateOrderWithMenuIds()
+                        Helper.sharedInstance.order?.orderId = orderResDataDict!.objectForKey("order_id") as? String;
                     }
                     
+                    /*
+                    if Helper.sharedInstance.order!.modeOfPayment == PaymentType.COD {
+                    
+                    
+                    } else if Helper.sharedInstance.order!.modeOfPayment == PaymentType.PAYTM{
+                    /*
+                    let storyboard: UIStoryboard = UIStoryboard(name: "Citrus_flow", bundle: nil);
+                    let nvc: UIViewController = storyboard.instantiateInitialViewController()!
+                    self.presentViewController(nvc, animated: true, completion: nil)
+                    */
+                    
+                    } else {
+                    let storyboard: UIStoryboard = UIStoryboard(name: "Citrus_flow", bundle: nil);
+                    let nvc: UIViewController = storyboard.instantiateInitialViewController()!
+                    self.presentViewController(nvc, animated: true, completion: nil)
+                    
+                    }
+                    */
                 }
-            } else if Helper.sharedInstance.order!.modeOfPayment == PaymentType.PAYTM{
-//                let storyboard: UIStoryboard = UIStoryboard(name: "Citrus_flow", bundle: nil);
-//                let nvc: UIViewController = storyboard.instantiateInitialViewController()!
-//                self.presentViewController(nvc, animated: true, completion: nil)
-                
-            } else {
-                let storyboard: UIStoryboard = UIStoryboard(name: "Citrus_flow", bundle: nil);
-                let nvc: UIViewController = storyboard.instantiateInitialViewController()!
-                self.presentViewController(nvc, animated: true, completion: nil)
-                
             }
+            
+        })
+        
+        
     }
 
+/*
     func updateOrderWithMenuIds() {
         
         Helper.sharedInstance.sendMenuIdstoOrder { (response) -> () in
@@ -167,6 +180,7 @@ class CartVC: UIViewController {
         }
     
     }
+*/
     
     // MARK: UICollectionView delegates and datasources
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {

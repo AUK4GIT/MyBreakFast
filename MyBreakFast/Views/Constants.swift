@@ -134,13 +134,17 @@ struct Constants {
         static let LocationsURL: String = "http://www.firsteatwebportal.in/project-poha/index.php/ws/get/all/locations"
         static let DeliveryLocationsURL: String = "http://www.firsteatwebportal.in/project-poha/index.php/ws/locations/delivery/all"
         static let GETRedeemPoints: String = "http://www.firsteatwebportal.in/project-poha/index.php/ws/users/points/all/"
-        static let RedeemPoints: String = "http://www.firsteatwebportal.in/project-poha/index.php/ws/points/redeem/"
+//        static let RedeemPoints: String = "http://www.firsteatwebportal.in/project-poha/index.php/ws/points/redeem/"
         static let ValidateCoupon: String = "http://www.firsteatwebportal.in/project-poha/index.php/ws/orders/coupon/apply?coupon="
-        static let PlaceOrder: String = "http://www.firsteatwebportal.in/project-poha/index.php/ws/orders/add/new/"
+//        static let PlaceOrder: String = "http://www.firsteatwebportal.in/project-poha/index.php/ws/orders/add/new/"
         
-        static let UpdateOrderWithMenuIds: String = "http://www.firsteatwebportal.in/project-poha/index.php/ws/orders/add/new/item/"
-        static let UpdateOrderWithOfferIds: String = "http://www.firsteatwebportal.in/project-poha/index.php/ws/orders/add/menu/offers/"
-        static let UpdateOrderWithBill: String = "http://www.firsteatwebportal.in/project-poha/index.php/ws/orders/update/"
+//        static let UpdateOrderWithMenuIds: String = "http://www.firsteatwebportal.in/project-poha/index.php/ws/orders/add/new/item/"
+//        static let UpdateOrderWithOfferIds: String = "http://www.firsteatwebportal.in/project-poha/index.php/ws/orders/add/menu/offers/"
+//        static let UpdateOrderWithBill: String = "http://www.firsteatwebportal.in/project-poha/index.php/ws/orders/update/"
+        
+        static let PlaceOrder: String = "http://firsteatwebportal.in/project-poha/index.php/ws/orders/add/new/alpha/"
+        
+        static let VerifyPayment: String = "http://firsteatwebportal.in/project-poha/index.php/ws/verify/payment/"
         
         static let FavouritesMenu: String = "http://www.firsteatwebportal.in/project-poha/index.php/ws/user/favorite/menu/"
         static let UploadFavouritesMenu: String = "http://www.firsteatwebportal.in/project-poha/index.php/ws/menu/user/favorite?user="
