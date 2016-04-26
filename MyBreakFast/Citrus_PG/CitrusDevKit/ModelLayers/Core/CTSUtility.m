@@ -1185,7 +1185,7 @@
 
     NSMutableURLRequest* urlReq = [[NSMutableURLRequest alloc] initWithURL:
                                    [NSURL URLWithString:urlString]];
-    [urlReq setHTTPMethod:@"POST"];
+    [urlReq setHTTPMethod:@"GET"];
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     [queue setMaxConcurrentOperationCount:5];
     

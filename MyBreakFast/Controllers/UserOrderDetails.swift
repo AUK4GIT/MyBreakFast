@@ -121,7 +121,7 @@ class UserOrderDetails: UIViewController {
         
         if Helper.sharedInstance.order?.timeSlotId == nil {
             UIAlertView(title: "First Eat", message: "Please select a timeslot", delegate: nil, cancelButtonTitle: "OK").show()
-            //return;
+            return;
         }
         
         let parentVC = self.parentViewController as! ViewController

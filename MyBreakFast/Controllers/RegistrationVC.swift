@@ -136,10 +136,13 @@ class RegistrationVC: UIViewController {
                 let respo = response as? NSDictionary
                 if let status = respo?.objectForKey("status") as? String {
                     if status == "1" {
-                        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                        let dQueue = dispatch_queue_create("asyncQueue", DISPATCH_QUEUE_SERIAL);
+                        dispatch_async(dQueue, { () -> Void in
                             Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserLoginStatus, value: true)
                             Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserRegistration, value: true)
-                            
+                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                self.dismissViewControllerAnimated(true, completion: nil)
+                            })
                         });
                     } else {
                         let warning = UIAlertController(title: "First Eat", message: "OTP doesnot match/. retry or relogin.", preferredStyle: UIAlertControllerStyle.Alert)
@@ -150,10 +153,13 @@ class RegistrationVC: UIViewController {
                 } else {
                     let status = respo?.objectForKey("status") as? NSNumber
                     if status == 1 {
-                        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                        let dQueue = dispatch_queue_create("asyncQueue", DISPATCH_QUEUE_SERIAL);
+                        dispatch_async(dQueue, { () -> Void in
                             Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserLoginStatus, value: true)
                             Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserRegistration, value: true)
-                            
+                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                self.dismissViewControllerAnimated(true, completion: nil)
+                            })
                         });
                     } else {
                         let warning = UIAlertController(title: "First Eat", message: "OTP doesnot match. retry or relogin.", preferredStyle: UIAlertControllerStyle.Alert)

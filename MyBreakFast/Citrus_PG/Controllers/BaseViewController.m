@@ -48,7 +48,7 @@
 #ifdef DEBUG
     [CitrusPaymentSDK initializeWithKeyStore:keyStore environment:CTSEnvSandbox];
 #else
-    //      [CitrusPaymentSDK initializeWithKeyStore:keyStore environment:CTSEnvProduction];
+    [CitrusPaymentSDK initializeWithKeyStore:keyStore environment:CTSEnvProduction];
 #endif
     
     authLayer = [CTSAuthLayer fetchSharedAuthLayer];

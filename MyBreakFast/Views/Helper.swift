@@ -222,7 +222,7 @@ import Reachability
             userDict.setObject(userDetails.userName!, forKey: "firstName");
             userDict.setObject(userDetails.emailId!, forKey: "email");
             userDict.setObject(userDetails.phoneNumber!, forKey: "mobile");
-            userDict.setObject(userDetails.address!, forKey: "address");
+            userDict.setObject(userDetails.address  ?? "", forKey: "address");
             
             
             return userDict;
@@ -1452,7 +1452,7 @@ import Reachability
         
         
         Helper.sharedInstance.showActivity()
-        let completeURL = Constants.API.PlaceOrder+"1098" //self.getUserId()
+        let completeURL = Constants.API.PlaceOrder+self.getUserId()
         let change = Helper.sharedInstance.order?.change ?? "100"
         let coupon = Helper.sharedInstance.order?.couponsApplied.count>0 ? Helper.sharedInstance.order?.couponsApplied[0]: nil;
         var couponId = "";
@@ -1505,26 +1505,12 @@ import Reachability
         }
     }
     
-    
-/*
-    func placeOrder(completionHandler: (AnyObject) -> ()) {
-        
+    func verifyPaymentForTransaction(transactionDict: NSDictionary, completionHandler: (AnyObject) -> ()) {
         
         Helper.sharedInstance.showActivity()
-        let completeURL = Constants.API.PlaceOrder+self.getUserId()
-        let change = Helper.sharedInstance.order?.change ?? "100"
-        let coupon = Helper.sharedInstance.order?.couponsApplied.count>0 ? Helper.sharedInstance.order?.couponsApplied[0]: nil;
-        var couponId = "";
-        if coupon != nil {
-            couponId = (coupon?.couponid)!;
-        }
-//        var kitchenId = "";
-//        if let kitchens = Helper.sharedInstance.fetchKitchens() {
-//                let kitchen = kitchens[0]
-//            kitchenId = kitchen.kid!
-//        }
+        let completeURL = Constants.API.VerifyPayment+(self.order?.orderId)!
         
-        Alamofire.request(.GET, completeURL, parameters: ["change":change as String,"coupon":couponId, "kitchen":Helper.sharedInstance.kitchen, "address":(self.order?.addressId!)!,"slot":(self.order?.timeSlotId!)!])
+        Alamofire.request(.GET, completeURL, parameters: transactionDict as? [String : AnyObject])
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
@@ -1533,16 +1519,9 @@ import Reachability
                 
                 if let JSON = response.result.value {
                     print("JSON: \(JSON)")
-                    if let jData =  JSON.objectForKey("data") as? NSDictionary{
-                        dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                            Helper.sharedInstance.hideActivity()
-                            completionHandler(jData)
-                        }
-                    } else {
-                        dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                            Helper.sharedInstance.hideActivity()
-                            completionHandler("ERROR")
-                        }
+                    dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                        Helper.sharedInstance.hideActivity()
+                        completionHandler(JSON)
                     }
                 } else {
                     dispatch_async(dispatch_get_main_queue()) { () -> Void in
@@ -1552,104 +1531,7 @@ import Reachability
                 }
         }
     }
-    */
     
-    /*
-        func sendMenuIdstoOrder(completionHandler: (AnyObject) -> ()) {
-            
-            
-            Helper.sharedInstance.showActivity()
-            let completeURL = Constants.API.UpdateOrderWithMenuIds+(self.order?.orderId)!
-            
-            Alamofire.request(.GET, completeURL, parameters: ["menu":self.getCommaSeparatedMenuIdsandQuantitiesForOrder(),"qty":self.quantities!])
-                .responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response) // URL response
-                    //print(response.data)     // server data
-                    print(response.result)   // result of response serialization
-                    
-                    if let JSON = response.result.value {
-                        print("JSON: \(JSON)")
-//                        if let jData =  JSON.objectForKey("data") as? Array<AnyObject>{
-//                            self.saveMenuOrders(jData)
-//                            self.saveContext();
-//                        }
-                        dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                            Helper.sharedInstance.hideActivity()
-                            completionHandler(JSON)
-                        }
-                    } else {
-                        dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                            Helper.sharedInstance.hideActivity()
-                            completionHandler("ERROR")
-                        }
-                    }
-            }
-    }
-    
-            func sendOfferIdsToOrder(completionHandler: (AnyObject) -> ()) {
-                
-                
-                Helper.sharedInstance.showActivity()
-                let completeURL = Constants.API.UpdateOrderWithOfferIds+(self.order?.orderId)!
-                
-                Alamofire.request(.GET, completeURL, parameters: ["offers":self.getCommaSeparatedOfferIds()])
-                    .responseJSON { response in
-                        print(response.request)  // original URL request
-                        print(response.response) // URL response
-                        //print(response.data)     // server data
-                        print(response.result)   // result of response serialization
-                        
-                        if let JSON = response.result.value {
-                            print("JSON: \(JSON)")
-//                            if let jData =  JSON.objectForKey("data") as? Array<AnyObject>{
-//                                self.saveMenuOrders(jData)
-//                                self.saveContext();
-//                            }
-                            dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                                Helper.sharedInstance.hideActivity()
-                                completionHandler(JSON)
-                            }
-                        } else {
-                            dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                                Helper.sharedInstance.hideActivity()
-                                completionHandler("ERROR")
-                            }
-                        }
-                }
-    }
-
-                func updateOrderWithBillDetails(completionHandler: (AnyObject) -> ()) {
-                    
-                    Helper.sharedInstance.showActivity()
-                    let completeURL = Constants.API.UpdateOrderWithBill+(self.order?.orderId)!
-                    
-                    Alamofire.request(.GET, completeURL, parameters: ["subtotal":(self.order?.totalAmount!)!,"discount":(Helper.sharedInstance.order?.discount)!,"vat":(Helper.sharedInstance.order?.vatAmount)!,"surcharge":(Helper.sharedInstance.order?.serviceChargeAmount)!,"total":(self.order?.totalAmountPayable!)!,"address":(self.order?.addressId!)!,"slot":(self.order?.timeSlotId!)!,"d":self.orderDate!])
-                        .responseJSON { response in
-                            print(response.request)  // original URL request
-                            print(response.response) // URL response
-                            //print(response.data)     // server data
-                            print(response.result)   // result of response serialization
-                            
-                            if let JSON = response.result.value {
-                                print("JSON: \(JSON)")
-//                                if let jData =  JSON.objectForKey("data") as? Array<AnyObject>{
-//                                    self.saveMenuOrders(jData)
-//                                    self.saveContext();
-//                                }
-                                dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                                    Helper.sharedInstance.hideActivity()
-                                    completionHandler(JSON)
-                                }
-                            } else {
-                                dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                                    Helper.sharedInstance.hideActivity()
-                                    completionHandler("ERROR")
-                                }
-                            }
-                    }
-    }
-    */
     func uploadFavouriteMenu(menuId: String, completionHandler: (AnyObject) -> ()) {
         
         Helper.sharedInstance.showActivity()

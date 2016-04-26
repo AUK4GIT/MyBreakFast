@@ -17,6 +17,7 @@ class CartVC: UIViewController {
     @IBOutlet var collectionViewLayout: UICollectionViewFlowLayout!
     let sectionHeaders: [String] = ["TOTAL AMOUNT", "REEDEM POINTS", "COUPON CODE", "BRING ME CHANGE OF", "PAYMENT METHODS"];
     var totalAmount: Int?
+    var response: AnyObject?
     
     override func beginAppearanceTransition(isAppearing: Bool, animated: Bool) {
         super.beginAppearanceTransition(isAppearing, animated: animated)
@@ -51,11 +52,50 @@ class CartVC: UIViewController {
         
         self.collectionViewLayout.sectionInset = UIEdgeInsetsMake(0, 0, 10, 0)
         self.collectionView.collectionViewLayout = self.collectionViewLayout
-
+        
         Helper.sharedInstance.getTotalPrice { (price) -> () in
             self.totalAmount = price
             self.payableAmountLabel.text = "Payable Amount ₹ "+String(self.totalAmount!);
             self.collectionView.reloadSections(NSIndexSet(index: 0))
+        }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "PaymentFinished:", name: "PaymentFinished", object: nil)
+    }
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func PaymentFinished(infoDict: AnyObject){
+        self.dismissViewControllerAnimated(true) { () -> Void in
+            self.verifyPayment(infoDict as? NSNotification);
+        }
+    }
+    
+    func verifyPayment(txDict: NSNotification?){
+        if let tsDictionary = txDict {
+            Helper.sharedInstance.verifyPaymentForTransaction(tsDictionary.userInfo!) { (response) -> () in
+                if response as? String == "ERROR" {
+                    Helper.sharedInstance.hideActivity()
+                    UIAlertView(title: "Error", message: "Please try again", delegate: nil, cancelButtonTitle: "OK").show()
+                } else {
+                    
+                    if let status = response.objectForKey("status") {
+                        if status as? String == "1" || status as? NSNumber == 1 {
+                            
+                            let parentVC = self.parentViewController as! ViewController
+                            let statusVC = (self.storyboard?.instantiateViewControllerWithIdentifier("OrderStatusVC")) as! OrderStatusVC
+                            parentVC.cycleFromViewController(nil, toViewController: statusVC)
+                            statusVC.setData(self.response as! NSDictionary);
+                        } else {
+                            UIAlertView(title: "Error", message: "Please try again", delegate: nil, cancelButtonTitle: "OK").show()
+                        }
+                    }
+                }
+            }
+        } else {
+            Helper.sharedInstance.hideActivity()
+            UIAlertView(title: "Error", message: "Please try again", delegate: nil, cancelButtonTitle: "OK").show()
         }
     }
     
@@ -74,113 +114,56 @@ class CartVC: UIViewController {
         
         
         let paymentStr = (Helper.sharedInstance.order!.modeOfPayment == PaymentType.COD) ? "COD" : "Online"
+        Helper.sharedInstance.showActivity()
         
         Helper.sharedInstance.placeOrder (paymentStr, completionHandler: { (response) -> () in
             if response as? String == "ERROR" {
+                Helper.sharedInstance.hideActivity()
                 UIAlertView(title: "Error", message: "Please try again", delegate: nil, cancelButtonTitle: "OK").show()
             } else {
-                
-                if let orderResDict = response.objectForKey("new_order_response") {
+                Helper.sharedInstance.hideActivity()
+                if let orderResDict = response.objectForKey("update_order_response") {
                     let orderResDataDict = orderResDict.objectForKey("data");
-                    if let orderId = orderResDataDict!.objectForKey("order_id") as? NSNumber {
-                        Helper.sharedInstance.order?.orderId = String(orderId);
-                    } else {
-                        Helper.sharedInstance.order?.orderId = orderResDataDict!.objectForKey("order_id") as? String;
-                    }
-                    
-                    /*
-                    if Helper.sharedInstance.order!.modeOfPayment == PaymentType.COD {
-                    
-                    
-                    } else if Helper.sharedInstance.order!.modeOfPayment == PaymentType.PAYTM{
-                    /*
-                    let storyboard: UIStoryboard = UIStoryboard(name: "Citrus_flow", bundle: nil);
-                    let nvc: UIViewController = storyboard.instantiateInitialViewController()!
-                    self.presentViewController(nvc, animated: true, completion: nil)
-                    */
-                    
-                    } else {
-                    let storyboard: UIStoryboard = UIStoryboard(name: "Citrus_flow", bundle: nil);
-                    let nvc: UIViewController = storyboard.instantiateInitialViewController()!
-                    self.presentViewController(nvc, animated: true, completion: nil)
-                    
-                    }
-                    */
-                }
-            }
-            
-        })
-        
-        
-    }
-
-/*
-    func updateOrderWithMenuIds() {
-        
-        Helper.sharedInstance.sendMenuIdstoOrder { (response) -> () in
-            
-            if response as? String == "ERROR" {
-                UIAlertView(title: "Error", message: "Please try again", delegate: nil, cancelButtonTitle: "OK").show()
-            } else {
-                self.updateOrderWithOfferIds()
-            }
-
-        }
-    
-    }
-    
-    
-    func updateOrderWithOfferIds() {
-        
-        Helper.sharedInstance.sendOfferIdsToOrder { (response) -> () in
-            
-            if response as? String == "ERROR" {
-                UIAlertView(title: "Error", message: "Please try again", delegate: nil, cancelButtonTitle: "OK").show()
-            } else {
-                self.updateOrderWithBill()
-            }
-        }
-    }
-    
-    func updateOrderWithBill() {
-        Helper.sharedInstance.updateOrderWithBillDetails { (response) -> () in
-            
-            if response as? String == "ERROR" {
-                UIAlertView(title: "Error", message: "Please try again", delegate: nil, cancelButtonTitle: "OK").show()
-            } else {
-                
-                Helper.sharedInstance.showActivity()
-                if Helper.sharedInstance.order?.hasRedeemedPoints == true {
-                    Helper.sharedInstance.redeemPoints((Helper.sharedInstance.order?.pointsToRedeem)!, completionHandler: { (responseS) -> () in
-                        
-                        dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                            let responseStatus = (responseS as? String) ?? ""
-                            if responseStatus == "ERROR"{
-                                UIAlertView(title: "Error redeeming points!", message: "Please try again", delegate: nil, cancelButtonTitle: "OK").show()
+                    if orderResDict.objectForKey("status") == 0 || orderResDict.objectForKey("status") == "0"{
+                        if let orderResDataDetails = orderResDataDict!.objectForKey("details") as? NSArray{
+                            if orderResDataDetails.count>0 {
+                                let dict = orderResDataDetails[0]
+                                if let orderId = dict.objectForKey("order_id") as? NSNumber {
+                                    Helper.sharedInstance.order?.orderId = String(orderId);
+                                } else {
+                                    Helper.sharedInstance.order?.orderId = dict.objectForKey("order_id") as? String;
+                                }
                             } else {
+                                UIAlertView(title: "Error", message: "Please try again", delegate: nil, cancelButtonTitle: "OK").show()
+                                return;
                             }
-                            let parentVC = self.parentViewController as! ViewController
-                            let statusVC = (self.storyboard?.instantiateViewControllerWithIdentifier("OrderStatusVC")) as! OrderStatusVC
-                            parentVC.cycleFromViewController(nil, toViewController: statusVC)
-                            statusVC.setData(response as! NSDictionary);
-                            Helper.sharedInstance.hideActivity()
+                            self.response = response.objectForKey("update_order_response");
+                            if Helper.sharedInstance.order!.modeOfPayment == PaymentType.COD {
+                                let parentVC = self.parentViewController as! ViewController
+                                let statusVC = (self.storyboard?.instantiateViewControllerWithIdentifier("OrderStatusVC")) as! OrderStatusVC
+                                parentVC.cycleFromViewController(nil, toViewController: statusVC)
+                                statusVC.setData(self.response as! NSDictionary);
+                                
+                            } else if Helper.sharedInstance.order!.modeOfPayment == PaymentType.PAYTM{
+                                /*
+                                let storyboard: UIStoryboard = UIStoryboard(name: "Citrus_flow", bundle: nil);
+                                let nvc: UIViewController = storyboard.instantiateInitialViewController()!
+                                self.presentViewController(nvc, animated: true, completion: nil)
+                                */
+                                
+                            } else {
+                                let storyboard: UIStoryboard = UIStoryboard(name: "Citrus_flow", bundle: nil);
+                                let nvc: UIViewController = storyboard.instantiateInitialViewController()!
+                                self.presentViewController(nvc, animated: true, completion: nil)
+                                
+                            }
                             
                         }
-                    })
-                } else {
-                    Helper.sharedInstance.hideActivity()
-                    let parentVC = self.parentViewController as! ViewController
-                    let statusVC = (self.storyboard?.instantiateViewControllerWithIdentifier("OrderStatusVC")) as! OrderStatusVC
-                    parentVC.cycleFromViewController(nil, toViewController: statusVC)
-                    statusVC.setData(response as! NSDictionary);
-
+                    }
                 }
             }
-
-        }
-    
+        })
     }
-*/
     
     // MARK: UICollectionView delegates and datasources
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
@@ -237,26 +220,26 @@ class CartVC: UIViewController {
             if let totalPrice = self.totalAmount {
                 (cell as! TotalBill).billLabel.text = "₹ "+String(totalPrice)
             }
-
+            
             break;
         case 1 :
             
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("redeempoints", forIndexPath: indexPath)
-
+            
             
             break;
         case 2 :
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("couponcode", forIndexPath: indexPath)
-
+            
             
             break;
-            case 3 :
-                cell = collectionView.dequeueReusableCellWithReuseIdentifier("change", forIndexPath: indexPath)
+        case 3 :
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("change", forIndexPath: indexPath)
             
             break;
-            case 4 :
+        case 4 :
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("paymentmethod", forIndexPath: indexPath)
-
+            
             break;
         default:
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("change", forIndexPath: indexPath)
@@ -276,5 +259,5 @@ class CartVC: UIViewController {
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
-
+    
 }
