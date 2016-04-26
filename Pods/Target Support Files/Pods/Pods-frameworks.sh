@@ -91,7 +91,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/FBSDKShareKit.framework"
   install_framework "Pods/Reachability.framework"
   install_framework "Pods/SDWebImage.framework"
-  install_framework "Pods/TIPBadgeManager.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/Alamofire.framework"
@@ -101,5 +100,4 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/FBSDKShareKit.framework"
   install_framework "Pods/Reachability.framework"
   install_framework "Pods/SDWebImage.framework"
-  install_framework "Pods/TIPBadgeManager.framework"
 fi

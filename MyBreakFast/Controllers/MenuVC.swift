@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 import SDWebImage
-import TIPBadgeManager
-
 
 class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, DatePickerVCDelegate, LocationPickerVCDelegate, UIAlertViewDelegate, LocationPickerDelegate, FilterProtocol {
     @IBOutlet var collectionView: UICollectionView!

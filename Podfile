@@ -8,7 +8,6 @@ pod 'Google/CloudMessaging'
 pod 'Reachability', git: 'https://github.com/tonymillion/Reachability'
 pod 'FBSDKLoginKit'
 pod 'FBSDKShareKit'
-pod 'TIPBadgeManager', '~> 0.2.1'
 target 'MyBreakFast' do
 
 end

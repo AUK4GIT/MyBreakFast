@@ -91,7 +91,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-MyBreakFast/FBSDKShareKit.framework"
   install_framework "Pods-MyBreakFast/Reachability.framework"
   install_framework "Pods-MyBreakFast/SDWebImage.framework"
-  install_framework "Pods-MyBreakFast/TIPBadgeManager.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-MyBreakFast/Alamofire.framework"
@@ -101,5 +100,4 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-MyBreakFast/FBSDKShareKit.framework"
   install_framework "Pods-MyBreakFast/Reachability.framework"
   install_framework "Pods-MyBreakFast/SDWebImage.framework"
-  install_framework "Pods-MyBreakFast/TIPBadgeManager.framework"
 fi
