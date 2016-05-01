@@ -21,7 +21,7 @@
 #ifdef DEBUG
 // URLs Sandbox
 #define VanityUrl @"khaleeque-ansari"
-#define BillUrl @"http://firsteat.in/andro/index.php/ws/orders/bill/generator"
+#define BillUrl @"http://firsteatwebportal.in/project-poha/index.php/ws/orders/bill/generator"
 #define LoadWalletReturnUrl @"http://firsteatwebportal.in/redirectUrlLoadCash.php"
 #else
 

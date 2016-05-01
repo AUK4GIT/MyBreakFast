@@ -52,6 +52,8 @@ class RegistrationVC: UIViewController {
         self.newPasswordField.text = password;
         self.confirmPasswordField.text = password;
         self.phonenumberField.text = phoneNumber;
+        self.nopasswordConstraint.constant = -30;
+        self.view.layoutIfNeeded()
         
 //        self.emailField.enabled = false;
         self.newPasswordField.enabled = false;

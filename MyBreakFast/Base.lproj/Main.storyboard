@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="94y-83-Mc3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="94y-83-Mc3">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -3017,7 +3017,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashImage" translatesAutoresizingMaskIntoConstraints="NO" id="NeH-dr-GBu">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                             </imageView>
-                            <view alpha="0.55000000000000004" contentMode="scaleToFill" restorationIdentifier="blackbg" translatesAutoresizingMaskIntoConstraints="NO" id="rPN-3F-31n">
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" restorationIdentifier="blackbg" translatesAutoresizingMaskIntoConstraints="NO" id="rPN-3F-31n">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -3064,7 +3064,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" red="0.7843137255" green="0.019607843140000001" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="uG1-BS-Wha" id="8kd-4z-c58"/>
                                                 </connections>
@@ -3330,7 +3330,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashImage" translatesAutoresizingMaskIntoConstraints="NO" id="X9c-ji-gfp">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                             </imageView>
-                            <view alpha="0.55000001192092896" contentMode="scaleToFill" restorationIdentifier="blackbg" translatesAutoresizingMaskIntoConstraints="NO" id="mhO-Ed-a6c">
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" restorationIdentifier="blackbg" translatesAutoresizingMaskIntoConstraints="NO" id="mhO-Ed-a6c">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -3343,7 +3343,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SJW-FA-lc1">
                                         <rect key="frame" x="8" y="159" width="304" height="260"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ams-jC-us5">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ams-jC-us5">
                                                 <rect key="frame" x="8" y="16" width="288" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" red="0.7843137255" green="0.019607843140000001" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -3356,7 +3356,7 @@
                                                     <outlet property="delegate" destination="oHE-06-4bd" id="sbF-YO-xp3"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v02-WZ-P6e">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v02-WZ-P6e">
                                                 <rect key="frame" x="8" y="62" width="288" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" red="0.7843137255" green="0.019607843140000001" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -3541,14 +3541,14 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="confirmPasswordField" destination="DeH-1Q-d1Y" id="Roo-Xo-aoL"/>
-                        <outlet property="emailField" destination="Ams-jC-us5" id="aUz-JP-PQc"/>
+                        <outlet property="emailField" destination="v02-WZ-P6e" id="M7y-en-Dmq"/>
                         <outlet property="loginButton" destination="FmY-Zr-F5d" id="LFj-xL-WBS"/>
                         <outlet property="newPasswordField" destination="LdD-RW-W3q" id="yN8-yu-JB6"/>
                         <outlet property="nopasswordConstraint" destination="Vzb-kq-FeN" id="Pbc-vi-HsC"/>
                         <outlet property="phonenumberField" destination="aIG-TY-3Zf" id="HHh-Gt-WT6"/>
                         <outlet property="referralField" destination="FyT-tq-kd7" id="i0l-TZ-7lr"/>
                         <outlet property="topConstraint" destination="HLH-oN-zHD" id="YYe-AW-ct2"/>
-                        <outlet property="usernameField" destination="v02-WZ-P6e" id="gwp-ff-42z"/>
+                        <outlet property="usernameField" destination="Ams-jC-us5" id="mOX-z6-gJj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="swy-l4-VPT" userLabel="First Responder" sceneMemberID="firstResponder"/>

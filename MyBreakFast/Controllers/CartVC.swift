@@ -59,7 +59,7 @@ class CartVC: UIViewController {
             self.collectionView.reloadSections(NSIndexSet(index: 0))
         }
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "PaymentFinished:", name: "PaymentFinished", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CartVC.PaymentFinished(_:)), name: "PaymentFinished", object: nil)
     }
     
     deinit{
@@ -124,7 +124,7 @@ class CartVC: UIViewController {
                 Helper.sharedInstance.hideActivity()
                 if let orderResDict = response.objectForKey("update_order_response") {
                     let orderResDataDict = orderResDict.objectForKey("data");
-                    if orderResDict.objectForKey("status") == 0 || orderResDict.objectForKey("status") == "0"{
+                    if orderResDict.objectForKey("status") as? NSNumber == 0 || orderResDict.objectForKey("status") as? String == "0"{
                         if let orderResDataDetails = orderResDataDict!.objectForKey("details") as? NSArray{
                             if orderResDataDetails.count>0 {
                                 let dict = orderResDataDetails[0]

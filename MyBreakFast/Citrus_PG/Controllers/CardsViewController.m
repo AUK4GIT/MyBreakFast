@@ -504,7 +504,7 @@
                     
                     NSDictionary *transactionInfo = [[NSDictionary alloc] initWithObjects:@[[citrusCashResponse.responseDict valueForKey:@"TxId"], [citrusCashResponse.responseDict valueForKey:@"TxRefNo"], [citrusCashResponse.responseDict valueForKey:@"amount"], [citrusCashResponse.responseDict valueForKey:@"TxStatus"], [citrusCashResponse.responseDict valueForKey:@"pgTxnNo"], [citrusCashResponse.responseDict valueForKey:@"issuerRefNo"], [citrusCashResponse.responseDict valueForKey:@"paymentMode"]] forKeys:@[@"TransactionId", @"TxRefNo", @"Value", @"TransactionStatus", @"PgTxnNo", @"IssuerRefNo", @"PaymentMode"]];
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        [[NSNotificationCenter defaultCenter] postNotificationName:@"PaymentFinished" object:transactionInfo];
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"PaymentFinished" object:nil userInfo:transactionInfo];
                     });
                 }
             }];
