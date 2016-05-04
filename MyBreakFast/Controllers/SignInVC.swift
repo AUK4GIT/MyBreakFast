@@ -16,7 +16,7 @@ class SignInVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let appDelegate: AppDelegate =  UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.performSelector("loadMainView", withObject: nil, afterDelay: 2.0)
+        appDelegate.performSelector(#selector(AppDelegate.loadMainView), withObject: nil, afterDelay: 2.0)
     }
     
     

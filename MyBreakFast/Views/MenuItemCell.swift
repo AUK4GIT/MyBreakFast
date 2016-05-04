@@ -52,12 +52,12 @@ class MenuItemCell: UICollectionViewCell {
         if self.quantity == 0{
             return
         } else {
-            --self.quantity;
+            self.quantity -= 1;
         }
         self.orderItem?.quantity = String(self.quantity);
         self.orderItem?.itemPrice = String(self.quantity * Int((self.item?.price)!)!)
         self.quantityLabel.text = String(self.quantity)
-        sender.sendAction("updateToolbar", to: nil, forEvent: nil)
+        sender.sendAction(#selector(MenuVC.updateToolbar), to: nil, forEvent: nil)
     }
     
     @IBAction func increaseAction(sender: UIButton) {
@@ -66,12 +66,12 @@ class MenuItemCell: UICollectionViewCell {
             UIAlertView(title: "First Eat", message: "Maximum order limit reached for the item.", delegate: nil, cancelButtonTitle: "OK").show()
             return
         } else {
-            ++self.quantity;
+            self.quantity += 1;
         }
         self.orderItem?.quantity = String(self.quantity);
         self.orderItem?.itemPrice = String(self.quantity * Int((self.item?.price)!)!)
         self.quantityLabel.text = String(self.quantity)
-        sender.sendAction("updateToolbar", to: nil, forEvent: nil)
+        sender.sendAction(#selector(MenuVC.updateToolbar), to: nil, forEvent: nil)
 
     }
     

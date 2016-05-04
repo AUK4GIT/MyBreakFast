@@ -42,7 +42,7 @@ class Yourdetails: UICollectionViewCell {
     
     
     @IBAction func addorChangeAddress(sender: UIButton) {
-        sender.sendAction("showAddAddressVC", to: nil, forEvent: nil)
+        sender.sendAction(#selector(UserOrderDetails.showAddAddressVC), to: nil, forEvent: nil)
     }
     
 }

@@ -91,7 +91,7 @@ class AddAddressCell: UICollectionViewCell {
                         Helper.sharedInstance.saveContext()
 
                     }
-                    UIApplication.sharedApplication().sendAction("dismissViewAfterAddingAddress", to: nil, from: self, forEvent: nil);
+                    UIApplication.sharedApplication().sendAction(#selector(AddAddressVC.dismissViewAfterAddingAddress), to: nil, from: self, forEvent: nil);
                 }
             }
             self.activity?.stopAnimating()

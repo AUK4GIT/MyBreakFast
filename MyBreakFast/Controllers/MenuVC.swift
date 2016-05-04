@@ -60,7 +60,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         self.collectionView.setCollectionViewLayout(collectionViewLayoutVertical, animated: true)
         self.collectionView.registerNib(UINib.init(nibName: "MenuItemCell", bundle: NSBundle.mainBundle()), forCellWithReuseIdentifier: "item")
         
-        self.performSelector("fetchMenuData", withObject: nil, afterDelay: 1.0)
+        self.performSelector(#selector(MenuVC.fetchMenuData), withObject: nil, afterDelay: 1.0)
         
         let dtFormat = NSDateFormatter()
         dtFormat.dateFormat = "EEEE dd, MMM"
@@ -74,10 +74,10 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
                 let locationObj = locations[0] as? Locations
                 Helper.sharedInstance.userLocation = locationObj?.locationName;
             } else {
-                self.performSelector("showDeliveryLocationPopUp", withObject: nil, afterDelay: 1.0);
+                self.performSelector(#selector(MenuVC.showDeliveryLocationPopUp), withObject: nil, afterDelay: 1.0);
             }
         } else {
-            self.performSelector("showDeliveryLocationPopUp", withObject: nil, afterDelay: 1.0);
+            self.performSelector(#selector(MenuVC.showDeliveryLocationPopUp), withObject: nil, afterDelay: 1.0);
         }
     }
     
@@ -285,7 +285,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
             fadeTextAnimation.type = kCATransitionFade;
             
             parentVC.containerNavigationItem.leftBarButtonItem?.image = UIImage(named: "menu_icon.png");
-            parentVC.containerNavigationItem.leftBarButtonItem?.action = "toggleSideView";
+            parentVC.containerNavigationItem.leftBarButtonItem?.action = #selector(ViewController.toggleSideView);
             parentVC.containerNavigationItem.leftBarButtonItem?.target = parentVC;
             parentVC.containerNavigationBar.layer.addAnimation(fadeTextAnimation, forKey: "fadeText");
         } else {
@@ -324,7 +324,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         searchcustomView.addSubview(searchButton);
         parentVC.containerNavigationItem.title = nil;
         parentVC.containerNavigationItem.titleView = searchcustomView//self.titleView
-        searchButton.addTarget(self, action: "showLocationPicker:", forControlEvents: UIControlEvents.TouchUpInside);
+        searchButton.addTarget(self, action: #selector(MenuVC.showLocationPicker(_:)), forControlEvents: UIControlEvents.TouchUpInside);
         
         let filterButton: UIButton = UIButton(type: .Custom);
         filterButton.frame = CGRectMake(8, 2, 32, 32);
@@ -339,7 +339,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         customView.backgroundColor = UIColor.clearColor()
         customView.addSubview(filterButton)
 //        customView.addSubview(cartButton)
-        filterButton.addTarget(self, action: "filterClicked:", forControlEvents: UIControlEvents.TouchUpInside)
+        filterButton.addTarget(self, action: #selector(MenuVC.filterClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
 //        cartButton.addTarget(self, action: "cartClicked:", forControlEvents: UIControlEvents.TouchUpInside)
 //        self.cartButtonIcon = cartButton
         let useItem: UIBarButtonItem = UIBarButtonItem(customView: customView);
@@ -399,7 +399,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: MenuItemCell = (collectionView.dequeueReusableCellWithReuseIdentifier("item", forIndexPath: indexPath) as? MenuItemCell)!
-        let item : Item = self.itemsArray[indexPath.item] as! Item
+        let item : Item = self.itemsArray[indexPath.item]
         cell.item = item;
         cell.orderItem = Helper.sharedInstance.order?.orders[indexPath.row] 
         cell.setItemContent();

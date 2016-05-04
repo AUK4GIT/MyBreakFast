@@ -131,15 +131,15 @@ class ViewController: UIViewController, Slidemenuprotocol, UIGestureRecognizerDe
         UISearchBar.appearance().setImage(UIImage(named: "arrow-down.png"), forSearchBarIcon: UISearchBarIcon.Search, state: .Normal)
 
         
-        self.containerNavigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "menu_icon.png"), style: UIBarButtonItemStyle.Plain, target: self, action: "toggleSideView");
+        self.containerNavigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "menu_icon.png"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(ViewController.toggleSideView));
 //        self.initNavigationItemTitleView();
 
         
-        leftSwipeGesture = UISwipeGestureRecognizer(target: self, action: "swipeOnScreen:")
+        leftSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeOnScreen(_:)))
         leftSwipeGesture.direction = UISwipeGestureRecognizerDirection.Left;
         self.view.addGestureRecognizer(leftSwipeGesture)
         
-        rightSwipeGesture = UISwipeGestureRecognizer(target: self, action: "swipeOnScreen:")
+        rightSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeOnScreen(_:)))
         rightSwipeGesture.direction = UISwipeGestureRecognizerDirection.Right;
         self.view.addGestureRecognizer(rightSwipeGesture)
         
@@ -290,7 +290,7 @@ class ViewController: UIViewController, Slidemenuprotocol, UIGestureRecognizerDe
         self.toggleSideView()
         self.cycleFromViewController(nil, toViewController: vc);
         self.containerNavigationItem.leftBarButtonItem?.image = UIImage(named: "menu_icon.png");
-        self.containerNavigationItem.leftBarButtonItem?.action = "toggleSideView";
+        self.containerNavigationItem.leftBarButtonItem?.action = #selector(ViewController.toggleSideView);
     }
     
     // MARK: transition method

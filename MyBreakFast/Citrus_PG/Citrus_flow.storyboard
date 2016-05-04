@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="La5-kG-5yc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="La5-kG-5yc">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -298,9 +298,9 @@
                         <outlet property="indicatorView" destination="e0J-xm-hDe" id="tgC-Pz-7fj"/>
                         <outlet property="pickerView" destination="XTn-cD-mOh" id="n4M-ob-QFl"/>
                         <outlet property="transparentViewView" destination="Syj-Pg-sRN" id="x7n-x6-OSG"/>
-                        <segue destination="Onm-Gk-2qs" kind="push" identifier="CardViewIdentifier" id="oyr-Es-l8U"/>
-                        <segue destination="g3r-MB-6BO" kind="push" identifier="ManageCardIdentifier" id="eNP-NX-6XS"/>
-                        <segue destination="4Dh-Kj-ydA" kind="push" identifier="SettingViewIdentifier" id="c2r-ho-XkZ"/>
+                        <segue destination="Onm-Gk-2qs" kind="show" identifier="CardViewIdentifier" id="oyr-Es-l8U"/>
+                        <segue destination="g3r-MB-6BO" kind="show" identifier="ManageCardIdentifier" id="eNP-NX-6XS"/>
+                        <segue destination="4Dh-Kj-ydA" kind="show" identifier="SettingViewIdentifier" id="c2r-ho-XkZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vNV-YC-hsi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -852,7 +852,7 @@
                         <outlet property="mobileTextField" destination="b6E-gz-9dl" id="jJt-cR-efk"/>
                         <outlet property="signupButton" destination="f4a-Gl-kz9" id="uCH-a3-74o"/>
                         <outlet property="userNameTextField" destination="g82-9A-rKR" id="Z4G-ck-J6w"/>
-                        <segue destination="B32-2r-IDD" kind="push" identifier="SignInScreenIdentifier" id="pcX-Kv-hAz"/>
+                        <segue destination="B32-2r-IDD" kind="show" identifier="SignInScreenIdentifier" id="pcX-Kv-hAz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0gE-eb-aWo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1064,7 +1064,7 @@
                         <outlet property="passwordView" destination="4fw-Xa-PWg" id="Pbs-vr-TQM"/>
                         <outlet property="signinButton" destination="mBj-mP-qaq" id="bLv-EG-iy7"/>
                         <outlet property="userNameTextField" destination="Ov4-xb-FQY" id="ucT-ug-gbn"/>
-                        <segue destination="Zgu-Pe-ahK" kind="push" identifier="HomeScreenIdentifier" id="1e3-Ki-IOI"/>
+                        <segue destination="Zgu-Pe-ahK" kind="show" identifier="HomeScreenIdentifier" id="1e3-Ki-IOI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qi2-kG-Lwb" sceneMemberID="firstResponder"/>
@@ -1150,8 +1150,8 @@
                         <outlet property="signupOptionOneButton" destination="Al2-VB-oAO" id="zYq-5s-QLZ"/>
                         <outlet property="signupOptionThreeButton" destination="hDE-Qa-UmP" id="EVJ-Lp-uTn"/>
                         <outlet property="signupOptionTwoButton" destination="3B5-P9-Qn2" id="hpf-aF-4S6"/>
-                        <segue destination="571-om-B4q" kind="push" identifier="InitialViewIdentifier" id="ung-ph-lfR"/>
-                        <segue destination="Zgu-Pe-ahK" kind="push" identifier="HomeScreenIdentifier" id="Elx-bP-Tuu"/>
+                        <segue destination="571-om-B4q" kind="show" identifier="InitialViewIdentifier" id="ung-ph-lfR"/>
+                        <segue destination="Zgu-Pe-ahK" kind="show" identifier="HomeScreenIdentifier" id="Elx-bP-Tuu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MOT-nT-oIL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1257,6 +1257,6 @@
         <image name="Wallet" width="62" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Elx-bP-Tuu"/>
+        <segue reference="1e3-Ki-IOI"/>
     </inferredMetricsTieBreakers>
 </document>

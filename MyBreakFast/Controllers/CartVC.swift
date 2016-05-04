@@ -29,7 +29,7 @@ class CartVC: UIViewController {
             if let parentVC = self.parentViewController as? ViewController {
                 parentVC.containerNavigationItem.leftBarButtonItem?.image = UIImage(named: "menu_icon.png");
                 parentVC.containerNavigationItem.leftBarButtonItem?.image = UIImage(named: "back.png");
-                parentVC.containerNavigationItem.leftBarButtonItem?.action = "backToMenu";
+                parentVC.containerNavigationItem.leftBarButtonItem?.action = #selector(ViewController.backToMenu);
                 parentVC.containerNavigationBar.layer.addAnimation(fadeTextAnimation, forKey: "fadeText");
                 parentVC.setNavBarTitle("CHECKOUT")
             } else {

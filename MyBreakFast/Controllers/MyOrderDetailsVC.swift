@@ -36,7 +36,7 @@ class MyOrderDetailsVC: UIViewController {
         doneButton.setTitle("Done", forState: .Normal)
         doneButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 17.0);
         doneButton.titleLabel?.adjustFontToRealIPhoneSize = true;
-        doneButton.addTarget(self, action: "dismissViewController", forControlEvents: .TouchUpInside)
+        doneButton.addTarget(self, action: #selector(MyOrderDetailsVC.dismissViewController), forControlEvents: .TouchUpInside)
         doneButton.titleEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0)
         
         self.navigationItem.title = "MyOrder";

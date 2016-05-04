@@ -98,7 +98,7 @@ class FeedBackVC: UIViewController, FloatRatingViewDelegate {
             let navC = UINavigationController(rootViewController: vc)
             self.presentViewController(navC, animated: true, completion: { () -> Void in
                 vc.toolbar?.hidden = true;
-                vc.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Save, target: vc, action: "saveData")
+                vc.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Save, target: vc, action: #selector(UserOrderDetails.saveData))
             })
             navC.view.backgroundColor = UIColor.whiteColor()
             
@@ -151,8 +151,8 @@ class FeedBackVC: UIViewController, FloatRatingViewDelegate {
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool
     {
         
-        NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: "validateandEnableSubmit", object: nil)
-        self.performSelector("validateandEnableSubmit", withObject: nil, afterDelay: 0.5)
+        NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: #selector(FeedBackVC.validateandEnableSubmit), object: nil)
+        self.performSelector(#selector(FeedBackVC.validateandEnableSubmit), withObject: nil, afterDelay: 0.5)
         
         //        if (range.location > 299) {
         //            return false

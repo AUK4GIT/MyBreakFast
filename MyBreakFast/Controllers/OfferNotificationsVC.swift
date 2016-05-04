@@ -22,7 +22,7 @@ class OfferNotificationsVC: UIViewController {
         doneButton.setTitle("Done", forState: .Normal)
         doneButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 18.0);
         doneButton.titleLabel?.adjustFontToRealIPhoneSize = true;
-        doneButton.addTarget(self, action: "dismissController:", forControlEvents: .TouchUpInside)
+        doneButton.addTarget(self, action: #selector(OfferNotificationsVC.dismissController(_:)), forControlEvents: .TouchUpInside)
         doneButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -20)
         
         self.navigationItem.title = "Offers";

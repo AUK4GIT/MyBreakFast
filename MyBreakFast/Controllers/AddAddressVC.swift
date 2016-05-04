@@ -21,7 +21,7 @@ class AddAddressVC: UIViewController, LocationPickerVCDelegate {
         doneButton.setTitle("Back", forState: .Normal)
         doneButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 18.0);
         doneButton.titleLabel?.adjustFontToRealIPhoneSize = true;
-        doneButton.addTarget(self, action: "dismissViewController", forControlEvents: .TouchUpInside)
+        doneButton.addTarget(self, action: #selector(AddAddressVC.dismissViewController), forControlEvents: .TouchUpInside)
         doneButton.titleEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0)
         
         self.navigationItem.title = "Add Address";

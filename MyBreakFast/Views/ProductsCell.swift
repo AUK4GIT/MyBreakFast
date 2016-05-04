@@ -36,12 +36,13 @@ class ProductsCell: UICollectionViewCell {
         if self.quantity == 0{
             return
         } else {
-            --self.quantity;
+            self.quantity -= 1;
         }
         self.orderItem?.quantity = String(self.quantity);
         self.orderItem?.itemPrice = String(self.quantity * Int((self.item?.price)!)!)
         self.quantityLabel.text = String(self.quantity)
-        sender.sendAction("updateCartToolbar", to: nil, forEvent: nil)
+        
+        sender.sendAction(#selector(UserOrderDetails.updateCartToolbar), to: nil, forEvent: nil)
     }
     
     @IBAction func increaseAction(sender: UIButton) {
@@ -51,12 +52,12 @@ class ProductsCell: UICollectionViewCell {
             UIAlertView(title: "First Eat", message: "Maximum order limit reached for the item.", delegate: nil, cancelButtonTitle: "OK").show()
             return
         } else {
-            ++self.quantity;
+            self.quantity += 1;
         }
         self.orderItem?.quantity = String(self.quantity);
         self.orderItem?.itemPrice = String(self.quantity * Int((self.item?.price)!)!)
         self.quantityLabel.text = String(self.quantity)
-        sender.sendAction("updateCartToolbar", to: nil, forEvent: nil)
+        sender.sendAction(#selector(UserOrderDetails.updateCartToolbar), to: nil, forEvent: nil)
     }
     
     func setItemContent() {
@@ -138,7 +139,8 @@ class ProductsCell: UICollectionViewCell {
             Helper.sharedInstance.order?.offers.append(self.offersArray[indexPath.row] )
         }
         
-        UIApplication.sharedApplication().sendAction("updateCartToolbar", to: nil, from: self, forEvent: nil);
+        
+        UIApplication.sharedApplication().sendAction(#selector(UserOrderDetails.updateCartToolbar), to: nil, from: self, forEvent: nil);
         
     }
     

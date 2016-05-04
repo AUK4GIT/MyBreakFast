@@ -59,8 +59,7 @@ class RedeemCell: UICollectionViewCell {
                 let messg = "Points redeemed: "+redeemPoi+" discount: ₹ "+String(totalRedeemValue)+" balance points: 0"
                 UIAlertView(title: "First Eat", message: messg, delegate: nil, cancelButtonTitle: "OK").show()
                 
-                UIApplication.sharedApplication().sendAction("updateCartWithTotalAmountPayableWithDiscount:", to: nil, from: self, forEvent: nil)
-
+                UIApplication.sharedApplication().sendAction(#selector(CartVC.updateCartWithTotalAmountPayableWithDiscount(_:)), to: nil, from: self, forEvent: nil)
 
             } else {
 //                Helper.sharedInstance.order?.totalAmountPayable = "0"
@@ -75,8 +74,7 @@ class RedeemCell: UICollectionViewCell {
                 let messg = "Points redeemed: "+pointstoredeem+" discount: ₹ "+String(discount)+" balance points: "+String(balancePoints)
                 UIAlertView(title: "First Eat", message: messg, delegate: nil, cancelButtonTitle: "OK").show()
                 
-                UIApplication.sharedApplication().sendAction("updateCartWithTotalAmountPayableWithDiscount:", to: nil, from: self, forEvent: nil)
-
+                UIApplication.sharedApplication().sendAction(#selector(CartVC.updateCartWithTotalAmountPayableWithDiscount(_:)), to: nil, from: self, forEvent: nil)
 
             }
            

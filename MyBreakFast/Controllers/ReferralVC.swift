@@ -184,8 +184,9 @@ class ReferralVC: UIViewController {
         }
     }
     
-    func textToImage(drawText: NSString, var inImage: UIImage, atPoint:CGPoint)->UIImage{
+    func textToImage(drawText: NSString, inImage: UIImage, atPoint:CGPoint)->UIImage{
         
+        var inImg = inImage
         // Setup the font specific variables
         let textColor: UIColor = UIColor.darkGrayColor()
         let textFont: UIFont = UIFont(name: "HelveticaNeue-Bold", size: 14)!
@@ -199,11 +200,11 @@ class ReferralVC: UIViewController {
             NSForegroundColorAttributeName: textColor,
         ]
         
-//        if inImage == nil {
-            inImage = UIImage()
+//        if inImg == nil {
+            inImg = UIImage()
 //        }
         //Put the image into a rectangle as large as the original image.
-        inImage.drawInRect(CGRectMake(0, 0, 300, 60))
+        inImg.drawInRect(CGRectMake(0, 0, 300, 60))
         
         // Creating a point within the space that is as bit as the image.
         let rect: CGRect = CGRectMake(5, 5, 290, 50)

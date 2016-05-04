@@ -32,7 +32,7 @@ class OrderStatusVC: UIViewController {
             
             let parentVC: ViewController = self.parentViewController as! ViewController
             parentVC.containerNavigationItem.leftBarButtonItem?.image = UIImage(named: "back.png");
-            parentVC.containerNavigationItem.leftBarButtonItem?.action = "backToMenu";
+            parentVC.containerNavigationItem.leftBarButtonItem?.action = #selector(ViewController.backToMenu);
             parentVC.setNavBarTitle("Order status")
             parentVC.containerNavigationBar.layer.addAnimation(fadeTextAnimation, forKey: "fadeText");
         }

@@ -63,7 +63,7 @@ class Deliverytime: UICollectionViewCell {
                     }
                 }
                 self.collectionView.reloadData()
-                self.performSelector("showCurrentSlot", withObject: nil, afterDelay: 1.0);
+                self.performSelector(#selector(Deliverytime.showCurrentSlot), withObject: nil, afterDelay: 1.0);
             }
             self.activity?.stopAnimating()
 
@@ -87,11 +87,9 @@ class Deliverytime: UICollectionViewCell {
                 
                 timeFormtter.dateFormat = "hh:mm a"
                 timeFormtter1.dateFormat = "hh:mm a"
-                if let timeStr = timeFormtter1.stringFromDate(currentTime) as? String {
-                    currentTime = timeFormtter.dateFromString(timeStr)!
-                } else {
                 
-                }
+                let timeStr = timeFormtter1.stringFromDate(currentTime)
+                currentTime = timeFormtter.dateFromString(timeStr)!
                 
                 if Helper.sharedInstance.currenttimeSlot != "" {
                     timeFormtter1.dateFormat = "HH:mm:ss"

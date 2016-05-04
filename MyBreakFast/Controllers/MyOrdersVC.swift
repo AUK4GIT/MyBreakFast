@@ -76,7 +76,7 @@ class MyOrdersVC: UIViewController {
             
         } else {
             
-            if check > 0{return; } else{ check++;}
+            if check > 0{return; } else{ check += 1;}
             
             Helper.sharedInstance.getMyOrders() { (response) -> () in
                 

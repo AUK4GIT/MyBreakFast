@@ -40,7 +40,7 @@ import UIKit
                 button.selected = false;
             }
             sender.selected = true;
-            sender.addTarget(nil, action: "segmentAction:", forControlEvents: UIControlEvents.TouchUpInside);
+            sender.addTarget(nil, action: #selector(MenuVC.segmentAction(_:)), forControlEvents: UIControlEvents.TouchUpInside);
         }
     }
     

@@ -118,8 +118,10 @@ class CouponCodeCell: UICollectionViewCell {
                     }
                     coupon.actualDiscount = (Helper.sharedInstance.order?.discount)!
                     Helper.sharedInstance.order?.totalAmountPayable = String(totalAmtPay)
-                 
-                    UIApplication.sharedApplication().sendAction("updateCartWithTotalAmountPayableWithDiscount:", to: nil, from: self, forEvent: nil)
+                    
+
+                    UIApplication.sharedApplication().sendAction(#selector(CartVC.updateCartWithTotalAmountPayableWithDiscount(_:)), to: nil, from: self, forEvent: nil)
+                    
                     let messg = "Coupon "+couponName!+" applied. "+"discount value: "+discountValue!
                     UIAlertView(title: "First Eat", message: messg, delegate: nil, cancelButtonTitle: "OK").show()
                 } else {
@@ -150,7 +152,7 @@ class CouponCodeCell: UICollectionViewCell {
 
                     Helper.sharedInstance.order?.totalAmountPayable = String(totalAmtPay)
                   
-                    UIApplication.sharedApplication().sendAction("updateCartWithTotalAmountPayableWithDiscount:", to: nil, from: self, forEvent: nil)
+                    UIApplication.sharedApplication().sendAction(#selector(CartVC.updateCartWithTotalAmountPayableWithDiscount(_:)), to: nil, from: self, forEvent: nil)
 
                     let messg = "Coupon "+couponName!+" applied. "+"discount value: "+String(discount)
                     UIAlertView(title: "First Eat", message: messg, delegate: nil, cancelButtonTitle: "OK").show()

@@ -41,7 +41,7 @@ import Reachability
         // Here we set up a NSNotification observer. The Reachability that caused the notification
         // is passed in the object parameter
         NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "reachabilityChanged:",
+            selector: #selector(Helper.reachabilityChanged(_:)),
             name: kReachabilityChangedNotification,
             object: nil)
         
@@ -489,8 +489,8 @@ import Reachability
         var emailId = "";
         if items?.count>0{
             let userDetails = items![0] as! UserDetails
-            emailId = userDetails.emailId!;
-            print(" userDetails.emailId!: ",userDetails.emailId!);
+            emailId = userDetails.emailId ?? "";
+            print(" userDetails.emailId!: ",emailId);
         }
         return emailId;
     }
