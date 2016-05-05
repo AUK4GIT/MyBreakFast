@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
     
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
+            
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
         let font = UIFont(name: "HelveticaNeue-Light", size: 18)
         if let font = font {
@@ -85,13 +85,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
             // Handle the received message
             // Invoke the completion handler passing the appropriate UIBackgroundFetchResult value
             // ...
+        if let messageDict =  userInfo["aps"] as? NSDictionary {
+            if let message =  messageDict["alert"] as? String {
+                let notifPrompt = UIAlertController(title: "First Eat", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                notifPrompt.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self.window?.rootViewController?.presentViewController(notifPrompt, animated: true, completion: nil);
+            }
+        }
     }
     
     func application( application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken
         deviceToken: NSData ) {
         
 //        #if DEBUG
-        /*
+        
         let tokenChars = UnsafePointer<CChar>(deviceToken.bytes)
         var tokenString = ""
         
@@ -100,7 +107,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         }
         
         print("Device Token:", tokenString)
- */
+ 
 //        #endif
         
             let instanceIDConfig = GGLInstanceIDConfig.defaultConfig()

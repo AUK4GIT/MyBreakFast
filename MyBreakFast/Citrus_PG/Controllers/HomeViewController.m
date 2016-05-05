@@ -34,12 +34,13 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelAction:)];
     
     [self initialSetting];
+    [self getBalance:nil];
     
-    if ([Helper sharedInstance].order.modeOfPayment == PaymentTypeCITRUS) {
-        [self performSelector:@selector(payFromWallet) withObject:nil afterDelay:1.0];
-    } else {
-        [self payMoney:nil];
-    }
+//    if ([Helper sharedInstance].order.modeOfPayment == PaymentTypeCITRUS) {
+//        [self performSelector:@selector(payFromWallet) withObject:nil afterDelay:1.0];
+//    } else {
+//        [self payMoney:nil];
+//    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,7 +54,6 @@
     [self resetUI];
     self.transparentViewView.frame = CGRectMake(0, self.view.bounds.size.height, self.view.bounds.size.width, self.view.bounds.size.height);
     frame = self.transparentViewView.frame;
-    [self getBalance:nil];
 }
 
 - (void) viewWillDisappear:(BOOL)animated{
@@ -146,6 +146,19 @@
         else{
             dispatch_async(dispatch_get_main_queue(), ^{
             self.amountLabel.text = [NSString stringWithFormat:@"%@ %@",amount.currency,amount.value];
+                
+                int totalPayableAmount = [Helper sharedInstance].order.totalAmountPayable.intValue;
+                
+                if ([Helper sharedInstance].order.modeOfPayment == PaymentTypeCITRUS) {
+                    if (totalPayableAmount > amount.value.intValue) {
+                        [self loadMoney:nil];
+                    } else {
+                        [self performSelector:@selector(payFromWallet) withObject:nil afterDelay:0.7];
+                    }
+                } else {
+                    [self payMoney:nil];
+                }
+                
             });
 //            [UIUtility toastMessageOnScreen:[NSString stringWithFormat:@"Balance is %@ %@",amount.value,amount.currency]];
         }
@@ -198,7 +211,7 @@
     option = 0;
     dispatch_async(dispatch_get_main_queue(), ^{
         
-        alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Please enter amount." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok" , nil];
+        alert = [[UIAlertView alloc] initWithTitle:@"Load Money" message:@"Please enter amount." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok" , nil];
         alert.tag = 1006;
         alert.alertViewStyle = UIAlertViewStylePlainTextInput;
         UITextField * alertTextField = [alert textFieldAtIndex:0];
@@ -398,8 +411,13 @@
                                     }
                                     else{
                                         LogTrace(@" isAnyoneSignedIn %d",[authLayer isLoggedIn]);
-                                        [UIUtility toastMessageOnScreen:[NSString stringWithFormat:@"TxnStatus: %@",[paymentInfo.responseDict valueForKey:@"TxStatus"]]];
-                                        [self getBalance:nil];
+                                        [UIUtility toastMessageOnScreen:[NSString stringWithFormat:@"Payment Status: %@",[paymentInfo.responseDict valueForKey:@"TxStatus"]]];
+                                        NSDictionary *transactionInfo = [[NSDictionary alloc] initWithObjects:@[[paymentInfo.responseDict valueForKey:@"TxId"], [paymentInfo.responseDict valueForKey:@"TxRefNo"], [paymentInfo.responseDict valueForKey:@"amount"], [paymentInfo.responseDict valueForKey:@"TxStatus"], [paymentInfo.responseDict valueForKey:@"pgTxnNo"], [paymentInfo.responseDict valueForKey:@"issuerRefNo"], [paymentInfo.responseDict valueForKey:@"paymentMode"]] forKeys:@[@"TransactionId", @"TxRefNo", @"Value", @"TransactionStatus", @"PgTxnNo", @"IssuerRefNo", @"PaymentMode"]];
+                                        dispatch_async(dispatch_get_main_queue(), ^{
+                                            [[NSNotificationCenter defaultCenter] postNotificationName:@"PaymentFinished" object:nil userInfo:transactionInfo];
+                                        });
+                                        
+//                                        [self getBalance:nil];
                                     }
                                 }];
                             }
@@ -515,10 +533,10 @@
         ((UILabel *) [cell.contentView viewWithTag:500]).text = @"Pay Using Citrus Cash";
     }
     else if (indexPath.row==1) {
-        ((UILabel *) [cell.contentView viewWithTag:500]).text = @"PG Payment";
+        ((UILabel *) [cell.contentView viewWithTag:500]).text = @"Load Money";
     }
     else if (indexPath.row==2) {
-        ((UILabel *) [cell.contentView viewWithTag:500]).text = @"Manage Cards";
+        ((UILabel *) [cell.contentView viewWithTag:500]).text = @"PG Payment";
     }
     
     /*
@@ -563,10 +581,10 @@
         [self payUsingCitrusCash:nil];
     }
     else if (indexPath.row==1) {
-        [self payMoney:nil];
+        [self loadMoney:nil];
     }
     else if (indexPath.row==2) {
-        [self performSegueWithIdentifier:@"ManageCardIdentifier" sender:nil];
+        [self payMoney:nil];
     }
 
     /*
@@ -684,8 +702,7 @@
             
         }
         else
-//            viewController.amount = ((UITextField *)[alert textFieldAtIndex:0]).text; //Passing the amount to Card payment screen
-            viewController.amount = @"2";//[Helper sharedInstance].order.totalAmountPayable; //Passing the amount to Card payment screen
+            viewController.amount = [Helper sharedInstance].order.totalAmountPayable; //Passing the amount to Card payment screen
 
     }
     else if ([segue.identifier isEqualToString:@"SettingViewIdentifier"]){
@@ -822,8 +839,12 @@
                             }
                             else{
                                 LogTrace(@" isAnyoneSignedIn %d",[authLayer isLoggedIn]);
-                                [UIUtility toastMessageOnScreen:[NSString stringWithFormat:@"TxnStatus: %@",[paymentInfo.responseDict valueForKey:@"TxStatus"]]];
-                                [self getBalance:nil];
+                                [UIUtility toastMessageOnScreen:[NSString stringWithFormat:@"Payment Status: %@",[paymentInfo.responseDict valueForKey:@"TxStatus"]]];
+                                NSDictionary *transactionInfo = [[NSDictionary alloc] initWithObjects:@[[paymentInfo.responseDict valueForKey:@"TxId"], [paymentInfo.responseDict valueForKey:@"TxRefNo"], [paymentInfo.responseDict valueForKey:@"amount"], [paymentInfo.responseDict valueForKey:@"TxStatus"], [paymentInfo.responseDict valueForKey:@"pgTxnNo"], [paymentInfo.responseDict valueForKey:@"issuerRefNo"], [paymentInfo.responseDict valueForKey:@"paymentMode"]] forKeys:@[@"TransactionId", @"TxRefNo", @"Value", @"TransactionStatus", @"PgTxnNo", @"IssuerRefNo", @"PaymentMode"]];
+                                dispatch_async(dispatch_get_main_queue(), ^{
+                                    [[NSNotificationCenter defaultCenter] postNotificationName:@"PaymentFinished" object:nil userInfo:transactionInfo];
+                                });
+//                                [self getBalance:nil];
                             }
                         }];
                     }

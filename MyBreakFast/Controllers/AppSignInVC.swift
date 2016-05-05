@@ -157,7 +157,7 @@ class AppSignInVC: UIViewController {
                     if status == "1" {
                         self.fetchUserDetails();
                     } else {
-                        let warning = UIAlertController(title: "First Eat", message: "OTP doesnot match. retry or relogin.", preferredStyle: UIAlertControllerStyle.Alert)
+                        let warning = UIAlertController(title: "First Eat", message: "Please enter the correct OTP.", preferredStyle: UIAlertControllerStyle.Alert)
                         warning.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
                             self.verifyOTPWithUserId((self.userObj?.userId!)!);
                         }))
@@ -172,7 +172,7 @@ class AppSignInVC: UIViewController {
                             
                         });
                     } else {
-                        let warning = UIAlertController(title: "First Eat", message: "OTP doesnot match. retry or relogin.", preferredStyle: UIAlertControllerStyle.Alert)
+                        let warning = UIAlertController(title: "First Eat", message: "Please enter the correct OTP", preferredStyle: UIAlertControllerStyle.Alert)
                         warning.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
                             self.verifyOTPWithUserId((self.userObj?.userId!)!);
                         }))
@@ -278,9 +278,7 @@ class AppSignInVC: UIViewController {
         }
     }
     func presentRegistrationScreenAfterLoginFromFaceBook(){
-        
         //        RegistrationVC
-        
         let vc: RegistrationVC = (self.storyboard?.instantiateViewControllerWithIdentifier("RegistrationVC")) as! RegistrationVC
         self.presentViewController(vc, animated: true) { () -> Void in
             vc.setAfterFaceBookLoginSettings();
@@ -303,7 +301,7 @@ class AppSignInVC: UIViewController {
         }
         self.isEditing = true;
         UIView.animateWithDuration(0.3, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
-            self.topConstraint.constant -= 170;
+            self.topConstraint.constant -= 50;
             self.view.layoutIfNeeded()
             
             }, completion: nil)
@@ -315,20 +313,16 @@ class AppSignInVC: UIViewController {
         return true
     }
     
-    
     func textFieldDidEndEditing(textField: UITextField) {
         if self.isEditing == true {
             return;
         }
         UIView.animateWithDuration(0.3, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
-            self.topConstraint.constant += 170;
+            self.topConstraint.constant += 50;
             self.view.layoutIfNeeded()
             
             }) { (Bool) -> Void in
                 //                self.validateEmailId();
         }
     }
-
-
-    
 }

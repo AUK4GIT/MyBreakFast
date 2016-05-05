@@ -3070,7 +3070,7 @@
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baI-Be-88J">
-                                                <rect key="frame" x="212" y="151" width="84" height="29"/>
+                                                <rect key="frame" x="212" y="116" width="84" height="29"/>
                                                 <color key="backgroundColor" red="0.7843137255" green="0.019607843140000001" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="84" id="ZJe-ic-XRO"/>
@@ -3089,7 +3089,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDs-Cm-Gep">
-                                                <rect key="frame" x="86" y="150" width="118" height="30"/>
+                                                <rect key="frame" x="86" y="115" width="118" height="30"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <state key="normal" title="forgot password ?"/>
                                                 <connections>
@@ -3108,6 +3108,7 @@
                                             <constraint firstAttribute="trailing" secondItem="qdc-g0-Eat" secondAttribute="trailing" constant="8" id="RDv-0G-U6b"/>
                                             <constraint firstAttribute="trailing" secondItem="GiH-gP-Ich" secondAttribute="trailing" constant="8" id="bS1-CR-f8p"/>
                                             <constraint firstItem="baI-Be-88J" firstAttribute="leading" secondItem="WDs-Cm-Gep" secondAttribute="trailing" constant="8" id="cAZ-9l-VA7"/>
+                                            <constraint firstItem="baI-Be-88J" firstAttribute="top" secondItem="GiH-gP-Ich" secondAttribute="bottom" constant="20" id="eMo-Pa-a1o"/>
                                             <constraint firstAttribute="height" constant="180" id="jYa-UO-Epx"/>
                                             <constraint firstAttribute="trailing" secondItem="Xpc-iB-LaW" secondAttribute="trailing" constant="8" id="lNb-Mf-jZc"/>
                                             <constraint firstAttribute="trailing" secondItem="baI-Be-88J" secondAttribute="trailing" constant="8" id="pMZ-T9-sZD"/>
@@ -3116,6 +3117,11 @@
                                             <constraint firstItem="GiH-gP-Ich" firstAttribute="top" secondItem="qdc-g0-Eat" secondAttribute="bottom" constant="20" id="zVj-z0-MHc"/>
                                             <constraint firstItem="GiH-gP-Ich" firstAttribute="leading" secondItem="2Nt-Hp-Fgd" secondAttribute="leading" constant="8" id="zcj-it-gaH"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Kg8-kR-AOB"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riW-hl-d6t">
                                         <rect key="frame" x="153" y="349" width="13.5" height="17"/>
@@ -3343,7 +3349,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SJW-FA-lc1">
                                         <rect key="frame" x="8" y="159" width="304" height="260"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ams-jC-us5">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Please enter your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ams-jC-us5">
                                                 <rect key="frame" x="8" y="16" width="288" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" red="0.7843137255" green="0.019607843140000001" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -3356,7 +3362,7 @@
                                                     <outlet property="delegate" destination="oHE-06-4bd" id="sbF-YO-xp3"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v02-WZ-P6e">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Please enter your email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v02-WZ-P6e">
                                                 <rect key="frame" x="8" y="62" width="288" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" red="0.7843137255" green="0.019607843140000001" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>

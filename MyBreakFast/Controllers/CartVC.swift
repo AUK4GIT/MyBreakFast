@@ -68,7 +68,9 @@ class CartVC: UIViewController {
     
     func PaymentFinished(infoDict: AnyObject){
         self.dismissViewControllerAnimated(true) { () -> Void in
-            self.verifyPayment(infoDict as? NSNotification);
+            self.placeOrder({ 
+                self.verifyPayment(infoDict as? NSNotification);
+            })
         }
     }
     
@@ -112,7 +114,29 @@ class CartVC: UIViewController {
     
     @IBAction func showOrderStatus(sender: AnyObject) {
         
+        if Helper.sharedInstance.order!.modeOfPayment == PaymentType.COD {
+            self.placeOrder({ (response) in
+                let parentVC = self.parentViewController as! ViewController
+                let statusVC = (self.storyboard?.instantiateViewControllerWithIdentifier("OrderStatusVC")) as! OrderStatusVC
+                parentVC.cycleFromViewController(nil, toViewController: statusVC)
+                statusVC.setData(self.response as! NSDictionary);
+            })
+        } else if Helper.sharedInstance.order!.modeOfPayment == PaymentType.PAYTM{
+            /*
+             let storyboard: UIStoryboard = UIStoryboard(name: "Citrus_flow", bundle: nil);
+             let nvc: UIViewController = storyboard.instantiateInitialViewController()!
+             self.presentViewController(nvc, animated: true, completion: nil)
+             */
+        } else {
+            let storyboard: UIStoryboard = UIStoryboard(name: "Citrus_flow", bundle: nil);
+            let nvc: UIViewController = storyboard.instantiateInitialViewController()!
+            self.presentViewController(nvc, animated: true, completion: nil)
+        }
         
+    }
+    
+    func placeOrder(completionHandler: () -> ()){
+    
         let paymentStr = (Helper.sharedInstance.order!.modeOfPayment == PaymentType.COD) ? "COD" : "Online"
         Helper.sharedInstance.showActivity()
         
@@ -138,38 +162,20 @@ class CartVC: UIViewController {
                                 return;
                             }
                             self.response = response.objectForKey("update_order_response");
-                            if Helper.sharedInstance.order!.modeOfPayment == PaymentType.COD {
-                                let parentVC = self.parentViewController as! ViewController
-                                let statusVC = (self.storyboard?.instantiateViewControllerWithIdentifier("OrderStatusVC")) as! OrderStatusVC
-                                parentVC.cycleFromViewController(nil, toViewController: statusVC)
-                                statusVC.setData(self.response as! NSDictionary);
-                                
-                            } else if Helper.sharedInstance.order!.modeOfPayment == PaymentType.PAYTM{
-                                /*
-                                let storyboard: UIStoryboard = UIStoryboard(name: "Citrus_flow", bundle: nil);
-                                let nvc: UIViewController = storyboard.instantiateInitialViewController()!
-                                self.presentViewController(nvc, animated: true, completion: nil)
-                                */
-                                
-                            } else {
-                                let storyboard: UIStoryboard = UIStoryboard(name: "Citrus_flow", bundle: nil);
-                                let nvc: UIViewController = storyboard.instantiateInitialViewController()!
-                                self.presentViewController(nvc, animated: true, completion: nil)
-                                
-                            }
-                            
+                            completionHandler();
                         }
                     }
                 }
             }
         })
+
     }
     
     // MARK: UICollectionView delegates and datasources
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let width: CGFloat = ((UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone) ? collectionView.bounds.size.width : 600.0);
         var height: CGFloat = (UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone) ? 75.0 : 100.0;
-        height = indexPath.section == 4 ? 200.0: height;
+        height = indexPath.section == 3 ? 200.0: height;
         print("indexPath.row: %@ --> %@",indexPath.section, height);
         return CGSizeMake(width, height);
     }
@@ -234,12 +240,14 @@ class CartVC: UIViewController {
             
             break;
         case 3 :
-            cell = collectionView.dequeueReusableCellWithReuseIdentifier("change", forIndexPath: indexPath)
+            
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("paymentmethod", forIndexPath: indexPath)
             
             break;
         case 4 :
-            cell = collectionView.dequeueReusableCellWithReuseIdentifier("paymentmethod", forIndexPath: indexPath)
             
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("change", forIndexPath: indexPath)
+
             break;
         default:
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("change", forIndexPath: indexPath)

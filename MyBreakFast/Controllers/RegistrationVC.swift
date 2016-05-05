@@ -28,24 +28,16 @@ class RegistrationVC: UIViewController {
 //        self.loginButton.layer.cornerRadius = 12.0;
         self.userObj = Helper.sharedInstance.getUserDetailsObj() as? UserDetails
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.nopasswordConstraint.constant = -30;
+        self.view.layoutIfNeeded()
+    }
+    
     @IBAction func dismissViewController(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
-//    func setAfterLoginSettings(emailid: String, password: String){
-//        self.emailField.text = emailid;
-//        self.newPasswordField.text = password;
-//        self.confirmPasswordField.text = password;
-//        
-//        self.emailField.enabled = false;
-//        self.newPasswordField.enabled = false;
-//        self.confirmPasswordField.enabled = false;
-//        
-////        UIAlertView(title: "Registration", message: "Please enter Username and Phone number.", delegate: nil, cancelButtonTitle: "OK").show()
-//        
-//        UIAlertView(title: "Registration", message: "Please enter Username and Email address.", delegate: nil, cancelButtonTitle: "OK").show()
-//
-//    }
     
     func setAfterLoginSettings(phoneNumber: String, password: String){
         self.emailField.text = "";
@@ -104,25 +96,9 @@ class RegistrationVC: UIViewController {
                     UIAlertView(title: "Registration Unsuccessful!", message: "Please try again.", delegate: nil, cancelButtonTitle: "OK").show()
                     
                 } else {
-//                    Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserRegistration, value: true)
-//                    Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserLoginStatus, value: true)
                     self.verifyOTPWithUserId("");
-//                    self.dismissViewControllerAnimated(true, completion: { () -> Void in
-//                    })
                 }
             })
-            
-//            Helper.sharedInstance.doUserRegistration(self.userObj!,password: self.newPasswordField.text!, referralId: referralText, completionHandler: { (response) -> () in
-//                let responseStatus = (response as? String) ?? ""
-//                if responseStatus == "ERROR" {
-//                    UIAlertView(title: "Registration Unsuccessful!", message: "Please try again.", delegate: nil, cancelButtonTitle: "OK").show()
-//
-//                } else {
-//                    Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserRegistration, value: true)
-//                    self.dismissViewControllerAnimated(true, completion: { () -> Void in
-//                    })
-//                }
-//            })
         }
     }
     
@@ -147,7 +123,7 @@ class RegistrationVC: UIViewController {
                             })
                         });
                     } else {
-                        let warning = UIAlertController(title: "First Eat", message: "OTP doesnot match/. retry or relogin.", preferredStyle: UIAlertControllerStyle.Alert)
+                        let warning = UIAlertController(title: "First Eat", message: "Please enter the correct OTP.", preferredStyle: UIAlertControllerStyle.Alert)
                         warning.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
                             self.verifyOTPWithUserId((self.userObj?.userId!)!);
                         }))
@@ -164,7 +140,7 @@ class RegistrationVC: UIViewController {
                             })
                         });
                     } else {
-                        let warning = UIAlertController(title: "First Eat", message: "OTP doesnot match. retry or relogin.", preferredStyle: UIAlertControllerStyle.Alert)
+                        let warning = UIAlertController(title: "First Eat", message: "Please enter the correct OTP.", preferredStyle: UIAlertControllerStyle.Alert)
                         warning.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
                             self.verifyOTPWithUserId((self.userObj?.userId!)!);
                         }))
