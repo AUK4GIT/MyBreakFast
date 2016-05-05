@@ -56,8 +56,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         
             FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         FBSDKProfile.enableUpdatesOnAccessTokenChange(true)
+        
         return true
     }
+    
     
     func loadMainView() {
     

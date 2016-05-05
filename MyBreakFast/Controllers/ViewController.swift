@@ -166,6 +166,21 @@ class ViewController: UIViewController, Slidemenuprotocol, UIGestureRecognizerDe
 //            }
         });
         
+        self.checkForAppUpdate();
+    }
+    
+    func checkForAppUpdate(){
+        
+        dispatch_async(dispatch_queue_create("backgroundQueue", nil)) {
+            if Helper.sharedInstance.appUpdateAvailable(nil) == true {
+                dispatch_async(dispatch_get_main_queue(), {
+                    let notifPrompt = UIAlertController(title: "First Eat", message: "An Update for the App is available at the appstore. Kindly update. ", preferredStyle: UIAlertControllerStyle.Alert)
+                    notifPrompt.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(notifPrompt, animated: true, completion: nil);
+                })
+            }
+        }
+        
     }
     
     override func viewDidAppear(animated: Bool) {

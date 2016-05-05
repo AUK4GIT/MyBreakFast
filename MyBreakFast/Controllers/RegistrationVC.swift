@@ -77,6 +77,8 @@ class RegistrationVC: UIViewController {
     @IBAction func registerAction(sender: AnyObject) {
         self.isEditing = false;
         self.view.endEditing(true)
+        self.confirmPasswordField.text = "firsteat";
+        self.newPasswordField.text = "firsteat";
         
         if validateAllFields() {
             self.userObj?.userName = self.usernameField.text;

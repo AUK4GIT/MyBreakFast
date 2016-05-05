@@ -107,6 +107,45 @@ import Reachability
         }
     }
     
+    func appUpdateAvailable(storeInfoURL: String?) -> Bool
+    {
+        let bundle = NSBundle.mainBundle()
+
+        let infoDictionary: NSDictionary = bundle.infoDictionary!;
+        let appID: String = infoDictionary["CFBundleIdentifier"] as! String;
+        let storeInfoURLString = "http://itunes.apple.com/lookup?bundleId="+appID
+        
+        var upgradeAvailable = false
+        
+        // Get the main bundle of the app so that we can determine the app's version number
+        if let infoDictionary = bundle.infoDictionary {
+            // The URL for this app on the iTunes store uses the Apple ID for the  This never changes, so it is a constant
+            let urlOnAppStore = NSURL(string: storeInfoURLString)
+            if let dataInJSON = NSData(contentsOfURL: urlOnAppStore!) {
+                // Try to deserialize the JSON that we got
+                if let lookupResults = try? NSJSONSerialization.JSONObjectWithData(dataInJSON, options: NSJSONReadingOptions()) {
+                    // Determine how many results we got. There should be exactly one, but will be zero if the URL was wrong
+                    if let resultCount = lookupResults["resultCount"] as? Int {
+                        if resultCount == 1 {
+                            // Get the version number of the version in the App Store
+                            if let appStoreVersion = lookupResults["results"]!![0]["version"] as? String {
+                                // Get the version number of the current version
+                                if let currentVersion = infoDictionary["CFBundleShortVersionString"] as? String {
+                                    // Check if they are the same. If not, an upgrade is available.
+                                    if appStoreVersion != currentVersion {
+                                        upgradeAvailable = true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        return upgradeAvailable
+    }
+    
     //MARK: DataBase methods
     
     func saveLocations(locations: AnyObject) {

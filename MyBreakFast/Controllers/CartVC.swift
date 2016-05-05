@@ -15,7 +15,7 @@ class CartVC: UIViewController {
     @IBOutlet var toolbar: UIToolbar!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var collectionViewLayout: UICollectionViewFlowLayout!
-    let sectionHeaders: [String] = ["TOTAL AMOUNT", "REEDEM POINTS", "COUPON CODE", "BRING ME CHANGE OF", "PAYMENT METHODS"];
+    let sectionHeaders: [String] = ["TOTAL AMOUNT", "REEDEM POINTS", "COUPON CODE", "PAYMENT METHODS", "BRING ME CHANGE OF"];
     var totalAmount: Int?
     var response: AnyObject?
     
@@ -127,10 +127,12 @@ class CartVC: UIViewController {
              let nvc: UIViewController = storyboard.instantiateInitialViewController()!
              self.presentViewController(nvc, animated: true, completion: nil)
              */
-        } else {
+        } else if Helper.sharedInstance.order!.modeOfPayment == PaymentType.CITRUS || Helper.sharedInstance.order!.modeOfPayment == PaymentType.CARDS || Helper.sharedInstance.order!.modeOfPayment == PaymentType.NB {
             let storyboard: UIStoryboard = UIStoryboard(name: "Citrus_flow", bundle: nil);
             let nvc: UIViewController = storyboard.instantiateInitialViewController()!
             self.presentViewController(nvc, animated: true, completion: nil)
+        } else {
+            UIAlertView(title: "First eat", message: "Please select a mode of payment", delegate: nil, cancelButtonTitle: "OK").show()
         }
         
     }
