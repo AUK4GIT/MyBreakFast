@@ -22,6 +22,7 @@
     NSArray *array;
     int selectedRule;
     NSInteger selectedRow;
+    __weak IBOutlet UIButton *walletButton;
 }
 
 @end
@@ -153,7 +154,8 @@
                     if (totalPayableAmount > amount.value.intValue) {
                         [self loadMoney:nil];
                     } else {
-                        [self performSelector:@selector(payFromWallet) withObject:nil afterDelay:0.7];
+//                        [self performSelector:@selector(payFromWallet) withObject:nil afterDelay:0.7];
+                        [walletButton setTitle:@"Pay now" forState:UIControlStateNormal];
                     }
                 } else {
                     [self payMoney:nil];
@@ -410,14 +412,21 @@
                                         [UIUtility toastMessageOnScreen:[error localizedDescription]];
                                     }
                                     else{
-                                        LogTrace(@" isAnyoneSignedIn %d",[authLayer isLoggedIn]);
                                         [UIUtility toastMessageOnScreen:[NSString stringWithFormat:@"Payment Status: %@",[paymentInfo.responseDict valueForKey:@"TxStatus"]]];
-                                        NSDictionary *transactionInfo = [[NSDictionary alloc] initWithObjects:@[[paymentInfo.responseDict valueForKey:@"TxId"], [paymentInfo.responseDict valueForKey:@"TxRefNo"], [paymentInfo.responseDict valueForKey:@"amount"], [paymentInfo.responseDict valueForKey:@"TxStatus"], [paymentInfo.responseDict valueForKey:@"pgTxnNo"], [paymentInfo.responseDict valueForKey:@"issuerRefNo"], [paymentInfo.responseDict valueForKey:@"paymentMode"]] forKeys:@[@"TransactionId", @"TxRefNo", @"Value", @"TransactionStatus", @"PgTxnNo", @"IssuerRefNo", @"PaymentMode"]];
-                                        dispatch_async(dispatch_get_main_queue(), ^{
-                                            [[NSNotificationCenter defaultCenter] postNotificationName:@"PaymentFinished" object:nil userInfo:transactionInfo];
-                                        });
-                                        
-//                                        [self getBalance:nil];
+                                        if ([[paymentInfo.responseDict valueForKey:@"TxStatus"] isEqualToString:@"CANCELED"]) {
+                                            dispatch_async(dispatch_get_main_queue(), ^{
+                                                [[NSNotificationCenter defaultCenter] postNotificationName:@"PaymentFinished" object:nil userInfo:nil];
+                                            });
+                                        } else if ([[paymentInfo.responseDict valueForKey:@"TxStatus"] isEqualToString:@"SUCCESS"]) {
+                                            NSDictionary *transactionInfo = [[NSDictionary alloc] initWithObjects:@[[paymentInfo.responseDict valueForKey:@"TxId"], [paymentInfo.responseDict valueForKey:@"TxRefNo"], [paymentInfo.responseDict valueForKey:@"amount"], [paymentInfo.responseDict valueForKey:@"TxStatus"], [paymentInfo.responseDict valueForKey:@"pgTxnNo"], [paymentInfo.responseDict valueForKey:@"issuerRefNo"], [paymentInfo.responseDict valueForKey:@"paymentMode"]] forKeys:@[@"TransactionId", @"TxRefNo", @"Value", @"TransactionStatus", @"PgTxnNo", @"IssuerRefNo", @"PaymentMode"]];
+                                            dispatch_async(dispatch_get_main_queue(), ^{
+                                                [[NSNotificationCenter defaultCenter] postNotificationName:@"PaymentFinished" object:nil userInfo:transactionInfo];
+                                            });
+                                        } else {
+                                            dispatch_async(dispatch_get_main_queue(), ^{
+                                                [[NSNotificationCenter defaultCenter] postNotificationName:@"PaymentFinished" object:nil userInfo:nil];
+                                            });
+                                        }
                                     }
                                 }];
                             }
@@ -839,12 +848,22 @@
                             }
                             else{
                                 LogTrace(@" isAnyoneSignedIn %d",[authLayer isLoggedIn]);
+
                                 [UIUtility toastMessageOnScreen:[NSString stringWithFormat:@"Payment Status: %@",[paymentInfo.responseDict valueForKey:@"TxStatus"]]];
-                                NSDictionary *transactionInfo = [[NSDictionary alloc] initWithObjects:@[[paymentInfo.responseDict valueForKey:@"TxId"], [paymentInfo.responseDict valueForKey:@"TxRefNo"], [paymentInfo.responseDict valueForKey:@"amount"], [paymentInfo.responseDict valueForKey:@"TxStatus"], [paymentInfo.responseDict valueForKey:@"pgTxnNo"], [paymentInfo.responseDict valueForKey:@"issuerRefNo"], [paymentInfo.responseDict valueForKey:@"paymentMode"]] forKeys:@[@"TransactionId", @"TxRefNo", @"Value", @"TransactionStatus", @"PgTxnNo", @"IssuerRefNo", @"PaymentMode"]];
-                                dispatch_async(dispatch_get_main_queue(), ^{
-                                    [[NSNotificationCenter defaultCenter] postNotificationName:@"PaymentFinished" object:nil userInfo:transactionInfo];
-                                });
-//                                [self getBalance:nil];
+                                if ([[paymentInfo.responseDict valueForKey:@"TxStatus"] isEqualToString:@"CANCELED"]) {
+                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                        [[NSNotificationCenter defaultCenter] postNotificationName:@"PaymentFinished" object:nil userInfo:nil];
+                                    });
+                                } else if ([[paymentInfo.responseDict valueForKey:@"TxStatus"] isEqualToString:@"SUCCESS"]) {
+                                    LogTrace(@" isAnyoneSignedIn %d",[authLayer isLoggedIn]);
+                                    NSDictionary *transactionInfo = [[NSDictionary alloc] initWithObjects:@[[paymentInfo.responseDict valueForKey:@"TxId"], [paymentInfo.responseDict valueForKey:@"TxRefNo"], [paymentInfo.responseDict valueForKey:@"amount"], [paymentInfo.responseDict valueForKey:@"TxStatus"], [paymentInfo.responseDict valueForKey:@"pgTxnNo"], [paymentInfo.responseDict valueForKey:@"issuerRefNo"], [paymentInfo.responseDict valueForKey:@"paymentMode"]] forKeys:@[@"TransactionId", @"TxRefNo", @"Value", @"TransactionStatus", @"PgTxnNo", @"IssuerRefNo", @"PaymentMode"]];
+                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                        [[NSNotificationCenter defaultCenter] postNotificationName:@"PaymentFinished" object:nil userInfo:transactionInfo];
+                                    });                                } else {
+                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                        [[NSNotificationCenter defaultCenter] postNotificationName:@"PaymentFinished" object:nil userInfo:nil];
+                                    });
+                                }
                             }
                         }];
                     }

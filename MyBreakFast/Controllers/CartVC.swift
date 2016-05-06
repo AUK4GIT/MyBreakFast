@@ -66,11 +66,15 @@ class CartVC: UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    func PaymentFinished(infoDict: AnyObject){
+    func PaymentFinished(infoDict: NSNotification){
         self.dismissViewControllerAnimated(true) { () -> Void in
-            self.placeOrder({ 
-                self.verifyPayment(infoDict as? NSNotification);
-            })
+            if infoDict.userInfo != nil {
+                self.placeOrder({
+                    self.verifyPayment(infoDict);
+                })
+            } else {
+            
+            }
         }
     }
     

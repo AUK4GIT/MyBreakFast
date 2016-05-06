@@ -48,6 +48,7 @@
 #ifdef DEBUG
     [CitrusPaymentSDK initializeWithKeyStore:keyStore environment:CTSEnvSandbox];
 #else
+    NSLog(@"********CTSEnvProduction ********CTSEnvProduction:  %@",SignInId);
     [CitrusPaymentSDK initializeWithKeyStore:keyStore environment:CTSEnvProduction];
 #endif
     
