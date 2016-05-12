@@ -2646,7 +2646,7 @@
                                                     <rect key="frame" x="8" y="8" width="284" height="184"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCr-mu-k4Z">
-                                                            <rect key="frame" x="16" y="16" width="155" height="17"/>
+                                                            <rect key="frame" x="16" y="16" width="155" height="31.5"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                                             <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -2662,7 +2662,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5o-xy-uVv">
-                                                            <rect key="frame" x="16" y="49" width="113" height="17"/>
+                                                            <rect key="frame" x="16" y="55.5" width="113" height="31.5"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                                             <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -2678,7 +2678,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G25-v8-iyM">
-                                                            <rect key="frame" x="16" y="82" width="159" height="17"/>
+                                                            <rect key="frame" x="16" y="95" width="159" height="31.5"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                                             <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -2693,54 +2693,8 @@
                                                                 <action selector="selectModeOfPayment:" destination="VN7-sz-EqY" eventType="touchUpInside" id="pXj-9e-Q6t"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" tag="3" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w1q-hP-PuF">
-                                                            <rect key="frame" x="16" y="115" width="75" height="16"/>
-                                                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                            <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                            <state key="normal" image="radio_unselected">
-                                                                <attributedString key="attributedTitle">
-                                                                    <fragment content="PAY">
-                                                                        <attributes>
-                                                                            <color key="NSColor" red="0.015686274509803921" green="0.13725490196078433" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
-                                                                            <font key="NSFont" size="14" name="TimesNewRomanPS-BoldMT"/>
-                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                                        </attributes>
-                                                                    </fragment>
-                                                                    <fragment content="TM">
-                                                                        <attributes>
-                                                                            <color key="NSColor" red="0.019607843137254902" green="0.62745098039215685" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
-                                                                            <font key="NSFont" size="14" name="TimesNewRomanPS-BoldMT"/>
-                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                                        </attributes>
-                                                                    </fragment>
-                                                                </attributedString>
-                                                            </state>
-                                                            <state key="disabled">
-                                                                <attributedString key="attributedTitle">
-                                                                    <fragment content="PAY">
-                                                                        <attributes>
-                                                                            <color key="NSColor" red="0.015686274509803921" green="0.13725490196078433" blue="0.31372549019607843" alpha="0.5" colorSpace="calibratedRGB"/>
-                                                                            <font key="NSFont" size="14" name="TimesNewRomanPS-BoldMT"/>
-                                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                                        </attributes>
-                                                                    </fragment>
-                                                                    <fragment content="TM">
-                                                                        <attributes>
-                                                                            <color key="NSColor" red="0.019607843137254902" green="0.62745098039215685" blue="0.78431372549019607" alpha="0.47999999999999998" colorSpace="calibratedRGB"/>
-                                                                            <font key="NSFont" size="14" name="TimesNewRomanPS-BoldMT"/>
-                                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                                        </attributes>
-                                                                    </fragment>
-                                                                </attributedString>
-                                                            </state>
-                                                            <state key="selected" image="radio_selected"/>
-                                                            <state key="highlighted" image="radio_selected"/>
-                                                            <connections>
-                                                                <action selector="selectModeOfPayment:" destination="VN7-sz-EqY" eventType="touchUpInside" id="a3X-0Q-XQH"/>
-                                                            </connections>
-                                                        </button>
-                                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zaj-56-YDa">
-                                                            <rect key="frame" x="16" y="147" width="68" height="19"/>
+                                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zaj-56-YDa">
+                                                            <rect key="frame" x="16" y="134.5" width="68" height="31.5"/>
                                                             <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             <state key="normal" image="radio_unselected">
@@ -2771,18 +2725,20 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="B5o-xy-uVv" firstAttribute="leading" secondItem="HCr-mu-k4Z" secondAttribute="leading" id="23M-va-Ght"/>
+                                                        <constraint firstItem="zaj-56-YDa" firstAttribute="top" secondItem="G25-v8-iyM" secondAttribute="bottom" constant="8" id="475-gU-wv9"/>
                                                         <constraint firstItem="HCr-mu-k4Z" firstAttribute="leading" secondItem="9mq-Pc-nL9" secondAttribute="leading" constant="16" id="6Yi-tZ-bPh"/>
-                                                        <constraint firstItem="zaj-56-YDa" firstAttribute="leading" secondItem="w1q-hP-PuF" secondAttribute="leading" id="FAm-pF-dfg"/>
                                                         <constraint firstItem="G25-v8-iyM" firstAttribute="leading" secondItem="B5o-xy-uVv" secondAttribute="leading" id="LRh-bF-sXM"/>
-                                                        <constraint firstItem="w1q-hP-PuF" firstAttribute="top" secondItem="G25-v8-iyM" secondAttribute="bottom" constant="16" id="MwK-0c-sgh"/>
-                                                        <constraint firstItem="zaj-56-YDa" firstAttribute="top" secondItem="w1q-hP-PuF" secondAttribute="bottom" constant="16" id="Uu3-Lv-qCe"/>
-                                                        <constraint firstItem="w1q-hP-PuF" firstAttribute="leading" secondItem="G25-v8-iyM" secondAttribute="leading" id="aqj-zJ-1De"/>
+                                                        <constraint firstItem="zaj-56-YDa" firstAttribute="height" secondItem="HCr-mu-k4Z" secondAttribute="height" id="VUG-We-vM2"/>
+                                                        <constraint firstItem="B5o-xy-uVv" firstAttribute="height" secondItem="HCr-mu-k4Z" secondAttribute="height" id="Xak-ma-ivc"/>
+                                                        <constraint firstItem="G25-v8-iyM" firstAttribute="height" secondItem="HCr-mu-k4Z" secondAttribute="height" id="ag2-ja-VU2"/>
+                                                        <constraint firstAttribute="bottom" secondItem="zaj-56-YDa" secondAttribute="bottom" constant="18" id="bND-m4-PYg"/>
                                                         <constraint firstItem="HCr-mu-k4Z" firstAttribute="centerY" secondItem="9mq-Pc-nL9" secondAttribute="centerY" id="bnI-zg-NPb"/>
+                                                        <constraint firstItem="zaj-56-YDa" firstAttribute="leading" secondItem="G25-v8-iyM" secondAttribute="leading" id="hf4-2g-CM4"/>
                                                         <constraint firstItem="HCr-mu-k4Z" firstAttribute="centerX" secondItem="9mq-Pc-nL9" secondAttribute="centerX" id="nRI-kx-He5"/>
                                                         <constraint firstItem="HCr-mu-k4Z" firstAttribute="top" secondItem="9mq-Pc-nL9" secondAttribute="top" constant="16" id="nYI-kw-YMN"/>
-                                                        <constraint firstItem="B5o-xy-uVv" firstAttribute="top" secondItem="HCr-mu-k4Z" secondAttribute="bottom" constant="16" id="nr7-sU-YET"/>
+                                                        <constraint firstItem="B5o-xy-uVv" firstAttribute="top" secondItem="HCr-mu-k4Z" secondAttribute="bottom" constant="8" id="nr7-sU-YET"/>
                                                         <constraint firstAttribute="height" constant="184" id="oZn-NT-dyT"/>
-                                                        <constraint firstItem="G25-v8-iyM" firstAttribute="top" secondItem="B5o-xy-uVv" secondAttribute="bottom" constant="16" id="phu-5d-Kyf"/>
+                                                        <constraint firstItem="G25-v8-iyM" firstAttribute="top" secondItem="B5o-xy-uVv" secondAttribute="bottom" constant="8" id="phu-5d-Kyf"/>
                                                         <constraint firstItem="HCr-mu-k4Z" firstAttribute="leading" secondItem="9mq-Pc-nL9" secondAttribute="leading" id="w9T-f9-53w"/>
                                                     </constraints>
                                                     <variation key="default">
@@ -2817,7 +2773,6 @@
                                             <outletCollection property="PaymentRadioButton" destination="HCr-mu-k4Z" collectionClass="NSMutableArray" id="gd6-Bd-mmO"/>
                                             <outletCollection property="PaymentRadioButton" destination="B5o-xy-uVv" collectionClass="NSMutableArray" id="pS9-ag-ftm"/>
                                             <outletCollection property="PaymentRadioButton" destination="G25-v8-iyM" collectionClass="NSMutableArray" id="E3a-tb-wVs"/>
-                                            <outletCollection property="PaymentRadioButton" destination="w1q-hP-PuF" collectionClass="NSMutableArray" id="Ja2-xd-y6t"/>
                                             <outletCollection property="PaymentRadioButton" destination="zaj-56-YDa" collectionClass="NSMutableArray" id="fgc-7Z-vDi"/>
                                         </connections>
                                     </collectionViewCell>

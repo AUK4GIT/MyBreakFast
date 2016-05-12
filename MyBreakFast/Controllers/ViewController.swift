@@ -166,7 +166,7 @@ class ViewController: UIViewController, Slidemenuprotocol, UIGestureRecognizerDe
 //            }
         });
         
-        self.checkForAppUpdate();
+        self.performSelector(#selector(checkForAppUpdate), withObject: nil, afterDelay: 0.7);
     }
     
     func checkForAppUpdate(){

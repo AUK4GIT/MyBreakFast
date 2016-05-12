@@ -36,13 +36,13 @@ class PaymentModeCell: UICollectionViewCell {
 
                 break;
             case 3:
-                Helper.sharedInstance.order!.modeOfPayment = PaymentType.PAYTM;
-
-                break;
-            case 4:
                 Helper.sharedInstance.order!.modeOfPayment = PaymentType.CITRUS;
 
                 break;
+//            case 4:
+//                Helper.sharedInstance.order!.modeOfPayment = PaymentType.PAYTM;
+//
+//                break;
             default:
                 Helper.sharedInstance.order!.modeOfPayment = PaymentType.COD;
                 

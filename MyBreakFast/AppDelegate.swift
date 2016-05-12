@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
     var subscribedToTopic = false
     
     
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
             
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
@@ -122,11 +123,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
             // token to enable reception of notifications
             GGLInstanceID.sharedInstance().startWithConfig(instanceIDConfig)
 //        #if DEBUG
-            registrationOptions = [kGGLInstanceIDRegisterAPNSOption:deviceToken,
-                kGGLInstanceIDAPNSServerTypeSandboxOption:true]
-//        #else
 //            registrationOptions = [kGGLInstanceIDRegisterAPNSOption:deviceToken,
-//                                   kGGLInstanceIDAPNSServerTypeSandboxOption:false]
+//                kGGLInstanceIDAPNSServerTypeSandboxOption:true]
+//        #else
+            registrationOptions = [kGGLInstanceIDRegisterAPNSOption:deviceToken,
+                                   kGGLInstanceIDAPNSServerTypeSandboxOption:false]
 //        #endif
             GGLInstanceID.sharedInstance().tokenWithAuthorizedEntity(self.gcmSenderID,
                 scope: kGGLInstanceIDScopeGCM, options: registrationOptions, handler: registrationHandler)

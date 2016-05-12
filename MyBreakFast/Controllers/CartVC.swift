@@ -111,8 +111,8 @@ class CartVC: UIViewController {
     
     func updateCartWithTotalAmountPayableWithDiscount(sender: AnyObject) {
         Helper.sharedInstance.getTotalPrice { (price) -> () in
-            self.totalAmount = price
-            self.payableAmountLabel.text = "Payable Amount ₹ "+String(self.totalAmount!);
+//            self.totalAmount = price
+            self.payableAmountLabel.text = "Payable Amount ₹ "+String(price);
         }
     }
     

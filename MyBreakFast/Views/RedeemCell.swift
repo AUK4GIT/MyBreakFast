@@ -45,8 +45,8 @@ class RedeemCell: UICollectionViewCell {
             }
             
 //            let totalPayableAmount = Int((Helper.sharedInstance.order?.totalAmountPayable)!);
-            let totalPayable = Int((Helper.sharedInstance.order?.totalAmount)!);
-
+            var totalPayable = Int((Helper.sharedInstance.order?.totalAmount)!);
+            totalPayable = totalPayable!-Int((Helper.sharedInstance.order?.discount)!)!;
             let totalRedeemValue = floor((Double(self.redeemPoints)!*Helper.sharedInstance.redeemValue));
             if totalPayable >= Int(totalRedeemValue) {
 //                Helper.sharedInstance.order?.totalAmountPayable = String(totalPayable! - Int(totalRedeemValue))
@@ -55,7 +55,8 @@ class RedeemCell: UICollectionViewCell {
                 let redeemPoi = self.redeemPoints
                 Helper.sharedInstance.order?.pointsToRedeem = redeemPoi;
                 self.redeemPoints = "0";
-                Helper.sharedInstance.order?.discount = String(Int(Double(totalRedeemValue)));
+                let totalDisc = Int((Helper.sharedInstance.order?.discount)!)!+Int(Double(totalRedeemValue))
+                Helper.sharedInstance.order?.discount = String(totalDisc);
                 let messg = "Points redeemed: "+redeemPoi+" discount: ₹ "+String(totalRedeemValue)+" balance points: 0"
                 UIAlertView(title: "First Eat", message: messg, delegate: nil, cancelButtonTitle: "OK").show()
                 

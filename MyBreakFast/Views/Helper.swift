@@ -594,9 +594,9 @@ import Reachability
             price += offerPrice
             Helper.sharedInstance.order?.totalAmount = String(price)
 
-            if self.order?.hasRedeemedPoints == true {
+//            if self.order?.hasRedeemedPoints == true {
                 price = price - Int((self.order?.discount)!)!
-            }
+//            }
             dispatch_async(dispatch_get_main_queue()) {
                 completionHandler(count, price)
             }
@@ -608,16 +608,16 @@ import Reachability
         self.getOrderCountandPrice { (count, price) -> () in
             
             var totalAmount = price;
-            var actualDiscount = 0;
+//            var actualDiscount = 0;
             
             //Note: Either Redeem or Coupon but not both can be applied per order.
-            if self.order?.couponsApplied.count > 0 {
-                for couponObj in (self.order?.couponsApplied)! {
-                    let coupon = couponObj as Coupon
-                    actualDiscount += Int((coupon.actualDiscount))!
-                }
-            }
-            totalAmount -= actualDiscount;
+//            if self.order?.couponsApplied.count > 0 {
+//                for couponObj in (self.order?.couponsApplied)! {
+//                    let coupon = couponObj as Coupon
+//                    actualDiscount += Int((coupon.actualDiscount))!
+//                }
+//            }
+//            totalAmount -= actualDiscount;
             if totalAmount < 0 {
                 totalAmount = 0;
             }
@@ -625,7 +625,6 @@ import Reachability
             let scPercent = 0.05;
             let vatAmount = Double(totalAmount) * vatPercent
             let scAmount = vatAmount * scPercent
-//            let totalPayableAmount = totalAmount+Int(ceil(vatAmount+scAmount))-Int(Double((self.order?.pointsToRedeem)!)! * Double(self.redeemValue))
             let totalPayableAmount = totalAmount+Int(ceil(vatAmount+scAmount))
             self.order?.totalAmountPayable = String(totalPayableAmount);
             self.order?.vatAmount = String(vatAmount);
@@ -1373,35 +1372,6 @@ import Reachability
     }
 
     
-    
-    func getAboutusText(completionHandler: (AnyObject) -> ()) {
-        
-        Helper.sharedInstance.showActivity()
-        Alamofire.request(.GET, Constants.API.AboutUs, parameters: nil)
-        .responseString { response in
-        print(response.request)  // original URL request
-        print(response.response) // URL response
-        //print(response.data)     // server data
-        print(response.result)   // result of response serialization
-            
-        if let JSON = response.result.value {
-            print("JSON: \(JSON)")
-            
-            dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                Helper.sharedInstance.hideActivity()
-                completionHandler(JSON)
-            }
-        } else {
-            
-            dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                Helper.sharedInstance.hideActivity()
-                completionHandler("ERROR")
-            }
-            }
-        }
-        
-    }
-    
     func getDeliveryLocations(completionHandler: (AnyObject) -> ()) {
         
         Alamofire.request(.GET, Constants.API.LocationsURL, parameters: nil)
@@ -1422,40 +1392,7 @@ import Reachability
                     }
                 }
         }
-    }
-
-
-    
-    func sendUserQuery(message: String, completionHandler: (AnyObject) -> ()) {
-        
-        Helper.sharedInstance.showActivity()
-
-        let request = NSMutableURLRequest(URL: NSURL(string: Constants.API.ContactUsMessage)!)
-        request.HTTPMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let values = ["user_id": self.getUserEmailId(), "query" : message]
-        request.HTTPBody = try! NSJSONSerialization.dataWithJSONObject(values, options: [])
-        
-        Alamofire.request(request)
-            .responseJSON { response in
-                // do whatever you want here
-                switch response.result {
-                case .Failure(let error):
-                    print(error)
-                    dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                        Helper.sharedInstance.hideActivity()
-                        completionHandler("ERROR")
-                    }
-                case .Success(let responseObject):
-                    print(responseObject)
-                    dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                        Helper.sharedInstance.hideActivity()
-                        completionHandler(responseObject)
-                    }
-                }
-        }
-    }
-    
+    }  
     
     func getMyOrders(completionHandler: (AnyObject) -> ()) {
         

@@ -112,7 +112,7 @@ class ReferralVC: UIViewController {
         let referString = "whatsapp://"
         let whatsappURL = NSURL(string: referString);
         if UIApplication.sharedApplication().canOpenURL(whatsappURL!){
-            let referString = "whatsapp://send?text=Please use this referral code \""+self.referCode!+"\" to register on First Eat and get credits"
+            let referString = "whatsapp://send?text=Please use this referral code \""+self.referCode!+"\" to register on First Eat and get 50 credits. Download the app -> https://goo.gl/x6ngjy"
             let url2 = referString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
             let whatsappURL = NSURL(string: url2!);
 
@@ -149,7 +149,7 @@ class ReferralVC: UIViewController {
 
         }
         
-        UIAlertView(title: "First Eat", message: "Double tap to paste the referral code on you wall.", delegate: nil, cancelButtonTitle: "OK").show()
+        UIAlertView(title: "First Eat", message: "Double tap to paste the referral code on your wall.", delegate: nil, cancelButtonTitle: "OK").show()
 
         
             }

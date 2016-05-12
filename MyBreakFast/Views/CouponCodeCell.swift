@@ -103,7 +103,10 @@ class CouponCodeCell: UICollectionViewCell {
                 if discountType == "AMOUNT"{
                     Helper.sharedInstance.order?.discount = String(Int((Helper.sharedInstance.order?.discount)!)! + Int(Float(discountValue!)!))
                     if couponName == "TEAM250" {
-                        let totAmnt = Int((Helper.sharedInstance.order?.totalAmount)!)
+                        var totAmnt = Int((Helper.sharedInstance.order?.totalAmount)!)
+                        let discountsAlreadyApplied = Int((Helper.sharedInstance.order?.discount)!);
+                        totAmnt = totAmnt!-discountsAlreadyApplied!;
+                        
                         let couponDiscount = totAmnt! - 250
                         Helper.sharedInstance.order?.discount = String(couponDiscount); //maxDiscountAmount!;
                         discountValue = maxDiscountAmount;
@@ -113,6 +116,8 @@ class CouponCodeCell: UICollectionViewCell {
                     var totalAmtPay = amtPayable!-Int(Float(discountValue!)!)
                     if totalAmtPay < 0 {
                         discountValue = (Helper.sharedInstance.order?.totalAmount)
+                        let discountsAlreadyApplied = Int((Helper.sharedInstance.order?.discount)!);
+                        discountValue = String(Int(discountValue!)!-discountsAlreadyApplied!);
                         Helper.sharedInstance.order?.discount = discountValue!;
                         totalAmtPay = 0;
                     }
@@ -126,8 +131,10 @@ class CouponCodeCell: UICollectionViewCell {
                     UIAlertView(title: "First Eat", message: messg, delegate: nil, cancelButtonTitle: "OK").show()
                 } else {
                 //percentage
-                    let amtWithoutVATandSC = Int((Helper.sharedInstance.order?.totalAmount)!)
-
+                    var amtWithoutVATandSC = Int((Helper.sharedInstance.order?.totalAmount)!)
+                    let discountsAlreadyApplied = Int((Helper.sharedInstance.order?.discount)!);
+                    amtWithoutVATandSC = amtWithoutVATandSC!-discountsAlreadyApplied!;
+                    
                     var discount = amtWithoutVATandSC! * Int(Float(discountValue!)!) / 100;
                     if discount > Int(maxDiscountAmount!)! {
                         discount = Int(maxDiscountAmount!)!
@@ -141,8 +148,9 @@ class CouponCodeCell: UICollectionViewCell {
                         discount = Int(maxDiscountAmount!)!
                         coupon.discountvalue = String(discount);
                     }
-                    let amtountPayable = Int((Helper.sharedInstance.order?.totalAmountPayable)!)
-                    var totalAmtPay = amtountPayable!-discount
+//                    let amtountPayable = Int((Helper.sharedInstance.order?.totalAmountPayable)!)
+//                    var totalAmtPay = amtountPayable!-discount
+                    var totalAmtPay = amtWithoutVATandSC!-discount;
                     if totalAmtPay < 0 {
                         discount = Int((Helper.sharedInstance.order?.totalAmount)!)!
                         Helper.sharedInstance.order?.discount = String(discount);
