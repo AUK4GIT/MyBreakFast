@@ -92,13 +92,7 @@ class OfferNotificationsVC: UIViewController {
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        //        let modalVC : ItemPreViewVC = self.storyboard?.instantiateViewControllerWithIdentifier("ItemPreViewVC") as! ItemPreViewVC
-        //        let item : Item = self.itemsArray[indexPath.item] as! Item
-        //
-        //        modalVC.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
-        //        self.presentViewController(modalVC, animated: true, completion: nil)
-        //        modalVC.imageView.sd_setImageWithURL(NSURL(string: item.imageURL!), placeholderImage: UIImage(named: "menu_logo"), completed: nil)
-        //        modalVC.descriptionView.text = item.itemDescription
+       
     }
 
 }
