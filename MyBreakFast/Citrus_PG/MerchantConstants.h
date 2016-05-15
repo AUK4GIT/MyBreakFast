@@ -10,7 +10,7 @@
 #ifndef CTS_iOS_Sdk_MerchantConstants_h
 #define CTS_iOS_Sdk_MerchantConstants_h
 
-
+/*
 #ifdef DEBUG
 // Keys
 #define SignInId @"zc7st7huse-signin"
@@ -24,7 +24,7 @@
 #define LoadWalletReturnUrl @"http://firsteatwebportal.in/redirectUrlLoadCash.php"
 
 #else
-
+*/
 // Keys
 #define SignInId @"oct0e7rmkb-signin"
 #define SignInSecretKey @"3dc3b1f5cef74143c20460e69247fdc6"
@@ -35,7 +35,8 @@
 #define VanityUrl @"feklick"
 #define BillUrl @"http://firsteat.in/andro/index.php/ws/orders/bill/generator"
 #define LoadWalletReturnUrl @"http://firsteatwebportal.in/redirectUrlLoadCash.php"
-#endif
+
+//#endif
 
 
 /*

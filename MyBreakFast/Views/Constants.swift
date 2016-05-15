@@ -9,7 +9,6 @@
 import Foundation
 
 struct Constants {
- /*
     //Production
     struct API {
         static let BaseURL: String = "http://firsteat.in/andro/"
@@ -34,7 +33,8 @@ struct Constants {
         static let RedeemPoints: String = BaseURL+"index.php/ws/points/redeem/"
         static let ValidateCoupon: String = BaseURL+"index.php/ws/orders/coupon/apply?coupon="
         static let PlaceOrder: String = BaseURL+"index.php/ws/orders/add/new/alpha/"
-        
+        static let VerifyPayment: String = BaseURL+"index.php/ws/verify/payment/"
+
         static let UpdateOrderWithMenuIds: String = BaseURL+"index.php/ws/orders/add/new/item/"
         static let UpdateOrderWithOfferIds: String = BaseURL+"index.php/ws/orders/add/menu/offers/"
         static let UpdateOrderWithBill: String = BaseURL+"index.php/ws/orders/update/"
@@ -50,9 +50,10 @@ struct Constants {
         static let  URL_KITCHENS: String = BaseURL+"index.php/ws/kitchens/all";
         
         static let  GOOGLE_BROWSER_KEY : String = "AIzaSyDd8Q_8KX1JDi6nSdkoNx_jLQB7P5VXRqc";
-        
+        static let APPSTORE_URL : String = "https://goo.gl/x6ngjy"
     }
-    */
+ 
+    /*
     ///testing/New Dev
     struct API {
         static let BaseURL: String = "http://firsteatwebportal.in/project-poha/"
@@ -92,9 +93,10 @@ struct Constants {
         static let  URL_KITCHENS: String = BaseURL+"index.php/ws/kitchens/all";
         
         static let  GOOGLE_BROWSER_KEY : String = "AIzaSyDd8Q_8KX1JDi6nSdkoNx_jLQB7P5VXRqc";
-        
-    }
+        static let APPSTORE_URL : String = "https://goo.gl/x6ngjy"
 
+    }
+*/
     
     struct StaticContent {
         static let SideMenuList : [String] = ["Menu", "My Orders", "About Us", "Contact Us", "Rate Us", "Refer a Friend", "Terms & Conditions"];

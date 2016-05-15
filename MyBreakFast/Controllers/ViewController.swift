@@ -151,19 +151,6 @@ class ViewController: UIViewController, Slidemenuprotocol, UIGestureRecognizerDe
         }
         
         Helper.sharedInstance.fetchKitchenAddressess({ (response) -> () in
-//            if let kitchens = Helper.sharedInstance.fetchKitchens() {
-//                
-//                var destinations: String = ""
-//                
-//                for (index, kitchen) in (kitchens.enumerate()) {
-//                    let kObj = kitchen;
-//                    if index == 0 {
-//                        destinations = (kObj.latitude)!+","+(kObj.longitude)!
-//                    } else {
-//                        destinations = destinations+"|"+(kObj.latitude)!+","+(kObj.longitude)!
-//                    }
-//                }
-//            }
         });
         
         self.performSelector(#selector(checkForAppUpdate), withObject: nil, afterDelay: 0.7);
@@ -175,7 +162,11 @@ class ViewController: UIViewController, Slidemenuprotocol, UIGestureRecognizerDe
             if Helper.sharedInstance.appUpdateAvailable(nil) == true {
                 dispatch_async(dispatch_get_main_queue(), {
                     let notifPrompt = UIAlertController(title: "First Eat", message: "An Update for the App is available at the appstore. Kindly update. ", preferredStyle: UIAlertControllerStyle.Alert)
-                    notifPrompt.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                    notifPrompt.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+                        UIApplication.sharedApplication().openURL(NSURL(string: Constants.API.APPSTORE_URL)!);
+                    }))
+                    notifPrompt.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+
                     self.presentViewController(notifPrompt, animated: true, completion: nil);
                 })
             }
