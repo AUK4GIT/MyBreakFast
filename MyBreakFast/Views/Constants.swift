@@ -102,14 +102,14 @@ struct Constants {
         static let SideMenuList : [String] = ["Menu", "My Orders", "About Us", "Contact Us", "Rate Us", "Refer a Friend", "Terms & Conditions"];
         static let AppThemeColor = UIColor(red: 200.0/255.0, green: 5.0/255.0, blue: 15.0/255.0, alpha: 1.0);
         static let Filters : [[String:String]] = [["filterName":"Veg", "filtervalue":"Veg","imageName":"Veg.png", "color":"green"],
-        ["filterName":"Non-Veg", "filtervalue":"Non-Veg","imageName":"NonVeg-1.png", "color":"red"],
+        ["filterName":"Non-Veg", "filtervalue":"Non Veg","imageName":"NonVeg-1.png", "color":"red"],
         ["filterName":"Egg", "filtervalue":"Egg","imageName":"Egg-1.png", "color":"yellow"],
-        ["filterName":"Club Sandwich", "filtervalue":"Club Sandwich","imageName":"ClubSandwich.png", "color":"gray"],
-        ["filterName":"Zero Oil Sandwich", "filtervalue":"Zero Oil Sandwich","imageName":"ZeroOilSandwich.png", "color":"gray"],
-        ["filterName":"Juices", "filtervalue":"Juices","imageName":"Juices.png", "color":"gray"],
-        ["filterName":"Salads", "filtervalue":"Salads","imageName":"Salads.png", "color":"gray"],
-        ["filterName":"Mom-Made", "filtervalue":"Mom-Made","imageName":"MomMade.png", "color":"gray"],
-        ["filterName":"Combos", "filtervalue":"Combos","imageName":"Combos.png", "color":"gray"]];
+        ["filterName":"Club Sandwich", "filtervalue":"Club Sandwhich","imageName":"ClubSandwich.png", "color":"gray"],
+        ["filterName":"Zero Oil Sandwich", "filtervalue":"ZeroOilSandwich","imageName":"ZeroOilSandwich.png", "color":"gray"],
+        ["filterName":"Juices", "filtervalue":"Juice","imageName":"Juices.png", "color":"gray"],
+        ["filterName":"Salads", "filtervalue":"Salad","imageName":"Salads.png", "color":"gray"],
+        ["filterName":"Mom-Made", "filtervalue":"Homemade","imageName":"MomMade.png", "color":"gray"],
+        ["filterName":"Combos", "filtervalue":"Combo","imageName":"Combos.png", "color":"gray"]];
 
     }
     
