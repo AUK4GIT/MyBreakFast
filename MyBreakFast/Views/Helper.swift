@@ -1432,6 +1432,7 @@ import Reachability
         let change = Helper.sharedInstance.order?.change ?? "100"
         let coupon = Helper.sharedInstance.order?.couponsApplied.count>0 ? Helper.sharedInstance.order?.couponsApplied[0]: nil;
         var couponId = "";
+        let redeemPoints = self.order?.pointsToRedeem;
         if coupon != nil {
             couponId = (coupon?.couponid)!;
         }
@@ -1440,7 +1441,7 @@ import Reachability
             "kitchen":Helper.sharedInstance.kitchen,
             "address":(self.order?.addressId!)!,
             "slot":(self.order?.timeSlotId)!,
-            "points":0,
+            "points":redeemPoints!,
             "menu":self.getCommaSeparatedMenuIdsandQuantitiesForOrder(),
             "qty":self.quantities!,
             "offers":self.getCommaSeparatedOfferIds(),
