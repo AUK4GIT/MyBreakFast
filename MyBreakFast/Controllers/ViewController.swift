@@ -165,6 +165,8 @@ class ViewController: UIViewController, Slidemenuprotocol, UIGestureRecognizerDe
                     notifPrompt.addAction(UIAlertAction(title: "Update", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
                         UIApplication.sharedApplication().openURL(NSURL(string: Constants.API.APPSTORE_URL)!);
                     }))
+                    notifPrompt.addAction(UIAlertAction(title: "Later", style: UIAlertActionStyle.Default, handler: nil))
+
                     self.presentViewController(notifPrompt, animated: true, completion: nil);
                 })
             }

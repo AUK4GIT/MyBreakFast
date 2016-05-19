@@ -132,7 +132,7 @@ import Reachability
                                 // Get the version number of the current version
                                 if let currentVersion = infoDictionary["CFBundleShortVersionString"] as? String {
                                     // Check if they are the same. If not, an upgrade is available.
-                                    if appStoreVersion != currentVersion {
+                                    if Float(appStoreVersion) > Float(currentVersion) {
                                         upgradeAvailable = true
                                     }
                                 }
