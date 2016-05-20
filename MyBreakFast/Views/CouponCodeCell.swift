@@ -33,11 +33,11 @@ class CouponCodeCell: UICollectionViewCell {
         }
         
         if Helper.sharedInstance.order?.hasRedeemedPoints == true {
-            /*
+            
             UIAlertView(title: "First Eat", message: "Cannot apply coupon as discounts already applied from redeem points.", delegate: nil, cancelButtonTitle: "OK").show()
             sender.enabled = true;
             return;
-*/
+
         }
         
         

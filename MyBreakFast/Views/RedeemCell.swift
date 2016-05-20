@@ -34,10 +34,10 @@ class RedeemCell: UICollectionViewCell {
         
         if Int(self.redeemPoints)>0 {
             if Helper.sharedInstance.order?.couponsApplied.count > 0 {
-                /*
+                
                 UIAlertView(title: "First Eat", message: "Cannot redeem points as discounts already applied from coupons.", delegate: nil, cancelButtonTitle: "OK").show()
                 return;
-*/
+
             }
             if Helper.sharedInstance.order?.hasRedeemedPoints == true {
                 UIAlertView(title: "First Eat", message: "Already redeemed Points.", delegate: nil, cancelButtonTitle: "OK").show()
