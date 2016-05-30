@@ -7,3 +7,4 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <FBSDKShareKit/FBSDKShareKit.h>
 #import "CitrusSDK.h"
+#import "PaymentsSDK.h"

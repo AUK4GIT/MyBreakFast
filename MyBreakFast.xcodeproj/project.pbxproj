@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		42F4FE3801F1438966FD070F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6E7E1A1C9BAD8E663A54F6 /* Pods.framework */; };
+		AA9EE7601CF1C58700AC6DF3 /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA9EE75F1CF1C58700AC6DF3 /* libPaymentsSDK.a */; };
+		AA9EE7671CF1CD8400AC6DF3 /* PayTMMerchantConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9EE7661CF1CD8400AC6DF3 /* PayTMMerchantConstants.swift */; };
+		AA9EE7691CF2E78400AC6DF3 /* PayTM_flow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA9EE7681CF2E78300AC6DF3 /* PayTM_flow.storyboard */; };
+		AA9EE76C1CF2E8FD00AC6DF3 /* PayTMVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9EE76B1CF2E8FD00AC6DF3 /* PayTMVC.swift */; };
 		ED344C941C9B14DA008643F9 /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED344C7C1C9B14DA008643F9 /* AboutUsVC.swift */; };
 		ED344C951C9B14DA008643F9 /* AddAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED344C7D1C9B14DA008643F9 /* AddAddressVC.swift */; };
 		ED344C961C9B14DA008643F9 /* AppSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED344C7E1C9B14DA008643F9 /* AppSignInVC.swift */; };
@@ -373,6 +377,15 @@
 
 /* Begin PBXFileReference section */
 		A83BCDDAA0B52B48CF8F04BD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		AA9EE75F1CF1C58700AC6DF3 /* libPaymentsSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPaymentsSDK.a; path = MyBreakFast/libPaymentsSDK.a; sourceTree = "<group>"; };
+		AA9EE7611CF1C5B600AC6DF3 /* PaymentsSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PaymentsSDK.h; path = MyBreakFast/PayTM/include/PaymentsSDK.h; sourceTree = SOURCE_ROOT; };
+		AA9EE7621CF1C5B600AC6DF3 /* PGMerchantConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PGMerchantConfiguration.h; path = MyBreakFast/PayTM/include/PGMerchantConfiguration.h; sourceTree = SOURCE_ROOT; };
+		AA9EE7631CF1C5B600AC6DF3 /* PGOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PGOrder.h; path = MyBreakFast/PayTM/include/PGOrder.h; sourceTree = SOURCE_ROOT; };
+		AA9EE7641CF1C5B600AC6DF3 /* PGServerEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PGServerEnvironment.h; path = MyBreakFast/PayTM/include/PGServerEnvironment.h; sourceTree = SOURCE_ROOT; };
+		AA9EE7651CF1C5B600AC6DF3 /* PGTransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PGTransactionViewController.h; path = MyBreakFast/PayTM/include/PGTransactionViewController.h; sourceTree = SOURCE_ROOT; };
+		AA9EE7661CF1CD8400AC6DF3 /* PayTMMerchantConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PayTMMerchantConstants.swift; path = PayTM/PayTMMerchantConstants.swift; sourceTree = "<group>"; };
+		AA9EE7681CF2E78300AC6DF3 /* PayTM_flow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PayTM_flow.storyboard; path = PayTM/PayTM_flow.storyboard; sourceTree = "<group>"; };
+		AA9EE76B1CF2E8FD00AC6DF3 /* PayTMVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PayTMVC.swift; path = PayTM/Controllers/PayTMVC.swift; sourceTree = "<group>"; };
 		C02CB2CC5C006A15257050EC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DC6E7E1A1C9BAD8E663A54F6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED344C7C1C9B14DA008643F9 /* AboutUsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutUsVC.swift; path = Controllers/AboutUsVC.swift; sourceTree = "<group>"; };
@@ -885,6 +898,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42F4FE3801F1438966FD070F /* Pods.framework in Frameworks */,
+				AA9EE7601CF1C58700AC6DF3 /* libPaymentsSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -898,6 +912,37 @@
 				C02CB2CC5C006A15257050EC /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		AA9EE7581CF1C4D400AC6DF3 /* PayTM */ = {
+			isa = PBXGroup;
+			children = (
+				AA9EE76A1CF2E8D900AC6DF3 /* Controllers */,
+				AA9EE7591CF1C4E500AC6DF3 /* include */,
+				AA9EE7661CF1CD8400AC6DF3 /* PayTMMerchantConstants.swift */,
+				AA9EE7681CF2E78300AC6DF3 /* PayTM_flow.storyboard */,
+			);
+			name = PayTM;
+			sourceTree = "<group>";
+		};
+		AA9EE7591CF1C4E500AC6DF3 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				AA9EE7611CF1C5B600AC6DF3 /* PaymentsSDK.h */,
+				AA9EE7621CF1C5B600AC6DF3 /* PGMerchantConfiguration.h */,
+				AA9EE7631CF1C5B600AC6DF3 /* PGOrder.h */,
+				AA9EE7641CF1C5B600AC6DF3 /* PGServerEnvironment.h */,
+				AA9EE7651CF1C5B600AC6DF3 /* PGTransactionViewController.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		AA9EE76A1CF2E8D900AC6DF3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AA9EE76B1CF2E8FD00AC6DF3 /* PayTMVC.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		ED344C791C9B14AB008643F9 /* Controllers */ = {
@@ -1030,6 +1075,7 @@
 		ED722B151BE09A33003DC9F2 /* MyBreakFast */ = {
 			isa = PBXGroup;
 			children = (
+				AA9EE7581CF1C4D400AC6DF3 /* PayTM */,
 				ED742AA91CA78855007FC96D /* Citrus_PG */,
 				ED344C7A1C9B14B4008643F9 /* Views */,
 				ED344C791C9B14AB008643F9 /* Controllers */,
@@ -1744,6 +1790,7 @@
 		FCCBE4C75107B921E1C15ABB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AA9EE75F1CF1C58700AC6DF3 /* libPaymentsSDK.a */,
 				EDA09EF01BFC24C5000470CB /* CoreLocation.framework */,
 				EDA736DD1BE4F14D00AC9884 /* StoreKit.framework */,
 				EDA736DB1BE4F11400AC9884 /* SystemConfiguration.framework */,
@@ -1866,6 +1913,7 @@
 				ED742D551CA78856007FC96D /* Mastero@2x.png in Resources */,
 				ED742CE01CA78856007FC96D /* bank_of_maharshtra2x.png in Resources */,
 				ED742CE41CA78856007FC96D /* canara_bank@3x.png in Resources */,
+				AA9EE7691CF2E78400AC6DF3 /* PayTM_flow.storyboard in Resources */,
 				ED742D5A1CA78856007FC96D /* visa.png in Resources */,
 				ED742D131CA78856007FC96D /* indusind_bank@2x.png in Resources */,
 				ED742D1C1CA78856007FC96D /* Karur_Vyasa_Bank@2x.png in Resources */,
@@ -2069,6 +2117,7 @@
 				ED742C901CA78856007FC96D /* CTSNetbankingOption.m in Sources */,
 				ED742D6A1CA78856007FC96D /* UICustomTextField.m in Sources */,
 				ED742D5F1CA78856007FC96D /* BaseViewController.m in Sources */,
+				AA9EE76C1CF2E8FD00AC6DF3 /* PayTMVC.swift in Sources */,
 				ED742C641CA78856007FC96D /* CTSAmount.m in Sources */,
 				EDE7F1F41C57DBB30063F855 /* Coupon.swift in Sources */,
 				ED742C961CA78856007FC96D /* CTSPrepaidPayResp.m in Sources */,
@@ -2133,6 +2182,7 @@
 				EDCC2AE71C339F6500C15C3B /* OrderItem.swift in Sources */,
 				ED996EB31C30CA960017284A /* UserAddress+CoreDataProperties.swift in Sources */,
 				ED742C921CA78856007FC96D /* CTSPaymentTransactionRes.m in Sources */,
+				AA9EE7671CF1CD8400AC6DF3 /* PayTMMerchantConstants.swift in Sources */,
 				ED344C9A1C9B14DA008643F9 /* DatePickerVC.swift in Sources */,
 				ED5B21801BF76D3400C65857 /* Offer.swift in Sources */,
 				ED742C791CA78856007FC96D /* CTSNewUserProfileReq.m in Sources */,
@@ -2386,6 +2436,11 @@
 				INFOPLIST_FILE = MyBreakFast/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/MyBreakFast",
+				);
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.firsteat.firsteat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2430,6 +2485,11 @@
 				INFOPLIST_FILE = MyBreakFast/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/MyBreakFast",
+				);
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.firsteat.firsteat;
 				PRODUCT_NAME = "$(TARGET_NAME)";

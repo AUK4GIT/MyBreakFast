@@ -126,11 +126,11 @@ class CartVC: UIViewController {
                 statusVC.setData(self.response as! NSDictionary);
             })
         } else if Helper.sharedInstance.order!.modeOfPayment == PaymentType.PAYTM{
-            /*
-             let storyboard: UIStoryboard = UIStoryboard(name: "Citrus_flow", bundle: nil);
+            
+             let storyboard: UIStoryboard = UIStoryboard(name: "PayTM_flow", bundle: nil);
              let nvc: UIViewController = storyboard.instantiateInitialViewController()!
              self.presentViewController(nvc, animated: true, completion: nil)
-             */
+            
         } else if Helper.sharedInstance.order!.modeOfPayment == PaymentType.CITRUS || Helper.sharedInstance.order!.modeOfPayment == PaymentType.CARDS || Helper.sharedInstance.order!.modeOfPayment == PaymentType.NB {
             let storyboard: UIStoryboard = UIStoryboard(name: "Citrus_flow", bundle: nil);
             let nvc: UIViewController = storyboard.instantiateInitialViewController()!
