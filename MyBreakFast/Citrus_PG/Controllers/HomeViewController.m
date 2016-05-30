@@ -35,7 +35,15 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelAction:)];
     
     [self initialSetting];
-    [self getBalance:nil];
+    
+    if ([Helper sharedInstance].order.modeOfPayment == PaymentTypeCARDS || [Helper sharedInstance].order.modeOfPayment == PaymentTypeNB){
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [self performSegueWithIdentifier:@"CardViewIdentifier" sender:nil];
+            return;
+        }];
+    } else {
+        [self getBalance:nil];
+    }
     
 //    if ([Helper sharedInstance].order.modeOfPayment == PaymentTypeCITRUS) {
 //        [self performSelector:@selector(payFromWallet) withObject:nil afterDelay:1.0];
@@ -413,11 +421,11 @@
                                     }
                                     else{
                                         [UIUtility toastMessageOnScreen:[NSString stringWithFormat:@"Payment Status: %@",[paymentInfo.responseDict valueForKey:@"TxStatus"]]];
-                                        if ([[paymentInfo.responseDict valueForKey:@"TxStatus"] isEqualToString:@"CANCELED"]) {
+                                        if ([[paymentInfo.responseDict valueForKey:@"TxStatus"] isEqualToString:@"CANCELED"] || [[paymentInfo.responseDict valueForKey:@"TxStatus"] isEqualToString:@"CANCELLED"]) {
                                             dispatch_async(dispatch_get_main_queue(), ^{
                                                 [[NSNotificationCenter defaultCenter] postNotificationName:@"PaymentFinished" object:nil userInfo:nil];
                                             });
-                                        } else if ([[paymentInfo.responseDict valueForKey:@"TxStatus"] isEqualToString:@"SUCCESS"]) {
+                                        } else if ([[paymentInfo.responseDict valueForKey:@"TxStatus"] isEqualToString:@"SUCCESS"] || [[paymentInfo.responseDict valueForKey:@"TxStatus"] isEqualToString:@"SUCCESSFUL"]) {
                                             NSDictionary *transactionInfo = [[NSDictionary alloc] initWithObjects:@[[paymentInfo.responseDict valueForKey:@"TxId"], [paymentInfo.responseDict valueForKey:@"TxRefNo"], [paymentInfo.responseDict valueForKey:@"amount"], [paymentInfo.responseDict valueForKey:@"TxStatus"], [paymentInfo.responseDict valueForKey:@"pgTxnNo"], [paymentInfo.responseDict valueForKey:@"issuerRefNo"], [paymentInfo.responseDict valueForKey:@"paymentMode"]] forKeys:@[@"TransactionId", @"TxRefNo", @"Value", @"TransactionStatus", @"PgTxnNo", @"IssuerRefNo", @"PaymentMode"]];
                                             dispatch_async(dispatch_get_main_queue(), ^{
                                                 [[NSNotificationCenter defaultCenter] postNotificationName:@"PaymentFinished" object:nil userInfo:transactionInfo];
@@ -850,11 +858,11 @@
                                 LogTrace(@" isAnyoneSignedIn %d",[authLayer isLoggedIn]);
 
                                 [UIUtility toastMessageOnScreen:[NSString stringWithFormat:@"Payment Status: %@",[paymentInfo.responseDict valueForKey:@"TxStatus"]]];
-                                if ([[paymentInfo.responseDict valueForKey:@"TxStatus"] isEqualToString:@"CANCELED"]) {
+                                if ([[paymentInfo.responseDict valueForKey:@"TxStatus"] isEqualToString:@"CANCELED"] || [[paymentInfo.responseDict valueForKey:@"TxStatus"] isEqualToString:@"CANCELLED"]) {
                                     dispatch_async(dispatch_get_main_queue(), ^{
                                         [[NSNotificationCenter defaultCenter] postNotificationName:@"PaymentFinished" object:nil userInfo:nil];
                                     });
-                                } else if ([[paymentInfo.responseDict valueForKey:@"TxStatus"] isEqualToString:@"SUCCESS"]) {
+                                } else if ([[paymentInfo.responseDict valueForKey:@"TxStatus"] isEqualToString:@"SUCCESS"] || [[paymentInfo.responseDict valueForKey:@"TxStatus"] isEqualToString:@"SUCCESSFUL"]) {
                                     LogTrace(@" isAnyoneSignedIn %d",[authLayer isLoggedIn]);
                                     NSDictionary *transactionInfo = [[NSDictionary alloc] initWithObjects:@[[paymentInfo.responseDict valueForKey:@"TxId"], [paymentInfo.responseDict valueForKey:@"TxRefNo"], [paymentInfo.responseDict valueForKey:@"amount"], [paymentInfo.responseDict valueForKey:@"TxStatus"], [paymentInfo.responseDict valueForKey:@"pgTxnNo"], [paymentInfo.responseDict valueForKey:@"issuerRefNo"], [paymentInfo.responseDict valueForKey:@"paymentMode"]] forKeys:@[@"TransactionId", @"TxRefNo", @"Value", @"TransactionStatus", @"PgTxnNo", @"IssuerRefNo", @"PaymentMode"]];
                                     dispatch_async(dispatch_get_main_queue(), ^{

@@ -73,7 +73,8 @@ class CartVC: UIViewController {
                     self.verifyPayment(infoDict);
                 })
             } else {
-            
+                Helper.sharedInstance.hideActivity()
+                UIAlertView(title: "Error", message: "Please try again", delegate: nil, cancelButtonTitle: "OK").show()
             }
         }
     }

@@ -2190,7 +2190,7 @@
     NSString *status = [response.responseDict valueForKey:@"TxStatus"];
     LogTrace(@"status %@ ",status);
     
-    if([status isEqualToString:@"SUCCESS"]){
+    if([status isEqualToString:@"SUCCESS"]  || [status isEqualToString:@"SUCCESSFUL"]){
         [self cvvEncrypt:response error:error];
     }
 }

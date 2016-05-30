@@ -10,6 +10,7 @@
 #import "UIUtility.h"
 #import "HMSegmentedControl.h"
 #import "MerchantConstants.h"
+#import "MyBreakFast-Swift.h"
 
 @interface CardsViewController (){
 
@@ -45,7 +46,18 @@
     [super viewWillAppear:animated];
     [switchView setOn:NO animated:YES];
     
+    if ([Helper sharedInstance].order.modeOfPayment == PaymentTypeCARDS || [Helper sharedInstance].order.modeOfPayment == PaymentTypeNB){
+        
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelAction:)];
+        
+            }
+    
 }
+
+- (IBAction)cancelAction:(id)sender {
+    [self dismissViewControllerAnimated:true completion:nil];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -372,11 +384,11 @@
                     else {
                         [UIUtility toastMessageOnScreen:[NSString stringWithFormat:@"Payment Status %@",[citrusCashResponse.responseDict valueForKey:@"TxStatus"] ]];
                         [self resetUI];
-                        if ([[citrusCashResponse.responseDict valueForKey:@"TxStatus"] isEqualToString:@"CANCELED"]) {
+                        if ([[citrusCashResponse.responseDict valueForKey:@"TxStatus"] isEqualToString:@"CANCELED"] || [[citrusCashResponse.responseDict valueForKey:@"TxStatus"] isEqualToString:@"CANCELLED"]) {
                             dispatch_async(dispatch_get_main_queue(), ^{
                                 [[NSNotificationCenter defaultCenter] postNotificationName:@"PaymentFinished" object:nil userInfo:nil];
                             });
-                        } else if ([[citrusCashResponse.responseDict valueForKey:@"TxStatus"] isEqualToString:@"SUCCESS"]) {
+                        } else if ([[citrusCashResponse.responseDict valueForKey:@"TxStatus"] isEqualToString:@"SUCCESS"] || [[citrusCashResponse.responseDict valueForKey:@"TxStatus"] isEqualToString:@"SUCCESSFUL"]) {
                             NSDictionary *transactionInfo = [[NSDictionary alloc] initWithObjects:@[[citrusCashResponse.responseDict valueForKey:@"TxId"], [citrusCashResponse.responseDict valueForKey:@"TxRefNo"], [citrusCashResponse.responseDict valueForKey:@"amount"], [citrusCashResponse.responseDict valueForKey:@"TxStatus"], [citrusCashResponse.responseDict valueForKey:@"pgTxnNo"], [citrusCashResponse.responseDict valueForKey:@"issuerRefNo"], [citrusCashResponse.responseDict valueForKey:@"paymentMode"]] forKeys:@[@"TransactionId", @"TxRefNo", @"Value", @"TransactionStatus", @"PgTxnNo", @"IssuerRefNo", @"PaymentMode"]];
                             dispatch_async(dispatch_get_main_queue(), ^{
                                 [[NSNotificationCenter defaultCenter] postNotificationName:@"PaymentFinished" object:nil userInfo:transactionInfo];
@@ -512,11 +524,11 @@
                 else {
                     [UIUtility toastMessageOnScreen:[NSString stringWithFormat:@"Payment Status %@",[citrusCashResponse.responseDict valueForKey:@"TxStatus"] ]];
                     [self resetUI];
-                    if ([[citrusCashResponse.responseDict valueForKey:@"TxStatus"] isEqualToString:@"CANCELED"]) {
+                    if ([[citrusCashResponse.responseDict valueForKey:@"TxStatus"] isEqualToString:@"CANCELED"] || [[citrusCashResponse.responseDict valueForKey:@"TxStatus"] isEqualToString:@"CANCELLED"]) {
                         dispatch_async(dispatch_get_main_queue(), ^{
                             [[NSNotificationCenter defaultCenter] postNotificationName:@"PaymentFinished" object:nil userInfo:nil];
                         });
-                    } else if ([[citrusCashResponse.responseDict valueForKey:@"TxStatus"] isEqualToString:@"SUCCESS"]) {
+                    } else if ([[citrusCashResponse.responseDict valueForKey:@"TxStatus"] isEqualToString:@"SUCCESS"] || [[citrusCashResponse.responseDict valueForKey:@"TxStatus"] isEqualToString:@"SUCCESSFUL"]) {
                         NSDictionary *transactionInfo = [[NSDictionary alloc] initWithObjects:@[[citrusCashResponse.responseDict valueForKey:@"TxId"], [citrusCashResponse.responseDict valueForKey:@"TxRefNo"], [citrusCashResponse.responseDict valueForKey:@"amount"], [citrusCashResponse.responseDict valueForKey:@"TxStatus"], [citrusCashResponse.responseDict valueForKey:@"pgTxnNo"], [citrusCashResponse.responseDict valueForKey:@"issuerRefNo"], [citrusCashResponse.responseDict valueForKey:@"paymentMode"]] forKeys:@[@"TransactionId", @"TxRefNo", @"Value", @"TransactionStatus", @"PgTxnNo", @"IssuerRefNo", @"PaymentMode"]];
                         dispatch_async(dispatch_get_main_queue(), ^{
                             [[NSNotificationCenter defaultCenter] postNotificationName:@"PaymentFinished" object:nil userInfo:transactionInfo];

@@ -8,6 +8,7 @@
 
 #import "InitialViewController.h"
 #import "SignUpViewController.h"
+#import "MyBreakFast-Swift.h"
 
 @interface InitialViewController (){
     
@@ -29,6 +30,11 @@
      self.signupOptionThreeButton.layer.cornerRadius = 4;
     
     if (authLayer.requestSignInOauthToken.length != 0) {
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [self performSegueWithIdentifier:@"HomeScreenIdentifier" sender:nil];
+            return;
+        }];
+    } else if ([Helper sharedInstance].order.modeOfPayment == PaymentTypeCARDS || [Helper sharedInstance].order.modeOfPayment == PaymentTypeNB){
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             [self performSegueWithIdentifier:@"HomeScreenIdentifier" sender:nil];
             return;
