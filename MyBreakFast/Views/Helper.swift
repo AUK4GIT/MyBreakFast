@@ -773,56 +773,6 @@ import Reachability
         }
     }
     
-//    func doUserRegistration(userObject: UserDetails, password: String, referralId: String, completionHandler: (AnyObject) -> ()) {
-//        
-//        let gcmId = (self.appDelegate.registrationToken ?? self.getDataFromUserDefaults(forKey: Constants.UserdefaultConstants.GCMRegistrationToken) ?? "")
-//        let useraddress = userObject.address ?? ""
-//        let values: [String: String] = ["devid":self.userDefaults.objectForKey("DeviceId")! as! String,"devtype":UIDevice.currentDevice().model, "gcm": gcmId as! String, "email":userObject.emailId!,"mobile":userObject.phoneNumber!,"name":userObject.userName!,"pwd":password,"address":useraddress,"ref":referralId];
-//        Helper.sharedInstance.showActivity()
-//        Alamofire.request(.GET, Constants.API.UserRegistration, parameters: values)
-//            .responseJSON { response in
-//                print(response.request)  // original URL request
-//                print(response.response) // URL response
-////                //print(response.data)     // server data
-//                print(response.result)   // result of response serialization
-//                // do whatever you want here
-//                switch response.result {
-//                case .Failure(let error):
-//                    print(error)
-//                    dispatch_async(dispatch_get_main_queue()) { () -> Void in
-//                        print(response.result.value)
-//                        Helper.sharedInstance.hideActivity()
-//                        completionHandler("ERROR")
-//                    }
-//                case .Success( _):
-//                    if let JSON = response.result.value {
-//                        print("JSON: \(JSON)")
-//                        if let jData =  JSON.objectForKey("data") as? NSDictionary{
-//                            if let userid = jData.objectForKey("user_id") as? NSNumber {
-//                                userObject.userId = userid.stringValue
-//                            } else {
-//                                userObject.userId = jData.objectForKey("user_id") as? String
-//                            }
-//                            if let keys = jData.objectForKey("keys"){
-//                                if keys is NSNull {
-//                                    userObject.referralCode = ""
-//                                } else {
-//                                    userObject.referralCode = keys.objectForKey("referal_code") as? String
-//                                }
-//                            }
-//                            self.saveContext();
-//                        }
-//                    }
-//                    dispatch_async(dispatch_get_main_queue()) { () -> Void in
-//                        print(response.result.value)
-//                        Helper.sharedInstance.hideActivity()
-//                        completionHandler("SUCCESS")
-//
-//                    }
-//            }
-//        }
-//    }
-    
     func registerUser(userObject: UserDetails, password: String, referralId: String, completionHandler: (AnyObject) -> ()) {
         
         let gcmId = (self.appDelegate.registrationToken ?? self.getDataFromUserDefaults(forKey: Constants.UserdefaultConstants.GCMRegistrationToken) ?? "")
