@@ -470,7 +470,7 @@
         <!--Cards View Controller-->
         <scene sceneID="dlB-XT-OGl">
             <objects>
-                <viewController id="Onm-Gk-2qs" customClass="CardsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CardsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Onm-Gk-2qs" customClass="CardsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8aQ-vi-nqr"/>
                         <viewControllerLayoutGuide type="bottom" id="UrC-cg-cRP"/>
@@ -479,13 +479,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1We-6F-Pd2">
+                                <rect key="frame" x="0.0" y="64" width="600" height="45"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="oCg-ck-2jY"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="4Tp-QE-Pcd">
-                                <rect key="frame" x="4" y="16" width="592" height="430"/>
+                                <rect key="frame" x="4" y="109" width="592" height="337"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="-10" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="test0" id="E9F-N7-ysp">
-                                        <rect key="frame" x="0.0" y="114" width="592" height="44"/>
+                                        <rect key="frame" x="0.0" y="50" width="592" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E9F-N7-ysp" id="oJ5-7u-oMM">
                                             <rect key="frame" x="0.0" y="0.0" width="592" height="43"/>
@@ -521,7 +528,7 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="test1" id="ZP7-pd-guV">
-                                        <rect key="frame" x="0.0" y="158" width="592" height="44"/>
+                                        <rect key="frame" x="0.0" y="94" width="592" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZP7-pd-guV" id="tCr-lM-0IQ">
                                             <rect key="frame" x="0.0" y="0.0" width="592" height="43"/>
@@ -584,7 +591,7 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="test2" id="wka-S3-MLk">
-                                        <rect key="frame" x="0.0" y="202" width="592" height="44"/>
+                                        <rect key="frame" x="0.0" y="138" width="592" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wka-S3-MLk" id="uk1-V3-ncW">
                                             <rect key="frame" x="0.0" y="0.0" width="592" height="43"/>
@@ -611,7 +618,7 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="test3" id="CNk-XN-7tk">
-                                        <rect key="frame" x="0.0" y="246" width="592" height="44"/>
+                                        <rect key="frame" x="0.0" y="182" width="592" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CNk-XN-7tk" id="StI-yo-ZGb">
                                             <rect key="frame" x="0.0" y="0.0" width="592" height="43"/>
@@ -783,20 +790,31 @@
                             <constraint firstAttribute="trailingMargin" secondItem="4Tp-QE-Pcd" secondAttribute="trailing" constant="-16" id="IJ5-l8-brK"/>
                             <constraint firstItem="UrC-cg-cRP" firstAttribute="top" secondItem="dbH-9I-3Mk" secondAttribute="bottom" id="JH1-oS-wfx"/>
                             <constraint firstItem="4Tp-QE-Pcd" firstAttribute="leading" secondItem="QtX-9T-N18" secondAttribute="leadingMargin" constant="-16" id="JHd-0N-VkX"/>
+                            <constraint firstItem="1We-6F-Pd2" firstAttribute="leading" secondItem="QtX-9T-N18" secondAttribute="leading" id="JQd-Vw-fwa"/>
                             <constraint firstItem="WIo-dL-bx3" firstAttribute="leading" secondItem="QtX-9T-N18" secondAttribute="leadingMargin" id="JhA-AK-Ne2"/>
                             <constraint firstItem="UrC-cg-cRP" firstAttribute="top" secondItem="WIo-dL-bx3" secondAttribute="bottom" constant="15" id="N1Y-sp-r38"/>
                             <constraint firstAttribute="centerX" secondItem="nXM-1k-GQd" secondAttribute="centerX" id="Q3l-LB-ppg"/>
                             <constraint firstItem="dbH-9I-3Mk" firstAttribute="top" secondItem="8aQ-vi-nqr" secondAttribute="bottom" constant="51" id="WIr-9H-4X5"/>
                             <constraint firstItem="UQR-yY-uim" firstAttribute="leading" secondItem="QtX-9T-N18" secondAttribute="leadingMargin" constant="-4" id="WUp-8w-zh3"/>
-                            <constraint firstItem="4Tp-QE-Pcd" firstAttribute="top" secondItem="8aQ-vi-nqr" secondAttribute="bottom" constant="-48" id="XXn-3U-ZQF"/>
+                            <constraint firstItem="4Tp-QE-Pcd" firstAttribute="top" secondItem="8aQ-vi-nqr" secondAttribute="bottom" constant="4" id="XXn-3U-ZQF"/>
                             <constraint firstAttribute="centerY" secondItem="nXM-1k-GQd" secondAttribute="centerY" constant="-58" id="Zj1-Uw-wTR"/>
+                            <constraint firstItem="1We-6F-Pd2" firstAttribute="top" secondItem="8aQ-vi-nqr" secondAttribute="bottom" id="bvI-B0-kx9"/>
+                            <constraint firstItem="4Tp-QE-Pcd" firstAttribute="top" secondItem="1We-6F-Pd2" secondAttribute="bottom" id="cZy-xI-cE2"/>
+                            <constraint firstItem="1We-6F-Pd2" firstAttribute="top" secondItem="UQR-yY-uim" secondAttribute="bottom" id="dY0-BA-I9q"/>
                             <constraint firstItem="UrC-cg-cRP" firstAttribute="top" secondItem="2wM-sp-kFY" secondAttribute="bottom" constant="8" id="fzz-5V-CP7"/>
                             <constraint firstItem="UQR-yY-uim" firstAttribute="top" secondItem="8aQ-vi-nqr" secondAttribute="bottom" constant="64" id="iw5-jt-lmn"/>
                             <constraint firstItem="2wM-sp-kFY" firstAttribute="leading" secondItem="QtX-9T-N18" secondAttribute="leadingMargin" constant="-20" id="kpO-jl-5EQ"/>
                             <constraint firstItem="dbH-9I-3Mk" firstAttribute="leading" secondItem="QtX-9T-N18" secondAttribute="leadingMargin" constant="-20" id="ol0-Fp-OtC"/>
                             <constraint firstItem="UQR-yY-uim" firstAttribute="trailing" secondItem="QtX-9T-N18" secondAttribute="trailingMargin" constant="4" id="sQv-yn-Qed"/>
+                            <constraint firstAttribute="trailing" secondItem="1We-6F-Pd2" secondAttribute="trailing" id="tLP-lZ-CQA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2wM-sp-kFY" secondAttribute="trailing" constant="-20" id="y0n-GA-mMk"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dY0-BA-I9q"/>
+                                <exclude reference="XXn-3U-ZQF"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="xYd-bQ-pwH"/>
                     <connections>
@@ -806,6 +824,7 @@
                         <outlet property="netBankCodeTextField" destination="UQR-yY-uim" id="sVI-ne-D2r"/>
                         <outlet property="pickerView" destination="2wM-sp-kFY" id="fgH-S8-5YJ"/>
                         <outlet property="saveCardsTableView" destination="dbH-9I-3Mk" id="j4g-jk-BGq"/>
+                        <outlet property="segmentView" destination="1We-6F-Pd2" id="831-6F-Pub"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hoZ-fl-lXJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

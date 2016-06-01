@@ -10,7 +10,7 @@ import Foundation
 
 struct Constants {
     //Production
-    /*
+    
     struct API {
         static let BaseURL: String = "http://firsteat.in/andro/"
         static let GCMRegistration: String = "http://firsteatwebportal.in/api/v1/gcm/registeruser"
@@ -53,8 +53,8 @@ struct Constants {
         static let  GOOGLE_BROWSER_KEY : String = "AIzaSyDd8Q_8KX1JDi6nSdkoNx_jLQB7P5VXRqc";
         static let APPSTORE_URL : String = "https://goo.gl/x6ngjy"
     }
- */
-    
+ 
+    /*
     ///testing/New Dev
     struct API {
         static let BaseURL: String = "http://firsteatwebportal.in/project-poha/"
@@ -97,7 +97,7 @@ struct Constants {
         static let APPSTORE_URL : String = "https://goo.gl/x6ngjy"
 
     }
-    
+    */
     struct StaticContent {
         static let SideMenuList : [String] = ["Menu", "My Orders", "About Us", "Contact Us", "Rate Us", "Refer a Friend", "Terms & Conditions"];
         static let AppThemeColor = UIColor(red: 200.0/255.0, green: 5.0/255.0, blue: 15.0/255.0, alpha: 1.0);

@@ -27,6 +27,7 @@
     NSString *cvvText;
     NSMutableDictionary *imageDict;
     UISwitch *switchView;
+    IBOutlet UIView *segmentView;
 }
 
 @end
@@ -48,6 +49,9 @@
     
     if ([Helper sharedInstance].order.modeOfPayment == PaymentTypeCARDS || [Helper sharedInstance].order.modeOfPayment == PaymentTypeNB){
         
+        self.title = @"Payment";
+        NSString *string = [NSString stringWithFormat:@"Pay ₹ %@",self.amount];
+        [self.loadButton setTitle:string forState:UIControlStateNormal];
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelAction:)];
         
             }
@@ -108,21 +112,21 @@
     if (self.landingScreen==1) {
         
         self.title = @"Payment";
-        NSString *string = [NSString stringWithFormat:@"Pay Rs %@",self.amount];
+        NSString *string = [NSString stringWithFormat:@"Pay ₹ %@",self.amount];
         [self.loadButton setTitle:string forState:UIControlStateNormal];
         //        [self.loadMoneyButton setTitle:@"Payment" forState:UIControlStateNormal];
         
     }
     else if (self.landingScreen==0){
         self.title = @"Load Money";
-        NSString *string = [NSString stringWithFormat:@"Load Rs %@",self.amount];
+        NSString *string = [NSString stringWithFormat:@"Load ₹ %@",self.amount];
         [self.loadButton setTitle:string forState:UIControlStateNormal];
         //        [self.loadMoneyButton setTitle:@"Load Money" forState:UIControlStateNormal];
         
     }
     else if (self.landingScreen==2){
         self.title = @"Dynamic Pricing";
-        NSString *string = [NSString stringWithFormat:@"Pay Rs %@",self.ruleInfo.originalAmount];
+        NSString *string = [NSString stringWithFormat:@"Pay ₹ %@",self.ruleInfo.originalAmount];
         [self.loadButton setTitle:string forState:UIControlStateNormal];
         //        [self.loadMoneyButton setTitle:@"Apply Dynamic Pricing" forState:UIControlStateNormal];
     }
@@ -132,8 +136,8 @@
     
     segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"Debit Card", @"Credit Card", @"Net Banking", @"Saved Card"]];
     segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
-    CGFloat viewWidth = CGRectGetWidth(self.view.frame);
-    segmentedControl.frame = CGRectMake(0, 64, viewWidth, 45);
+    CGFloat viewWidth = CGRectGetWidth(segmentView.frame);
+    segmentedControl.frame = CGRectMake(0, 0, viewWidth, 45);
     segmentedControl.segmentEdgeInset = UIEdgeInsetsMake(0, 10, 0, 10);
     segmentedControl.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe;
     segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
@@ -145,11 +149,12 @@
         return attString;
     }];
     [segmentedControl addTarget:self action:@selector(loadUsingCard:) forControlEvents:UIControlEventValueChanged];
-    [self.view addSubview:segmentedControl];
+    [segmentView addSubview:segmentedControl];
     
     
     imageDict = [[CTSDataCache sharedCache] fetchCachedDataForKey:BANK_LOGO_KEY];
-    
+    self.ccddtableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0);
+
 }
 
 #pragma mark - Action Methods

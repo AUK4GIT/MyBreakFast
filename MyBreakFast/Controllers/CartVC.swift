@@ -132,9 +132,15 @@ class CartVC: UIViewController {
              let nvc: UIViewController = storyboard.instantiateInitialViewController()!
              self.presentViewController(nvc, animated: true, completion: nil)
             
-        } else if Helper.sharedInstance.order!.modeOfPayment == PaymentType.CITRUS || Helper.sharedInstance.order!.modeOfPayment == PaymentType.CARDS || Helper.sharedInstance.order!.modeOfPayment == PaymentType.NB {
+        } else if Helper.sharedInstance.order!.modeOfPayment == PaymentType.CITRUS {
             let storyboard: UIStoryboard = UIStoryboard(name: "Citrus_flow", bundle: nil);
             let nvc: UIViewController = storyboard.instantiateInitialViewController()!
+            self.presentViewController(nvc, animated: true, completion: nil)
+        } else if Helper.sharedInstance.order!.modeOfPayment == PaymentType.CARDS || Helper.sharedInstance.order!.modeOfPayment == PaymentType.NB {
+            let storyboard: UIStoryboard = UIStoryboard(name: "Citrus_flow", bundle: nil);
+            let vc: UIViewController = storyboard.instantiateViewControllerWithIdentifier("CardsViewController")
+            vc.setValue(Helper.sharedInstance.order?.totalAmountPayable, forKey: "amount")
+            let nvc: UINavigationController = UINavigationController(rootViewController: vc)
             self.presentViewController(nvc, animated: true, completion: nil)
         } else {
             UIAlertView(title: "First eat", message: "Please select a mode of payment", delegate: nil, cancelButtonTitle: "OK").show()
