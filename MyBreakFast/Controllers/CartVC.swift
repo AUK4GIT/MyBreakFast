@@ -140,6 +140,8 @@ class CartVC: UIViewController {
             let storyboard: UIStoryboard = UIStoryboard(name: "Citrus_flow", bundle: nil);
             let vc: UIViewController = storyboard.instantiateViewControllerWithIdentifier("CardsViewController")
             vc.setValue(Helper.sharedInstance.order?.totalAmountPayable, forKey: "amount")
+            vc.setValue(1, forKey: "landingScreen")
+
             let nvc: UINavigationController = UINavigationController(rootViewController: vc)
             self.presentViewController(nvc, animated: true, completion: nil)
         } else {

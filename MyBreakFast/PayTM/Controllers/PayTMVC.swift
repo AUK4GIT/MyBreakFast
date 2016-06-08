@@ -126,18 +126,20 @@ class PayTMVC: UIViewController, PGTransactionDelegate
     //Called when a transaction is Canceled by User. response dictionary will be having details about Canceled Transaction.
     func didCancelTransaction(controller: PGTransactionViewController, error: NSError?, response: [NSObject : AnyObject]?) {
         print("ViewController::didCancelTransaction error = %@ response= %@", error, response);
-        var msg = "";
-        if ((error == nil)){
-            msg = "Successful";
-        }
-        else {
-            msg = "UnSuccessful";
-        }
+//        var msg = "";
+//        if ((error == nil)){
+//            msg = "Successful";
+//        }
+//        else {
+//            msg = "UnSuccessful";
+//        }
         
-        UIAlertView(title: "Transaction Cancel", message: msg, delegate: nil, cancelButtonTitle: "OK").show()
-        NSNotificationCenter.defaultCenter().postNotificationName("PaymentFinished", object: nil, userInfo: nil)
+        UIAlertView(title: "Transaction Cancelled", message: "", delegate: nil, cancelButtonTitle: "OK").show()
+//        NSNotificationCenter.defaultCenter().postNotificationName("PaymentFinished", object: nil, userInfo: nil)
 
-        self.removeController(controller);
+        controller.dismissViewControllerAnimated(true, completion: nil);
+
+//        self.removeController(controller);
     }
     
 //    //Called when CHeckSum HASH Generation completes either by PG_Server Or Merchant server.
