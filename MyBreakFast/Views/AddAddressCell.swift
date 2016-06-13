@@ -20,7 +20,7 @@ class AddAddressCell: UICollectionViewCell {
         
         self.activity = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
         self.addSubview(self.activity!);
-        self.activity?.color = Constants.StaticContent.AppThemeColor;
+        self.activity?.color = Constants.AppColors.blue.color;
         self.activity?.hidesWhenStopped = true;
         self.activity?.translatesAutoresizingMaskIntoConstraints = false;
 

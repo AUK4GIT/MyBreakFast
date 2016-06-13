@@ -122,8 +122,8 @@ class MyOrdersVC: UIViewController {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        
         let vc: UINavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("MyOrderDetails") as! UINavigationController
+        
         self.presentViewController(vc, animated: true) { () -> Void in
             
             let orderdetailsVC: MyOrderDetailsVC = vc.topViewController as! MyOrderDetailsVC

@@ -144,6 +144,7 @@ class CartVC: UIViewController {
 
             let nvc: UINavigationController = UINavigationController(rootViewController: vc)
             self.presentViewController(nvc, animated: true, completion: nil)
+
         } else {
             UIAlertView(title: "First eat", message: "Please select a mode of payment", delegate: nil, cancelButtonTitle: "OK").show()
         }

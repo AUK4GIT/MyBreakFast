@@ -96,7 +96,7 @@ extension UILabel {
 }
 
 
-class ViewController: UIViewController, Slidemenuprotocol, UIGestureRecognizerDelegate {
+class ViewController: ContainerVC, Slidemenuprotocol, UIGestureRecognizerDelegate {
 
 
     @IBOutlet var containerBGView: UIView!
@@ -206,7 +206,7 @@ class ViewController: UIViewController, Slidemenuprotocol, UIGestureRecognizerDe
     }
 
     func backToMenu() {
-        self.cycleFromViewController(nil, toViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("MenuVC"))!);
+        self.cycleFromViewController(nil, toViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("SubscriptionMenuVC"))!);
     }
     
     func swipeOnScreen(gesture: UIGestureRecognizer){
@@ -300,10 +300,13 @@ class ViewController: UIViewController, Slidemenuprotocol, UIGestureRecognizerDe
     }
     
     // MARK: transition method
+
     
     func cycleFromViewController(oldC: AnyObject?,
         toViewController newC: UIViewController)    {
-            
+        
+        self.cycleFromViewController(oldC, toViewController: newC, onContainer: self.mainContainer)
+           /*
             guard let oldView = self.mainContainer.viewWithTag(101) else {
                 print(self.mainContainer.viewWithTag(101));
                 newC.view.tag = 101;
@@ -353,7 +356,8 @@ class ViewController: UIViewController, Slidemenuprotocol, UIGestureRecognizerDe
                 self.mainContainer.addSubview(newC.view);
                 newC.didMoveToParentViewController(self);
             }
-            
+  */
     }
+ 
 }
 

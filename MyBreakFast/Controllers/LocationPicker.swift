@@ -44,7 +44,7 @@ class LocationPicker: CustomModalViewController {
                     }
                     alertController.addAction(searchAction)
                     self.presentViewController(alertController, animated: true) {
-                        alertController.view.tintColor = Constants.StaticContent.AppThemeColor;
+                        alertController.view.tintColor = Constants.AppColors.blue.color;
                     }
                     } else {
                         self.searchField.becomeFirstResponder();

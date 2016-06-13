@@ -41,8 +41,10 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         self.dateTableView.hidden = true;
         self.dateTableView.rowHeight = 44.0;
 
-        UINavigationBar.appearance().setBackgroundImage(UIImage(named: "normalsegment.png"), forBarMetrics: UIBarMetrics.Default);
-        UINavigationBar.appearance().shadowImage = UIImage();
+//        UINavigationBar.appearance().setBackgroundImage(UIImage(named: "normalsegment.png"), forBarMetrics: UIBarMetrics.Default);
+//        UINavigationBar.appearance().shadowImage = UIImage();
+        
+        self.topToolbar.barTintColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 1.0)
         
         self.datesArray.append(NSDate())
         
@@ -178,7 +180,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
             };
             
         } else {
-                let parentVC = self.parentViewController as! ViewController
+                let parentVC = self.parentViewController?.parentViewController as! ViewController
                 parentVC.cycleFromViewController(nil, toViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("UserOrderDetails"))!)
         }
 
@@ -209,7 +211,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         alertController.view.addSubview(imageView)
 
         self.presentViewController(alertController, animated: true) {
-            alertController.view.tintColor = Constants.StaticContent.AppThemeColor;
+            alertController.view.tintColor = Constants.AppColors.blue.color;
 
         }
 
@@ -275,7 +277,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     
     override func beginAppearanceTransition(isAppearing: Bool, animated: Bool) {
         super.beginAppearanceTransition(isAppearing, animated: animated)
-        let parentVC: ViewController = self.parentViewController as! ViewController
+        let parentVC: ViewController = self.parentViewController?.parentViewController as! ViewController
 
         if isAppearing {
             self.initNavigationItemTitleView();
@@ -297,13 +299,14 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         }
 
     }
+
     override func endAppearanceTransition() {
         super.endAppearanceTransition()
     }
     
     private func initNavigationItemTitleView() {
         
-        let parentVC: ViewController = self.parentViewController as! ViewController
+        let parentVC: ViewController = self.parentViewController?.parentViewController as! ViewController
 
         let searchcustomView = UIView()
         searchcustomView.frame = CGRectMake(0, 0, 240, 44);
@@ -439,7 +442,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell")! 
-cell.textLabel?.textColor = UIColor.darkGrayColor()//Constants.StaticContent.AppThemeColor;
+cell.textLabel?.textColor = UIColor.darkGrayColor()//Constants.AppColors.blue.color;
 //        cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 16.0)
         let dtFormat = NSDateFormatter()
         dtFormat.dateFormat = "EEEE dd, MMM"
@@ -453,4 +456,5 @@ cell.textLabel?.textColor = UIColor.darkGrayColor()//Constants.StaticContent.App
 //        self.dateTableView.alpha = 0;
 //
 //    }
+        
 }

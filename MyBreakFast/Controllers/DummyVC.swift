@@ -14,8 +14,12 @@ class DummyVC: UIViewController {
         super.viewDidAppear(animated);
         
         
-        let parentVC = self.parentViewController as! ViewController
-        parentVC.cycleFromViewController(nil, toViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("MenuVC"))!)
+        if let parentVC = self.parentViewController as? ViewController {
+            parentVC.cycleFromViewController(nil, toViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("SubscriptionMenuVC"))!)
+        } else if let parentVC = self.parentViewController as? SubscriptionMenuVC {
+            parentVC.cycleFromViewController(nil, toViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("MenuVC"))!)
+        }
+
 
     }
 }

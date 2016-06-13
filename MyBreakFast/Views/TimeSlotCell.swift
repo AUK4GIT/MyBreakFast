@@ -63,10 +63,14 @@ class TimeSlotCell: UICollectionViewCell {
             print("endTime is before than currentime");
             timeSlot.status = "InActive"
         }
+        
+        if (timeSlot.orderlimit == "0") || (Int(timeSlot.orderlimit!) <= Int(timeSlot.presentorders!)) {
+            timeSlot.status = "InActive"
+        }
 
         self.timeLabel.text = timeFormtter.stringFromDate(startTime!)+" - "+timeFormtter.stringFromDate(endTime!)
         if timeSlot.status == "Active"{
-            self.timeLabel.textColor = Constants.StaticContent.AppThemeColor;
+            self.timeLabel.textColor = Constants.AppColors.blue.color;
         } else {
             self.timeLabel.textColor = UIColor.grayColor()
         }

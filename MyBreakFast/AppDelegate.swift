@@ -34,7 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
             UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName : font, NSForegroundColorAttributeName : UIColor.whiteColor()]
         }
         UINavigationBar.appearance().tintColor = UIColor.whiteColor();
-        
+        UINavigationBar.appearance().barTintColor = Constants.AppColors.blue.color;
+        UIToolbar.appearance().barTintColor = Constants.AppColors.green.color;
+        UIToolbar.appearance().translucent = false;
+        UINavigationBar.appearance().translucent = false;
 
         // Override point for customization after application launch.
         Helper.sharedInstance.setUpReachability()

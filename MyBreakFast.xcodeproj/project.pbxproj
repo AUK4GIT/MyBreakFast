@@ -8,10 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		42F4FE3801F1438966FD070F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6E7E1A1C9BAD8E663A54F6 /* Pods.framework */; };
+		AA4AACC11D0D5FDD00627FB0 /* SubscriptionDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4AACC01D0D5FDD00627FB0 /* SubscriptionDetailsVC.swift */; };
+		AA7CF6E51D0EBCC900FA0665 /* CustomSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7CF6E41D0EBCC900FA0665 /* CustomSegmentControl.swift */; };
 		AA9EE7601CF1C58700AC6DF3 /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA9EE75F1CF1C58700AC6DF3 /* libPaymentsSDK.a */; };
 		AA9EE7671CF1CD8400AC6DF3 /* PayTMMerchantConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9EE7661CF1CD8400AC6DF3 /* PayTMMerchantConstants.swift */; };
 		AA9EE7691CF2E78400AC6DF3 /* PayTM_flow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA9EE7681CF2E78300AC6DF3 /* PayTM_flow.storyboard */; };
 		AA9EE76C1CF2E8FD00AC6DF3 /* PayTMVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9EE76B1CF2E8FD00AC6DF3 /* PayTMVC.swift */; };
+		AAF072251D09DAB400C67D2D /* Assets_BGTheme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAF072241D09DAB400C67D2D /* Assets_BGTheme.xcassets */; };
+		AAF072281D0A938900C67D2D /* ContainerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF072271D0A938900C67D2D /* ContainerProtocol.swift */; };
+		AAF0722A1D0AB88200C67D2D /* SubscriptionMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF072291D0AB88200C67D2D /* SubscriptionMenuVC.swift */; };
+		AAF0722C1D0AD79D00C67D2D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF0722B1D0AD79D00C67D2D /* CustomButton.swift */; };
+		AAF0722E1D0B1EA700C67D2D /* SubscriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF0722D1D0B1EA700C67D2D /* SubscriptionVC.swift */; };
 		ED344C941C9B14DA008643F9 /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED344C7C1C9B14DA008643F9 /* AboutUsVC.swift */; };
 		ED344C951C9B14DA008643F9 /* AddAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED344C7D1C9B14DA008643F9 /* AddAddressVC.swift */; };
 		ED344C961C9B14DA008643F9 /* AppSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED344C7E1C9B14DA008643F9 /* AppSignInVC.swift */; };
@@ -87,7 +94,6 @@
 		ED709AA41C29AA960068528C /* Fooddetails+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED709AA21C29AA960068528C /* Fooddetails+CoreDataProperties.swift */; };
 		ED722B171BE09A33003DC9F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED722B161BE09A33003DC9F2 /* AppDelegate.swift */; };
 		ED722B1F1BE09A33003DC9F2 /* MyBreakFast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED722B1D1BE09A33003DC9F2 /* MyBreakFast.xcdatamodeld */; };
-		ED722B211BE09A33003DC9F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED722B201BE09A33003DC9F2 /* Assets.xcassets */; };
 		ED722B241BE09A33003DC9F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED722B221BE09A33003DC9F2 /* LaunchScreen.storyboard */; };
 		ED742C5E1CA78856007FC96D /* Citrus_flow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED742AAA1CA78855007FC96D /* Citrus_flow.storyboard */; };
 		ED742C5F1CA78856007FC96D /* CTSRestError.m in Sources */ = {isa = PBXBuildFile; fileRef = ED742AAF1CA78855007FC96D /* CTSRestError.m */; };
@@ -377,6 +383,8 @@
 
 /* Begin PBXFileReference section */
 		A83BCDDAA0B52B48CF8F04BD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		AA4AACC01D0D5FDD00627FB0 /* SubscriptionDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionDetailsVC.swift; path = Controllers/SubscriptionDetailsVC.swift; sourceTree = "<group>"; };
+		AA7CF6E41D0EBCC900FA0665 /* CustomSegmentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomSegmentControl.swift; path = Views/CustomSegmentControl.swift; sourceTree = "<group>"; };
 		AA9EE75F1CF1C58700AC6DF3 /* libPaymentsSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPaymentsSDK.a; path = MyBreakFast/libPaymentsSDK.a; sourceTree = "<group>"; };
 		AA9EE7611CF1C5B600AC6DF3 /* PaymentsSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PaymentsSDK.h; path = MyBreakFast/PayTM/include/PaymentsSDK.h; sourceTree = SOURCE_ROOT; };
 		AA9EE7621CF1C5B600AC6DF3 /* PGMerchantConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PGMerchantConfiguration.h; path = MyBreakFast/PayTM/include/PGMerchantConfiguration.h; sourceTree = SOURCE_ROOT; };
@@ -386,6 +394,11 @@
 		AA9EE7661CF1CD8400AC6DF3 /* PayTMMerchantConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PayTMMerchantConstants.swift; path = PayTM/PayTMMerchantConstants.swift; sourceTree = "<group>"; };
 		AA9EE7681CF2E78300AC6DF3 /* PayTM_flow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PayTM_flow.storyboard; path = PayTM/PayTM_flow.storyboard; sourceTree = "<group>"; };
 		AA9EE76B1CF2E8FD00AC6DF3 /* PayTMVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PayTMVC.swift; path = PayTM/Controllers/PayTMVC.swift; sourceTree = "<group>"; };
+		AAF072241D09DAB400C67D2D /* Assets_BGTheme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets_BGTheme.xcassets; sourceTree = "<group>"; };
+		AAF072271D0A938900C67D2D /* ContainerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerProtocol.swift; path = Protocols/ContainerProtocol.swift; sourceTree = "<group>"; };
+		AAF072291D0AB88200C67D2D /* SubscriptionMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionMenuVC.swift; path = Controllers/SubscriptionMenuVC.swift; sourceTree = "<group>"; };
+		AAF0722B1D0AD79D00C67D2D /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = Views/CustomButton.swift; sourceTree = "<group>"; };
+		AAF0722D1D0B1EA700C67D2D /* SubscriptionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionVC.swift; path = Controllers/SubscriptionVC.swift; sourceTree = "<group>"; };
 		C02CB2CC5C006A15257050EC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DC6E7E1A1C9BAD8E663A54F6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED344C7C1C9B14DA008643F9 /* AboutUsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutUsVC.swift; path = Controllers/AboutUsVC.swift; sourceTree = "<group>"; };
@@ -945,6 +958,14 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		AAF072261D0A935500C67D2D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				AAF072271D0A938900C67D2D /* ContainerProtocol.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		ED344C791C9B14AB008643F9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -973,6 +994,9 @@
 				ED344C911C9B14DA008643F9 /* TermsVC.swift */,
 				ED344C921C9B14DA008643F9 /* UserOrderDetails.swift */,
 				ED344C931C9B14DA008643F9 /* ViewController.swift */,
+				AAF072291D0AB88200C67D2D /* SubscriptionMenuVC.swift */,
+				AAF0722D1D0B1EA700C67D2D /* SubscriptionVC.swift */,
+				AA4AACC01D0D5FDD00627FB0 /* SubscriptionDetailsVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -1005,6 +1029,8 @@
 				ED344CC31C9B1526008643F9 /* VitaminCell.swift */,
 				ED344CC41C9B1526008643F9 /* VitaminCollectionView.swift */,
 				ED344CC51C9B1526008643F9 /* Yourdetails.swift */,
+				AAF0722B1D0AD79D00C67D2D /* CustomButton.swift */,
+				AA7CF6E41D0EBCC900FA0665 /* CustomSegmentControl.swift */,
 				ED344C7B1C9B14BF008643F9 /* Xibs */,
 			);
 			name = Views;
@@ -1081,6 +1107,7 @@
 				ED344C791C9B14AB008643F9 /* Controllers */,
 				EDC572221C7AD08F0018F11C /* CustomModalVC */,
 				ED5B216B1BF612A300C65857 /* Models */,
+				AAF072261D0A935500C67D2D /* Protocols */,
 				ED344CB01C9B1526008643F9 /* Constants.swift */,
 				ED344CB71C9B1526008643F9 /* Helper.swift */,
 				ED722B161BE09A33003DC9F2 /* AppDelegate.swift */,
@@ -1088,6 +1115,7 @@
 				ED722B221BE09A33003DC9F2 /* LaunchScreen.storyboard */,
 				EDA736C11BE4DB1800AC9884 /* Resources */,
 				ED722B201BE09A33003DC9F2 /* Assets.xcassets */,
+				AAF072241D09DAB400C67D2D /* Assets_BGTheme.xcassets */,
 				ED722B251BE09A33003DC9F2 /* Info.plist */,
 				ED722B1D1BE09A33003DC9F2 /* MyBreakFast.xcdatamodeld */,
 			);
@@ -1920,6 +1948,7 @@
 				ED742D401CA78856007FC96D /* united_bank_of_india@2x.png in Resources */,
 				ED742CE51CA78856007FC96D /* Catholic.png in Resources */,
 				ED742CDB1CA78856007FC96D /* Bank_of_baroda@3x.png in Resources */,
+				AAF072251D09DAB400C67D2D /* Assets_BGTheme.xcassets in Resources */,
 				ED742D221CA78856007FC96D /* punjab_national_bank@2x.png in Resources */,
 				ED742D2C1CA78856007FC96D /* State_bank_of_hyderabad@3x.png in Resources */,
 				ED344CED1C9B1536008643F9 /* MyOrderCell.xib in Resources */,
@@ -2003,7 +2032,6 @@
 				ED742CF11CA78856007FC96D /* corporation_bank.png in Resources */,
 				ED742D5B1CA78856007FC96D /* visa@2x.png in Resources */,
 				ED742D281CA78856007FC96D /* State_bank_of_bikaner_and_jaipur@2x.png in Resources */,
-				ED722B211BE09A33003DC9F2 /* Assets.xcassets in Resources */,
 				ED742D1F1CA78856007FC96D /* kotak_mahindra@2x.png in Resources */,
 				ED742D391CA78856007FC96D /* UCO_bank.png in Resources */,
 				ED742D211CA78856007FC96D /* punjab_national_bank.png in Resources */,
@@ -2120,6 +2148,7 @@
 				AA9EE76C1CF2E8FD00AC6DF3 /* PayTMVC.swift in Sources */,
 				ED742C641CA78856007FC96D /* CTSAmount.m in Sources */,
 				EDE7F1F41C57DBB30063F855 /* Coupon.swift in Sources */,
+				AA4AACC11D0D5FDD00627FB0 /* SubscriptionDetailsVC.swift in Sources */,
 				ED742C961CA78856007FC96D /* CTSPrepaidPayResp.m in Sources */,
 				ED742CD21CA78856007FC96D /* HVDOverlay.m in Sources */,
 				ED742C851CA78856007FC96D /* CTSSignUpRes.m in Sources */,
@@ -2151,6 +2180,7 @@
 				ED742CA71CA78856007FC96D /* CitrusPay.m in Sources */,
 				ED742C771CA78856007FC96D /* CTSElectronicCardUpdate.m in Sources */,
 				ED5B21871BF76D3400C65857 /* Item.swift in Sources */,
+				AAF0722A1D0AB88200C67D2D /* SubscriptionMenuVC.swift in Sources */,
 				ED742C821CA78856007FC96D /* CTSLinkRes.m in Sources */,
 				ED742C721CA78856007FC96D /* CTSTokenizedPaymentToken.m in Sources */,
 				ED344CCE1C9B1526008643F9 /* Deliveryaddress.swift in Sources */,
@@ -2167,6 +2197,7 @@
 				ED344CCA1C9B1526008643F9 /* Constants.swift in Sources */,
 				ED742C9E1CA78856007FC96D /* CTSProfilePaymentRes.m in Sources */,
 				ED742C6E1CA78856007FC96D /* CTSPaymentUpdate.m in Sources */,
+				AAF072281D0A938900C67D2D /* ContainerProtocol.swift in Sources */,
 				ED742C681CA78856007FC96D /* CTSDyPValidateRuleReq.m in Sources */,
 				ED742CB51CA78856007FC96D /* CTSRestCore.m in Sources */,
 				ED344C9B1C9B14DA008643F9 /* DummyVC.swift in Sources */,
@@ -2192,6 +2223,7 @@
 				ED742CA21CA78856007FC96D /* GetProfileRes.m in Sources */,
 				ED5B21841BF76D3400C65857 /* Locations.swift in Sources */,
 				ED742CC41CA78856007FC96D /* JSONModel+networking.m in Sources */,
+				AAF0722E1D0B1EA700C67D2D /* SubscriptionVC.swift in Sources */,
 				EDBA06B71C00D7BC00BE09B3 /* MyOrder.swift in Sources */,
 				ED742C5F1CA78856007FC96D /* CTSRestError.m in Sources */,
 				ED344CD21C9B1526008643F9 /* MenuItemCell.swift in Sources */,
@@ -2207,6 +2239,7 @@
 				ED742D5D1CA78856007FC96D /* NSString+HVDKit.m in Sources */,
 				ED742CB91CA78856007FC96D /* CTSRestPluginBase.m in Sources */,
 				ED344CD71C9B1526008643F9 /* PopCell.swift in Sources */,
+				AA7CF6E51D0EBCC900FA0665 /* CustomSegmentControl.swift in Sources */,
 				ED742C8F1CA78856007FC96D /* CTSDyPResponse.m in Sources */,
 				ED5B21861BF76D3400C65857 /* Item+CoreDataProperties.swift in Sources */,
 				ED344CA91C9B14DA008643F9 /* TermsVC.swift in Sources */,
@@ -2228,6 +2261,7 @@
 				ED742CAA1CA78856007FC96D /* CTSObject.m in Sources */,
 				ED344CCC1C9B1526008643F9 /* CustomSegment.swift in Sources */,
 				ED742C9D1CA78856007FC96D /* CTSProfileContactRes.m in Sources */,
+				AAF0722C1D0AD79D00C67D2D /* CustomButton.swift in Sources */,
 				ED344CF41C9B19EB008643F9 /* FloatRatingView.swift in Sources */,
 				ED742D611CA78856007FC96D /* HomeViewController.m in Sources */,
 				ED344CC61C9B1526008643F9 /* ActivityIndicator.swift in Sources */,

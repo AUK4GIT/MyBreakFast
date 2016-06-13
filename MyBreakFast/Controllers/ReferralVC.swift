@@ -101,7 +101,7 @@ class ReferralVC: UIViewController {
     
     @IBAction func orderNow(sender: AnyObject) {
         let parentVC = self.parentViewController as! ViewController
-        parentVC.cycleFromViewController(nil, toViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("MenuVC"))!)
+        parentVC.cycleFromViewController(nil, toViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("SubscriptionMenuVC"))!)
     }
     
     @IBAction func whatsAppAction(sender: AnyObject) {

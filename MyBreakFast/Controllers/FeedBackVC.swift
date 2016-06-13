@@ -27,6 +27,7 @@ class FeedBackVC: UIViewController, FloatRatingViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.floatRatingView.delegate = self;
+        self.floatRatingView.tintColor = Constants.AppColors.green.color;
     }
     
     override func beginAppearanceTransition(isAppearing: Bool, animated: Bool) {

@@ -100,7 +100,6 @@ struct Constants {
     */
     struct StaticContent {
         static let SideMenuList : [String] = ["Menu", "My Orders", "About Us", "Contact Us", "Rate Us", "Refer a Friend", "Terms & Conditions"];
-        static let AppThemeColor = UIColor(red: 200.0/255.0, green: 5.0/255.0, blue: 15.0/255.0, alpha: 1.0);
         static let Filters : [[String:String]] = [["filterName":"Veg", "filtervalue":"Veg","imageName":"Veg.png", "color":"green"],
         ["filterName":"Non-Veg", "filtervalue":"Non Veg","imageName":"NonVeg-1.png", "color":"red"],
         ["filterName":"Egg", "filtervalue":"Egg","imageName":"Egg-1.png", "color":"yellow"],
@@ -142,4 +141,25 @@ struct Constants {
         static let LastSelectedLocationId: String = "LastSelectedLocationId"
 
     }
+    
+    enum AppColors {
+        case blue
+        case green
+        case darkGrey
+        case lightGrey
+        case lightGreen
+        case highlightedCellBG
+        
+        var color: UIColor {
+            switch self {
+            case .blue: return UIColor(red: 59.0/255.0, green: 195.0/255.0, blue: 211.0/255.0, alpha: 1.0)
+            case .green: return UIColor(red: 193.0/255.0, green: 207.0/255.0, blue: 89.0/255.0, alpha: 1.0)
+            case .darkGrey: return UIColor(red: 49.0/255.0, green: 47.0/255.0, blue: 47.0/255.0, alpha: 1.0)
+            case .lightGrey: return UIColor(red: 238.0/255.0, green: 238.0/255.0, blue: 238.0/255.0, alpha: 1.0)
+            case .lightGreen: return UIColor(red: 208.0/255.0, green: 224.0/255.0, blue: 84.0/255.0, alpha: 1.0)
+            case .highlightedCellBG: return UIColor(red: 200.0/255.0, green: 200.0/255.0, blue: 200.0/255.0, alpha:1.0)
+            }
+        }
+    }
+    
 }

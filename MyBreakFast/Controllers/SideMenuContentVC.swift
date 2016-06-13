@@ -16,6 +16,7 @@ protocol Slidemenuprotocol: class  {
 
 class SideMenuContentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet var headerBGView: UIView!
     @IBOutlet  var locationName: UILabel!
     @IBOutlet  var userName: UILabel!
 //    let gradient: CAGradientLayer = CAGradientLayer()
@@ -26,7 +27,7 @@ class SideMenuContentVC: UIViewController, UITableViewDataSource, UITableViewDel
     
     override func viewDidLoad(){
         super.viewDidLoad();
-
+        self.headerBGView.backgroundColor = Constants.AppColors.blue.color;
         self.tableView.registerNib(UINib(nibName: "SideMenuCell", bundle: nil), forCellReuseIdentifier: "cell")
         self.tableView.rowHeight = (UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone) ? 55.0 : 75.0;
         self.tableView.backgroundColor = UIColor.clearColor()
@@ -57,17 +58,13 @@ class SideMenuContentVC: UIViewController, UITableViewDataSource, UITableViewDel
 
     override func viewWillLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
-//        self.gradient.frame = self.view.bounds;
-//        self.gradient.colors = [UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0).CGColor, UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 150.0/255.0, alpha: 1.0).CGColor];
-
     }
     // MARK: Tableview delegates & datasources
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch indexPath.row {
         case 0:
-            self.delegate?.selectedViewController((self.storyboard?.instantiateViewControllerWithIdentifier("MenuVC"))!)
+            self.delegate?.selectedViewController((self.storyboard?.instantiateViewControllerWithIdentifier("SubscriptionMenuVC"))!)
             break;
         case 1:
             self.delegate?.selectedViewController((self.storyboard?.instantiateViewControllerWithIdentifier("MyOrdersVC"))!)
@@ -109,7 +106,7 @@ class SideMenuContentVC: UIViewController, UITableViewDataSource, UITableViewDel
 //        cell.cellTextLabel?.font = UIFont(name: "Helvetica Neue", size: 22.0)
 
         let bView = UIView(frame: cell.bounds)
-        bView.backgroundColor = UIColor(red: 200.0/255.0, green: 200.0/255.0, blue: 200.0/255.0, alpha: 1.0)
+        bView.backgroundColor = Constants.AppColors.highlightedCellBG.color
         cell.selectedBackgroundView = bView
         
         switch indexPath.row {

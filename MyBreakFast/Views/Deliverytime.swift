@@ -116,7 +116,7 @@ class Deliverytime: UICollectionViewCell {
         self.activity = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
         self.addSubview(self.activity!);
         self.activity?.translatesAutoresizingMaskIntoConstraints = false;
-        self.activity?.color = Constants.StaticContent.AppThemeColor;
+        self.activity?.color = Constants.AppColors.blue.color;
         self.activity?.startAnimating()
         self.activity?.hidesWhenStopped = true;
         

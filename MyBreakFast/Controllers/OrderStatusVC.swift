@@ -93,7 +93,7 @@ class OrderStatusVC: UIViewController {
     
     @IBAction func gotomenu(sender: AnyObject) {
         let parentVC = self.parentViewController as! ViewController
-        parentVC.cycleFromViewController(nil, toViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("MenuVC"))!)
+        parentVC.cycleFromViewController(nil, toViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("SubscriptionMenuVC"))!)
     }
     
     @IBAction func gotoMyOrders(sender: AnyObject) {
