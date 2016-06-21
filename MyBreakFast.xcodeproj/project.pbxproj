@@ -14,6 +14,15 @@
 		AA9EE7671CF1CD8400AC6DF3 /* PayTMMerchantConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9EE7661CF1CD8400AC6DF3 /* PayTMMerchantConstants.swift */; };
 		AA9EE7691CF2E78400AC6DF3 /* PayTM_flow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA9EE7681CF2E78300AC6DF3 /* PayTM_flow.storyboard */; };
 		AA9EE76C1CF2E8FD00AC6DF3 /* PayTMVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9EE76B1CF2E8FD00AC6DF3 /* PayTMVC.swift */; };
+		AAAB65AF1D152E4A006E6984 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB65AE1D152E4A006E6984 /* Subscription.swift */; };
+		AAAB65B11D152F3D006E6984 /* Dietician.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB65B01D152F3D006E6984 /* Dietician.swift */; };
+		AAAB65B31D152F50006E6984 /* RegularPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB65B21D152F50006E6984 /* RegularPlan.swift */; };
+		AAAB65B51D155E0B006E6984 /* PlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB65B41D155E0B006E6984 /* PlanCell.swift */; };
+		AAAB65B71D155E5F006E6984 /* DietCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB65B61D155E5F006E6984 /* DietCell.swift */; };
+		AAAB65B91D184A48006E6984 /* PlanDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB65B81D184A48006E6984 /* PlanDetails.swift */; };
+		AAAB65BB1D185447006E6984 /* MealSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB65BA1D185447006E6984 /* MealSlot.swift */; };
+		AAAB65BF1D1855D5006E6984 /* PlannedMeals.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB65BE1D1855D4006E6984 /* PlannedMeals.swift */; };
+		AAAB65C11D1855F5006E6984 /* TimeSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB65C01D1855F5006E6984 /* TimeSlot.swift */; };
 		AAF072251D09DAB400C67D2D /* Assets_BGTheme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAF072241D09DAB400C67D2D /* Assets_BGTheme.xcassets */; };
 		AAF072281D0A938900C67D2D /* ContainerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF072271D0A938900C67D2D /* ContainerProtocol.swift */; };
 		AAF0722A1D0AB88200C67D2D /* SubscriptionMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF072291D0AB88200C67D2D /* SubscriptionMenuVC.swift */; };
@@ -394,6 +403,15 @@
 		AA9EE7661CF1CD8400AC6DF3 /* PayTMMerchantConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PayTMMerchantConstants.swift; path = PayTM/PayTMMerchantConstants.swift; sourceTree = "<group>"; };
 		AA9EE7681CF2E78300AC6DF3 /* PayTM_flow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PayTM_flow.storyboard; path = PayTM/PayTM_flow.storyboard; sourceTree = "<group>"; };
 		AA9EE76B1CF2E8FD00AC6DF3 /* PayTMVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PayTMVC.swift; path = PayTM/Controllers/PayTMVC.swift; sourceTree = "<group>"; };
+		AAAB65AE1D152E4A006E6984 /* Subscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Subscription.swift; path = Models/Subscription.swift; sourceTree = "<group>"; };
+		AAAB65B01D152F3D006E6984 /* Dietician.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dietician.swift; path = Models/Dietician.swift; sourceTree = "<group>"; };
+		AAAB65B21D152F50006E6984 /* RegularPlan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegularPlan.swift; path = Models/RegularPlan.swift; sourceTree = "<group>"; };
+		AAAB65B41D155E0B006E6984 /* PlanCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlanCell.swift; path = Views/PlanCell.swift; sourceTree = "<group>"; };
+		AAAB65B61D155E5F006E6984 /* DietCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DietCell.swift; path = Views/DietCell.swift; sourceTree = "<group>"; };
+		AAAB65B81D184A48006E6984 /* PlanDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlanDetails.swift; path = Models/PlanDetails.swift; sourceTree = "<group>"; };
+		AAAB65BA1D185447006E6984 /* MealSlot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealSlot.swift; path = Models/MealSlot.swift; sourceTree = "<group>"; };
+		AAAB65BE1D1855D4006E6984 /* PlannedMeals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlannedMeals.swift; path = Models/PlannedMeals.swift; sourceTree = "<group>"; };
+		AAAB65C01D1855F5006E6984 /* TimeSlot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeSlot.swift; path = Models/TimeSlot.swift; sourceTree = "<group>"; };
 		AAF072241D09DAB400C67D2D /* Assets_BGTheme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets_BGTheme.xcassets; sourceTree = "<group>"; };
 		AAF072271D0A938900C67D2D /* ContainerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerProtocol.swift; path = Protocols/ContainerProtocol.swift; sourceTree = "<group>"; };
 		AAF072291D0AB88200C67D2D /* SubscriptionMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionMenuVC.swift; path = Controllers/SubscriptionMenuVC.swift; sourceTree = "<group>"; };
@@ -1032,6 +1050,8 @@
 				AAF0722B1D0AD79D00C67D2D /* CustomButton.swift */,
 				AA7CF6E41D0EBCC900FA0665 /* CustomSegmentControl.swift */,
 				ED344C7B1C9B14BF008643F9 /* Xibs */,
+				AAAB65B41D155E0B006E6984 /* PlanCell.swift */,
+				AAAB65B61D155E5F006E6984 /* DietCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1076,6 +1096,13 @@
 				EDCC2AE41C339F0800C15C3B /* Order.swift */,
 				EDCC2AE61C339F6500C15C3B /* OrderItem.swift */,
 				EDE7F1F31C57DBB30063F855 /* Coupon.swift */,
+				AAAB65AE1D152E4A006E6984 /* Subscription.swift */,
+				AAAB65B01D152F3D006E6984 /* Dietician.swift */,
+				AAAB65B21D152F50006E6984 /* RegularPlan.swift */,
+				AAAB65B81D184A48006E6984 /* PlanDetails.swift */,
+				AAAB65BA1D185447006E6984 /* MealSlot.swift */,
+				AAAB65C01D1855F5006E6984 /* TimeSlot.swift */,
+				AAAB65BE1D1855D4006E6984 /* PlannedMeals.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -2118,6 +2145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED344C961C9B14DA008643F9 /* AppSignInVC.swift in Sources */,
+				AAAB65B31D152F50006E6984 /* RegularPlan.swift in Sources */,
 				ED344CC91C9B1526008643F9 /* ChangeCell.swift in Sources */,
 				ED344CDB1C9B1526008643F9 /* TimeSlotCell.swift in Sources */,
 				ED742CAC1CA78856007FC96D /* OauthStatus.m in Sources */,
@@ -2193,6 +2221,7 @@
 				ED742C9A1CA78856007FC96D /* CTSNewContactProfile.m in Sources */,
 				ED742C781CA78856007FC96D /* CTSNetBankingUpdate.m in Sources */,
 				ED344CD81C9B1526008643F9 /* ProductsCell.swift in Sources */,
+				AAAB65B71D155E5F006E6984 /* DietCell.swift in Sources */,
 				EDBA06B61C00D7BC00BE09B3 /* MyOrder+CoreDataProperties.swift in Sources */,
 				ED344CCA1C9B1526008643F9 /* Constants.swift in Sources */,
 				ED742C9E1CA78856007FC96D /* CTSProfilePaymentRes.m in Sources */,
@@ -2200,6 +2229,7 @@
 				AAF072281D0A938900C67D2D /* ContainerProtocol.swift in Sources */,
 				ED742C681CA78856007FC96D /* CTSDyPValidateRuleReq.m in Sources */,
 				ED742CB51CA78856007FC96D /* CTSRestCore.m in Sources */,
+				AAAB65BB1D185447006E6984 /* MealSlot.swift in Sources */,
 				ED344C9B1C9B14DA008643F9 /* DummyVC.swift in Sources */,
 				ED742C8B1CA78856007FC96D /* CTSCardBinResponse.m in Sources */,
 				ED742D651CA78856007FC96D /* SettingViewController.m in Sources */,
@@ -2212,7 +2242,9 @@
 				ED742C8C1CA78856007FC96D /* CTSCashoutBankAccountResp.m in Sources */,
 				EDCC2AE71C339F6500C15C3B /* OrderItem.swift in Sources */,
 				ED996EB31C30CA960017284A /* UserAddress+CoreDataProperties.swift in Sources */,
+				AAAB65B91D184A48006E6984 /* PlanDetails.swift in Sources */,
 				ED742C921CA78856007FC96D /* CTSPaymentTransactionRes.m in Sources */,
+				AAAB65AF1D152E4A006E6984 /* Subscription.swift in Sources */,
 				AA9EE7671CF1CD8400AC6DF3 /* PayTMMerchantConstants.swift in Sources */,
 				ED344C9A1C9B14DA008643F9 /* DatePickerVC.swift in Sources */,
 				ED5B21801BF76D3400C65857 /* Offer.swift in Sources */,
@@ -2227,6 +2259,7 @@
 				EDBA06B71C00D7BC00BE09B3 /* MyOrder.swift in Sources */,
 				ED742C5F1CA78856007FC96D /* CTSRestError.m in Sources */,
 				ED344CD21C9B1526008643F9 /* MenuItemCell.swift in Sources */,
+				AAAB65C11D1855F5006E6984 /* TimeSlot.swift in Sources */,
 				ED742CD11CA78856007FC96D /* CTSPaymentWebViewController.m in Sources */,
 				ED742C7C1CA78856007FC96D /* CTSPrepaidUpdate.m in Sources */,
 				ED742C931CA78856007FC96D /* CTSPGHealthRes.m in Sources */,
@@ -2248,9 +2281,11 @@
 				ED344CAA1C9B14DA008643F9 /* UserOrderDetails.swift in Sources */,
 				ED344CDD1C9B1526008643F9 /* VitaminCell.swift in Sources */,
 				ED742CB61CA78856007FC96D /* CTSRestCoreRequest.m in Sources */,
+				AAAB65B11D152F3D006E6984 /* Dietician.swift in Sources */,
 				ED344CCB1C9B1526008643F9 /* CouponCodeCell.swift in Sources */,
 				ED742C691CA78856007FC96D /* CTSGuestCheckout.m in Sources */,
 				ED742CA01CA78856007FC96D /* CTSUpdateMobileNumberRes.m in Sources */,
+				AAAB65BF1D1855D5006E6984 /* PlannedMeals.swift in Sources */,
 				ED742CC51CA78856007FC96D /* JSONKeyMapper.m in Sources */,
 				ED742C6B1CA78856007FC96D /* CTSPaymentNetbankingRequest.m in Sources */,
 				ED742CA81CA78856007FC96D /* CTSDataCache.m in Sources */,
@@ -2294,6 +2329,7 @@
 				ED742CC71CA78856007FC96D /* CTSHtmlElement.m in Sources */,
 				ED742C891CA78856007FC96D /* CitrusCashRes.m in Sources */,
 				ED344CA21C9B14DA008643F9 /* MyOrdersVC.swift in Sources */,
+				AAAB65B51D155E0B006E6984 /* PlanCell.swift in Sources */,
 				ED344CD51C9B1526008643F9 /* OffersCell.swift in Sources */,
 				ED344CA01C9B14DA008643F9 /* MenuVC.swift in Sources */,
 				ED344C9E1C9B14DA008643F9 /* LocationPicker.swift in Sources */,

@@ -14,9 +14,6 @@ class SubscriptionMenuVC: ContainerVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        self.cycleFromViewController(nil, toViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("MenuVC"))!)
-
     }
     
     func cycleFromViewController(oldC: AnyObject?,

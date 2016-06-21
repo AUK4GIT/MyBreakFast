@@ -33,6 +33,7 @@ import Reachability
     var isOrderForTomorrow = false;
     var redeemValue: Double = 0.5;
     var kitchen = "";
+    var subscription: Subscription?
 
     func setUpReachability(){
     
@@ -175,15 +176,6 @@ import Reachability
         }
         self.saveContext();
     }
-    
-//    func saveMenuOrders(myOrders: AnyObject) {
-//        self.deleteData("MyOrder");
-//        for order in myOrders as! [AnyObject] {
-//            let orderObj: MyOrder = NSManagedObject(entity: NSEntityDescription.entityForName("MyOrder",
-//                inManagedObjectContext:appDelegate.managedObjectContext)!, insertIntoManagedObjectContext: appDelegate.managedObjectContext) as! MyOrder
-//            orderObj.saveData(order as! NSDictionary);
-//        }
-//    }
     
     func saveUserDetailsFromFaceBook(userDetails: NSDictionary) {
         self.deleteData("UserDetails");
@@ -1542,6 +1534,167 @@ import Reachability
 
     }
     
+    
+    func getSubscriptionRegularPlan(completionHandler: (AnyObject) -> ()) {
+        
+        Helper.sharedInstance.showActivity()
+        let completeURL = Constants.API.Subscr_RegularPlan
+        
+        Alamofire.request(.GET, completeURL, parameters: nil)
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                //print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                    if let jData =  JSON as? NSDictionary{
+                        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                            Helper.sharedInstance.hideActivity()
+                            completionHandler(jData)
+                        }
+                    } else {
+                        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                            Helper.sharedInstance.hideActivity()
+                            completionHandler("ERROR")
+                        }
+                    }
+                } else {
+                    dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                        Helper.sharedInstance.hideActivity()
+                        completionHandler("ERROR")
+                    }
+                }
+        }
+    }
+    
+    func getSubscriptionMealsForaPlan(planId: String, completionHandler: (AnyObject) -> ()) {
+        
+        Helper.sharedInstance.showActivity()
+        let completeURL = Constants.API.Subscr_MealsForPlan+planId
+        Alamofire.request(.GET, completeURL, parameters: nil)
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                //print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                    if let jData =  JSON as? NSDictionary{
+                        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                            Helper.sharedInstance.hideActivity()
+                            completionHandler(jData)
+                        }
+                    } else {
+                        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                            Helper.sharedInstance.hideActivity()
+                            completionHandler("ERROR")
+                        }
+                    }
+                } else {
+                    dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                        Helper.sharedInstance.hideActivity()
+                        completionHandler("ERROR")
+                    }
+                }
+        }
+    }
+
+    func getSubscriptionOrderDetails(orderId: String, completionHandler: (AnyObject) -> ()) {
+        
+        Helper.sharedInstance.showActivity()
+        let completeURL = Constants.API.Subscr_GetOrderDetails+orderId
+        Alamofire.request(.GET, completeURL, parameters: nil)
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                //print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                    if let jData =  JSON as? NSDictionary{
+                        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                            Helper.sharedInstance.hideActivity()
+                            completionHandler(jData)
+                        }
+                    } else {
+                        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                            Helper.sharedInstance.hideActivity()
+                            completionHandler("ERROR")
+                        }
+                    }
+                } else {
+                    dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                        Helper.sharedInstance.hideActivity()
+                        completionHandler("ERROR")
+                    }
+                }
+        }
+    }
+    
+    
+    func subscriptionPlaceOrder(paymentMode: String, completionHandler: (AnyObject) -> ()) {
+        
+        
+        Helper.sharedInstance.showActivity()
+        let completeURL = Constants.API.Subscr_PlaceOrder+self.getUserId()
+        let change = Helper.sharedInstance.order?.change ?? "100"
+        let coupon = Helper.sharedInstance.order?.couponsApplied.count>0 ? Helper.sharedInstance.order?.couponsApplied[0]: nil;
+        var couponId = "";
+        let redeemPoints = self.order?.pointsToRedeem;
+        if coupon != nil {
+            couponId = (coupon?.couponid)!;
+        }
+        let postParams: [String : AnyObject] = ["change":change as String,
+                                                "coupon":couponId,
+                                                "kitchen":Helper.sharedInstance.kitchen,
+                                                "address":(self.order?.addressId!)!,
+                                                "slot":(self.order?.timeSlotId)!,
+                                                "points":redeemPoints!,
+                                                "menu":self.getCommaSeparatedMenuIdsandQuantitiesForOrder(),
+                                                "qty":self.quantities!,
+                                                "offers":self.getCommaSeparatedOfferIds(),
+                                                "subtotal":(self.order?.totalAmount!)!,
+                                                "paymentmode":paymentMode,
+                                                "discount":(Helper.sharedInstance.order?.discount)!,
+                                                "vat":(Helper.sharedInstance.order?.vatAmount)!,
+                                                "surcharge":(Helper.sharedInstance.order?.serviceChargeAmount)!,
+                                                "total":(self.order?.totalAmountPayable!)!,
+                                                "d":self.orderDate!]
+        
+        Alamofire.request(.GET, completeURL, parameters: postParams)
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                //print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                    if let jData =  JSON as? NSDictionary{
+                        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                            Helper.sharedInstance.hideActivity()
+                            completionHandler(jData)
+                        }
+                    } else {
+                        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                            Helper.sharedInstance.hideActivity()
+                            completionHandler("ERROR")
+                        }
+                    }
+                } else {
+                    dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                        Helper.sharedInstance.hideActivity()
+                        completionHandler("ERROR")
+                    }
+                }
+        }
+    }
+    
+    //MARK: Coredata Save context
     
     func saveContext() {
         do {
