@@ -17,6 +17,8 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     @IBOutlet  var numberOfItemsLabel: UILabel!
     
     @IBOutlet  var dateLabel: UIBarButtonItem!
+    @IBOutlet  weak var dateLabelAlacarte: UILabel?
+
      var searchButton: UIButton!
     var itemsArray : [Item] = [];
     var tempItemsArray : [Item] = [];
@@ -186,7 +188,10 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
 
     }
     
-    @IBAction func showDatePicker(sender: AnyObject) {
+    @IBAction func showDatePicker(sender: UIControl) {
+        
+        let label = sender.viewWithTag(3) as! UILabel
+        self.dateLabelAlacarte = label
         
         self.dateTableView.alpha = 0.0;
         self.dateTableView.hidden = false;
@@ -195,7 +200,6 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
             self.dateTableView.alpha = 1.0;
             }) { (completed) -> Void in
         }
-        
     }
     
     func showDeliveryLocationPopUp() {
@@ -419,6 +423,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         self.dateLabel.title = cell?.textLabel?.text;
+        self.dateLabelAlacarte!.text = cell?.textLabel?.text;
         if indexPath.row == 0 {
             Helper.sharedInstance.isOrderForTomorrow = false;
         } else {
@@ -447,6 +452,7 @@ cell.textLabel?.textColor = UIColor.darkGrayColor()//Constants.AppColors.blue.co
         let dtFormat = NSDateFormatter()
         dtFormat.dateFormat = "EEEE dd, MMM"
         let date = self.datesArray[indexPath.row] as NSDate
+        cell.textLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 10.0)
         cell.textLabel?.text = self.dateFormatter.stringFromDate(date)+" ("+dtFormat.stringFromDate(date)+")"
         
         return cell

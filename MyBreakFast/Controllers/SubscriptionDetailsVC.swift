@@ -36,9 +36,11 @@ class SubscriptionDetailsVC: UIViewController {
                 if self.planDetails?.sat == "0" {
                     self.satButton.enabled = false;
                 }
-                if self.planDetails?.sun == "0" {
+                //For Now Sunday is Disabled
+//                if self.planDetails?.sun == "0" {
                     self.sunButton.enabled = false;
-                }
+                self.sunButton.userInteractionEnabled = false;
+//                }
                 
                 if let addrID = Helper.sharedInstance.getDataFromUserDefaults(forKey: Constants.UserdefaultConstants.LastSelectedAddressId) as? String {
                     Helper.sharedInstance.order?.addressId = addrID
@@ -57,6 +59,10 @@ class SubscriptionDetailsVC: UIViewController {
         }
     }
     
+    @IBAction func includeSaturday(sender: UIButton) {
+        
+        sender.selected = !sender.selected;
+    }
     func showAddAddressVC(){
         //        AddAddressVC
         self.presentViewController((self.storyboard?.instantiateViewControllerWithIdentifier("AddAddressNVC"))!, animated: true) { () -> Void in

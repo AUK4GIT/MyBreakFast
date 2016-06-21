@@ -13,6 +13,7 @@ class DietCell: UICollectionViewCell {
     @IBOutlet  var nameLabel: UILabel!
     @IBOutlet  var recommendLabel: UILabel!
     @IBOutlet  var imageV: UIImageView!
+    @IBOutlet  var highlightView: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,10 +23,18 @@ class DietCell: UICollectionViewCell {
         didSet{
             if selected {
                 print("selected");
-                self.contentView.backgroundColor = Constants.AppColors.lightGrey.color;
+//                self.contentView.backgroundColor = Constants.AppColors.lightGrey.color;
+                self.nameLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 12.0)
+//                self.recommendLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 11.0)
+
+                self.highlightView.hidden = false;
             } else {
                 print("unselected");
-                self.contentView.backgroundColor = UIColor.whiteColor();
+                self.nameLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 10.0)
+//                self.recommendLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 10.0)
+
+//                self.contentView.backgroundColor = UIColor.whiteColor();
+                self.highlightView.hidden = true;
             }
         }
     }

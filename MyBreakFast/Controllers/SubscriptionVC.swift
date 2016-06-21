@@ -40,6 +40,17 @@ class DieticiansDatasource: NSObject, UICollectionViewDelegate, UICollectionView
         return cell!;
     }
     
+    func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
+    
+        if collectionView.indexPathsForSelectedItems()![0] == indexPath {
+            UIApplication.sharedApplication().sendAction(#selector(SubscriptionVC.showDietciansDetails), to: nil, from: collectionView, forEvent: nil);
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         UIApplication.sharedApplication().sendAction(#selector(SubscriptionVC.setSelectionLabel), to: nil, from: collectionView, forEvent: nil);
     }
@@ -85,6 +96,12 @@ class SubscriptionVC: UIViewController {
 
             }
         }
+    }
+    
+    func showDietciansDetails(){
+        let dIndexPath = self.dieticiansList.indexPathsForSelectedItems()![0]
+        let dietician = Helper.sharedInstance.subscription?.dieticians![dIndexPath.row]
+
     }
     
     func setSelectionLabel(){
