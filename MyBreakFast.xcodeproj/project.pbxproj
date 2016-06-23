@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		42F4FE3801F1438966FD070F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6E7E1A1C9BAD8E663A54F6 /* Pods.framework */; };
+		7197232473EAE4B72D117DDA /* Pods_MyBreakFast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E122D7142E78537EB4BA1D5 /* Pods_MyBreakFast.framework */; };
 		AA4AACC11D0D5FDD00627FB0 /* SubscriptionDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4AACC01D0D5FDD00627FB0 /* SubscriptionDetailsVC.swift */; };
 		AA7CF6E51D0EBCC900FA0665 /* CustomSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7CF6E41D0EBCC900FA0665 /* CustomSegmentControl.swift */; };
 		AA9EE7601CF1C58700AC6DF3 /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA9EE75F1CF1C58700AC6DF3 /* libPaymentsSDK.a */; };
@@ -391,7 +391,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A83BCDDAA0B52B48CF8F04BD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		3298BBB4469215821FB74B86 /* Pods-MyBreakFast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyBreakFast.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyBreakFast/Pods-MyBreakFast.release.xcconfig"; sourceTree = "<group>"; };
+		5E122D7142E78537EB4BA1D5 /* Pods_MyBreakFast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyBreakFast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA4AACC01D0D5FDD00627FB0 /* SubscriptionDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionDetailsVC.swift; path = Controllers/SubscriptionDetailsVC.swift; sourceTree = "<group>"; };
 		AA7CF6E41D0EBCC900FA0665 /* CustomSegmentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomSegmentControl.swift; path = Views/CustomSegmentControl.swift; sourceTree = "<group>"; };
 		AA9EE75F1CF1C58700AC6DF3 /* libPaymentsSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPaymentsSDK.a; path = MyBreakFast/libPaymentsSDK.a; sourceTree = "<group>"; };
@@ -417,7 +418,6 @@
 		AAF072291D0AB88200C67D2D /* SubscriptionMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionMenuVC.swift; path = Controllers/SubscriptionMenuVC.swift; sourceTree = "<group>"; };
 		AAF0722B1D0AD79D00C67D2D /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = Views/CustomButton.swift; sourceTree = "<group>"; };
 		AAF0722D1D0B1EA700C67D2D /* SubscriptionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionVC.swift; path = Controllers/SubscriptionVC.swift; sourceTree = "<group>"; };
-		C02CB2CC5C006A15257050EC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DC6E7E1A1C9BAD8E663A54F6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED344C7C1C9B14DA008643F9 /* AboutUsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutUsVC.swift; path = Controllers/AboutUsVC.swift; sourceTree = "<group>"; };
 		ED344C7D1C9B14DA008643F9 /* AddAddressVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddAddressVC.swift; path = Controllers/AddAddressVC.swift; sourceTree = "<group>"; };
@@ -921,6 +921,7 @@
 		EDE5E03A1C4FEB690044E819 /* Kitchens+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Kitchens+CoreDataProperties.swift"; path = "Models/Kitchens+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EDE5E03B1C4FEB690044E819 /* Kitchens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Kitchens.swift; path = Models/Kitchens.swift; sourceTree = "<group>"; };
 		EDE7F1F31C57DBB30063F855 /* Coupon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Coupon.swift; path = Models/Coupon.swift; sourceTree = "<group>"; };
+		F86E339288D1435A50B7FB43 /* Pods-MyBreakFast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyBreakFast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyBreakFast/Pods-MyBreakFast.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -928,19 +929,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42F4FE3801F1438966FD070F /* Pods.framework in Frameworks */,
 				AA9EE7601CF1C58700AC6DF3 /* libPaymentsSDK.a in Frameworks */,
+				7197232473EAE4B72D117DDA /* Pods_MyBreakFast.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		937BD884ED0712A7D853FBD3 /* Pods */ = {
+		015196126A989BEB9DDF3928 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A83BCDDAA0B52B48CF8F04BD /* Pods.debug.xcconfig */,
-				C02CB2CC5C006A15257050EC /* Pods.release.xcconfig */,
+				F86E339288D1435A50B7FB43 /* Pods-MyBreakFast.debug.xcconfig */,
+				3298BBB4469215821FB74B86 /* Pods-MyBreakFast.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1112,8 +1113,8 @@
 			children = (
 				ED722B151BE09A33003DC9F2 /* MyBreakFast */,
 				ED722B141BE09A33003DC9F2 /* Products */,
-				937BD884ED0712A7D853FBD3 /* Pods */,
 				FCCBE4C75107B921E1C15ABB /* Frameworks */,
+				015196126A989BEB9DDF3928 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1851,6 +1852,7 @@
 				EDA736DB1BE4F11400AC9884 /* SystemConfiguration.framework */,
 				EDA736D91BE4F10E00AC9884 /* AddressBook.framework */,
 				DC6E7E1A1C9BAD8E663A54F6 /* Pods.framework */,
+				5E122D7142E78537EB4BA1D5 /* Pods_MyBreakFast.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1862,12 +1864,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED722B281BE09A33003DC9F2 /* Build configuration list for PBXNativeTarget "MyBreakFast" */;
 			buildPhases = (
-				999FD5FF2451F82DF7DAD3C7 /* Check Pods Manifest.lock */,
+				3EA25042C51F40F7BA1328F6 /* [CP] Check Pods Manifest.lock */,
 				ED722B0F1BE09A33003DC9F2 /* Sources */,
 				ED722B101BE09A33003DC9F2 /* Frameworks */,
 				ED722B111BE09A33003DC9F2 /* Resources */,
-				6FF0D2C418A835404A2BB320 /* Copy Pods Resources */,
-				A1301AEE978B84F4F472367B /* Embed Pods Frameworks */,
+				E523D6359410E18011A958BB /* [CP] Embed Pods Frameworks */,
+				7F8FA34CF13FDD2086372BBF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2092,29 +2094,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6FF0D2C418A835404A2BB320 /* Copy Pods Resources */ = {
+		3EA25042C51F40F7BA1328F6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		999FD5FF2451F82DF7DAD3C7 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2122,19 +2109,34 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		A1301AEE978B84F4F472367B /* Embed Pods Frameworks */ = {
+		7F8FA34CF13FDD2086372BBF /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyBreakFast/Pods-MyBreakFast-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E523D6359410E18011A958BB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyBreakFast/Pods-MyBreakFast-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2475,7 +2477,7 @@
 		};
 		ED722B291BE09A33003DC9F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A83BCDDAA0B52B48CF8F04BD /* Pods.debug.xcconfig */;
+			baseConfigurationReference = F86E339288D1435A50B7FB43 /* Pods-MyBreakFast.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -2524,7 +2526,7 @@
 		};
 		ED722B2A1BE09A33003DC9F2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C02CB2CC5C006A15257050EC /* Pods.release.xcconfig */;
+			baseConfigurationReference = 3298BBB4469215821FB74B86 /* Pods-MyBreakFast.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

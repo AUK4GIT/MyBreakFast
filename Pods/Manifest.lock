@@ -1,23 +1,17 @@
 PODS:
   - Alamofire (3.1.2)
-  - Bolts (1.5.0):
-    - Bolts/AppLinks (= 1.5.0)
-    - Bolts/Tasks (= 1.5.0)
-  - Bolts/AppLinks (1.5.0):
+  - Bolts (1.7.0):
+    - Bolts/AppLinks (= 1.7.0)
+    - Bolts/Tasks (= 1.7.0)
+  - Bolts/AppLinks (1.7.0):
     - Bolts/Tasks
-  - Bolts/Tasks (1.5.0)
-  - FBSDKCoreKit (4.8.0):
-    - Bolts (~> 1.1)
-    - FBSDKCoreKit/arc (= 4.8.0)
-    - FBSDKCoreKit/no-arc (= 4.8.0)
-  - FBSDKCoreKit/arc (4.8.0):
-    - Bolts (~> 1.1)
-  - FBSDKCoreKit/no-arc (4.8.0):
-    - Bolts (~> 1.1)
-    - FBSDKCoreKit/arc
-  - FBSDKLoginKit (4.8.0):
+  - Bolts/Tasks (1.7.0)
+  - Calendar-iOS (0.9)
+  - FBSDKCoreKit (4.10.1):
+    - Bolts (~> 1.5)
+  - FBSDKLoginKit (4.10.1):
     - FBSDKCoreKit
-  - FBSDKShareKit (4.9.0):
+  - FBSDKShareKit (4.10.1):
     - FBSDKCoreKit
   - GGLInstanceID (1.1.5):
     - GoogleIPhoneUtilities (~> 1.0)
@@ -55,12 +49,14 @@ PODS:
   - SDWebImage/Core (3.7.3)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.0)
+  - Alamofire
+  - Calendar-iOS
+  - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
   - Google/CloudMessaging
   - Reachability (from `https://github.com/tonymillion/Reachability`)
-  - SDWebImage (~> 3.7)
+  - SDWebImage
 
 EXTERNAL SOURCES:
   Reachability:
@@ -73,10 +69,11 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 7c16ca65f3c7e681fd925fd7f2dec7747ff96855
-  Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
-  FBSDKCoreKit: 66a935d17b6e00b6b64e604f2eb9b72c9ab7deb8
-  FBSDKLoginKit: d893fcbb98d854496925e9ff73c67b896982d3c4
-  FBSDKShareKit: c2e0050cf7e8f1309b0da65b0bfebfcd66712a2b
+  Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
+  Calendar-iOS: 2296d7b4354a36ee1eefa012617b573270a206cb
+  FBSDKCoreKit: d2aaed5e9ab7d8d6301c533376a1fbff1cf3deb5
+  FBSDKLoginKit: 699ff169080e3072de4b9b0faca90bf23dc36deb
+  FBSDKShareKit: 2fd887cce0056bdda91f99b2021d724a4fed8e88
   GGLInstanceID: 4be9a86f27e87f8cedc9694f521f12949813a7ba
   Google: 97618e118111b998cce1d8dd1bd98b82301d72db
   GoogleCloudMessaging: faa057e30845e7300da31de3777060420b2f6579
@@ -88,4 +85,6 @@ SPEC CHECKSUMS:
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: fe608804dbb8c5768353e58e9f51f40cfd86681d
+
+COCOAPODS: 1.0.1
