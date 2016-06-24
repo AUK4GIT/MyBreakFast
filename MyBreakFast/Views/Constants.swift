@@ -66,6 +66,7 @@ struct Constants {
     ///testing/New Dev
     struct API {
         static let BaseURL: String = "http://firsteatwebportal.in/project-poha/"
+        static let SubscrImgBaseURL: String = "http://firsteatwebportal.in/project-poha/"
         static let GCMRegistration: String = BaseURL+"index.php/ws/first/app"
         static let UserRegistration: String = BaseURL+"index.php/ws/register/mobile/user"
         static let UserLogin: String = BaseURL+"index.php/ws/verify/user"

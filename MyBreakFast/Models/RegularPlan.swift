@@ -12,6 +12,7 @@ class RegularPlan: NSObject {
     var dieticianId: String?
     var planId: String?
     var name: String?
+    var selectionText: String?
 //    var price: String?
     var imageURL: String?
 //    var planDescription: String?

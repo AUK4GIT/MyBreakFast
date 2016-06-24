@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import Calendar_iOS
 
-class SubscriptionDetailsVC: UIViewController {
+class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate {
     @IBOutlet var calendarCollectionView: UICollectionView!
     var calendarModelSource = CalendarModelDataSource();
     
@@ -16,6 +17,9 @@ class SubscriptionDetailsVC: UIViewController {
     @IBOutlet var addressLabelForMeal: UILabel!
     @IBOutlet var sunButton: UIButton!
     @IBOutlet var satButton: UIButton!
+    @IBOutlet var calendarView: CalendarView!
+    @IBOutlet var calendarBGView: UIView!
+
     
     var planDetails: PlanDetails?
     var planSlots: [MealSlot]?
@@ -23,6 +27,13 @@ class SubscriptionDetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.calendarView.selectionColor = Constants.AppColors.green.color
+        self.calendarView.fontHeaderColor = Constants.AppColors.green.color
+        self.calendarView.calendarDelegate = self;
+        self.calendarView.shouldShowHeaders = true;
+        self.calendarView.shouldMarkToday = false;
+
+        self.calendarView.refresh()
         self.calendarCollectionView.delegate = self.calendarModelSource
         self.calendarCollectionView.dataSource = self.calendarModelSource
         Helper.sharedInstance.getSubscriptionMealsForaPlan((Helper.sharedInstance.subscription?.selectedPlanId)!) { (response) in
@@ -57,6 +68,30 @@ class SubscriptionDetailsVC: UIViewController {
                 
             }
         }
+    }
+   
+    
+    func didChangeCalendarDate(date: NSDate)
+    {
+        print("didChangeCalendarDate: ", date);
+    }
+    
+    func didChangeCalendarDate(date: NSDate!, withType type: Int, withEvent event: Int) {
+        if event == 1 {
+            UIView.animateWithDuration(0.3, animations: { 
+                self.calendarBGView.alpha = 0.0
+                }, completion: { (completion) in
+                    self.calendarBGView.hidden = true;
+            })
+        }
+    }
+    
+    @IBAction func showCalendar() {
+        self.calendarBGView.hidden = false;
+        UIView.animateWithDuration(0.3, animations: {
+            self.calendarBGView.alpha = 1.0
+            }, completion: { (completion) in
+        })
     }
     
     @IBAction func includeSaturday(sender: UIButton) {

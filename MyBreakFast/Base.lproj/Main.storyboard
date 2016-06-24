@@ -43,7 +43,6 @@
             <string>HelveticaNeue</string>
             <string>HelveticaNeue-Medium</string>
             <string>HelveticaNeue-Medium</string>
-            <string>HelveticaNeue-Medium</string>
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
@@ -58,6 +57,8 @@
             <string>HelveticaNeue-Medium</string>
             <string>HelveticaNeue-Medium</string>
             <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Medium</string>
         </mutableArray>
         <mutableArray key="HelveticaNeueLights.ttc">
             <string>HelveticaNeue-Light</string>
@@ -908,8 +909,12 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="105" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="Aboutus" translatesAutoresizingMaskIntoConstraints="NO" id="3iG-gy-IzX">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="Aboutus" translatesAutoresizingMaskIntoConstraints="NO" id="3iG-gy-IzX">
                                                             <rect key="frame" x="0.0" y="7" width="36" height="36"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="36" id="CGT-wZ-zm0"/>
+                                                                <constraint firstAttribute="height" constant="36" id="qhj-8Z-vjI"/>
+                                                            </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dieticians" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TlF-Nl-ij7">
                                                             <rect key="frame" x="36" y="12" width="50" height="14"/>
@@ -1078,6 +1083,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1OB-3d-HaU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="696" y="-485"/>
+        </scene>
+        <!--Dietician BioVC-->
+        <scene sceneID="74q-DX-fWl">
+            <objects>
+                <viewController storyboardIdentifier="DieticianBioVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0aI-HH-CvO" customClass="DieticianBioVC" customModule="MyBreakFast" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yFk-kK-YsT"/>
+                        <viewControllerLayoutGuide type="bottom" id="hwp-Ak-kGz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dbw-al-Mts">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3c-iu-4qK">
+                                <rect key="frame" x="40" y="190" width="240" height="100"/>
+                                <color key="backgroundColor" red="0.71372549019999998" green="0.7843137255" blue="0.33725490200000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="MqL-G6-c2p"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="L3c-iu-4qK" firstAttribute="centerX" secondItem="dbw-al-Mts" secondAttribute="centerX" id="Apj-pg-Nub"/>
+                            <constraint firstItem="L3c-iu-4qK" firstAttribute="leading" secondItem="dbw-al-Mts" secondAttribute="leading" constant="40" id="MJ0-G7-heS"/>
+                            <constraint firstAttribute="trailing" secondItem="L3c-iu-4qK" secondAttribute="trailing" constant="40" id="R26-8X-vwB"/>
+                            <constraint firstItem="L3c-iu-4qK" firstAttribute="centerY" secondItem="dbw-al-Mts" secondAttribute="centerY" id="con-qZ-Y35"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="textView" destination="L3c-iu-4qK" id="lBQ-eD-ihg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ceV-7U-lpD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="766" y="-1055"/>
         </scene>
         <!--Order StatusVC-->
         <scene sceneID="2zo-9o-Vgd">
@@ -5243,22 +5287,6 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9jG-mn-bfh">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calander-icon" translatesAutoresizingMaskIntoConstraints="NO" id="csR-6P-rcY">
-                                        <rect key="frame" x="8" y="13" width="28" height="28"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="28" id="Hhe-DW-BKK"/>
-                                            <constraint firstAttribute="width" constant="28" id="lfS-jN-xlT"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXi-Qr-AAH">
-                                        <rect key="frame" x="44" y="19" width="81" height="15"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Include" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRB-sP-03R">
                                         <rect key="frame" x="150" y="20" width="40" height="14"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
@@ -5293,32 +5321,32 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                                             <action selector="includeSaturday:" destination="IwJ-yC-UpH" eventType="touchUpInside" id="wHz-bw-DtG"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKX-5r-aVd">
+                                        <rect key="frame" x="8" y="8" width="125" height="37"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
+                                        <state key="normal" title="Choose a date" image="calander-icon">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showCalendar" destination="IwJ-yC-UpH" eventType="touchUpInside" id="Umb-Qq-EQX"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="1TY-QI-Dum" firstAttribute="leading" secondItem="hq0-bW-ZSi" secondAttribute="trailing" constant="5" id="606-mi-s1F"/>
                                     <constraint firstItem="hq0-bW-ZSi" firstAttribute="leading" secondItem="tRB-sP-03R" secondAttribute="trailing" constant="5" id="8rk-5y-iFC"/>
+                                    <constraint firstItem="BKX-5r-aVd" firstAttribute="centerY" secondItem="9jG-mn-bfh" secondAttribute="centerY" id="Dgq-KP-4Tq"/>
                                     <constraint firstItem="1TY-QI-Dum" firstAttribute="top" secondItem="9jG-mn-bfh" secondAttribute="top" id="G4a-5S-slA"/>
                                     <constraint firstAttribute="height" constant="54" id="Gpr-tO-1Zj"/>
                                     <constraint firstAttribute="bottom" secondItem="1TY-QI-Dum" secondAttribute="bottom" id="ITH-X4-1mJ"/>
-                                    <constraint firstItem="jXi-Qr-AAH" firstAttribute="centerY" secondItem="csR-6P-rcY" secondAttribute="centerY" id="Oqh-lB-22I"/>
-                                    <constraint firstItem="csR-6P-rcY" firstAttribute="leading" secondItem="9jG-mn-bfh" secondAttribute="leading" constant="8" id="Teu-on-daM"/>
                                     <constraint firstItem="hq0-bW-ZSi" firstAttribute="height" secondItem="1TY-QI-Dum" secondAttribute="height" id="Ux8-Wf-hIP"/>
-                                    <constraint firstItem="csR-6P-rcY" firstAttribute="centerY" secondItem="9jG-mn-bfh" secondAttribute="centerY" id="VUQ-Bq-jmV"/>
+                                    <constraint firstItem="BKX-5r-aVd" firstAttribute="leading" secondItem="9jG-mn-bfh" secondAttribute="leading" constant="8" id="bco-D6-VbP"/>
                                     <constraint firstAttribute="trailing" secondItem="1TY-QI-Dum" secondAttribute="trailing" id="gzL-Y6-QFD"/>
                                     <constraint firstItem="hq0-bW-ZSi" firstAttribute="width" secondItem="1TY-QI-Dum" secondAttribute="width" id="hFt-yW-bib"/>
-                                    <constraint firstAttribute="bottom" secondItem="csR-6P-rcY" secondAttribute="bottom" constant="8" id="kaN-Ai-aob"/>
                                     <constraint firstItem="hq0-bW-ZSi" firstAttribute="centerY" secondItem="1TY-QI-Dum" secondAttribute="centerY" id="lSk-cS-Orp"/>
-                                    <constraint firstItem="csR-6P-rcY" firstAttribute="top" secondItem="9jG-mn-bfh" secondAttribute="top" constant="8" id="qrT-h9-Dka"/>
-                                    <constraint firstItem="jXi-Qr-AAH" firstAttribute="leading" secondItem="csR-6P-rcY" secondAttribute="trailing" constant="8" id="u4J-Gg-yUL"/>
                                     <constraint firstItem="tRB-sP-03R" firstAttribute="centerY" secondItem="hq0-bW-ZSi" secondAttribute="centerY" id="wtB-8F-yHY"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="kaN-Ai-aob"/>
-                                        <exclude reference="qrT-h9-Dka"/>
-                                    </mask>
-                                </variation>
                             </view>
                             <view contentMode="scaleToFill" restorationIdentifier="CalendarBGView" translatesAutoresizingMaskIntoConstraints="NO" id="wG6-lH-5f0">
                                 <rect key="frame" x="0.0" y="54" width="320" height="44"/>
@@ -5687,15 +5715,42 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                                     <constraint firstItem="erf-gY-pMd" firstAttribute="leading" secondItem="YuP-mK-PLG" secondAttribute="trailing" constant="8" id="nrr-uJ-1Jp"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EOB-jO-kfg">
+                                <rect key="frame" x="0.0" y="54" width="320" height="270"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S5v-of-aef" customClass="CalendarView">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="270"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="DCS-hq-79h"/>
+                                    <constraint firstAttribute="trailing" secondItem="S5v-of-aef" secondAttribute="trailing" id="Fgk-yf-DSB"/>
+                                    <constraint firstAttribute="height" constant="150" id="JND-oj-Bi0"/>
+                                    <constraint firstAttribute="bottom" secondItem="S5v-of-aef" secondAttribute="bottom" id="Ywo-QX-cwS"/>
+                                    <constraint firstItem="S5v-of-aef" firstAttribute="top" secondItem="EOB-jO-kfg" secondAttribute="top" id="kig-fr-99N"/>
+                                    <constraint firstAttribute="height" constant="270" id="nzb-Pr-O2L"/>
+                                    <constraint firstItem="S5v-of-aef" firstAttribute="leading" secondItem="EOB-jO-kfg" secondAttribute="leading" id="y1v-wQ-TkO"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="DCS-hq-79h"/>
+                                        <exclude reference="JND-oj-Bi0"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9jG-mn-bfh" firstAttribute="leading" secondItem="CNz-Uf-GDc" secondAttribute="leading" id="0Xw-1K-FWN"/>
+                            <constraint firstItem="EOB-jO-kfg" firstAttribute="top" secondItem="9jG-mn-bfh" secondAttribute="bottom" id="190-Gl-FiB"/>
                             <constraint firstAttribute="trailing" secondItem="W3C-Hl-sqB" secondAttribute="trailing" id="3dJ-yY-pfh"/>
                             <constraint firstItem="vAf-tb-7hM" firstAttribute="leading" secondItem="CNz-Uf-GDc" secondAttribute="leading" id="4tG-Bu-4Sa"/>
                             <constraint firstItem="fSI-kE-qZy" firstAttribute="leading" secondItem="CNz-Uf-GDc" secondAttribute="leading" id="5vt-NV-4JB"/>
                             <constraint firstAttribute="trailing" secondItem="Fia-i6-Iz7" secondAttribute="trailing" id="BGz-0s-jR8"/>
                             <constraint firstItem="wG6-lH-5f0" firstAttribute="leading" secondItem="CNz-Uf-GDc" secondAttribute="leading" id="D1Q-L9-yhd"/>
+                            <constraint firstItem="EOB-jO-kfg" firstAttribute="trailing" secondItem="9jG-mn-bfh" secondAttribute="trailing" id="EOx-oH-e8V"/>
                             <constraint firstAttribute="trailing" secondItem="9jG-mn-bfh" secondAttribute="trailing" id="HXW-Xy-bgM"/>
                             <constraint firstItem="fSI-kE-qZy" firstAttribute="leading" secondItem="CNz-Uf-GDc" secondAttribute="leading" id="JAy-YA-fif"/>
                             <constraint firstItem="hv4-mL-cC8" firstAttribute="top" secondItem="b5C-8h-1MN" secondAttribute="bottom" id="KQc-lU-icw"/>
@@ -5709,6 +5764,7 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                             <constraint firstAttribute="trailing" secondItem="fSI-kE-qZy" secondAttribute="trailing" id="ea8-nu-TKG"/>
                             <constraint firstItem="b5C-8h-1MN" firstAttribute="leading" secondItem="CNz-Uf-GDc" secondAttribute="leading" id="ekt-o7-mMQ"/>
                             <constraint firstItem="vAf-tb-7hM" firstAttribute="top" secondItem="W3C-Hl-sqB" secondAttribute="bottom" id="ftE-wD-dvX"/>
+                            <constraint firstItem="EOB-jO-kfg" firstAttribute="leading" secondItem="9jG-mn-bfh" secondAttribute="leading" id="lMc-3T-9ZA"/>
                             <constraint firstItem="9jG-mn-bfh" firstAttribute="top" secondItem="CNz-Uf-GDc" secondAttribute="top" id="rGS-I4-QcR"/>
                             <constraint firstItem="W3C-Hl-sqB" firstAttribute="top" secondItem="wG6-lH-5f0" secondAttribute="bottom" id="wH6-Qh-cJF"/>
                             <constraint firstItem="b5C-8h-1MN" firstAttribute="top" secondItem="fSI-kE-qZy" secondAttribute="bottom" id="zfa-lq-eQJ"/>
@@ -5722,7 +5778,9 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="addressLabelForMeal" destination="erf-gY-pMd" id="7k8-Xi-tfO"/>
+                        <outlet property="calendarBGView" destination="EOB-jO-kfg" id="Afh-xt-SFY"/>
                         <outlet property="calendarCollectionView" destination="sfj-kY-UQH" id="aqa-Ag-jJD"/>
+                        <outlet property="calendarView" destination="S5v-of-aef" id="RKI-OL-nnp"/>
                         <outlet property="mealPlanLabel" destination="fHt-IF-x38" id="WnR-tv-t3h"/>
                         <outlet property="satButton" destination="hq0-bW-ZSi" id="iuC-Ra-NU7"/>
                         <outlet property="sunButton" destination="1TY-QI-Dum" id="as9-A0-T0b"/>

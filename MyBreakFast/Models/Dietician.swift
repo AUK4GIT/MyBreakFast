@@ -12,4 +12,6 @@ class Dietician: NSObject {
     var dieticianId: String?
     var firstName: String?
     var lastName: String?
+    var imgURL: String?
+    var biography: String?
 }

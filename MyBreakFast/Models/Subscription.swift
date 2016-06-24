@@ -75,6 +75,12 @@ class Subscription: NSObject {
                 if let obj = dietician.objectForKey("l_name") as? String{
                     dietiObj.lastName = obj
                 }
+                if let obj = dietician.objectForKey("img_url") as? String{
+                    dietiObj.imgURL = obj
+                }
+                if let obj = dietician.objectForKey("bio") as? String{
+                    dietiObj.biography = obj
+                }
                 self.dieticians?.append(dietiObj)
             }
             
@@ -99,6 +105,10 @@ class Subscription: NSObject {
                         
                         if let obj = mealPlan.objectForKey("img_url") as? String{
                             planObj.imageURL = obj
+                        }
+                        
+                        if let obj = mealPlan.objectForKey("selection_text") as? String{
+                            planObj.selectionText = obj
                         }
                         
 //                        if let obj = mealPlan.objectForKey("name") as? String{

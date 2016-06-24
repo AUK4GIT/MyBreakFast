@@ -36,12 +36,16 @@ class DieticiansDatasource: NSObject, UICollectionViewDelegate, UICollectionView
         let dietician = self.dieticiansList![indexPath.row]
         cell?.nameLabel.text = dietician.firstName!
         cell?.recommendLabel.text = dietician.lastName!
-        print(dietician.firstName);
+        
+        var url: String? = dietician.imgURL
+        url = Constants.API.SubscrImgBaseURL+(url?.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLQueryAllowedCharacterSet()))!
+        cell!.imageV.sd_setImageWithURL(NSURL(string: url!), placeholderImage: UIImage(named: "Aboutus"), completed: nil)
+        
         return cell!;
     }
     
     func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-    
+
         if collectionView.indexPathsForSelectedItems()![0] == indexPath {
             UIApplication.sharedApplication().sendAction(#selector(SubscriptionVC.showDietciansDetails), to: nil, from: collectionView, forEvent: nil);
             return false;
@@ -90,8 +94,8 @@ class SubscriptionVC: UIViewController {
 
                 let regularPlan = self.plansList![indexPath.row]
 
-                let url: String? = regularPlan.imageURL
-                (url?.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLQueryAllowedCharacterSet()))
+                var url: String? = regularPlan.imageURL
+                url = Constants.API.SubscrImgBaseURL+(url?.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLQueryAllowedCharacterSet()))!
                 self.planImageView.sd_setImageWithURL(NSURL(string: url!), placeholderImage: UIImage(named: ""), completed: nil)
 
             }
@@ -101,7 +105,12 @@ class SubscriptionVC: UIViewController {
     func showDietciansDetails(){
         let dIndexPath = self.dieticiansList.indexPathsForSelectedItems()![0]
         let dietician = Helper.sharedInstance.subscription?.dieticians![dIndexPath.row]
-
+        
+        let bioVC = self.storyboard?.instantiateViewControllerWithIdentifier("DieticianBioVC") as! DieticianBioVC
+        self.presentViewController(bioVC, animated: true, completion: {(completion) in
+            bioVC.textView.text = dietician?.biography
+        })
+        print(dietician?.biography);
     }
     
     func setSelectionLabel(){
@@ -112,9 +121,8 @@ class SubscriptionVC: UIViewController {
         let dietician = Helper.sharedInstance.subscription?.dieticians![dIndexPath.row]
         let regularPlan = self.plansList![pIndexPath.row]
         
-        let dietcianname = (dietician?.firstName)!+" "+(dietician?.lastName)!
-        self.mealPlanLabel.text = "You have selected the meal plan recommended by "+dietcianname+" to "+regularPlan.name!
-        
+//        let dietcianname = (dietician?.firstName)!+" "+(dietician?.lastName)!
+        self.mealPlanLabel.text = regularPlan.selectionText!
         Helper.sharedInstance.subscription?.selectedPlanId = regularPlan.planId
         Helper.sharedInstance.subscription?.selectedDieticianId = dietician?.dieticianId
         
@@ -171,8 +179,8 @@ class SubscriptionVC: UIViewController {
         
         let regularPlan = self.plansList![indexPath.row]
 
-        let url: String? = regularPlan.imageURL
-        (url?.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLQueryAllowedCharacterSet()))
+        var url: String? = regularPlan.imageURL
+        url = Constants.API.SubscrImgBaseURL+(url?.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLQueryAllowedCharacterSet()))!
         self.planImageView.sd_setImageWithURL(NSURL(string: url!), placeholderImage: UIImage(named: ""), completed: nil)
         
         self.setSelectionLabel();

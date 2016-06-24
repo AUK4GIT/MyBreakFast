@@ -17,6 +17,7 @@ class DietCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.imageV.layer.cornerRadius = 18.0
     }
     
     override var selected: Bool {

@@ -18,6 +18,10 @@ class PlanDetails: NSObject {
     var sat: String?
     var sun: String?
     var minweek: String?
+    var meal1Exists: String?
+    var meal2Exists: String?
+    var meal3Exists: String?
+    var selectionText: String?
     
     func saveData(dict: NSDictionary){
         
@@ -57,8 +61,30 @@ class PlanDetails: NSObject {
             self.minweek = dict.objectForKey("min_week") as? String;
         }
         
+        if let obj = dict.objectForKey("meal1_exist") as? NSNumber{
+            self.meal1Exists = obj.stringValue
+        } else {
+            self.meal1Exists = dict.objectForKey("meal1_exist") as? String;
+        }
+        
+        if let obj = dict.objectForKey("meal2_exist") as? NSNumber{
+            self.meal2Exists = obj.stringValue
+        } else {
+            self.meal2Exists = dict.objectForKey("meal2_exist") as? String;
+        }
+        
+        if let obj = dict.objectForKey("meal3_exist") as? NSNumber{
+            self.meal3Exists = obj.stringValue
+        } else {
+            self.meal3Exists = dict.objectForKey("meal3_exist") as? String;
+        }
+        
         if let obj = dict.objectForKey("name") as? String{
             self.name = obj
+        }
+        
+        if let obj = dict.objectForKey("selection_text") as? String{
+            self.selectionText = obj
         }
         
         if let obj = dict.objectForKey("description") as? String{
