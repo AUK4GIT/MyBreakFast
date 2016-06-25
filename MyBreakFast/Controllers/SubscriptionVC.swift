@@ -56,7 +56,7 @@ class DieticiansDatasource: NSObject, UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        UIApplication.sharedApplication().sendAction(#selector(SubscriptionVC.setSelectionLabel), to: nil, from: collectionView, forEvent: nil);
+        UIApplication.sharedApplication().sendAction(#selector(SubscriptionVC.setSelectionParameters), to: nil, from: collectionView, forEvent: nil);
     }
 
 }
@@ -70,6 +70,7 @@ class SubscriptionVC: UIViewController {
     var plansList: [RegularPlan]?;
     @IBOutlet var mealPlanLabel: UILabel!
 
+    @IBOutlet var mealDetailsView: MealDetailsView!
     @IBOutlet var customizedSubscrTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,11 +91,18 @@ class SubscriptionVC: UIViewController {
                 self.collectionView.selectItemAtIndexPath(indexPath, animated: true, scrollPosition: .Left)
                 self.dieticiansList.selectItemAtIndexPath(indexPath, animated: true, scrollPosition: .Left)
 
-                self.setSelectionLabel()
+                self.setSelectionParameters()
 
                 let regularPlan = self.plansList![indexPath.row]
+                let dieticianSelected = self.dieticiansDataSource.dieticiansList![0]
+                var mealPlans = regularPlan.mealPlans!.filter({
+                    $0.dieticianId! == dieticianSelected.dieticianId
+                })
+                let mealPlan = mealPlans[0]
 
-                var url: String? = regularPlan.imageURL
+                self.mealDetailsView.setDescription(mealPlan.planDescription)
+
+                var url: String? = mealPlan.imageURL
                 url = Constants.API.SubscrImgBaseURL+(url?.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLQueryAllowedCharacterSet()))!
                 self.planImageView.sd_setImageWithURL(NSURL(string: url!), placeholderImage: UIImage(named: ""), completed: nil)
 
@@ -108,23 +116,40 @@ class SubscriptionVC: UIViewController {
         
         let bioVC = self.storyboard?.instantiateViewControllerWithIdentifier("DieticianBioVC") as! DieticianBioVC
         self.presentViewController(bioVC, animated: true, completion: {(completion) in
-            bioVC.textView.text = dietician?.biography
+            bioVC.showDieticianDescription(dietician?.biography)
         })
         print(dietician?.biography);
     }
     
-    func setSelectionLabel(){
+    func setSelectionParameters(){
     
         let dIndexPath = self.dieticiansList.indexPathsForSelectedItems()![0]
         let pIndexPath = self.collectionView.indexPathsForSelectedItems()![0]
 
         let dietician = Helper.sharedInstance.subscription?.dieticians![dIndexPath.row]
         let regularPlan = self.plansList![pIndexPath.row]
+        var mealPlans = regularPlan.mealPlans!.filter({
+            $0.dieticianId! == dietician!.dieticianId
+        })
         
-//        let dietcianname = (dietician?.firstName)!+" "+(dietician?.lastName)!
-        self.mealPlanLabel.text = regularPlan.selectionText!
-        Helper.sharedInstance.subscription?.selectedPlanId = regularPlan.planId
-        Helper.sharedInstance.subscription?.selectedDieticianId = dietician?.dieticianId
+        if mealPlans.count > 0 {
+            let mealPlan = mealPlans[0]
+            //        let dietcianname = (dietician?.firstName)!+" "+(dietician?.lastName)!
+            
+            var url: String? = mealPlan.imageURL
+            url = Constants.API.SubscrImgBaseURL+(url?.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLQueryAllowedCharacterSet()))!
+            self.planImageView.sd_setImageWithURL(NSURL(string: url!), placeholderImage: UIImage(named: ""), completed: nil)
+            self.mealDetailsView.setDescription(mealPlan.planDescription)
+            
+            self.mealPlanLabel.text = mealPlan.selectionText!
+            Helper.sharedInstance.subscription?.selectedPlanId = mealPlan.planId
+            Helper.sharedInstance.subscription?.selectedDieticianId = dietician?.dieticianId
+        } else {
+        
+            let warn = UIAlertController(title: "First Eat", message: "The dietician has no plans for the current selection. Please select another.", preferredStyle: UIAlertControllerStyle.Alert)
+            warn.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(warn, animated: true, completion: nil);
+        }
         
     }
     
@@ -149,8 +174,14 @@ class SubscriptionVC: UIViewController {
     }
     
     @IBAction func subscribeAction(sender: AnyObject) {
-        let parentVC = self.parentViewController?.parentViewController as! ViewController
-        parentVC.cycleFromViewController(nil, toViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("SubscriptionDetailsVC"))!)
+        if let _ = Helper.sharedInstance.subscription?.selectedDieticianId, let _ = Helper.sharedInstance.subscription?.selectedPlanId {
+            
+            let parentVC = self.parentViewController?.parentViewController as! ViewController
+            parentVC.cycleFromViewController(nil, toViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("SubscriptionDetailsVC"))!)
+        } else {
+        
+        }
+        
     }
     
     // MARK: UICollectionView delegates and datasources
@@ -177,15 +208,18 @@ class SubscriptionVC: UIViewController {
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        let regularPlan = self.plansList![indexPath.row]
-
-        var url: String? = regularPlan.imageURL
-        url = Constants.API.SubscrImgBaseURL+(url?.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLQueryAllowedCharacterSet()))!
-        self.planImageView.sd_setImageWithURL(NSURL(string: url!), placeholderImage: UIImage(named: ""), completed: nil)
-        
-        self.setSelectionLabel();
-        
-
+//        let regularPlan = self.plansList![indexPath.row]
+//
+//        let dieticianId = Helper.sharedInstance.subscription?.selectedDieticianId
+//        var mealPlans = regularPlan.mealPlans!.filter({
+//            $0.dieticianId! == dieticianId
+//        })
+//        let mealPlan = mealPlans[0]
+//        var url: String? = mealPlan.imageURL
+//        url = Constants.API.SubscrImgBaseURL+(url?.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLQueryAllowedCharacterSet()))!
+//        self.planImageView.sd_setImageWithURL(NSURL(string: url!), placeholderImage: UIImage(named: ""), completed: nil)
+//        self.mealDetailsView.setDescription(mealPlan.planDescription)
+        self.setSelectionParameters();
     }
     
     // MARK: Subscription Table view

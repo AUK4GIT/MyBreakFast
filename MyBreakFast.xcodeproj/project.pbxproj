@@ -10,6 +10,8 @@
 		7197232473EAE4B72D117DDA /* Pods_MyBreakFast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E122D7142E78537EB4BA1D5 /* Pods_MyBreakFast.framework */; };
 		AA4AACC11D0D5FDD00627FB0 /* SubscriptionDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4AACC01D0D5FDD00627FB0 /* SubscriptionDetailsVC.swift */; };
 		AA51D2921D1C527F00D404C7 /* DieticianBioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA51D2911D1C527F00D404C7 /* DieticianBioVC.swift */; };
+		AA6056581D1E75D900A7A32E /* CalendarWeeksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6056571D1E75D900A7A32E /* CalendarWeeksCell.swift */; };
+		AA60565A1D1EA3D300A7A32E /* MealDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6056591D1EA3D300A7A32E /* MealDetailsView.swift */; };
 		AA7CF6E51D0EBCC900FA0665 /* CustomSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7CF6E41D0EBCC900FA0665 /* CustomSegmentControl.swift */; };
 		AA9EE7601CF1C58700AC6DF3 /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA9EE75F1CF1C58700AC6DF3 /* libPaymentsSDK.a */; };
 		AA9EE7671CF1CD8400AC6DF3 /* PayTMMerchantConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9EE7661CF1CD8400AC6DF3 /* PayTMMerchantConstants.swift */; };
@@ -24,6 +26,7 @@
 		AAAB65BB1D185447006E6984 /* MealSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB65BA1D185447006E6984 /* MealSlot.swift */; };
 		AAAB65BF1D1855D5006E6984 /* PlannedMeals.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB65BE1D1855D4006E6984 /* PlannedMeals.swift */; };
 		AAAB65C11D1855F5006E6984 /* TimeSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB65C01D1855F5006E6984 /* TimeSlot.swift */; };
+		AAC25C341D1EC1730052CE97 /* MealPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC25C331D1EC1730052CE97 /* MealPlan.swift */; };
 		AAF072251D09DAB400C67D2D /* Assets_BGTheme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAF072241D09DAB400C67D2D /* Assets_BGTheme.xcassets */; };
 		AAF072281D0A938900C67D2D /* ContainerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF072271D0A938900C67D2D /* ContainerProtocol.swift */; };
 		AAF0722A1D0AB88200C67D2D /* SubscriptionMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF072291D0AB88200C67D2D /* SubscriptionMenuVC.swift */; };
@@ -396,6 +399,8 @@
 		5E122D7142E78537EB4BA1D5 /* Pods_MyBreakFast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyBreakFast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA4AACC01D0D5FDD00627FB0 /* SubscriptionDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionDetailsVC.swift; path = Controllers/SubscriptionDetailsVC.swift; sourceTree = "<group>"; };
 		AA51D2911D1C527F00D404C7 /* DieticianBioVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DieticianBioVC.swift; path = Controllers/DieticianBioVC.swift; sourceTree = "<group>"; };
+		AA6056571D1E75D900A7A32E /* CalendarWeeksCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarWeeksCell.swift; path = Views/CalendarWeeksCell.swift; sourceTree = "<group>"; };
+		AA6056591D1EA3D300A7A32E /* MealDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealDetailsView.swift; path = Views/MealDetailsView.swift; sourceTree = "<group>"; };
 		AA7CF6E41D0EBCC900FA0665 /* CustomSegmentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomSegmentControl.swift; path = Views/CustomSegmentControl.swift; sourceTree = "<group>"; };
 		AA9EE75F1CF1C58700AC6DF3 /* libPaymentsSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPaymentsSDK.a; path = MyBreakFast/libPaymentsSDK.a; sourceTree = "<group>"; };
 		AA9EE7611CF1C5B600AC6DF3 /* PaymentsSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PaymentsSDK.h; path = MyBreakFast/PayTM/include/PaymentsSDK.h; sourceTree = SOURCE_ROOT; };
@@ -415,6 +420,7 @@
 		AAAB65BA1D185447006E6984 /* MealSlot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealSlot.swift; path = Models/MealSlot.swift; sourceTree = "<group>"; };
 		AAAB65BE1D1855D4006E6984 /* PlannedMeals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlannedMeals.swift; path = Models/PlannedMeals.swift; sourceTree = "<group>"; };
 		AAAB65C01D1855F5006E6984 /* TimeSlot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeSlot.swift; path = Models/TimeSlot.swift; sourceTree = "<group>"; };
+		AAC25C331D1EC1730052CE97 /* MealPlan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealPlan.swift; path = Models/MealPlan.swift; sourceTree = "<group>"; };
 		AAF072241D09DAB400C67D2D /* Assets_BGTheme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets_BGTheme.xcassets; sourceTree = "<group>"; };
 		AAF072271D0A938900C67D2D /* ContainerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerProtocol.swift; path = Protocols/ContainerProtocol.swift; sourceTree = "<group>"; };
 		AAF072291D0AB88200C67D2D /* SubscriptionMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionMenuVC.swift; path = Controllers/SubscriptionMenuVC.swift; sourceTree = "<group>"; };
@@ -1056,6 +1062,8 @@
 				ED344C7B1C9B14BF008643F9 /* Xibs */,
 				AAAB65B41D155E0B006E6984 /* PlanCell.swift */,
 				AAAB65B61D155E5F006E6984 /* DietCell.swift */,
+				AA6056571D1E75D900A7A32E /* CalendarWeeksCell.swift */,
+				AA6056591D1EA3D300A7A32E /* MealDetailsView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1107,6 +1115,7 @@
 				AAAB65BA1D185447006E6984 /* MealSlot.swift */,
 				AAAB65C01D1855F5006E6984 /* TimeSlot.swift */,
 				AAAB65BE1D1855D4006E6984 /* PlannedMeals.swift */,
+				AAC25C331D1EC1730052CE97 /* MealPlan.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -2204,6 +2213,7 @@
 				ED742CCE1CA78856007FC96D /* RNEncryptor.m in Sources */,
 				EDC572261C7AD1210018F11C /* CustomPresentationAnimationController.swift in Sources */,
 				ED742C611CA78856007FC96D /* CTSSignupState.m in Sources */,
+				AA6056581D1E75D900A7A32E /* CalendarWeeksCell.swift in Sources */,
 				ED742CA11CA78856007FC96D /* CTSUserProfile.m in Sources */,
 				ED742D631CA78856007FC96D /* ManageCradViewController.m in Sources */,
 				ED344C9D1C9B14DA008643F9 /* ItemPreViewVC.swift in Sources */,
@@ -2244,6 +2254,7 @@
 				ED742C8A1CA78856007FC96D /* CTSBill.m in Sources */,
 				ED742C7D1CA78856007FC96D /* CTSProfileUpdate.m in Sources */,
 				ED742C8D1CA78856007FC96D /* CTSCreditCardOption.m in Sources */,
+				AA60565A1D1EA3D300A7A32E /* MealDetailsView.swift in Sources */,
 				ED742CBD1CA78856007FC96D /* JSONModel.m in Sources */,
 				ED742C8C1CA78856007FC96D /* CTSCashoutBankAccountResp.m in Sources */,
 				EDCC2AE71C339F6500C15C3B /* OrderItem.swift in Sources */,
@@ -2360,6 +2371,7 @@
 				ED742C7B1CA78856007FC96D /* CTSPaymentOption.m in Sources */,
 				ED742C731CA78856007FC96D /* CTSUserAddress.m in Sources */,
 				ED742C9F1CA78856007FC96D /* CTSProfilePrepaidRes.m in Sources */,
+				AAC25C341D1EC1730052CE97 /* MealPlan.swift in Sources */,
 				ED5B217F1BF76D3400C65857 /* Offer+CoreDataProperties.swift in Sources */,
 				ED344CD91C9B1526008643F9 /* RedeemCell.swift in Sources */,
 				ED5B216F1BF612B700C65857 /* UserDetails.swift in Sources */,

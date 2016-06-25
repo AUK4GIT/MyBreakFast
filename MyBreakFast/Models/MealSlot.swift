@@ -15,6 +15,7 @@ class MealSlot: NSObject {
     func saveData(dict: NSArray){
         self.mealSlots = []
         for slot in dict {
+            if let slot = slot as? NSDictionary {
             let tSlot = TimeSlot()
             
             if let obj = slot.objectForKey("id") as? NSNumber{
@@ -32,6 +33,7 @@ class MealSlot: NSObject {
             }
             
             self.mealSlots?.append(tSlot);
+        }
         }
     }
     

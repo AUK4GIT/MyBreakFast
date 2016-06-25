@@ -93,70 +93,9 @@ class Subscription: NSObject {
                 if let obj = plan.objectForKey("name") as? String{
                     planObj.name = obj
                 }
-                
                 if let mealPlans = plan.objectForKey("meal_plans") as? NSArray{
-                    if let mealPlan = mealPlans[0] as? NSDictionary {
-                    
-                        if let obj = mealPlan.objectForKey("id") as? NSNumber{
-                            planObj.planId = obj.stringValue
-                        } else {
-                            planObj.planId = mealPlan.objectForKey("id") as? String;
-                        }
-                        
-                        if let obj = mealPlan.objectForKey("img_url") as? String{
-                            planObj.imageURL = obj
-                        }
-                        
-                        if let obj = mealPlan.objectForKey("selection_text") as? String{
-                            planObj.selectionText = obj
-                        }
-                        
-//                        if let obj = mealPlan.objectForKey("name") as? String{
-//                            planObj.name = obj
-//                        }
-                       
-                       /*
-                        if let obj = mealPlan.objectForKey("min_week") as? NSNumber{
-                            planObj.minweek = obj.stringValue
-                        } else {
-                            planObj.minweek = mealPlan.objectForKey("min_week") as? String;
-                        }
-                        
-                        if let obj = mealPlan.objectForKey("price") as? NSNumber{
-                            planObj.price = obj.stringValue
-                        } else {
-                            planObj.price = mealPlan.objectForKey("price") as? String;
-                        }
-                        
-                        if let obj = mealPlan.objectForKey("sat") as? NSNumber{
-                            planObj.sat = obj.stringValue
-                        } else {
-                            planObj.sat = mealPlan.objectForKey("sat") as? String;
-                        }
-                        
-                        if let obj = mealPlan.objectForKey("sun") as? NSNumber{
-                            planObj.sun = obj.stringValue
-                        } else {
-                            planObj.sun = mealPlan.objectForKey("sun") as? String;
-                        }
-
-                        if let obj = mealPlan.objectForKey("description") as? String{
-                            planObj.planDescription = obj
-                        }
-                        
-                        */
-                        
-                        if let obj = mealPlan.objectForKey("dietician") as? NSDictionary{
-                            if let dietobj = obj.objectForKey("id") as? NSNumber{
-                                planObj.dieticianId = dietobj.stringValue
-                            } else {
-                                planObj.dieticianId = obj.objectForKey("id") as? String;
-                            }
-                        }
-                    }
-
+                    planObj.saveData(mealPlans);
                 }
-                
                 self.regplans?.append(planObj)
             }
         }

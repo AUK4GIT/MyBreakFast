@@ -10,15 +10,31 @@ import Foundation
 
 class DieticianBioVC: UIViewController {
     
-    @IBOutlet var textView: UITextView!
+    @IBOutlet var textView: UILabel!
+    @IBOutlet var labelBGView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.textView.layer.cornerRadius = 10.0;
+        self.labelBGView!.alpha = 0.0;
+        self.labelBGView!.layer.cornerRadius = 10.0;
+    }
+    
+    func showDieticianDescription(descr: String?){
+        self.labelBGView!.alpha = 0.0;
+        UIView.animateWithDuration(0.3, animations: {
+            self.textView.text = descr;
+            self.labelBGView!.alpha = 1.0;
+            self.view.layoutIfNeeded()
+            }) { (completion) in
+                
+        }
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        let touch = touches.first! as UITouch
+        if !CGRectContainsPoint(self.labelBGView.frame, touch.locationInView(self.view)){
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
 }
