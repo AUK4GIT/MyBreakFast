@@ -209,9 +209,9 @@ class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate, AddressProt
                 if let userAddr = Helper.sharedInstance.fetchLastUserAddressesForId(addressId) {
                     print(userAddr.lineone, userAddr.linetwo)
                     self.addressLabelForMeal.text = userAddr.lineone!+", "+userAddr.linetwo!
-                } else {
-                    self.addressLabelForMeal.text = "Add address"
                 }
+            } else {
+                self.addressLabelForMeal.text = "Add address"
             }
             break;
         case 2:
