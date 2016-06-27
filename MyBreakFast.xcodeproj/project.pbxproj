@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7197232473EAE4B72D117DDA /* Pods_MyBreakFast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E122D7142E78537EB4BA1D5 /* Pods_MyBreakFast.framework */; };
+		AA09FF0E1D1FC4FD003AE665 /* MealPlanDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA09FF0D1D1FC4FD003AE665 /* MealPlanDetailsView.swift */; };
 		AA4AACC11D0D5FDD00627FB0 /* SubscriptionDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4AACC01D0D5FDD00627FB0 /* SubscriptionDetailsVC.swift */; };
 		AA51D2921D1C527F00D404C7 /* DieticianBioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA51D2911D1C527F00D404C7 /* DieticianBioVC.swift */; };
 		AA6056581D1E75D900A7A32E /* CalendarWeeksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6056571D1E75D900A7A32E /* CalendarWeeksCell.swift */; };
@@ -27,6 +28,7 @@
 		AAAB65BF1D1855D5006E6984 /* PlannedMeals.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB65BE1D1855D4006E6984 /* PlannedMeals.swift */; };
 		AAAB65C11D1855F5006E6984 /* TimeSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB65C01D1855F5006E6984 /* TimeSlot.swift */; };
 		AAC25C341D1EC1730052CE97 /* MealPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC25C331D1EC1730052CE97 /* MealPlan.swift */; };
+		AAD870951D20309D00A37D98 /* TimeSlotPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD870941D20309D00A37D98 /* TimeSlotPickerView.swift */; };
 		AAF072251D09DAB400C67D2D /* Assets_BGTheme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAF072241D09DAB400C67D2D /* Assets_BGTheme.xcassets */; };
 		AAF072281D0A938900C67D2D /* ContainerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF072271D0A938900C67D2D /* ContainerProtocol.swift */; };
 		AAF0722A1D0AB88200C67D2D /* SubscriptionMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF072291D0AB88200C67D2D /* SubscriptionMenuVC.swift */; };
@@ -397,6 +399,7 @@
 /* Begin PBXFileReference section */
 		3298BBB4469215821FB74B86 /* Pods-MyBreakFast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyBreakFast.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyBreakFast/Pods-MyBreakFast.release.xcconfig"; sourceTree = "<group>"; };
 		5E122D7142E78537EB4BA1D5 /* Pods_MyBreakFast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyBreakFast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA09FF0D1D1FC4FD003AE665 /* MealPlanDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealPlanDetailsView.swift; path = Views/MealPlanDetailsView.swift; sourceTree = "<group>"; };
 		AA4AACC01D0D5FDD00627FB0 /* SubscriptionDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionDetailsVC.swift; path = Controllers/SubscriptionDetailsVC.swift; sourceTree = "<group>"; };
 		AA51D2911D1C527F00D404C7 /* DieticianBioVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DieticianBioVC.swift; path = Controllers/DieticianBioVC.swift; sourceTree = "<group>"; };
 		AA6056571D1E75D900A7A32E /* CalendarWeeksCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarWeeksCell.swift; path = Views/CalendarWeeksCell.swift; sourceTree = "<group>"; };
@@ -421,6 +424,7 @@
 		AAAB65BE1D1855D4006E6984 /* PlannedMeals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlannedMeals.swift; path = Models/PlannedMeals.swift; sourceTree = "<group>"; };
 		AAAB65C01D1855F5006E6984 /* TimeSlot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeSlot.swift; path = Models/TimeSlot.swift; sourceTree = "<group>"; };
 		AAC25C331D1EC1730052CE97 /* MealPlan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealPlan.swift; path = Models/MealPlan.swift; sourceTree = "<group>"; };
+		AAD870941D20309D00A37D98 /* TimeSlotPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeSlotPickerView.swift; path = Views/TimeSlotPickerView.swift; sourceTree = "<group>"; };
 		AAF072241D09DAB400C67D2D /* Assets_BGTheme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets_BGTheme.xcassets; sourceTree = "<group>"; };
 		AAF072271D0A938900C67D2D /* ContainerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerProtocol.swift; path = Protocols/ContainerProtocol.swift; sourceTree = "<group>"; };
 		AAF072291D0AB88200C67D2D /* SubscriptionMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionMenuVC.swift; path = Controllers/SubscriptionMenuVC.swift; sourceTree = "<group>"; };
@@ -1064,6 +1068,8 @@
 				AAAB65B61D155E5F006E6984 /* DietCell.swift */,
 				AA6056571D1E75D900A7A32E /* CalendarWeeksCell.swift */,
 				AA6056591D1EA3D300A7A32E /* MealDetailsView.swift */,
+				AA09FF0D1D1FC4FD003AE665 /* MealPlanDetailsView.swift */,
+				AAD870941D20309D00A37D98 /* TimeSlotPickerView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -2197,6 +2203,7 @@
 				EDCC2AE51C339F0800C15C3B /* Order.swift in Sources */,
 				ED742CCB1CA78856007FC96D /* RNCryptor.m in Sources */,
 				ED344CC81C9B1526008643F9 /* AddressCell.swift in Sources */,
+				AAD870951D20309D00A37D98 /* TimeSlotPickerView.swift in Sources */,
 				ED742D5E1CA78856007FC96D /* UIUtility.m in Sources */,
 				ED742C6D1CA78856007FC96D /* CTSPaymentToken.m in Sources */,
 				ED742D621CA78856007FC96D /* InitialViewController.m in Sources */,
@@ -2377,6 +2384,7 @@
 				ED5B216F1BF612B700C65857 /* UserDetails.swift in Sources */,
 				ED344CCD1C9B1526008643F9 /* DatePicker.swift in Sources */,
 				ED742C671CA78856007FC96D /* CTSDyPPaymentInfo.m in Sources */,
+				AA09FF0E1D1FC4FD003AE665 /* MealPlanDetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

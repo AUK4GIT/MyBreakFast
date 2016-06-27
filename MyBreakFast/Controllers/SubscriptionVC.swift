@@ -72,8 +72,13 @@ class SubscriptionVC: UIViewController {
 
     @IBOutlet var mealDetailsView: MealDetailsView!
     @IBOutlet var customizedSubscrTable: UITableView!
+    var planTitle: String?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Helper.sharedInstance.order = nil;
+        Helper.sharedInstance.subscription = nil;
+        
         self.customizedSubscrTable.hidden = true;
         self.dieticiansList.delegate = dieticiansDataSource;
         self.dieticiansList.dataSource = dieticiansDataSource;
@@ -81,6 +86,7 @@ class SubscriptionVC: UIViewController {
         Helper.sharedInstance.getSubscriptionRegularPlan { (response) in
             if let json = response as? NSDictionary {
                 Helper.sharedInstance.subscription = Subscription()
+                Helper.sharedInstance.order = Order()
                 Helper.sharedInstance.subscription?.saveData(json)
                 self.dieticiansDataSource.dieticiansList = Helper.sharedInstance.subscription?.dieticians
                 self.plansList = Helper.sharedInstance.subscription?.regplans
@@ -93,18 +99,18 @@ class SubscriptionVC: UIViewController {
 
                 self.setSelectionParameters()
 
-                let regularPlan = self.plansList![indexPath.row]
-                let dieticianSelected = self.dieticiansDataSource.dieticiansList![0]
-                var mealPlans = regularPlan.mealPlans!.filter({
-                    $0.dieticianId! == dieticianSelected.dieticianId
-                })
-                let mealPlan = mealPlans[0]
-
-                self.mealDetailsView.setDescription(mealPlan.planDescription)
-
-                var url: String? = mealPlan.imageURL
-                url = Constants.API.SubscrImgBaseURL+(url?.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLQueryAllowedCharacterSet()))!
-                self.planImageView.sd_setImageWithURL(NSURL(string: url!), placeholderImage: UIImage(named: ""), completed: nil)
+//                let regularPlan = self.plansList![indexPath.row]
+//                let dieticianSelected = self.dieticiansDataSource.dieticiansList![0]
+//                var mealPlans = regularPlan.mealPlans!.filter({
+//                    $0.dieticianId! == dieticianSelected.dieticianId
+//                })
+//                let mealPlan = mealPlans[0]
+//
+//                self.mealDetailsView.setDescription(mealPlan.planDescription)
+//
+//                var url: String? = mealPlan.imageURL
+//                url = Constants.API.SubscrImgBaseURL+(url?.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLQueryAllowedCharacterSet()))!
+//                self.planImageView.sd_setImageWithURL(NSURL(string: url!), placeholderImage: UIImage(named: ""), completed: nil)
 
             }
         }
@@ -135,7 +141,7 @@ class SubscriptionVC: UIViewController {
         if mealPlans.count > 0 {
             let mealPlan = mealPlans[0]
             //        let dietcianname = (dietician?.firstName)!+" "+(dietician?.lastName)!
-            
+            self.planTitle = mealPlan.name;
             var url: String? = mealPlan.imageURL
             url = Constants.API.SubscrImgBaseURL+(url?.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLQueryAllowedCharacterSet()))!
             self.planImageView.sd_setImageWithURL(NSURL(string: url!), placeholderImage: UIImage(named: ""), completed: nil)
@@ -143,6 +149,7 @@ class SubscriptionVC: UIViewController {
             
             self.mealPlanLabel.text = mealPlan.selectionText!
             Helper.sharedInstance.subscription?.selectedPlanId = mealPlan.planId
+            Helper.sharedInstance.order?.mealPlanId = mealPlan.planId;
             Helper.sharedInstance.subscription?.selectedDieticianId = dietician?.dieticianId
         } else {
         
@@ -174,14 +181,43 @@ class SubscriptionVC: UIViewController {
     }
     
     @IBAction func subscribeAction(sender: AnyObject) {
-        if let _ = Helper.sharedInstance.subscription?.selectedDieticianId, let _ = Helper.sharedInstance.subscription?.selectedPlanId {
+        
+            let userLoginStatus = Helper.sharedInstance.getDataFromUserDefaults(forKey: Constants.UserdefaultConstants.UserLoginStatus) as? Bool
+            let userRegistrationStatus = Helper.sharedInstance.getDataFromUserDefaults(forKey: Constants.UserdefaultConstants.UserRegistration) as? Bool
             
-            let parentVC = self.parentViewController?.parentViewController as! ViewController
-            parentVC.cycleFromViewController(nil, toViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("SubscriptionDetailsVC"))!)
-        } else {
-        
-        }
-        
+            if userLoginStatus == nil {
+                let vc: AppSignInVC = (self.storyboard?.instantiateViewControllerWithIdentifier("AppSignInVC")) as! AppSignInVC
+                self.presentViewController(vc, animated: true, completion: nil)
+                vc.completionHandler = {dict in
+                    print(dict);
+                    vc.dismissViewControllerAnimated(true, completion: { () -> Void in
+                        //                    if let obj = dict.object
+                    })
+                };
+            } else if userRegistrationStatus == nil {
+                
+                let vc: AppSignInVC = (self.storyboard?.instantiateViewControllerWithIdentifier("AppSignInVC")) as! AppSignInVC
+                self.presentViewController(vc, animated: true, completion: nil)
+                vc.completionHandler = {dict in
+                    print(dict);
+                    vc.dismissViewControllerAnimated(true, completion: { () -> Void in
+                        //                    if let obj = dict.object
+                    })
+                };
+                
+            } else {
+                
+                if let _ = Helper.sharedInstance.subscription?.selectedDieticianId, let _ = Helper.sharedInstance.subscription?.selectedPlanId {
+                    
+                    let parentVC = self.parentViewController?.parentViewController as! ViewController
+                    let vc = (self.storyboard?.instantiateViewControllerWithIdentifier("SubscriptionDetailsVC")) as? SubscriptionDetailsVC
+                    vc?.planTitle = self.planTitle
+                    parentVC.cycleFromViewController(nil, toViewController: vc!)
+                } else {
+                    
+                }
+            }
+  
     }
     
     // MARK: UICollectionView delegates and datasources

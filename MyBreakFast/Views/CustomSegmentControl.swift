@@ -23,6 +23,21 @@ import Foundation
         }
     }
     
+    func disableSegmentAtIndex(index :Int){
+        let sView = self.viewWithTag(index)
+        sView?.userInteractionEnabled = true;
+        sView?.backgroundColor = UIColor.lightGrayColor();
+        let label: UILabel = sView!.viewWithTag(5) as! UILabel
+        label.text = "No Meal";
+
+    }
+    
+    func setSelectedSlot(slot: String?, forIndex index: Int){
+        let sView = self.viewWithTag(index)
+        let label: UILabel = sView!.viewWithTag(6) as! UILabel
+        label.text = slot;
+    }
+    
     func displayNewSelectedIndex(){
         for (index, view) in self.subviews.enumerate() {
             view.backgroundColor = dColor
@@ -32,6 +47,8 @@ import Foundation
                 view.backgroundColor = sColor
                 let label: UILabel = view.viewWithTag(5) as! UILabel
                 label.textColor = dColor;
+            } else if view.userInteractionEnabled == true {
+                view.backgroundColor = UIColor.lightGrayColor()
             }
         }
     }
@@ -53,15 +70,4 @@ import Foundation
         
         return false
     }
-    /*
-    override internal func continueTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
-    
-    }
-    override internal func endTrackingWithTouch(touch: UITouch?, withEvent event: UIEvent?) {
-    
-    }
-    override internal func cancelTrackingWithEvent(event: UIEvent?) {
-    
-    }
- */
 }

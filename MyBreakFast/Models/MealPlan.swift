@@ -37,9 +37,9 @@ class MealPlan: NSObject {
             self.selectionText = obj
         }
         
-        //                        if let obj = mealPlan.objectForKey("name") as? String{
-        //                            self.name = obj
-        //                        }
+        if let obj = mealPlan.objectForKey("name") as? String{
+            self.name = obj
+        }
         
         /*
          if let obj = mealPlan.objectForKey("min_week") as? NSNumber{

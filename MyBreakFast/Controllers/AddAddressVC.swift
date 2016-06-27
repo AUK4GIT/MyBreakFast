@@ -8,10 +8,14 @@
 
 import Foundation
 
+protocol AddressProtocol: class {
+    func didPickAddress(addrId: String?);
+}
 class AddAddressVC: UIViewController, LocationPickerVCDelegate {
     
     @IBOutlet var collectionView: UICollectionView!
     var itemsArray : [AnyObject] = [];
+    weak var delegate : AddressProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +35,7 @@ class AddAddressVC: UIViewController, LocationPickerVCDelegate {
     }
     
     func dismissViewController(){
+        self.delegate?.didPickAddress(Helper.sharedInstance.order?.addressId)
         self.dismissViewControllerAnimated(true, completion: nil);
     }
     
@@ -179,14 +184,12 @@ class AddAddressVC: UIViewController, LocationPickerVCDelegate {
         Helper
         .sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.LastSelectedAddressId, value: (userAddr?.addressId)!)
         Helper.sharedInstance.order?.addressId = (userAddr?.addressId)!
-        
         self.dismissViewController()
 
     }
     
     func dismissViewAfterAddingAddress(){
         self.dismissViewController()
-
     }
     
     override func viewWillLayoutSubviews() {

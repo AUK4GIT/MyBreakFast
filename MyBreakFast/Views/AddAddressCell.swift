@@ -44,10 +44,15 @@ class AddAddressCell: UICollectionViewCell {
     }
     
     @IBAction func showLocationPicker(sender: UIButton) {
-//        sender.sendAction("showLocationPicker:", to: nil, forEvent: nil)
+        sender.sendAction(#selector(AddAddressVC.showLocationPicker), to: nil, forEvent: nil)
     }
     
     @IBAction func addorChangeAddress(sender: UIButton) {
+        
+        guard let _ = Helper.sharedInstance.userLocation else{
+            UIAlertView(title: "First Eat", message: "Please pick a location.", delegate: nil, cancelButtonTitle: "OK").show()
+            return;
+        }
         
         if self.secondLine.text.characters.count == 0 {
             UIAlertView(title: "First Eat", message: "Address field cannot be empty.", delegate: nil, cancelButtonTitle: "OK").show()

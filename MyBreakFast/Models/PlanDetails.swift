@@ -15,6 +15,9 @@ class PlanDetails: NSObject {
     var planId: String?
     var name: String?
     var price: String?
+    var priceSat: String?
+    var priceSun: String?
+    var priceSatSun: String?
     var sat: String?
     var sun: String?
     var minweek: String?
@@ -41,6 +44,24 @@ class PlanDetails: NSObject {
             self.price = obj.stringValue
         } else {
             self.price = dict.objectForKey("price") as? String;
+        }
+        
+        if let obj = dict.objectForKey("price_with_sat") as? NSNumber{
+            self.priceSat = obj.stringValue
+        } else {
+            self.priceSat = dict.objectForKey("price_with_sat") as? String;
+        }
+        
+        if let obj = dict.objectForKey("price_with_sun") as? NSNumber{
+            self.priceSun = obj.stringValue
+        } else {
+            self.priceSun = dict.objectForKey("price_with_sun") as? String;
+        }
+        
+        if let obj = dict.objectForKey("price_with_sat_n_sun") as? NSNumber{
+            self.priceSatSun = obj.stringValue
+        } else {
+            self.priceSatSun = dict.objectForKey("price_with_sat_n_sun") as? String;
         }
         
         if let obj = dict.objectForKey("sat") as? NSNumber{
