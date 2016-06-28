@@ -28,7 +28,7 @@ import Foundation
         sView?.userInteractionEnabled = true;
         sView?.backgroundColor = UIColor.lightGrayColor();
         let label: UILabel = sView!.viewWithTag(5) as! UILabel
-        label.text = "No Meal";
+        label.text = "No Course";
 
     }
     
@@ -39,7 +39,7 @@ import Foundation
     }
     
     func displayNewSelectedIndex(){
-        for (index, view) in self.subviews.enumerate() {
+        for (_, view) in self.subviews.enumerate() {
             view.backgroundColor = dColor
             let label: UILabel = view.viewWithTag(5) as! UILabel
             label.textColor = sColor;

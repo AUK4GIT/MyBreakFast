@@ -35,6 +35,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashImage" translatesAutoresizingMaskIntoConstraints="NO" id="WJy-PH-1GN">
                                         <rect key="frame" x="0.0" y="0.0" width="556" height="200"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="0.23137254901960785" green="0.76470588235294112" blue="0.82745098039215681" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="240" id="e8q-Yt-CeS"/>
                                         </constraints>

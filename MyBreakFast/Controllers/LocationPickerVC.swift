@@ -81,7 +81,7 @@ class LocationPickerVC: CustomModalViewController {
         if (pickerLabel == nil)
         {
             pickerLabel = UILabel()
-            pickerLabel?.textColor = Constants.AppColors.blue.color;
+            pickerLabel?.textColor = UIColor.blackColor();
             pickerLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 16)
             pickerLabel?.textAlignment = NSTextAlignment.Center
         }

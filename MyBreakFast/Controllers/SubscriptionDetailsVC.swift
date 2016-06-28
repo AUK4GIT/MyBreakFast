@@ -93,7 +93,7 @@ class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate, AddressProt
                 
                 self.mealPlanLabel.text = self.planDetails?.selectionText
                 
-                let priceLbl = "Pay Rs. "+(self.planDetails?.price)!
+                let priceLbl = "Pay ₹ "+(self.planDetails?.price)!
                 self.planPricePerWeek = Int((self.planDetails?.price)!)!
                 self.priceLabel.setTitle(priceLbl, forState: .Normal)
                 Helper.sharedInstance.order?.totalAmount = (self.planDetails?.price)!
@@ -157,7 +157,7 @@ class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate, AddressProt
     
     @IBAction func includeSaturday(sender: UIButton) {
         
-        var priceLbl = "Pay Rs. "
+        var priceLbl = "Pay ₹ "
         var price = 0;
         if sender.selected {
             sender.selected = false
@@ -259,7 +259,7 @@ class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate, AddressProt
         self.repeatCount = self.repeatCount!+1
         self.repeatCountLabel.text = String(self.repeatCount!)
         Helper.sharedInstance.order?.weeks = String(self.repeatCount!);
-        var priceLbl = "Pay Rs. "
+        var priceLbl = "Pay ₹ "
         let price = self.repeatCount! * self.planPricePerWeek;
         priceLbl = priceLbl+String(price)
         self.priceLabel.setTitle(priceLbl, forState: .Normal)
@@ -273,7 +273,7 @@ class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate, AddressProt
             self.repeatCountLabel.text = String(self.repeatCount!)
             Helper.sharedInstance.order?.weeks = String(self.repeatCount!);
 
-            var priceLbl = "Pay Rs. "
+            var priceLbl = "Pay ₹ "
             let price = self.repeatCount! * self.planPricePerWeek;
             priceLbl = priceLbl+String(price)
             self.priceLabel.setTitle(priceLbl, forState: .Normal)

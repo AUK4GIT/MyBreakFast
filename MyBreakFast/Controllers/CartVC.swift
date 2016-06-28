@@ -16,6 +16,7 @@ class CartVC: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var collectionViewLayout: UICollectionViewFlowLayout!
     let sectionHeaders: [String] = ["TOTAL AMOUNT", "REEDEM POINTS", "COUPON CODE", "PAYMENT METHODS", "BRING ME CHANGE OF"];
+    let sectionHeaderImages: [String] = ["total-bill-icon","redeem points","coupon code icon","payment method icon","noimage"];
     var totalAmount: Int?
     var response: AnyObject?
     
@@ -223,6 +224,10 @@ class CartVC: UIViewController {
             reusableview = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "CartHeaderView", forIndexPath: indexPath)
             let label: UILabel = reusableview?.viewWithTag(5) as! UILabel
             label.text = sectionHeaders[indexPath.section];
+            
+            let imgView: UIImageView = reusableview?.viewWithTag(5) as! UIImageView
+            imgView.image = UIImage(named: sectionHeaderImages[indexPath.section]);
+
             return reusableview!;
         } else {
             reusableview = nil;
