@@ -62,7 +62,7 @@ class ProductsCell: UICollectionViewCell {
     
     func setItemContent() {
         let url: String? = self.item!.imgurl
-        self.imageView.sd_setImageWithURL(NSURL(string: url!), placeholderImage: UIImage(named: "menu_logo"), completed: nil)
+        self.imageView.sd_setImageWithURL(NSURL(string: url!), placeholderImage: UIImage(named: "loading"), completed: nil)
         self.nameLabel.text = self.item!.itemname
         self.quantityLabel.text = "0"
         if let quan = self.orderItem?.quantity {

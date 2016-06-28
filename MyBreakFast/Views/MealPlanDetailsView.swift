@@ -61,7 +61,7 @@ class MealPlanDetailsView: UIView {
         if let meal = mealObj as? PlannedMeals{
             var url: String? = meal.imgURL
             url = Constants.API.SubscrImgBaseURL+(url?.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLQueryAllowedCharacterSet()))!
-            self.imgView.sd_setImageWithURL(NSURL(string: url!), placeholderImage: UIImage(named: "menu_logo"), completed: nil)
+            self.imgView.sd_setImageWithURL(NSURL(string: url!), placeholderImage: UIImage(named: "loading"), completed: nil)
             self.nameLbl.text = meal.name
             self.descrLbl.text = meal.mealDescription
             

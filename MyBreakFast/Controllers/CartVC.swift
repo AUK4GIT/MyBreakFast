@@ -225,7 +225,7 @@ class CartVC: UIViewController {
             let label: UILabel = reusableview?.viewWithTag(5) as! UILabel
             label.text = sectionHeaders[indexPath.section];
             
-            let imgView: UIImageView = reusableview?.viewWithTag(5) as! UIImageView
+            let imgView: UIImageView = reusableview?.viewWithTag(6) as! UIImageView
             imgView.image = UIImage(named: sectionHeaderImages[indexPath.section]);
 
             return reusableview!;

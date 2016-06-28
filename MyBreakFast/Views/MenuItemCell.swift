@@ -78,7 +78,7 @@ class MenuItemCell: UICollectionViewCell {
     func setItemContent() {       
         let url: String? = self.item!.imgurl
         (url?.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLQueryAllowedCharacterSet()))
-        self.imageView.sd_setImageWithURL(NSURL(string: url!), placeholderImage: UIImage(named: "menu_logo"), completed: nil)
+        self.imageView.sd_setImageWithURL(NSURL(string: url!), placeholderImage: UIImage(named: "loading"), completed: nil)
         self.nameLabel.text = self.item!.itemname
         self.amountLabel.text = "₹ \(self.item!.price!)"
         self.quantityLabel.text = "0"
