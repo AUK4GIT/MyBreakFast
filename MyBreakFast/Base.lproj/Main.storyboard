@@ -6038,7 +6038,7 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="----------" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFI-mz-Bbi">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="----------" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gFI-mz-Bbi">
                                                 <rect key="frame" x="138" y="36" width="45" height="15"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -6047,7 +6047,7 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Rj-Xa-RzP">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Rj-Xa-RzP">
                                                 <rect key="frame" x="146" y="55" width="29" height="15"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -6133,17 +6133,21 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="gFI-mz-Bbi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yBQ-zA-Qn8" secondAttribute="leading" constant="10" id="9AD-OV-Pzo"/>
                                             <constraint firstItem="hhk-VV-jT9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1Rj-Xa-RzP" secondAttribute="bottom" id="9G7-rq-SVR"/>
                                             <constraint firstItem="pqT-6P-CiQ" firstAttribute="top" secondItem="yBQ-zA-Qn8" secondAttribute="top" constant="16" id="Ge5-7F-BDX"/>
                                             <constraint firstItem="1Rj-Xa-RzP" firstAttribute="centerY" secondItem="yBQ-zA-Qn8" secondAttribute="centerY" id="MAm-ge-nlv"/>
                                             <constraint firstItem="1Rj-Xa-RzP" firstAttribute="centerX" secondItem="yBQ-zA-Qn8" secondAttribute="centerX" id="OME-5J-abo"/>
                                             <constraint firstItem="gFI-mz-Bbi" firstAttribute="top" secondItem="pqT-6P-CiQ" secondAttribute="bottom" id="Rg5-o9-Uih"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1Rj-Xa-RzP" secondAttribute="trailing" constant="10" id="WWm-FX-enh"/>
                                             <constraint firstAttribute="bottom" secondItem="hhk-VV-jT9" secondAttribute="bottom" id="Y2E-JY-fcJ"/>
                                             <constraint firstItem="gFI-mz-Bbi" firstAttribute="centerX" secondItem="pqT-6P-CiQ" secondAttribute="centerX" id="n1X-JZ-8bR"/>
                                             <constraint firstItem="1Rj-Xa-RzP" firstAttribute="top" secondItem="gFI-mz-Bbi" secondAttribute="bottom" constant="4" id="qo7-tF-xXF"/>
                                             <constraint firstItem="pqT-6P-CiQ" firstAttribute="centerX" secondItem="yBQ-zA-Qn8" secondAttribute="centerX" id="rvN-yX-ocW"/>
+                                            <constraint firstItem="1Rj-Xa-RzP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yBQ-zA-Qn8" secondAttribute="leading" constant="10" id="tKG-GE-rpA"/>
                                             <constraint firstAttribute="trailing" secondItem="hhk-VV-jT9" secondAttribute="trailing" id="vFj-hi-Bz8"/>
                                             <constraint firstItem="hhk-VV-jT9" firstAttribute="leading" secondItem="yBQ-zA-Qn8" secondAttribute="leading" id="xSs-qd-5zT"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gFI-mz-Bbi" secondAttribute="trailing" constant="10" id="yZI-7y-9EJ"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">

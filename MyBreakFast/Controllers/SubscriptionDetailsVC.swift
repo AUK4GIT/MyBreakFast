@@ -110,9 +110,13 @@ class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate, AddressProt
                 self.selectedWeekDay = 1;
                 
                 self.showDetailsForDayandMealType(1);
+                self.setInitialDefaultsTimeslotsasFirstslot();
+            } else {
+                let warn = UIAlertController(title: "First Eat", message: "Error! Please try again.", preferredStyle: UIAlertControllerStyle.Alert)
+                warn.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(warn, animated: true, completion: nil);
             }
             
-            self.setInitialDefaultsTimeslotsasFirstslot();
         }
     }
     
