@@ -83,12 +83,15 @@ class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate, AddressProt
                 
                 if self.planDetails?.meal1Exists == "0" {
                     self.MealsSegmentControl.disableSegmentAtIndex(0)
+                    Helper.sharedInstance.order?.address1 = ""
                 }
                 if self.planDetails?.meal2Exists == "0" {
                     self.MealsSegmentControl.disableSegmentAtIndex(1)
+                    Helper.sharedInstance.order?.address2 = ""
                 }
                 if self.planDetails?.meal3Exists == "0" {
                     self.MealsSegmentControl.disableSegmentAtIndex(2)
+                    Helper.sharedInstance.order?.address3 = ""
                 }
                 
                 self.mealPlanLabel.text = self.planDetails?.selectionText
@@ -105,8 +108,37 @@ class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate, AddressProt
                 
                 self.calendarCollectionView.selectItemAtIndexPath(NSIndexPath(forItem: 0, inSection: 0), animated: true, scrollPosition: .Left)
                 self.selectedWeekDay = 1;
+                
+                self.showDetailsForDayandMealType(1);
             }
+            
+            self.setInitialDefaultsTimeslotsasFirstslot();
         }
+    }
+    
+    func setInitialDefaultsTimeslotsasFirstslot(){
+    
+        let slot1 = self.planSlots![0]
+        var timeSlot = slot1.mealSlots![0]
+        Helper.sharedInstance.order?.slot1 = timeSlot.slotId
+        var slot = timeSlot.startTime!+" to "+timeSlot.endTime!
+
+        self.MealsSegmentControl.setSelectedSlot(slot, forIndex: 0)
+
+        let slot2 = self.planSlots![1]
+         timeSlot = slot2.mealSlots![0]
+        Helper.sharedInstance.order?.slot2 = timeSlot.slotId
+        slot = timeSlot.startTime!+" to "+timeSlot.endTime!
+        self.MealsSegmentControl.setSelectedSlot(slot, forIndex: 1)
+
+        let slot3 = self.planSlots![2]
+         timeSlot = slot3.mealSlots![0]
+        Helper.sharedInstance.order?.slot3 = timeSlot.slotId
+        slot = timeSlot.startTime!+" to "+timeSlot.endTime!
+        self.MealsSegmentControl.setSelectedSlot(slot, forIndex: 2)
+
+        self.MealsSegmentControl.selectedIndex = 0;
+        self.mealSelectedType(self.MealsSegmentControl);
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -189,6 +221,8 @@ class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate, AddressProt
             self.presentViewController(warn, animated: true, completion: nil);
         } else {
         
+            let parentVC = self.parentViewController as! ViewController
+            parentVC.cycleFromViewController(nil, toViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("CartVC"))!)
         }
     }
     
@@ -380,11 +414,12 @@ class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate, AddressProt
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("timeSlotcell")
-        cell?.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 8.0)
+        cell?.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 10.0)
+        cell?.textLabel?.adjustFontToRealIPhoneSize = true;
         cell?.contentView.backgroundColor = UIColor.clearColor()
         cell?.backgroundColor = UIColor.clearColor()
         if let timeSlot = self.slotsArray![indexPath.row] as? TimeSlot {
-            cell?.textLabel?.text = (timeSlot.startTime)!+" - "+(timeSlot.endTime)!
+            cell?.textLabel?.text = (((timeSlot.startTime)! as NSString).substringToIndex(5))+" - "+(((timeSlot.endTime)! as NSString).substringToIndex(5))
         }
         return cell!
     }

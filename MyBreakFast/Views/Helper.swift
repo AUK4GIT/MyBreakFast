@@ -584,8 +584,15 @@ import Reachability
                 offerPrice += Int((offer.price)!)!
             }
             price += offerPrice
-            Helper.sharedInstance.order?.totalAmount = String(price)
+            
+            if let _ = self.subscription {
+                //Subscriptiom flvoe
+                price = Int((Helper.sharedInstance.order?.totalAmount)!)!
+            } else {
+                Helper.sharedInstance.order?.totalAmount = String(price)
+            }
 
+            
 //            if self.order?.hasRedeemedPoints == true {
                 price = price - Int((self.order?.discount)!)!
 //            }
@@ -1365,6 +1372,36 @@ import Reachability
                 }
         }
     }
+    
+    func getMySubscriptions(completionHandler: (AnyObject) -> ()) {
+        
+        Helper.sharedInstance.showActivity()
+        let completeURL = Constants.API.Subscr_GetAllSubscrs+self.getUserId()
+        Alamofire.request(.GET, completeURL, parameters: nil)
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                //print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                    //                    if let jData =  JSON.objectForKey("data") as? Array<AnyObject>{
+                    //                        self.saveMenuOrders(jData)
+                    //                        self.saveContext();
+                    //                    }
+                    dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                        Helper.sharedInstance.hideActivity()
+                        completionHandler(JSON)
+                    }
+                } else {
+                    dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                        Helper.sharedInstance.hideActivity()
+                        completionHandler("ERROR")
+                    }
+                }
+        }
+    }
 
     func placeOrder(paymentMode: String, completionHandler: (AnyObject) -> ()) {
         
@@ -1395,6 +1432,68 @@ import Reachability
             "total":(self.order?.totalAmountPayable!)!,
             "d":self.orderDate!]
         
+        Alamofire.request(.GET, completeURL, parameters: postParams)
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                //print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                    if let jData =  JSON as? NSDictionary{
+                        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                            Helper.sharedInstance.hideActivity()
+                            completionHandler(jData)
+                        }
+                    } else {
+                        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                            Helper.sharedInstance.hideActivity()
+                            completionHandler("ERROR")
+                        }
+                    }
+                } else {
+                    dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                        Helper.sharedInstance.hideActivity()
+                        completionHandler("ERROR")
+                    }
+                }
+        }
+    }
+    
+    func placeSubscriptionOrder(paymentMode: String, completionHandler: (AnyObject) -> ()) {
+        
+        Helper.sharedInstance.showActivity()
+        let completeURL = Constants.API.Subscr_PlaceOrder+self.getUserId()
+        let change = Helper.sharedInstance.order?.change ?? "0"
+        let coupon = Helper.sharedInstance.order?.couponsApplied.count>0 ? Helper.sharedInstance.order?.couponsApplied[0]: nil;
+        var couponId = "";
+        let redeemPoints = self.order?.pointsToRedeem;
+        if coupon != nil {
+            couponId = (coupon?.couponid)!;
+        }
+        var postParams: [String : AnyObject] = ["mealplanid":(self.order?.mealPlanId)!,
+                                                "coupon":couponId,
+                                                "points":redeemPoints!,
+                                                "menu":self.getCommaSeparatedMenuIdsandQuantitiesForOrder(),
+                                                "weeks":(self.order?.weeks)!,
+                                                "offers":"null",
+                                                "subtotal":(self.order?.totalAmount!)!,
+                                                "paymentmode":paymentMode,
+                                                "discount":(Helper.sharedInstance.order?.discount)!,
+                                                "vat":(Helper.sharedInstance.order?.vatAmount)!,
+                                                "surcharge":(Helper.sharedInstance.order?.serviceChargeAmount)!,
+                                                "total":(self.order?.totalAmountPayable!)!]
+        postParams["address1"] = (self.order?.address1!)!
+        postParams["slot1"] = (self.order?.slot1)!
+        postParams["address2"] = (self.order?.address2!)!
+        postParams["slot2"] = (self.order?.slot2)!
+        postParams["address3"] = (self.order?.address3!)!
+        postParams["slot3"] = (self.order?.slot3)!
+        postParams["start_date"] = self.order?.subscriptionDate
+        postParams["change"] = change
+        postParams["sat_inc"] = self.order?.satIncluded ?? "0"
+
         Alamofire.request(.GET, completeURL, parameters: postParams)
             .responseJSON { response in
                 print(response.request)  // original URL request

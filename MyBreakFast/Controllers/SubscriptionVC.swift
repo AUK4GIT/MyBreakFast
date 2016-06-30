@@ -61,7 +61,7 @@ class DieticiansDatasource: NSObject, UICollectionViewDelegate, UICollectionView
 
 }
 
-class SubscriptionVC: UIViewController {
+class SubscriptionVC: UIViewController, LocationPickerDelegate {
     
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var dieticiansList: UICollectionView!
@@ -73,6 +73,99 @@ class SubscriptionVC: UIViewController {
     @IBOutlet var mealDetailsView: MealDetailsView!
     @IBOutlet var customizedSubscrTable: UITableView!
     var planTitle: String?
+    
+    
+    var searchButton: UIButton!
+    
+    override func beginAppearanceTransition(isAppearing: Bool, animated: Bool) {
+        super.beginAppearanceTransition(isAppearing, animated: animated)
+        let parentVC: ViewController = self.parentViewController?.parentViewController as! ViewController
+        
+        if isAppearing {
+            self.initNavigationItemTitleView();
+            
+            let fadeTextAnimation: CATransition = CATransition();
+            fadeTextAnimation.duration = 0.5;
+            fadeTextAnimation.type = kCATransitionFade;
+            
+            parentVC.containerNavigationItem.leftBarButtonItem?.image = UIImage(named: "menu_icon.png");
+            parentVC.containerNavigationItem.leftBarButtonItem?.action = #selector(ViewController.toggleSideView);
+            parentVC.containerNavigationItem.leftBarButtonItem?.target = parentVC;
+            parentVC.containerNavigationBar.layer.addAnimation(fadeTextAnimation, forKey: "fadeText");
+        } else {
+            parentVC.containerNavigationItem.rightBarButtonItem = nil;
+        }
+        
+        if let title = Helper.sharedInstance.userLocation {
+            self.searchButton.setTitle(title, forState: UIControlState.Normal)
+        }
+        
+    }
+    
+    override func endAppearanceTransition() {
+        super.endAppearanceTransition()
+    }
+    
+    private func initNavigationItemTitleView() {
+        
+        let parentVC: ViewController = self.parentViewController?.parentViewController as! ViewController
+        
+        let searchcustomView = UIView()
+        searchcustomView.frame = CGRectMake(0, 0, 240, 44);
+        searchcustomView.backgroundColor = UIColor.clearColor()
+        
+        let width: CGFloat = Constants.DeviceConstants.IS_IPHONE_5_OR_LESS ? 190.0 : (Constants.DeviceConstants.IS_IPHONE_6 ? 240 : 242);
+        let offset: CGFloat = 0;//Constants.DeviceConstants.IS_IPHONE_5_OR_LESS ? -10 : 0.0;
+        let height: CGFloat = Constants.DeviceConstants.IS_IPHONE_5_OR_LESS ? 27.0 : 30.0;
+        
+        self.searchButton = UIButton(type: UIButtonType.Custom)
+        searchButton.frame = CGRectMake(offset, 6, width, height);
+        searchButton.setBackgroundImage(UIImage(named: "searchbg.png"), forState: UIControlState.Normal)
+        searchButton.setTitle("Search for locations", forState: UIControlState.Normal)
+        searchButton.titleEdgeInsets = UIEdgeInsetsMake(0, 20, 0, 20);
+        searchButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        searchButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 14.0);
+        searchButton.titleLabel?.textAlignment = NSTextAlignment.Center
+        searchcustomView.addSubview(searchButton);
+        parentVC.containerNavigationItem.title = nil;
+        parentVC.containerNavigationItem.titleView = searchcustomView//self.titleView
+        searchButton.addTarget(self, action: #selector(MenuVC.showLocationPicker(_:)), forControlEvents: UIControlEvents.TouchUpInside);
+        
+    }
+    
+    func showLocationPicker(locationObj: AnyObject?) {
+        
+        self.searchButton.setTitle("", forState: .Normal)
+        let locationPickVC : LocationPicker = self.storyboard?.instantiateViewControllerWithIdentifier("LocationPicker") as! LocationPicker
+        locationPickVC.locationDelegate = self;
+        self.presentViewController(locationPickVC, animated: true, completion: nil)
+        //        return;
+    }
+    
+    func didPickLocation(location: AnyObject?) {
+        if let locationObj = location as? Locations {
+            print(locationObj.locationId, locationObj.locationName);
+            self.searchButton.setTitle(locationObj.locationName, forState: .Normal)
+            Helper.sharedInstance.userLocation = locationObj.locationName;
+            Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.LastSelectedLocationId, value: locationObj.locationId!)
+//            self.didSelectDate(self.menuDate)
+        } else {
+            if let locId = Helper.sharedInstance.getDataFromUserDefaults(forKey: Constants.UserdefaultConstants.LastSelectedLocationId) {
+                let locations = Helper.sharedInstance.getLocationsForLocationId(locId as! String);
+                if locations.count > 0 {
+                    let locationObj = locations[0] as? Locations
+                    Helper.sharedInstance.userLocation = locationObj?.locationName;
+                    self.searchButton.setTitle(locationObj?.locationName, forState: .Normal)
+                } else {
+                    self.searchButton.setTitle("Search for locations", forState: .Normal)
+                }
+            } else {
+                self.searchButton.setTitle("Search for locations", forState: .Normal)
+            }
+        }
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -144,7 +237,7 @@ class SubscriptionVC: UIViewController {
             self.planTitle = mealPlan.name;
             var url: String? = mealPlan.imageURL
             url = Constants.API.SubscrImgBaseURL+(url?.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLQueryAllowedCharacterSet()))!
-            self.planImageView.sd_setImageWithURL(NSURL(string: url!), placeholderImage: UIImage(named: ""), completed: nil)
+            self.planImageView.sd_setImageWithURL(NSURL(string: url!), placeholderImage: UIImage(named: "loading"), completed: nil)
             self.mealDetailsView.setDescription(mealPlan.planDescription)
             
             self.mealPlanLabel.text = mealPlan.selectionText!

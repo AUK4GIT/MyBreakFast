@@ -69,13 +69,15 @@ class OrderStatusVC: UIViewController {
         self.address.text = lineOne+" "+lineTwo+" "+lineThree
         self.status.text = "Ordered"
         self.status.textColor = UIColor(red: 200.0/255.0, green: 15.0/255.0, blue: 5.0/255.0, alpha: 1.0)
-
-        let date = self.dateFormatter.dateFromString(Helper.sharedInstance.orderDate!)
-        let dateStr = dayFormatter.stringFromDate(date!)
+        var date = NSDate();
+        if let _ = Helper.sharedInstance.orderDate {
+            date = self.dateFormatter.dateFromString(Helper.sharedInstance.orderDate!)!
+        }
+        let dateStr = dayFormatter.stringFromDate(date)
         self.orderedAt.text = "Ordered at: "
         self.orderDate.text = dateStr;
         self.orderAmount.text = "₹ "+(Helper.sharedInstance.order?.totalAmountPayable)!
-        
+        if let _ = Helper.sharedInstance.order?.timeSlotId {
         if let timeSlotObj = Helper.sharedInstance.fetchTimeSlotObjectForId() {
             let timeFormtter = NSDateFormatter()
             timeFormtter.dateFormat = "HH:mm:ss"
@@ -85,6 +87,7 @@ class OrderStatusVC: UIViewController {
             timeFormtter.dateFormat = "hh:mm a"
             self.orderTime.text = timeFormtter.stringFromDate(startTime!)+" - "+timeFormtter.stringFromDate(endTime!)
 
+        }
         }
         
         self.orderTime.text = ""

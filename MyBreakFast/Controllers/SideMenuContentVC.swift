@@ -70,18 +70,21 @@ class SideMenuContentVC: UIViewController, UITableViewDataSource, UITableViewDel
             self.delegate?.selectedViewController((self.storyboard?.instantiateViewControllerWithIdentifier("MyOrdersVC"))!)
             break;
         case 2:
-            self.delegate?.selectedViewController((self.storyboard?.instantiateViewControllerWithIdentifier("AboutUsVC"))!)
+            self.delegate?.selectedViewController((self.storyboard?.instantiateViewControllerWithIdentifier("MySubscriptions"))!)
             break;
         case 3:
-            self.delegate?.selectedViewController((self.storyboard?.instantiateViewControllerWithIdentifier("ContactUsVC"))!)
+            self.delegate?.selectedViewController((self.storyboard?.instantiateViewControllerWithIdentifier("AboutUsVC"))!)
             break;
         case 4:
-            self.delegate?.selectedViewController((self.storyboard?.instantiateViewControllerWithIdentifier("FeedBackVC"))!)
+            self.delegate?.selectedViewController((self.storyboard?.instantiateViewControllerWithIdentifier("ContactUsVC"))!)
             break;
         case 5:
-            self.delegate?.selectedViewController((self.storyboard?.instantiateViewControllerWithIdentifier("ReferralVC"))!)
+            self.delegate?.selectedViewController((self.storyboard?.instantiateViewControllerWithIdentifier("FeedBackVC"))!)
             break;
         case 6:
+            self.delegate?.selectedViewController((self.storyboard?.instantiateViewControllerWithIdentifier("ReferralVC"))!)
+            break;
+        case 7:
             self.delegate?.selectedViewController((self.storyboard?.instantiateViewControllerWithIdentifier("TermsVC"))!)
             break;
         default:
@@ -117,18 +120,21 @@ class SideMenuContentVC: UIViewController, UITableViewDataSource, UITableViewDel
             cell.imageView?.image = UIImage(imageLiteral: "MyOrders.png");
             break;
         case 2:
-            cell.imageView?.image = UIImage(imageLiteral: "Aboutus.png");
+            cell.imageView?.image = UIImage(imageLiteral: "dietican icon");
             break;
         case 3:
-            cell.imageView?.image = UIImage(imageLiteral: "Contactus.png");
+            cell.imageView?.image = UIImage(imageLiteral: "Aboutus.png");
             break;
         case 4:
-            cell.imageView?.image = UIImage(imageLiteral: "Rateus.png");
+            cell.imageView?.image = UIImage(imageLiteral: "Contactus.png");
             break;
         case 5:
-            cell.imageView?.image = UIImage(imageLiteral: "Refer.png");
+            cell.imageView?.image = UIImage(imageLiteral: "Rateus.png");
             break;
         case 6:
+            cell.imageView?.image = UIImage(imageLiteral: "Refer.png");
+            break;
+        case 7:
             cell.imageView?.image = UIImage(imageLiteral: "Terms.png");
             break;
         default:

@@ -127,7 +127,7 @@
                 <outlet property="timeLabel" destination="LS3-ks-Maf" id="Wsh-ca-Qmn"/>
                 <outlet property="totalLabel" destination="Ll3-hL-qrb" id="cyS-1l-ebk"/>
             </connections>
-            <point key="canvasLocation" x="498" y="166"/>
+            <point key="canvasLocation" x="373" y="155"/>
         </tableViewCell>
     </objects>
 </document>

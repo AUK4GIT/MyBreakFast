@@ -60,6 +60,9 @@ struct Constants {
         static let Subscr_PlaceOrder: String = BaseURL+"index.php/ws/subsc/add/new/"
      
         static let Subscr_GetOrderDetails: String = BaseURL+"index.php/ws/subsc/details
+     
+        static let Subscr_GetAllSubscrs: String = BaseURL+"index.php/ws/subsc/all/"
+
     }
  */
     
@@ -109,11 +112,12 @@ struct Constants {
         static let Subscr_MealsForPlan: String = BaseURL+"index.php/ws/subsc/mealplan/details/"
         static let Subscr_PlaceOrder: String = BaseURL+"index.php/ws/subsc/add/new/"
         static let Subscr_GetOrderDetails: String = BaseURL+"index.php/ws/subsc/details/"
+        static let Subscr_GetAllSubscrs: String = BaseURL+"index.php/ws/subsc/all/"
 
     }
     
     struct StaticContent {
-        static let SideMenuList : [String] = ["Menu", "My Orders", "About Us", "Contact Us", "Rate Us", "Refer a Friend", "Terms & Conditions"];
+        static let SideMenuList : [String] = ["Menu", "My Orders", "My Subscriptions","About Us", "Contact Us", "Rate Us", "Refer a Friend", "Terms & Conditions"];
         static let Filters : [[String:String]] = [["filterName":"Veg", "filtervalue":"Veg","imageName":"Veg.png", "color":"green"],
         ["filterName":"Non-Veg", "filtervalue":"Non Veg","imageName":"NonVeg-1.png", "color":"red"],
         ["filterName":"Egg", "filtervalue":"Egg","imageName":"Egg-1.png", "color":"yellow"],

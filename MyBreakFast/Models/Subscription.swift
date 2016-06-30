@@ -52,9 +52,12 @@ class Subscription: NSObject {
         if let dicti = dict.objectForKey("meals") as? NSArray{
             self.mealPlans = []
             for dict in dicti {
-                let plannedMeal = PlannedMeals()
-                plannedMeal.saveData(dict as! NSDictionary)
-                self.mealPlans?.append(plannedMeal)
+                if let dict = dict as? NSDictionary {
+                    let plannedMeal = PlannedMeals()
+                    plannedMeal.saveData(dict)
+                    self.mealPlans?.append(plannedMeal)
+                    
+                }
             }
         }
     }

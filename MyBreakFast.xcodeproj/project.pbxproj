@@ -34,6 +34,7 @@
 		AAF0722A1D0AB88200C67D2D /* SubscriptionMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF072291D0AB88200C67D2D /* SubscriptionMenuVC.swift */; };
 		AAF0722C1D0AD79D00C67D2D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF0722B1D0AD79D00C67D2D /* CustomButton.swift */; };
 		AAF0722E1D0B1EA700C67D2D /* SubscriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF0722D1D0B1EA700C67D2D /* SubscriptionVC.swift */; };
+		AAFAA47C1D24D2CC003D939D /* MySubscriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA47B1D24D2CC003D939D /* MySubscriptions.swift */; };
 		ED344C941C9B14DA008643F9 /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED344C7C1C9B14DA008643F9 /* AboutUsVC.swift */; };
 		ED344C951C9B14DA008643F9 /* AddAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED344C7D1C9B14DA008643F9 /* AddAddressVC.swift */; };
 		ED344C961C9B14DA008643F9 /* AppSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED344C7E1C9B14DA008643F9 /* AppSignInVC.swift */; };
@@ -430,6 +431,7 @@
 		AAF072291D0AB88200C67D2D /* SubscriptionMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionMenuVC.swift; path = Controllers/SubscriptionMenuVC.swift; sourceTree = "<group>"; };
 		AAF0722B1D0AD79D00C67D2D /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = Views/CustomButton.swift; sourceTree = "<group>"; };
 		AAF0722D1D0B1EA700C67D2D /* SubscriptionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionVC.swift; path = Controllers/SubscriptionVC.swift; sourceTree = "<group>"; };
+		AAFAA47B1D24D2CC003D939D /* MySubscriptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MySubscriptions.swift; path = Controllers/MySubscriptions.swift; sourceTree = "<group>"; };
 		DC6E7E1A1C9BAD8E663A54F6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED344C7C1C9B14DA008643F9 /* AboutUsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutUsVC.swift; path = Controllers/AboutUsVC.swift; sourceTree = "<group>"; };
 		ED344C7D1C9B14DA008643F9 /* AddAddressVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddAddressVC.swift; path = Controllers/AddAddressVC.swift; sourceTree = "<group>"; };
@@ -1029,6 +1031,7 @@
 				AAF0722D1D0B1EA700C67D2D /* SubscriptionVC.swift */,
 				AA4AACC01D0D5FDD00627FB0 /* SubscriptionDetailsVC.swift */,
 				AA51D2911D1C527F00D404C7 /* DieticianBioVC.swift */,
+				AAFAA47B1D24D2CC003D939D /* MySubscriptions.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -2209,6 +2212,7 @@
 				ED742D621CA78856007FC96D /* InitialViewController.m in Sources */,
 				ED344C991C9B14DA008643F9 /* ContactUsVC.swift in Sources */,
 				ED742C941CA78856007FC96D /* CTSPgSettings.m in Sources */,
+				AAFAA47C1D24D2CC003D939D /* MySubscriptions.swift in Sources */,
 				ED742C911CA78856007FC96D /* CTSPaymentRes.m in Sources */,
 				ED344CD61C9B1526008643F9 /* PaymentModeCell.swift in Sources */,
 				ED742C621CA78856007FC96D /* CTSUser.m in Sources */,

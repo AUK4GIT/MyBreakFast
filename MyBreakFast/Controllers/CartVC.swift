@@ -157,6 +157,36 @@ class CartVC: UIViewController {
         let paymentStr = (Helper.sharedInstance.order!.modeOfPayment == PaymentType.COD) ? "COD" : "Online"
         Helper.sharedInstance.showActivity()
         
+        if let _ = Helper.sharedInstance.subscription {
+            
+            Helper.sharedInstance.placeSubscriptionOrder (paymentStr, completionHandler: { (response) -> () in
+                if response as? String == "ERROR" {
+                    Helper.sharedInstance.hideActivity()
+                    UIAlertView(title: "Error", message: "Please try again", delegate: nil, cancelButtonTitle: "OK").show()
+                } else {
+                    Helper.sharedInstance.hideActivity()
+                    if let orderResDict = response.objectForKey("new_order_response") {
+                        let orderResDataDict = orderResDict.objectForKey("data");
+                        if orderResDict.objectForKey("status") as? NSNumber == 0 || orderResDict.objectForKey("status") as? String == "0"{
+                            
+                            if let orderResDataDetails = orderResDataDict as? NSDictionary{
+                                    if let orderId = orderResDataDetails.objectForKey("order_id") as? NSNumber {
+                                        Helper.sharedInstance.order?.orderId = String(orderId);
+                                    } else {
+                                        Helper.sharedInstance.order?.orderId = orderResDataDetails.objectForKey("order_id") as? String;
+                                    }
+                                self.response = response.objectForKey("update_order_response");
+                                completionHandler();
+                            } else {
+                                UIAlertView(title: "Error", message: "Please try again", delegate: nil, cancelButtonTitle: "OK").show()
+                                return;
+                            }
+                        }
+                    }
+                }
+            })
+            
+        } else {
         Helper.sharedInstance.placeOrder (paymentStr, completionHandler: { (response) -> () in
             if response as? String == "ERROR" {
                 Helper.sharedInstance.hideActivity()
@@ -185,6 +215,7 @@ class CartVC: UIViewController {
                 }
             }
         })
+    }
 
     }
     
