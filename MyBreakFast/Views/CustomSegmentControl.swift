@@ -28,7 +28,7 @@ import Foundation
         sView?.userInteractionEnabled = true;
         sView?.backgroundColor = UIColor.lightGrayColor();
         let label: UILabel = sView!.viewWithTag(5) as! UILabel
-        label.text = "No Course";
+        label.text = "No Meal";
 
     }
     

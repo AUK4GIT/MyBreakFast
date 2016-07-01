@@ -26,7 +26,7 @@ class MyOrdersVC: UIViewController {
             fadeTextAnimation.type = kCATransitionFade;
             
             let parentVC: ViewController = self.parentViewController as! ViewController
-            parentVC.setNavBarTitle("Orders")
+            parentVC.setNavBarTitle("My Orders")
             parentVC.containerNavigationBar.layer.addAnimation(fadeTextAnimation, forKey: "fadeText");
         }
     }

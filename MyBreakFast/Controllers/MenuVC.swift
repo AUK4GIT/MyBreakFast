@@ -37,6 +37,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         
         Helper.sharedInstance.userLocation = nil;
         Helper.sharedInstance.order = nil;
+        Helper.sharedInstance.subscription = nil;
         Helper.sharedInstance.quantities = nil;
         
         self.dateTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")

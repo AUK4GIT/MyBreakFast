@@ -315,7 +315,7 @@ class SubscriptionVC: UIViewController, LocationPickerDelegate {
     
     // MARK: UICollectionView delegates and datasources
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let width: CGFloat = 100.0
+        let width: CGFloat = 120.0
         let height: CGFloat = self.collectionView.bounds.size.height
         return CGSizeMake(width, height);
     }

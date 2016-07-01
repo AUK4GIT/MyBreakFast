@@ -1,4 +1,4 @@
-//
+
 //  SubscriptionDetailsVC.swift
 //  MyBreakFast
 //
@@ -15,7 +15,7 @@ class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate, AddressProt
     
     @IBOutlet var mealPlanLabel: UILabel!
     @IBOutlet var addressLabelForMeal: UILabel!
-    @IBOutlet var sunButton: UIButton!
+//    @IBOutlet var sunButton: UIButton!
     @IBOutlet var satButton: UIButton!
     @IBOutlet var calendarView: CalendarView!
     @IBOutlet var calendarBGView: UIView!
@@ -73,12 +73,12 @@ class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate, AddressProt
                 
                 if self.planDetails?.sat == "0" {
                     self.satButton.enabled = false;
-                    self.sunButton.userInteractionEnabled = false;
+//                    self.sunButton.userInteractionEnabled = false;
                 }
                 //For Now Sunday is Disabled
 //                if self.planDetails?.sun == "0" {
-                    self.sunButton.enabled = false;
-                self.sunButton.userInteractionEnabled = false;
+//                    self.sunButton.enabled = false;
+//                self.sunButton.userInteractionEnabled = false;
 //                }
                 
                 if self.planDetails?.meal1Exists == "0" {
@@ -126,21 +126,25 @@ class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate, AddressProt
         var timeSlot = slot1.mealSlots![0]
         Helper.sharedInstance.order?.slot1 = timeSlot.slotId
         var slot = timeSlot.startTime!+" to "+timeSlot.endTime!
-
-        self.MealsSegmentControl.setSelectedSlot(slot, forIndex: 0)
+        if self.planDetails?.meal1Exists == "1" {
+            self.MealsSegmentControl.setSelectedSlot(slot, forIndex: 0)
+        }
 
         let slot2 = self.planSlots![1]
          timeSlot = slot2.mealSlots![0]
         Helper.sharedInstance.order?.slot2 = timeSlot.slotId
         slot = timeSlot.startTime!+" to "+timeSlot.endTime!
-        self.MealsSegmentControl.setSelectedSlot(slot, forIndex: 1)
+        if self.planDetails?.meal2Exists == "1" {
+            self.MealsSegmentControl.setSelectedSlot(slot, forIndex: 1)
+        }
 
         let slot3 = self.planSlots![2]
          timeSlot = slot3.mealSlots![0]
         Helper.sharedInstance.order?.slot3 = timeSlot.slotId
         slot = timeSlot.startTime!+" to "+timeSlot.endTime!
-        self.MealsSegmentControl.setSelectedSlot(slot, forIndex: 2)
-
+        if self.planDetails?.meal3Exists == "1" {
+            self.MealsSegmentControl.setSelectedSlot(slot, forIndex: 2)
+        }
         self.MealsSegmentControl.selectedIndex = 0;
         self.mealSelectedType(self.MealsSegmentControl);
     }
