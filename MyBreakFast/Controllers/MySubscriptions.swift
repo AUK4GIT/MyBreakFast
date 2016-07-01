@@ -120,43 +120,43 @@ class MySubscriptions: UIViewController {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        let vc: UINavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("MyOrderDetails") as! UINavigationController
+        let vc: UINavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("MealSummaryNVC") as! UINavigationController
         
         self.presentViewController(vc, animated: true) { () -> Void in
             
-            let orderdetailsVC: MyOrderDetailsVC = vc.topViewController as! MyOrderDetailsVC
-            
-            let orderDict = self.contentArray[indexPath.row] as? NSDictionary
-            var addressDict: NSDictionary?
-            
-            if let addrDictArray = orderDict?.objectForKey("orderAddresses") as? NSArray {
-                addressDict = addrDictArray.count>0 ? addrDictArray[0] as? NSDictionary : nil
-            }
-            
-            let filtered = self.addressess?.filter({
-                if let addid = addressDict?.objectForKey("address_id") as? String{
-                    if let addrid = $0["id"] as? NSNumber {
-                        return addrid  == Int(addid)
-                    } else {
-                        return $0["id"] as? String  == addid
-                    }
-                } else {
-                    if let addrid = $0["id"] as? NSNumber {
-                        return addrid  == addressDict?.objectForKey("address_id") as? NSNumber
-                    } else {
-                        return $0["id"] as? NSNumber  == addressDict?.objectForKey("address_id") as? NSNumber
-                    }
-                }
-                
-            })
-            let addressDictionary : NSDictionary?
-            if filtered?.count>0 {
-                addressDictionary = filtered![0] as? NSDictionary
-            } else {
-                addressDictionary = nil
-            }
-            
-            orderdetailsVC.setDetails(orderDict!, addressDict: addressDictionary)
+//            let orderdetailsVC: MyOrderDetailsVC = vc.topViewController as! MyOrderDetailsVC
+//            
+//            let orderDict = self.contentArray[indexPath.row] as? NSDictionary
+//            var addressDict: NSDictionary?
+//            
+//            if let addrDictArray = orderDict?.objectForKey("orderAddresses") as? NSArray {
+//                addressDict = addrDictArray.count>0 ? addrDictArray[0] as? NSDictionary : nil
+//            }
+//            
+//            let filtered = self.addressess?.filter({
+//                if let addid = addressDict?.objectForKey("address_id") as? String{
+//                    if let addrid = $0["id"] as? NSNumber {
+//                        return addrid  == Int(addid)
+//                    } else {
+//                        return $0["id"] as? String  == addid
+//                    }
+//                } else {
+//                    if let addrid = $0["id"] as? NSNumber {
+//                        return addrid  == addressDict?.objectForKey("address_id") as? NSNumber
+//                    } else {
+//                        return $0["id"] as? NSNumber  == addressDict?.objectForKey("address_id") as? NSNumber
+//                    }
+//                }
+//                
+//            })
+//            let addressDictionary : NSDictionary?
+//            if filtered?.count>0 {
+//                addressDictionary = filtered![0] as? NSDictionary
+//            } else {
+//                addressDictionary = nil
+//            }
+//            
+//            orderdetailsVC.setDetails(orderDict!, addressDict: addressDictionary)
         }
         
         

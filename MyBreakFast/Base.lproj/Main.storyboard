@@ -62,6 +62,11 @@
             <string>HelveticaNeue-Medium</string>
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue-Medium</string>
         </mutableArray>
         <mutableArray key="HelveticaNeueLights.ttc">
             <string>HelveticaNeue-Light</string>
@@ -6291,6 +6296,149 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
             </objects>
             <point key="canvasLocation" x="1207" y="-880"/>
         </scene>
+        <!--Meal SummaryVC-->
+        <scene sceneID="9sz-im-QfJ">
+            <objects>
+                <viewController storyboardIdentifier="MealSummaryVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ymi-ky-KbR" customClass="MealSummaryVC" customModule="MyBreakFast" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="doZ-As-3MR"/>
+                        <viewControllerLayoutGuide type="bottom" id="fgE-CT-hEU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qj3-vs-ORx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dli-KP-vms">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanks for subscribing to the diet plan&quot;. Your meal will be delivered as per below schedule." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Sc-vE-zgj">
+                                        <rect key="frame" x="8" y="4" width="304" height="45"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.75686274509999996" green="0.81176470590000005" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="1Sc-vE-zgj" secondAttribute="bottom" constant="4" id="0Xm-Vh-fMK"/>
+                                    <constraint firstItem="1Sc-vE-zgj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Dli-KP-vms" secondAttribute="leading" constant="8" id="2Lg-ch-uof"/>
+                                    <constraint firstItem="1Sc-vE-zgj" firstAttribute="centerY" secondItem="Dli-KP-vms" secondAttribute="centerY" id="ETB-R1-7Q8"/>
+                                    <constraint firstItem="1Sc-vE-zgj" firstAttribute="centerX" secondItem="Dli-KP-vms" secondAttribute="centerX" id="I37-fy-1eq"/>
+                                    <constraint firstAttribute="height" constant="54" id="NRh-TE-J6C"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1Sc-vE-zgj" secondAttribute="trailing" constant="8" id="PD7-19-dA8"/>
+                                    <constraint firstItem="1Sc-vE-zgj" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Dli-KP-vms" secondAttribute="top" constant="4" id="wkd-SI-mvo"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x5l-5P-M2B">
+                                <rect key="frame" x="0.0" y="54" width="320" height="44"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XSS-Md-lvg">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="44"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="Plan Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zvk-hp-bj4">
+                                                <rect key="frame" x="8" y="13" width="75" height="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Plan Name" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tmv-8j-hkc">
+                                                <rect key="frame" x="110" y="5" width="42" height="34"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                                <color key="textColor" red="0.75686274509999996" green="0.81176470590000005" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tmv-8j-hkc" secondAttribute="bottom" id="0H6-bN-n6U"/>
+                                            <constraint firstItem="tmv-8j-hkc" firstAttribute="top" relation="greaterThanOrEqual" secondItem="XSS-Md-lvg" secondAttribute="top" id="4AF-8Y-7sr"/>
+                                            <constraint firstItem="Zvk-hp-bj4" firstAttribute="centerY" secondItem="XSS-Md-lvg" secondAttribute="centerY" id="7pq-RF-Mr3"/>
+                                            <constraint firstItem="tmv-8j-hkc" firstAttribute="centerY" secondItem="XSS-Md-lvg" secondAttribute="centerY" id="jFi-PM-hGs"/>
+                                            <constraint firstAttribute="trailing" secondItem="tmv-8j-hkc" secondAttribute="trailing" constant="8" id="nuj-H8-BTF"/>
+                                            <constraint firstItem="Zvk-hp-bj4" firstAttribute="leading" secondItem="XSS-Md-lvg" secondAttribute="leading" constant="8" id="qI8-K2-3xK"/>
+                                            <constraint firstItem="tmv-8j-hkc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Zvk-hp-bj4" secondAttribute="trailing" constant="2" id="xiK-GL-jZe"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yjZ-WO-Bzl">
+                                        <rect key="frame" x="160" y="0.0" width="160" height="44"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" text="Nutrionist:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zg0-46-dNt">
+                                                <rect key="frame" x="8" y="14" width="67" height="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plan Name" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XOG-Ur-YVx">
+                                                <rect key="frame" x="81" y="14" width="71" height="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                                <color key="textColor" red="0.75686274509999996" green="0.81176470590000005" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.40000000000000002" green="0.74901960779999999" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="XOG-Ur-YVx" secondAttribute="bottom" id="0tF-5x-Ebi"/>
+                                            <constraint firstItem="zg0-46-dNt" firstAttribute="leading" secondItem="yjZ-WO-Bzl" secondAttribute="leading" constant="8" id="Ftr-f1-ZRF"/>
+                                            <constraint firstItem="XOG-Ur-YVx" firstAttribute="top" relation="greaterThanOrEqual" secondItem="yjZ-WO-Bzl" secondAttribute="top" id="aaK-y4-fPC"/>
+                                            <constraint firstItem="zg0-46-dNt" firstAttribute="centerY" secondItem="yjZ-WO-Bzl" secondAttribute="centerY" id="iVu-N7-eyR"/>
+                                            <constraint firstItem="XOG-Ur-YVx" firstAttribute="centerY" secondItem="yjZ-WO-Bzl" secondAttribute="centerY" id="pn7-wD-QbU"/>
+                                            <constraint firstAttribute="trailing" secondItem="XOG-Ur-YVx" secondAttribute="trailing" constant="8" id="wOW-x7-VX4"/>
+                                            <constraint firstItem="XOG-Ur-YVx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zg0-46-dNt" secondAttribute="trailing" constant="2" id="zLm-GP-JFT"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="yjZ-WO-Bzl" secondAttribute="bottom" id="0gb-uk-YgM"/>
+                                    <constraint firstAttribute="trailing" secondItem="yjZ-WO-Bzl" secondAttribute="trailing" id="D3B-m4-F61"/>
+                                    <constraint firstItem="XSS-Md-lvg" firstAttribute="width" secondItem="yjZ-WO-Bzl" secondAttribute="width" id="HPP-RI-j1f"/>
+                                    <constraint firstItem="XSS-Md-lvg" firstAttribute="leading" secondItem="x5l-5P-M2B" secondAttribute="leading" id="JuK-tm-mez"/>
+                                    <constraint firstItem="yjZ-WO-Bzl" firstAttribute="top" secondItem="x5l-5P-M2B" secondAttribute="top" id="NJN-om-CDD"/>
+                                    <constraint firstItem="yjZ-WO-Bzl" firstAttribute="leading" secondItem="XSS-Md-lvg" secondAttribute="trailing" id="XQz-zV-JdP"/>
+                                    <constraint firstItem="XSS-Md-lvg" firstAttribute="leading" secondItem="yjZ-WO-Bzl" secondAttribute="trailing" id="YGD-HI-8Qe"/>
+                                    <constraint firstAttribute="height" constant="44" id="dTq-5q-UaG"/>
+                                    <constraint firstAttribute="bottom" secondItem="XSS-Md-lvg" secondAttribute="bottom" id="udk-vg-YFM"/>
+                                    <constraint firstItem="XSS-Md-lvg" firstAttribute="top" secondItem="x5l-5P-M2B" secondAttribute="top" id="yNK-nq-QbN"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="YGD-HI-8Qe"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Dli-KP-vms" secondAttribute="trailing" id="Nfw-EX-Co4"/>
+                            <constraint firstItem="Dli-KP-vms" firstAttribute="top" secondItem="Qj3-vs-ORx" secondAttribute="top" id="OOb-fn-94i"/>
+                            <constraint firstItem="x5l-5P-M2B" firstAttribute="top" secondItem="Dli-KP-vms" secondAttribute="bottom" id="SPz-f1-8LU"/>
+                            <constraint firstItem="Dli-KP-vms" firstAttribute="leading" secondItem="Qj3-vs-ORx" secondAttribute="leading" id="bvx-RB-eg0"/>
+                            <constraint firstAttribute="trailing" secondItem="x5l-5P-M2B" secondAttribute="trailing" id="hV5-EI-I0x"/>
+                            <constraint firstItem="x5l-5P-M2B" firstAttribute="leading" secondItem="Qj3-vs-ORx" secondAttribute="leading" id="sIJ-lx-fh0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dvS-0X-4Vm"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CjQ-UK-g93" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1998" y="-1049"/>
+        </scene>
         <!--Location PickerVC-->
         <scene sceneID="pI1-y9-xb2">
             <objects>
@@ -6383,6 +6531,25 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PCE-TJ-uRI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1804" y="2470"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ejj-BR-Mnn">
+            <objects>
+                <navigationController storyboardIdentifier="MealSummaryNVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="C7g-2T-M75" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Boh-TN-oeB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ymi-ky-KbR" kind="relationship" relationship="rootViewController" id="DwX-gE-RPd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o6z-dF-0tG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1639" y="-1049"/>
         </scene>
     </scenes>
     <resources>

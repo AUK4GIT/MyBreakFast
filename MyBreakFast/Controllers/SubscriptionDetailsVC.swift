@@ -173,6 +173,9 @@ class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate, AddressProt
                                                              toUnitGranularity: .Day)
         if order == NSComparisonResult.OrderedSame {
             cDate = cDate!.dateByAddingTimeInterval(NSTimeInterval(60*60*24*1))
+            let warn = UIAlertController(title: "First Eat", message: "We need a day to curate your special meal plan. Please select tomorrow's date as the start date.", preferredStyle: UIAlertControllerStyle.Alert)
+            warn.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(warn, animated: true, completion: nil);
         }
         for i in 0...6 {
             let aDate = cDate!.dateByAddingTimeInterval(NSTimeInterval(60*60*24*i));
@@ -243,7 +246,7 @@ class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate, AddressProt
     
     func showDetailsForDayandMealType(mealTypeSelected: Int){
         let mealIndex = mealTypeSelected * self.selectedWeekDay;
-        let mealPlan = self.mealPlans![mealIndex]
+        let mealPlan = self.mealPlans![mealIndex-1]
         self.mealDetailsView.setMealDetails(mealPlan);
         switch mealTypeSelected {
         case 1:

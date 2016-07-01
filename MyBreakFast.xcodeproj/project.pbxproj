@@ -35,6 +35,7 @@
 		AAF0722C1D0AD79D00C67D2D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF0722B1D0AD79D00C67D2D /* CustomButton.swift */; };
 		AAF0722E1D0B1EA700C67D2D /* SubscriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF0722D1D0B1EA700C67D2D /* SubscriptionVC.swift */; };
 		AAFAA47C1D24D2CC003D939D /* MySubscriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA47B1D24D2CC003D939D /* MySubscriptions.swift */; };
+		AAFAA47E1D2607C1003D939D /* MealSummaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA47D1D2607C1003D939D /* MealSummaryVC.swift */; };
 		ED344C941C9B14DA008643F9 /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED344C7C1C9B14DA008643F9 /* AboutUsVC.swift */; };
 		ED344C951C9B14DA008643F9 /* AddAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED344C7D1C9B14DA008643F9 /* AddAddressVC.swift */; };
 		ED344C961C9B14DA008643F9 /* AppSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED344C7E1C9B14DA008643F9 /* AppSignInVC.swift */; };
@@ -432,6 +433,7 @@
 		AAF0722B1D0AD79D00C67D2D /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = Views/CustomButton.swift; sourceTree = "<group>"; };
 		AAF0722D1D0B1EA700C67D2D /* SubscriptionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionVC.swift; path = Controllers/SubscriptionVC.swift; sourceTree = "<group>"; };
 		AAFAA47B1D24D2CC003D939D /* MySubscriptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MySubscriptions.swift; path = Controllers/MySubscriptions.swift; sourceTree = "<group>"; };
+		AAFAA47D1D2607C1003D939D /* MealSummaryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealSummaryVC.swift; path = Controllers/MealSummaryVC.swift; sourceTree = "<group>"; };
 		DC6E7E1A1C9BAD8E663A54F6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED344C7C1C9B14DA008643F9 /* AboutUsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutUsVC.swift; path = Controllers/AboutUsVC.swift; sourceTree = "<group>"; };
 		ED344C7D1C9B14DA008643F9 /* AddAddressVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddAddressVC.swift; path = Controllers/AddAddressVC.swift; sourceTree = "<group>"; };
@@ -1032,6 +1034,7 @@
 				AA4AACC01D0D5FDD00627FB0 /* SubscriptionDetailsVC.swift */,
 				AA51D2911D1C527F00D404C7 /* DieticianBioVC.swift */,
 				AAFAA47B1D24D2CC003D939D /* MySubscriptions.swift */,
+				AAFAA47D1D2607C1003D939D /* MealSummaryVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -2327,6 +2330,7 @@
 				AAF0722C1D0AD79D00C67D2D /* CustomButton.swift in Sources */,
 				ED344CF41C9B19EB008643F9 /* FloatRatingView.swift in Sources */,
 				ED742D611CA78856007FC96D /* HomeViewController.m in Sources */,
+				AAFAA47E1D2607C1003D939D /* MealSummaryVC.swift in Sources */,
 				ED344CC61C9B1526008643F9 /* ActivityIndicator.swift in Sources */,
 				ED344C951C9B14DA008643F9 /* AddAddressVC.swift in Sources */,
 				ED742C861CA78856007FC96D /* CTSTokenValidityRes.m in Sources */,
