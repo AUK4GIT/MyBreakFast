@@ -10,7 +10,7 @@ import Foundation
 
 struct Constants {
     //Production
-/*
+
     struct API {
         static let BaseURL: String = "http://firsteat.in/andro/"
         static let SubscrImgBaseURL: String = "http://firsteat.in/andro/"
@@ -65,8 +65,8 @@ struct Constants {
         static let Subscr_GetAllSubscrs: String = BaseURL+"index.php/ws/subsc/all/"
 
     }
- */
-    
+ 
+ /*
     ///testing/New Dev
     struct API {
         static let BaseURL: String = "http://firsteatwebportal.in/project-poha/"
@@ -116,6 +116,7 @@ struct Constants {
         static let Subscr_GetAllSubscrs: String = BaseURL+"index.php/ws/subsc/all/"
 
     }
+ */
     
     struct StaticContent {
         static let SideMenuList : [String] = ["Menu", "My Orders", "My Subscriptions","About Us", "Contact Us", "Rate Us", "Refer a Friend", "Terms & Conditions"];

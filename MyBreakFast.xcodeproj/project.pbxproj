@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		7197232473EAE4B72D117DDA /* Pods_MyBreakFast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E122D7142E78537EB4BA1D5 /* Pods_MyBreakFast.framework */; };
 		AA09FF0E1D1FC4FD003AE665 /* MealPlanDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA09FF0D1D1FC4FD003AE665 /* MealPlanDetailsView.swift */; };
+		AA3EBD581D28D4F000F7FAC4 /* MySubscriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA3EBD571D28D4F000F7FAC4 /* MySubscriptionCell.xib */; };
+		AA3EBD5A1D28D52F00F7FAC4 /* MySubscriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3EBD591D28D52F00F7FAC4 /* MySubscriptionCell.swift */; };
+		AA4847D61D29236700EFF576 /* SummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4847D51D29236700EFF576 /* SummaryCell.swift */; };
+		AA4847D81D29239000EFF576 /* SummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA4847D71D29239000EFF576 /* SummaryCell.xib */; };
 		AA4AACC11D0D5FDD00627FB0 /* SubscriptionDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4AACC01D0D5FDD00627FB0 /* SubscriptionDetailsVC.swift */; };
 		AA51D2921D1C527F00D404C7 /* DieticianBioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA51D2911D1C527F00D404C7 /* DieticianBioVC.swift */; };
 		AA6056581D1E75D900A7A32E /* CalendarWeeksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6056571D1E75D900A7A32E /* CalendarWeeksCell.swift */; };
@@ -402,6 +406,10 @@
 		3298BBB4469215821FB74B86 /* Pods-MyBreakFast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyBreakFast.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyBreakFast/Pods-MyBreakFast.release.xcconfig"; sourceTree = "<group>"; };
 		5E122D7142E78537EB4BA1D5 /* Pods_MyBreakFast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyBreakFast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA09FF0D1D1FC4FD003AE665 /* MealPlanDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealPlanDetailsView.swift; path = Views/MealPlanDetailsView.swift; sourceTree = "<group>"; };
+		AA3EBD571D28D4F000F7FAC4 /* MySubscriptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MySubscriptionCell.xib; path = Views/Xibs/MySubscriptionCell.xib; sourceTree = "<group>"; };
+		AA3EBD591D28D52F00F7FAC4 /* MySubscriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MySubscriptionCell.swift; path = Views/MySubscriptionCell.swift; sourceTree = "<group>"; };
+		AA4847D51D29236700EFF576 /* SummaryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SummaryCell.swift; path = Views/SummaryCell.swift; sourceTree = "<group>"; };
+		AA4847D71D29239000EFF576 /* SummaryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SummaryCell.xib; path = Views/Xibs/SummaryCell.xib; sourceTree = "<group>"; };
 		AA4AACC01D0D5FDD00627FB0 /* SubscriptionDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionDetailsVC.swift; path = Controllers/SubscriptionDetailsVC.swift; sourceTree = "<group>"; };
 		AA51D2911D1C527F00D404C7 /* DieticianBioVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DieticianBioVC.swift; path = Controllers/DieticianBioVC.swift; sourceTree = "<group>"; };
 		AA6056571D1E75D900A7A32E /* CalendarWeeksCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarWeeksCell.swift; path = Views/CalendarWeeksCell.swift; sourceTree = "<group>"; };
@@ -1069,6 +1077,7 @@
 				ED344CC51C9B1526008643F9 /* Yourdetails.swift */,
 				AAF0722B1D0AD79D00C67D2D /* CustomButton.swift */,
 				AA7CF6E41D0EBCC900FA0665 /* CustomSegmentControl.swift */,
+				AA4847D51D29236700EFF576 /* SummaryCell.swift */,
 				ED344C7B1C9B14BF008643F9 /* Xibs */,
 				AAAB65B41D155E0B006E6984 /* PlanCell.swift */,
 				AAAB65B61D155E5F006E6984 /* DietCell.swift */,
@@ -1076,6 +1085,7 @@
 				AA6056591D1EA3D300A7A32E /* MealDetailsView.swift */,
 				AA09FF0D1D1FC4FD003AE665 /* MealPlanDetailsView.swift */,
 				AAD870941D20309D00A37D98 /* TimeSlotPickerView.swift */,
+				AA3EBD591D28D52F00F7FAC4 /* MySubscriptionCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1092,6 +1102,8 @@
 				ED344CE61C9B1536008643F9 /* PopCell.xib */,
 				ED344CE71C9B1536008643F9 /* SideMenuCell.xib */,
 				ED344CE81C9B1536008643F9 /* VitaminCell.xib */,
+				AA3EBD571D28D4F000F7FAC4 /* MySubscriptionCell.xib */,
+				AA4847D71D29239000EFF576 /* SummaryCell.xib */,
 			);
 			name = Xibs;
 			sourceTree = "<group>";
@@ -2097,6 +2109,7 @@
 				ED742CD51CA78856007FC96D /* andra_bank@3x.png in Resources */,
 				ED742D511CA78856007FC96D /* Mastercard.png in Resources */,
 				ED742D151CA78856007FC96D /* ING.png in Resources */,
+				AA3EBD581D28D4F000F7FAC4 /* MySubscriptionCell.xib in Resources */,
 				ED742D051CA78856007FC96D /* hdfc@3x.png in Resources */,
 				ED742D061CA78856007FC96D /* icici_bank.png in Resources */,
 				ED742D341CA78856007FC96D /* State_bank_of_patalia@2x.png in Resources */,
@@ -2109,6 +2122,7 @@
 				ED742CEE1CA78856007FC96D /* citi_union_bank.png in Resources */,
 				ED742CF81CA78856007FC96D /* DCB@2x.png in Resources */,
 				ED742D1B1CA78856007FC96D /* Karur_Vyasa_Bank.png in Resources */,
+				AA4847D81D29239000EFF576 /* SummaryCell.xib in Resources */,
 				ED742D231CA78856007FC96D /* punjab_national_bank@3x.png in Resources */,
 				ED742D0B1CA78856007FC96D /* idbi@3x.png in Resources */,
 				ED742CB21CA78856007FC96D /* Staging4Env.plist in Resources */,
@@ -2264,6 +2278,7 @@
 				ED742C8B1CA78856007FC96D /* CTSCardBinResponse.m in Sources */,
 				ED742D651CA78856007FC96D /* SettingViewController.m in Sources */,
 				ED742C741CA78856007FC96D /* CTSUserDetails.m in Sources */,
+				AA3EBD5A1D28D52F00F7FAC4 /* MySubscriptionCell.swift in Sources */,
 				ED996EB41C30CA960017284A /* UserAddress.swift in Sources */,
 				ED742C8A1CA78856007FC96D /* CTSBill.m in Sources */,
 				ED742C7D1CA78856007FC96D /* CTSProfileUpdate.m in Sources */,
@@ -2353,6 +2368,7 @@
 				ED742D681CA78856007FC96D /* HMSegmentedControl.m in Sources */,
 				ED742C7A1CA78856007FC96D /* CTSPaymentDetailUpdate.m in Sources */,
 				ED742CC31CA78856007FC96D /* JSONHTTPClient.m in Sources */,
+				AA4847D61D29236700EFF576 /* SummaryCell.swift in Sources */,
 				ED742C811CA78856007FC96D /* CTSKeyStore.m in Sources */,
 				ED344CDA1C9B1526008643F9 /* SideMenuCell.swift in Sources */,
 				ED344CA51C9B14DA008643F9 /* ReferralVC.swift in Sources */,

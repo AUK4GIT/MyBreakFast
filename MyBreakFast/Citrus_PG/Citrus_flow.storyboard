@@ -162,13 +162,13 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18m-iB-g5A">
                                                 <rect key="frame" x="8" y="260" width="90" height="30"/>
-                                                <color key="backgroundColor" red="0.95235558710000001" green="0.54225712780000002" blue="0.2114394979" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.75686274509999996" green="0.81176470590000005" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="90" id="mm7-26-MZa"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
                                                 <state key="normal" title="Cancel">
-                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -177,13 +177,13 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbU-QP-QaE">
                                                 <rect key="frame" x="470" y="260" width="90" height="30"/>
-                                                <color key="backgroundColor" red="0.95235558710000001" green="0.54225712780000002" blue="0.2114394979" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.75686274509999996" green="0.81176470590000005" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="90" id="C3Q-GX-y8o"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
                                                 <state key="normal" title="Apply">
-                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -281,7 +281,9 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="sbM-cM-srn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" title="Pay using citrus wallet"/>
+                                <state key="normal" title="Pay using citrus wallet">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="payUsingCitrusCash:" destination="Zgu-Pe-ahK" eventType="touchUpInside" id="fWK-dJ-4MY"/>
                                 </connections>
@@ -293,7 +295,9 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="I0j-pR-kLF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" title="Load money"/>
+                                <state key="normal" title="Load money">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="loadMoney:" destination="Zgu-Pe-ahK" eventType="touchUpInside" id="BkA-Fe-dTL"/>
                                 </connections>
@@ -373,7 +377,6 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jt7-bq-FXn">
                                                             <rect key="frame" x="59" y="17" width="446" height="16"/>
                                                             <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="12"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                             <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <size key="shadowOffset" width="0.0" height="1"/>
@@ -381,7 +384,6 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="1002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1h-n5-wS6">
                                                             <rect key="frame" x="-9" y="39" width="584" height="17"/>
                                                             <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="13"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                             <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <size key="shadowOffset" width="0.0" height="1"/>
@@ -389,7 +391,6 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaG-Jm-aby">
                                                             <rect key="frame" x="-6" y="62" width="579" height="16"/>
                                                             <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="12"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                             <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <size key="shadowOffset" width="0.0" height="1"/>
@@ -397,7 +398,6 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="1004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWW-hV-gsz">
                                                             <rect key="frame" x="26" y="80" width="514" height="16"/>
                                                             <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="12"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                             <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <size key="shadowOffset" width="0.0" height="1"/>
@@ -684,7 +684,6 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9C-A7-bAX">
                                                             <rect key="frame" x="-9" y="17" width="584" height="16"/>
                                                             <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="12"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                             <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <size key="shadowOffset" width="0.0" height="1"/>
@@ -692,7 +691,6 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="1002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snk-oK-qaC">
                                                             <rect key="frame" x="-9" y="38" width="584" height="17"/>
                                                             <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="13"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                             <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <size key="shadowOffset" width="0.0" height="1"/>
@@ -700,7 +698,6 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="1003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSa-j1-Yhe">
                                                             <rect key="frame" x="-6" y="62" width="579" height="16"/>
                                                             <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="12"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                             <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <size key="shadowOffset" width="0.0" height="1"/>
@@ -708,7 +705,6 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="1004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7A-bu-pFF">
                                                             <rect key="frame" x="26" y="80" width="514" height="16"/>
                                                             <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="12"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                             <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <size key="shadowOffset" width="0.0" height="1"/>
@@ -762,7 +758,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="15"/>
                                 <state key="normal" title="Load">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -852,7 +848,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="15"/>
                                 <state key="normal" title="Is Citrus Member">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -861,7 +857,6 @@
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b6E-gz-9dl">
                                 <rect key="frame" x="32" y="167" width="534" height="30"/>
-                                <color key="tintColor" red="0.7843137255" green="0.019607843140000001" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
@@ -878,7 +873,6 @@
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g82-9A-rKR" userLabel="yaddyboy100@mailinator.com">
                                 <rect key="frame" x="31" y="212" width="535" height="30"/>
-                                <color key="tintColor" red="0.7843137255" green="0.019607843140000001" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
@@ -1153,7 +1147,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
                                 <state key="normal" title="Login with both Mobile &amp; Email Id">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="selectLoginTypeAction:" destination="0g6-Ff-VMg" eventType="touchUpInside" id="AUh-GH-JkX"/>
@@ -1167,7 +1161,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
                                 <state key="normal" title="Login with only Mobile ">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="selectLoginTypeAction:" destination="0g6-Ff-VMg" eventType="touchUpInside" id="HPg-nD-Ycp"/>
@@ -1175,13 +1169,13 @@
                             </button>
                             <button hidden="YES" opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDE-Qa-UmP">
                                 <rect key="frame" x="30" y="303" width="540" height="35"/>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="0.81999999999999995" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.75686274509999996" green="0.81176470590000005" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="PoC-nY-iNt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
                                 <state key="normal" title="Login with either Mobile or Email Id">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                         </subviews>
@@ -1241,6 +1235,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="16"/>
                                 <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>

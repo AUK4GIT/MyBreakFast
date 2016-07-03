@@ -19,6 +19,7 @@ class CartVC: UIViewController {
     let sectionHeaderImages: [String] = ["total-bill-icon","redeem points","coupon code icon","payment method icon","noimage"];
     var totalAmount: Int?
     var response: AnyObject?
+    var isFromSubscription = false;
     
     override func beginAppearanceTransition(isAppearing: Bool, animated: Bool) {
         super.beginAppearanceTransition(isAppearing, animated: animated)
@@ -92,9 +93,19 @@ class CartVC: UIViewController {
                         if status as? String == "1" || status as? NSNumber == 1 {
                             
                             let parentVC = self.parentViewController as! ViewController
-                            let statusVC = (self.storyboard?.instantiateViewControllerWithIdentifier("OrderStatusVC")) as! OrderStatusVC
-                            parentVC.cycleFromViewController(nil, toViewController: statusVC)
-                            statusVC.setData(self.response as! NSDictionary);
+                            if self.isFromSubscription {
+                                let statusVC = (self.storyboard?.instantiateViewControllerWithIdentifier("MealSummaryVC")) as! MealSummaryVC
+                                parentVC.cycleFromViewController(nil, toViewController: statusVC)
+
+                                statusVC.performSelector(#selector(MealSummaryVC.getContentForItemId), withObject: (Helper.sharedInstance.order?.orderId)!, afterDelay: 0.6)
+
+                                statusVC.performSelector(#selector(MealSummaryVC.loadPlanNameandNutritionname), withObject: nil, afterDelay: 1.0)
+                            } else {
+                                let statusVC = (self.storyboard?.instantiateViewControllerWithIdentifier("OrderStatusVC")) as! OrderStatusVC
+                                parentVC.cycleFromViewController(nil, toViewController: statusVC)
+                                statusVC.setData(self.response as! NSDictionary);
+                            }
+                            
                         } else {
                             UIAlertView(title: "Error", message: "Please try again", delegate: nil, cancelButtonTitle: "OK").show()
                         }
@@ -123,9 +134,20 @@ class CartVC: UIViewController {
         if Helper.sharedInstance.order!.modeOfPayment == PaymentType.COD {
             self.placeOrder({ (response) in
                 let parentVC = self.parentViewController as! ViewController
+                if self.isFromSubscription {
+                    let statusVC = (self.storyboard?.instantiateViewControllerWithIdentifier("MealSummaryVC")) as? MealSummaryVC
+                    parentVC.cycleFromViewController(nil, toViewController: statusVC!)
+
+                    statusVC!.performSelector(#selector(MealSummaryVC.getContentForItemId), withObject: (Helper.sharedInstance.order?.orderId)!, afterDelay: 0.6)
+                    
+                    statusVC!.performSelector(#selector(MealSummaryVC.loadPlanNameandNutritionname), withObject: nil, afterDelay: 1.0)
+//                    statusVC.setData(self.response as! NSDictionary);
+
+                }else{
                 let statusVC = (self.storyboard?.instantiateViewControllerWithIdentifier("OrderStatusVC")) as! OrderStatusVC
                 parentVC.cycleFromViewController(nil, toViewController: statusVC)
                 statusVC.setData(self.response as! NSDictionary);
+                }
             })
         } else if Helper.sharedInstance.order!.modeOfPayment == PaymentType.PAYTM{
             

@@ -131,7 +131,7 @@
     [self addSubview:self.scrollView];
     
 //    _backgroundColor = [UIColor colorWithRed:245/255.0 green:133/255.0 blue:42/255.0 alpha:1.0f];
-    _backgroundColor = [UIColor colorWithRed:200/255.0 green:5/255.0 blue:15/255.0 alpha:1.0f];
+    _backgroundColor = [UIColor colorWithRed:193/255.0 green:207/255.0 blue:89/255.0 alpha:1.0f];
 
     self.opaque = NO;
 //    _selectionIndicatorColor = [UIColor colorWithRed:52.0f/255.0f green:181.0f/255.0f blue:229.0f/255.0f alpha:1.0f];

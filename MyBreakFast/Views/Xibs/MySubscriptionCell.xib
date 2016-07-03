@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue-Medium</string>
+        </mutableArray>
+        <mutableArray key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Light</string>
+            <string>HelveticaNeue-Light</string>
+            <string>HelveticaNeue-Light</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MySubscriptionCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="MySubscriptionCell" id="r5x-CK-5uY" customClass="MySubscriptionCell" customModule="MyBreakFast" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r5x-CK-5uY" id="w83-Rg-Hc3">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HAO-ME-tqA">
+                        <rect key="frame" x="8" y="0.0" width="304" height="91"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19 Nov 2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBd-iA-os2">
+                        <rect key="frame" x="20" y="66" width="68" height="15"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total (Rs): 300" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Luy-i4-GS9">
+                        <rect key="frame" x="226" y="38" width="74" height="15"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Order Id #1447907796)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uis-4v-E8Z">
+                        <rect key="frame" x="20" y="8" width="129" height="15"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mannat Wadehra S 28/7 DLF City Phase 3, Gurgaon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvh-lR-BTD">
+                        <rect key="frame" x="20" y="23" width="284" height="15"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gO4-Wo-qLY">
+                        <rect key="frame" x="20" y="60" width="280" height="1"/>
+                        <color key="backgroundColor" red="0.75686274509999996" green="0.81176470590000005" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="VQh-dv-L3t"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:30 am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fI3-da-DZW">
+                        <rect key="frame" x="257" y="66" width="43" height="15"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivered" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCJ-w6-iDR">
+                        <rect key="frame" x="20" y="38" width="53" height="15"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="WCJ-w6-iDR" firstAttribute="top" secondItem="uis-4v-E8Z" secondAttribute="bottom" constant="2.5" id="1jT-JM-PTd"/>
+                    <constraint firstItem="nBd-iA-os2" firstAttribute="top" secondItem="gO4-Wo-qLY" secondAttribute="bottom" constant="5" id="2R8-6K-TDL"/>
+                    <constraint firstItem="nBd-iA-os2" firstAttribute="leading" secondItem="WCJ-w6-iDR" secondAttribute="leading" id="8Aw-AH-k8P"/>
+                    <constraint firstAttribute="trailing" secondItem="Luy-i4-GS9" secondAttribute="trailing" constant="20" id="Cm0-WP-0V8"/>
+                    <constraint firstAttribute="trailing" secondItem="HAO-ME-tqA" secondAttribute="trailing" constant="8" id="D4U-Z0-Mif"/>
+                    <constraint firstItem="WCJ-w6-iDR" firstAttribute="leading" secondItem="uis-4v-E8Z" secondAttribute="leading" id="EY3-3h-Hpe"/>
+                    <constraint firstItem="HAO-ME-tqA" firstAttribute="top" secondItem="w83-Rg-Hc3" secondAttribute="top" id="Fba-dj-G7h"/>
+                    <constraint firstItem="WCJ-w6-iDR" firstAttribute="top" secondItem="hvh-lR-BTD" secondAttribute="bottom" id="GRl-X4-ZUu"/>
+                    <constraint firstAttribute="bottom" secondItem="Luy-i4-GS9" secondAttribute="bottom" constant="20" id="KD4-Ly-adW"/>
+                    <constraint firstItem="HAO-ME-tqA" firstAttribute="leading" secondItem="w83-Rg-Hc3" secondAttribute="leading" constant="8" id="MDY-o2-W8j"/>
+                    <constraint firstItem="hvh-lR-BTD" firstAttribute="leading" secondItem="uis-4v-E8Z" secondAttribute="leading" id="Pgz-te-ob9"/>
+                    <constraint firstAttribute="bottom" secondItem="HAO-ME-tqA" secondAttribute="bottom" constant="8" id="WWy-Sk-jqZ"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="hvh-lR-BTD" secondAttribute="trailing" constant="8" id="aV8-tg-Hpq"/>
+                    <constraint firstItem="fI3-da-DZW" firstAttribute="centerY" secondItem="nBd-iA-os2" secondAttribute="centerY" id="bOy-cW-paf"/>
+                    <constraint firstItem="hvh-lR-BTD" firstAttribute="top" secondItem="uis-4v-E8Z" secondAttribute="bottom" id="eeJ-wF-qkU"/>
+                    <constraint firstItem="uis-4v-E8Z" firstAttribute="leading" secondItem="w83-Rg-Hc3" secondAttribute="leading" constant="20" id="iWn-bi-3Vf"/>
+                    <constraint firstAttribute="trailing" secondItem="fI3-da-DZW" secondAttribute="trailing" constant="20" id="oqy-ft-AVN"/>
+                    <constraint firstAttribute="trailing" secondItem="gO4-Wo-qLY" secondAttribute="trailing" constant="20" id="qSu-es-xBj"/>
+                    <constraint firstItem="uis-4v-E8Z" firstAttribute="top" secondItem="w83-Rg-Hc3" secondAttribute="top" constant="8" id="qoz-uE-l8d"/>
+                    <constraint firstAttribute="bottom" secondItem="nBd-iA-os2" secondAttribute="bottom" constant="18" id="tWw-ad-qlP"/>
+                    <constraint firstItem="Luy-i4-GS9" firstAttribute="centerY" secondItem="WCJ-w6-iDR" secondAttribute="centerY" id="v1D-dU-50d"/>
+                    <constraint firstItem="gO4-Wo-qLY" firstAttribute="leading" secondItem="w83-Rg-Hc3" secondAttribute="leading" constant="20" id="wXc-RA-lMJ"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="1jT-JM-PTd"/>
+                        <exclude reference="KD4-Ly-adW"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="addressLabel" destination="hvh-lR-BTD" id="hFf-sm-ihW"/>
+                <outlet property="dateLabel" destination="nBd-iA-os2" id="Kl5-KU-Vkt"/>
+                <outlet property="deliveryStatus" destination="WCJ-w6-iDR" id="vJx-HY-i2u"/>
+                <outlet property="orderId" destination="uis-4v-E8Z" id="3zu-nN-iyX"/>
+                <outlet property="timeLabel" destination="fI3-da-DZW" id="f32-ER-NjJ"/>
+                <outlet property="totalLabel" destination="Luy-i4-GS9" id="xGj-Zl-pPT"/>
+            </connections>
+            <point key="canvasLocation" x="373" y="155"/>
+        </tableViewCell>
+    </objects>
+</document>

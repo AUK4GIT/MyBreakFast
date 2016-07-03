@@ -83,15 +83,15 @@ class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate, AddressProt
                 
                 if self.planDetails?.meal1Exists == "0" {
                     self.MealsSegmentControl.disableSegmentAtIndex(0)
-                    Helper.sharedInstance.order?.address1 = ""
+                    Helper.sharedInstance.order?.address1 = "0"
                 }
                 if self.planDetails?.meal2Exists == "0" {
                     self.MealsSegmentControl.disableSegmentAtIndex(1)
-                    Helper.sharedInstance.order?.address2 = ""
+                    Helper.sharedInstance.order?.address2 = "0"
                 }
                 if self.planDetails?.meal3Exists == "0" {
                     self.MealsSegmentControl.disableSegmentAtIndex(2)
-                    Helper.sharedInstance.order?.address3 = ""
+                    Helper.sharedInstance.order?.address3 = "0"
                 }
                 
                 self.mealPlanLabel.text = self.planDetails?.selectionText
@@ -233,7 +233,9 @@ class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate, AddressProt
         } else {
         
             let parentVC = self.parentViewController as! ViewController
-            parentVC.cycleFromViewController(nil, toViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("CartVC"))!)
+            let vc = (self.storyboard?.instantiateViewControllerWithIdentifier("CartVC")) as! CartVC
+            vc.isFromSubscription = true;
+            parentVC.cycleFromViewController(nil, toViewController: vc)
         }
     }
     
