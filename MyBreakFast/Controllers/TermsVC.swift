@@ -21,6 +21,8 @@ class TermsVC: UIViewController {
             let parentVC: ViewController = self.parentViewController as! ViewController
             parentVC.setNavBarTitle("Terms & Conditions")
             parentVC.containerNavigationBar.layer.addAnimation(fadeTextAnimation, forKey: "fadeText");
+            parentVC.containerNavigationItem.rightBarButtonItem = nil;
+
         }
     }
     override func endAppearanceTransition() {

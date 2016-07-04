@@ -148,7 +148,12 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     
     }
     
-
+    @IBAction func setTodayAsDefault(sender: UIControl) {
+        
+        let label = sender.viewWithTag(3) as! UILabel
+        self.dateLabelAlacarte = label
+        self.dateLabelAlacarte!.text = self.dateLabel.title
+    }
     
     @IBAction func proceedtoConfirmOrder(sender: AnyObject) {
         

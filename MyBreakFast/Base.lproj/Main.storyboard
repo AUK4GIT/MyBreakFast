@@ -63,15 +63,15 @@
             <string>HelveticaNeue</string>
             <string>HelveticaNeue-Medium</string>
             <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
             <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue</string>
             <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue</string>
             <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue</string>
             <string>HelveticaNeue-Medium</string>
-            <string>HelveticaNeue-Medium</string>
-            <string>HelveticaNeue-Medium</string>
-            <string>HelveticaNeue-Medium</string>
-            <string>HelveticaNeue-Medium</string>
-            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue</string>
             <string>HelveticaNeue-Medium</string>
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
@@ -260,7 +260,7 @@
                                                     <action selector="showDatePicker:" destination="cU9-Vs-WMh" eventType="touchUpInside" id="doE-Uc-RIZ"/>
                                                 </connections>
                                             </view>
-                                            <view hidden="YES" tag="7" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brj-Ha-ulH">
+                                            <view tag="7" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brj-Ha-ulH">
                                                 <rect key="frame" x="8" y="50" width="284" height="2"/>
                                                 <color key="backgroundColor" red="0.40000000000000002" green="0.74901960779999999" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -306,7 +306,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <view tag="7" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMe-DH-6he">
+                                            <view hidden="YES" tag="7" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMe-DH-6he">
                                                 <rect key="frame" x="8" y="50" width="283" height="2"/>
                                                 <color key="backgroundColor" red="0.71372549019999998" green="0.7843137255" blue="0.33725490200000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -373,6 +373,7 @@
                     </view>
                     <connections>
                         <outlet property="alacarteButton" destination="3BL-LK-AaC" id="8c4-B1-GHg"/>
+                        <outlet property="alacarteDateLabel" destination="9VF-kC-xb2" id="Chp-6d-HX7"/>
                         <outlet property="mainContainer" destination="Oeg-jO-BQM" id="GpW-2o-wTV"/>
                         <outlet property="subscriptionButton" destination="5Kc-FQ-YMK" id="hyW-IT-bwJ"/>
                     </connections>
@@ -6030,7 +6031,7 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b0f-6O-VmZ" customClass="MealPlanDetailsView" customModule="MyBreakFast" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="192" width="320" height="181"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VWv-re-t98">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VWv-re-t98">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="181"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" red="0.23137254900000001" green="0.76470588240000004" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -6362,8 +6363,8 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="44"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Plan Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zvk-hp-bj4">
-                                                <rect key="frame" x="4" y="13" width="75" height="17"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                                <rect key="frame" x="4" y="13" width="73" height="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
@@ -6395,8 +6396,8 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                                         <rect key="frame" x="160" y="0.0" width="160" height="44"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Nutrionist:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zg0-46-dNt">
-                                                <rect key="frame" x="4" y="14" width="67" height="17"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                                <rect key="frame" x="4" y="14" width="65" height="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
@@ -6462,7 +6463,7 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="qfC-c5-c8R"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
@@ -6498,7 +6499,7 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="aNS-9w-u4P"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
@@ -6540,7 +6541,7 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="nAM-cn-D5n"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
@@ -7074,7 +7075,7 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
         <image name="unchecked_checkbox" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AYJ-qN-2bp"/>
+        <segue reference="saF-9U-7C5"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.40000000000000002" green="0.74901960779999999" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
 </document>

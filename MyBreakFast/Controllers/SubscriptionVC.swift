@@ -92,6 +92,7 @@ class SubscriptionVC: UIViewController, LocationPickerDelegate {
             parentVC.containerNavigationItem.leftBarButtonItem?.action = #selector(ViewController.toggleSideView);
             parentVC.containerNavigationItem.leftBarButtonItem?.target = parentVC;
             parentVC.containerNavigationBar.layer.addAnimation(fadeTextAnimation, forKey: "fadeText");
+            parentVC.containerNavigationItem.rightBarButtonItem = nil;
         } else {
             parentVC.containerNavigationItem.rightBarButtonItem = nil;
         }

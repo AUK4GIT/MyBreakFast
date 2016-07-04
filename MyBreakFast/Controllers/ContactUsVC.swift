@@ -23,6 +23,7 @@ class ContactUsVC: UIViewController,MFMailComposeViewControllerDelegate {
             let parentVC: ViewController = self.parentViewController as! ViewController
             parentVC.setNavBarTitle("Contact Us")
             parentVC.containerNavigationBar.layer.addAnimation(fadeTextAnimation, forKey: "fadeText");
+            parentVC.containerNavigationItem.rightBarButtonItem = nil;
 
         }
     }

@@ -35,6 +35,8 @@ class OrderStatusVC: UIViewController {
             parentVC.containerNavigationItem.leftBarButtonItem?.action = #selector(ViewController.backToMenu);
             parentVC.setNavBarTitle("Order status")
             parentVC.containerNavigationBar.layer.addAnimation(fadeTextAnimation, forKey: "fadeText");
+            parentVC.containerNavigationItem.rightBarButtonItem = nil;
+
         }
     }
     override func endAppearanceTransition() {

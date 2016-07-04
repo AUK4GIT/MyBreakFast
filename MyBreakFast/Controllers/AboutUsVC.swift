@@ -22,6 +22,8 @@ class AboutUsVC: UIViewController {
             let parentVC: ViewController = self.parentViewController as! ViewController
             parentVC.setNavBarTitle("About Us")
             parentVC.containerNavigationBar.layer.addAnimation(fadeTextAnimation, forKey: "fadeText");
+            parentVC.containerNavigationItem.rightBarButtonItem = nil;
+
         }
     }
     override func endAppearanceTransition() {

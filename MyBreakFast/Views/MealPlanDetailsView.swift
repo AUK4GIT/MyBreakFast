@@ -66,10 +66,10 @@ class MealPlanDetailsView: UIView {
             self.descrLbl.text = meal.mealDescription
             
             self.caloriesLbl.text = meal.calories!+" "+"Cal."
-            self.carbohydratesLbl.text = meal.carbohydrates!+" "+"Carb."
-            self.proteinsLbl.text = meal.proteins!+" "+"Protein"
-            self.fibreLbl.text = meal.fibre!+" "+"Fibre"
-            self.fatLbl.text = meal.fats!+" "+"Fat"
+            self.carbohydratesLbl.text = meal.carbohydrates!+"g "+"Carb."
+            self.proteinsLbl.text = meal.proteins!+"g "+"Protein"
+            self.fibreLbl.text = meal.fibre!+"g "+"Fibre"
+            self.fatLbl.text = meal.fats!+"g "+"Fat"
             self.bestSuitedFor.text = meal.bestSuitedfor
         }
     }

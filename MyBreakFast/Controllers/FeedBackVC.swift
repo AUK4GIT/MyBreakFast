@@ -40,7 +40,8 @@ class FeedBackVC: UIViewController, FloatRatingViewDelegate {
             let parentVC: ViewController = self.parentViewController as! ViewController
             parentVC.setNavBarTitle("Rate Us")
             parentVC.containerNavigationBar.layer.addAnimation(fadeTextAnimation, forKey: "fadeText");
-            
+            parentVC.containerNavigationItem.rightBarButtonItem = nil;
+
 //            self.textView.layer.borderColor = UIColor.lightGrayColor().CGColor
 //            self.textView.layer.borderWidth = 1;
 //            self.textView.layer.cornerRadius = 10

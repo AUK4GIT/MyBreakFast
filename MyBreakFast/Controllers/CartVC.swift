@@ -34,6 +34,8 @@ class CartVC: UIViewController {
                 parentVC.containerNavigationItem.leftBarButtonItem?.action = #selector(ViewController.backToMenu);
                 parentVC.containerNavigationBar.layer.addAnimation(fadeTextAnimation, forKey: "fadeText");
                 parentVC.setNavBarTitle("CHECKOUT")
+                parentVC.containerNavigationItem.rightBarButtonItem = nil;
+
             } else {
                 self.view.backgroundColor = UIColor.whiteColor()
                 self.toolbar.hidden = true;

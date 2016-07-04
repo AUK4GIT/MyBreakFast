@@ -28,6 +28,8 @@ class ReferralVC: UIViewController {
             let parentVC: ViewController = self.parentViewController as! ViewController
             parentVC.setNavBarTitle("Refer a Friend")
             parentVC.containerNavigationBar.layer.addAnimation(fadeTextAnimation, forKey: "fadeText");
+            parentVC.containerNavigationItem.rightBarButtonItem = nil;
+
         }
     }
     override func endAppearanceTransition() {
