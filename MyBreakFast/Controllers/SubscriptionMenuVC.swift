@@ -15,14 +15,9 @@ class SubscriptionMenuVC: ContainerVC {
     @IBOutlet var alacarteButton: UIControl!
     @IBOutlet var subscriptionButton: UIControl!
     @IBOutlet var alacarteDateLabel: UIControl!
-
+    var loadSubscription = false;
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let alacarteHighlightView = self.alacarteButton.viewWithTag(7);
-//        let subscrHighlightView = self.subscriptionButton.viewWithTag(7);
-//        alacarteHighlightView?.hidden = true;
-//        subscrHighlightView?.hidden = true;
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
         dateFormatter.doesRelativeDateFormatting = true;
@@ -33,6 +28,16 @@ class SubscriptionMenuVC: ContainerVC {
         dtFormat.dateFormat = "EEEE dd, MMM"
         let date = NSDate()
         label.text = dateFormatter.stringFromDate(date)+" ("+dtFormat.stringFromDate(date)+")"
+        
+        let alacarteHighlightView = self.alacarteButton.viewWithTag(7);
+        let subscrHighlightView = self.subscriptionButton.viewWithTag(7);
+        if self.loadSubscription {
+            subscrHighlightView?.hidden = false;
+            alacarteHighlightView?.hidden = true;
+        } else {
+            subscrHighlightView?.hidden = true;
+            alacarteHighlightView?.hidden = false;
+        }
     }
     
     func cycleFromViewController(oldC: AnyObject?,
@@ -65,6 +70,7 @@ class SubscriptionMenuVC: ContainerVC {
             print(segueName)
             if segueName == "DummyVC" {
                 let dummyVC: DummyVC = segue.destinationViewController as! DummyVC
+                dummyVC.loadSubscription = self.loadSubscription;
                 dummyVC.view.tag = 101;
             }
         }

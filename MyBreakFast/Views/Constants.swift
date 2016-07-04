@@ -60,7 +60,7 @@ struct Constants {
      
         static let Subscr_PlaceOrder: String = BaseURL+"index.php/ws/subsc/add/new/"
      
-      static let Subscr_GetOrderDetails: String = BaseURL+"index.php/ws/subsc/details"
+      static let Subscr_GetOrderDetails: String = BaseURL+"index.php/ws/subsc/details/"
      
         static let Subscr_GetAllSubscrs: String = BaseURL+"index.php/ws/subsc/all/"
 

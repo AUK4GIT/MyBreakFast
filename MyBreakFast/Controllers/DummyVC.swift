@@ -9,7 +9,7 @@
 import Foundation
 
 class DummyVC: UIViewController {
-    
+    var loadSubscription = false;
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated);
         
@@ -17,7 +17,12 @@ class DummyVC: UIViewController {
         if let parentVC = self.parentViewController as? ViewController {
             parentVC.cycleFromViewController(nil, toViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("SubscriptionMenuVC"))!)
         } else if let parentVC = self.parentViewController as? SubscriptionMenuVC {
-            parentVC.cycleFromViewController(nil, toViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("MenuVC"))!)
+            if self.loadSubscription {
+                parentVC.cycleFromViewController(nil, toViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("SubscriptionVC"))!)
+                
+            } else {
+                parentVC.cycleFromViewController(nil, toViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("MenuVC"))!)
+            }
         }
 
 

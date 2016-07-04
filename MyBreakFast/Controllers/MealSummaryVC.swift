@@ -28,6 +28,7 @@ class MealSummaryVC: UIViewController {
     var mealsArray: [AnyObject]?
     let dateForm = NSDateFormatter();
     var satSelected: Bool = false;
+    var wmDateFormatter = NSDateFormatter();
 
     @IBOutlet var collectionView: UICollectionView!
     override func viewDidLoad() {
@@ -38,7 +39,7 @@ class MealSummaryVC: UIViewController {
         self.mealsArray = []
         self.weeksArray = [];
         self.dateForm.dateFormat = "yyyy-MM-dd"
-
+        self.wmDateFormatter.dateFormat = "EEE dd MMM";
         let doneButton: UIButton = UIButton(type: .Custom)
         doneButton.frame = CGRectMake(0, 0, 60, 44)
         doneButton.setTitle("Done", forState: .Normal)
@@ -98,14 +99,16 @@ class MealSummaryVC: UIViewController {
 print(indexPath.row, self.weeksArray.count)
         if indexPath.row%4 == 0 {
             cell.mealLabel.text = "Mon"
-            cell.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 1.0)
+//            cell.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 1.0)
+            cell.backgroundColor = UIColor.clearColor()
+
             cell.mealLabel.textColor = UIColor(red: 193/255.0, green: 207/255.0, blue: 89/255.0, alpha: 1.0)
             let index = Int(indexPath.row/4)
             if index >= self.weeksArray.count {
                 cell.mealLabel.text = "---"
             } else {
             let week = self.weeksArray[index];
-                cell.mealLabel.text = self.dateForm.stringFromDate((week ))
+                cell.mealLabel.text = self.wmDateFormatter.stringFromDate((week ))
             }
 
         } else {

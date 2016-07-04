@@ -164,7 +164,6 @@ class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate, AddressProt
         }
         let dateForm = NSDateFormatter();
         dateForm.dateFormat = "yyyy-MM-dd"
-        Helper.sharedInstance.order?.subscriptionDate = dateForm.stringFromDate(cDate!)
         print(Helper.sharedInstance.order?.subscriptionDate)
         self.weekDatesArray.removeAll(keepCapacity: false)
         let calendar: NSCalendar = NSCalendar.currentCalendar();
@@ -174,6 +173,8 @@ class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate, AddressProt
         if order == NSComparisonResult.OrderedSame {
             cDate = cDate!.dateByAddingTimeInterval(NSTimeInterval(60*60*24*1))
         }
+        Helper.sharedInstance.order?.subscriptionDate = dateForm.stringFromDate(cDate!)
+
         for i in 0...6 {
             let aDate = cDate!.dateByAddingTimeInterval(NSTimeInterval(60*60*24*i));
             let components: NSDateComponents = calendar.components(.Weekday, fromDate: aDate);
@@ -296,7 +297,9 @@ class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate, AddressProt
     
     @IBAction func showSubscriptionView(sender: AnyObject) {
         let parentVC = self.parentViewController as! ViewController
-        parentVC.cycleFromViewController(nil, toViewController: (self.storyboard?.instantiateViewControllerWithIdentifier("SubscriptionMenuVC"))!)
+        let vc = (self.storyboard?.instantiateViewControllerWithIdentifier("SubscriptionMenuVC")) as! SubscriptionMenuVC
+        vc.loadSubscription = true;
+        parentVC.cycleFromViewController(nil, toViewController: vc)
 
     }
     @IBAction func incrementRepeatCount(sender: AnyObject) {

@@ -38,6 +38,8 @@
 		AAF0722A1D0AB88200C67D2D /* SubscriptionMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF072291D0AB88200C67D2D /* SubscriptionMenuVC.swift */; };
 		AAF0722C1D0AD79D00C67D2D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF0722B1D0AD79D00C67D2D /* CustomButton.swift */; };
 		AAF0722E1D0B1EA700C67D2D /* SubscriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF0722D1D0B1EA700C67D2D /* SubscriptionVC.swift */; };
+		AAF5826C1D2AD8DF007191F1 /* MultiSelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF5826B1D2AD8DF007191F1 /* MultiSelCell.swift */; };
+		AAF5826E1D2ADB1B007191F1 /* MultiSelectFilterDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF5826D1D2ADB1B007191F1 /* MultiSelectFilterDS.swift */; };
 		AAFAA47C1D24D2CC003D939D /* MySubscriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA47B1D24D2CC003D939D /* MySubscriptions.swift */; };
 		AAFAA47E1D2607C1003D939D /* MealSummaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA47D1D2607C1003D939D /* MealSummaryVC.swift */; };
 		ED344C941C9B14DA008643F9 /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED344C7C1C9B14DA008643F9 /* AboutUsVC.swift */; };
@@ -440,6 +442,8 @@
 		AAF072291D0AB88200C67D2D /* SubscriptionMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionMenuVC.swift; path = Controllers/SubscriptionMenuVC.swift; sourceTree = "<group>"; };
 		AAF0722B1D0AD79D00C67D2D /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = Views/CustomButton.swift; sourceTree = "<group>"; };
 		AAF0722D1D0B1EA700C67D2D /* SubscriptionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionVC.swift; path = Controllers/SubscriptionVC.swift; sourceTree = "<group>"; };
+		AAF5826B1D2AD8DF007191F1 /* MultiSelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultiSelCell.swift; path = Views/MultiSelCell.swift; sourceTree = "<group>"; };
+		AAF5826D1D2ADB1B007191F1 /* MultiSelectFilterDS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultiSelectFilterDS.swift; path = Views/MultiSelectFilterDS.swift; sourceTree = "<group>"; };
 		AAFAA47B1D24D2CC003D939D /* MySubscriptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MySubscriptions.swift; path = Controllers/MySubscriptions.swift; sourceTree = "<group>"; };
 		AAFAA47D1D2607C1003D939D /* MealSummaryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealSummaryVC.swift; path = Controllers/MealSummaryVC.swift; sourceTree = "<group>"; };
 		DC6E7E1A1C9BAD8E663A54F6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1050,6 +1054,7 @@
 		ED344C7A1C9B14B4008643F9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AAF5826B1D2AD8DF007191F1 /* MultiSelCell.swift */,
 				ED344CF31C9B19EB008643F9 /* FloatRatingView.swift */,
 				ED344CAC1C9B1526008643F9 /* ActivityIndicator.swift */,
 				ED344CAD1C9B1526008643F9 /* AddAddressCell.swift */,
@@ -1086,6 +1091,7 @@
 				AA09FF0D1D1FC4FD003AE665 /* MealPlanDetailsView.swift */,
 				AAD870941D20309D00A37D98 /* TimeSlotPickerView.swift */,
 				AA3EBD591D28D52F00F7FAC4 /* MySubscriptionCell.swift */,
+				AAF5826D1D2ADB1B007191F1 /* MultiSelectFilterDS.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -2259,6 +2265,7 @@
 				ED742C951CA78856007FC96D /* CTSPrepaidBill.m in Sources */,
 				ED5B21851BF76D3400C65857 /* UserDetails+CoreDataProperties.swift in Sources */,
 				ED5B21811BF76D3400C65857 /* TimeSlots+CoreDataProperties.swift in Sources */,
+				AAF5826E1D2ADB1B007191F1 /* MultiSelectFilterDS.swift in Sources */,
 				ED742CC21CA78856007FC96D /* JSONAPI.m in Sources */,
 				ED344CDE1C9B1526008643F9 /* VitaminCollectionView.swift in Sources */,
 				ED742C9A1CA78856007FC96D /* CTSNewContactProfile.m in Sources */,
@@ -2304,6 +2311,7 @@
 				AAF0722E1D0B1EA700C67D2D /* SubscriptionVC.swift in Sources */,
 				EDBA06B71C00D7BC00BE09B3 /* MyOrder.swift in Sources */,
 				ED742C5F1CA78856007FC96D /* CTSRestError.m in Sources */,
+				AAF5826C1D2AD8DF007191F1 /* MultiSelCell.swift in Sources */,
 				ED344CD21C9B1526008643F9 /* MenuItemCell.swift in Sources */,
 				AAAB65C11D1855F5006E6984 /* TimeSlot.swift in Sources */,
 				ED742CD11CA78856007FC96D /* CTSPaymentWebViewController.m in Sources */,

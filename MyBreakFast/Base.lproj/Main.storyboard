@@ -63,7 +63,6 @@
             <string>HelveticaNeue</string>
             <string>HelveticaNeue-Medium</string>
             <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
             <string>HelveticaNeue-Medium</string>
             <string>HelveticaNeue</string>
             <string>HelveticaNeue-Medium</string>
@@ -81,11 +80,13 @@
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
             <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
         </mutableArray>
         <mutableArray key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Light</string>
             <string>HelveticaNeue-Light</string>
             <string>HelveticaNeue-Light</string>
             <string>HelveticaNeue-Light</string>
@@ -1547,8 +1548,68 @@
                                     <constraint firstAttribute="height" constant="1" id="Ccy-Iw-D70"/>
                                 </constraints>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VRp-jq-6R7">
+                                <rect key="frame" x="0.0" y="21" width="600" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.75686274509999996" green="0.81176470590000005" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="CyD-gm-GEj"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="2" id="I0L-Td-rvv">
+                                    <size key="itemSize" width="100" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MultiSelCell" id="bEW-Jt-taZ" customClass="MultiSelCell" customModule="MyBreakFast" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="-3" width="100" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xze-Uq-gPP">
+                                                    <rect key="frame" x="8" y="46" width="84" height="2"/>
+                                                    <color key="backgroundColor" red="0.75686274509999996" green="0.81176470590000005" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="2" id="cHV-ce-nSe"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ems-th-Ds2">
+                                                    <rect key="frame" x="4" y="4" width="92" height="36"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <color key="textColor" red="0.75686274509999996" green="0.81176470590000005" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="xze-Uq-gPP" firstAttribute="top" secondItem="ems-th-Ds2" secondAttribute="bottom" constant="6" id="0Bc-hQ-MM7"/>
+                                            <constraint firstAttribute="trailing" secondItem="ems-th-Ds2" secondAttribute="trailing" constant="4" id="22Q-x1-dE1"/>
+                                            <constraint firstItem="ems-th-Ds2" firstAttribute="leading" secondItem="bEW-Jt-taZ" secondAttribute="leading" constant="4" id="3Ab-vm-iTh"/>
+                                            <constraint firstItem="ems-th-Ds2" firstAttribute="leading" secondItem="bEW-Jt-taZ" secondAttribute="leading" constant="4" id="Hxe-K4-8En"/>
+                                            <constraint firstItem="ems-th-Ds2" firstAttribute="top" secondItem="bEW-Jt-taZ" secondAttribute="top" constant="4" id="POb-Qq-ghw"/>
+                                            <constraint firstAttribute="bottom" secondItem="xze-Uq-gPP" secondAttribute="bottom" constant="2" id="Qdl-Gq-9Jv"/>
+                                            <constraint firstItem="xze-Uq-gPP" firstAttribute="leading" secondItem="bEW-Jt-taZ" secondAttribute="leading" constant="8" id="R8a-fC-d71"/>
+                                            <constraint firstAttribute="trailing" secondItem="xze-Uq-gPP" secondAttribute="trailing" constant="8" id="XTI-9y-4lT"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Hxe-K4-8En"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <outlet property="celllabel" destination="ems-th-Ds2" id="XbQ-zV-rlJ"/>
+                                            <outlet property="highlightView" destination="xze-Uq-gPP" id="f8g-Pb-HbZ"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="v5U-6J-9Wv">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="66" width="600" height="534"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="Fhm-6f-rK4">
                                     <size key="itemSize" width="560" height="300"/>
@@ -1648,15 +1709,20 @@
                             <constraint firstItem="v5U-6J-9Wv" firstAttribute="leading" secondItem="iYv-fd-Ay2" secondAttribute="leading" id="LZA-rG-3bG"/>
                             <constraint firstItem="X2s-MD-kwc" firstAttribute="top" secondItem="v5U-6J-9Wv" secondAttribute="bottom" id="Okh-Gd-wzn"/>
                             <constraint firstItem="gzI-qN-cy6" firstAttribute="top" secondItem="rO2-dk-0YQ" secondAttribute="bottom" constant="35" id="V49-we-n8j"/>
+                            <constraint firstItem="v5U-6J-9Wv" firstAttribute="top" secondItem="VRp-jq-6R7" secondAttribute="bottom" constant="1" id="VHl-u2-vFU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="K2O-lx-V3K" secondAttribute="trailing" constant="16" id="b1d-Uh-aWn"/>
                             <constraint firstItem="gzI-qN-cy6" firstAttribute="leading" secondItem="iYv-fd-Ay2" secondAttribute="leading" id="bZd-En-8fr"/>
+                            <constraint firstItem="VRp-jq-6R7" firstAttribute="top" secondItem="rO2-dk-0YQ" secondAttribute="bottom" constant="1" id="gTZ-68-5gA"/>
                             <constraint firstItem="OYY-zA-Xl5" firstAttribute="leading" secondItem="iYv-fd-Ay2" secondAttribute="leadingMargin" id="ikW-21-F4S"/>
                             <constraint firstItem="OYY-zA-Xl5" firstAttribute="top" secondItem="gzI-qN-cy6" secondAttribute="bottom" id="ilO-rb-9CH"/>
+                            <constraint firstAttribute="trailing" secondItem="VRp-jq-6R7" secondAttribute="trailing" id="itj-3b-gv6"/>
                             <constraint firstItem="OYY-zA-Xl5" firstAttribute="leading" secondItem="iYv-fd-Ay2" secondAttribute="leading" id="jb4-Oz-AJb"/>
                             <constraint firstAttribute="trailing" secondItem="v5U-6J-9Wv" secondAttribute="trailing" id="kXt-ip-f5b"/>
+                            <constraint firstItem="VRp-jq-6R7" firstAttribute="top" secondItem="K2O-lx-V3K" secondAttribute="bottom" id="mQj-Si-GhY"/>
                             <constraint firstItem="Jtj-Ur-wKc" firstAttribute="leading" secondItem="iYv-fd-Ay2" secondAttribute="leading" id="omO-P4-QPc"/>
                             <constraint firstAttribute="trailing" secondItem="gzI-qN-cy6" secondAttribute="trailing" id="qss-d0-4d3"/>
                             <constraint firstItem="v5U-6J-9Wv" firstAttribute="top" secondItem="rO2-dk-0YQ" secondAttribute="bottom" id="uD6-QM-8L0"/>
+                            <constraint firstItem="VRp-jq-6R7" firstAttribute="leading" secondItem="iYv-fd-Ay2" secondAttribute="leading" id="vgQ-HN-DTJ"/>
                             <constraint firstItem="v5U-6J-9Wv" firstAttribute="top" secondItem="gzI-qN-cy6" secondAttribute="bottom" constant="40" id="w31-MD-n8Y"/>
                         </constraints>
                         <variation key="default">
@@ -1664,11 +1730,13 @@
                                 <exclude reference="FXV-eR-Bpn"/>
                                 <exclude reference="b1d-Uh-aWn"/>
                                 <exclude reference="V49-we-n8j"/>
+                                <exclude reference="HRQ-5p-p1x"/>
+                                <exclude reference="ikW-21-F4S"/>
+                                <exclude reference="mQj-Si-GhY"/>
+                                <exclude reference="1Cc-o6-iBc"/>
                                 <exclude reference="3Pa-jo-9iV"/>
                                 <exclude reference="uD6-QM-8L0"/>
                                 <exclude reference="w31-MD-n8Y"/>
-                                <exclude reference="HRQ-5p-p1x"/>
-                                <exclude reference="ikW-21-F4S"/>
                             </mask>
                         </variation>
                     </view>
@@ -1676,6 +1744,7 @@
                         <outlet property="collectionView" destination="v5U-6J-9Wv" id="HfO-ti-0gu"/>
                         <outlet property="dateLabel" destination="rPn-4y-gjB" id="akc-bM-DVl"/>
                         <outlet property="dateTableView" destination="K2O-lx-V3K" id="xhn-Kp-65J"/>
+                        <outlet property="filterCollView" destination="VRp-jq-6R7" id="diM-th-ADs"/>
                         <outlet property="numberOfItemsLabel" destination="vib-WT-0TG" id="0Vp-Fm-q5H"/>
                         <outlet property="topToolbar" destination="gzI-qN-cy6" id="4ol-K5-pFC"/>
                     </connections>
@@ -6336,8 +6405,8 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanks for subscribing to the diet plan&quot;. Your meal will be delivered as per below schedule." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Sc-vE-zgj">
-                                        <rect key="frame" x="6" y="4" width="309" height="45"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <rect key="frame" x="5" y="8" width="311" height="38"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -6494,7 +6563,7 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NUj-oK-Bgg">
                                         <rect key="frame" x="107" y="0.0" width="106" height="44"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Weeks:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rvh-9s-OWp">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Week(s):" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rvh-9s-OWp">
                                                 <rect key="frame" x="4" y="2" width="81" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="aNS-9w-u4P"/>
@@ -6622,13 +6691,13 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fv-MN-gcr">
-                                <rect key="frame" x="0.0" y="144" width="320" height="35"/>
+                                <rect key="frame" x="0.0" y="144" width="320" height="44"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewF-9S-Ccg">
-                                        <rect key="frame" x="54" y="8" width="266" height="27"/>
+                                        <rect key="frame" x="54" y="8" width="266" height="35"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIp-CG-AzR">
-                                                <rect key="frame" x="0.0" y="0.0" width="89" height="27"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="89" height="35"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -6637,7 +6706,7 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIv-vv-pAi">
-                                                <rect key="frame" x="89" y="0.0" width="88" height="27"/>
+                                                <rect key="frame" x="89" y="0.0" width="88" height="35"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -6646,7 +6715,7 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8u-gX-cwu">
-                                                <rect key="frame" x="177" y="0.0" width="89" height="27"/>
+                                                <rect key="frame" x="177" y="0.0" width="89" height="35"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -6673,17 +6742,17 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ewF-9S-Ccg" secondAttribute="trailing" id="2ML-WK-8DN"/>
-                                    <constraint firstAttribute="bottom" secondItem="ewF-9S-Ccg" secondAttribute="bottom" id="Bi9-1s-XlH"/>
-                                    <constraint firstAttribute="height" constant="35" id="Hun-Sx-m4e"/>
+                                    <constraint firstAttribute="bottom" secondItem="ewF-9S-Ccg" secondAttribute="bottom" constant="1" id="Bi9-1s-XlH"/>
+                                    <constraint firstAttribute="height" constant="44" id="Hun-Sx-m4e"/>
                                     <constraint firstItem="ewF-9S-Ccg" firstAttribute="leading" secondItem="9fv-MN-gcr" secondAttribute="leading" constant="54" id="KbI-7L-Qsm"/>
                                     <constraint firstItem="ewF-9S-Ccg" firstAttribute="top" secondItem="9fv-MN-gcr" secondAttribute="top" constant="8" id="oO1-9x-nxA"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fpy-xw-u3a">
-                                <rect key="frame" x="0.0" y="179" width="320" height="35"/>
+                                <rect key="frame" x="0.0" y="188" width="320" height="35"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Time" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dZq-HL-g8w">
                                         <rect key="frame" x="0.0" y="0.0" width="54" height="35"/>
@@ -6695,10 +6764,11 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LmD-iw-9L3">
-                                        <rect key="frame" x="54" y="0.0" width="266" height="35"/>
+                                        <rect key="frame" x="54" y="0.0" width="266" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--:--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5b-T2-eet">
-                                                <rect key="frame" x="0.0" y="0.0" width="89" height="35"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="88" height="34"/>
+                                                <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -6707,7 +6777,8 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--:--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azr-rM-mig">
-                                                <rect key="frame" x="89" y="0.0" width="88" height="35"/>
+                                                <rect key="frame" x="89" y="0.0" width="88" height="34"/>
+                                                <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -6716,7 +6787,8 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--:--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QF5-jM-ASC">
-                                                <rect key="frame" x="177" y="0.0" width="89" height="35"/>
+                                                <rect key="frame" x="178" y="0.0" width="88" height="34"/>
+                                                <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -6735,8 +6807,8 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                                             <constraint firstAttribute="bottom" secondItem="Y5b-T2-eet" secondAttribute="bottom" id="JPT-im-Nwc"/>
                                             <constraint firstAttribute="bottom" secondItem="QF5-jM-ASC" secondAttribute="bottom" id="O05-QX-5zh"/>
                                             <constraint firstItem="azr-rM-mig" firstAttribute="centerX" secondItem="LmD-iw-9L3" secondAttribute="centerX" id="Ozp-e9-zbn"/>
-                                            <constraint firstItem="azr-rM-mig" firstAttribute="leading" secondItem="Y5b-T2-eet" secondAttribute="trailing" id="WbA-U6-8wh"/>
-                                            <constraint firstItem="QF5-jM-ASC" firstAttribute="leading" secondItem="azr-rM-mig" secondAttribute="trailing" id="iSk-1x-H6C"/>
+                                            <constraint firstItem="azr-rM-mig" firstAttribute="leading" secondItem="Y5b-T2-eet" secondAttribute="trailing" constant="1" id="WbA-U6-8wh"/>
+                                            <constraint firstItem="QF5-jM-ASC" firstAttribute="leading" secondItem="azr-rM-mig" secondAttribute="trailing" constant="1" id="iSk-1x-H6C"/>
                                             <constraint firstItem="azr-rM-mig" firstAttribute="top" secondItem="LmD-iw-9L3" secondAttribute="top" id="kd3-2a-Qfp"/>
                                             <constraint firstItem="QF5-jM-ASC" firstAttribute="width" secondItem="Y5b-T2-eet" secondAttribute="width" id="tsc-cx-ccr"/>
                                             <constraint firstItem="Y5b-T2-eet" firstAttribute="top" secondItem="LmD-iw-9L3" secondAttribute="top" id="u1z-4l-PGF"/>
@@ -6752,13 +6824,13 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                                     <constraint firstAttribute="bottom" secondItem="dZq-HL-g8w" secondAttribute="bottom" id="BHY-0O-y3Z"/>
                                     <constraint firstAttribute="trailing" secondItem="LmD-iw-9L3" secondAttribute="trailing" id="NQH-KU-zFM"/>
                                     <constraint firstItem="LmD-iw-9L3" firstAttribute="top" secondItem="fpy-xw-u3a" secondAttribute="top" id="aJ4-ZD-bmM"/>
-                                    <constraint firstAttribute="bottom" secondItem="LmD-iw-9L3" secondAttribute="bottom" id="c8X-GD-U83"/>
+                                    <constraint firstAttribute="bottom" secondItem="LmD-iw-9L3" secondAttribute="bottom" constant="1" id="c8X-GD-U83"/>
                                     <constraint firstAttribute="height" constant="35" id="cf9-39-BYT"/>
                                     <constraint firstItem="LmD-iw-9L3" firstAttribute="leading" secondItem="dZq-HL-g8w" secondAttribute="trailing" id="ziX-Jy-gXR"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hHX-yf-hNO">
-                                <rect key="frame" x="0.0" y="214" width="320" height="35"/>
+                                <rect key="frame" x="0.0" y="223" width="320" height="35"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Addr" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="btJ-Ms-bBK">
                                         <rect key="frame" x="0.0" y="0.0" width="54" height="35"/>
@@ -6772,8 +6844,9 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B8O-np-1yU">
                                         <rect key="frame" x="54" y="0.0" width="266" height="35"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-----" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dj1-Pa-UpW">
-                                                <rect key="frame" x="0.0" y="0.0" width="89" height="35"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-----" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dj1-Pa-UpW">
+                                                <rect key="frame" x="0.0" y="0.0" width="88" height="35"/>
+                                                <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -6781,8 +6854,9 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-----" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYm-za-Nep">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-----" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SYm-za-Nep">
                                                 <rect key="frame" x="89" y="0.0" width="88" height="35"/>
+                                                <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -6790,8 +6864,9 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-----" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2i-Mm-W2f">
-                                                <rect key="frame" x="177" y="0.0" width="89" height="35"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-----" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P2i-Mm-W2f">
+                                                <rect key="frame" x="178" y="0.0" width="88" height="35"/>
+                                                <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -6806,8 +6881,8 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                                             <constraint firstItem="SYm-za-Nep" firstAttribute="width" secondItem="dj1-Pa-UpW" secondAttribute="width" id="8Cg-xo-ahp"/>
                                             <constraint firstAttribute="bottom" secondItem="P2i-Mm-W2f" secondAttribute="bottom" id="8es-U7-rxn"/>
                                             <constraint firstItem="P2i-Mm-W2f" firstAttribute="top" secondItem="B8O-np-1yU" secondAttribute="top" id="EnB-LM-g4r"/>
-                                            <constraint firstItem="SYm-za-Nep" firstAttribute="leading" secondItem="dj1-Pa-UpW" secondAttribute="trailing" id="IsU-yC-vPx"/>
-                                            <constraint firstItem="P2i-Mm-W2f" firstAttribute="leading" secondItem="SYm-za-Nep" secondAttribute="trailing" id="N7P-jI-ZiI"/>
+                                            <constraint firstItem="SYm-za-Nep" firstAttribute="leading" secondItem="dj1-Pa-UpW" secondAttribute="trailing" constant="1" id="IsU-yC-vPx"/>
+                                            <constraint firstItem="P2i-Mm-W2f" firstAttribute="leading" secondItem="SYm-za-Nep" secondAttribute="trailing" constant="1" id="N7P-jI-ZiI"/>
                                             <constraint firstItem="dj1-Pa-UpW" firstAttribute="top" secondItem="B8O-np-1yU" secondAttribute="top" id="VJm-jD-jFe"/>
                                             <constraint firstItem="SYm-za-Nep" firstAttribute="top" secondItem="B8O-np-1yU" secondAttribute="top" id="Zur-sP-xPe"/>
                                             <constraint firstAttribute="trailing" secondItem="P2i-Mm-W2f" secondAttribute="trailing" id="gOq-oL-UmG"/>
@@ -6833,8 +6908,8 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="O0D-CG-2fN">
-                                <rect key="frame" x="0.0" y="257" width="320" height="223"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="259" width="320" height="221"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="c6u-I5-dgx">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -6862,7 +6937,7 @@ F.E. Food Tech Private Limited reserves the right to change any part or piece of
                         <constraints>
                             <constraint firstItem="O0D-CG-2fN" firstAttribute="leading" secondItem="Qj3-vs-ORx" secondAttribute="leading" id="0PK-IT-HHF"/>
                             <constraint firstItem="x5l-5P-M2B" firstAttribute="leading" secondItem="Qj3-vs-ORx" secondAttribute="leading" id="4iu-p8-TLn"/>
-                            <constraint firstItem="O0D-CG-2fN" firstAttribute="top" secondItem="hHX-yf-hNO" secondAttribute="bottom" constant="8" id="5H0-N0-OnL"/>
+                            <constraint firstItem="O0D-CG-2fN" firstAttribute="top" secondItem="hHX-yf-hNO" secondAttribute="bottom" constant="1" id="5H0-N0-OnL"/>
                             <constraint firstAttribute="trailing" secondItem="O2z-GK-dpx" secondAttribute="trailing" id="934-Q9-Ah8"/>
                             <constraint firstItem="wJW-F7-pYj" firstAttribute="top" secondItem="1Vh-4R-GDX" secondAttribute="bottom" constant="1" id="945-Po-mLU"/>
                             <constraint firstAttribute="trailing" secondItem="Dli-KP-vms" secondAttribute="trailing" id="ATw-gZ-xv7"/>

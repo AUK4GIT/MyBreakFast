@@ -20,9 +20,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="58S-6d-hCm">
-                        <rect key="frame" x="0.0" y="0.0" width="50" height="35"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                        <rect key="frame" x="0.0" y="0.0" width="49" height="34"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                         <userDefinedRuntimeAttributes>
@@ -33,8 +33,8 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="58S-6d-hCm" secondAttribute="trailing" id="E3l-Sy-P6Y"/>
-                <constraint firstAttribute="bottom" secondItem="58S-6d-hCm" secondAttribute="bottom" id="Htd-wp-Cf0"/>
+                <constraint firstAttribute="trailing" secondItem="58S-6d-hCm" secondAttribute="trailing" constant="1" id="E3l-Sy-P6Y"/>
+                <constraint firstAttribute="bottom" secondItem="58S-6d-hCm" secondAttribute="bottom" constant="1" id="Htd-wp-Cf0"/>
                 <constraint firstItem="58S-6d-hCm" firstAttribute="top" secondItem="ZhG-pE-V15" secondAttribute="top" id="IPs-Fc-NLf"/>
                 <constraint firstItem="58S-6d-hCm" firstAttribute="leading" secondItem="ZhG-pE-V15" secondAttribute="leading" id="UFe-3d-8tP"/>
             </constraints>

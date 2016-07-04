@@ -11,6 +11,7 @@ import UIKit
 import SDWebImage
 
 class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, DatePickerVCDelegate, LocationPickerVCDelegate, UIAlertViewDelegate, LocationPickerDelegate, FilterProtocol {
+    @IBOutlet var filterCollView: UICollectionView!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet  var dateTableView: UITableView!
     var datesArray: [NSDate] = []
@@ -27,7 +28,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     var cartButtonIcon: UIButton?
     var itemQuantities = 0;
     var menuDate = NSDate();
-//    let titles = ["All", "Veg", "Egg", "NonVeg"];
+    let mulSelFilter: MultiSelectFilterDS = MultiSelectFilterDS();
 
     override func viewDidLoad() {
         
@@ -84,6 +85,12 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         } else {
             self.performSelector(#selector(MenuVC.showDeliveryLocationPopUp), withObject: nil, afterDelay: 1.0);
         }
+        
+        self.filterCollView.delegate = mulSelFilter
+        self.filterCollView.dataSource = mulSelFilter
+        self.filterCollView.allowsMultipleSelection = true;
+        mulSelFilter.delegate = self;
+        self.filterCollView.reloadData()
     }
     
     override func viewWillLayoutSubviews() {
@@ -377,9 +384,9 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     
     func filterClicked(sender: AnyObject) {
         
-        let vc: FIlterVC = self.storyboard?.instantiateViewControllerWithIdentifier("FIlterVC") as! FIlterVC
-        vc.delegate = self;
-        self.presentViewController(vc, animated: true, completion: nil)
+//        let vc: FIlterVC = self.storyboard?.instantiateViewControllerWithIdentifier("FIlterVC") as! FIlterVC
+//        vc.delegate = self;
+//        self.presentViewController(vc, animated: true, completion: nil)
         
     }
    
