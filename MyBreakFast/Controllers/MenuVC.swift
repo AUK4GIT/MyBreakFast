@@ -345,7 +345,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         parentVC.containerNavigationItem.title = nil;
         parentVC.containerNavigationItem.titleView = searchcustomView//self.titleView
         searchButton.addTarget(self, action: #selector(MenuVC.showLocationPicker(_:)), forControlEvents: UIControlEvents.TouchUpInside);
-        
+        /*
         let filterButton: UIButton = UIButton(type: .Custom);
         filterButton.frame = CGRectMake(8, 2, 32, 32);
         filterButton.setBackgroundImage(UIImage(named: "filter.png"), forState: .Normal)
@@ -364,6 +364,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
 //        self.cartButtonIcon = cartButton
         let useItem: UIBarButtonItem = UIBarButtonItem(customView: customView);
         parentVC.containerNavigationItem.setRightBarButtonItem(useItem, animated: true);
+ */
 
     }
     
