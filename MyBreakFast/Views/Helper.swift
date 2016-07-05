@@ -149,6 +149,12 @@ import Reachability
     
     //MARK: DataBase methods
     
+    func getOrderItemForItemId(itemId: String)->OrderItem{
+        return (self.order?.orders.filter(){
+            return ($0.itemId == itemId)
+            }[0])!;
+    }
+    
     func saveLocations(locations: AnyObject) {
         self.deleteData("Locations");
         self.saveContext()

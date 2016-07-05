@@ -221,7 +221,10 @@ class UserOrderDetails: UIViewController {
 
     func showAddAddressVC(){
 //        AddAddressVC
-        self.presentViewController((self.storyboard?.instantiateViewControllerWithIdentifier("AddAddressNVC"))!, animated: true) { () -> Void in
+        let nvc = (self.storyboard?.instantiateViewControllerWithIdentifier("AddAddressNVC")) as! UINavigationController
+        self.presentViewController(nvc, animated: true) { () -> Void in
+            let vc = nvc.topViewController as! AddAddressVC
+            vc.locationPickerDisabled = true;
         }
     }
     

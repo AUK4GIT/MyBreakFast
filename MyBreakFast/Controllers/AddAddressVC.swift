@@ -12,7 +12,7 @@ protocol AddressProtocol: class {
     func didPickAddress(addrId: String?);
 }
 class AddAddressVC: UIViewController, LocationPickerVCDelegate {
-    
+    var locationPickerDisabled = false;
     @IBOutlet var collectionView: UICollectionView!
     var itemsArray : [AnyObject] = [];
     weak var delegate : AddressProtocol?
@@ -40,6 +40,9 @@ class AddAddressVC: UIViewController, LocationPickerVCDelegate {
     }
     
     func showLocationPicker(sender: UIButton) {
+        if self.locationPickerDisabled {
+            return;
+        }
         let locationPickVC : LocationPickerVC = self.storyboard?.instantiateViewControllerWithIdentifier("LocationPickerVC") as! LocationPickerVC
         locationPickVC.delegate = self;
         locationPickVC.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext

@@ -92,8 +92,9 @@ class MenuItemCell: UICollectionViewCell {
         }
         
         self.quantityLabel.text = String(self.quantity)
+        let category = self.item!.category!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
 
-        switch self.item!.category!{
+        switch category{
         case "0" :
             self.descButton.setImage(UIImage(named: "spinch-info.png"), forState: .Normal);
             break;
@@ -122,7 +123,7 @@ class MenuItemCell: UICollectionViewCell {
             self.cellBlackTape.hidden = false;
         }
         
-        self.orderItem?.itemId = self.item?.itemid
+//        self.orderItem?.itemId = self.item?.itemid
         
         //self.cellBGView.layer.masksToBounds = false
         //self.cellBGView.layer.shadowColor = UIColor.darkGrayColor().CGColor

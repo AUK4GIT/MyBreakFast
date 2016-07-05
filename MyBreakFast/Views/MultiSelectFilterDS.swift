@@ -24,7 +24,7 @@ class MultiSelectFilterDS: NSObject, UICollectionViewDelegate, UICollectionViewD
     // MARK: UICollectionView delegates and datasources
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-        return CGSizeMake(100, 44);
+        return CGSizeMake(75, 44);
     }
     
     
@@ -43,7 +43,13 @@ class MultiSelectFilterDS: NSObject, UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        self.filters.insert((self.filtersArray[indexPath.row]["filtervalue"])!)
+        if ((self.filtersArray[indexPath.row]["filtervalue"])! == "All") {
+            self.filters = Set();
+
+        } else {
+            self.filters.insert((self.filtersArray[indexPath.row]["filtervalue"])!)
+
+        }
         self.delegate?.didFilterWithString!(self.filters)
 
     }

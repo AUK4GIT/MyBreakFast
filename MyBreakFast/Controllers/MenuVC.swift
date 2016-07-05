@@ -88,9 +88,10 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         
         self.filterCollView.delegate = mulSelFilter
         self.filterCollView.dataSource = mulSelFilter
-        self.filterCollView.allowsMultipleSelection = true;
+        self.filterCollView.allowsMultipleSelection = false;
         mulSelFilter.delegate = self;
         self.filterCollView.reloadData()
+        self.filterCollView.selectItemAtIndexPath(NSIndexPath.init(forItem: 0, inSection: 0), animated: true, scrollPosition: .Left)
     }
     
     override func viewWillLayoutSubviews() {
@@ -103,11 +104,15 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     
     func didFilterWithString(searchTags: Set<String>) {
         print("Your search string is \(searchTags)")
-        self.itemsArray = self.tempItemsArray.filter(){
-            let tags = $0.tags
-            let tagsArray = tags!.componentsSeparatedByString(",");
-            return tagsArray.contains { searchTags.contains($0) };
-        };
+        if searchTags.count == 0{
+            self.itemsArray = self.tempItemsArray
+        } else {
+            self.itemsArray = self.tempItemsArray.filter(){
+                let tags = $0.tags
+                let tagsArray = tags!.componentsSeparatedByString(",");
+                return tagsArray.contains { searchTags.contains($0) };
+            };
+        }
         self.collectionView.reloadData();
     }
 
@@ -241,11 +246,15 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         Helper.sharedInstance.getMenuFor(selectedDate, completionHandler: {
             self.itemsArray = Helper.sharedInstance.getTodaysItems();
             Helper.sharedInstance.order = Order();
-            let maxCount = max((self.itemsArray.count-1), 0)
-            for _ in 0...maxCount {
-                Helper.sharedInstance.order?.orders.append(OrderItem());
-                }
+            _ = max((self.itemsArray.count-1), 0)
             self.tempItemsArray = self.itemsArray;
+
+            for (_, element) in self.itemsArray.enumerate() {
+                let orderItem = OrderItem()
+                orderItem.itemId = element.itemid
+                Helper.sharedInstance.order?.orders.append(orderItem);
+            }
+
             self.collectionView.reloadData()
         })
     }
@@ -422,7 +431,9 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         let cell: MenuItemCell = (collectionView.dequeueReusableCellWithReuseIdentifier("item", forIndexPath: indexPath) as? MenuItemCell)!
         let item : Item = self.itemsArray[indexPath.item]
         cell.item = item;
-        cell.orderItem = Helper.sharedInstance.order?.orders[indexPath.row] 
+//        cell.orderItem = Helper.sharedInstance.order?.orders[indexPath.row] 
+        cell.orderItem = Helper.sharedInstance.getOrderItemForItemId(item.itemid!)
+
         cell.setItemContent();
         return cell;
     }

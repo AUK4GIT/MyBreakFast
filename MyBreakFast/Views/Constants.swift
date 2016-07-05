@@ -120,7 +120,7 @@ struct Constants {
     
     struct StaticContent {
         static let SideMenuList : [String] = ["Menu", "My Orders", "My Subscriptions","About Us", "Contact Us", "Rate Us", "Refer a Friend", "Terms & Conditions"];
-        static let Filters : [[String:String]] = [["filterName":"Veg", "filtervalue":"Veg","imageName":"Veg.png", "color":"green"],
+        static let Filters : [[String:String]] = [["filterName":"All", "filtervalue":"All","imageName":"", "color":"white"],["filterName":"Veg", "filtervalue":"Veg","imageName":"Veg.png", "color":"green"],
         ["filterName":"Non-Veg", "filtervalue":"Non Veg","imageName":"NonVeg-1.png", "color":"red"],
         ["filterName":"Egg", "filtervalue":"Egg","imageName":"Egg-1.png", "color":"yellow"],
         ["filterName":"Sandwich", "filtervalue":"Club Sandwhich","imageName":"ClubSandwich.png", "color":"gray"],
