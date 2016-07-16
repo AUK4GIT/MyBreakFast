@@ -14,7 +14,7 @@ struct Constants {
     struct API {
         static let BaseURL: String = "http://firsteat.in/andro/"
         static let SubscrImgBaseURL: String = "http://firsteat.in/andro/"
-        static let GCMRegistration: String = "http://firsteatwebportal.in/api/v1/gcm/registeruser"
+        static let GCMRegistration: String = BaseURL+"index.php/ws/first/app"
         static let UserRegistration: String = BaseURL+"index.php/ws/register/user"
         static let UserLogin: String = BaseURL+"index.php/ws/verify/mobile/user"
         static let UserDetails: String = BaseURL+"index.php/ws/users/details/all/"
