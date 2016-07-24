@@ -10,10 +10,10 @@ import Foundation
 
 @objc protocol FilterProtocol : class
 {
-    optional func didFilterWithString(searchString: Set<String>);
+    optional func didFilterWithTag(searchTags: Foodtags);
 }
 class MultiSelectFilterDS: NSObject, UICollectionViewDelegate, UICollectionViewDataSource{
-    var filtersArray = Constants.StaticContent.Filters
+    var filtersArray: [Foodtags] = []
     weak var delegate: FilterProtocol?
     var filters: Set<String> = []
 
@@ -35,29 +35,21 @@ class MultiSelectFilterDS: NSObject, UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: MultiSelCell = (collectionView.dequeueReusableCellWithReuseIdentifier("MultiSelCell", forIndexPath: indexPath) as? MultiSelCell)!
-        
-        cell.celllabel?.text = self.filtersArray[indexPath.row]["filterName"]
-//        cell.imageView?.image = UIImage(named: (self.filtersArray[indexPath.row]["imageName"])!);
-        
+        let foodTag = self.filtersArray[indexPath.row]
+        cell.celllabel?.text = foodTag.tagName
         return cell;
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        if ((self.filtersArray[indexPath.row]["filtervalue"])! == "All") {
-            self.filters = Set();
-
-        } else {
-            self.filters.insert((self.filtersArray[indexPath.row]["filtervalue"])!)
-
-        }
-        self.delegate?.didFilterWithString!(self.filters)
+   
+        let foodtag: Foodtags = self.filtersArray[indexPath.row]
+        self.delegate?.didFilterWithTag!(foodtag)
 
     }
     
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
-        self.filters.remove((self.filtersArray[indexPath.row]["filtervalue"])!)
+//        self.filters.remove((self.filtersArray[indexPath.row]["filtervalue"])!)
         //        }
-        self.delegate?.didFilterWithString!(self.filters)
-        
+//        self.delegate?.didFilterWithTag!(self.filters)
     }
 }

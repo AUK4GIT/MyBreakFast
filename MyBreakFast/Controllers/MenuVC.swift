@@ -91,7 +91,6 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         self.filterCollView.allowsMultipleSelection = false;
         mulSelFilter.delegate = self;
         self.filterCollView.reloadData()
-        self.filterCollView.selectItemAtIndexPath(NSIndexPath.init(forItem: 0, inSection: 0), animated: true, scrollPosition: .Left)
     }
     
     override func viewWillLayoutSubviews() {
@@ -102,15 +101,16 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
    
     // MARK: - FilterView Delegate
     
-    func didFilterWithString(searchTags: Set<String>) {
-        print("Your search string is \(searchTags)")
-        if searchTags.count == 0{
+    func didFilterWithTag(tag: Foodtags) {
+        print("Your search string is \(tag.tagName)")
+        if tag.tagName == "All"{
             self.itemsArray = self.tempItemsArray
         } else {
             self.itemsArray = self.tempItemsArray.filter(){
                 let tags = $0.tags
                 let tagsArray = tags!.componentsSeparatedByString(",");
-                return tagsArray.contains { searchTags.contains($0) };
+                print(tagsArray.contains(tag.tagName!), tagsArray)
+                return tagsArray.contains(tag.tagName!);
             };
         }
         self.collectionView.reloadData();
@@ -256,6 +256,15 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
             }
 
             self.collectionView.reloadData()
+            if Helper.sharedInstance.foodTags?.count > 0 {
+                let allTag : Foodtags = Foodtags()
+                allTag.saveData(["id":"0","tag_category":"All","tag_name":"All"]);
+                self.mulSelFilter.filtersArray = Helper.sharedInstance.foodTags!;
+                self.mulSelFilter.filtersArray.insert(allTag, atIndex: 0)
+                self.filterCollView.reloadData()
+            self.filterCollView.selectItemAtIndexPath(NSIndexPath.init(forItem: 0, inSection: 0), animated: true, scrollPosition: .Left)
+            }
+
         })
     }
     

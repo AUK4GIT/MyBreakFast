@@ -34,7 +34,8 @@ import Reachability
     var redeemValue: Double = 0.5;
     var kitchen = "";
     var subscription: Subscription?
-
+    var foodTags: [Foodtags]?
+    
     func setUpReachability(){
     
         self.reach = Reachability.reachabilityForInternetConnection()
@@ -1271,6 +1272,16 @@ import Reachability
                     self.deleteData("Fooddetails");
                     self.deleteData("Item");
                     self.saveContext();
+                    if let tagsData =  JSON.objectForKey("all_tags") as? Array<AnyObject>{
+                        Helper.sharedInstance.foodTags = []
+                        for tag in tagsData{
+                            if let tg = tag as? NSDictionary{
+                                let foodTag = Foodtags()
+                                foodTag.saveData(tg)
+                                Helper.sharedInstance.foodTags?.append(foodTag)
+                            }
+                        }
+                    }
                     if let jData =  JSON.objectForKey("data") as? Array<AnyObject>{
                         var numPoints = 2;
                         var pointsVal = 1;

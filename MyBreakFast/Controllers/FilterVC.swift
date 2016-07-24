@@ -20,7 +20,8 @@ class FIlterVC: CustomModalViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad();
-        self.filtersArray = Constants.StaticContent.Filters;
+//        self.filtersArray = Constants.StaticContent.Filters;
+        self.filtersArray = [];
         self.tableView.registerNib(UINib(nibName: "FilterCell", bundle: nil), forCellReuseIdentifier: "PopCell")
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "FilterCell")
 
