@@ -265,6 +265,20 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
             self.filterCollView.selectItemAtIndexPath(NSIndexPath.init(forItem: 0, inSection: 0), animated: true, scrollPosition: .Left)
             }
 
+            if Helper.sharedInstance.isAddPopuprequired {
+                let vc : ADDVC = self.storyboard?.instantiateViewControllerWithIdentifier("ADDVC") as! ADDVC
+                Helper.sharedInstance.fetchAddImageForURL(Helper.sharedInstance.popupURL, completionHandler: { (response) in
+                    
+                    let responseStatus = (response as? String) ?? ""
+                    if responseStatus == "ERROR"{
+                    } else {
+                        self.presentViewController(vc, animated: false, completion: { (finished) in
+                            vc.imgView.image = UIImage(data: response as! NSData);
+                            }
+                        )
+                    }
+                })
+            }
         })
     }
     

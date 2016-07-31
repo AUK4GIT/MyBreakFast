@@ -193,18 +193,20 @@ class SubscriptionVC: UIViewController, LocationPickerDelegate {
 
                 self.setSelectionParameters()
 
-//                let regularPlan = self.plansList![indexPath.row]
-//                let dieticianSelected = self.dieticiansDataSource.dieticiansList![0]
-//                var mealPlans = regularPlan.mealPlans!.filter({
-//                    $0.dieticianId! == dieticianSelected.dieticianId
-//                })
-//                let mealPlan = mealPlans[0]
-//
-//                self.mealDetailsView.setDescription(mealPlan.planDescription)
-//
-//                var url: String? = mealPlan.imageURL
-//                url = Constants.API.SubscrImgBaseURL+(url?.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLQueryAllowedCharacterSet()))!
-//                self.planImageView.sd_setImageWithURL(NSURL(string: url!), placeholderImage: UIImage(named: ""), completed: nil)
+                if Helper.sharedInstance.isAddPopuprequired {
+                    let vc : ADDVC = self.storyboard?.instantiateViewControllerWithIdentifier("ADDVC") as! ADDVC
+                    Helper.sharedInstance.fetchAddImageForURL(Helper.sharedInstance.popupURL, completionHandler: { (response) in
+                        
+                        let responseStatus = (response as? String) ?? ""
+                        if responseStatus == "ERROR"{
+                        } else {
+                            self.presentViewController(vc, animated: false, completion: { (finished) in
+                                vc.imgView.image = UIImage(data: response as! NSData);
+                                }
+                            )
+                        }
+                    })
+                }
 
             }
         }

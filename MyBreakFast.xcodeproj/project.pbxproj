@@ -10,6 +10,7 @@
 		7197232473EAE4B72D117DDA /* Pods_MyBreakFast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E122D7142E78537EB4BA1D5 /* Pods_MyBreakFast.framework */; };
 		AA09FF0E1D1FC4FD003AE665 /* MealPlanDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA09FF0D1D1FC4FD003AE665 /* MealPlanDetailsView.swift */; };
 		AA0E0E5D1D43DB2200C1B5E0 /* Foodtags.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E0E5C1D43DB2200C1B5E0 /* Foodtags.swift */; };
+		AA33E6D61D4926260061BDBB /* ADDVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA33E6D51D4926260061BDBB /* ADDVC.swift */; };
 		AA3EBD581D28D4F000F7FAC4 /* MySubscriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA3EBD571D28D4F000F7FAC4 /* MySubscriptionCell.xib */; };
 		AA3EBD5A1D28D52F00F7FAC4 /* MySubscriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3EBD591D28D52F00F7FAC4 /* MySubscriptionCell.swift */; };
 		AA4847D61D29236700EFF576 /* SummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4847D51D29236700EFF576 /* SummaryCell.swift */; };
@@ -410,6 +411,7 @@
 		5E122D7142E78537EB4BA1D5 /* Pods_MyBreakFast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyBreakFast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA09FF0D1D1FC4FD003AE665 /* MealPlanDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealPlanDetailsView.swift; path = Views/MealPlanDetailsView.swift; sourceTree = "<group>"; };
 		AA0E0E5C1D43DB2200C1B5E0 /* Foodtags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Foodtags.swift; path = Models/Foodtags.swift; sourceTree = "<group>"; };
+		AA33E6D51D4926260061BDBB /* ADDVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ADDVC.swift; path = Controllers/ADDVC.swift; sourceTree = "<group>"; };
 		AA3EBD571D28D4F000F7FAC4 /* MySubscriptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MySubscriptionCell.xib; path = Views/Xibs/MySubscriptionCell.xib; sourceTree = "<group>"; };
 		AA3EBD591D28D52F00F7FAC4 /* MySubscriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MySubscriptionCell.swift; path = Views/MySubscriptionCell.swift; sourceTree = "<group>"; };
 		AA4847D51D29236700EFF576 /* SummaryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SummaryCell.swift; path = Views/SummaryCell.swift; sourceTree = "<group>"; };
@@ -1049,6 +1051,7 @@
 				AA51D2911D1C527F00D404C7 /* DieticianBioVC.swift */,
 				AAFAA47B1D24D2CC003D939D /* MySubscriptions.swift */,
 				AAFAA47D1D2607C1003D939D /* MealSummaryVC.swift */,
+				AA33E6D51D4926260061BDBB /* ADDVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -2238,6 +2241,7 @@
 				ED742D621CA78856007FC96D /* InitialViewController.m in Sources */,
 				ED344C991C9B14DA008643F9 /* ContactUsVC.swift in Sources */,
 				ED742C941CA78856007FC96D /* CTSPgSettings.m in Sources */,
+				AA33E6D61D4926260061BDBB /* ADDVC.swift in Sources */,
 				AAFAA47C1D24D2CC003D939D /* MySubscriptions.swift in Sources */,
 				ED742C911CA78856007FC96D /* CTSPaymentRes.m in Sources */,
 				ED344CD61C9B1526008643F9 /* PaymentModeCell.swift in Sources */,

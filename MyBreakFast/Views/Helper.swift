@@ -35,7 +35,9 @@ import Reachability
     var kitchen = "";
     var subscription: Subscription?
     var foodTags: [Foodtags]?
-    
+    var isAddPopuprequired: Bool = false;
+    var popupURL: String = "";
+
     func setUpReachability(){
     
         self.reach = Reachability.reachabilityForInternetConnection()
@@ -774,6 +776,24 @@ import Reachability
                             completionHandler(JSON.objectForKey("data")!)
                         }
                         
+                    }
+                }
+        }
+    }
+    
+    func fetchAddImageForURL(urlString: String ,completionHandler: (AnyObject) -> ()) {
+        
+        Alamofire.request(.GET, urlString).response { (request, response, data, error) in
+                print(request)  // original URL request
+                print(response) // URL response
+                //                //print(response.data)     // server data
+                // do whatever you want here
+                dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                    if (error != nil) {
+                        print(error)
+                        completionHandler("ERROR")
+                    } else {
+                        completionHandler(data!)
                     }
                 }
         }
@@ -1807,6 +1827,36 @@ import Reachability
                         completionHandler("ERROR")
                     }
                 }
+        }
+    }
+    
+    func getDefaultScreen(completionHandler: (AnyObject) -> ()) {
+        
+        Helper.sharedInstance.showActivity()
+        if !self.reach!.isReachable() {
+            UIAlertView(title: "No Internet Connection!", message: "Please connect to internet and try again", delegate: nil, cancelButtonTitle: "OK").show()
+            Helper.sharedInstance.hideActivity()
+            return
+        }
+        let completeURL = Constants.API.DefaultScreen
+        Alamofire.request(.GET, completeURL, parameters: nil)
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                //print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                    if let JSON = response.result.value {
+                        print("JSON: \(JSON)")
+                        completionHandler(JSON)
+                    } else {
+                        completionHandler("ERROR")
+                    }
+                    Helper.sharedInstance.hideActivity()
+                    
+                }
+                
         }
     }
     
