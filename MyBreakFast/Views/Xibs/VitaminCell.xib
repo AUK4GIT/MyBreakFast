@@ -21,13 +21,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fhl-DG-8Lq">
-                        <rect key="frame" x="2" y="0.0" width="45" height="45"/>
+                        <rect key="frame" x="2" y="0.0" width="46" height="30"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle-red" translatesAutoresizingMaskIntoConstraints="NO" id="v5A-Ex-YrD">
-                                <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle-red" translatesAutoresizingMaskIntoConstraints="NO" id="v5A-Ex-YrD">
+                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plX-DL-Ux8">
-                                <rect key="frame" x="11" y="15" width="22" height="16"/>
+                                <rect key="frame" x="12" y="7" width="22" height="16"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -41,16 +41,21 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="45" id="0gd-5f-qeS"/>
                             <constraint firstAttribute="bottom" secondItem="v5A-Ex-YrD" secondAttribute="bottom" id="5pk-Kk-lPr"/>
-                            <constraint firstAttribute="height" constant="45" id="IQK-3Y-N6V"/>
+                            <constraint firstAttribute="height" constant="30" id="IQK-3Y-N6V"/>
                             <constraint firstAttribute="trailing" secondItem="v5A-Ex-YrD" secondAttribute="trailing" id="MMs-qI-Wdm"/>
                             <constraint firstItem="plX-DL-Ux8" firstAttribute="centerX" secondItem="Fhl-DG-8Lq" secondAttribute="centerX" id="Q4I-86-S89"/>
                             <constraint firstItem="v5A-Ex-YrD" firstAttribute="leading" secondItem="Fhl-DG-8Lq" secondAttribute="leading" id="TFy-Bn-L1A"/>
                             <constraint firstItem="plX-DL-Ux8" firstAttribute="centerY" secondItem="Fhl-DG-8Lq" secondAttribute="centerY" id="cfD-fH-lSL"/>
                             <constraint firstItem="v5A-Ex-YrD" firstAttribute="top" secondItem="Fhl-DG-8Lq" secondAttribute="top" id="wkw-Yh-7G5"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0gd-5f-qeS"/>
+                            </mask>
+                        </variation>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cal." textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOc-vs-foJ">
-                        <rect key="frame" x="15" y="47" width="21" height="15"/>
+                        <rect key="frame" x="15" y="32" width="21" height="15"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -64,7 +69,9 @@
             <constraints>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XOc-vs-foJ" secondAttribute="trailing" constant="2" id="0Ro-at-3bM"/>
                 <constraint firstItem="XOc-vs-foJ" firstAttribute="centerX" secondItem="Sv9-mH-dq1" secondAttribute="centerX" id="5hn-xc-gbA"/>
+                <constraint firstAttribute="trailing" secondItem="Fhl-DG-8Lq" secondAttribute="trailing" constant="2" id="GFb-cR-pLR"/>
                 <constraint firstAttribute="trailing" secondItem="Fhl-DG-8Lq" secondAttribute="trailing" id="Klf-ZS-lgY"/>
+                <constraint firstItem="Fhl-DG-8Lq" firstAttribute="leading" secondItem="Sv9-mH-dq1" secondAttribute="leading" constant="2" id="LKK-SM-zTY"/>
                 <constraint firstItem="XOc-vs-foJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Sv9-mH-dq1" secondAttribute="leading" constant="2" id="Waq-6Y-FGb"/>
                 <constraint firstAttribute="bottom" secondItem="XOc-vs-foJ" secondAttribute="bottom" id="a90-dD-IhT"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XOc-vs-foJ" secondAttribute="trailing" id="cfL-uR-68r"/>

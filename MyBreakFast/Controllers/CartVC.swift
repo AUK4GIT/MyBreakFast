@@ -66,6 +66,10 @@ class CartVC: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CartVC.PaymentFinished(_:)), name: "PaymentFinished", object: nil)
     }
     
+    func didPickPaymentType() {
+        self.collectionView.reloadData()
+    }
+    
     deinit{
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
@@ -264,7 +268,13 @@ class CartVC: UIViewController {
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return sectionHeaders.count;
+        if Helper.sharedInstance.order!.modeOfPayment == PaymentType.COD
+        {
+            return sectionHeaders.count;
+
+        } else {
+            return sectionHeaders.count-1;
+        }
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

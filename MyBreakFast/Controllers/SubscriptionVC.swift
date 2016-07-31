@@ -335,7 +335,7 @@ class SubscriptionVC: UIViewController, LocationPickerDelegate {
         
         let regularPlan = self.plansList![indexPath.row]
         cell?.nameLabel.text = regularPlan.name
-        cell?.priceLabel.text = "Plan"//regularPlan.price
+        cell?.priceLabel.text = regularPlan.mealPlans![indexPath.row].numberofMeals + " Meal Plan"
         return cell!;
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {

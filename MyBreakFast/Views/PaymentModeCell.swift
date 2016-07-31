@@ -46,6 +46,6 @@ class PaymentModeCell: UICollectionViewCell {
                 break;
             }
         }
-        
+        sender.sendAction(#selector(CartVC.didPickPaymentType), to: nil, forEvent: nil)
     }
 }

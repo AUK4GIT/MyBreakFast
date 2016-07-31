@@ -15,6 +15,10 @@ class MealPlan: NSObject {
     var selectionText: String?
     var imageURL: String?
     var planDescription: String?
+    var numberofMeals: String = "0"
+    var meal1Exists: String?
+    var meal2Exists: String?
+    var meal3Exists: String?
     //    var sat: String?
     //    var sun: String?
     //    var price: String?
@@ -41,6 +45,36 @@ class MealPlan: NSObject {
             self.name = obj
         }
         
+        var noOfMeals = 0;
+        if let obj = mealPlan.objectForKey("meal1_exist") as? NSNumber{
+            self.meal1Exists = obj.stringValue
+        } else {
+            self.meal1Exists = mealPlan.objectForKey("meal1_exist") as? String;
+        }
+        
+        if let obj = mealPlan.objectForKey("meal2_exist") as? NSNumber{
+            self.meal2Exists = obj.stringValue
+        } else {
+            self.meal2Exists = mealPlan.objectForKey("meal2_exist") as? String;
+        }
+        
+        if let obj = mealPlan.objectForKey("meal3_exist") as? NSNumber{
+            self.meal3Exists = obj.stringValue
+        } else {
+            self.meal3Exists = mealPlan.objectForKey("meal3_exist") as? String;
+        }
+        
+        if self.meal1Exists == "1" {
+            noOfMeals = noOfMeals+1;
+        }
+        if self.meal2Exists == "1" {
+            noOfMeals = noOfMeals+1;
+        }
+        if self.meal3Exists == "1" {
+            noOfMeals = noOfMeals+1;
+        }
+        
+        self.numberofMeals = String(noOfMeals);
         /*
          if let obj = mealPlan.objectForKey("min_week") as? NSNumber{
          self.minweek = obj.stringValue

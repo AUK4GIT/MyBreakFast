@@ -13,4 +13,13 @@ class VitaminCell: UICollectionViewCell {
     @IBOutlet var calValue: UILabel!
     @IBOutlet var label: UILabel!
     @IBOutlet var circleView: UIView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.circleView.layer.cornerRadius = 5.0;
+        self.circleView.layer.borderWidth = 1.0;
+        self.circleView.layer.borderColor = (Constants.AppColors.blue.color as UIColor).CGColor;
+
+    }
 }
