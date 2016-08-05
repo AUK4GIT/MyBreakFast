@@ -265,7 +265,7 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
             self.filterCollView.selectItemAtIndexPath(NSIndexPath.init(forItem: 0, inSection: 0), animated: true, scrollPosition: .Left)
             }
 
-            if Helper.sharedInstance.isAddPopuprequired {
+            if Helper.sharedInstance.isAddPopuprequired && (Helper.sharedInstance.popupShown == false){
                 let vc : ADDVC = self.storyboard?.instantiateViewControllerWithIdentifier("ADDVC") as! ADDVC
                 Helper.sharedInstance.fetchAddImageForURL(Helper.sharedInstance.popupURL, completionHandler: { (response) in
                     
@@ -274,6 +274,8 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
                     } else {
                         self.presentViewController(vc, animated: false, completion: { (finished) in
                             vc.imgView.image = UIImage(data: response as! NSData);
+                            Helper.sharedInstance.isAddPopuprequired = false;
+                            Helper.sharedInstance.popupShown = true;
                             }
                         )
                     }

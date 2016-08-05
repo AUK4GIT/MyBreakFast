@@ -28,6 +28,7 @@ class MealSummaryVC: UIViewController {
     var mealsArray: [AnyObject]?
     let dateForm = NSDateFormatter();
     var satSelected: Bool = false;
+    var sunSelected: Bool = false;
     var wmDateFormatter = NSDateFormatter();
 
     @IBOutlet var collectionView: UICollectionView!
@@ -170,6 +171,8 @@ func getContentForItemId(itemId: String){
             let order = responsestatus?.objectForKey("order")
             let startDate = order?.objectForKey("start_date")
             let satIncluded = order!.objectForKey("sat_inc")
+            let sunIncluded = order!.objectForKey("sun_inc")
+
             if let satSel = satIncluded as? NSNumber{
                 if satSel == 1{
                     self.satSelected = true;
@@ -184,6 +187,22 @@ func getContentForItemId(itemId: String){
                     self.satSelected = false;
                 }
             }
+            
+            if let sunSel = sunIncluded as? NSNumber{
+                if sunSel == 1{
+                    self.sunSelected = true;
+                } else {
+                    self.sunSelected = false;
+                }
+            } else {
+                let sunSel = sunIncluded as? String
+                if sunSel == "1"{
+                    self.sunSelected = true;
+                } else {
+                    self.sunSelected = false;
+                }
+            }
+            
             self.startDate.text = startDate as? String
             self.calculateWeekDaysFrom(self.dateForm.dateFromString(startDate as! String));
             if let week = order?.objectForKey("week") as? NSNumber{

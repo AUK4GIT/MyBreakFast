@@ -22,8 +22,8 @@ class ADDVC: UIViewController {
     }
     
     @IBAction func dismissView(sender: AnyObject) {
-        self.centerY.constant = -(self.view.bounds.size.height - self.contentView.bounds.size.height + self.contentView.bounds.size.height/2);
-        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.3, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+        self.centerY.constant = -self.contentView.bounds.size.height-50;
+        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.0, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
             self.view.layoutIfNeeded()
         }) { (finished) in
             self.dismissViewControllerAnimated(false, completion: nil)

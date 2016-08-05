@@ -115,9 +115,12 @@ class CouponCodeCell: UICollectionViewCell {
                     let amtPayable = Int((Helper.sharedInstance.order?.totalAmountPayable)!)
                     var totalAmtPay = amtPayable!-Int(Float(discountValue!)!)
                     if totalAmtPay < 0 {
+//                        discountValue = (Helper.sharedInstance.order?.totalAmount)
+//                        let discountsAlreadyApplied = Int((Helper.sharedInstance.order?.discount)!);
+//                        discountValue = String(Int(discountValue!)!-discountsAlreadyApplied!);
+//                        Helper.sharedInstance.order?.discount = discountValue!;
+//                        totalAmtPay = 0;
                         discountValue = (Helper.sharedInstance.order?.totalAmount)
-                        let discountsAlreadyApplied = Int((Helper.sharedInstance.order?.discount)!);
-                        discountValue = String(Int(discountValue!)!-discountsAlreadyApplied!);
                         Helper.sharedInstance.order?.discount = discountValue!;
                         totalAmtPay = 0;
                     }

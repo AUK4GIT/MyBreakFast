@@ -15,7 +15,7 @@ class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate, AddressProt
     
     @IBOutlet var mealPlanLabel: UILabel!
     @IBOutlet var addressLabelForMeal: UILabel!
-//    @IBOutlet var sunButton: UIButton!
+    @IBOutlet var sunButton: UIButton!
     @IBOutlet var satButton: UIButton!
     @IBOutlet var calendarView: CalendarView!
     @IBOutlet var calendarBGView: UIView!
@@ -73,13 +73,11 @@ class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate, AddressProt
                 
                 if self.planDetails?.sat == "0" {
                     self.satButton.enabled = false;
-//                    self.sunButton.userInteractionEnabled = false;
                 }
                 //For Now Sunday is Disabled
-//                if self.planDetails?.sun == "0" {
-//                    self.sunButton.enabled = false;
-//                self.sunButton.userInteractionEnabled = false;
-//                }
+                if self.planDetails?.sun == "0" {
+                    self.sunButton.enabled = false;
+                }
                 
                 if self.planDetails?.meal1Exists == "0" {
                     self.MealsSegmentControl.disableSegmentAtIndex(0)
@@ -180,7 +178,7 @@ class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate, AddressProt
             let components: NSDateComponents = calendar.components(.Weekday, fromDate: aDate);
             let weekdayOfDate: Int = components.weekday;
             
-            if !(weekdayOfDate == 1 || (weekdayOfDate == 7 && !self.satButton.selected)) {
+            if !((weekdayOfDate == 1 && !self.sunButton.selected) || (weekdayOfDate == 7 && !self.satButton.selected)) {
                 print("weekdayOfDate-> ", aDate, weekdayOfDate)
                 self.weekDatesArray.append(aDate)
             }
@@ -202,11 +200,11 @@ class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate, AddressProt
         var price = 0;
         if sender.selected {
             sender.selected = false
-            price = Int((self.planDetails?.price)!)!
+            price = self.sunButton.selected ? Int((self.planDetails?.priceSun)!)! : Int((self.planDetails?.price)!)!
             Helper.sharedInstance.order?.satIncluded = "0"
         } else {
             sender.selected = true;
-            price = Int((self.planDetails?.priceSat)!)!
+            price = self.sunButton.selected ? Int((self.planDetails?.priceSatSun)!)! : Int((self.planDetails?.priceSat)!)!
             Helper.sharedInstance.order?.satIncluded = "1"
         }
         self.planPricePerWeek = price;
@@ -220,6 +218,32 @@ class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate, AddressProt
         self.priceLabel.setTitle(priceLbl, forState: .Normal)
         Helper.sharedInstance.order?.totalAmount = String(price)
 
+    }
+    
+    @IBAction func includeSunday(sender: UIButton) {
+        
+        var priceLbl = "Pay ₹ "
+        var price = 0;
+        if sender.selected {
+            sender.selected = false
+            price = self.satButton.selected ? Int((self.planDetails?.priceSat)!)! : Int((self.planDetails?.price)!)!
+            Helper.sharedInstance.order?.sunIncluded = "0"
+        } else {
+            sender.selected = true;
+            price = self.satButton.selected ? Int((self.planDetails?.priceSatSun)!)! : Int((self.planDetails?.priceSun)!)!
+            Helper.sharedInstance.order?.sunIncluded = "1"
+        }
+        self.planPricePerWeek = price;
+        price = price*self.repeatCount!;
+        priceLbl = priceLbl+String(price)
+        
+        self.calculateWeekDaysFrom(self.selectedStartDate)
+        self.calendarModelSource.datesArray = self.weekDatesArray
+        self.calendarCollectionView.reloadData()
+        
+        self.priceLabel.setTitle(priceLbl, forState: .Normal)
+        Helper.sharedInstance.order?.totalAmount = String(price)
+        
     }
     
     @IBAction func checkOut(sender: AnyObject) {

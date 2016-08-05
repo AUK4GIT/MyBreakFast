@@ -36,6 +36,7 @@ import Reachability
     var subscription: Subscription?
     var foodTags: [Foodtags]?
     var isAddPopuprequired: Bool = false;
+    var popupShown: Bool = false;
     var popupURL: String = "";
 
     func setUpReachability(){
@@ -1530,6 +1531,7 @@ import Reachability
         postParams["start_date"] = self.order?.subscriptionDate
         postParams["change"] = change
         postParams["sat_inc"] = self.order?.satIncluded ?? "0"
+        postParams["sun_inc"] = self.order?.sunIncluded ?? "0"
 
         Alamofire.request(.GET, completeURL, parameters: postParams)
             .responseJSON { response in

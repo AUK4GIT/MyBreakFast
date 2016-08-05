@@ -193,7 +193,7 @@ class SubscriptionVC: UIViewController, LocationPickerDelegate {
 
                 self.setSelectionParameters()
 
-                if Helper.sharedInstance.isAddPopuprequired {
+                if Helper.sharedInstance.isAddPopuprequired && (Helper.sharedInstance.popupShown == false){
                     let vc : ADDVC = self.storyboard?.instantiateViewControllerWithIdentifier("ADDVC") as! ADDVC
                     Helper.sharedInstance.fetchAddImageForURL(Helper.sharedInstance.popupURL, completionHandler: { (response) in
                         
@@ -202,6 +202,8 @@ class SubscriptionVC: UIViewController, LocationPickerDelegate {
                         } else {
                             self.presentViewController(vc, animated: false, completion: { (finished) in
                                 vc.imgView.image = UIImage(data: response as! NSData);
+                                Helper.sharedInstance.isAddPopuprequired = false;
+                                Helper.sharedInstance.popupShown = true;
                                 }
                             )
                         }
@@ -335,7 +337,7 @@ class SubscriptionVC: UIViewController, LocationPickerDelegate {
         
         let regularPlan = self.plansList![indexPath.row]
         cell?.nameLabel.text = regularPlan.name
-        cell?.priceLabel.text = regularPlan.mealPlans![indexPath.row].numberofMeals + " Meal Plan"
+        cell?.priceLabel.text = regularPlan.mealPlans![0].numberofMeals + " Meal Plan"
         return cell!;
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {

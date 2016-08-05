@@ -43,14 +43,14 @@ class VitaminCollectionView: UICollectionView, UICollectionViewDataSource, UICol
     
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return (self.bounds.size.width-50*5)/5;
+        return 5//(self.bounds.size.width-50*5)/5;
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
 //        let width: CGFloat = ((UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone) ? collectionView.bounds.size.width-10 : 600.0);
 //        let height: CGFloat = (UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone) ? 320.0 : 400.0;
     
-        return CGSizeMake(50, 70);
+        return CGSizeMake((self.bounds.size.width-6*5)/5, 70);
     }
         
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {

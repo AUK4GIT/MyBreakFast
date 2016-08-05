@@ -41,5 +41,5 @@ class Order: NSObject {
     var weeks:String?
     var subscriptionDate: String?
     var satIncluded: String?
-
+    var sunIncluded: String?
 }
