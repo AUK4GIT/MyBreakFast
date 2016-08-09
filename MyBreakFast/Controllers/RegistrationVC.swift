@@ -27,6 +27,8 @@ class RegistrationVC: UIViewController {
         self.isEditing = false;
 //        self.loginButton.layer.cornerRadius = 12.0;
         self.userObj = Helper.sharedInstance.getUserDetailsObj() as? UserDetails
+        
+        self.phonenumberField.keyboardType = UIKeyboardType.NumberPad;
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -129,6 +131,7 @@ class RegistrationVC: UIViewController {
                         warning.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
                             self.verifyOTPWithUserId((self.userObj?.userId!)!);
                         }))
+                        self.presentViewController(warning, animated: true, completion: nil)
                     }
                 } else {
                     let status = respo?.objectForKey("status") as? NSNumber
@@ -146,6 +149,7 @@ class RegistrationVC: UIViewController {
                         warning.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
                             self.verifyOTPWithUserId((self.userObj?.userId!)!);
                         }))
+                        self.presentViewController(warning, animated: true, completion: nil)
                     }
                 }
             })
@@ -156,7 +160,7 @@ class RegistrationVC: UIViewController {
             inputTextField = textField
         })
         
-        presentViewController(passwordPrompt, animated: true, completion: nil)
+        self.presentViewController(passwordPrompt, animated: true, completion: nil)
     }
     
     func validateAllFields()->Bool {
@@ -194,6 +198,12 @@ class RegistrationVC: UIViewController {
         return true
     }
     
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        if (textField == self.phonenumberField) && (range.location >= 10) {
+            return false
+        }
+        return true;
+    }
     
     func textFieldDidEndEditing(textField: UITextField) {
         if self.isEditing == true {

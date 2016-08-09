@@ -34,6 +34,7 @@ class AppSignInVC: UIViewController {
         
         self.loginButton.titleLabel?.adjustFontToRealIPhoneSize = true;
         self.faceBookButton.titleLabel?.adjustFontToRealIPhoneSize = true;
+        self.passwordField.keyboardType = UIKeyboardType.NumberPad;
 
         if let _ = Helper.sharedInstance.getDataFromUserDefaults(forKey: Constants.UserdefaultConstants.UserLoginStatus) {
         
@@ -176,6 +177,8 @@ class AppSignInVC: UIViewController {
                         warning.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
                             self.verifyOTPWithUserId((self.userObj?.userId!)!);
                         }))
+                        self.presentViewController(warning, animated: true, completion: nil)
+
                     }
                 }
             })
@@ -311,6 +314,13 @@ class AppSignInVC: UIViewController {
         self.isEditing = false;
         self.view.endEditing(true)
         return true
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        if (textField == self.passwordField) && (range.location >= 10) {
+            return false
+        }
+        return true;
     }
     
     func textFieldDidEndEditing(textField: UITextField) {

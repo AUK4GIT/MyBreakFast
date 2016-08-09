@@ -17,6 +17,8 @@ class SignInVC: UIViewController {
         super.viewDidLoad()
         let appDelegate: AppDelegate =  UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.performSelector(#selector(AppDelegate.loadMainView), withObject: nil, afterDelay: 2.0)
+//        self..keyboardType = UIKeyboardType.NumberPad;
+
     }
     
     
