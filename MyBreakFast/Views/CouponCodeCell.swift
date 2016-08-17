@@ -11,16 +11,27 @@ import Foundation
 class CouponCodeCell: UICollectionViewCell {
     
     @IBOutlet  var couponTextField: UITextField!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.couponTextField.autocorrectionType = .No
+    }
+    
     @IBAction func couponAction(sender: UIButton) {
         self.couponTextField.resignFirstResponder()
+        
+        var couponCode = self.couponTextField.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        couponCode = couponCode?.stringByTrimmingCharactersInSet(NSCharacterSet.punctuationCharacterSet())
+
+        
         sender.enabled = false;
-        if self.couponTextField.text?.characters.count == 0 {
+        if couponCode!.characters.count == 0 {
             UIAlertView(title: "First Eat", message: "Coupon code cannot be empty.", delegate: nil, cancelButtonTitle: "OK").show()
             sender.enabled = true;
             return;
         }
         
-        self.couponTextField.text = self.couponTextField.text?.uppercaseString
+        couponCode = couponCode?.uppercaseString
         
 //        let coupons = (Helper.sharedInstance.order?.couponsApplied.filter() { $0.couponname == self.couponTextField.text! })!
         let coupons = Helper.sharedInstance.order?.couponsApplied 
@@ -41,7 +52,7 @@ class CouponCodeCell: UICollectionViewCell {
         }
         
         
-        Helper.sharedInstance.validateCoupon(self.couponTextField.text!, completionHandler: { (response) -> () in
+        Helper.sharedInstance.validateCoupon(couponCode!, completionHandler: { (response) -> () in
             sender.enabled = true;
             if let responseStatus = response as? String {
                 if responseStatus == "max_redeem_limit"{

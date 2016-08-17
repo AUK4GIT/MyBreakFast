@@ -830,6 +830,17 @@ import Reachability
                             } else {
                                 userObject.userId = jData.objectForKey("user_id") as? String
                             }
+                            
+                            if userObject.userId == nil {
+                                //Device ID Already Registered
+                                dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                                    print(response.result.value)
+                                    Helper.sharedInstance.hideActivity()
+                                    completionHandler("DEVICEIDALREADYREGISTERED")
+                                }
+                                return;
+                            }
+                            
                             if let keys = jData.objectForKey("keys"){
                                 if keys is NSNull {
                                     userObject.referralCode = ""
@@ -910,7 +921,11 @@ import Reachability
     }
     
     func VerifyOTP(otp: String,userObject: UserDetails, completionHandler: (AnyObject) -> ()) {
-        let values: [String: String] = ["otp":otp, "user_id":userObject.userId!];
+        guard let userid = userObject.userId else{
+            completionHandler("ERROR")
+            return;
+        }
+        let values: [String: String] = ["otp":otp, "user_id":userid];
         Helper.sharedInstance.showActivity()
         Alamofire.request(.GET, Constants.API.VerifyOTP, parameters: values)
             .responseJSON { response in

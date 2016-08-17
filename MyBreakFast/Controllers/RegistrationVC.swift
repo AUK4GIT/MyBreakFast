@@ -99,8 +99,10 @@ class RegistrationVC: UIViewController {
                 if responseStatus == "ERROR" {
                     UIAlertView(title: "Registration Unsuccessful!", message: "Please try again.", delegate: nil, cancelButtonTitle: "OK").show()
                     
-                } else {
+                } else if responseStatus == "SUCCESS" {
                     self.verifyOTPWithUserId("");
+                } else if responseStatus == "DEVICEIDALREADYREGISTERED" {
+                    UIAlertView(title: "Registration Unsuccessful!", message: "Device is already registered, please login using your registered mobile number", delegate: nil, cancelButtonTitle: "OK").show()
                 }
             })
         }
@@ -129,7 +131,11 @@ class RegistrationVC: UIViewController {
                     } else {
                         let warning = UIAlertController(title: "First Eat", message: "Please enter the correct OTP.", preferredStyle: UIAlertControllerStyle.Alert)
                         warning.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
-                            self.verifyOTPWithUserId((self.userObj?.userId!)!);
+                            
+                            guard let userid = self.userObj!.userId else{
+                                return;
+                            }
+                            self.verifyOTPWithUserId(userid);
                         }))
                         self.presentViewController(warning, animated: true, completion: nil)
                     }
@@ -147,7 +153,10 @@ class RegistrationVC: UIViewController {
                     } else {
                         let warning = UIAlertController(title: "First Eat", message: "Please enter the correct OTP.", preferredStyle: UIAlertControllerStyle.Alert)
                         warning.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
-                            self.verifyOTPWithUserId((self.userObj?.userId!)!);
+                            guard let userid = self.userObj!.userId else{
+                                return;
+                            }
+                            self.verifyOTPWithUserId(userid);
                         }))
                         self.presentViewController(warning, animated: true, completion: nil)
                     }
