@@ -182,6 +182,9 @@ class RegistrationVC: UIViewController {
         } else if Helper.sharedInstance.isvalidaEmailId(self.emailField.text!) == false {
             UIAlertView(title: "Error", message: "Invalid Email Address.", delegate: nil, cancelButtonTitle: "OK").show()
             return false;
+        } else if self.phonenumberField.text?.characters.count != 10 {
+            UIAlertView(title: "Error", message: "Please enter correct hpone number.", delegate: nil, cancelButtonTitle: "OK").show()
+            return false;
         }
         return true;
     }

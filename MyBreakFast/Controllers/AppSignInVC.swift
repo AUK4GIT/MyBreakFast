@@ -72,6 +72,9 @@ class AppSignInVC: UIViewController {
             UIAlertView(title: "First Eat!", message: "Please Fill all the details.", delegate: nil, cancelButtonTitle: "OK").show()
             
             return
+        } else if self.passwordField.text?.characters.count != 10 {
+            UIAlertView(title: "Error", message: "Please enter correct hpone number.", delegate: nil, cancelButtonTitle: "OK").show()
+            return
         }
         
         Helper.sharedInstance.validatePhoneNumber(self.passwordField.text!, completionHandler:{ (response) -> () in
