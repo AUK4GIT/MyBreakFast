@@ -550,8 +550,8 @@ import Reachability
         var userName = "Guest";
         if items?.count>0{
             let userDetails = items![0] as! UserDetails
-            userName = userDetails.userName!;
-            print(" userDetails.userName!: ",userDetails.userName!);
+            userName = userDetails.userName ?? "Guest";
+            print(" userDetails.userName!: ",userName);
         }
         return userName;
     }
@@ -861,36 +861,6 @@ import Reachability
         }
     }
     
-    func doUserLogin(userEmail: String, password: String, completionHandler: (AnyObject) -> ()) {
-        
-        let gcmId = (self.appDelegate.registrationToken ?? self.getDataFromUserDefaults(forKey: Constants.UserdefaultConstants.GCMRegistrationToken) ?? "")
-        let values: [String: String] = ["devid":self.userDefaults.objectForKey("DeviceId")! as! String,"devtype":UIDevice.currentDevice().model, "gcm": gcmId as! String, "email":userEmail, "pwd":password];
-        Helper.sharedInstance.showActivity()
-        Alamofire.request(.GET, Constants.API.UserLogin, parameters: values)
-            .responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                //                //print(response.data)     // server data
-                print(response.result)   // result of response serialization
-                // do whatever you want here
-                dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                    Helper.sharedInstance.hideActivity()
-                    switch response.result {
-                    case .Failure(let error):
-                        print(error)
-                        completionHandler("ERROR")
-                    case .Success(let responseObject):
-                        if let JSON = response.result.value {
-                            print("JSON: \(JSON)")
-                            print(responseObject)
-                            completionHandler(JSON.objectForKey("data")!)
-                        }
-
-                    }
-                }
-        }
-    }
-    
     func validatePhoneNumber(phonenumber: String, completionHandler: (AnyObject) -> ()) {
         
         let values: [String: String] = ["mobile":phonenumber];
@@ -952,6 +922,61 @@ import Reachability
                 }
         }
     }
+    
+    
+    func resendOTP(mobileNumber: String,userId: String, completionHandler: (AnyObject) -> ()) {
+        let values: [String: String] = ["mobile":mobileNumber, "user_id":userId];
+        Helper.sharedInstance.showActivity()
+        Alamofire.request(.GET, Constants.API.resendOTP, parameters: values)
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                print(response.result)   // result of response serialization
+                // do whatever you want here
+                dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                    Helper.sharedInstance.hideActivity()
+                    switch response.result {
+                    case .Failure(let error):
+                        print(error)
+                        completionHandler("ERROR")
+                    case .Success(let _):
+                        if let JSON = response.result.value {
+                            print("JSON: \(JSON)")
+                            completionHandler(JSON)
+                        }
+                    }
+                }
+        }
+    }
+    
+    func skipOTP(mobileNumber: String,userId: String, completionHandler: (AnyObject) -> ()) {
+        let values: [String: String] = ["mobile":mobileNumber, "user_id":userId];
+        Helper.sharedInstance.showActivity()
+        Alamofire.request(.GET, Constants.API.skipOTP, parameters: values)
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                print(response.result)   // result of response serialization
+                // do whatever you want here
+                dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                    Helper.sharedInstance.hideActivity()
+                    switch response.result {
+                    case .Failure(let error):
+                        print(error)
+                        completionHandler("ERROR")
+                    case .Success(let responseObject):
+                        if let JSON = response.result.value {
+                            self.saveContext();
+                            print("JSON: \(JSON)")
+                            print(responseObject)
+                            completionHandler(JSON)
+                        }
+                        
+                    }
+                }
+        }
+    }
+
     
     func fetchLocations(completionHandler: () -> Void) {
         

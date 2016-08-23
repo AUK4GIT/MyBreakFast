@@ -12,15 +12,12 @@ class RegistrationVC: UIViewController {
     
     @IBOutlet  var emailField: UITextField!
     @IBOutlet  var usernameField: UITextField!
-    @IBOutlet  var newPasswordField: UITextField!
-    @IBOutlet  var confirmPasswordField: UITextField!
     @IBOutlet  var phonenumberField: UITextField!
     @IBOutlet  var referralField: UITextField!
     @IBOutlet  var loginButton: UIButton!
     @IBOutlet  var topConstraint: NSLayoutConstraint!
     var userObj: UserDetails?
     var isEditing: Bool?
-    @IBOutlet  var nopasswordConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +30,6 @@ class RegistrationVC: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.nopasswordConstraint.constant = -30;
         self.view.layoutIfNeeded()
     }
     
@@ -43,44 +39,19 @@ class RegistrationVC: UIViewController {
     
     func setAfterLoginSettings(phoneNumber: String, password: String){
         self.emailField.text = "";
-        self.newPasswordField.text = password;
-        self.confirmPasswordField.text = password;
         self.phonenumberField.text = phoneNumber;
-        self.nopasswordConstraint.constant = -30;
         self.view.layoutIfNeeded()
         
 //        self.emailField.enabled = false;
-        self.newPasswordField.enabled = false;
-        self.confirmPasswordField.enabled = false;
         self.phonenumberField.enabled = false;
                 
         UIAlertView(title: "Registration", message: "Please enter Username and Email address.", delegate: nil, cancelButtonTitle: "OK").show()
         
     }
     
-    func setAfterFaceBookLoginSettings(){
-        self.emailField.text = Helper.sharedInstance.getUserEmailId();
-        self.usernameField.text = Helper.sharedInstance.getUserName();
-        self.confirmPasswordField.text = "firsteat";
-        self.newPasswordField.text = "firsteat";
-        self.confirmPasswordField.enabled = false;
-        self.newPasswordField.enabled = false;
-
-        self.confirmPasswordField.alpha = 0.6;
-        self.newPasswordField.alpha = 0.6;
-        self.nopasswordConstraint.constant = -30;
-        self.view.layoutIfNeeded()
-        self.emailField.enabled = false;
-//        self.referralField.enabled = false;
-        
-        UIAlertView(title: "Registration", message: "Please set Phone number.", delegate: nil, cancelButtonTitle: "OK").show()
-    }
-    
     @IBAction func registerAction(sender: AnyObject) {
         self.isEditing = false;
         self.view.endEditing(true)
-        self.confirmPasswordField.text = "firsteat";
-        self.newPasswordField.text = "firsteat";
         
         if validateAllFields() {
             self.userObj?.userName = self.usernameField.text;
@@ -94,7 +65,7 @@ class RegistrationVC: UIViewController {
                 referralText = self.referralField.text!
             }
             
-            Helper.sharedInstance.registerUser(self.userObj!,password: self.newPasswordField.text!, referralId: referralText, completionHandler: { (response) -> () in
+            Helper.sharedInstance.registerUser(self.userObj!,password: "firsteat", referralId: referralText, completionHandler: { (response) -> () in
                 let responseStatus = (response as? String) ?? ""
                 if responseStatus == "ERROR" {
                     UIAlertView(title: "Registration Unsuccessful!", message: "Please try again.", delegate: nil, cancelButtonTitle: "OK").show()
@@ -173,11 +144,8 @@ class RegistrationVC: UIViewController {
     }
     
     func validateAllFields()->Bool {
-        if self.emailField.text?.characters.count == 0 || self.usernameField.text?.characters.count == 0 || self.newPasswordField.text?.characters.count == 0 || self.confirmPasswordField.text?.characters.count == 0 || self.phonenumberField.text?.characters.count == 0 {
+        if self.emailField.text?.characters.count == 0 || self.usernameField.text?.characters.count == 0 || self.phonenumberField.text?.characters.count == 0 {
             UIAlertView(title: "Error", message: "Please fill all the fields.", delegate: nil, cancelButtonTitle: "OK").show()
-            return false;
-        } else if self.newPasswordField.text != self.confirmPasswordField.text{
-            UIAlertView(title: "Error", message: "Passwords donot match.", delegate: nil, cancelButtonTitle: "OK").show()
             return false;
         } else if Helper.sharedInstance.isvalidaEmailId(self.emailField.text!) == false {
             UIAlertView(title: "Error", message: "Invalid Email Address.", delegate: nil, cancelButtonTitle: "OK").show()

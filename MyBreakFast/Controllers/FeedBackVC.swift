@@ -92,18 +92,8 @@ class FeedBackVC: UIViewController, FloatRatingViewDelegate {
     @IBAction func send(sender: AnyObject) {
         self.textView.resignFirstResponder()
         
-        
-        let emailId = Helper.sharedInstance.getUserEmailId();
-        if emailId.characters.count == 0 {
-            UIAlertView(title: "First Eat", message: "Please fill your details.", delegate: nil, cancelButtonTitle: "OK").show()
-            let vc: UserOrderDetails = self.storyboard?.instantiateViewControllerWithIdentifier("UserOrderDetails") as! UserOrderDetails
-            let navC = UINavigationController(rootViewController: vc)
-            self.presentViewController(navC, animated: true, completion: { () -> Void in
-                vc.toolbar?.hidden = true;
-                vc.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Save, target: vc, action: #selector(UserOrderDetails.saveData))
-            })
-            navC.view.backgroundColor = UIColor.whiteColor()
-            
+        if self.textView.text.characters.count == 0 {
+            UIAlertView(title: "First Eat", message: "Please add comment.", delegate: nil, cancelButtonTitle: "OK").show()            
         } else {
             self.sendQuery();
         }

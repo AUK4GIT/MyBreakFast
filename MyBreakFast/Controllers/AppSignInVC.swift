@@ -7,33 +7,27 @@
 //
 
 import Foundation
-import FBSDKCoreKit
-import FBSDKLoginKit
+//import FBSDKCoreKit
+//import FBSDKLoginKit
 
 class AppSignInVC: UIViewController {
     
     @IBOutlet  var topConstraint: NSLayoutConstraint!
     @IBOutlet  var loginButton: UIButton!
-    @IBOutlet var faceBookButton: UIButton!
-     var completionHandler:((NSDictionary)->Void)!
-    @IBOutlet  var userEmail: UITextField!
+    var completionHandler:((NSDictionary)->Void)!
     @IBOutlet  var passwordField: UITextField!
-    @IBOutlet  var confirmPasswordField: UITextField!
-    @IBOutlet  var forgotPassword: UIButton!
     var isEditing: Bool?
+    var isOTPResent: Bool?
     var userObj: UserDetails?
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
         self.isEditing = false;
+        self.isOTPResent = false;
         self.userObj = Helper.sharedInstance.getUserDetailsObj() as? UserDetails
-
-//        self.loginButton.layer.cornerRadius = 15.0;
-//        self.faceBookButton.layer.cornerRadius = 15.0;
         
         self.loginButton.titleLabel?.adjustFontToRealIPhoneSize = true;
-        self.faceBookButton.titleLabel?.adjustFontToRealIPhoneSize = true;
         self.passwordField.keyboardType = UIKeyboardType.NumberPad;
 
         if let _ = Helper.sharedInstance.getDataFromUserDefaults(forKey: Constants.UserdefaultConstants.UserLoginStatus) {
@@ -58,13 +52,9 @@ class AppSignInVC: UIViewController {
         }
     }
     
-    @IBAction func forgotPasswordAction(sender: AnyObject) {
-    }
-    
     @IBAction func loginSignUpAction(sender: AnyObject){
 
         self.isEditing = false;
-        self.userEmail.resignFirstResponder()
         self.passwordField.resignFirstResponder()
         
         if self.passwordField.text?.characters.count == 0{
@@ -94,12 +84,12 @@ class AppSignInVC: UIViewController {
                     if let userId = responsestatus?.objectForKey("user_id") as? String {
                         self.userObj?.userId = userId;
                         self.userObj?.phoneNumber = self.passwordField.text!;
-                        self.verifyOTPWithUserId(userId);
+                        self.showOTPInputViewWithUserId(userId);
                     } else {
                         let userId = responsestatus?.objectForKey("user_id") as? NSNumber
                         self.userObj?.userId = userId?.stringValue;
                         self.userObj?.phoneNumber = self.passwordField.text!;
-                        self.verifyOTPWithUserId((userId?.stringValue)!);
+                        self.showOTPInputViewWithUserId((userId?.stringValue)!);
                     }
                 } else {
                     UIAlertView(title: "Unknown Error", message: "Please try again after sometime.", delegate: nil, cancelButtonTitle: "OK").show()
@@ -107,84 +97,18 @@ class AppSignInVC: UIViewController {
             }
         })
         
-      /*
-        if self.userEmail.text?.characters.count == 0 || self.passwordField.text?.characters.count == 0{
-            
-            UIAlertView(title: "First Eat!", message: "Please Fill all the details.", delegate: nil, cancelButtonTitle: "OK").show()
-
-        return
-        }
-        
-        
-        Helper.sharedInstance.doUserLogin(self.userEmail.text!, password: self.passwordField.text!) { (response) -> () in
-            
-            let responseStatus = (response as? String) ?? ""
-            if responseStatus == "ERROR" {
-                UIAlertView(title: "Login Unsuccessful!", message: "Please try again.", delegate: nil, cancelButtonTitle: "OK").show()
-                
-            } else {
-                let responsestatus = (response as? NSDictionary)
-                if (responsestatus?.objectForKey("authentication"))! as! String == "invalid" {
-                    UIAlertView(title: "Login Unsuccessful!", message: "Please try again using correct Username and Password.", delegate: nil, cancelButtonTitle: "OK").show()
-
-                    return;
-                } else {
-                
-                    let userRegistrationStatus = Helper.sharedInstance.getDataFromUserDefaults(forKey: Constants.UserdefaultConstants.UserRegistration) as? Bool
-                    Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserLoginStatus, value: true)
-
-                    if userRegistrationStatus != nil{
-                    
-                        self.dismissViewControllerAnimated(true, completion: { () -> Void in
-                        })
-
-                    } else {
-                        self.presentRegistrationScreenAfterLogin();
-                    }
-                }
-            }
-        }
-        */
     }
     
-    func verifyOTPWithUserId(userId: String){
+    func showOTPInputViewWithUserId(userId: String){
        
         var inputTextField: UITextField?
         let passwordPrompt = UIAlertController(title: "First Eat", message: "Please enter the OTP received.", preferredStyle: UIAlertControllerStyle.Alert)
-        passwordPrompt.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
         passwordPrompt.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
-            // Now do whatever you want with inputTextField (remember to unwrap the optional)
-            print("%@",inputTextField?.text);
-            Helper.sharedInstance.VerifyOTP((inputTextField?.text)!, userObject: self.userObj!, completionHandler: { (response) -> () in
-                let respo = response as? NSDictionary
-                if let status = respo?.objectForKey("status") as? String {
-                    if status == "1" {
-                        self.fetchUserDetails();
-                    } else {
-                        let warning = UIAlertController(title: "First Eat", message: "Please enter the correct OTP.", preferredStyle: UIAlertControllerStyle.Alert)
-                        warning.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
-                            self.verifyOTPWithUserId((self.userObj?.userId!)!);
-                        }))
-                        self.presentViewController(warning, animated: true, completion: nil)
-                    }
-                } else {
-                    let status = respo?.objectForKey("status") as? NSNumber
-                    if status == 1 {
-                        self.dismissViewControllerAnimated(true, completion: { () -> Void in
-                            Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserLoginStatus, value: true)
-                            Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserRegistration, value: true)
-                            
-                        });
-                    } else {
-                        let warning = UIAlertController(title: "First Eat", message: "Please enter the correct OTP", preferredStyle: UIAlertControllerStyle.Alert)
-                        warning.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
-                            self.verifyOTPWithUserId((self.userObj?.userId!)!);
-                        }))
-                        self.presentViewController(warning, animated: true, completion: nil)
-
-                    }
-                }
-            })
+            if inputTextField?.text?.characters.count > 0 {
+                self.verifyOTPWith((inputTextField?.text)!, userObject: self.userObj!)
+            } else {
+                self.showOTPInputViewWithUserId(userId);
+            }
         }))
         passwordPrompt.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
             textField.placeholder = "OTP"
@@ -192,9 +116,108 @@ class AppSignInVC: UIViewController {
             inputTextField = textField
         })
         
-        presentViewController(passwordPrompt, animated: true, completion: nil)
+        presentViewController(passwordPrompt, animated: true) {
+            
+            var actionDelayTimer: NSTimer?
+            var timer: Int = 0;
+            let block: NSBlockOperation = NSBlockOperation(block: {
+                /* do work */
+                
+                timer = timer+1;
+                passwordPrompt.message = "Please enter the OTP received. "+String(timer);
+                
+                if let _ = actionDelayTimer where timer == 15{
+                    actionDelayTimer?.invalidate()
+                    actionDelayTimer = nil;
+                    passwordPrompt.addAction(UIAlertAction(title: ((self.isOTPResent == true) ? "Skip/Verify Later" : "resend"), style: UIAlertActionStyle.Default, handler:{ (action) -> Void in
+                        
+                        if self.isOTPResent == false {
+                            self.resendOTP((self.userObj?.phoneNumber)!, userId: userId)
+                        } else {
+                            self.skipOTP((self.userObj?.phoneNumber)!, userId: userId)
+                        }
+                    }))
+                }
+            })
+            actionDelayTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: block, selector: #selector(block.main), userInfo: nil, repeats: true)
+        }
     }
     
+    func resendOTP(phoneNumber: String, userId: String){
+        Helper.sharedInstance.resendOTP(phoneNumber, userId: userId, completionHandler: { (response) in
+            let responseStatus = (response as? String) ?? ""
+            if responseStatus == "ERROR" {
+                UIAlertView(title: "Login Unsuccessful!", message: "Please try again.", delegate: nil, cancelButtonTitle: "OK").show()
+                
+            } else {
+                let responsestatus = (response as? NSDictionary)
+                let status = responsestatus?.objectForKey("status") as? String
+                if status == "1" {
+                    self.isOTPResent = true;
+                    self.showOTPInputViewWithUserId(userId)
+                } else {
+                    UIAlertView(title: "Login Unsuccessful!", message: "Please try again.", delegate: nil, cancelButtonTitle: "OK").show()
+                }
+            }
+        })
+    }
+    
+    func skipOTP(phoneNumber: String, userId: String){
+        Helper.sharedInstance.skipOTP(phoneNumber, userId: userId, completionHandler: { (response) in
+            let responseStatus = (response as? String) ?? ""
+            if responseStatus == "ERROR" {
+                UIAlertView(title: "Login Unsuccessful!", message: "Please try again.", delegate: nil, cancelButtonTitle: "OK").show()
+                
+            } else {
+                let responsestatus = (response as? NSDictionary)
+                let status = responsestatus?.objectForKey("status") as? String
+                if status == "1" {
+                    self.isOTPResent = false;
+                    self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                        Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserLoginStatus, value: true)
+                        Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserRegistration, value: true)
+                        
+                    });
+                } else {
+                    UIAlertView(title: "Login Unsuccessful!", message: "Please try again.", delegate: nil, cancelButtonTitle: "OK").show()
+                }
+            }
+        })
+    }
+    
+    func verifyOTPWith(otpText: String, userObject: AnyObject) {
+        // Now do whatever you want with inputTextField (remember to unwrap the optional)
+        Helper.sharedInstance.VerifyOTP(otpText, userObject: userObject as! UserDetails, completionHandler: { (response) -> () in
+            let respo = response as? NSDictionary
+            if let status = respo?.objectForKey("status") as? String {
+                if status == "1" {
+                    self.fetchUserDetails();
+                } else {
+                    let warning = UIAlertController(title: "First Eat", message: "Please enter the correct OTP.", preferredStyle: UIAlertControllerStyle.Alert)
+                    warning.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+                        self.showOTPInputViewWithUserId((self.userObj?.userId!)!);
+                    }))
+                    self.presentViewController(warning, animated: true, completion: nil)
+                }
+            } else {
+                let status = respo?.objectForKey("status") as? NSNumber
+                if status == 1 {
+                    self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                        Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserLoginStatus, value: true)
+                        Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserRegistration, value: true)
+                        
+                    });
+                } else {
+                    let warning = UIAlertController(title: "First Eat", message: "Please enter the correct OTP", preferredStyle: UIAlertControllerStyle.Alert)
+                    warning.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+                        self.showOTPInputViewWithUserId((self.userObj?.userId!)!);
+                    }))
+                    self.presentViewController(warning, animated: true, completion: nil)
+                    
+                }
+            }
+        })
+    }
     
     func fetchUserDetails(){
     
@@ -233,68 +256,9 @@ class AppSignInVC: UIViewController {
             vc.setAfterLoginSettings(self.passwordField.text!, password: "firsteat");
         }
     }
-    
-    
-    @IBAction func facebookLoginAction(sender: AnyObject) {
-        let login: FBSDKLoginManager = FBSDKLoginManager();
-        
-//        if ((FBSDKAccessToken.currentAccessToken()) != nil) {
-//            // User is logged in, do work such as go to next view controller.
-//            return;
-//        }
-        
-        login.logInWithReadPermissions(["public_profile","email","user_friends"], fromViewController: self) { (result, error) -> Void in
-            if let error = error {
-                print("Process error:->  ",error);
-//                if self.completionHandler != nil {
-//                    self.completionHandler(["ERROR":"ERROR"]);
-//                }
-                UIAlertView(title: "Error!", message: "Please try again.", delegate: nil, cancelButtonTitle: "OK").show()
-            } else if (result.isCancelled) {
-                print("Cancelled");
-//                if self.completionHandler != nil {
-//                    self.completionHandler(["ERROR":"CANCELLED"]);
-//                }
-            } else {
-                
-                FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).startWithCompletionHandler({ (connection, result, error) -> Void in
-                    if (error == nil){
-                        let dict = result as! NSDictionary
-                        print(result)
-                        print(dict)
-                        print(dict.objectForKey("picture")?.objectForKey("data")?.objectForKey("url") as! String)
-                        Helper.sharedInstance.saveUserDetailsFromFaceBook(dict);
-                        Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserLoginStatus, value: true);
-//                        self.showUserSignUpPage();
-//                        if self.completionHandler != nil {
-//                            self.completionHandler(dict);
-//                        }        
-                        
-                        
-                        let userRegistrationStatus = Helper.sharedInstance.getDataFromUserDefaults(forKey: Constants.UserdefaultConstants.UserRegistration) as? Bool
-                        
-                        if userRegistrationStatus == nil{
-                            self.presentRegistrationScreenAfterLoginFromFaceBook();
-                        }
-                    }
-                });
-                
-                
-            }
-        }
-    }
-    func presentRegistrationScreenAfterLoginFromFaceBook(){
-        //        RegistrationVC
-        let vc: RegistrationVC = (self.storyboard?.instantiateViewControllerWithIdentifier("RegistrationVC")) as! RegistrationVC
-        self.presentViewController(vc, animated: true) { () -> Void in
-            vc.setAfterFaceBookLoginSettings();
-        }
-    }
-    
-    
+
     @IBAction func registerAction(sender: AnyObject) {
         
-        self.confirmPasswordField.hidden = false;
         self.loginButton.setTitle("SIGNUP", forState: .Normal)
     }
     

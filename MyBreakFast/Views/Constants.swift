@@ -21,6 +21,9 @@ struct Constants {
         static let UserDetails: String = BaseURL+"index.php/ws/users/details/all/"
         static let ValidatePhonenumber: String = BaseURL+"index.php/ws/verify/mobile/user"
         static let VerifyOTP: String = BaseURL+"index.php/ws/verify/otp"
+        static let resendOTP: String = BaseURL+"index.php/ws/resend/otp"
+        static let skipOTP: String = BaseURL+"index.php/ws/skip/otp"
+     
         static let MenuonDate: String = BaseURL+"index.php/ws/menu/all"
         static let MenuonDateLocation: String = BaseURL+"index.php/ws/menu/location/"
         static let UserAddresses: String = BaseURL+"index.php/ws/users/address/list/"
@@ -79,6 +82,8 @@ struct Constants {
         static let UserDetails: String = BaseURL+"index.php/ws/users/details/all/"
         static let ValidatePhonenumber: String = BaseURL+"index.php/ws/verify/mobile/user"
         static let VerifyOTP: String = BaseURL+"index.php/ws/verify/otp"
+        static let resendOTP: String = BaseURL+"index.php/ws/resend/otp"
+        static let skipOTP: String = BaseURL+"index.php/ws/skip/otp"
 
         static let MenuonDate: String = BaseURL+"index.php/ws/menu/all"
         static let MenuonDateLocation: String = BaseURL+"index.php/ws/menu/location/"
