@@ -18,13 +18,13 @@ class RegistrationVC: UIViewController {
     @IBOutlet  var topConstraint: NSLayoutConstraint!
     var userObj: UserDetails?
     var isEditing: Bool?
+    var isOTPResent: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.isEditing = false;
-//        self.loginButton.layer.cornerRadius = 12.0;
+        self.isOTPResent = false;
         self.userObj = Helper.sharedInstance.getUserDetailsObj() as? UserDetails
-        
         self.phonenumberField.keyboardType = UIKeyboardType.NumberPad;
     }
     
@@ -37,14 +37,12 @@ class RegistrationVC: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    //this is called by login vc when mobile number is new/new user
     func setAfterLoginSettings(phoneNumber: String, password: String){
         self.emailField.text = "";
         self.phonenumberField.text = phoneNumber;
         self.view.layoutIfNeeded()
-        
-//        self.emailField.enabled = false;
         self.phonenumberField.enabled = false;
-                
         UIAlertView(title: "Registration", message: "Please enter Username and Email address.", delegate: nil, cancelButtonTitle: "OK").show()
         
     }
@@ -71,7 +69,7 @@ class RegistrationVC: UIViewController {
                     UIAlertView(title: "Registration Unsuccessful!", message: "Please try again.", delegate: nil, cancelButtonTitle: "OK").show()
                     
                 } else if responseStatus == "SUCCESS" {
-                    self.verifyOTPWithUserId("");
+                    self.showOTPInputViewWithUserId(Helper.sharedInstance.getUserId());
                 } else if responseStatus == "DEVICEIDALREADYREGISTERED" {
                     UIAlertView(title: "Registration Unsuccessful!", message: "Device is already registered, please login using your registered mobile number", delegate: nil, cancelButtonTitle: "OK").show()
                 }
@@ -79,68 +77,139 @@ class RegistrationVC: UIViewController {
         }
     }
     
-    func verifyOTPWithUserId(userId: String){
-        
+    func showOTPInputViewWithUserId(userId: String){
         var inputTextField: UITextField?
-        let passwordPrompt = UIAlertController(title: "First Eat", message: "Please enter the OTP received.", preferredStyle: UIAlertControllerStyle.Alert)
-        passwordPrompt.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+        let passwordPrompt = UIAlertController(title: "First Eat  ", message: "Please enter the OTP received", preferredStyle: UIAlertControllerStyle.Alert)
         passwordPrompt.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
-            // Now do whatever you want with inputTextField (remember to unwrap the optional)
-            print("%@",inputTextField?.text);
-            Helper.sharedInstance.VerifyOTP((inputTextField?.text)!, userObject: self.userObj!, completionHandler: { (response) -> () in
-                let respo = response as? NSDictionary
-                if let status = respo?.objectForKey("status") as? String {
-                    if status == "1" {
-                        let dQueue = dispatch_queue_create("asyncQueue", DISPATCH_QUEUE_SERIAL);
-                        dispatch_async(dQueue, { () -> Void in
-                            Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserLoginStatus, value: true)
-                            Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserRegistration, value: true)
-                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                self.dismissViewControllerAnimated(true, completion: nil)
-                            })
-                        });
-                    } else {
-                        let warning = UIAlertController(title: "First Eat", message: "Please enter the correct OTP.", preferredStyle: UIAlertControllerStyle.Alert)
-                        warning.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
-                            
-                            guard let userid = self.userObj!.userId else{
-                                return;
-                            }
-                            self.verifyOTPWithUserId(userid);
-                        }))
-                        self.presentViewController(warning, animated: true, completion: nil)
-                    }
-                } else {
-                    let status = respo?.objectForKey("status") as? NSNumber
-                    if status == 1 {
-                        let dQueue = dispatch_queue_create("asyncQueue", DISPATCH_QUEUE_SERIAL);
-                        dispatch_async(dQueue, { () -> Void in
-                            Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserLoginStatus, value: true)
-                            Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserRegistration, value: true)
-                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                self.dismissViewControllerAnimated(true, completion: nil)
-                            })
-                        });
-                    } else {
-                        let warning = UIAlertController(title: "First Eat", message: "Please enter the correct OTP.", preferredStyle: UIAlertControllerStyle.Alert)
-                        warning.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
-                            guard let userid = self.userObj!.userId else{
-                                return;
-                            }
-                            self.verifyOTPWithUserId(userid);
-                        }))
-                        self.presentViewController(warning, animated: true, completion: nil)
-                    }
-                }
-            })
+            if inputTextField?.text?.characters.count > 0 {
+                self.verifyOTPWith((inputTextField?.text)!, userObject: self.userObj!)
+            } else {
+                self.showOTPInputViewWithUserId(userId);
+            }
         }))
         passwordPrompt.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
             textField.placeholder = "OTP"
             textField.secureTextEntry = true
             inputTextField = textField
         })
-        
-        self.presentViewController(passwordPrompt, animated: true, completion: nil)
+        self.presentViewController(passwordPrompt, animated: true){
+            
+            var actionDelayTimer: NSTimer?
+            var timer: Int = 15;
+            let block: NSBlockOperation = NSBlockOperation(block: {
+                passwordPrompt.title = "First Eat "+String(timer);
+                timer = timer-1;
+                if let _ = actionDelayTimer where timer == 0{
+                    passwordPrompt.title = "First Eat   ";
+                    actionDelayTimer?.invalidate()
+                    actionDelayTimer = nil;
+                    passwordPrompt.addAction(UIAlertAction(title: ((self.isOTPResent == true) ? "Skip/Verify Later" : "resend"), style: UIAlertActionStyle.Default, handler:{ (action) -> Void in
+                        
+                        if self.isOTPResent == false {
+                            self.resendOTP((self.userObj?.phoneNumber)!, userId: userId)
+                        } else {
+                            self.skipOTP((self.userObj?.phoneNumber)!, userId: userId)
+                        }
+                    }))
+                }
+            })
+            actionDelayTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: block, selector: #selector(block.main), userInfo: nil, repeats: true)
+        }
+    }
+    
+    func resendOTP(phoneNumber: String, userId: String){
+        Helper.sharedInstance.resendOTP(phoneNumber, userId: userId, completionHandler: { (response) in
+            let responseStatus = (response as? String) ?? ""
+            if responseStatus == "ERROR" {
+                UIAlertView(title: "Login Unsuccessful!", message: "Please try again.", delegate: nil, cancelButtonTitle: "OK").show()
+                
+            } else {
+                let responsestatus = (response as? NSDictionary)
+                let status = responsestatus?.objectForKey("status") as? String
+                if status == "1" {
+                    self.isOTPResent = true;
+                    self.showOTPInputViewWithUserId(userId)
+                } else {
+                    UIAlertView(title: "Login Unsuccessful!", message: "Please try again.", delegate: nil, cancelButtonTitle: "OK").show()
+                }
+            }
+        })
+    }
+    
+    func skipOTP(phoneNumber: String, userId: String){
+        Helper.sharedInstance.skipOTP(phoneNumber, userId: userId, completionHandler: { (response) in
+            let responseStatus = (response as? String) ?? ""
+            if responseStatus == "ERROR" {
+                UIAlertView(title: "Login Unsuccessful!", message: "Please try again.", delegate: nil, cancelButtonTitle: "OK").show()
+                
+            } else {
+                let responsestatus = (response as? NSDictionary)
+                let status = responsestatus?.objectForKey("status") as? String
+                if status == "1" {
+                    self.isOTPResent = false;
+                        let dQueue = dispatch_queue_create("asyncQueue", DISPATCH_QUEUE_SERIAL);
+                        dispatch_async(dQueue, { () -> Void in
+                            Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserLoginStatus, value: true)
+                            Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserRegistration, value: true)
+                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                self.dismissViewControllerAnimated(true, completion: nil)
+                            })
+                        });
+                } else {
+                    UIAlertView(title: "Login Unsuccessful!", message: "Please try again.", delegate: nil, cancelButtonTitle: "OK").show()
+                }
+            }
+        })
+    }
+    
+    func verifyOTPWith(otpText: String, userObject: AnyObject) {
+        // Now do whatever you want with inputTextField (remember to unwrap the optional)
+        Helper.sharedInstance.VerifyOTP(otpText, userObject: userObject as! UserDetails, completionHandler: { (response) -> () in
+            let respo = response as? NSDictionary
+            if let status = respo?.objectForKey("status") as? String {
+                if status == "1" {
+                    let dQueue = dispatch_queue_create("asyncQueue", DISPATCH_QUEUE_SERIAL);
+                    dispatch_async(dQueue, { () -> Void in
+                        Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserLoginStatus, value: true)
+                        Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserRegistration, value: true)
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            self.dismissViewControllerAnimated(true, completion: nil)
+                        })
+                    });
+                } else {
+                    let warning = UIAlertController(title: "First Eat", message: "Please enter the correct OTP.", preferredStyle: UIAlertControllerStyle.Alert)
+                    warning.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+                        
+                        guard let userid = self.userObj!.userId else{
+                            return;
+                        }
+                        self.showOTPInputViewWithUserId(userid);
+                    }))
+                    self.presentViewController(warning, animated: true, completion: nil)
+                }
+            } else {
+                let status = respo?.objectForKey("status") as? NSNumber
+                if status == 1 {
+                    let dQueue = dispatch_queue_create("asyncQueue", DISPATCH_QUEUE_SERIAL);
+                    dispatch_async(dQueue, { () -> Void in
+                        Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserLoginStatus, value: true)
+                        Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserRegistration, value: true)
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            self.dismissViewControllerAnimated(true, completion: nil)
+                        })
+                    });
+                } else {
+                    let warning = UIAlertController(title: "First Eat", message: "Please enter the correct OTP.", preferredStyle: UIAlertControllerStyle.Alert)
+                    warning.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+                        guard let userid = self.userObj!.userId else{
+                            return;
+                        }
+                        self.showOTPInputViewWithUserId(userid);
+                    }))
+                    self.presentViewController(warning, animated: true, completion: nil)
+                }
+            }
+        })
     }
     
     func validateAllFields()->Bool {

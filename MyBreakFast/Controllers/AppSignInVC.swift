@@ -102,7 +102,7 @@ class AppSignInVC: UIViewController {
     func showOTPInputViewWithUserId(userId: String){
        
         var inputTextField: UITextField?
-        let passwordPrompt = UIAlertController(title: "First Eat", message: "Please enter the OTP received.", preferredStyle: UIAlertControllerStyle.Alert)
+        let passwordPrompt = UIAlertController(title: "First Eat   ", message: "Please enter the OTP received", preferredStyle: UIAlertControllerStyle.Alert)
         passwordPrompt.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
             if inputTextField?.text?.characters.count > 0 {
                 self.verifyOTPWith((inputTextField?.text)!, userObject: self.userObj!)
@@ -119,14 +119,12 @@ class AppSignInVC: UIViewController {
         presentViewController(passwordPrompt, animated: true) {
             
             var actionDelayTimer: NSTimer?
-            var timer: Int = 0;
+            var timer: Int = 15;
             let block: NSBlockOperation = NSBlockOperation(block: {
-                /* do work */
-                
-                timer = timer+1;
-                passwordPrompt.message = "Please enter the OTP received. "+String(timer);
-                
-                if let _ = actionDelayTimer where timer == 15{
+                passwordPrompt.title = "First Eat "+String(timer);
+                timer = timer-1;
+                if let _ = actionDelayTimer where timer == 0{
+                    passwordPrompt.title = "First Eat   ";
                     actionDelayTimer?.invalidate()
                     actionDelayTimer = nil;
                     passwordPrompt.addAction(UIAlertAction(title: ((self.isOTPResent == true) ? "Skip/Verify Later" : "resend"), style: UIAlertActionStyle.Default, handler:{ (action) -> Void in
@@ -173,11 +171,7 @@ class AppSignInVC: UIViewController {
                 let status = responsestatus?.objectForKey("status") as? String
                 if status == "1" {
                     self.isOTPResent = false;
-                    self.dismissViewControllerAnimated(true, completion: { () -> Void in
-                        Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserLoginStatus, value: true)
-                        Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserRegistration, value: true)
-                        
-                    });
+                    self.fetchUserDetails();
                 } else {
                     UIAlertView(title: "Login Unsuccessful!", message: "Please try again.", delegate: nil, cancelButtonTitle: "OK").show()
                 }
@@ -202,11 +196,7 @@ class AppSignInVC: UIViewController {
             } else {
                 let status = respo?.objectForKey("status") as? NSNumber
                 if status == 1 {
-                    self.dismissViewControllerAnimated(true, completion: { () -> Void in
-                        Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserLoginStatus, value: true)
-                        Helper.sharedInstance.saveToUserDefaults(forKey: Constants.UserdefaultConstants.UserRegistration, value: true)
-                        
-                    });
+                    self.fetchUserDetails();
                 } else {
                     let warning = UIAlertController(title: "First Eat", message: "Please enter the correct OTP", preferredStyle: UIAlertControllerStyle.Alert)
                     warning.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
@@ -248,9 +238,7 @@ class AppSignInVC: UIViewController {
     
     
     func presentRegistrationScreenAfterLogin(){
-    
 //        RegistrationVC
-        
         let vc: RegistrationVC = (self.storyboard?.instantiateViewControllerWithIdentifier("RegistrationVC")) as! RegistrationVC
         self.presentViewController(vc, animated: true) { () -> Void in
             vc.setAfterLoginSettings(self.passwordField.text!, password: "firsteat");

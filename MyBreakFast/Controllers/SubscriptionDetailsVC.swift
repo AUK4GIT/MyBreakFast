@@ -246,14 +246,21 @@ class SubscriptionDetailsVC: UIViewController, CalendarViewDelegate, AddressProt
         
     }
     
+    func showTimeAddressSelectionWarning(){
+        let warn = UIAlertController(title: "First Eat", message: "Please select timeslot and address for each meal type.", preferredStyle: UIAlertControllerStyle.Alert)
+        warn.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(warn, animated: true, completion: nil);
+    }
+    
     @IBAction func checkOut(sender: AnyObject) {
-        if (Helper.sharedInstance.order?.address1 == nil) || (Helper.sharedInstance.order?.address2 == nil) || (Helper.sharedInstance.order?.address3 == nil) || (Helper.sharedInstance.order?.slot1 == nil) || (Helper.sharedInstance.order?.slot2 == nil) || (Helper.sharedInstance.order?.slot3 == nil){
-            
-            let warn = UIAlertController(title: "First Eat", message: "Please select timeslot and address for each meal type.", preferredStyle: UIAlertControllerStyle.Alert)
-            warn.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(warn, animated: true, completion: nil);
-        } else {
         
+        if self.planDetails?.meal1Exists == "1" && ((Helper.sharedInstance.order?.address1 == nil) || (Helper.sharedInstance.order?.slot1 == nil)) {
+            self.showTimeAddressSelectionWarning();
+        } else if self.planDetails?.meal2Exists == "1" && ((Helper.sharedInstance.order?.address2 == nil) || (Helper.sharedInstance.order?.slot2 == nil)){
+            self.showTimeAddressSelectionWarning();
+        } else if self.planDetails?.meal3Exists == "1" && ((Helper.sharedInstance.order?.address3 == nil) || (Helper.sharedInstance.order?.slot3 == nil)){
+            self.showTimeAddressSelectionWarning();
+        } else {
             let parentVC = self.parentViewController as! ViewController
             let vc = (self.storyboard?.instantiateViewControllerWithIdentifier("CartVC")) as! CartVC
             vc.isFromSubscription = true;

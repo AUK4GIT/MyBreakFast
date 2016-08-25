@@ -64,7 +64,7 @@ struct Constants {
      
         static let Subscr_PlaceOrder: String = BaseURL+"index.php/ws/subsc/add/new/"
      
-      static let Subscr_GetOrderDetails: String = BaseURL+"index.php/ws/subsc/details/"
+        static let Subscr_GetOrderDetails: String = BaseURL+"index.php/ws/subsc/details/"
      
         static let Subscr_GetAllSubscrs: String = BaseURL+"index.php/ws/subsc/all/"
 
@@ -127,16 +127,6 @@ struct Constants {
     
     struct StaticContent {
         static let SideMenuList : [String] = ["Menu", "My Orders", "My Subscriptions","About Us", "Contact Us", "Rate Us", "Refer a Friend", "Terms & Conditions"];
-//        static let Filters : [[String:String]] = [["filterName":"All", "filtervalue":"All","imageName":"", "color":"white"],["filterName":"Veg", "filtervalue":"Veg","imageName":"Veg.png", "color":"green"],
-//        ["filterName":"Non-Veg", "filtervalue":"Non Veg","imageName":"NonVeg-1.png", "color":"red"],
-//        ["filterName":"Egg", "filtervalue":"Egg","imageName":"Egg-1.png", "color":"yellow"],
-//        ["filterName":"Sandwich", "filtervalue":"Club Sandwhich","imageName":"ClubSandwich.png", "color":"gray"],
-//        ["filterName":"Zero Oil", "filtervalue":"ZeroOilSandwich","imageName":"ZeroOilSandwich.png", "color":"gray"],
-//        ["filterName":"Juices", "filtervalue":"Juice","imageName":"Juices.png", "color":"gray"],
-//        ["filterName":"Salads", "filtervalue":"Salad","imageName":"Salads.png", "color":"gray"],
-//        ["filterName":"Mom-Made", "filtervalue":"Homemade","imageName":"MomMade.png", "color":"gray"],
-//        ["filterName":"Combos", "filtervalue":"Combo","imageName":"Combos.png", "color":"gray"]];
-
     }
     
     struct ServiceLocation {
