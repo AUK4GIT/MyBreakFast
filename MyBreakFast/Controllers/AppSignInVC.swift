@@ -63,7 +63,7 @@ class AppSignInVC: UIViewController {
             
             return
         } else if self.passwordField.text?.characters.count != 10 {
-            UIAlertView(title: "Error", message: "Please enter correct hpone number.", delegate: nil, cancelButtonTitle: "OK").show()
+            UIAlertView(title: "Error", message: "Please enter correct phone number.", delegate: nil, cancelButtonTitle: "OK").show()
             return
         }
         
@@ -127,7 +127,7 @@ class AppSignInVC: UIViewController {
                     passwordPrompt.title = "First Eat   ";
                     actionDelayTimer?.invalidate()
                     actionDelayTimer = nil;
-                    passwordPrompt.addAction(UIAlertAction(title: ((self.isOTPResent == true) ? "Skip/Verify Later" : "resend"), style: UIAlertActionStyle.Default, handler:{ (action) -> Void in
+                    passwordPrompt.addAction(UIAlertAction(title: ((self.isOTPResent == true) ? "Skip/Verify Later" : "Resend"), style: UIAlertActionStyle.Default, handler:{ (action) -> Void in
                         
                         if self.isOTPResent == false {
                             self.resendOTP((self.userObj?.phoneNumber)!, userId: userId)

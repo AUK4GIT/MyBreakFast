@@ -103,7 +103,7 @@ class RegistrationVC: UIViewController {
                     passwordPrompt.title = "First Eat   ";
                     actionDelayTimer?.invalidate()
                     actionDelayTimer = nil;
-                    passwordPrompt.addAction(UIAlertAction(title: ((self.isOTPResent == true) ? "Skip/Verify Later" : "resend"), style: UIAlertActionStyle.Default, handler:{ (action) -> Void in
+                    passwordPrompt.addAction(UIAlertAction(title: ((self.isOTPResent == true) ? "Skip/Verify Later" : "Resend"), style: UIAlertActionStyle.Default, handler:{ (action) -> Void in
                         
                         if self.isOTPResent == false {
                             self.resendOTP((self.userObj?.phoneNumber)!, userId: userId)

@@ -161,11 +161,11 @@ class ViewController: ContainerVC, Slidemenuprotocol, UIGestureRecognizerDelegat
         dispatch_async(dispatch_queue_create("backgroundQueue", nil)) {
             if Helper.sharedInstance.appUpdateAvailable(nil) == true {
                 dispatch_async(dispatch_get_main_queue(), {
-                    let notifPrompt = UIAlertController(title: "First Eat", message: "An Update for the App is available at the appstore. Kindly update. ", preferredStyle: UIAlertControllerStyle.Alert)
+                    let notifPrompt = UIAlertController(title: "First Eat", message: "A better version of the app is available. Please update for a smoother experience.", preferredStyle: UIAlertControllerStyle.Alert)
                     notifPrompt.addAction(UIAlertAction(title: "Update", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
                         UIApplication.sharedApplication().openURL(NSURL(string: Constants.API.APPSTORE_URL)!);
                     }))
-                    notifPrompt.addAction(UIAlertAction(title: "Later", style: UIAlertActionStyle.Default, handler: nil))
+//                    notifPrompt.addAction(UIAlertAction(title: "Later", style: UIAlertActionStyle.Default, handler: nil))
 
                     self.presentViewController(notifPrompt, animated: true, completion: nil);
                 })
