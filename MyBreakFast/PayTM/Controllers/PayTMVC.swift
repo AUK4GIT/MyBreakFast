@@ -42,6 +42,7 @@ class PayTMVC: UIViewController, PGTransactionDelegate
         }
     }
 
+    /*
     func generateOrderIDWithPrefix(prefix: String) -> String
     {
         srand(UInt32(time(nil)))
@@ -49,6 +50,16 @@ class PayTMVC: UIViewController, PGTransactionDelegate
         let orderID: String = prefix+String(randomNo);
         return orderID;
     }
+ */
+    
+    func generateOrderIDWithPrefix(prefix: String) -> String
+    {
+        //        srand(UInt32(time(nil)))
+        let randomNo: UInt32  = arc4random(); //just randomizing the number
+        let orderID: String = prefix+String(randomNo);
+        return orderID;
+    }
+
     
     func testPayment(sender: AnyObject?)
     {

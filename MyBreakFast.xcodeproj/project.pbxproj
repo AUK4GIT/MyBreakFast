@@ -412,6 +412,7 @@
 		AA09FF0D1D1FC4FD003AE665 /* MealPlanDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealPlanDetailsView.swift; path = Views/MealPlanDetailsView.swift; sourceTree = "<group>"; };
 		AA0E0E5C1D43DB2200C1B5E0 /* Foodtags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Foodtags.swift; path = Models/Foodtags.swift; sourceTree = "<group>"; };
 		AA33E6D51D4926260061BDBB /* ADDVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ADDVC.swift; path = Controllers/ADDVC.swift; sourceTree = "<group>"; };
+		AA3D09211DB53B070054497B /* MyBreakFast.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyBreakFast.entitlements; sourceTree = "<group>"; };
 		AA3EBD571D28D4F000F7FAC4 /* MySubscriptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MySubscriptionCell.xib; path = Views/Xibs/MySubscriptionCell.xib; sourceTree = "<group>"; };
 		AA3EBD591D28D52F00F7FAC4 /* MySubscriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MySubscriptionCell.swift; path = Views/MySubscriptionCell.swift; sourceTree = "<group>"; };
 		AA4847D51D29236700EFF576 /* SummaryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SummaryCell.swift; path = Views/SummaryCell.swift; sourceTree = "<group>"; };
@@ -1177,6 +1178,7 @@
 		ED722B151BE09A33003DC9F2 /* MyBreakFast */ = {
 			isa = PBXGroup;
 			children = (
+				AA3D09211DB53B070054497B /* MyBreakFast.entitlements */,
 				AA9EE7581CF1C4D400AC6DF3 /* PayTM */,
 				ED742AA91CA78855007FC96D /* Citrus_PG */,
 				ED344C7A1C9B14B4008643F9 /* Views */,
@@ -1935,12 +1937,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = AUK;
 				TargetAttributes = {
 					ED722B121BE09A33003DC9F2 = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = 7ECJ337932;
+						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -2463,8 +2466,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Mannat Wadehra (TX6YJ82MD9)";
@@ -2472,6 +2477,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7ECJ337932;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -2492,7 +2498,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "0ad305e3-8644-4a35-b62d-95300428a0cd";
+				PROVISIONING_PROFILE_SPECIFIER = "FirstEat-Development-Cert";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2512,8 +2519,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Mannat Wadehra (7ECJ337932)";
@@ -2521,6 +2530,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7ECJ337932;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -2534,8 +2544,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "0ad305e3-8644-4a35-b62d-95300428a0cd";
+				PROVISIONING_PROFILE_SPECIFIER = "Firsteat-AdHoc";
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2545,10 +2557,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F86E339288D1435A50B7FB43 /* Pods-MyBreakFast.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = MyBreakFast/MyBreakFast.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mannat Wadehra (TX6YJ82MD9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mannat Wadehra (TX6YJ82MD9)";
 				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2583,9 +2597,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.firsteat.firsteat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "FirstEat-Development-Cert";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "MyBreakFast/MyBreakFast-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2594,8 +2610,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3298BBB4469215821FB74B86 /* Pods-MyBreakFast.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MyBreakFast/MyBreakFast.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Mannat Wadehra (7ECJ337932)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mannat Wadehra (7ECJ337932)";
 				DEFINES_MODULE = YES;
@@ -2632,8 +2650,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.firsteat.firsteat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Firsteat-AdHoc";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "MyBreakFast/MyBreakFast-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

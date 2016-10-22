@@ -156,7 +156,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
             self.amountLabel.text = [NSString stringWithFormat:@"%@ %@",amount.currency,amount.value];
                 
-                int totalPayableAmount = [Helper sharedInstance].order.totalAmountPayable.intValue;
+                int totalPayableAmount = 2;//[Helper sharedInstance].order.totalAmountPayable.intValue;
                 
                 if ([Helper sharedInstance].order.modeOfPayment == PaymentTypeCITRUS) {
                     if (totalPayableAmount > amount.value.intValue) {
@@ -719,7 +719,7 @@
             
         }
         else
-            viewController.amount = [Helper sharedInstance].order.totalAmountPayable; //Passing the amount to Card payment screen
+            viewController.amount = @"2";//[Helper sharedInstance].order.totalAmountPayable; //Passing the amount to Card payment screen
 
     }
     else if ([segue.identifier isEqualToString:@"SettingViewIdentifier"]){
@@ -806,7 +806,7 @@
         }
         else{
 //            UITextField * alertTextField = [alertView textFieldAtIndex:0];
-            NSString *payableAmount = [Helper sharedInstance].order.totalAmountPayable;
+            NSString *payableAmount = @"2";//[Helper sharedInstance].order.totalAmountPayable;
             if(payableAmount.length==0){
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.indicatorView stopAnimating];

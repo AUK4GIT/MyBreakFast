@@ -248,6 +248,18 @@ class MenuVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
             Helper.sharedInstance.order = Order();
             _ = max((self.itemsArray.count-1), 0)
             self.tempItemsArray = self.itemsArray;
+            
+            if self.tempItemsArray.count == 0 {
+                
+                let alertController = UIAlertController(title: "First Eat", message: "Our chefs are preparing something special for you. Please come back again in sometime", preferredStyle: .Alert)
+                let searchAction = UIAlertAction(title: "OK", style: .Default) { (_) in
+                }
+                alertController.addAction(searchAction)
+                self.presentViewController(alertController, animated: true) {
+                    alertController.view.tintColor = Constants.AppColors.blue.color;
+                }
+                return;
+            }
 
             for (_, element) in self.itemsArray.enumerate() {
                 let orderItem = OrderItem()

@@ -38,10 +38,11 @@ class CustomPresentationAnimationController: NSObject, UIViewControllerAnimatedT
     
     func animatePresentationWithTransitionContext(transitionContext: UIViewControllerContextTransitioning) {
         
+        let containerView = transitionContext.containerView()
+
         guard
             let presentedController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey),
-            let presentedControllerView = transitionContext.viewForKey(UITransitionContextToViewKey),
-            let containerView = transitionContext.containerView()
+            let presentedControllerView = transitionContext.viewForKey(UITransitionContextToViewKey)
             else {
                 return
         }
@@ -63,9 +64,10 @@ class CustomPresentationAnimationController: NSObject, UIViewControllerAnimatedT
     
     func animateDismissalWithTransitionContext(transitionContext: UIViewControllerContextTransitioning) {
         
+        let containerView = transitionContext.containerView()
+
         guard
-            let presentedControllerView = transitionContext.viewForKey(UITransitionContextFromViewKey),
-            let containerView = transitionContext.containerView()
+            let presentedControllerView = transitionContext.viewForKey(UITransitionContextFromViewKey)
             else {
                 return
         }

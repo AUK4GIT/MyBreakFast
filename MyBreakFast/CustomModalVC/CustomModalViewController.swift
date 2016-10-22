@@ -26,7 +26,7 @@ class CustomModalViewController: UIViewController, UIViewControllerTransitioning
 
     // ---- UIViewControllerTransitioningDelegate methods
 
-    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
+    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController?, sourceViewController source: UIViewController) -> UIPresentationController? {
 
         if presented == self {
             return CustomPresentationController(presentedViewController: presented, presentingViewController: presenting)

@@ -10,7 +10,7 @@ import Foundation
 
 struct Constants {
     //Production
-    
+ /*
     struct API {
         static let BaseURL: String = "http://firsteat.in/andro/"
         static let DefaultScreen: String = BaseURL+"index.php/ws/config/default/screen"
@@ -69,11 +69,12 @@ struct Constants {
         static let Subscr_GetAllSubscrs: String = BaseURL+"index.php/ws/subsc/all/"
 
     }
+ */
  
- /*
     ///testing/New Dev
     struct API {
         static let BaseURL: String = "http://firsteatwebportal.in/project-poha/"
+//      static let BaseURL: String = "http://ec2-52-43-19-101.us-west-2.compute.amazonaws.com/andro/"
         static let DefaultScreen: String = BaseURL+"index.php/ws/config/default/screen"
         static let SubscrImgBaseURL: String = "http://firsteatwebportal.in/project-poha/"
         static let GCMRegistration: String = BaseURL+"index.php/ws/first/app"
@@ -123,7 +124,7 @@ struct Constants {
         static let Subscr_GetAllSubscrs: String = BaseURL+"index.php/ws/subsc/all/"
 
     }
- */
+ 
     
     struct StaticContent {
         static let SideMenuList : [String] = ["Menu", "My Orders", "My Subscriptions","About Us", "Contact Us", "Rate Us", "Refer a Friend", "Terms & Conditions"];

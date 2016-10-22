@@ -215,7 +215,7 @@ class ReferralVC: UIViewController {
         drawText.drawInRect(rect, withAttributes: textFontAttributes)
         
         // Create a new image out of the images we have created
-        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         
         // End the context now that we have the image we need
         UIGraphicsEndImageContext()

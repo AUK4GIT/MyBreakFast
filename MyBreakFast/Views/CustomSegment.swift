@@ -15,7 +15,7 @@ import UIKit
         super.awakeFromNib()
         print("gggg: \(self.subviews)")
         if (self.subviews.count == 0) {
-            let array: [AnyObject] = NSBundle.mainBundle().loadNibNamed("CustomSegment", owner: self, options: nil);
+            let array: [AnyObject] = NSBundle.mainBundle().loadNibNamed("CustomSegment", owner: self, options: nil)!;
             let cusView: UIView = array[0] as! UIView;
             self.addSubview(cusView);
         }

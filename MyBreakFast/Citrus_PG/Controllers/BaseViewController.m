@@ -45,12 +45,12 @@
     keyStore.signUpSecret = SubscriptionSecretKey;
     keyStore.vanity = VanityUrl;
     
-#ifdef DEBUG
-    [CitrusPaymentSDK initializeWithKeyStore:keyStore environment:CTSEnvSandbox];
-#else
+//#ifdef DEBUG
+//    [CitrusPaymentSDK initializeWithKeyStore:keyStore environment:CTSEnvSandbox];
+//#else
     NSLog(@"********CTSEnvProduction ********CTSEnvProduction:  %@",SignInId);
     [CitrusPaymentSDK initializeWithKeyStore:keyStore environment:CTSEnvProduction];
-#endif
+//#endif
     
     authLayer = [CTSAuthLayer fetchSharedAuthLayer];
     proifleLayer = [CTSProfileLayer fetchSharedProfileLayer];
@@ -64,7 +64,7 @@
         contactInfo.firstName = [userData objectForKey:@"firstName"];
         contactInfo.lastName = @"";
         contactInfo.email = [userData objectForKey:@"email"];
-        contactInfo.mobile = [userData objectForKey:@"mobile"];
+        contactInfo.mobile = @"9650503675";//[userData objectForKey:@"mobile"];
         
         addressInfo = [[CTSUserAddress alloc] init];
         addressInfo.city = @"Gurgoan";

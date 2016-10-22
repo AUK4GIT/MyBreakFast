@@ -155,8 +155,8 @@ class MyOrderDetailsVC: UIViewController {
                 }
                
                 let orArray = self.orderDetails.filteredArrayUsingPredicate(NSPredicate(block: { (dict, _: [String : AnyObject]?) -> Bool in
-                    print(dict.objectForKey("menu"));
-                    if let _ = dict.objectForKey("menu") as? NSDictionary {
+                    print(dict!.objectForKey("menu"));
+                    if let _ = dict!.objectForKey("menu") as? NSDictionary {
                         return true;
                     } else {
                         return false;
